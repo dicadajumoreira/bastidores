@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>50 Frases que o Síndico Precisa Aprender a Responder sem Perder a Cabeça · Bastidores da Sindicatura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <circle r="120" fill="none" stroke="#B8543B" stroke-width="6"/>
+      <path d="M-46 -8 a46 40 0 1 0 18 -34 L-46 -54 Z" fill="none" stroke="#B8543B" stroke-width="12" stroke-linejoin="round"/>
+      <text y="180" font-family="serif" font-style="italic" font-size="64" fill="#0E1A2B">Bastidores</text>
+      <text y="240" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  /* ============================================================
+     BASTIDORES DA SINDICATURA · 50 Frases (A4 PDF) · Vol. 05
+     ============================================================ */
+
+  :root{
+    --ink:        #0E1A2B;
+    --ink-2:      #1F2C3F;
+    --muted:      #6A7385;
+    --line:       #D9D2C2;
+    --line-soft:  #EAE3D2;
+    --paper:      #F4EEDF;
+    --paper-2:    #ECE3CC;
+    --cream:      #FBF7EC;
+    --accent:     #B8543B;
+    --accent-2:   #C68B3B;
+    --gold:       #8C6A2A;
+    --rule:       1px solid var(--line);
+  }
+
+  /* ESTRUTURA OBRIGATÓRIA: .page são filhas diretas do <body>.
+     Rode _skill/audit-overflow.py antes de gerar o PDF. */
+  @page { size: 210mm 297mm; margin: 0; }
+
+  *{ box-sizing: border-box; }
+  html, body{
+    margin: 0; padding: 0; width: 210mm;
+    background: #2A2522;
+    font-family: "Manrope", system-ui, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  .page{
+    width: 210mm; height: 297mm;
+    background: var(--paper);
+    position: relative; overflow: hidden;
+    color: var(--ink);
+    page-break-after: always; break-after: page;
+    margin: 0 auto;
+  }
+  .page:last-child{ page-break-after: auto; }
+
+  @media screen {
+    html, body{ width: auto; }
+    body{ display: flex; flex-direction: column; align-items: center;
+          gap: 18px; padding: 28px 0 60px; }
+    .page{ box-shadow: 0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); }
+  }
+  @media print{
+    html, body{ background: #fff; width: 210mm; margin: 0; padding: 0; display: block; }
+    .page{ box-shadow: none; margin: 0; display: block; }
+  }
+  html.show-overflow .pg-body{ outline: 1px dashed rgba(184,84,59,.4); }
+  html.show-overflow .page{ outline: 1px dashed rgba(14,26,43,.25); }
+
+  /* ---------- shared chrome ---------- */
+  .frame{ position:absolute; inset: 14mm 16mm; }
+  .pg-head{
+    position:absolute; top: 10mm; left:16mm; right:16mm;
+    display:flex; align-items:center; justify-content:space-between;
+    font-family:"Manrope"; font-size: 9pt; letter-spacing:.18em;
+    text-transform:uppercase; color: var(--muted);
+    padding-bottom: 4mm; border-bottom: var(--rule);
+  }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{
+    width:8px; height:8px; background:var(--accent); border-radius:50%;
+    box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--accent);
+  }
+  .pg-foot{
+    position:absolute; bottom: 10mm; left:16mm; right:16mm;
+    display:flex; align-items:center; justify-content:space-between;
+    font-family:"Manrope"; font-size: 8.5pt; color: var(--muted);
+    padding-top: 4mm; border-top: var(--rule);
+  }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size: 12pt; color: var(--ink); }
+  .pg-body{
+    position:absolute; top: 22mm; bottom: 18mm; left:16mm; right:16mm;
+    display:flex; flex-direction:column;
+  }
+
+  /* ---------- typography ---------- */
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif", "Times New Roman", serif; font-weight:400; }
+
+  .section-num{
+    font-family:"Instrument Serif"; font-style:italic;
+    font-size: 64pt; line-height: 1; color: var(--accent); letter-spacing:-.02em;
+  }
+  .section-kicker{
+    font-size: 8.5pt; letter-spacing:.24em; text-transform:uppercase;
+    color: var(--muted); font-weight:600;
+  }
+  .section-title{
+    font-family:"Instrument Serif"; font-weight:400;
+    font-size: 34pt; line-height: 1.04; letter-spacing:-.01em;
+    color: var(--ink); margin-top: 2mm;
+  }
+  .section-lede{ font-size: 10.5pt; line-height:1.55; color: var(--ink-2); max-width: 130mm; margin-top: 5mm; }
+
+  .h-sub{
+    font-family:"Manrope"; font-weight:700;
+    font-size: 9pt; letter-spacing:.22em; text-transform:uppercase; color: var(--gold);
+    display:flex; align-items:center; gap:8px; margin-bottom: 4mm;
+  }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10.5pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  /* check list */
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap: 2.4mm; }
+  ul.checks li{
+    display:flex; gap: 10px; align-items: flex-start;
+    font-size: 10pt; line-height: 1.42; color: var(--ink-2);
+    padding: 1.2mm 0; border-bottom: 1px dotted var(--line);
+  }
+  ul.checks li:last-child{ border-bottom: none; }
+  ul.checks li .box{
+    flex: 0 0 auto; width: 4.4mm; height: 4.4mm;
+    border: 1.2px solid var(--ink); border-radius: 1.2px;
+    background: var(--cream); margin-top: 1.2mm;
+  }
+  .stack-tight ul.checks li{ font-size: 9.5pt; padding: .7mm 0; }
+  .stack-tight ul.checks li .box{ width:4mm; height:4mm; }
+
+  .cols-2{ display:grid; grid-template-columns: 1fr 1fr; column-gap: 12mm; align-items: start; }
+
+  /* callouts */
+  .callout{
+    background: var(--paper-2); border-left: 3px solid var(--accent);
+    padding: 5mm 6mm; font-size: 9.5pt; line-height: 1.5; color: var(--ink-2); margin-top: 4mm;
+  }
+  .callout b{ color: var(--ink); }
+  .quote-block{
+    background: var(--cream); border: 1px solid var(--line); padding: 7mm 8mm;
+    font-family:"Instrument Serif"; font-style: italic; font-size: 13pt; line-height: 1.45; color: var(--ink);
+  }
+  .quote-block .signature{
+    margin-top: 4mm; font-family:"Manrope"; font-style: normal;
+    font-size: 8.5pt; letter-spacing:.2em; text-transform:uppercase; color: var(--muted);
+  }
+  .survival{
+    background: var(--paper-2); border-left: 3px solid var(--accent);
+    padding: 5mm 7mm; display:flex; flex-direction:column; gap:2mm;
+  }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size: 8pt; letter-spacing:.22em; text-transform:uppercase; color: var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size: 14pt; line-height:1.3; color: var(--ink); }
+
+  .tag{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size: 8pt; letter-spacing:.18em; text-transform:uppercase;
+    color: var(--ink); background: var(--cream); padding: 2.2mm 3.6mm;
+    border-radius: 100px; border:1px solid var(--line); font-weight: 600;
+  }
+  .hr-orn{ display:flex; align-items:center; gap: 10px; color: var(--accent); margin: 4mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height: 1px; background: var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style: italic; font-size: 14pt; color: var(--accent);}
+
+  /* ============================================================ COVER */
+  .cover{
+    background:
+      radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.10), transparent 55%),
+      radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%),
+      var(--paper);
+  }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom: var(--rule); padding-bottom: 6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap: 10px; font-family:"Instrument Serif"; font-style: italic; font-size: 22pt; color: var(--ink); }
+  .cover-brand .logo .mark{ width: 30px; height: 30px; border-radius: 50%; background: var(--ink); position: relative; flex: 0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border: 2px solid var(--paper); border-radius:50%; border-top-color: var(--accent); transform: rotate(35deg); }
+  .cover-brand .sub{ font-size: 8.5pt; letter-spacing:.26em; text-transform:uppercase; color: var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size: 16pt; color: var(--accent); }
+  .cover-meta .label{ font-size: 8.5pt; letter-spacing:.24em; text-transform:uppercase; color: var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding: 14mm 0 8mm; }
+  .cover-eyebrow{
+    font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase;
+    color: var(--accent); font-weight:700; margin-bottom: 8mm; display:flex; align-items:center; gap: 12px;
+  }
+  .cover-eyebrow::before{ content:""; width: 28px; height: 1.5px; background: var(--accent); }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size: 66pt; line-height: .96; letter-spacing:-.022em; color: var(--ink); margin: 0 0 6mm; }
+  .cover-title .it{ font-style: italic; color: var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size: 12.5pt; line-height:1.5; color: var(--ink-2); max-width: 158mm; }
+  .cover-bottom{ border-top: var(--rule); padding-top: 6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap: 14mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size: 38pt; line-height:1; color: var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color: var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color: var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size: 8.5pt; letter-spacing:.22em; text-transform:uppercase; color: var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size: 22pt; letter-spacing:0; text-transform:none; color: var(--ink); margin-top: 2mm; }
+
+  /* ============================================================ OPENER */
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size: 50pt; line-height: 1.02; color: var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style: italic; color: var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 10mm; margin-top: 8mm; }
+  .opener-grid p{ font-size: 10.5pt; line-height: 1.55; color: var(--ink-2); margin:0 0 4mm; }
+
+  /* ============================================================ TOC */
+  .toc-list{ display:grid; grid-template-columns: 1fr; row-gap: 0; margin-top: 5mm; }
+  .toc-item{ display:flex; align-items:baseline; gap: 8px; padding: 3mm 0; border-bottom: 1px dotted var(--line); font-size: 10.5pt; color: var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size: 14pt; color: var(--accent); flex: 0 0 14mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size: 13pt; color: var(--muted); }
+
+  /* ============================================================ SECTION HEAD */
+  .section-head{ display:flex; gap: 10mm; align-items:flex-start; padding-bottom: 6mm; border-bottom: var(--rule); margin-bottom: 6mm; }
+  .section-head .big{ flex: 0 0 auto; }
+  .section-head .meta{ flex:1; padding-top: 4mm;}
+  .section-body{ display:flex; flex-direction:column; gap: 5mm; flex:1;}
+  .block-card{ background: var(--cream); border: 1px solid var(--line); padding: 6mm 7mm; }
+  .twoframe{ display:grid; grid-template-columns: 1fr 1fr; gap: 8mm; }
+
+  .model{
+    background: var(--cream); border: 1px dashed var(--gold); padding: 6mm 7mm;
+    font-family: "Instrument Serif", serif; font-size: 11pt; line-height: 1.5; color: var(--ink-2); position: relative;
+  }
+  .model p{ margin: 0 0 3mm; } .model p:last-child{ margin:0; }
+
+  /* ============================================================ FRASES (50) */
+  .frases-head{
+    display:flex; align-items:baseline; gap:8mm; flex-wrap:wrap;
+    padding-bottom: 4mm; border-bottom: var(--rule); margin-bottom: 5mm;
+  }
+  .frases-head .section-kicker{ flex:0 0 auto; }
+  .frases-head h2{ font-family:"Instrument Serif"; font-weight:400; font-size:24pt; line-height:1.05; color:var(--ink); margin:0; }
+  .frases-head h2 .it{ font-style:italic; color:var(--accent); }
+
+  .frases-grid{ display:grid; grid-template-columns: 1fr 1fr; gap: 4.5mm 10mm; flex:1; align-content:start; }
+  .frase{ display:grid; grid-template-columns: 9mm 1fr; gap: 0 3mm; align-items:start; }
+  .frase .fnum{ font-family:"Instrument Serif"; font-style:italic; font-size: 19pt; line-height:.85; color: var(--accent); }
+  .frase .fbody{ min-width:0; }
+  .fquote{ font-family:"Instrument Serif"; font-style:italic; font-size: 10.5pt; line-height:1.22; color: var(--ink); margin:0 0 1.6mm; }
+  .fans{ font-size: 8.4pt; line-height:1.4; color: var(--ink-2); margin:0 0 1.6mm; }
+  .fwhy{ font-family:"Manrope"; font-weight:600; font-size: 7.4pt; line-height:1.3; letter-spacing:.01em; color: var(--gold); margin:0; }
+  .fwhy::before{ content:"▸ "; color: var(--accent); }
+
+  /* ready-replies grid (curingas) */
+  .replies{ display:grid; grid-template-columns: 1fr 1fr; gap: 4mm 9mm; }
+  .reply-card{ border-left: 2px solid var(--accent); padding-left: 5mm; }
+  .reply-card .sit{ font-family:"Manrope"; font-weight:700; font-size: 8pt; letter-spacing:.12em; text-transform:uppercase; color: var(--gold); display:block; margin-bottom: 1.5mm; }
+  .reply-card p{ margin:0; font-family:"Instrument Serif"; font-style:italic; font-size: 10pt; line-height:1.38; color: var(--ink-2); }
+
+  /* capture page */
+  .capture{
+    background:
+      radial-gradient(120% 80% at 0% 0%, rgba(140,106,42,.12), transparent 55%),
+      radial-gradient(90% 70% at 100% 100%, rgba(184,84,59,.12), transparent 55%),
+      var(--paper);
+  }
+  .cta-band{ background: var(--ink); color: var(--paper); padding: 8mm 9mm; display:flex; flex-direction:column; gap:3mm; margin-top: 2mm; }
+  .cta-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color: var(--accent-2); }
+  .cta-band .t{ font-family:"Instrument Serif"; font-size: 26pt; line-height:1.05; color: var(--paper); }
+  .cta-band .t .it{ font-style:italic; color: var(--accent-2); }
+  .cta-band .u{ font-family:"Manrope"; font-weight:700; font-size:11pt; letter-spacing:.04em; color: var(--paper); margin-top:1mm; }
+  .cta-band .u span{ color: var(--accent-2); }
+
+  /* manifesto */
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  /* Save-as-PDF FAB */
+  .pdf-fab{
+    position: fixed; right: 22px; bottom: 22px; z-index: 9999;
+    display: inline-flex; align-items: center; gap: 10px; padding: 14px 22px;
+    background: #0E1A2B; color: #F4EEDF; border: none; border-radius: 999px;
+    font-family: "Manrope", system-ui, sans-serif; font-size: 13px; font-weight: 600;
+    letter-spacing: .08em; text-transform: uppercase; cursor: pointer;
+    box-shadow: 0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30), inset 0 0 0 1px rgba(255,255,255,.06);
+    transition: transform .15s ease, box-shadow .15s ease, background .15s ease;
+  }
+  .pdf-fab:hover{ transform: translateY(-2px); background: #B8543B; box-shadow: 0 18px 42px rgba(184,84,59,.45), 0 4px 12px rgba(184,84,59,.30); }
+  .pdf-fab svg{ width: 16px; height: 16px; flex: 0 0 auto; }
+  .pdf-fab .dot-accent{ width: 6px; height: 6px; border-radius: 50%; background: #B8543B; box-shadow: 0 0 0 3px rgba(184,84,59,.22); }
+  .pdf-fab:hover .dot-accent{ background: #F4EEDF; box-shadow: 0 0 0 3px rgba(244,238,223,.22); }
+  .pdf-hint{
+    position: fixed; right: 22px; bottom: 74px; z-index: 9998; max-width: 280px; padding: 12px 14px;
+    background: #FBF7EC; border: 1px solid #D9D2C2; border-radius: 10px;
+    font-family: "Manrope", system-ui, sans-serif; font-size: 11.5px; line-height: 1.5; color: #1F2C3F;
+    box-shadow: 0 10px 30px rgba(0,0,0,.18); opacity: 0; transform: translateY(8px); pointer-events: none;
+    transition: opacity .2s ease, transform .2s ease;
+  }
+  .pdf-hint.show{ opacity: 1; transform: translateY(0); }
+  .pdf-hint b{ color: #B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display: none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 05</div>
+          <div class="label">Respostas para o dia a dia</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">Guia de respostas do síndico</div>
+        <h1 class="cover-title">50 frases para <span class="it">responder</span> sem perder a cabeça.</h1>
+        <p class="cover-deck">Respostas prontas para cobranças, provocações, acusações e conflitos, sem abrir mão da postura profissional. Porque, na sindicatura, nem sempre vence quem fala mais alto.</p>
+      </div>
+
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">50</span></div><div class="l">Frases respondidas</div></div>
+          <div class="s"><div class="n">+10</div><div class="l">Frases curinga</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · OPENER -->
+  <section class="page opener" data-screen-label="02 Posicionamento">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Posicionamento</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:8mm;">Antes de começar</div>
+        <h2 class="opener-title">Não vence quem fala <span class="it">mais alto.</span></h2>
+        <div class="opener-grid">
+          <div>
+            <p>Vence quem sabe responder melhor. Ser síndico não é só administrar contratos, contas, manutenções e assembleias. É lidar com pessoas.</p>
+            <p>E lidar com pessoas significa receber mensagens atravessadas, cobranças fora de hora, acusações injustas e ironias no grupo, muitas vezes feitas para testar a sua paciência.</p>
+          </div>
+          <div>
+            <p>Uma resposta mal colocada transforma uma dúvida em crise. Uma frase impulsiva vira print. Um comentário irônico vira reclamação formal.</p>
+            <p>Por isso o síndico precisa de uma habilidade que pouca gente ensina: responder com firmeza sem agressividade, com técnica sem frieza, com educação sem abrir mão da autoridade.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">A promessa</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Mais do que respostas prontas, você vai encontrar formas de se posicionar com equilíbrio, profissionalismo e segurança em 50 situações reais da gestão.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">Como usar</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Use como consulta rápida. Recebeu uma mensagem difícil? Localize a frase mais parecida e adapte a resposta ao seu condomínio, sempre com clareza, firmeza e respeito.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 05</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · TOC -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:5mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">—</span><span class="ttl">Introdução · Antes de responder, respire</span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">01–10</span><span class="ttl">Direitos, deveres e o peso do costume</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">11–20</span><span class="ttl">Canais, ameaças e comunicação</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">21–30</span><span class="ttl">Exceções, regras e urgência</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">31–40</span><span class="ttl">Equipe, finanças e prestação de contas</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">41–50</span><span class="ttl">Governança, assembleia e ataques pessoais</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Bônus · O que o síndico nunca deve fazer ao responder</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Frases curinga para o dia a dia</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Conclusão · Conduzir, não vencer</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">A mentoria Bastidores da Sindicatura</span><span class="pg">13</span></div>
+      </div>
+      <div style="margin-top:auto;padding-top:6mm;">
+        <div class="callout"><b>Dica de uso:</b> a boa resposta não é a que humilha o outro. É a que encerra o ruído e traz o assunto de volta para o procedimento correto. Imprima e mantenha à mão.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · INTRODUÇÃO -->
+  <section class="page" data-screen-label="04 Introdução">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Introdução</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">§</div></div>
+        <div class="meta">
+          <div class="section-kicker">Introdução</div>
+          <h2 class="section-title">Antes de responder, <span class="serif" style="font-style:italic;color:var(--accent);">respire</span>.</h2>
+          <p class="section-lede">Muitos conflitos no condomínio não começam por causa da regra. Começam por causa da forma como a regra é comunicada. O síndico não precisa vencer a discussão; precisa conduzir a situação.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Identifique o tipo de situação</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Cobrança agressiva</li>
+              <li><span class="box"></span>Acusação injusta</li>
+              <li><span class="box"></span>Pedido fora da regra</li>
+              <li><span class="box"></span>Pressão emocional</li>
+              <li><span class="box"></span>Ironia no grupo</li>
+              <li><span class="box"></span>Questionamento sobre decisões</li>
+              <li><span class="box"></span>Reclamação de convivência</li>
+              <li><span class="box"></span>Tentativa de desautorizar a gestão</li>
+            </ul>
+          </div>
+          <div>
+            <div class="block-card">
+              <div class="h-sub">Os três pilares de toda resposta</div>
+              <p style="margin:0 0 2mm;font-size:11pt;line-height:1.4;color:var(--ink);"><b style="font-family:'Instrument Serif';font-style:italic;font-size:14pt;color:var(--accent);">Clareza.</b> Diga o que precisa ser dito, sem rodeio.</p>
+              <p style="margin:0 0 2mm;font-size:11pt;line-height:1.4;color:var(--ink);"><b style="font-family:'Instrument Serif';font-style:italic;font-size:14pt;color:var(--accent);">Firmeza.</b> Sustente a regra sem agredir.</p>
+              <p style="margin:0;font-size:11pt;line-height:1.4;color:var(--ink);"><b style="font-family:'Instrument Serif';font-style:italic;font-size:14pt;color:var(--accent);">Respeito.</b> Trate bem, mesmo quem destrata.</p>
+            </div>
+            <div class="callout" style="margin-top:5mm;">Uma frase impulsiva pode virar print. Uma resposta bem escrita pode proteger a gestão inteira.</div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">A ideia central</span>
+          <span class="txt">O síndico não precisa responder tudo na hora, nem provar o tempo inteiro que está certo. Precisa conduzir.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Introdução · Antes de responder, respire</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · FRASES 01–10 -->
+  <section class="page" data-screen-label="05 Frases 01-10">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>As 50 frases · 01–10</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Frases 01–10</div>
+        <h2>Direitos, deveres e o peso do <span class="it">costume</span>.</h2>
+      </div>
+      <div class="frases-grid">
+        <div class="frase"><div class="fnum">01</div><div class="fbody"><p class="fquote">“Eu pago condomínio, então eu tenho direito.”</p><p class="fans">O pagamento da taxa garante o uso das áreas e serviços, sempre dentro das regras aprovadas pela coletividade. Nenhum direito individual se sobrepõe à convenção e ao direito dos demais.</p><p class="fwhy">Reconhece o direito sem ignorar o coletivo.</p></div></div>
+        <div class="frase"><div class="fnum">02</div><div class="fbody"><p class="fquote">“Você trabalha para mim.”</p><p class="fans">O síndico trabalha em favor do condomínio como um todo, representando os interesses coletivos e cumprindo as responsabilidades previstas em lei, na convenção e em assembleia.</p><p class="fwhy">Reposiciona o síndico como representante de todos.</p></div></div>
+        <div class="frase"><div class="fnum">03</div><div class="fbody"><p class="fquote">“Eu sou proprietário, faço o que quiser.”</p><p class="fans">A propriedade dentro de um condomínio tem direitos e também limites. O uso da unidade deve respeitar as normas, a segurança da edificação, o sossego e o direito dos vizinhos.</p><p class="fwhy">Propriedade não é ausência de regras.</p></div></div>
+        <div class="frase"><div class="fnum">04</div><div class="fbody"><p class="fquote">“Isso é perseguição.”</p><p class="fans">A gestão não atua por questões pessoais. Toda orientação, advertência ou medida é baseada em fatos, registros e normas aplicáveis a todos os moradores.</p><p class="fwhy">Tira do emocional, leva para o técnico.</p></div></div>
+        <div class="frase"><div class="fnum">05</div><div class="fbody"><p class="fquote">“Só eu sou multado neste condomínio.”</p><p class="fans">As medidas administrativas são tratadas individualmente e respeitam a privacidade de cada unidade. Por isso a gestão não divulga advertências ou multas de outros moradores.</p><p class="fwhy">Preserva terceiros e a seriedade do processo.</p></div></div>
+        <div class="frase"><div class="fnum">06</div><div class="fbody"><p class="fquote">“No prédio do meu amigo pode.”</p><p class="fans">Cada condomínio tem sua própria convenção, regulamento, estrutura e decisões de assembleia. O que vale em outro lugar não se aplica automaticamente aqui.</p><p class="fwhy">Cada condomínio tem as próprias regras.</p></div></div>
+        <div class="frase"><div class="fnum">07</div><div class="fbody"><p class="fquote">“Sempre foi assim.”</p><p class="fans">O fato de uma prática ter ocorrido antes não significa que esteja correta. A gestão tem o dever de corrigir procedimentos quando identifica risco ou irregularidade.</p><p class="fwhy">O costume não valida o erro.</p></div></div>
+        <div class="frase"><div class="fnum">08</div><div class="fbody"><p class="fquote">“Nunca ninguém reclamou.”</p><p class="fans">A ausência de reclamações não autoriza o descumprimento das normas. A partir do momento em que a situação é identificada, a gestão precisa orientar e agir.</p><p class="fwhy">Falta de histórico não é permissão.</p></div></div>
+        <div class="frase"><div class="fnum">09</div><div class="fbody"><p class="fquote">“Vocês não fazem nada.”</p><p class="fans">Entendemos a percepção, mas muitas ações acontecem nos bastidores: cotações, tratativas com fornecedores, notificações e acompanhamento de chamados. Manteremos todos informados pelos canais oficiais.</p><p class="fwhy">Mostra trabalho sem soar defensivo.</p></div></div>
+        <div class="frase"><div class="fnum">10</div><div class="fbody"><p class="fquote">“O condomínio está abandonado.”</p><p class="fans">Se identificou algum ponto específico que precisa de atenção, encaminhe pelo canal oficial para registro. Assim conseguimos avaliar, priorizar e dar o retorno.</p><p class="fwhy">Vira crítica genérica em demanda objetiva.</p></div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>As 50 frases · Direitos, deveres e costume</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · FRASES 11–20 -->
+  <section class="page" data-screen-label="06 Frases 11-20">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>As 50 frases · 11–20</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Frases 11–20</div>
+        <h2>Canais, ameaças e <span class="it">comunicação</span>.</h2>
+      </div>
+      <div class="frases-grid">
+        <div class="frase"><div class="fnum">11</div><div class="fbody"><p class="fquote">“Quero falar direto com o síndico agora.”</p><p class="fans">Para garantir organização e rastreabilidade, as demandas devem vir pelo canal oficial de atendimento, onde conseguimos registrar, acompanhar e responder cada solicitação.</p><p class="fwhy">Protege o síndico da informalidade.</p></div></div>
+        <div class="frase"><div class="fnum">12</div><div class="fbody"><p class="fquote">“Vou colocar no grupo para todo mundo ver.”</p><p class="fans">O morador tem liberdade para se manifestar, mas demandas administrativas devem ser tratadas pelos canais oficiais, para serem registradas, analisadas e respondidas.</p><p class="fwhy">Não ameaça; direciona ao canal certo.</p></div></div>
+        <div class="frase"><div class="fnum">13</div><div class="fbody"><p class="fquote">“Vou processar o condomínio.”</p><p class="fans">O morador tem o direito de buscar os meios que entender cabíveis. Da nossa parte, seguiremos tratando o assunto com base nos documentos, registros e procedimentos formais.</p><p class="fwhy">Segurança, sem entrar na provocação.</p></div></div>
+        <div class="frase"><div class="fnum">14</div><div class="fbody"><p class="fquote">“Vou chamar a polícia.”</p><p class="fans">Se entender necessário, o morador pode acionar as autoridades competentes. A gestão seguirá adotando as medidas administrativas cabíveis dentro de suas atribuições.</p><p class="fwhy">Reconhece o direito sem virar ameaça.</p></div></div>
+        <div class="frase"><div class="fnum">15</div><div class="fbody"><p class="fquote">“Eu conheço meus direitos.”</p><p class="fans">Perfeito. O conhecimento dos direitos é importante, assim como o dos deveres previstos na convenção, no regulamento e na legislação aplicável à vida em condomínio.</p><p class="fwhy">Equilibra direitos e deveres.</p></div></div>
+        <div class="frase"><div class="fnum">16</div><div class="fbody"><p class="fquote">“Isso é abuso de poder.”</p><p class="fans">A gestão atua dentro das atribuições previstas em lei e nas normas. Havendo dúvida sobre uma medida, podemos esclarecer o fundamento e o procedimento adotado.</p><p class="fwhy">Abre para esclarecer sem admitir culpa.</p></div></div>
+        <div class="frase"><div class="fnum">17</div><div class="fbody"><p class="fquote">“Quero ver onde está escrito.”</p><p class="fans">Podemos indicar o trecho correspondente da convenção, do regulamento ou da deliberação aplicável. As regras devem sempre estar fundamentadas nos documentos oficiais.</p><p class="fwhy">Transparência e segurança documental.</p></div></div>
+        <div class="frase"><div class="fnum">18</div><div class="fbody"><p class="fquote">“Eu não fui avisado.”</p><p class="fans">Os comunicados são enviados pelos canais oficiais do condomínio. Vamos verificar o histórico do envio e reforçar a informação para que não reste dúvida.</p><p class="fwhy">Evita confronto, abre a checagem.</p></div></div>
+        <div class="frase"><div class="fnum">19</div><div class="fbody"><p class="fquote">“Ninguém me respondeu.”</p><p class="fans">Vamos verificar o registro da sua solicitação no canal oficial. Se ainda não houver demanda aberta, encaminhe por lá para acompanharmos o prazo e o retorno.</p><p class="fwhy">Leva ao controle do atendimento.</p></div></div>
+        <div class="frase"><div class="fnum">20</div><div class="fbody"><p class="fquote">“Mandei mensagem no WhatsApp do porteiro.”</p><p class="fans">Mensagens enviadas direto ao porteiro não substituem o canal oficial. Para garantir registro e acompanhamento, encaminhe a solicitação pelo canal correto.</p><p class="fwhy">Protege os funcionários e organiza tudo.</p></div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>As 50 frases · Canais, ameaças e comunicação</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · FRASES 21–30 -->
+  <section class="page" data-screen-label="07 Frases 21-30">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>As 50 frases · 21–30</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Frases 21–30</div>
+        <h2>Exceções, regras e <span class="it">urgência</span>.</h2>
+      </div>
+      <div class="frases-grid">
+        <div class="frase"><div class="fnum">21</div><div class="fbody"><p class="fquote">“Mas é só uma exceção.”</p><p class="fans">Entendemos a situação, mas exceções precisam ser analisadas com cuidado: podem gerar precedente e comprometer a aplicação igualitária das regras.</p><p class="fwhy">Empatia sem abrir precedente.</p></div></div>
+        <div class="frase"><div class="fnum">22</div><div class="fbody"><p class="fquote">“Só dessa vez.”</p><p class="fans">Compreendemos o pedido, mas a gestão precisa preservar a regra coletiva. Uma exceção sem critério gera questionamento e tratamento desigual entre moradores.</p><p class="fwhy">Preserva a regra coletiva.</p></div></div>
+        <div class="frase"><div class="fnum">23</div><div class="fbody"><p class="fquote">“Mas eu já reservei.”</p><p class="fans">A reserva precisa respeitar as regras, prazos, condições de uso e confirmações previstas. Vamos verificar o caso e orientar conforme o procedimento vigente.</p><p class="fwhy">Não confirma nem cancela antes de checar.</p></div></div>
+        <div class="frase"><div class="fnum">24</div><div class="fbody"><p class="fquote">“Eu não sabia da regra.”</p><p class="fans">Entendemos. Ainda assim, as regras se aplicam a todos, independentemente do conhecimento prévio. Vamos reforçar a orientação para evitar novas ocorrências.</p><p class="fwhy">Educa sem passar a mão na cabeça.</p></div></div>
+        <div class="frase"><div class="fnum">25</div><div class="fbody"><p class="fquote">“Mas ninguém lê regulamento.”</p><p class="fans">Justamente por isso reforçamos os comunicados e orientamos os moradores. Ainda assim, o regulamento organiza a convivência e deve ser respeitado por todos.</p><p class="fwhy">Reconhece a realidade, mantém a norma.</p></div></div>
+        <div class="frase"><div class="fnum">26</div><div class="fbody"><p class="fquote">“Vocês estão criando regra.”</p><p class="fans">A gestão não cria regras de forma unilateral. As medidas seguem a convenção, o regulamento, a legislação ou deliberações aprovadas em assembleia.</p><p class="fwhy">Combate a ideia de arbitrariedade.</p></div></div>
+        <div class="frase"><div class="fnum">27</div><div class="fbody"><p class="fquote">“Isso nunca foi aprovado em assembleia.”</p><p class="fans">Vamos verificar a origem da regra. Algumas medidas decorrem da convenção, do regulamento ou de exigência legal; outras dependem de deliberação em assembleia.</p><p class="fwhy">Domínio técnico, sem resposta precipitada.</p></div></div>
+        <div class="frase"><div class="fnum">28</div><div class="fbody"><p class="fquote">“Vocês têm que resolver imediatamente.”</p><p class="fans">Entendemos a urgência percebida, mas cada demanda é classificada por risco, gravidade e impacto. Situações emergenciais têm prioridade; as demais seguem o fluxo.</p><p class="fwhy">Ensina critério de prioridade.</p></div></div>
+        <div class="frase"><div class="fnum">29</div><div class="fbody"><p class="fquote">“Isso é caso de emergência.”</p><p class="fans">Vamos avaliar conforme os critérios de emergência: risco à segurança, dano iminente ou impacto coletivo. Se enquadrado, será tratado com prioridade.</p><p class="fwhy">Nem todo incômodo é emergência.</p></div></div>
+        <div class="frase"><div class="fnum">30</div><div class="fbody"><p class="fquote">“Tem que trocar esse fornecedor agora.”</p><p class="fans">A troca de fornecedor exige análise de contrato, desempenho, notificações, cotações e impacto financeiro. A gestão pode avaliar, mas seguindo o procedimento adequado.</p><p class="fwhy">Gestão profissional não decide por impulso.</p></div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>As 50 frases · Exceções, regras e urgência</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · FRASES 31–40 -->
+  <section class="page" data-screen-label="08 Frases 31-40">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>As 50 frases · 31–40</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Frases 31–40</div>
+        <h2>Equipe, finanças e <span class="it">prestação de contas</span>.</h2>
+      </div>
+      <div class="frases-grid">
+        <div class="frase"><div class="fnum">31</div><div class="fbody"><p class="fquote">“Esse prestador é péssimo.”</p><p class="fans">Agradecemos o apontamento. Envie detalhes objetivos, como data, horário, local e descrição, para avaliarmos o desempenho do prestador com base em registros.</p><p class="fwhy">Transforma opinião em evidência.</p></div></div>
+        <div class="frase"><div class="fnum">32</div><div class="fbody"><p class="fquote">“O funcionário foi mal-educado comigo.”</p><p class="fans">Lamentamos o ocorrido. Para apuração adequada, encaminhe data, horário, local e descrição. A gestão avaliará o caso e adotará as providências cabíveis.</p><p class="fwhy">Acolhe sem condenar sem apuração.</p></div></div>
+        <div class="frase"><div class="fnum">33</div><div class="fbody"><p class="fquote">“Quero que esse funcionário seja demitido.”</p><p class="fans">A gestão vai apurar com responsabilidade. Medidas relacionadas a funcionários seguem critérios técnicos, contratuais e legais, não apenas a solicitação individual.</p><p class="fwhy">Protege de decisão emocional e risco trabalhista.</p></div></div>
+        <div class="frase"><div class="fnum">34</div><div class="fbody"><p class="fquote">“O porteiro não fez nada.”</p><p class="fans">Vamos verificar o procedimento da portaria no momento da ocorrência. É importante analisar os registros antes de concluir se houve falha ou limitação operacional.</p><p class="fwhy">Evita julgamento precipitado.</p></div></div>
+        <div class="frase"><div class="fnum">35</div><div class="fbody"><p class="fquote">“O zelador não resolve nada.”</p><p class="fans">O zelador atua dentro das atribuições definidas e sob orientação da gestão. Havendo demanda específica sem retorno, encaminhe pelo canal oficial para verificarmos.</p><p class="fwhy">Protege a equipe e organiza a cobrança.</p></div></div>
+        <div class="frase"><div class="fnum">36</div><div class="fbody"><p class="fquote">“O síndico só aparece para cobrar.”</p><p class="fans">A atuação do síndico envolve muitas responsabilidades pouco visíveis: manutenção, contratos, finanças, segurança, assembleias e fornecedores. A cobrança é só uma parte.</p><p class="fwhy">Reforça a amplitude do trabalho.</p></div></div>
+        <div class="frase"><div class="fnum">37</div><div class="fbody"><p class="fquote">“Cadê o dinheiro do condomínio?”</p><p class="fans">As movimentações são registradas na prestação de contas e nos demonstrativos disponibilizados. Havendo dúvida sobre algum item, orientamos a forma correta de consulta.</p><p class="fwhy">Transparência sem aceitar insinuação.</p></div></div>
+        <div class="frase"><div class="fnum">38</div><div class="fbody"><p class="fquote">“A taxa está cara demais.”</p><p class="fans">A taxa reflete os custos de operação: funcionários, contratos, consumo, manutenção, seguros e encargos aprovados. Podemos esclarecer a composição na prestação de contas.</p><p class="fwhy">A taxa não é valor aleatório.</p></div></div>
+        <div class="frase"><div class="fnum">39</div><div class="fbody"><p class="fquote">“Não vou pagar enquanto não resolverem.”</p><p class="fans">A taxa é obrigação vinculada à unidade e não pode ser condicionada à insatisfação com uma demanda. A solicitação será tratada, mas a obrigação de pagamento permanece.</p><p class="fwhy">Firme: pagamento não se condiciona.</p></div></div>
+        <div class="frase"><div class="fnum">40</div><div class="fbody"><p class="fquote">“Eu pago em dia e não tenho retorno.”</p><p class="fans">O pagamento em dia é essencial e beneficia toda a coletividade. Sobre a sua demanda, vamos verificar o registro e o andamento pelo canal oficial para dar o retorno.</p><p class="fwhy">Reconhece o bom pagador sem criar privilégio.</p></div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>As 50 frases · Equipe, finanças e prestação de contas</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · FRASES 41–50 -->
+  <section class="page" data-screen-label="09 Frases 41-50">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>As 50 frases · 41–50</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Frases 41–50</div>
+        <h2>Governança, assembleia e <span class="it">ataques pessoais</span>.</h2>
+      </div>
+      <div class="frases-grid">
+        <div class="frase"><div class="fnum">41</div><div class="fbody"><p class="fquote">“Inadimplente não deveria poder usar nada.”</p><p class="fans">A inadimplência deve ser tratada pelos meios legais e administrativos adequados. Restrições de uso precisam observar a lei, a convenção e o risco de práticas abusivas.</p><p class="fwhy">Evita medida ilegal ou discriminatória.</p></div></div>
+        <div class="frase"><div class="fnum">42</div><div class="fbody"><p class="fquote">“Tem que expor quem não paga.”</p><p class="fans">A gestão não pode expor inadimplentes de forma constrangedora. A cobrança segue os meios adequados, preservando a legalidade, a privacidade e a segurança jurídica.</p><p class="fwhy">Protege o condomínio de risco jurídico.</p></div></div>
+        <div class="frase"><div class="fnum">43</div><div class="fbody"><p class="fquote">“O grupo de WhatsApp decidiu.”</p><p class="fans">O grupo serve para comunicação e troca de informação, mas não substitui assembleia, votação formal ou os procedimentos previstos na convenção do condomínio.</p><p class="fwhy">Grupo não é assembleia.</p></div></div>
+        <div class="frase"><div class="fnum">44</div><div class="fbody"><p class="fquote">“Todo mundo concorda comigo.”</p><p class="fans">A percepção de apoio informal não substitui manifestação formal. Quando o assunto exige decisão coletiva, ele segue o procedimento previsto, em especial a assembleia.</p><p class="fwhy">Desmonta a pressão do “todo mundo”.</p></div></div>
+        <div class="frase"><div class="fnum">45</div><div class="fbody"><p class="fquote">“Vou fazer abaixo-assinado.”</p><p class="fans">Os moradores podem se organizar dentro dos limites legais. A gestão reforça que a solicitação deve observar os procedimentos formais, os quóruns e as normas do condomínio.</p><p class="fwhy">Enquadra a mobilização no processo.</p></div></div>
+        <div class="frase"><div class="fnum">46</div><div class="fbody"><p class="fquote">“Quero uma assembleia agora.”</p><p class="fans">A convocação segue os critérios da convenção e da lei: forma de convocação, pauta, prazos e quóruns. Podemos avaliar a solicitação conforme esses parâmetros.</p><p class="fwhy">Evita assembleia reativa e desorganizada.</p></div></div>
+        <div class="frase"><div class="fnum">47</div><div class="fbody"><p class="fquote">“Isso tinha que ser votado por todos.”</p><p class="fans">Alguns assuntos exigem aprovação em assembleia; outros fazem parte das atribuições do síndico. Vamos avaliar a natureza da decisão conforme a convenção e a lei.</p><p class="fwhy">Separa gestão de deliberação coletiva.</p></div></div>
+        <div class="frase"><div class="fnum">48</div><div class="fbody"><p class="fquote">“O síndico não pode decidir nada sozinho.”</p><p class="fans">O síndico tem atribuições legais e administrativas para conduzir a rotina, executar deliberações e tomar as providências necessárias à conservação, segurança e funcionamento.</p><p class="fwhy">Reforça autoridade sem autoritarismo.</p></div></div>
+        <div class="frase"><div class="fnum">49</div><div class="fbody"><p class="fquote">“Você está sendo grosso.”</p><p class="fans">Lamento que a mensagem tenha sido recebida assim. A intenção é tratar o assunto com clareza e objetividade, mantendo o respeito e seguindo as normas do condomínio.</p><p class="fwhy">Desarma a acusação sem se diminuir.</p></div></div>
+        <div class="frase"><div class="fnum">50</div><div class="fbody"><p class="fquote">“Você não sabe lidar com pessoas.”</p><p class="fans">A convivência condominial exige diálogo, respeito e cumprimento das regras. A gestão está aberta a tratar as demandas, desde que a comunicação seja respeitosa e produtiva.</p><p class="fwhy">Recoloca o limite da conversa.</p></div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>As 50 frases · Governança, assembleia e ataques pessoais</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · BÔNUS · O QUE NUNCA FAZER -->
+  <section class="page" data-screen-label="10 Bônus">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bônus · Nunca faça</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Capítulo bônus</div>
+      <h2 class="section-title" style="margin-bottom:6mm;">O que o síndico nunca deve fazer ao <span class="serif" style="font-style:italic;color:var(--accent);">responder</span>.</h2>
+      <div class="twoframe" style="flex:1; align-content:start;">
+        <div>
+          <div class="block-card">
+            <div class="h-sub">1 · Responder no calor da emoção</div>
+            <p style="margin:0;font-size:9.5pt;line-height:1.5;color:var(--ink-2);">A mensagem chega agressiva e a vontade é responder na mesma intensidade. Mas a sua resposta pode circular fora de contexto. Antes de enviar: respire, releia e pergunte se resolve ou piora.</p>
+          </div>
+          <div class="block-card" style="margin-top:5mm;">
+            <div class="h-sub">2 · Ironizar o morador</div>
+            <p style="margin:0;font-size:9.5pt;line-height:1.5;color:var(--ink-2);">A ironia dá satisfação por alguns segundos e gera desgaste por muito mais tempo. O síndico não vence no deboche. Vence na condução.</p>
+          </div>
+          <div class="block-card" style="margin-top:5mm;">
+            <div class="h-sub">3 · Responder sem consultar documento</div>
+            <p style="margin:0;font-size:9.5pt;line-height:1.5;color:var(--ink-2);">Quando o assunto envolve regra, multa, assembleia, obra ou inadimplência, a resposta tem que estar baseada em documento. Achismo enfraquece a gestão; fundamento fortalece.</p>
+          </div>
+        </div>
+        <div>
+          <div class="block-card">
+            <div class="h-sub">4 · Prometer o que não pode cumprir</div>
+            <p style="margin:0 0 2mm;font-size:9.5pt;line-height:1.5;color:var(--ink-2);">“Vou resolver hoje” ou “isso nunca mais vai acontecer” criam expectativa perigosa. Prefira:</p>
+            <p style="margin:0;font-family:'Instrument Serif';font-style:italic;font-size:11pt;line-height:1.45;color:var(--ink);">“Vamos verificar.” · “Vamos apurar.” · “Vamos encaminhar para análise.”</p>
+          </div>
+          <div class="block-card" style="margin-top:5mm;">
+            <div class="h-sub">5 · Tratar tudo no WhatsApp</div>
+            <p style="margin:0;font-size:9.5pt;line-height:1.5;color:var(--ink-2);">O WhatsApp é útil, mas não pode ser o único lugar onde a gestão acontece. Demandas importantes precisam de registro, protocolo e histórico.</p>
+          </div>
+          <div class="survival" style="margin-top:5mm;">
+            <span class="lbl">Frase de sobrevivência</span>
+            <span class="txt">O que não tem registro vira ruído. O que tem registro vira gestão.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bônus · O que nunca fazer ao responder</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · FRASES CURINGA -->
+  <section class="page" data-screen-label="11 Curingas">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Frases curinga</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Para qualquer situação</div>
+      <h2 class="section-title" style="margin-bottom:6mm;">Frases <span class="serif" style="font-style:italic;color:var(--accent);">curinga</span> para o dia a dia.</h2>
+      <div class="replies" style="flex:1; align-content:start;">
+        <div class="reply-card"><span class="sit">Para ganhar tempo</span><p>Vamos verificar o caso e retornar pelo canal oficial.</p></div>
+        <div class="reply-card"><span class="sit">Para não entrar na provocação</span><p>Entendemos a manifestação, mas manteremos a tratativa dentro dos procedimentos formais do condomínio.</p></div>
+        <div class="reply-card"><span class="sit">Para pedir objetividade</span><p>Para avaliarmos, pedimos data, horário, local e descrição objetiva da ocorrência.</p></div>
+        <div class="reply-card"><span class="sit">Para reforçar a regra</span><p>A orientação segue o regulamento interno e deve ser observada por todos os moradores.</p></div>
+        <div class="reply-card"><span class="sit">Para encerrar discussão improdutiva</span><p>A gestão permanece à disposição pelos canais oficiais, de forma respeitosa e objetiva.</p></div>
+        <div class="reply-card"><span class="sit">Para cobrança agressiva</span><p>Compreendemos a insatisfação, mas pedimos que a comunicação seja respeitosa para conduzirmos a demanda.</p></div>
+        <div class="reply-card"><span class="sit">Para evitar decisão precipitada</span><p>Antes de qualquer providência, precisamos apurar os fatos e verificar os registros.</p></div>
+        <div class="reply-card"><span class="sit">Para negar com elegância</span><p>Entendemos o pedido, mas não será possível atender fora das regras vigentes do condomínio.</p></div>
+        <div class="reply-card"><span class="sit">Para lidar com acusações</span><p>A gestão atua com base em fatos, documentos e procedimentos, não em questões pessoais.</p></div>
+        <div class="reply-card"><span class="sit">Para manter a autoridade</span><p>O assunto será tratado conforme as normas internas e os interesses coletivos do condomínio.</p></div>
+      </div>
+      <div class="survival" style="margin-top:5mm;">
+        <span class="lbl">Lembre-se</span>
+        <span class="txt">A boa resposta encerra o ruído e devolve o assunto ao procedimento correto.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Frases curinga para o dia a dia</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · CONCLUSÃO -->
+  <section class="page" data-screen-label="12 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">Conduzir, não <span class="serif" style="font-style:italic;color:var(--accent);">vencer</span>.</h2>
+          <p class="section-lede">Ser síndico exige preparo técnico, mas também preparo emocional. Muitos conflitos não começam pela regra. Começam pela forma como a regra é comunicada.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Uma boa resposta</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Pode evitar uma briga</li>
+              <li><span class="box"></span>Pode impedir um abuso</li>
+              <li><span class="box"></span>Pode proteger a gestão</li>
+              <li><span class="box"></span>Pode transformar tensão em liderança</li>
+            </ul>
+          </div>
+          <div>
+            <div class="block-card">
+              <div class="h-sub">O síndico precisa conduzir</div>
+              <p style="margin:0;font-family:'Instrument Serif';font-size:15pt;line-height:1.35;color:var(--ink);">Com clareza. Com equilíbrio. Com técnica. Com postura.</p>
+              <p style="margin:3mm 0 0;font-size:9.5pt;line-height:1.5;color:var(--ink-2);">Não precisa responder tudo na hora. Não precisa aceitar provocação. Não precisa provar o tempo inteiro que está certo.</p>
+            </div>
+          </div>
+        </div>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          A sindicatura não é só sobre administrar condomínios. É sobre liderar pessoas em ambientes onde todo mundo acha que sabe como deveria ser feito. Por isso, aprender a responder sem perder a cabeça não é detalhe. É sobrevivência.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · Conduzir, não vencer</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · CAPTAÇÃO -->
+  <section class="page capture" data-screen-label="13 Captação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>A mentoria</div></div>
+    <div class="pg-body">
+      <div class="cover-eyebrow" style="margin-bottom:5mm;">O mercado ensina teoria. A vida real ensina sobrevivência.</div>
+      <h2 class="opener-title" style="font-size:38pt;">Os bastidores acontecem fora da <span class="it">teoria</span>.</h2>
+
+      <div class="opener-grid" style="margin-top:6mm;">
+        <div>
+          <p style="font-size:10.5pt;line-height:1.55;color:var(--ink-2);margin:0 0 3mm;">É no bastidor que acontecem as decisões difíceis. É ali que surgem os conflitos e que o síndico aprende a se posicionar, negociar, responder e conduzir.</p>
+          <p style="font-size:10.5pt;line-height:1.55;color:var(--ink-2);margin:0;">Se você é síndico ou quer se tornar um síndico profissional mais preparado, precisa entender que a vida real da sindicatura vai muito além da teoria.</p>
+        </div>
+        <div>
+          <p style="font-size:10.5pt;line-height:1.55;color:var(--ink-2);margin:0 0 3mm;">A mentoria <b>Bastidores da Sindicatura</b> foi criada para quem quer atuar com mais segurança, estratégia e maturidade no mercado condominial.</p>
+          <p style="font-size:10.5pt;line-height:1.55;color:var(--ink-2);margin:0;">Quem aprende os bastidores sai na frente. E aprende, justamente, a sobreviver à pressão da função.</p>
+        </div>
+      </div>
+
+      <div class="cta-band" style="margin-top:auto;">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Aprenda a atuar com <span class="it">segurança e estratégia</span> no mercado condominial.</div>
+        <p style="margin:1mm 0 0;font-size:9.5pt;line-height:1.5;color:rgba(244,238,223,.82);">Segue o site com mais informações sobre a mentoria, conteúdos e como participar:</p>
+        <div class="u">→ <span>www.bastidoresdasindicatura.com.br</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>A mentoria · Bastidores da Sindicatura</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · MANIFESTO / CLOSE -->
+  <section class="page manifesto" data-screen-label="14 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top: 30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap: 12mm;">
+        <div class="cover-eyebrow" style="margin:0;">Guia de respostas do síndico</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:165mm;">
+          O síndico não precisa vencer a <em style="font-style:italic;color:var(--accent);">discussão.</em><br/>
+          Precisa <em style="font-style:italic;color:var(--accent);">conduzir a situação.</em>
+        </h2>
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          Responder com clareza, firmeza e respeito não é detalhe da função. É o que separa a gestão que se desgasta da gestão que vira referência.
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          50 frases · Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 05 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<!-- Floating Save-as-PDF button -->
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite">
+  <b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.
+</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+    <path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line>
+  </svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab = document.getElementById('pdfFab'); var hint = document.getElementById('pdfHint');
+    if (!fab) return; var hintTimer;
+    fab.addEventListener('mouseenter', function(){ clearTimeout(hintTimer); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave', function(){ hintTimer = setTimeout(function(){ hint.classList.remove('show'); }, 250); });
+    fab.addEventListener('click', function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); }, 120); setTimeout(function(){ hint.classList.remove('show'); }, 4000); });
+  })();
+</script>
+</body>
+</html>
