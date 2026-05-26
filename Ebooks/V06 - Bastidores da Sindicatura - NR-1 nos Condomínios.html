@@ -1,0 +1,1010 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Condomínio Também é Ambiente de Trabalho · NR-1 nos Condomínios · Bastidores da Sindicatura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <circle r="120" fill="none" stroke="#B8543B" stroke-width="6"/>
+      <path d="M-46 -8 a46 40 0 1 0 18 -34 L-46 -54 Z" fill="none" stroke="#B8543B" stroke-width="12" stroke-linejoin="round"/>
+      <text y="180" font-family="serif" font-style="italic" font-size="64" fill="#0E1A2B">Bastidores</text>
+      <text y="240" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  /* ============================================================
+     BASTIDORES DA SINDICATURA · NR-1 nos Condomínios (A4 PDF) · Vol. 06
+     ============================================================ */
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A; --rule:1px solid var(--line);
+  }
+  /* ESTRUTURA OBRIGATÓRIA: .page filhas diretas do <body>. Rode _skill/audit-overflow.py antes do PDF. */
+  @page { size: 210mm 297mm; margin: 0; }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; width:210mm; background:#2A2522; font-family:"Manrope", system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; color:var(--ink); page-break-after:always; break-after:page; margin:0 auto; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen { html, body{ width:auto; } body{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 0 60px; } .page{ box-shadow:0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); } }
+  @media print{ html, body{ background:#fff; width:210mm; margin:0; padding:0; display:block; } .page{ box-shadow:none; margin:0; display:block; } }
+  html.show-overflow .pg-body{ outline:1px dashed rgba(184,84,59,.4); }
+  html.show-overflow .page{ outline:1px dashed rgba(14,26,43,.25); }
+
+  .frame{ position:absolute; inset:14mm 16mm; }
+  .pg-head{ position:absolute; top:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); padding-bottom:4mm; border-bottom:var(--rule); }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{ width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  .pg-foot{ position:absolute; bottom:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:8.5pt; color:var(--muted); padding-top:4mm; border-top:var(--rule); }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .pg-body{ position:absolute; top:22mm; bottom:18mm; left:16mm; right:16mm; display:flex; flex-direction:column; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif","Times New Roman",serif; font-weight:400; }
+  .mono{ font-family:"JetBrains Mono", monospace; }
+  .section-num{ font-family:"Instrument Serif"; font-style:italic; font-size:64pt; line-height:1; color:var(--accent); letter-spacing:-.02em; }
+  .section-kicker{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-title{ font-family:"Instrument Serif"; font-weight:400; font-size:33pt; line-height:1.04; letter-spacing:-.01em; color:var(--ink); margin-top:2mm; }
+  .section-lede{ font-size:10.5pt; line-height:1.55; color:var(--ink-2); max-width:132mm; margin-top:5mm; }
+  .h-sub{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:4mm; }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10.5pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.4mm; }
+  ul.checks li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.42; color:var(--ink-2); padding:1.2mm 0; border-bottom:1px dotted var(--line); }
+  ul.checks li:last-child{ border-bottom:none; }
+  ul.checks li .box{ flex:0 0 auto; width:4.4mm; height:4.4mm; border:1.2px solid var(--ink); border-radius:1.2px; background:var(--cream); margin-top:1.2mm; }
+  .stack-tight ul.checks li{ font-size:9.5pt; padding:.7mm 0; }
+  .stack-tight ul.checks li .box{ width:4mm; height:4mm; }
+  ul.bul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.2mm; }
+  ul.bul li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.45; color:var(--ink-2); padding:1mm 0; border-bottom:1px dotted var(--line); }
+  ul.bul li:last-child{ border-bottom:none; }
+  ul.bul li::before{ content:""; flex:0 0 auto; width:5px; height:5px; margin-top:2.4mm; background:var(--accent); border-radius:50%; }
+
+  .cols-2{ display:grid; grid-template-columns:1fr 1fr; column-gap:12mm; align-items:start; }
+  ol.enum{ list-style:none; padding:0; margin:0; counter-reset:en; display:flex; flex-direction:column; gap:2mm; }
+  ol.enum li{ counter-increment:en; display:flex; gap:10px; align-items:baseline; font-size:9.5pt; line-height:1.4; color:var(--ink-2); padding:1.4mm 0; border-bottom:1px dotted var(--line); }
+  ol.enum li::before{ content:counter(en, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--accent); flex:0 0 9mm; }
+  ol.enum li b{ color:var(--ink); }
+
+  .callout{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 6mm; font-size:9.5pt; line-height:1.5; color:var(--ink-2); margin-top:4mm; }
+  .callout b{ color:var(--ink); }
+  .quote-block{ background:var(--cream); border:1px solid var(--line); padding:7mm 8mm; font-family:"Instrument Serif"; font-style:italic; font-size:13pt; line-height:1.45; color:var(--ink); }
+  .quote-block .signature{ margin-top:4mm; font-family:"Manrope"; font-style:normal; font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .survival{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 7mm; display:flex; flex-direction:column; gap:2mm; }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; line-height:1.3; color:var(--ink); }
+  .tag{ display:inline-flex; align-items:center; gap:6px; font-size:8pt; letter-spacing:.18em; text-transform:uppercase; color:var(--ink); background:var(--cream); padding:2.2mm 3.6mm; border-radius:100px; border:1px solid var(--line); font-weight:600; }
+  .hr-orn{ display:flex; align-items:center; gap:10px; color:var(--accent); margin:4mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent);}
+
+  /* COVER */
+  .cover{ background: radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.10), transparent 55%), radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%), var(--paper); }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:var(--rule); padding-bottom:6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap:10px; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); }
+  .cover-brand .logo .mark{ width:30px; height:30px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border:2px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .cover-brand .sub{ font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--accent); }
+  .cover-meta .label{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:12mm 0 8mm; }
+  .cover-eyebrow{ font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:8mm; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size:60pt; line-height:.98; letter-spacing:-.022em; color:var(--ink); margin:0 0 6mm; }
+  .cover-title .it{ font-style:italic; color:var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size:12.5pt; line-height:1.5; color:var(--ink-2); max-width:158mm; }
+  .cover-bottom{ border-top:var(--rule); padding-top:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap:13mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size:36pt; line-height:1; color:var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color:var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:2mm; }
+
+  /* OPENER */
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size:46pt; line-height:1.02; color:var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style:italic; color:var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:7mm; }
+  .opener-grid p{ font-size:10.5pt; line-height:1.55; color:var(--ink-2); margin:0 0 4mm; }
+
+  /* TOC */
+  .toc-list{ display:grid; grid-template-columns:1fr; margin-top:4mm; }
+  .toc-item{ display:flex; align-items:baseline; gap:8px; padding:2.4mm 0; border-bottom:1px dotted var(--line); font-size:10pt; color:var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent); flex:0 0 16mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--muted); }
+
+  /* SECTION HEAD */
+  .section-head{ display:flex; gap:10mm; align-items:flex-start; padding-bottom:6mm; border-bottom:var(--rule); margin-bottom:6mm; }
+  .section-head .big{ flex:0 0 auto; }
+  .section-head .meta{ flex:1; padding-top:4mm;}
+  .section-body{ display:flex; flex-direction:column; gap:5mm; flex:1;}
+  .block-card{ background:var(--cream); border:1px solid var(--line); padding:6mm 7mm; }
+  .twoframe{ display:grid; grid-template-columns:1fr 1fr; gap:8mm; }
+  .checks-3{ display:grid; grid-template-columns:1fr 1fr 1fr; column-gap:8mm; }
+
+  .model{ background:var(--cream); border:1px dashed var(--gold); padding:6mm 7mm; font-family:"Instrument Serif", serif; font-size:10.5pt; line-height:1.5; color:var(--ink-2); position:relative; }
+  .model::before{ content:"MODELO"; position:absolute; top:-3mm; left:6mm; background:var(--paper); padding:0 3mm; font-family:"Manrope"; font-size:8pt; letter-spacing:.24em; color:var(--gold); font-weight:700; }
+  .model p{ margin:0 0 2.6mm; } .model p:last-child{ margin:0; }
+  .model .sig{ margin-top:2.6mm; font-style:italic; color:var(--ink);}
+
+  /* cards grid (riscos / situações) */
+  .frases-head{ display:flex; align-items:baseline; gap:8mm; flex-wrap:wrap; padding-bottom:4mm; border-bottom:var(--rule); margin-bottom:5mm; }
+  .frases-head .section-kicker{ flex:0 0 auto; }
+  .frases-head h2{ font-family:"Instrument Serif"; font-weight:400; font-size:24pt; line-height:1.05; color:var(--ink); margin:0; }
+  .frases-head h2 .it{ font-style:italic; color:var(--accent); }
+  .frases-grid{ display:grid; grid-template-columns:1fr 1fr; gap:4.5mm 10mm; flex:1; align-content:start; }
+  .frase{ display:grid; grid-template-columns:9mm 1fr; gap:0 3mm; align-items:start; }
+  .frase .fnum{ font-family:"Instrument Serif"; font-style:italic; font-size:19pt; line-height:.85; color:var(--accent); }
+  .frase .fbody{ min-width:0; }
+  .fquote{ font-family:"Instrument Serif"; font-style:italic; font-size:11pt; line-height:1.22; color:var(--ink); margin:0 0 1.6mm; }
+  .fans{ font-size:8.6pt; line-height:1.4; color:var(--ink-2); margin:0 0 1.6mm; }
+  .fans b{ color:var(--ink); }
+  .fwhy{ font-family:"Manrope"; font-weight:600; font-size:7.8pt; line-height:1.3; letter-spacing:.01em; color:var(--gold); margin:0; }
+  .fwhy::before{ content:"▸ "; color:var(--accent); }
+
+  .replies{ display:grid; grid-template-columns:1fr 1fr; gap:4mm 9mm; }
+  .reply-card{ border-left:2px solid var(--accent); padding-left:5mm; }
+  .reply-card .sit{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:1.5mm; }
+  .reply-card p{ margin:0; font-size:9pt; line-height:1.42; color:var(--ink-2); }
+
+  /* capture */
+  .capture{ background: radial-gradient(120% 80% at 0% 0%, rgba(140,106,42,.12), transparent 55%), radial-gradient(90% 70% at 100% 100%, rgba(184,84,59,.12), transparent 55%), var(--paper); }
+  .cta-band{ background:var(--ink); color:var(--paper); padding:8mm 9mm; display:flex; flex-direction:column; gap:3mm; margin-top:2mm; }
+  .cta-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .cta-band .t{ font-family:"Instrument Serif"; font-size:26pt; line-height:1.05; color:var(--paper); }
+  .cta-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .cta-band .u{ font-family:"Manrope"; font-weight:700; font-size:11pt; letter-spacing:.04em; color:var(--paper); margin-top:1mm; }
+  .cta-band .u span{ color:var(--accent-2); }
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  /* Save-as-PDF FAB */
+  .pdf-fab{ position:fixed; right:22px; bottom:22px; z-index:9999; display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:#0E1A2B; color:#F4EEDF; border:none; border-radius:999px; font-family:"Manrope", system-ui, sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; box-shadow:0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30), inset 0 0 0 1px rgba(255,255,255,.06); transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .pdf-fab:hover{ transform:translateY(-2px); background:#B8543B; box-shadow:0 18px 42px rgba(184,84,59,.45), 0 4px 12px rgba(184,84,59,.30); }
+  .pdf-fab svg{ width:16px; height:16px; flex:0 0 auto; }
+  .pdf-fab .dot-accent{ width:6px; height:6px; border-radius:50%; background:#B8543B; box-shadow:0 0 0 3px rgba(184,84,59,.22); }
+  .pdf-fab:hover .dot-accent{ background:#F4EEDF; box-shadow:0 0 0 3px rgba(244,238,223,.22); }
+  .pdf-hint{ position:fixed; right:22px; bottom:74px; z-index:9998; max-width:280px; padding:12px 14px; background:#FBF7EC; border:1px solid #D9D2C2; border-radius:10px; font-family:"Manrope", system-ui, sans-serif; font-size:11.5px; line-height:1.5; color:#1F2C3F; box-shadow:0 10px 30px rgba(0,0,0,.18); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .pdf-hint.show{ opacity:1; transform:translateY(0); }
+  .pdf-hint b{ color:#B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display:none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 06</div>
+          <div class="label">Guia prático · NR-1</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">Em vigor desde 26/05/2026</div>
+        </div>
+      </div>
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">A nova NR-1 chegou aos condomínios</div>
+        <h1 class="cover-title">Condomínio também é <span class="it">ambiente de trabalho.</span></h1>
+        <p class="cover-deck">O que muda com a NR-1 para síndicos, administradoras, funcionários próprios e equipes terceirizadas. Um guia para organizar a gestão antes que o problema vire passivo trabalhista.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">20</span></div><div class="l">Capítulos</div></div>
+          <div class="s"><div class="n">3</div><div class="l">Modelos prontos</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · OPENER -->
+  <section class="page opener" data-screen-label="02 Posicionamento">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Posicionamento</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:8mm;">Antes de começar</div>
+        <h2 class="opener-title">A NR-1 não veio para <span class="it">assustar</span> o síndico.</h2>
+        <div class="opener-grid">
+          <div>
+            <p>Veio para lembrar que condomínio também é empresa quando o assunto é trabalho. A portaria, a limpeza, a manutenção e a zeladoria sabem disso na pele: o prédio é residencial, mas também é um local de trabalho.</p>
+            <p>A partir de 26 de maio de 2026, os fatores de risco psicossociais passam a integrar expressamente o Gerenciamento de Riscos Ocupacionais, conforme a redação dada pela Portaria MTE nº 1.419/2024.</p>
+          </div>
+          <div>
+            <p>Sobrecarga, assédio, pressão excessiva, conflitos, ordens contraditórias e exposição pública deixam de ser “problema de comportamento” e passam a integrar a gestão formal de segurança e saúde no trabalho.</p>
+            <p>Este guia traduz isso para a realidade do condomínio: o que muda, de quem é a responsabilidade e o que fazer na prática, com método e sem pânico.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="callout"><b>Aviso importante.</b> Material informativo e educativo. A aplicação da NR-1 deve ser conduzida com apoio de profissionais de Segurança e Saúde do Trabalho, do jurídico trabalhista e de prestadores habilitados, considerando a realidade de cada condomínio.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 06</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · TOC -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:4mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">—</span><span class="ttl">Introdução · Condomínio é local de trabalho</span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">01</span><span class="ttl">O que é a NR-1</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">02</span><span class="ttl">O que muda: GRO e PGR</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">03</span><span class="ttl">Por que isso importa em condomínios</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">04</span><span class="ttl">Riscos psicossociais no condomínio</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">05</span><span class="ttl">Funcionários próprios do condomínio</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">06</span><span class="ttl">Funcionários terceirizados</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">07</span><span class="ttl">Terceirizados na prática</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">08</span><span class="ttl">O que o síndico precisa fazer</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">09·10</span><span class="ttl">O papel da administradora e do conselho</span><span class="pg">13</span></div>
+        <div class="toc-item"><span class="num">11</span><span class="ttl">O que os moradores precisam entender</span><span class="pg">14</span></div>
+        <div class="toc-item"><span class="num">12</span><span class="ttl">Situações que podem gerar risco</span><span class="pg">15</span></div>
+        <div class="toc-item"><span class="num">13</span><span class="ttl">Checklist prático do condomínio</span><span class="pg">16</span></div>
+        <div class="toc-item"><span class="num">14</span><span class="ttl">Plano de ação em 10 passos</span><span class="pg">17</span></div>
+        <div class="toc-item"><span class="num">15</span><span class="ttl">Modelo · Comunicado aos moradores</span><span class="pg">18</span></div>
+        <div class="toc-item"><span class="num">16·17</span><span class="ttl">Modelos · Cláusula contratual e política anti-assédio</span><span class="pg">19</span></div>
+        <div class="toc-item"><span class="num">18·19</span><span class="ttl">Erros a evitar e o que a NR-1 não é</span><span class="pg">20</span></div>
+        <div class="toc-item"><span class="num">20</span><span class="ttl">Conclusão</span><span class="pg">21</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">A mentoria Bastidores da Sindicatura</span><span class="pg">22</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · INTRODUÇÃO -->
+  <section class="page" data-screen-label="04 Introdução">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Introdução</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">§</div></div>
+        <div class="meta">
+          <div class="section-kicker">Introdução</div>
+          <h2 class="section-title">Condomínio é, sim, um <span class="serif" style="font-style:italic;color:var(--accent);">local de trabalho</span>.</h2>
+          <p class="section-lede">É um ambiente residencial, mas também é onde porteiros, zeladores, faxineiros e manutencistas passam o dia. E esse ponto precisa ser levado a sério, porque a NR-1 agora olha para ele.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p class="body">A partir de 26 de maio de 2026, a nova redação da NR-1 inclui expressamente os fatores de risco psicossociais no Gerenciamento de Riscos Ocupacionais. Eles passam a constar no inventário de riscos, ao lado dos riscos físicos, químicos, biológicos, ergonômicos e de acidentes.</p>
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">Antes</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Sobrecarga, assédio, pressão e conflito eram tratados como “problema de comportamento” ou de convivência.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">Agora</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Passam a integrar a gestão formal de segurança e saúde no trabalho, ligados à forma como o trabalho é planejado, organizado e executado.</p>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">O ponto central deste guia</span>
+          <span class="txt">Condomínio também precisa olhar para isso. Não como psicólogo, mas como gestor de um ambiente de trabalho.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Introdução · Condomínio é local de trabalho</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · CAP 01 -->
+  <section class="page" data-screen-label="05 Cap 01">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 01 · A norma</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">01</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo um</div>
+          <h2 class="section-title">O que é a <span class="serif" style="font-style:italic;color:var(--accent);">NR-1</span>.</h2>
+          <p class="section-lede">É a Norma Regulamentadora que estabelece as disposições gerais sobre Segurança e Saúde no Trabalho e organiza o Gerenciamento de Riscos Ocupacionais. Serve de base para empregadores identificarem riscos, avaliarem a exposição e adotarem prevenção.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div>
+          <div class="h-sub">No condomínio, ela olha para todos que ali trabalham</div>
+          <div class="checks-3">
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Porteiros</li>
+              <li><span class="box"></span>Zeladores</li>
+              <li><span class="box"></span>Auxiliares de limpeza</li>
+              <li><span class="box"></span>Manobristas e garagistas</li>
+            </ul>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Jardineiros</li>
+              <li><span class="box"></span>Auxiliares de manutenção</li>
+              <li><span class="box"></span>Controladores de acesso</li>
+              <li><span class="box"></span>Funcionários administrativos</li>
+            </ul>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Equipes terceirizadas</li>
+              <li><span class="box"></span>Prestadores recorrentes</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout">A atualização não transforma o síndico em psicólogo ou técnico de segurança. Ela exige que o condomínio, como ambiente de trabalho, tenha postura mais organizada, documentada e preventiva. O Ministério do Trabalho lançou inclusive um manual orientando a aplicação do capítulo 1.5 da NR-1.</div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Em uma frase</span>
+          <span class="txt">A NR-1 pede método, prevenção e documentação. Não pede que o síndico vire especialista.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 01 · O que é a NR-1</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · CAP 02 -->
+  <section class="page" data-screen-label="06 Cap 02">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 02 · O que muda</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">02</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo dois</div>
+          <h2 class="section-title">O que muda: <span class="serif" style="font-style:italic;color:var(--accent);">GRO e PGR</span>.</h2>
+          <p class="section-lede">A grande mudança é que os riscos psicossociais passam a ser tratados expressamente dentro do GRO e do PGR. Não basta mais cuidar só de exame admissional, periódico e dos riscos tradicionais.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">GRO · o processo</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Gerenciamento de Riscos Ocupacionais. É como o condomínio identifica, avalia, controla e acompanha os riscos.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">PGR · a documentação</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Programa de Gerenciamento de Riscos. Onde ficam o inventário de riscos, o plano de ação, as medidas, os responsáveis e os prazos.</p>
+          </div>
+        </div>
+        <div>
+          <div class="h-sub">Fatores que agora entram na conta</div>
+          <div class="cols-2">
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Jornada excessiva e acúmulo de funções</li>
+              <li><span class="box"></span>Ausência de pausas adequadas</li>
+              <li><span class="box"></span>Conflitos recorrentes com moradores</li>
+              <li><span class="box"></span>Exposição a agressões verbais</li>
+              <li><span class="box"></span>Falta de clareza nas ordens</li>
+              <li><span class="box"></span>Cobranças contraditórias</li>
+            </ul>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Assédio moral</li>
+              <li><span class="box"></span>Isolamento no posto de trabalho</li>
+              <li><span class="box"></span>Pressão constante</li>
+              <li><span class="box"></span>Falta de apoio da liderança</li>
+              <li><span class="box"></span>Ambiente hostil e falhas de comunicação</li>
+              <li><span class="box"></span>Tratamento desrespeitoso</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout" style="margin-top:auto;">A identificação desses fatores deve considerar o estabelecimento, os processos de trabalho e as características dos trabalhadores, podendo usar observações, questionários, oficinas ou uma combinação de abordagens.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 02 · O que muda: GRO e PGR</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · CAP 03 -->
+  <section class="page" data-screen-label="07 Cap 03">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 03 · Por que importa</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">03</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo três</div>
+          <h2 class="section-title">Por que isso importa tanto em <span class="serif" style="font-style:italic;color:var(--accent);">condomínios</span>.</h2>
+          <p class="section-lede">O trabalhador atua dentro de um espaço residencial, em contato direto com moradores, visitantes, prestadores, síndico, conselho e administradora. Isso cria uma dinâmica diferente da empresa tradicional.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">A confusão de comando</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Em uma empresa, a hierarquia costuma ser clara. No condomínio, o funcionário muitas vezes recebe ordem de todos:</p>
+            <ul class="bul" style="margin-top:3mm;">
+              <li>O morador pede.</li>
+              <li>O conselheiro cobra.</li>
+              <li>O síndico orienta.</li>
+              <li>A administradora solicita.</li>
+              <li>O grupo de WhatsApp pressiona.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="block-card">
+              <div class="h-sub">No meio disso, o funcionário</div>
+              <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Quando o porteiro não sabe a quem responder, quando o zelador recebe ordens contraditórias e quando a equipe é cobrada de forma agressiva, o condomínio deixa de ter só um problema de convivência.</p>
+            </div>
+            <div class="callout" style="margin-top:5mm;">Ele passa a ter um problema trabalhista, ocupacional e de gestão de risco. A confusão de comando é um dos maiores fatores de risco do ambiente condominial.</div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase de gestão</span>
+          <span class="txt">Onde todo mundo manda, ninguém protege. E quem absorve o conflito é sempre o trabalhador.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 03 · Por que importa em condomínios</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · CAP 04 -->
+  <section class="page" data-screen-label="08 Cap 04">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 04 · Riscos psicossociais</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 04</div>
+        <h2>Riscos psicossociais no <span class="it">condomínio</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:5mm;">Risco psicossocial não é “funcionário sensível”. O foco da NR-1 não é diagnosticar a saúde mental de cada um, e sim identificar fatores do trabalho que possam gerar adoecimento, sofrimento ou tensão excessiva.</p>
+      <div class="replies" style="flex:1; align-content:start;">
+        <div class="reply-card"><span class="sit">1 · Pressão constante de moradores</span><p>Cobrança agressiva, irônica ou humilhante que se repete vira ambiente de tensão permanente.</p></div>
+        <div class="reply-card"><span class="sit">2 · Exposição em grupos de WhatsApp</span><p>Funcionário não deve ser julgado, ridicularizado ou exposto. O grupo não é tribunal público.</p></div>
+        <div class="reply-card"><span class="sit">3 · Ordens contraditórias</span><p>Síndico, conselho, morador e administradora mandando coisas diferentes gera insegurança e desgaste.</p></div>
+        <div class="reply-card"><span class="sit">4 · Acúmulo de função</span><p>Responsabilidades empilhadas sem organização, treinamento ou definição formal criam risco.</p></div>
+        <div class="reply-card"><span class="sit">5 · Falta de pausa e sobrecarga</span><p>Escalas mal planejadas, equipe reduzida e disponibilidade constante geram desgaste excessivo.</p></div>
+        <div class="reply-card"><span class="sit">6 · Assédio moral</span><p>Gritos, humilhações, ameaças, apelidos ofensivos, isolamento e cobranças abusivas.</p></div>
+        <div class="reply-card"><span class="sit">7 · Conflitos recorrentes</span><p>Portaria, garagem, encomendas e acesso de visitantes são pontos clássicos de atrito.</p></div>
+        <div class="reply-card"><span class="sit">8 · Falta de treinamento</span><p>Sem preparo, o funcionário erra mais, sofre mais cobrança e o condomínio aumenta o risco.</p></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 04 · Riscos psicossociais no condomínio</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · CAP 05 -->
+  <section class="page" data-screen-label="09 Cap 05">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 05 · Funcionários próprios</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">05</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo cinco</div>
+          <h2 class="section-title">Quando o condomínio é o <span class="serif" style="font-style:italic;color:var(--accent);">empregador</span>.</h2>
+          <p class="section-lede">Zelador, porteiro, faxineiro, manutencista ou administrativo contratados direto pelo condomínio: aqui o condomínio é o empregador e precisa manter sua estrutura de SST adequada.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">O condomínio precisa</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Manter o PGR atualizado</li>
+              <li><span class="box"></span>Manter o PCMSO vigente</li>
+              <li><span class="box"></span>Realizar os exames ocupacionais</li>
+              <li><span class="box"></span>Incluir os riscos psicossociais no inventário</li>
+              <li><span class="box"></span>Elaborar plano de ação com prazo e responsável</li>
+              <li><span class="box"></span>Treinar os funcionários</li>
+              <li><span class="box"></span>Organizar fluxos de comunicação</li>
+              <li><span class="box"></span>Prevenir assédio e documentar providências</li>
+              <li><span class="box"></span>Acompanhar a eficácia das medidas</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Pergunte sobre o ambiente</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>A forma como o trabalho está organizado adoece alguém?</li>
+              <li><span class="box"></span>Há pressão excessiva ou humilhação?</li>
+              <li><span class="box"></span>Há conflito permanente?</li>
+              <li><span class="box"></span>Há ordens contraditórias?</li>
+              <li><span class="box"></span>Há sobrecarga ou falha de treinamento?</li>
+              <li><span class="box"></span>Há ausência de apoio?</li>
+              <li><span class="box"></span>Há exposição indevida?</li>
+              <li><span class="box"></span>Há canal seguro para relato de problemas?</li>
+            </ul>
+            <div class="callout" style="margin-top:4mm;">Se a resposta for “sim” para algum desses pontos, o condomínio precisa agir.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 05 · Funcionários próprios do condomínio</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · CAP 06 -->
+  <section class="page" data-screen-label="10 Cap 06">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 06 · Terceirizados</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">06</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo seis</div>
+          <h2 class="section-title">Funcionários <span class="serif" style="font-style:italic;color:var(--accent);">terceirizados</span>.</h2>
+          <p class="section-lede">Quando o condomínio contrata uma empresa de portaria, limpeza ou segurança, os empregados são da terceirizada. O condomínio não é o empregador direto, mas isso não o isenta de responsabilidade.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">De quem é a obrigação</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">A terceirizada, como empregadora, mantém PGR, PCMSO, exames, treinamentos, EPIs e a gestão dos riscos de seus empregados.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">O papel do condomínio</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Como tomador do serviço e dono do ambiente, deve fiscalizar o contrato, exigir documentação e garantir que o local não crie risco para esses trabalhadores.</p>
+          </div>
+        </div>
+        <div class="quote-block" style="margin-top:auto;">
+          Se o porteiro terceirizado sofre agressões verbais diárias de moradores, o problema não é só da empresa. Ela é a empregadora, mas o condomínio é o ambiente onde a situação acontece. Se sabe do problema e nada faz, aumenta a própria exposição.
+          <div class="signature">NR-1 nos condomínios · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 06 · Funcionários terceirizados</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · CAP 07 -->
+  <section class="page" data-screen-label="11 Cap 07">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 07 · Terceirizados na prática</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">07</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo sete</div>
+          <h2 class="section-title">Terceirizados na <span class="serif" style="font-style:italic;color:var(--accent);">prática</span>.</h2>
+          <p class="section-lede">Não basta contratar a empresa e achar que toda a responsabilidade foi transferida. A terceirização se trata com método: contrato claro de um lado, informação sobre o ambiente do outro.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">O contrato deve exigir</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Cumprimento das Normas Regulamentadoras</li>
+              <li><span class="box"></span>PGR e PCMSO da contratada</li>
+              <li><span class="box"></span>ASOs dos trabalhadores alocados</li>
+              <li><span class="box"></span>Treinamentos obrigatórios e EPIs</li>
+              <li><span class="box"></span>Substituição em caso de conduta inadequada</li>
+              <li><span class="box"></span>Canal para comunicação de ocorrências</li>
+              <li><span class="box"></span>Tratamento de denúncias de assédio</li>
+              <li><span class="box"></span>Relatórios periódicos de conformidade</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">O condomínio deve informar os riscos do local</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Casa de máquinas e de bombas</li>
+              <li><span class="box"></span>Garagem e circulação de veículos</li>
+              <li><span class="box"></span>Produtos químicos de limpeza</li>
+              <li><span class="box"></span>Áreas técnicas e risco elétrico</li>
+              <li><span class="box"></span>Risco de queda e escadas</li>
+              <li><span class="box"></span>Pontos de conflito recorrente</li>
+              <li><span class="box"></span>Procedimentos de emergência</li>
+              <li><span class="box"></span>Rotinas críticas da portaria</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout" style="margin-top:auto;">A terceirizada precisa saber onde está colocando seus empregados. E o condomínio precisa saber se a terceirizada está gerindo corretamente esses trabalhadores.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 07 · Terceirizados na prática</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · CAP 08 -->
+  <section class="page" data-screen-label="12 Cap 08">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 08 · O síndico</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">08</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo oito</div>
+          <h2 class="section-title">O que o síndico precisa <span class="serif" style="font-style:italic;color:var(--accent);">fazer</span>.</h2>
+          <p class="section-lede">O síndico não precisa virar técnico de segurança do trabalho. Precisa assumir uma postura de governança: garantir que o condomínio tenha processos, contratos, documentos e medidas preventivas.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2">
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Contratar empresa de SST qualificada</li>
+            <li><span class="box"></span>Solicitar a revisão do PGR do condomínio</li>
+            <li><span class="box"></span>Verificar se os riscos psicossociais foram considerados</li>
+            <li><span class="box"></span>Cobrar plano de ação</li>
+            <li><span class="box"></span>Alinhar a administradora</li>
+            <li><span class="box"></span>Revisar contratos terceirizados</li>
+            <li><span class="box"></span>Criar regras de comunicação com funcionários</li>
+            <li><span class="box"></span>Coibir exposição pública de trabalhadores</li>
+          </ul>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Formalizar ocorrências</li>
+            <li><span class="box"></span>Orientar conselho e moradores</li>
+            <li><span class="box"></span>Definir canal adequado para reclamações</li>
+            <li><span class="box"></span>Evitar ordens diretas de moradores aos empregados</li>
+            <li><span class="box"></span>Registrar providências</li>
+            <li><span class="box"></span>Acompanhar indicadores de conflito</li>
+            <li><span class="box"></span>Atuar preventivamente</li>
+          </ul>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase de sobrevivência</span>
+          <span class="txt">Informalidade, em condomínio, costuma virar print, reclamação, ação trabalhista ou crise de gestão.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 08 · O que o síndico precisa fazer</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · CAP 09 + 10 -->
+  <section class="page" data-screen-label="13 Cap 09-10">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 09 e 10 · Administradora e conselho</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulos 09 e 10</div>
+        <h2>O papel da administradora e do <span class="it">conselho</span>.</h2>
+      </div>
+      <div class="twoframe" style="flex:1; align-content:start;">
+        <div>
+          <div class="h-sub">A administradora apoia, não substitui</div>
+          <p style="margin:0 0 3mm;font-size:9.5pt;line-height:1.5;color:var(--ink-2);">Ela ajuda na organização documental, mas a responsabilidade pela gestão segue sendo do síndico. Na prática, deve ajudar a:</p>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Manter documentos atualizados</li>
+            <li><span class="box"></span>Controlar vencimentos de laudos</li>
+            <li><span class="box"></span>Acionar a empresa de medicina e segurança</li>
+            <li><span class="box"></span>Cobrar documentos das terceirizadas</li>
+            <li><span class="box"></span>Guardar ASOs e comprovantes</li>
+            <li><span class="box"></span>Registrar notificações e apoiar a revisão contratual</li>
+          </ul>
+          <div class="callout" style="margin-top:4mm;">O erro comum: o síndico acha que “a administradora está vendo” e a administradora acha que “a terceirizada está vendo”. Quando ninguém assume, o condomínio fica descoberto.</div>
+        </div>
+        <div>
+          <div class="h-sub">O conselho fiscaliza, não chefia</div>
+          <p style="margin:0 0 3mm;font-size:9.5pt;line-height:1.5;color:var(--ink-2);">Conselheiro não dá ordem direta a porteiro, zelador ou terceirizado. Quando vira chefia paralela, cria confusão hierárquica. O conselho pode e deve:</p>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Acompanhar se o condomínio está regular</li>
+            <li><span class="box"></span>Solicitar informações ao síndico</li>
+            <li><span class="box"></span>Avaliar contratos de SST e terceirização</li>
+            <li><span class="box"></span>Aprovar orçamento para adequações</li>
+            <li><span class="box"></span>Apoiar campanhas educativas</li>
+            <li><span class="box"></span>Não expor funcionários nem incentivar perseguições</li>
+          </ul>
+          <div class="callout" style="margin-top:4mm;">Condomínio sério não usa funcionário como peça de disputa interna.</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 09 e 10 · Administradora e conselho</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · CAP 11 -->
+  <section class="page" data-screen-label="14 Cap 11">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 11 · Os moradores</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">11</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo onze</div>
+          <h2 class="section-title">O que os moradores precisam <span class="serif" style="font-style:italic;color:var(--accent);">entender</span>.</h2>
+          <p class="section-lede">O maior risco psicossocial do condomínio muitas vezes não nasce da escala de trabalho. Nasce da convivência. E o funcionário não é empregado particular de cada unidade.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <ul class="bul">
+          <li>O porteiro não é secretário pessoal.</li>
+          <li>O zelador não é funcionário exclusivo de um morador.</li>
+          <li>A faxineira não é empregada doméstica do prédio.</li>
+          <li>O controlador de acesso não é culpado pela regra que precisa cumprir.</li>
+          <li>O terceirizado não pode ser humilhado por usar o uniforme de uma empresa contratada.</li>
+        </ul>
+        <div class="block-card">
+          <div class="h-sub">A diferença que sustenta tudo</div>
+          <p style="margin:0;font-family:'Instrument Serif';font-size:14pt;line-height:1.4;color:var(--ink);">Apurar não é expor. Cobrar não é humilhar. Reclamar não é perseguir. Discordar não é destratar.</p>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Cultura também é prevenção</span>
+          <span class="txt">Reclamações devem ir pelos canais corretos. Ambiente de trabalho saudável também depende da cultura do condomínio.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 11 · O que os moradores precisam entender</div><div class="pg-num">14</div></div>
+  </section>
+
+  <!-- PAGE 15 · CAP 12 -->
+  <section class="page" data-screen-label="15 Cap 12">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 12 · Situações de risco</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 12</div>
+        <h2>Situações que podem gerar <span class="it">risco</span>.</h2>
+      </div>
+      <div class="frases-grid" style="grid-template-columns:1fr;">
+        <div class="frase"><div class="fnum">01</div><div class="fbody"><p class="fquote">Morador grita com o porteiro porque uma encomenda não foi entregue na unidade.</p><p class="fans"><b>Risco:</b> agressão verbal, pressão indevida, exposição emocional.</p><p class="fwhy">Medida: regra clara de recebimento de encomendas e reclamações pela gestão.</p></div></div>
+        <div class="frase"><div class="fnum">02</div><div class="fbody"><p class="fquote">Conselheiro cobra a faxineira em tom agressivo, direto por mensagem.</p><p class="fans"><b>Risco:</b> confusão hierárquica, assédio, pressão indevida.</p><p class="fwhy">Medida: solicitações passam pelo zelador, gerente, síndico ou canal oficial.</p></div></div>
+        <div class="frase"><div class="fnum">03</div><div class="fbody"><p class="fquote">Zelador recebe demandas simultâneas de morador, síndico, conselho e prestadores.</p><p class="fans"><b>Risco:</b> sobrecarga, falha operacional, conflito de prioridades.</p><p class="fwhy">Medida: sistema de chamados, rotina de prioridades e comunicação centralizada.</p></div></div>
+        <div class="frase"><div class="fnum">04</div><div class="fbody"><p class="fquote">Funcionário é acusado em grupo de WhatsApp sem apuração formal.</p><p class="fans"><b>Risco:</b> exposição pública, humilhação, dano moral, ambiente hostil.</p><p class="fwhy">Medida: proibir exposição de funcionários e abrir canal formal de reclamações.</p></div></div>
+        <div class="frase"><div class="fnum">05</div><div class="fbody"><p class="fquote">Equipe terceirizada atua sem integração e sem conhecer as regras internas.</p><p class="fans"><b>Risco:</b> acidente, falha operacional, responsabilidade compartilhada.</p><p class="fwhy">Medida: exigir documentação e fazer integração mínima às normas do condomínio.</p></div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 12 · Situações que podem gerar risco</div><div class="pg-num">15</div></div>
+  </section>
+
+  <!-- PAGE 16 · CAP 13 -->
+  <section class="page" data-screen-label="16 Cap 13">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 13 · Checklist</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 13</div>
+        <h2>Checklist prático do <span class="it">condomínio</span>.</h2>
+      </div>
+      <div class="twoframe" style="flex:1; align-content:start;">
+        <div>
+          <div class="h-sub">Para funcionários próprios</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>PGR atualizado e contemplando riscos psicossociais</li>
+            <li><span class="box"></span>PCMSO vigente e exames em dia</li>
+            <li><span class="box"></span>Inventário de riscos e plano de ação</li>
+            <li><span class="box"></span>Medidas com prazo e responsável</li>
+            <li><span class="box"></span>Funcionários treinados</li>
+            <li><span class="box"></span>Controle de jornada e clareza de funções</li>
+            <li><span class="box"></span>Política contra assédio</li>
+            <li><span class="box"></span>Canal para reclamações internas</li>
+            <li><span class="box"></span>Registro de ocorrências</li>
+            <li><span class="box"></span>Orientação aos moradores sobre respeito</li>
+            <li><span class="box"></span>Controle de EPIs, quando aplicável</li>
+            <li><span class="box"></span>Acompanhamento periódico</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h-sub">Para terceirizados</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>PGR e PCMSO apresentados</li>
+            <li><span class="box"></span>ASOs dos funcionários alocados</li>
+            <li><span class="box"></span>Comprovação de treinamentos</li>
+            <li><span class="box"></span>Contrato prevê cumprimento das NRs</li>
+            <li><span class="box"></span>Prevê substituição por conduta inadequada</li>
+            <li><span class="box"></span>Define responsabilidade trabalhista e ocupacional</li>
+            <li><span class="box"></span>Condomínio informou os riscos do ambiente</li>
+            <li><span class="box"></span>Integração dos terceirizados às regras</li>
+            <li><span class="box"></span>Canal com a supervisão da terceirizada</li>
+            <li><span class="box"></span>Registro de ocorrências com moradores</li>
+            <li><span class="box"></span>Cláusula sobre assédio e ambiente seguro</li>
+            <li><span class="box"></span>Fiscalização ativa do contrato</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 13 · Checklist prático do condomínio</div><div class="pg-num">16</div></div>
+  </section>
+
+  <!-- PAGE 17 · CAP 14 -->
+  <section class="page" data-screen-label="17 Cap 14">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 14 · Plano de ação</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">14</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo catorze</div>
+          <h2 class="section-title">Plano de ação em <span class="serif" style="font-style:italic;color:var(--accent);">10 passos</span>.</h2>
+          <p class="section-lede">A NR-1 não é uma pasta para guardar no armário. É processo vivo. Use a sequência abaixo para sair do improviso e organizar a adequação com método.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2">
+          <ol class="enum">
+            <li><b>Levantar os trabalhadores.</b> Próprios, terceirizados fixos e prestadores recorrentes.</li>
+            <li><b>Mapear os documentos de SST</b> que o condomínio já possui.</li>
+            <li><b>Acionar empresa especializada</b> em Segurança e Saúde do Trabalho.</li>
+            <li><b>Revisar o PGR</b> incluindo os fatores psicossociais reais do condomínio.</li>
+            <li><b>Mapear pontos de conflito.</b> Portaria, garagem, encomendas, grupos e acesso.</li>
+          </ol>
+          <ol class="enum" style="counter-reset:en 5;">
+            <li><b>Criar plano de ação.</b> Cada risco gera providência, responsável e prazo.</li>
+            <li><b>Revisar contratos terceirizados</b> com obrigações claras de SST.</li>
+            <li><b>Orientar conselho e moradores.</b> Sem cultura, a norma vira papel.</li>
+            <li><b>Criar canal formal de registro</b> de reclamações e ocorrências.</li>
+            <li><b>Monitorar continuamente.</b> Acompanhar, revisar e atualizar.</li>
+          </ol>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase de sobrevivência</span>
+          <span class="txt">A NR-1 não pede perfeição imediata. Pede um processo começado, documentado e em movimento.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 14 · Plano de ação em 10 passos</div><div class="pg-num">17</div></div>
+  </section>
+
+  <!-- PAGE 18 · CAP 15 -->
+  <section class="page" data-screen-label="18 Cap 15">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 15 · Modelo</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">15</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo quinze · modelo pronto</div>
+          <h2 class="section-title">Comunicado aos <span class="serif" style="font-style:italic;color:var(--accent);">moradores</span>.</h2>
+          <p class="section-lede">Copie, ajuste ao seu condomínio e envie pelos canais oficiais. Serve para reforçar o respeito aos trabalhadores e organizar a forma como as reclamações chegam.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="model">
+          <p><b>Assunto:</b> Respeito aos funcionários e boas práticas no ambiente condominial</p>
+          <p>Prezados moradores,</p>
+          <p>Em razão das atualizações da NR-1, que trata do Gerenciamento de Riscos Ocupacionais, o condomínio está reforçando suas práticas de prevenção e de promoção de um ambiente mais seguro e respeitoso para todos os trabalhadores que atuam em nossas dependências.</p>
+          <p>Porteiros, zeladores, auxiliares de limpeza, controladores de acesso e manutencistas, próprios ou terceirizados, devem ser tratados com respeito e urbanidade.</p>
+          <p>Reclamações e apontamentos sobre serviços devem ser encaminhados pelos canais oficiais, evitando abordagens agressivas, exposição pública em grupos de mensagens ou cobranças diretas que gerem constrangimento.</p>
+          <p>A colaboração de todos é essencial para mantermos um ambiente mais organizado, seguro e saudável.</p>
+          <p class="sig">Atenciosamente, Administração do Condomínio</p>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 15 · Modelo de comunicado aos moradores</div><div class="pg-num">18</div></div>
+  </section>
+
+  <!-- PAGE 19 · CAP 16 + 17 -->
+  <section class="page" data-screen-label="19 Cap 16-17">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 16 e 17 · Modelos</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulos 16 e 17 · modelos prontos</div>
+        <h2>Cláusula contratual e política <span class="it">anti-assédio</span>.</h2>
+      </div>
+      <div class="section-body" style="gap:6mm;">
+        <div>
+          <div class="h-sub">16 · Cláusula para contratos terceirizados</div>
+          <div class="model">
+            <p>A CONTRATADA declara estar regular quanto às obrigações trabalhistas, previdenciárias e de Segurança e Saúde no Trabalho de seus empregados, mantendo atualizados PGR, PCMSO, ASOs, treinamentos obrigatórios e fichas de EPI, quando aplicáveis.</p>
+            <p>Deverá orientar seus empregados sobre as normas internas do condomínio, os riscos do ambiente, as regras de conduta e os canais para comunicação de ocorrências, e comunicar imediatamente ao condomínio acidentes, afastamentos, relatos de assédio, conflitos recorrentes ou situações de risco psicossocial.</p>
+            <p>O CONDOMÍNIO, como tomador dos serviços, poderá solicitar periodicamente os comprovantes de regularidade e exigir medidas corretivas em caso de descumprimento.</p>
+          </div>
+        </div>
+        <div>
+          <div class="h-sub">17 · Política interna contra assédio e exposição</div>
+          <div class="model">
+            <p>O condomínio não tolera qualquer forma de assédio, humilhação, ameaça, agressão verbal, perseguição ou exposição indevida de trabalhadores próprios, terceirizados ou prestadores.</p>
+            <p>Toda reclamação sobre conduta profissional deve ser encaminhada pelos canais oficiais, para registro, análise e tratamento pela gestão. É vedada a exposição de funcionários em grupos de WhatsApp, redes sociais, comunicados informais ou áreas públicas do condomínio.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 16 e 17 · Modelos de cláusula e política</div><div class="pg-num">19</div></div>
+  </section>
+
+  <!-- PAGE 20 · CAP 18 + 19 -->
+  <section class="page" data-screen-label="20 Cap 18-19">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 18 e 19</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulos 18 e 19</div>
+        <h2>Erros a evitar e o que a NR-1 <span class="it">não é</span>.</h2>
+      </div>
+      <div class="twoframe" style="flex:1; align-content:start;">
+        <div>
+          <div class="h-sub">Erros que o condomínio não pode cometer</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Achar que a NR-1 só vale para grandes empresas</li>
+            <li><span class="box"></span>Achar que condomínio não é ambiente de trabalho</li>
+            <li><span class="box"></span>Achar que terceirizar elimina toda responsabilidade</li>
+            <li><span class="box"></span>Tratar o PGR como documento padrão de gaveta</li>
+            <li><span class="box"></span>Permitir ordens diretas de moradores aos funcionários</li>
+            <li><span class="box"></span>Permitir exposição de empregados em grupos</li>
+            <li><span class="box"></span>Não documentar ocorrências</li>
+            <li><span class="box"></span>Não fiscalizar as terceirizadas</li>
+            <li><span class="box"></span>Não treinar funcionários nem orientar o conselho</li>
+            <li><span class="box"></span>Esperar a fiscalização chegar para agir</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h-sub">O que a NR-1 não é</div>
+          <ul class="bul">
+            <li>Não é autorização para transformar o condomínio em consultório psicológico.</li>
+            <li>Não exige que o síndico faça diagnóstico de saúde mental.</li>
+            <li>Não é adivinhar problemas pessoais de funcionários.</li>
+            <li>Não é burocracia sem sentido.</li>
+            <li>Não é assunto só da administradora.</li>
+            <li>Não é responsabilidade exclusiva da terceirizada.</li>
+          </ul>
+          <div class="survival" style="margin-top:5mm;">
+            <span class="lbl">No fundo</span>
+            <span class="txt">A NR-1 é uma exigência de gestão. Pede método, prevenção e responsabilidade.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 18 e 19 · Erros a evitar e o que a NR-1 não é</div><div class="pg-num">20</div></div>
+  </section>
+
+  <!-- PAGE 21 · CONCLUSÃO -->
+  <section class="page" data-screen-label="21 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">A nova NR-1 obriga o mercado a <span class="serif" style="font-style:italic;color:var(--accent);">amadurecer</span>.</h2>
+          <p class="section-lede">Por muito tempo, o condomínio tratou conflitos com funcionários como simples convivência. Mas o mundo mudou, e o trabalho dentro do prédio passou a ser olhado como trabalho.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <ul class="bul">
+          <li>O porteiro humilhado diariamente está em ambiente de trabalho.</li>
+          <li>A faxineira exposta no grupo de WhatsApp está em ambiente de trabalho.</li>
+          <li>O zelador pressionado por todos os lados está em ambiente de trabalho.</li>
+          <li>O terceirizado que sofre agressão verbal de morador está em ambiente de trabalho.</li>
+        </ul>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          Gestão profissional não é só cuidar de boleto, manutenção e assembleia. É também criar um ambiente seguro, organizado, respeitoso e juridicamente protegido. A NR-1 não veio para assustar o síndico. Veio para lembrar que condomínio também é empresa quando o assunto é trabalho.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · A nova NR-1 obriga o mercado a amadurecer</div><div class="pg-num">21</div></div>
+  </section>
+
+  <!-- PAGE 22 · CAPTAÇÃO -->
+  <section class="page capture" data-screen-label="22 Captação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>A mentoria</div></div>
+    <div class="pg-body">
+      <div class="cover-eyebrow" style="margin-bottom:5mm;">O mercado ensina teoria. A vida real ensina sobrevivência.</div>
+      <h2 class="opener-title" style="font-size:38pt;">A vida real da sindicatura não cabe em <span class="it">teoria rasa</span>.</h2>
+      <div class="opener-grid" style="margin-top:6mm;">
+        <div>
+          <p style="font-size:10.5pt;line-height:1.55;color:var(--ink-2);margin:0 0 3mm;">A NR-1 é só um dos muitos temas que mostram como a gestão condominial exige preparo, visão técnica, comunicação e coragem para decidir.</p>
+          <p style="font-size:10.5pt;line-height:1.55;color:var(--ink-2);margin:0;">Quem administra condomínio hoje precisa estar pronto para uma realidade que mudou, e que cobra muito mais do que boleto e assembleia.</p>
+        </div>
+        <div>
+          <p style="font-size:10.5pt;line-height:1.55;color:var(--ink-2);margin:0 0 3mm;">Se você é síndico profissional, gestor condominial ou quer atuar nesse mercado com mais segurança, estratégia e posicionamento, conheça a mentoria <b>Bastidores da Sindicatura</b>.</p>
+          <p style="font-size:10.5pt;line-height:1.55;color:var(--ink-2);margin:0;">É onde a teoria encontra a prática de quem vive a gestão de verdade.</p>
+        </div>
+      </div>
+      <div class="cta-band" style="margin-top:auto;">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Atue no mercado condominial com <span class="it">segurança e estratégia</span>.</div>
+        <p style="margin:1mm 0 0;font-size:9.5pt;line-height:1.5;color:rgba(244,238,223,.82);">Segue o site com mais informações sobre a mentoria, conteúdos e como participar:</p>
+        <div class="u">→ <span>www.bastidoresdasindicatura.com.br</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>A mentoria · Bastidores da Sindicatura</div><div class="pg-num">22</div></div>
+  </section>
+
+  <!-- PAGE 23 · MANIFESTO / CLOSE -->
+  <section class="page manifesto" data-screen-label="23 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top:30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:12mm;">
+        <div class="cover-eyebrow" style="margin:0;">NR-1 nos condomínios</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:165mm;">
+          Condomínio também é <em style="font-style:italic;color:var(--accent);">ambiente de trabalho.</em><br/>
+          E gestão profissional também é <em style="font-style:italic;color:var(--accent);">proteger quem trabalha nele.</em>
+        </h2>
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          A norma pede método, prevenção e documentação. Quem administra condomínio precisa estar preparado para essa nova realidade, antes que o problema vire passivo.
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          NR-1 nos condomínios · Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 06 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<!-- Floating Save-as-PDF button -->
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite"><b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab=document.getElementById('pdfFab'); var hint=document.getElementById('pdfHint');
+    if(!fab) return; var t;
+    fab.addEventListener('mouseenter',function(){ clearTimeout(t); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave',function(){ t=setTimeout(function(){ hint.classList.remove('show'); },250); });
+    fab.addEventListener('click',function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); },120); setTimeout(function(){ hint.classList.remove('show'); },4000); });
+  })();
+</script>
+</body>
+</html>
