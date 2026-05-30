@@ -1,0 +1,1273 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Como Lidar com Moradores que Querem Destruir sua Gestão · Bastidores da Sindicatura · Vol. 07</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <circle r="120" fill="none" stroke="#B8543B" stroke-width="6"/>
+      <path d="M-46 -8 a46 40 0 1 0 18 -34 L-46 -54 Z" fill="none" stroke="#B8543B" stroke-width="12" stroke-linejoin="round"/>
+      <text y="180" font-family="serif" font-style="italic" font-size="64" fill="#0E1A2B">Bastidores</text>
+      <text y="240" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  /* ============================================================
+     BASTIDORES DA SINDICATURA · Gestão sob ataque (A4) · Vol. 07
+     ============================================================ */
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A; --rule:1px solid var(--line);
+  }
+  @page { size: 210mm 297mm; margin: 0; }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; width:210mm; background:#2A2522; font-family:"Manrope", system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; color:var(--ink); page-break-after:always; break-after:page; margin:0 auto; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen { html, body{ width:auto; } body{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 0 60px; } .page{ box-shadow:0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); } }
+  @media print{ html, body{ background:#fff; width:210mm; margin:0; padding:0; display:block; } .page{ box-shadow:none; margin:0; display:block; } }
+  html.show-overflow .pg-body{ outline:1px dashed rgba(184,84,59,.4); }
+  html.show-overflow .page{ outline:1px dashed rgba(14,26,43,.25); }
+
+  .frame{ position:absolute; inset:14mm 16mm; }
+  .pg-head{ position:absolute; top:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); padding-bottom:4mm; border-bottom:var(--rule); }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{ width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  .pg-foot{ position:absolute; bottom:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:8.5pt; color:var(--muted); padding-top:4mm; border-top:var(--rule); }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .pg-body{ position:absolute; top:22mm; bottom:18mm; left:16mm; right:16mm; display:flex; flex-direction:column; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif","Times New Roman",serif; font-weight:400; }
+  .mono{ font-family:"JetBrains Mono", monospace; }
+  .section-num{ font-family:"Instrument Serif"; font-style:italic; font-size:64pt; line-height:1; color:var(--accent); letter-spacing:-.02em; }
+  .section-kicker{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-title{ font-family:"Instrument Serif"; font-weight:400; font-size:32pt; line-height:1.04; letter-spacing:-.01em; color:var(--ink); margin-top:2mm; }
+  .section-lede{ font-size:10.5pt; line-height:1.55; color:var(--ink-2); max-width:135mm; margin-top:5mm; }
+  .h-sub{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:4mm; }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10.5pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.4mm; }
+  ul.checks li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.42; color:var(--ink-2); padding:1.2mm 0; border-bottom:1px dotted var(--line); }
+  ul.checks li:last-child{ border-bottom:none; }
+  ul.checks li .box{ flex:0 0 auto; width:4.4mm; height:4.4mm; border:1.2px solid var(--ink); border-radius:1.2px; background:var(--cream); margin-top:1.2mm; }
+  .stack-tight ul.checks li{ font-size:9.5pt; padding:.7mm 0; }
+  .stack-tight ul.checks li .box{ width:4mm; height:4mm; }
+  ul.bul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.2mm; }
+  ul.bul li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.45; color:var(--ink-2); padding:1mm 0; border-bottom:1px dotted var(--line); }
+  ul.bul li:last-child{ border-bottom:none; }
+  ul.bul li::before{ content:""; flex:0 0 auto; width:5px; height:5px; margin-top:2.4mm; background:var(--accent); border-radius:50%; }
+
+  .cols-2{ display:grid; grid-template-columns:1fr 1fr; column-gap:12mm; align-items:start; }
+  ol.enum{ list-style:none; padding:0; margin:0; counter-reset:en; display:flex; flex-direction:column; gap:2mm; }
+  ol.enum li{ counter-increment:en; display:flex; gap:10px; align-items:baseline; font-size:9.5pt; line-height:1.4; color:var(--ink-2); padding:1.4mm 0; border-bottom:1px dotted var(--line); }
+  ol.enum li::before{ content:counter(en, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--accent); flex:0 0 9mm; }
+  ol.enum li b{ color:var(--ink); }
+
+  .callout{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 6mm; font-size:9.5pt; line-height:1.5; color:var(--ink-2); margin-top:4mm; }
+  .callout b{ color:var(--ink); }
+  .quote-block{ background:var(--cream); border:1px solid var(--line); padding:7mm 8mm; font-family:"Instrument Serif"; font-style:italic; font-size:13pt; line-height:1.45; color:var(--ink); }
+  .quote-block .signature{ margin-top:4mm; font-family:"Manrope"; font-style:normal; font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .survival{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 7mm; display:flex; flex-direction:column; gap:2mm; }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; line-height:1.3; color:var(--ink); }
+  .tag{ display:inline-flex; align-items:center; gap:6px; font-size:8pt; letter-spacing:.18em; text-transform:uppercase; color:var(--ink); background:var(--cream); padding:2.2mm 3.6mm; border-radius:100px; border:1px solid var(--line); font-weight:600; }
+  .hr-orn{ display:flex; align-items:center; gap:10px; color:var(--accent); margin:4mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent);}
+
+  /* COVER */
+  .cover{ background: radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.12), transparent 55%), radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%), var(--paper); }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:var(--rule); padding-bottom:6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap:10px; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); }
+  .cover-brand .logo .mark{ width:30px; height:30px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border:2px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .cover-brand .sub{ font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--accent); }
+  .cover-meta .label{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:12mm 0 8mm; }
+  .cover-eyebrow{ font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:8mm; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size:54pt; line-height:1.0; letter-spacing:-.022em; color:var(--ink); margin:0 0 6mm; }
+  .cover-title .it{ font-style:italic; color:var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size:12.5pt; line-height:1.5; color:var(--ink-2); max-width:158mm; }
+  .cover-bottom{ border-top:var(--rule); padding-top:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap:13mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size:36pt; line-height:1; color:var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color:var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:2mm; }
+
+  /* OPENER */
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size:46pt; line-height:1.02; color:var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style:italic; color:var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:7mm; }
+  .opener-grid p{ font-size:10.5pt; line-height:1.55; color:var(--ink-2); margin:0 0 4mm; }
+
+  /* TOC */
+  .toc-list{ display:grid; grid-template-columns:1fr 1fr; column-gap:12mm; margin-top:4mm; }
+  .toc-item{ display:flex; align-items:baseline; gap:8px; padding:2.2mm 0; border-bottom:1px dotted var(--line); font-size:9.5pt; color:var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--accent); flex:0 0 10mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--muted); }
+
+  /* SECTION HEAD */
+  .section-head{ display:flex; gap:10mm; align-items:flex-start; padding-bottom:6mm; border-bottom:var(--rule); margin-bottom:6mm; }
+  .section-head .big{ flex:0 0 auto; }
+  .section-head .meta{ flex:1; padding-top:4mm;}
+  .section-body{ display:flex; flex-direction:column; gap:5mm; flex:1;}
+  .block-card{ background:var(--cream); border:1px solid var(--line); padding:6mm 7mm; }
+  .twoframe{ display:grid; grid-template-columns:1fr 1fr; gap:8mm; }
+  .checks-3{ display:grid; grid-template-columns:1fr 1fr 1fr; column-gap:8mm; }
+
+  .model{ background:var(--cream); border:1px dashed var(--gold); padding:6mm 7mm; font-family:"Instrument Serif", serif; font-size:10.5pt; line-height:1.5; color:var(--ink-2); position:relative; }
+  .model::before{ content:"MODELO"; position:absolute; top:-3mm; left:6mm; background:var(--paper); padding:0 3mm; font-family:"Manrope"; font-size:8pt; letter-spacing:.24em; color:var(--gold); font-weight:700; }
+  .model p{ margin:0 0 2.6mm; } .model p:last-child{ margin:0; }
+  .model .sig{ margin-top:2.6mm; font-style:italic; color:var(--ink);}
+
+  .phrases{ display:flex; flex-direction:column; gap:2.5mm; }
+  .phrases .phrase{ font-family:"Instrument Serif"; font-style:italic; font-size:11pt; line-height:1.35; color:var(--ink); padding-left:8mm; position:relative; }
+  .phrases .phrase::before{ content:"“"; position:absolute; left:0; top:-2mm; font-family:"Instrument Serif"; font-size:24pt; color:var(--accent); line-height:1; }
+
+  /* frase cards (used for "campos de ataque" and "situações") */
+  .frases-head{ display:flex; align-items:baseline; gap:8mm; flex-wrap:wrap; padding-bottom:4mm; border-bottom:var(--rule); margin-bottom:5mm; }
+  .frases-head .section-kicker{ flex:0 0 auto; }
+  .frases-head h2{ font-family:"Instrument Serif"; font-weight:400; font-size:24pt; line-height:1.05; color:var(--ink); margin:0; }
+  .frases-head h2 .it{ font-style:italic; color:var(--accent); }
+  .frases-grid{ display:grid; grid-template-columns:1fr 1fr; gap:4.5mm 10mm; flex:1; align-content:start; }
+  .frase{ display:grid; grid-template-columns:9mm 1fr; gap:0 3mm; align-items:start; }
+  .frase .fnum{ font-family:"Instrument Serif"; font-style:italic; font-size:19pt; line-height:.85; color:var(--accent); }
+  .frase .fbody{ min-width:0; }
+  .fquote{ font-family:"Instrument Serif"; font-style:italic; font-size:11pt; line-height:1.22; color:var(--ink); margin:0 0 1.6mm; }
+  .fans{ font-size:8.6pt; line-height:1.4; color:var(--ink-2); margin:0 0 1.6mm; }
+  .fans b{ color:var(--ink); }
+  .fwhy{ font-family:"Manrope"; font-weight:600; font-size:7.8pt; line-height:1.3; letter-spacing:.01em; color:var(--gold); margin:0; }
+  .fwhy::before{ content:"▸ "; color:var(--accent); }
+
+  /* replies */
+  .replies{ display:grid; grid-template-columns:1fr 1fr; gap:4mm 9mm; }
+  .reply-card{ border-left:2px solid var(--accent); padding-left:5mm; }
+  .reply-card .sit{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:1.5mm; }
+  .reply-card p{ margin:0; font-size:9pt; line-height:1.42; color:var(--ink-2); }
+  .reply-card p.it{ font-family:"Instrument Serif"; font-style:italic; font-size:9.5pt; }
+
+  /* compare ruim/melhor */
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
+  .compare .box{ padding:5mm 6mm; }
+  .compare .bad{ background:var(--paper-2); border-left:3px solid var(--accent); }
+  .compare .good{ background:var(--cream); border-left:3px solid var(--gold); }
+  .compare .lbl{ font-family:"Manrope"; font-weight:700; font-size:7.8pt; letter-spacing:.18em; text-transform:uppercase; margin-bottom:1.5mm; display:block; }
+  .compare .bad .lbl{ color:var(--accent); }
+  .compare .good .lbl{ color:var(--gold); }
+  .compare p{ margin:0; font-family:"Instrument Serif"; font-style:italic; font-size:10pt; line-height:1.32; color:var(--ink); }
+
+  /* mini-checklist grid (for protection checklist) */
+  .mini-grid{ display:grid; grid-template-columns:1fr 1fr; gap:5mm 9mm; flex:1; align-content:start; }
+  .mini{ break-inside:avoid; }
+  .mini .h-sub{ margin-bottom:2.5mm; font-size:8.5pt; }
+  .mini ul.checks li{ font-size:9pt; padding:.5mm 0; }
+  .mini ul.checks li .box{ width:3.6mm; height:3.6mm; margin-top:1mm; }
+
+  /* capture */
+  .capture{ background: radial-gradient(120% 80% at 0% 0%, rgba(140,106,42,.12), transparent 55%), radial-gradient(90% 70% at 100% 100%, rgba(184,84,59,.12), transparent 55%), var(--paper); }
+  .cta-band{ background:var(--ink); color:var(--paper); padding:8mm 9mm; display:flex; flex-direction:column; gap:3mm; margin-top:2mm; }
+  .cta-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .cta-band .t{ font-family:"Instrument Serif"; font-size:26pt; line-height:1.05; color:var(--paper); }
+  .cta-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .cta-band .u{ font-family:"Manrope"; font-weight:700; font-size:11pt; letter-spacing:.04em; color:var(--paper); margin-top:1mm; }
+  .cta-band .u span{ color:var(--accent-2); }
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  /* Save-as-PDF FAB */
+  .pdf-fab{ position:fixed; right:22px; bottom:22px; z-index:9999; display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:#0E1A2B; color:#F4EEDF; border:none; border-radius:999px; font-family:"Manrope", system-ui, sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; box-shadow:0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30), inset 0 0 0 1px rgba(255,255,255,.06); transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .pdf-fab:hover{ transform:translateY(-2px); background:#B8543B; box-shadow:0 18px 42px rgba(184,84,59,.45), 0 4px 12px rgba(184,84,59,.30); }
+  .pdf-fab svg{ width:16px; height:16px; flex:0 0 auto; }
+  .pdf-fab .dot-accent{ width:6px; height:6px; border-radius:50%; background:#B8543B; box-shadow:0 0 0 3px rgba(184,84,59,.22); }
+  .pdf-fab:hover .dot-accent{ background:#F4EEDF; box-shadow:0 0 0 3px rgba(244,238,223,.22); }
+  .pdf-hint{ position:fixed; right:22px; bottom:74px; z-index:9998; max-width:280px; padding:12px 14px; background:#FBF7EC; border:1px solid #D9D2C2; border-radius:10px; font-family:"Manrope", system-ui, sans-serif; font-size:11.5px; line-height:1.5; color:#1F2C3F; box-shadow:0 10px 30px rgba(0,0,0,.18); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .pdf-hint.show{ opacity:1; transform:translateY(0); }
+  .pdf-hint b{ color:#B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display:none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 07</div>
+          <div class="label">Gestão sob ataque</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">Guia da sindicatura sob pressão</div>
+        <h1 class="cover-title">Como lidar com moradores que querem <span class="it">destruir</span> sua gestão.</h1>
+        <p class="cover-deck">Um guia prático para síndicos que enfrentam ataques, boatos, grupos inflamados, acusações injustas, tentativas de destituição e oposição destrutiva dentro do condomínio.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">20</span></div><div class="l">Capítulos</div></div>
+          <div class="s"><div class="n">10</div><div class="l">Modelos prontos</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · OPENER -->
+  <section class="page opener" data-screen-label="02 Posicionamento">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Posicionamento</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:8mm;">Antes de começar</div>
+        <h2 class="opener-title">Toda gestão é fiscalizada. Algumas são <span class="it">perseguidas.</span></h2>
+        <div class="opener-grid">
+          <div>
+            <p>Todo condomínio tem divergência. Em qualquer comunidade com dezenas de famílias, opiniões diferentes, interesses conflitantes e expectativas desalinhadas são parte da rotina. Discordar é normal.</p>
+            <p>O problema começa quando a discordância vira campanha. Quando o morador deixa de fiscalizar e passa a perseguir. Quando deixa de questionar e passa a insinuar. Quando deixa de pedir esclarecimento e passa a criar narrativa.</p>
+          </div>
+          <div>
+            <p>Quando qualquer decisão vira suspeita. Qualquer erro operacional vira escândalo. Qualquer comunicado vira motivo para ataque. Qualquer assembleia vira palco para desestabilização.</p>
+            <p>Este e-book é para quem vive, ou já viveu, esse tipo de situação. Lidar com morador difícil faz parte da gestão. Lidar com quem quer destruir a gestão exige método, postura, documentação e estratégia.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">Para quem é</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Síndicos, subsíndicos, conselheiros, gestores condominiais e administradoras que precisam atravessar crises políticas internas sem perder a autoridade da gestão.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">A promessa</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Diagnóstico do ataque, modelos prontos de resposta, checklist de proteção e um plano de ação para conduzir o condomínio quando a oposição vira sabotagem.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 07</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · TOC -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:4mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">—</span><span class="ttl">Introdução · Condomínio como ambiente de conflito</span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">01</span><span class="ttl">Oposição saudável × sabotagem</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">02</span><span class="ttl">O perfil do morador que tenta destruir</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">03</span><span class="ttl">Por que alguns moradores atacam</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">04</span><span class="ttl">Os principais campos de ataque</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">05</span><span class="ttl">WhatsApp · palco da destruição</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">06</span><span class="ttl">Assembleia · espetáculo de confronto</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">07</span><span class="ttl">Conselho · aliado ou ferramenta?</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">08</span><span class="ttl">Prestação de contas · evitar narrativas</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">09</span><span class="ttl">Obras, contratos e orçamentos</span><span class="pg">13</span></div>
+        <div class="toc-item"><span class="num">10</span><span class="ttl">Funcionários e prestadores</span><span class="pg">14</span></div>
+        <div class="toc-item"><span class="num">11</span><span class="ttl">Boatos, prints e distorções</span><span class="pg">15</span></div>
+        <div class="toc-item"><span class="num">12</span><span class="ttl">Responder sem perder autoridade</span><span class="pg">16</span></div>
+        <div class="toc-item"><span class="num">13</span><span class="ttl">Documentar de forma inteligente</span><span class="pg">17</span></div>
+        <div class="toc-item"><span class="num">14</span><span class="ttl">Advertir, notificar, acionar o jurídico</span><span class="pg">18</span></div>
+        <div class="toc-item"><span class="num">15</span><span class="ttl">Tentativa de destituição</span><span class="pg">19</span></div>
+        <div class="toc-item"><span class="num">16</span><span class="ttl">Saúde emocional do síndico</span><span class="pg">20</span></div>
+        <div class="toc-item"><span class="num">17</span><span class="ttl">Plano prático em 8 passos</span><span class="pg">21</span></div>
+        <div class="toc-item"><span class="num">18</span><span class="ttl">10 modelos de resposta prontos</span><span class="pg">22</span></div>
+        <div class="toc-item"><span class="num">19</span><span class="ttl">Checklist de proteção da gestão</span><span class="pg">23</span></div>
+        <div class="toc-item"><span class="num">20</span><span class="ttl">Conclusão</span><span class="pg">24</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">A mentoria Bastidores da Sindicatura</span><span class="pg">25</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · INTRODUÇÃO -->
+  <section class="page" data-screen-label="04 Introdução">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Introdução</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">§</div></div>
+        <div class="meta">
+          <div class="section-kicker">Introdução</div>
+          <h2 class="section-title">O condomínio como ambiente de <span class="serif" style="font-style:italic;color:var(--accent);">conflito</span>.</h2>
+          <p class="section-lede">É uma das formas mais intensas de convivência coletiva. As pessoas dividem espaços, custos, regras, funcionários, equipamentos, decisões e responsabilidades. Ninguém escolhe seus vizinhos, e muito conflito nasce justamente dessa convivência obrigatória.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p class="body">No condomínio, uma decisão de obra pode gerar revolta. Uma multa pode virar guerra. Uma troca de prestador pode ser lida como favorecimento. Uma previsão orçamentária pode ser vista como abuso. Uma simples resposta no WhatsApp pode virar print, distorção e crise.</p>
+        <div class="block-card">
+          <div class="h-sub">Por que a gestão não pode ser só administrativa</div>
+          <p style="margin:0;font-size:10.5pt;line-height:1.55;color:var(--ink-2);">Ela é também política, emocional, jurídica, financeira, operacional e comunicacional. Quando há moradores atuando para destruí-la, o síndico não pode contar só com boa vontade. Precisa agir com <b>estratégia</b>.</p>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">A regra deste guia</span>
+          <span class="txt">O síndico não precisa vencer todas as discussões. Precisa conduzir o condomínio quando outros tentam transformar a gestão em guerra.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Introdução · O condomínio como ambiente de conflito</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · CAP 01 -->
+  <section class="page" data-screen-label="05 Cap 01">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 01 · Saudável × sabotagem</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">01</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo um</div>
+          <h2 class="section-title">Oposição saudável × <span class="serif" style="font-style:italic;color:var(--accent);">sabotagem</span>.</h2>
+          <p class="section-lede">Um condomínio saudável precisa de moradores participativos. Pedir informação, questionar despesa, discordar de decisão, analisar contas e cobrar responsabilidade é legítimo. O problema é quando a oposição deixa de buscar melhoria e passa a buscar desgaste.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="compare">
+          <div class="box bad"><span class="lbl">Saudável</span><p>Pergunta.</p></div>
+          <div class="box good"><span class="lbl">Destrutiva</span><p>Insinua.</p></div>
+          <div class="box bad"><span class="lbl">Saudável</span><p>Fiscaliza.</p></div>
+          <div class="box good"><span class="lbl">Destrutiva</span><p>Acusa sem prova.</p></div>
+          <div class="box bad"><span class="lbl">Saudável</span><p>Aponta falhas.</p></div>
+          <div class="box good"><span class="lbl">Destrutiva</span><p>Transforma cada falha em escândalo.</p></div>
+          <div class="box bad"><span class="lbl">Saudável</span><p>Respeita os canais.</p></div>
+          <div class="box good"><span class="lbl">Destrutiva</span><p>Usa exposição pública.</p></div>
+          <div class="box bad"><span class="lbl">Saudável</span><p>Quer solução.</p></div>
+          <div class="box good"><span class="lbl">Destrutiva</span><p>Quer desgaste.</p></div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase de sobrevivência</span>
+          <span class="txt">Tratar toda crítica como ataque faz o síndico perder legitimidade. Tratar todo ataque como crítica faz o síndico perder autoridade.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 01 · Oposição saudável × sabotagem</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · CAP 02 -->
+  <section class="page" data-screen-label="06 Cap 02">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 02 · O perfil</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">02</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo dois</div>
+          <h2 class="section-title">O perfil do morador que tenta <span class="serif" style="font-style:italic;color:var(--accent);">destruir</span>.</h2>
+          <p class="section-lede">Quase nunca aparece agressivo no começo. Começa como “preocupado”, dizendo que só quer entender. Com o tempo, o padrão aparece: não aceita resposta, repete perguntas já esclarecidas, distorce comunicados, fala em nome dos moradores sem autorização.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Padrões de comportamento</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Não aceita resposta e muda o foco quando esclarecido</li>
+              <li><span class="box"></span>Repete perguntas já respondidas</li>
+              <li><span class="box"></span>Distorce comunicados oficiais</li>
+              <li><span class="box"></span>Cria suspeitas sobre qualquer contratação</li>
+              <li><span class="box"></span>Fala em nome dos moradores sem ter sido autorizado</li>
+              <li><span class="box"></span>Caça erros pequenos para desqualificar a gestão inteira</li>
+              <li><span class="box"></span>Provoca o síndico até obter reação</li>
+              <li><span class="box"></span>Usa frases neutras carregadas de insinuação</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Frases típicas para criar desconfiança</div>
+            <div class="phrases">
+              <div class="phrase">Estranho isso, né?</div>
+              <div class="phrase">Será que está tudo certo mesmo?</div>
+              <div class="phrase">Alguém está ganhando com isso?</div>
+              <div class="phrase">Não estou acusando, mas…</div>
+              <div class="phrase">Eu só acho que os moradores deveriam saber.</div>
+              <div class="phrase">Tem coisa aí que precisa ser investigada.</div>
+              <div class="phrase">Depois não digam que ninguém avisou.</div>
+            </div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Por que isso é grave</span>
+          <span class="txt">Quando a comunidade acredita que “tem algo errado”, mesmo sem prova, a gestão gasta energia se defendendo em vez de administrar.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 02 · O perfil do morador que tenta destruir</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · CAP 03 -->
+  <section class="page" data-screen-label="07 Cap 03">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 03 · Por que atacam</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">03</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo três</div>
+          <h2 class="section-title">Por que alguns moradores <span class="serif" style="font-style:italic;color:var(--accent);">atacam</span>.</h2>
+          <p class="section-lede">Nem todo ataque vem do mesmo lugar. Frustração pessoal, disputa de poder, perda de benefícios, multas, discordância sobre obra, derrota em eleição, vínculo com gestões anteriores, interesses comerciais, gosto por influência.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Motivações comuns</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Frustração pessoal</li>
+              <li><span class="box"></span>Disputa de poder</li>
+              <li><span class="box"></span>Perda de benefícios informais</li>
+              <li><span class="box"></span>Multas ou advertências aplicadas</li>
+              <li><span class="box"></span>Discordância sobre obra ou rateio</li>
+              <li><span class="box"></span>Derrota em eleição anterior</li>
+              <li><span class="box"></span>Vínculo com prestadores antigos</li>
+              <li><span class="box"></span>Interesses comerciais</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Perguntas para o síndico observar</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Quem está atacando?</li>
+              <li><span class="box"></span>Quando começou?</li>
+              <li><span class="box"></span>Qual decisão gerou a reação?</li>
+              <li><span class="box"></span>Existe interesse por trás?</li>
+              <li><span class="box"></span>Existe vínculo com prestador antigo?</li>
+              <li><span class="box"></span>Existe tentativa de liderança paralela?</li>
+              <li><span class="box"></span>Existe movimento antes da próxima assembleia?</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout"><b>Toda vez que uma gestão profissional organiza a casa</b>, alguém que se beneficiava da desorganização pode se incomodar. Troca de prestador, revisão de contrato, cobrança de inadimplência e aplicação de advertência costumam ser os gatilhos.</div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Leitura essencial</span>
+          <span class="txt">Não agir por paranoia. Mas não ser ingênuo. Condomínio é convivência, e também é poder, dinheiro, reputação e influência.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 03 · Por que alguns moradores atacam</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · CAP 04 -->
+  <section class="page" data-screen-label="08 Cap 04">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 04 · Campos de ataque</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 04</div>
+        <h2>Os principais campos de <span class="it">ataque</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:5mm;">Moradores destrutivos escolhem temas sensíveis. Conhecer os sete campos clássicos ajuda o síndico a antecipar a defesa e responder com técnica em vez de impulso.</p>
+      <div class="replies" style="flex:1; align-content:start;">
+        <div class="reply-card"><span class="sit">1 · Prestação de contas</span><p>“Cadê o dinheiro?”, “as contas estão confusas”. Defesa: balancete, notas, contratos e resposta com documento, nunca com irritação.</p></div>
+        <div class="reply-card"><span class="sit">2 · Obras</span><p>Dinheiro, prazo, barulho, expectativa. Defesa: escopo, três orçamentos, contrato, cronograma e comunicação periódica.</p></div>
+        <div class="reply-card"><span class="sit">3 · Multas e advertências</span><p>“Só multam quem querem”. Defesa: isonomia, registro de ocorrência, imagens quando cabível e fundamento na convenção.</p></div>
+        <div class="reply-card"><span class="sit">4 · Inadimplência</span><p>Tema sensível e exposto. Defesa: sigilo, técnica, apoio da administradora e do jurídico. Jamais expor devedor.</p></div>
+        <div class="reply-card"><span class="sit">5 · Funcionários</span><p>Críticas à portaria, à limpeza, ao zelador. Defesa: proteger hierarquia, evitar ordens diretas de morador, apurar com método.</p></div>
+        <div class="reply-card"><span class="sit">6 · Segurança</span><p>Falha em portão, câmera ou cadastro gera pânico. Defesa: resposta técnica, plano de ação e comunicação objetiva.</p></div>
+        <div class="reply-card"><span class="sit">7 · Assembleia</span><p>Pode virar palco quando há pouca pauta e pouca condução. Defesa: pauta clara, documentos preparados e regras de fala.</p></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 04 · Os principais campos de ataque</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · CAP 05 -->
+  <section class="page" data-screen-label="09 Cap 05">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 05 · WhatsApp</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">05</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo cinco</div>
+          <h2 class="section-title">WhatsApp · o palco favorito da <span class="serif" style="font-style:italic;color:var(--accent);">destruição</span>.</h2>
+          <p class="section-lede">O morador destrutivo sabe usar o grupo como pressão. Joga a pergunta, espera repercussão, marca outros, insinua, provoca, gera print e leva para outro grupo. Por isso, o grupo precisa de regra.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">O que não pode ir no grupo</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Acusação pessoal</li>
+              <li><span class="box"></span>Exposição de funcionário</li>
+              <li><span class="box"></span>Discussão de inadimplência</li>
+              <li><span class="box"></span>Debate sobre processo jurídico</li>
+              <li><span class="box"></span>Aprovação de despesa relevante</li>
+              <li><span class="box"></span>Ataque à honra</li>
+              <li><span class="box"></span>Propagação de boatos</li>
+              <li><span class="box"></span>Deliberação de assembleia</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">O que pode ir no grupo</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Comunicados rápidos</li>
+              <li><span class="box"></span>Avisos emergenciais</li>
+              <li><span class="box"></span>Orientações gerais</li>
+              <li><span class="box"></span>Direcionamento aos canais oficiais</li>
+              <li><span class="box"></span>Confirmação de informações objetivas</li>
+            </ul>
+            <div class="model" style="margin-top:4mm;">
+              <p>Prezados moradores, para preservar a boa convivência e evitar ruídos, este assunto será tratado pelos canais oficiais da administração. Qualquer apontamento deve ser encaminhado formalmente para análise.</p>
+            </div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">A postura ideal não é vencer no grupo. É tirar o conflito do palco e levar para o processo.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 05 · WhatsApp, o palco da destruição</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · CAP 06 -->
+  <section class="page" data-screen-label="10 Cap 06">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 06 · Assembleia</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">06</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo seis</div>
+          <h2 class="section-title">Assembleia · quando a democracia vira <span class="serif" style="font-style:italic;color:var(--accent);">espetáculo</span>.</h2>
+          <p class="section-lede">É ali que insatisfeitos tentam constranger, que acusações ganham público, que grupos se organizam e que falas emocionais soam mais fortes que documentos. Uma assembleia mal conduzida destrói meses de gestão. Uma bem preparada pacifica.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Antes da assembleia, prepare</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Pauta clara</li>
+              <li><span class="box"></span>Documentos de apoio e relatórios</li>
+              <li><span class="box"></span>Contratos e orçamentos</li>
+              <li><span class="box"></span>Cronologia dos fatos</li>
+              <li><span class="box"></span>Balancetes</li>
+              <li><span class="box"></span>Pareceres técnicos, quando cabível</li>
+              <li><span class="box"></span>Alinhamento com administradora</li>
+              <li><span class="box"></span>Orientação jurídica em temas sensíveis</li>
+              <li><span class="box"></span>Critério de condução e tempo de fala</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Durante, evite</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Discussão pessoal</li>
+              <li><span class="box"></span>Resposta atravessada ou irônica</li>
+              <li><span class="box"></span>Debate paralelo</li>
+              <li><span class="box"></span>Exposição de moradores</li>
+              <li><span class="box"></span>Entrar em provocação</li>
+              <li><span class="box"></span>Responder sem documento</li>
+              <li><span class="box"></span>Permitir que uma pessoa monopolize</li>
+            </ul>
+            <div class="model" style="margin-top:4mm;">
+              <p>Vamos manter a reunião dentro da pauta e com respeito ao tempo de todos. Os questionamentos serão registrados e respondidos conforme os documentos disponíveis.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 06 · Assembleia, espetáculo de confronto</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · CAP 07 -->
+  <section class="page" data-screen-label="11 Cap 07">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 07 · Conselho</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">07</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo sete</div>
+          <h2 class="section-title">Conselho · aliado da governança ou ferramenta de <span class="serif" style="font-style:italic;color:var(--accent);">pressão</span>.</h2>
+          <p class="section-lede">Em condomínios conflituosos, o conselho vira alvo. Morador destrutivo acessa conselheiros individualmente, manda prints, cria medo, insinua omissão e diz que “estão passando pano”. Conselheiro inseguro cobra no impulso; conselheiro sem informação vira instrumento de boato.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Como o conselho é pressionado</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Mensagens diretas com prints fora de contexto</li>
+              <li><span class="box"></span>Sugestão de omissão e medo de responsabilização</li>
+              <li><span class="box"></span>Insinuação de que o síndico “esconde”</li>
+              <li><span class="box"></span>Tentativa de criar suspeita sobre contratos</li>
+              <li><span class="box"></span>Convite para reuniões paralelas</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Como o síndico protege a relação</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Reuniões periódicas com pauta</li>
+              <li><span class="box"></span>Relatórios objetivos e resumo financeiro</li>
+              <li><span class="box"></span>Atualização sobre obras e pendências</li>
+              <li><span class="box"></span>Registro das decisões em ata ou resumo</li>
+              <li><span class="box"></span>Canal formal entre síndico e conselho</li>
+              <li><span class="box"></span>Documentos disponíveis para consulta</li>
+            </ul>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase de sobrevivência</span>
+          <span class="txt">Conselho informado protege a governança. Conselho desorganizado vira instrumento de crise.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 07 · Conselho, aliado ou ferramenta de pressão</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · CAP 08 -->
+  <section class="page" data-screen-label="12 Cap 08">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 08 · Prestação de contas</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">08</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo oito</div>
+          <h2 class="section-title">Prestação de contas · evitar <span class="serif" style="font-style:italic;color:var(--accent);">narrativas</span>.</h2>
+          <p class="section-lede">É um dos maiores pontos de vulnerabilidade. Não porque toda gestão tenha erro, mas porque dinheiro sempre gera suspeita. Transparência não é responder qualquer pergunta a qualquer hora em qualquer tom. Transparência é método.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Transparência como método</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Balancete disponível e nota fiscal arquivada</li>
+              <li><span class="box"></span>Contrato formalizado</li>
+              <li><span class="box"></span>Orçamento comparativo e aprovação registrada</li>
+              <li><span class="box"></span>Rateio explicado</li>
+              <li><span class="box"></span>Previsão orçamentária coerente</li>
+              <li><span class="box"></span>Fundo de reserva tratado corretamente</li>
+              <li><span class="box"></span>Inadimplência acompanhada e comunicada</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Comunique antes que distorçam</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Aumento de taxa</li>
+              <li><span class="box"></span>Rateio extraordinário</li>
+              <li><span class="box"></span>Obra emergencial</li>
+              <li><span class="box"></span>Troca de fornecedor</li>
+              <li><span class="box"></span>Reajuste de contrato</li>
+              <li><span class="box"></span>Uso do fundo de reserva</li>
+              <li><span class="box"></span>Acordo judicial</li>
+              <li><span class="box"></span>Cobrança de inadimplência</li>
+            </ul>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">Quando a gestão não comunica, o vazio é preenchido por narrativa. E narrativa, em condomínio, vira “verdade” rapidamente.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 08 · Prestação de contas, evitar narrativas</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · CAP 09 -->
+  <section class="page" data-screen-label="13 Cap 09">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 09 · Obras e contratos</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">09</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo nove</div>
+          <h2 class="section-title">Obras, contratos e <span class="serif" style="font-style:italic;color:var(--accent);">orçamentos</span>.</h2>
+          <p class="section-lede">Obra envolve dinheiro, prazo, barulho e fornecedor. Mesmo quando é necessária, alguém dirá que não era prioridade. Mesmo quando o orçamento é correto, alguém apontará opção mais barata. O síndico precisa blindar tecnicamente cada decisão.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div>
+          <div class="h-sub">Toda obra relevante deve ter</div>
+          <div class="cols-2">
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Diagnóstico e justificativa</li>
+              <li><span class="box"></span>Escopo e fotos do problema</li>
+              <li><span class="box"></span>Relatório ou laudo técnico, quando necessário</li>
+              <li><span class="box"></span>Pelo menos três orçamentos comparáveis</li>
+              <li><span class="box"></span>Critérios de comparação</li>
+              <li><span class="box"></span>Contrato e cronograma</li>
+              <li><span class="box"></span>Forma de pagamento e garantia</li>
+            </ul>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Responsável técnico, quando cabível</li>
+              <li><span class="box"></span>Comunicação aos moradores</li>
+              <li><span class="box"></span>Aprovação em assembleia, quando exigida</li>
+              <li><span class="box"></span>Acompanhamento periódico</li>
+              <li><span class="box"></span>Evidências de execução</li>
+              <li><span class="box"></span>Recebimento documentado da entrega</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout">O erro mais comum é contratar corretamente e comunicar mal. Sem entender o motivo, o morador enxerga só o custo. Sem entender o risco, enxerga só o incômodo. Sem entender o critério, imagina favorecimento.</div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase de sobrevivência</span>
+          <span class="txt">Explique o porquê antes de defender o quanto.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 09 · Obras, contratos e orçamentos</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · CAP 10 -->
+  <section class="page" data-screen-label="14 Cap 10">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 10 · Funcionários</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">10</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo dez</div>
+          <h2 class="section-title">Funcionários e prestadores · quando o ataque passa pela <span class="serif" style="font-style:italic;color:var(--accent);">operação</span>.</h2>
+          <p class="section-lede">Atacar a gestão pela equipe é uma tática comum: desmoralizar a portaria, criticar a limpeza, dar ordens diretas, constranger terceirizados, gravar colaboradores. Isso desorganiza a hierarquia e cria ambiente de medo.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Padrões de ataque pela operação</div>
+            <ul class="bul">
+              <li>Crítica pública à portaria, limpeza ou zeladoria</li>
+              <li>Ordens diretas a funcionários sem alinhamento</li>
+              <li>Cobrança de funcionário fora das atribuições</li>
+              <li>Gravação e exposição de colaboradores</li>
+              <li>Exigência de respostas de quem não decide</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Como o síndico protege a equipe</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Canal formal para reclamações sobre funcionários</li>
+              <li><span class="box"></span>Reclamação registrada e apurada com método</li>
+              <li><span class="box"></span>Veto a constrangimento público</li>
+              <li><span class="box"></span>Hierarquia operacional explicada aos moradores</li>
+              <li><span class="box"></span>Orientação à equipe sobre o fluxo correto</li>
+            </ul>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">Proteger funcionário de abuso não significa ignorar falhas. Significa apurar com respeito, registro e procedimento.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 10 · Funcionários e prestadores</div><div class="pg-num">14</div></div>
+  </section>
+
+  <!-- PAGE 15 · CAP 11 -->
+  <section class="page" data-screen-label="15 Cap 11">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 11 · Boatos e prints</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">11</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo onze</div>
+          <h2 class="section-title">Boatos, prints e <span class="serif" style="font-style:italic;color:var(--accent);">distorções</span>.</h2>
+          <p class="section-lede">Hoje, uma crise condominial nasce de um print. Uma mensagem cortada, uma frase fora de contexto, um áudio encaminhado, uma foto sem explicação. O morador destrutivo trabalha com recortes: mostra só o trecho que favorece a narrativa.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Antes de responder, pergunte</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Essa mensagem pode ser printada?</li>
+              <li><span class="box"></span>Fora de contexto, ela pode parecer agressiva?</li>
+              <li><span class="box"></span>Estou respondendo com emoção?</li>
+              <li><span class="box"></span>Falo em nome do condomínio ou de mim?</li>
+              <li><span class="box"></span>Estou expondo alguém?</li>
+              <li><span class="box"></span>Estou assumindo algo sem consultar documento?</li>
+              <li><span class="box"></span>Estou usando o canal correto?</li>
+            </ul>
+          </div>
+          <div>
+            <div class="block-card">
+              <div class="h-sub">Formato seguro</div>
+              <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">A comunicação do síndico precisa ser clara, curta e institucional. Quanto mais emocional a resposta, maior o risco de distorção. Quanto mais longa no WhatsApp, maior a chance de recorte.</p>
+            </div>
+            <div class="callout" style="margin-top:5mm;">Na dúvida, formalize por e-mail, comunicado ou ata. O canal protege a mensagem.</div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">Escreva como se cada mensagem pudesse ser lida fora daquele contexto. Porque pode.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 11 · Boatos, prints e distorções</div><div class="pg-num">15</div></div>
+  </section>
+
+  <!-- PAGE 16 · CAP 12 -->
+  <section class="page" data-screen-label="16 Cap 12">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 12 · Responder com autoridade</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">12</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo doze</div>
+          <h2 class="section-title">Responder sem perder <span class="serif" style="font-style:italic;color:var(--accent);">autoridade</span>.</h2>
+          <p class="section-lede">Ignorar tudo soa omisso. Responder tudo vira refém. Responder com raiva perde autoridade. Responder com excesso de justificativa transmite insegurança. A resposta ideal é objetiva, firme, educada, documentada, impessoal e institucional.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="compare">
+          <div class="box bad"><span class="lbl">Exemplo ruim</span><p>“Você está mentindo e só quer tumultuar.”</p></div>
+          <div class="box good"><span class="lbl">Exemplo melhor</span><p>“As informações apresentadas não correspondem aos documentos da gestão. O tema será esclarecido pelos canais oficiais, com base nos registros disponíveis.”</p></div>
+          <div class="box bad"><span class="lbl">Exemplo ruim</span><p>“Você não entende nada de condomínio.”</p></div>
+          <div class="box good"><span class="lbl">Exemplo melhor</span><p>“Esse assunto envolve critérios técnicos e será tratado com o suporte da administradora e dos profissionais responsáveis.”</p></div>
+          <div class="box bad"><span class="lbl">Exemplo ruim</span><p>“Já expliquei mil vezes.”</p></div>
+          <div class="box good"><span class="lbl">Exemplo melhor</span><p>“Esse tema já foi esclarecido anteriormente e permanece disponível para consulta pelos canais oficiais.”</p></div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase de sobrevivência</span>
+          <span class="txt">A autoridade do síndico não está em falar mais alto. Está em manter a postura quando o outro tenta puxar para o conflito.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 12 · Responder sem perder autoridade</div><div class="pg-num">16</div></div>
+  </section>
+
+  <!-- PAGE 17 · CAP 13 -->
+  <section class="page" data-screen-label="17 Cap 13">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 13 · Documentação</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">13</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo treze</div>
+          <h2 class="section-title">Documentar de forma <span class="serif" style="font-style:italic;color:var(--accent);">inteligente</span>.</h2>
+          <p class="section-lede">Documentar não é juntar prints desorganizados. É criar histórico. Quando tudo está registrado, o síndico não depende da memória, e em caso de assembleia, notificação ou medida jurídica, a base já está pronta.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Mantenha registro estruturado de</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Comunicados enviados</li>
+              <li><span class="box"></span>Atas de assembleia e de reunião do conselho</li>
+              <li><span class="box"></span>Relatórios de visitas e manutenção</li>
+              <li><span class="box"></span>Orçamentos e contratos</li>
+              <li><span class="box"></span>Notas fiscais</li>
+              <li><span class="box"></span>Protocolos de atendimento e e-mails relevantes</li>
+              <li><span class="box"></span>Notificações enviadas</li>
+              <li><span class="box"></span>Reclamações formais e ocorrências da portaria</li>
+              <li><span class="box"></span>Pareceres técnicos e jurídicos</li>
+            </ul>
+          </div>
+          <div>
+            <div class="block-card">
+              <div class="h-sub">Linha do tempo para casos sensíveis</div>
+              <ul class="checks stack-tight" style="margin-top:1mm;">
+                <li><span class="box"></span>Data da reclamação</li>
+                <li><span class="box"></span>Canal usado</li>
+                <li><span class="box"></span>Providência adotada</li>
+                <li><span class="box"></span>Resposta enviada</li>
+                <li><span class="box"></span>Documento relacionado</li>
+                <li><span class="box"></span>Status atual e próximo passo</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase de sobrevivência</span>
+          <span class="txt">Memória esquece. Documento sustenta. A gestão sob ataque vive de registro.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 13 · Documentar de forma inteligente</div><div class="pg-num">17</div></div>
+  </section>
+
+  <!-- PAGE 18 · CAP 14 -->
+  <section class="page" data-screen-label="18 Cap 14">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 14 · Jurídico</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">14</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo catorze</div>
+          <h2 class="section-title">Advertir, notificar, acionar <span class="serif" style="font-style:italic;color:var(--accent);">juridicamente</span>.</h2>
+          <p class="section-lede">Nem todo ataque vira notificação. Nem toda ofensa vira processo. Mas o síndico precisa reconhecer quando o limite foi ultrapassado, e responder com proporcionalidade e técnica.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Faz parte × passou do limite</div>
+            <ul class="bul">
+              <li>A crítica faz parte. A ofensa não.</li>
+              <li>O questionamento faz parte. A acusação sem prova não.</li>
+              <li>A fiscalização faz parte. A perseguição não.</li>
+              <li>A discordância faz parte. A ameaça não.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Avalie providência formal quando houver</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Ofensa pessoal ou ameaça</li>
+              <li><span class="box"></span>Acusação de crime sem prova</li>
+              <li><span class="box"></span>Exposição de funcionário</li>
+              <li><span class="box"></span>Divulgação de informação falsa</li>
+              <li><span class="box"></span>Constrangimento público</li>
+              <li><span class="box"></span>Perseguição reiterada</li>
+              <li><span class="box"></span>Tumulto proposital em assembleia</li>
+              <li><span class="box"></span>Ataque à honra de gestão, conselho ou equipe</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout">Evite agir sozinho. Envolva administradora e jurídico. A resposta precisa ser proporcional, técnica e bem fundamentada. O objetivo não é punir por vaidade, é proteger a ordem e a administração.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 14 · Advertir, notificar e acionar juridicamente</div><div class="pg-num">18</div></div>
+  </section>
+
+  <!-- PAGE 19 · CAP 15 -->
+  <section class="page" data-screen-label="19 Cap 15">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 15 · Destituição</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">15</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo quinze</div>
+          <h2 class="section-title">Tentativa de <span class="serif" style="font-style:italic;color:var(--accent);">destituição</span>.</h2>
+          <p class="section-lede">É uma das situações mais delicadas. Mesmo quando não prospera, gera desgaste e divide o condomínio. Pedido de destituição não significa culpa. Significa movimento político. Não entre em pânico. Prepare-se.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Antes da assembleia, verifique</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>A convocação respeita a convenção?</li>
+              <li><span class="box"></span>O quórum está correto?</li>
+              <li><span class="box"></span>A pauta está clara?</li>
+              <li><span class="box"></span>As acusações estão documentadas?</li>
+              <li><span class="box"></span>Há fatos objetivos?</li>
+              <li><span class="box"></span>Há direito de defesa assegurado?</li>
+              <li><span class="box"></span>A administradora está acompanhando?</li>
+              <li><span class="box"></span>O jurídico foi acionado?</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Defesa técnica, não emocional</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Cronologia da gestão</li>
+              <li><span class="box"></span>Prestação de contas</li>
+              <li><span class="box"></span>Obras realizadas</li>
+              <li><span class="box"></span>Contratos revistos e economias geradas</li>
+              <li><span class="box"></span>Pendências herdadas e providências adotadas</li>
+              <li><span class="box"></span>Comunicações enviadas</li>
+              <li><span class="box"></span>Pareceres e apoios técnicos</li>
+            </ul>
+          </div>
+        </div>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          Estou aqui para prestar esclarecimentos, com documentos, respeito aos moradores e compromisso com a verdade dos fatos.
+          <div class="signature">Postura recomendada · fala de abertura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 15 · Tentativa de destituição</div><div class="pg-num">19</div></div>
+  </section>
+
+  <!-- PAGE 20 · CAP 16 -->
+  <section class="page" data-screen-label="20 Cap 16">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 16 · Saúde emocional</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">16</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo dezesseis</div>
+          <h2 class="section-title">A saúde emocional do <span class="serif" style="font-style:italic;color:var(--accent);">síndico</span>.</h2>
+          <p class="section-lede">Síndico sob ataque vive em estado de alerta. Acorda com mensagem, dorme pensando em problema, perde fim de semana, lê acusações injustas, sente que precisa provar o tempo todo. Isso adoece. A sindicatura cobra inteligência emocional porque o conflito não é só administrativo.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Estado de alerta permanente</div>
+            <ul class="bul">
+              <li>Acorda com mensagem.</li>
+              <li>Dorme pensando em problema.</li>
+              <li>Perde fim de semana.</li>
+              <li>Lê acusações injustas.</li>
+              <li>Sente que precisa provar tudo o tempo todo.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Limites a estabelecer</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Horário de atendimento definido</li>
+              <li><span class="box"></span>Uso de canais oficiais</li>
+              <li><span class="box"></span>Não responder provocação de madrugada</li>
+              <li><span class="box"></span>Não absorver todo ataque como verdade</li>
+              <li><span class="box"></span>Não se explicar para quem não quer entender</li>
+              <li><span class="box"></span>Apoio jurídico, administrativo e técnico</li>
+            </ul>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase de sobrevivência</span>
+          <span class="txt">Síndico forte não é o que aguenta tudo calado. É o que cria estrutura para não ser destruído pelo caos.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 16 · A saúde emocional do síndico</div><div class="pg-num">20</div></div>
+  </section>
+
+  <!-- PAGE 21 · CAP 17 -->
+  <section class="page" data-screen-label="21 Cap 17">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 17 · Plano de ação</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">17</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo dezessete</div>
+          <h2 class="section-title">Plano prático em <span class="serif" style="font-style:italic;color:var(--accent);">8 passos</span>.</h2>
+          <p class="section-lede">Quando perceber que há moradores atuando para destruir a credibilidade da gestão, siga a sequência. Diagnóstico antes de reação; documento antes de discurso; canal certo antes de público.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2">
+          <ol class="enum">
+            <li><b>Diagnosticar o tipo de ataque.</b> Reclamação? Disputa política? Boato? Tentativa de destituição?</li>
+            <li><b>Mapear os envolvidos.</b> Quem inicia, quem replica, quem influencia, quem só está confuso.</li>
+            <li><b>Separar fato de opinião.</b> Fato tem documento; opinião tem interpretação.</li>
+            <li><b>Organizar os documentos.</b> Contrato, nota, ata, relatório, comunicado, orçamento e parecer.</li>
+          </ol>
+          <ol class="enum" style="counter-reset:en 4;">
+            <li><b>Escolher o canal correto.</b> WhatsApp orienta, e-mail formaliza, assembleia delibera.</li>
+            <li><b>Comunicar com firmeza.</b> Clara, impessoal, objetiva, sem agressividade nem deboche.</li>
+            <li><b>Envolver conselho e administradora.</b> A crise não pode ser tratada só no campo emocional.</li>
+            <li><b>Encerrar o ciclo.</b> Depois da resposta formal, não entre em debate infinito.</li>
+          </ol>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">Morador destrutivo quer continuidade. A gestão precisa saber encerrar.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 17 · Plano prático em 8 passos</div><div class="pg-num">21</div></div>
+  </section>
+
+  <!-- PAGE 22 · CAP 18 -->
+  <section class="page" data-screen-label="22 Cap 18">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 18 · 10 respostas</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 18</div>
+        <h2>10 modelos de resposta <span class="it">prontos</span>.</h2>
+      </div>
+      <div class="replies" style="flex:1; align-content:start;">
+        <div class="reply-card"><span class="sit">Acusação sem prova</span><p class="it">Solicitamos que qualquer acusação ou apontamento seja formalizado com os documentos correspondentes, para análise responsável, técnica e registrada.</p></div>
+        <div class="reply-card"><span class="sit">Boato no WhatsApp</span><p class="it">As informações que estão circulando não representam, até o momento, os fatos apurados pela gestão. Qualquer atualização oficial será comunicada pelos canais do condomínio.</p></div>
+        <div class="reply-card"><span class="sit">Morador insiste no mesmo tema</span><p class="it">Esse tema já foi esclarecido e permanece disponível para consulta pelos canais oficiais. Havendo nova dúvida objetiva, pedimos que seja formalizada.</p></div>
+        <div class="reply-card"><span class="sit">Ataque pessoal</span><p class="it">Questionamentos sobre a gestão são legítimos quando feitos de forma respeitosa e objetiva. Ataques pessoais não contribuem para a solução dos temas do condomínio.</p></div>
+        <div class="reply-card"><span class="sit">Tentativa de tumulto em assembleia</span><p class="it">Vamos manter a reunião dentro da pauta, respeitando o tempo dos presentes e a ordem dos trabalhos. Todos os questionamentos pertinentes serão registrados.</p></div>
+        <div class="reply-card"><span class="sit">Pressão sobre o conselho</span><p class="it">Para análise responsável, orientamos que qualquer apontamento seja encaminhado formalmente, com os documentos correspondentes, à gestão, conselho e administradora.</p></div>
+        <div class="reply-card"><span class="sit">Exposição de funcionário</span><p class="it">Reclamações sobre colaboradores devem ser encaminhadas pelos canais oficiais. Não serão admitidas exposições ou constrangimentos públicos de funcionários ou prestadores.</p></div>
+        <div class="reply-card"><span class="sit">Distorção de prestação de contas</span><p class="it">As informações financeiras seguem registradas nos balancetes e documentos oficiais. A gestão está à disposição para esclarecimentos pelos canais adequados.</p></div>
+        <div class="reply-card"><span class="sit">Crítica agressiva sobre obra</span><p class="it">A obra mencionada segue critérios técnicos, documentação e acompanhamento. Eventuais dúvidas podem ser encaminhadas formalmente para resposta com base nos documentos.</p></div>
+        <div class="reply-card"><span class="sit">Encerrar discussão no grupo</span><p class="it">O assunto está registrado e será tratado pelo canal adequado. Para preservar a boa convivência, não seguiremos com esse debate no grupo.</p></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 18 · 10 modelos de resposta prontos</div><div class="pg-num">22</div></div>
+  </section>
+
+  <!-- PAGE 23 · CAP 19 -->
+  <section class="page" data-screen-label="23 Cap 19">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 19 · Checklist</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 19</div>
+        <h2>Checklist de proteção da <span class="it">gestão</span>.</h2>
+      </div>
+      <div class="mini-grid">
+        <div class="mini">
+          <div class="h-sub">Comunicação</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Canal oficial de atendimento</li>
+            <li><span class="box"></span>Comunicados claros</li>
+            <li><span class="box"></span>Temas sensíveis explicados antes</li>
+            <li><span class="box"></span>Regra do grupo definida</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">Documentação</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Decisões registradas</li>
+            <li><span class="box"></span>Contratos e orçamentos organizados</li>
+            <li><span class="box"></span>Notas fiscais e atas completas</li>
+            <li><span class="box"></span>Reclamações formais com protocolo</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">Financeiro</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Balancetes claros</li>
+            <li><span class="box"></span>Despesas relevantes justificadas</li>
+            <li><span class="box"></span>Rateios explicados</li>
+            <li><span class="box"></span>Inadimplência acompanhada</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">Conselho</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Recebe informações periódicas</li>
+            <li><span class="box"></span>Reuniões registradas</li>
+            <li><span class="box"></span>Alinhado em temas sensíveis</li>
+            <li><span class="box"></span>Acesso aos documentos</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">Assembleia</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Pauta objetiva</li>
+            <li><span class="box"></span>Documentos preparados</li>
+            <li><span class="box"></span>Condução com regra</li>
+            <li><span class="box"></span>Apoio da administradora e do jurídico</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">Jurídico</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Sabe quando acionar apoio</li>
+            <li><span class="box"></span>Ofensas registradas</li>
+            <li><span class="box"></span>Ameaças documentadas</li>
+            <li><span class="box"></span>Notificações com orientação adequada</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">Saúde emocional</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Horário de atendimento</li>
+            <li><span class="box"></span>Não responde fora de hora</li>
+            <li><span class="box"></span>Tem apoio técnico e rede de suporte</li>
+            <li><span class="box"></span>Sabe encerrar discussões improdutivas</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 19 · Checklist de proteção da gestão</div><div class="pg-num">23</div></div>
+  </section>
+
+  <!-- PAGE 24 · CAP 20 · CONCLUSÃO -->
+  <section class="page" data-screen-label="24 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">Não com medo. Com <span class="serif" style="font-style:italic;color:var(--accent);">método</span>.</h2>
+          <p class="section-lede">Moradores difíceis sempre existirão. Críticos também. Isso faz parte da vida em condomínio. Mas quem atua para destruir uma gestão precisa ser tratado com seriedade: não com medo, não com vingança, não com grito, não com desespero.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2">
+          <ul class="bul">
+            <li>Não controla todos os boatos. <b>Mas organiza os fatos.</b></li>
+            <li>Não agrada todos os moradores. <b>Mas age com coerência.</b></li>
+            <li>Não evita todos os conflitos. <b>Mas escolhe como responder.</b></li>
+          </ul>
+          <ul class="bul">
+            <li>O síndico não impede que falem mal. <b>Mas impede que o caos conduza a gestão.</b></li>
+            <li>Não precisa vencer todas as discussões. <b>Precisa conduzir o condomínio.</b></li>
+          </ul>
+        </div>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          Uma gestão forte não é a que nunca é atacada. É a que, mesmo atacada, permanece técnica, documentada, firme e comprometida com o coletivo. O condomínio não precisa de um síndico que grite mais alto. Precisa de um síndico que sustente a ordem quando todos querem puxar para o barulho.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · Não com medo. Com método.</div><div class="pg-num">24</div></div>
+  </section>
+
+  <!-- PAGE 25 · CAPTAÇÃO -->
+  <section class="page capture" data-screen-label="25 Captação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>A mentoria</div></div>
+    <div class="pg-body">
+      <div class="cover-eyebrow" style="margin-bottom:5mm;">O mercado ensina teoria. A vida real ensina sobrevivência.</div>
+      <h2 class="opener-title" style="font-size:38pt;">Sua gestão não pode ser destruída por quem confunde fiscalização com <span class="it">perseguição</span>.</h2>
+      <div class="opener-grid" style="margin-top:6mm;">
+        <div>
+          <p style="font-size:10.5pt;line-height:1.55;color:var(--ink-2);margin:0 0 3mm;">Ser síndico exige muito mais do que resolver manutenção, aprovar contas e conduzir assembleias. Exige inteligência emocional, comunicação estratégica e capacidade de liderar em meio ao conflito.</p>
+          <p style="font-size:10.5pt;line-height:1.55;color:var(--ink-2);margin:0;">A série <b>Bastidores da Sindicatura</b> existe para mostrar o que ninguém ensina sobre a vida real de quem administra condomínios.</p>
+        </div>
+        <div>
+          <p style="font-size:10.5pt;line-height:1.55;color:var(--ink-2);margin:0 0 3mm;">A mentoria foi criada para síndicos, gestores condominiais e profissionais da área que querem atuar com mais segurança, estratégia e posicionamento.</p>
+          <p style="font-size:10.5pt;line-height:1.55;color:var(--ink-2);margin:0;">Gestão condominial não é sobre agradar todo mundo. É sobre proteger o coletivo, decidir com responsabilidade e continuar firme mesmo quando tentam derrubar sua autoridade.</p>
+        </div>
+      </div>
+      <div class="cta-band" style="margin-top:auto;">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Atue no mercado condominial com <span class="it">segurança e estratégia</span>.</div>
+        <p style="margin:1mm 0 0;font-size:9.5pt;line-height:1.5;color:rgba(244,238,223,.82);">Segue o site com mais informações sobre a mentoria, conteúdos e como participar:</p>
+        <div class="u">→ <span>www.bastidoresdasindicatura.com.br</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>A mentoria · Bastidores da Sindicatura</div><div class="pg-num">25</div></div>
+  </section>
+
+  <!-- PAGE 26 · MANIFESTO / CLOSE -->
+  <section class="page manifesto" data-screen-label="26 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top:30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:12mm;">
+        <div class="cover-eyebrow" style="margin:0;">Gestão sob ataque · Vol. 07</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:165mm;">
+          O síndico não precisa <em style="font-style:italic;color:var(--accent);">vencer</em><br/>
+          todas as discussões.<br/>
+          Precisa <em style="font-style:italic;color:var(--accent);">conduzir o condomínio.</em>
+        </h2>
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          Uma gestão forte não é a que nunca é atacada. É a que, mesmo atacada, permanece técnica, documentada, firme e comprometida com o coletivo.
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 07 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<!-- Floating Save-as-PDF button -->
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite"><b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab=document.getElementById('pdfFab'); var hint=document.getElementById('pdfHint');
+    if(!fab) return; var t;
+    fab.addEventListener('mouseenter',function(){ clearTimeout(t); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave',function(){ t=setTimeout(function(){ hint.classList.remove('show'); },250); });
+    fab.addEventListener('click',function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); },120); setTimeout(function(){ hint.classList.remove('show'); },4000); });
+  })();
+</script>
+</body>
+</html>
