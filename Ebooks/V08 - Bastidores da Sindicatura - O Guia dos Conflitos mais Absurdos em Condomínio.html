@@ -1,0 +1,801 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>O Guia dos Conflitos mais Absurdos em Condomínio · Bastidores da Sindicatura · Vol. 08</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <circle r="120" fill="none" stroke="#B8543B" stroke-width="6"/>
+      <path d="M-46 -8 a46 40 0 1 0 18 -34 L-46 -54 Z" fill="none" stroke="#B8543B" stroke-width="12" stroke-linejoin="round"/>
+      <text y="180" font-family="serif" font-style="italic" font-size="64" fill="#0E1A2B">Bastidores</text>
+      <text y="240" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  /* ============================================================
+     BASTIDORES DA SINDICATURA · Conflitos absurdos (A4) · Vol. 08
+     ============================================================ */
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A; --rule:1px solid var(--line);
+  }
+  @page { size: 210mm 297mm; margin: 0; }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; width:210mm; background:#2A2522; font-family:"Manrope", system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; color:var(--ink); page-break-after:always; break-after:page; margin:0 auto; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen { html, body{ width:auto; } body{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 0 60px; } .page{ box-shadow:0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); } }
+  @media print{ html, body{ background:#fff; width:210mm; margin:0; padding:0; display:block; } .page{ box-shadow:none; margin:0; display:block; } }
+  html.show-overflow .pg-body{ outline:1px dashed rgba(184,84,59,.4); }
+  html.show-overflow .page{ outline:1px dashed rgba(14,26,43,.25); }
+
+  .frame{ position:absolute; inset:14mm 16mm; }
+  .pg-head{ position:absolute; top:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); padding-bottom:4mm; border-bottom:var(--rule); }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{ width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  .pg-foot{ position:absolute; bottom:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:8.5pt; color:var(--muted); padding-top:4mm; border-top:var(--rule); }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .pg-body{ position:absolute; top:22mm; bottom:18mm; left:16mm; right:16mm; display:flex; flex-direction:column; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif","Times New Roman",serif; font-weight:400; }
+  .section-num{ font-family:"Instrument Serif"; font-style:italic; font-size:64pt; line-height:1; color:var(--accent); letter-spacing:-.02em; }
+  .section-kicker{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-title{ font-family:"Instrument Serif"; font-weight:400; font-size:32pt; line-height:1.04; letter-spacing:-.01em; color:var(--ink); margin-top:2mm; }
+  .section-lede{ font-size:10.5pt; line-height:1.55; color:var(--ink-2); max-width:135mm; margin-top:5mm; }
+  .h-sub{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:4mm; }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10.5pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.4mm; }
+  ul.checks li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.42; color:var(--ink-2); padding:1.2mm 0; border-bottom:1px dotted var(--line); }
+  ul.checks li:last-child{ border-bottom:none; }
+  ul.checks li .box{ flex:0 0 auto; width:4.4mm; height:4.4mm; border:1.2px solid var(--ink); border-radius:1.2px; background:var(--cream); margin-top:1.2mm; }
+  .stack-tight ul.checks li{ font-size:9.5pt; padding:.7mm 0; }
+  .stack-tight ul.checks li .box{ width:4mm; height:4mm; }
+  ul.bul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.2mm; }
+  ul.bul li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.45; color:var(--ink-2); padding:1mm 0; border-bottom:1px dotted var(--line); }
+  ul.bul li:last-child{ border-bottom:none; }
+  ul.bul li::before{ content:""; flex:0 0 auto; width:5px; height:5px; margin-top:2.4mm; background:var(--accent); border-radius:50%; }
+
+  .cols-2{ display:grid; grid-template-columns:1fr 1fr; column-gap:12mm; align-items:start; }
+  ol.enum{ list-style:none; padding:0; margin:0; counter-reset:en; display:flex; flex-direction:column; gap:2mm; }
+  ol.enum li{ counter-increment:en; display:flex; gap:10px; align-items:baseline; font-size:9.5pt; line-height:1.4; color:var(--ink-2); padding:1.4mm 0; border-bottom:1px dotted var(--line); }
+  ol.enum li::before{ content:counter(en, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--accent); flex:0 0 9mm; }
+  ol.enum li b{ color:var(--ink); }
+
+  .callout{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 6mm; font-size:9.5pt; line-height:1.5; color:var(--ink-2); margin-top:4mm; }
+  .callout b{ color:var(--ink); }
+  .quote-block{ background:var(--cream); border:1px solid var(--line); padding:7mm 8mm; font-family:"Instrument Serif"; font-style:italic; font-size:13pt; line-height:1.45; color:var(--ink); }
+  .quote-block .signature{ margin-top:4mm; font-family:"Manrope"; font-style:normal; font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .survival{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 7mm; display:flex; flex-direction:column; gap:2mm; }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; line-height:1.3; color:var(--ink); }
+
+  /* story block – the "absurd anecdote" highlighted */
+  .story{
+    background: var(--cream); border:1px solid var(--line);
+    border-left: 4px solid var(--accent);
+    padding: 7mm 8mm; position:relative;
+  }
+  .story::before{
+    content:"HISTÓRIA REAL"; position:absolute; top:-3mm; left:8mm;
+    background:var(--paper); padding:0 3mm;
+    font-family:"Manrope"; font-size:8pt; letter-spacing:.24em; color:var(--accent); font-weight:700;
+  }
+  .story p{ margin:0 0 3mm; font-family:"Instrument Serif"; font-size:12pt; line-height:1.45; color:var(--ink); }
+  .story p:last-child{ margin:0; }
+  .story p.it{ font-style:italic; }
+  .story p.punch{ font-style:italic; color:var(--accent); font-size:14pt; }
+
+  .tag{ display:inline-flex; align-items:center; gap:6px; font-size:8pt; letter-spacing:.18em; text-transform:uppercase; color:var(--ink); background:var(--cream); padding:2.2mm 3.6mm; border-radius:100px; border:1px solid var(--line); font-weight:600; }
+  .hr-orn{ display:flex; align-items:center; gap:10px; color:var(--accent); margin:4mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent);}
+
+  /* COVER */
+  .cover{ background: radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.12), transparent 55%), radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%), var(--paper); }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:var(--rule); padding-bottom:6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap:10px; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); }
+  .cover-brand .logo .mark{ width:30px; height:30px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border:2px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .cover-brand .sub{ font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--accent); }
+  .cover-meta .label{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:12mm 0 8mm; }
+  .cover-eyebrow{ font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:8mm; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size:58pt; line-height:1.0; letter-spacing:-.022em; color:var(--ink); margin:0 0 6mm; }
+  .cover-title .it{ font-style:italic; color:var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size:12.5pt; line-height:1.5; color:var(--ink-2); max-width:158mm; }
+  .cover-bottom{ border-top:var(--rule); padding-top:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap:13mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size:36pt; line-height:1; color:var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color:var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:2mm; }
+
+  /* OPENER */
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size:46pt; line-height:1.02; color:var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style:italic; color:var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:7mm; }
+  .opener-grid p{ font-size:10.5pt; line-height:1.55; color:var(--ink-2); margin:0 0 4mm; }
+
+  /* TOC */
+  .toc-list{ display:grid; grid-template-columns:1fr; margin-top:4mm; }
+  .toc-item{ display:flex; align-items:baseline; gap:8px; padding:2.6mm 0; border-bottom:1px dotted var(--line); font-size:10pt; color:var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent); flex:0 0 12mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--muted); }
+
+  /* SECTION HEAD */
+  .section-head{ display:flex; gap:10mm; align-items:flex-start; padding-bottom:6mm; border-bottom:var(--rule); margin-bottom:6mm; }
+  .section-head .big{ flex:0 0 auto; }
+  .section-head .meta{ flex:1; padding-top:4mm;}
+  .section-body{ display:flex; flex-direction:column; gap:5mm; flex:1;}
+  .block-card{ background:var(--cream); border:1px solid var(--line); padding:6mm 7mm; }
+  .twoframe{ display:grid; grid-template-columns:1fr 1fr; gap:8mm; }
+
+  /* capture */
+  .capture{ background: radial-gradient(120% 80% at 0% 0%, rgba(140,106,42,.12), transparent 55%), radial-gradient(90% 70% at 100% 100%, rgba(184,84,59,.12), transparent 55%), var(--paper); }
+  .cta-band{ background:var(--ink); color:var(--paper); padding:8mm 9mm; display:flex; flex-direction:column; gap:3mm; margin-top:2mm; }
+  .cta-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .cta-band .t{ font-family:"Instrument Serif"; font-size:26pt; line-height:1.05; color:var(--paper); }
+  .cta-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .cta-band .u{ font-family:"Manrope"; font-weight:700; font-size:11pt; letter-spacing:.04em; color:var(--paper); margin-top:1mm; }
+  .cta-band .u span{ color:var(--accent-2); }
+  /* author bio */
+  .bio{ display:flex; gap:8mm; align-items:flex-start; }
+  .bio .name{ font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); line-height:1.1; margin:0; }
+  .bio ul{ list-style:none; padding:0; margin:2mm 0 0; display:flex; flex-direction:column; gap:1.5mm; }
+  .bio ul li{ font-family:"Manrope"; font-size:9.5pt; line-height:1.4; color:var(--ink-2); padding-left:10px; position:relative; }
+  .bio ul li::before{ content:""; position:absolute; left:0; top:7px; width:5px; height:1.5px; background:var(--accent); }
+
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  /* Save-as-PDF FAB */
+  .pdf-fab{ position:fixed; right:22px; bottom:22px; z-index:9999; display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:#0E1A2B; color:#F4EEDF; border:none; border-radius:999px; font-family:"Manrope", system-ui, sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; box-shadow:0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30), inset 0 0 0 1px rgba(255,255,255,.06); transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .pdf-fab:hover{ transform:translateY(-2px); background:#B8543B; box-shadow:0 18px 42px rgba(184,84,59,.45), 0 4px 12px rgba(184,84,59,.30); }
+  .pdf-fab svg{ width:16px; height:16px; flex:0 0 auto; }
+  .pdf-fab .dot-accent{ width:6px; height:6px; border-radius:50%; background:#B8543B; box-shadow:0 0 0 3px rgba(184,84,59,.22); }
+  .pdf-fab:hover .dot-accent{ background:#F4EEDF; box-shadow:0 0 0 3px rgba(244,238,223,.22); }
+  .pdf-hint{ position:fixed; right:22px; bottom:74px; z-index:9998; max-width:280px; padding:12px 14px; background:#FBF7EC; border:1px solid #D9D2C2; border-radius:10px; font-family:"Manrope", system-ui, sans-serif; font-size:11.5px; line-height:1.5; color:#1F2C3F; box-shadow:0 10px 30px rgba(0,0,0,.18); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .pdf-hint.show{ opacity:1; transform:translateY(0); }
+  .pdf-hint b{ color:#B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display:none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 08</div>
+          <div class="label">Histórias reais, lições inesquecíveis</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">10 conflitos clássicos e o que eles ensinam</div>
+        <h1 class="cover-title">O guia dos conflitos mais <span class="it">absurdos</span> em condomínio.</h1>
+        <p class="cover-deck">Histórias reais, situações inacreditáveis e as lições que todo síndico precisa aprender. Porque, no fim, o conflito quase nunca é sobre o motivo aparente.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">10</span></div><div class="l">Histórias reais</div></div>
+          <div class="s"><div class="n">14</div><div class="l">Itens no checklist</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · OPENER -->
+  <section class="page opener" data-screen-label="02 Posicionamento">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Introdução</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:8mm;">Antes de começar</div>
+        <h2 class="opener-title">Condomínio não é sobre <span class="it">prédio.</span> É sobre <span class="it">pessoas.</span></h2>
+        <div class="opener-grid">
+          <div>
+            <p>Quando centenas de pessoas com histórias, hábitos, valores e níveis de tolerância completamente distintos passam a dividir os mesmos espaços, o conflito se torna inevitável. Alguns são previsíveis. Outros, tão absurdos que parecem roteiro de comédia.</p>
+            <p>Mas por trás das histórias engraçadas existe um aprendizado valioso para síndicos, gestores, administradoras e conselheiros.</p>
+          </div>
+          <div>
+            <p>Em décadas no mercado condominial, acompanhei brigas que começaram por uma vaga e terminaram em processo. Vi assembleias interrompidas por discussões sem qualquer relação com a pauta. Vi vizinhos passarem anos sem se falar por motivos que ninguém mais lembrava.</p>
+            <p>Este e-book reúne os conflitos mais absurdos, mais frequentes e mais emblemáticos da vida condominial. Prepare-se para rir, refletir e <b>aprender</b>.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">Para quem é</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Síndicos, conselheiros, administradoras e gestores condominiais que querem reconhecer padrões, antecipar crises e tratar conflitos com método em vez de improviso.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">A promessa</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Dez histórias reais, dez lições aplicáveis e um checklist prático para reduzir conflitos no dia a dia da gestão.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 08</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · TOC -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:4mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">01</span><span class="ttl">A guerra dos cinco centímetros · garagem</span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">02</span><span class="ttl">O latido que quase virou processo · pets</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">03</span><span class="ttl">A guerra do salto alto · barulho</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">04</span><span class="ttl">A churrasqueira que dividiu o condomínio</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">05</span><span class="ttl">O elevador como palco de conflitos</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">06</span><span class="ttl">O morador detetive</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">07</span><span class="ttl">A assembleia que virou espetáculo</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">08</span><span class="ttl">O grupo de WhatsApp que entrou em colapso</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">09</span><span class="ttl">O conflito que não era sobre o conflito</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">10</span><span class="ttl">O que todo síndico precisa aprender</span><span class="pg">13</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Checklist · como reduzir conflitos</span><span class="pg">14</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Conclusão · convivência, não concreto</span><span class="pg">15</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">A mentoria Bastidores da Sindicatura</span><span class="pg">16</span></div>
+      </div>
+      <div style="margin-top:auto;padding-top:6mm;">
+        <div class="callout"><b>Dica de leitura:</b> cada capítulo segue o mesmo ritmo — o cenário, a história real e a lição que fica. Você pode ler em ordem ou pular para o conflito que mais aparece no seu condomínio.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · CAP 01 · GARAGEM -->
+  <section class="page" data-screen-label="04 Cap 01">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 01 · Garagem</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">01</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo um</div>
+          <h2 class="section-title">A guerra dos cinco <span class="serif" style="font-style:italic;color:var(--accent);">centímetros</span>.</h2>
+          <p class="section-lede">Se existe um lugar onde espaços pequenos geram brigas grandes, é a garagem. Muito síndico acredita que o problema da vaga é falta de espaço. Quase nunca é. O que está em jogo é a <b>percepção de invasão</b>.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p class="body">Quando o morador sente que o outro ultrapassou um limite, ainda que mínimo, o conflito começa. Não é o veículo. É o sinal de desrespeito.</p>
+        <div class="story">
+          <p>Em um condomínio que acompanhei, dois moradores discutiram por meses porque um veículo estacionava poucos centímetros fora do alinhamento.</p>
+          <p>O assunto subiu para o conselho. Depois para a administradora. Depois virou ponto de pauta de assembleia.</p>
+          <p class="punch">No fim, o condomínio gastou mais tempo discutindo o caso do que levaria para repintar toda a garagem.</p>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">O que isso ensina</span>
+          <span class="txt">Nem sempre o conflito é sobre a vaga. Muitas vezes é sobre respeito. E respeito não cabe em cinco centímetros.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 01 · A guerra dos cinco centímetros</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · CAP 02 · PETS -->
+  <section class="page" data-screen-label="05 Cap 02">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 02 · Pets</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">02</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo dois</div>
+          <h2 class="section-title">O latido que quase virou <span class="serif" style="font-style:italic;color:var(--accent);">processo</span>.</h2>
+          <p class="section-lede">Os pets ocupam hoje um lugar importante na família. Por isso, qualquer discussão envolvendo animais desperta emoções intensas. O problema surge quando o amor pelo bicho encontra a falta de responsabilidade do tutor.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Reclamações mais comuns</div>
+            <ul class="bul">
+              <li>Latidos constantes</li>
+              <li>Fezes em áreas comuns</li>
+              <li>Uso inadequado do elevador</li>
+              <li>Animais sem guia</li>
+              <li>Maus odores</li>
+              <li>Comportamento agressivo</li>
+            </ul>
+          </div>
+          <div>
+            <div class="story">
+              <p>Em um condomínio, um morador formalizou uma reclamação porque afirmava sentir-se intimidado pelo <i>olhar</i> de um cachorro.</p>
+              <p>Segundo ele, o animal o encarava de forma ameaçadora.</p>
+              <p class="punch">Sim. A reclamação era sobre um olhar.</p>
+            </div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">O que isso ensina</span>
+          <span class="txt">Nem todo incômodo é uma infração. E nem toda reclamação exige uma punição. Cabe à gestão saber separar uma coisa da outra.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 02 · O latido que quase virou processo</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · CAP 03 · BARULHO -->
+  <section class="page" data-screen-label="06 Cap 03">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 03 · Barulho</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">03</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo três</div>
+          <h2 class="section-title">A guerra do <span class="serif" style="font-style:italic;color:var(--accent);">salto alto</span>.</h2>
+          <p class="section-lede">Barulho continua sendo o campeão absoluto das reclamações condominiais. E, curiosamente, muitas vezes o problema não é a intensidade do som. É a percepção dele.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Já chegaram à gestão</div>
+            <ul class="bul">
+              <li>Salto alto no piso de cima</li>
+              <li>Crianças brincando</li>
+              <li>Móveis arrastando</li>
+              <li>Choro de bebê</li>
+              <li>Máquina de lavar</li>
+              <li>Cachorro andando no apartamento</li>
+              <li>Descarga sanitária</li>
+            </ul>
+          </div>
+          <div>
+            <div class="story">
+              <p>Uma moradora afirmava que conseguia identificar exatamente em qual cômodo a vizinha estava caminhando, apenas pelo som dos passos no andar de cima.</p>
+              <p class="punch">Queria que o condomínio obrigasse a instalação de tapetes em todo o apartamento da vizinha.</p>
+            </div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">O que isso ensina</span>
+          <span class="txt">Conforto acústico e convivência nem sempre caminham juntos. E nem todo barulho pede norma. Alguns pedem só conversa.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 03 · A guerra do salto alto</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · CAP 04 · CHURRASQUEIRA -->
+  <section class="page" data-screen-label="07 Cap 04">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 04 · Churrasqueira</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">04</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo quatro</div>
+          <h2 class="section-title">A churrasqueira que <span class="serif" style="font-style:italic;color:var(--accent);">dividiu</span> o condomínio.</h2>
+          <p class="section-lede">Poucos espaços concentram tantas emoções quanto a churrasqueira. Aniversários, confraternizações, encontros familiares. E, claro, conflitos.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="story">
+          <p>Em um caso emblemático, duas famílias chegaram no mesmo dia, no mesmo horário, com a mesma reserva.</p>
+          <p>Ambas afirmavam ter a autorização. Nenhuma aceitou mudar a data. E ninguém quis ceder.</p>
+          <p>O resultado: duas festas tentando ocupar simultaneamente o mesmo espaço.</p>
+          <p class="punch">O churrasco virou assembleia. A assembleia virou discussão. E a discussão virou um dos assuntos mais comentados do condomínio por meses.</p>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Onde a gestão poderia ter atuado antes</div>
+          <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Sistema único de reserva com confirmação por escrito. Comprovante emitido para o morador. Bloqueio automático de data já ocupada. Regra clara sobre prioridade em caso de conflito de reserva.</p>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">O que isso ensina</span>
+          <span class="txt">A ausência de processos claros gera conflitos previsíveis. Quase toda “briga absurda” começa onde a regra é vaga.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 04 · A churrasqueira que dividiu o condomínio</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · CAP 05 · ELEVADOR -->
+  <section class="page" data-screen-label="08 Cap 05">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 05 · Elevador</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">05</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo cinco</div>
+          <h2 class="section-title">O elevador como palco de <span class="serif" style="font-style:italic;color:var(--accent);">conflitos</span>.</h2>
+          <p class="section-lede">O elevador é uma espécie de laboratório social. Ali convivem pessoas que talvez jamais conversassem fora daquele ambiente. E isso gera situações curiosas.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Já viraram reclamação</div>
+            <ul class="bul">
+              <li>Perfume forte</li>
+              <li>Conversa no celular</li>
+              <li>Transporte de bicicleta</li>
+              <li>Uso do social por prestadores</li>
+              <li>Animais sem guia</li>
+              <li>Mudanças sem aviso</li>
+              <li>Tempo excessivo segurando a porta</li>
+            </ul>
+          </div>
+          <div>
+            <div class="story">
+              <p>Uma moradora exigiu, formalmente, que o vizinho deixasse de usar determinado perfume porque considerava a fragrância desagradável dentro do elevador.</p>
+              <p class="punch">Queria que a gestão emitisse um comunicado oficial proibindo o perfume.</p>
+            </div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">O que isso ensina</span>
+          <span class="txt">Nem todo desconforto pode ser resolvido por uma norma. Algumas coisas só se resolvem com tolerância e bom senso.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 05 · O elevador como palco de conflitos</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · CAP 06 · DETETIVE -->
+  <section class="page" data-screen-label="09 Cap 06">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 06 · O detetive</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">06</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo seis</div>
+          <h2 class="section-title">O morador <span class="serif" style="font-style:italic;color:var(--accent);">detetive</span>.</h2>
+          <p class="section-lede">Todo condomínio tem pelo menos um. É aquele morador que sabe tudo, vê tudo, fotografa tudo, fiscaliza tudo. Quando ele traz fato objetivo, ajuda a gestão. Quando vira perseguição, paralisa.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">O que ele acompanha</div>
+            <ul class="bul">
+              <li>Entrada dos prestadores</li>
+              <li>Trabalho dos funcionários</li>
+              <li>Cada fornecedor que entra no prédio</li>
+              <li>Cada contrato e cada orçamento</li>
+              <li>Cada ocorrência da portaria</li>
+              <li>Cada aviso enviado pela gestão</li>
+            </ul>
+          </div>
+          <div>
+            <div class="story">
+              <p>Em um condomínio, um único morador enviou <i>mais de cem mensagens</i> em um único dia apontando supostas irregularidades.</p>
+              <p class="punch">Nenhuma delas era, de fato, irregularidade.</p>
+            </div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">O que isso ensina</span>
+          <span class="txt">Fiscalização é saudável. Perseguição não. A gestão precisa abrir canal formal para receber apontamentos e fechar a porta para o assédio.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 06 · O morador detetive</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · CAP 07 · ASSEMBLEIA -->
+  <section class="page" data-screen-label="10 Cap 07">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 07 · Assembleia</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">07</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo sete</div>
+          <h2 class="section-title">A assembleia que virou <span class="serif" style="font-style:italic;color:var(--accent);">espetáculo</span>.</h2>
+          <p class="section-lede">Quem nunca participou de uma assembleia conflituosa costuma imaginar um ambiente organizado e racional. Quem já participou sabe que nem sempre é assim.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Cenas vistas em campo</div>
+            <ul class="bul">
+              <li>Interrupções constantes</li>
+              <li>Discussões paralelas</li>
+              <li>Acusações e ofensas</li>
+              <li>Teorias conspiratórias</li>
+              <li>Ataques pessoais</li>
+              <li>Disputas que nada têm com a pauta</li>
+            </ul>
+          </div>
+          <div>
+            <div class="story">
+              <p>Em uma assembleia, um morador levou uma <i>caixa de som portátil</i> para aumentar o volume da própria voz durante a reunião.</p>
+              <p class="punch">Plugou, ligou, falou. Como se a assembleia fosse palco.</p>
+            </div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">O que isso ensina</span>
+          <span class="txt">Uma assembleia mal conduzida transforma divergência normal em crise. Pauta clara, documento à mão e tempo de fala definido valem mais que qualquer microfone.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 07 · A assembleia que virou espetáculo</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · CAP 08 · WHATSAPP -->
+  <section class="page" data-screen-label="11 Cap 08">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 08 · WhatsApp</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">08</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo oito</div>
+          <h2 class="section-title">O grupo de WhatsApp que entrou em <span class="serif" style="font-style:italic;color:var(--accent);">colapso</span>.</h2>
+          <p class="section-lede">A ideia original era simples: facilitar a comunicação. Mas, muitas vezes, acontece o oposto.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">O grupo vira o quê</div>
+            <ul class="bul">
+              <li>Espaço para reclamação pública</li>
+              <li>Palco para ataque pessoal</li>
+              <li>Debate infinito sobre assunto pequeno</li>
+              <li>Canal para informação falsa</li>
+              <li>Julgamento precipitado</li>
+              <li>Fiscalização coletiva</li>
+            </ul>
+          </div>
+          <div>
+            <div class="story">
+              <p>Em um condomínio, uma simples lâmpada queimada no hall gerou centenas de mensagens em poucas horas.</p>
+              <p class="punch">No fim do dia, ninguém mais lembrava qual era a lâmpada.</p>
+            </div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">O que isso ensina</span>
+          <span class="txt">Nem toda comunicação melhora a convivência. Grupo sem regra vira ruído. Grupo com regra vira ferramenta de gestão.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 08 · O grupo de WhatsApp que entrou em colapso</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · CAP 09 · O CONFLITO POR TRÁS DO CONFLITO -->
+  <section class="page" data-screen-label="12 Cap 09">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 09 · O conflito por trás</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">09</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo nove</div>
+          <h2 class="section-title">O conflito que não era sobre o <span class="serif" style="font-style:italic;color:var(--accent);">conflito</span>.</h2>
+          <p class="section-lede">Uma das maiores lições da vida condominial é entender que os conflitos raramente acontecem pelo motivo aparente.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2">
+          <ul class="bul">
+            <li>A vaga não é sobre a vaga.</li>
+            <li>O cachorro não é sobre o cachorro.</li>
+            <li>O barulho não é só sobre o barulho.</li>
+          </ul>
+          <ul class="bul">
+            <li>Há ressentimentos antigos.</li>
+            <li>Há problemas pessoais.</li>
+            <li>Há disputa de poder.</li>
+            <li>Há conflitos mal resolvidos.</li>
+          </ul>
+        </div>
+        <div class="quote-block">
+          O síndico que entende essa camada por baixo do conflito conduz melhor. Porque deixa de discutir o pretexto e passa a tratar o que realmente está em jogo.
+          <div class="signature">Bastidores da Sindicatura</div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">O que isso ensina</span>
+          <span class="txt">Tudo aquilo que reaparece com frequência por motivos diferentes não é sobre o motivo. É sobre uma ferida que ninguém cuidou.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 09 · O conflito que não era sobre o conflito</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · CAP 10 · 10 PRINCÍPIOS -->
+  <section class="page" data-screen-label="13 Cap 10">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 10 · 10 princípios</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">10</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo dez</div>
+          <h2 class="section-title">O que todo síndico precisa <span class="serif" style="font-style:italic;color:var(--accent);">aprender</span>.</h2>
+          <p class="section-lede">O objetivo não é eliminar o conflito. Isso seria impossível. O papel real da gestão é impedir que o conflito normal vire crise. Para isso, dez princípios sustentam quase tudo.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2">
+          <ol class="enum">
+            <li>Nunca responder no calor da emoção.</li>
+            <li>Registrar tudo formalmente.</li>
+            <li>Aplicar regras de forma igualitária.</li>
+            <li>Não tomar partido.</li>
+            <li>Utilizar canais oficiais.</li>
+          </ol>
+          <ol class="enum" style="counter-reset:en 5;">
+            <li>Buscar mediação sempre que possível.</li>
+            <li>Priorizar solução em vez de culpado.</li>
+            <li>Manter a comunicação clara.</li>
+            <li>Evitar promessas que não pode cumprir.</li>
+            <li>Agir com transparência.</li>
+          </ol>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">Liderar não significa agradar a todos. Significa decidir com equilíbrio, aplicar regra com justiça e manter o condomínio funcionando mesmo no calor das emoções.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 10 · O que todo síndico precisa aprender</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · CHECKLIST -->
+  <section class="page" data-screen-label="14 Checklist">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Checklist prático</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Checklist prático</div>
+      <h2 class="section-title" style="margin-bottom:6mm;">Como reduzir conflitos no <span class="serif" style="font-style:italic;color:var(--accent);">condomínio</span>.</h2>
+      <div class="twoframe" style="flex:1; align-content:start;">
+        <div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Atualizar regulamento interno</li>
+            <li><span class="box"></span>Formalizar procedimentos</li>
+            <li><span class="box"></span>Criar canais oficiais de comunicação</li>
+            <li><span class="box"></span>Registrar ocorrências adequadamente</li>
+            <li><span class="box"></span>Capacitar funcionários</li>
+            <li><span class="box"></span>Promover campanhas de convivência</li>
+            <li><span class="box"></span>Melhorar a comunicação com moradores</span></li>
+          </ul>
+        </div>
+        <div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Documentar decisões importantes</li>
+            <li><span class="box"></span>Aplicar regras de forma consistente</li>
+            <li><span class="box"></span>Estimular a mediação de conflitos</li>
+            <li><span class="box"></span>Evitar discussões em grupos informais</li>
+            <li><span class="box"></span>Atuar preventivamente</li>
+            <li><span class="box"></span>Tratar todos os moradores com isonomia</li>
+            <li><span class="box"></span>Focar na solução, não na discussão</li>
+          </ul>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:5mm;">
+        <span class="lbl">Para guardar</span>
+        <span class="txt">Conflito ignorado vira crise. Conflito tratado com método vira aprendizado coletivo.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Checklist · Como reduzir conflitos no condomínio</div><div class="pg-num">14</div></div>
+  </section>
+
+  <!-- PAGE 15 · CONCLUSÃO -->
+  <section class="page" data-screen-label="15 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">Convivência, não <span class="serif" style="font-style:italic;color:var(--accent);">concreto</span>.</h2>
+          <p class="section-lede">Depois de anos vivendo os bastidores da sindicatura, posso afirmar uma coisa com certeza: os conflitos vão continuar existindo. Sempre haverá alguém reclamando do barulho, da vaga, da decisão, do grupo. Faz parte da vida em comunidade.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p class="body">O que diferencia um condomínio saudável de um condomínio em crise não é a ausência de conflitos. É a forma como eles são administrados. Síndicos experientes entendem que liderar não é agradar a todos. É decidir com equilíbrio, aplicar regra com justiça e manter o prédio funcionando mesmo quando as emoções estão à flor da pele.</p>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          No final das contas, condomínio nunca foi sobre concreto. Sempre foi sobre convivência.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · Convivência, não concreto</div><div class="pg-num">15</div></div>
+  </section>
+
+  <!-- PAGE 16 · CAPTAÇÃO + BIO -->
+  <section class="page capture" data-screen-label="16 Captação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>A mentoria</div></div>
+    <div class="pg-body">
+      <div class="cover-eyebrow" style="margin-bottom:5mm;">E agora, o que fazer com tudo isso?</div>
+      <h2 class="opener-title" style="font-size:36pt;">A sindicatura vai muito além de atas, boletos e <span class="it">assembleias</span>.</h2>
+      <div class="opener-grid" style="margin-top:6mm;">
+        <div>
+          <p style="font-size:10.5pt;line-height:1.55;color:var(--ink-2);margin:0 0 3mm;">A realidade da profissão envolve conflitos, pressão, tomada de decisão difícil, relacionamento com moradores, gestão de crise, negociação, liderança e muitas situações que ninguém ensina nos cursos tradicionais.</p>
+          <p style="font-size:10.5pt;line-height:1.55;color:var(--ink-2);margin:0;">Foi vivendo esses desafios por anos que criei a mentoria <b>Bastidores da Sindicatura</b>: um programa para quem quer conhecer a profissão sem filtros, aprender com casos reais e evitar erros que custam tempo, dinheiro e reputação.</p>
+        </div>
+        <div>
+          <div class="bio">
+            <div>
+              <h3 class="name">Juliana Moreira</h3>
+              <ul>
+                <li>Fundadora da Sindicompany</li>
+                <li>Professora do MBA de Gestão Condominial do IBMEC</li>
+                <li>Referência nacional em sindicatura profissional</li>
+              </ul>
+            </div>
+          </div>
+          <div class="callout" style="margin-top:5mm;">O que transforma um síndico comum em síndico extraordinário não é o que acontece na assembleia. É o que ele aprende nos <b>bastidores</b>.</div>
+        </div>
+      </div>
+      <div class="cta-band" style="margin-top:auto;">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Atue no mercado condominial com <span class="it">método, segurança e estratégia</span>.</div>
+        <p style="margin:1mm 0 0;font-size:9.5pt;line-height:1.5;color:rgba(244,238,223,.82);">Segue o site com mais informações sobre a mentoria, conteúdos e como participar:</p>
+        <div class="u">→ <span>www.bastidoresdasindicatura.com.br</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>A mentoria · Bastidores da Sindicatura</div><div class="pg-num">16</div></div>
+  </section>
+
+  <!-- PAGE 17 · MANIFESTO / CLOSE -->
+  <section class="page manifesto" data-screen-label="17 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top:30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:12mm;">
+        <div class="cover-eyebrow" style="margin:0;">Conflitos absurdos · Vol. 08</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:165mm;">
+          Condomínio nunca foi sobre <em style="font-style:italic;color:var(--accent);">concreto.</em><br/>
+          Sempre foi sobre <em style="font-style:italic;color:var(--accent);">convivência.</em>
+        </h2>
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          O que diferencia um condomínio saudável de um condomínio em crise não é a ausência de conflito. É a forma como ele é administrado.
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 08 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<!-- Floating Save-as-PDF button -->
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite"><b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab=document.getElementById('pdfFab'); var hint=document.getElementById('pdfHint');
+    if(!fab) return; var t;
+    fab.addEventListener('mouseenter',function(){ clearTimeout(t); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave',function(){ t=setTimeout(function(){ hint.classList.remove('show'); },250); });
+    fab.addEventListener('click',function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); },120); setTimeout(function(){ hint.classList.remove('show'); },4000); });
+  })();
+</script>
+</body>
+</html>
