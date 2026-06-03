@@ -1,0 +1,924 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>O Síndico está Adoecendo. E Ninguém Fala sobre Isso · Bastidores da Sindicatura · Vol. 09</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <circle r="120" fill="none" stroke="#B8543B" stroke-width="6"/>
+      <path d="M-46 -8 a46 40 0 1 0 18 -34 L-46 -54 Z" fill="none" stroke="#B8543B" stroke-width="12" stroke-linejoin="round"/>
+      <text y="180" font-family="serif" font-style="italic" font-size="64" fill="#0E1A2B">Bastidores</text>
+      <text y="240" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  /* BASTIDORES DA SINDICATURA · O custo emocional do síndico · Vol. 09 */
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A; --rule:1px solid var(--line);
+  }
+  @page { size: 210mm 297mm; margin: 0; }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; width:210mm; background:#2A2522; font-family:"Manrope", system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; color:var(--ink); page-break-after:always; break-after:page; margin:0 auto; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen { html, body{ width:auto; } body{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 0 60px; } .page{ box-shadow:0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); } }
+  @media print{ html, body{ background:#fff; width:210mm; margin:0; padding:0; display:block; } .page{ box-shadow:none; margin:0; display:block; } }
+  html.show-overflow .pg-body{ outline:1px dashed rgba(184,84,59,.4); }
+  html.show-overflow .page{ outline:1px dashed rgba(14,26,43,.25); }
+
+  .frame{ position:absolute; inset:14mm 16mm; }
+  .pg-head{ position:absolute; top:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); padding-bottom:4mm; border-bottom:var(--rule); }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{ width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  .pg-foot{ position:absolute; bottom:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:8.5pt; color:var(--muted); padding-top:4mm; border-top:var(--rule); }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .pg-body{ position:absolute; top:22mm; bottom:18mm; left:16mm; right:16mm; display:flex; flex-direction:column; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif","Times New Roman",serif; font-weight:400; }
+  .section-num{ font-family:"Instrument Serif"; font-style:italic; font-size:64pt; line-height:1; color:var(--accent); letter-spacing:-.02em; }
+  .section-kicker{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-title{ font-family:"Instrument Serif"; font-weight:400; font-size:32pt; line-height:1.04; letter-spacing:-.01em; color:var(--ink); margin-top:2mm; }
+  .section-lede{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); max-width:135mm; margin-top:5mm; }
+  .h-sub{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:4mm; }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.4mm; }
+  ul.checks li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.42; color:var(--ink-2); padding:1.2mm 0; border-bottom:1px dotted var(--line); }
+  ul.checks li:last-child{ border-bottom:none; }
+  ul.checks li .box{ flex:0 0 auto; width:4.4mm; height:4.4mm; border:1.2px solid var(--ink); border-radius:1.2px; background:var(--cream); margin-top:1.2mm; }
+  .stack-tight ul.checks li{ font-size:9.5pt; padding:.7mm 0; }
+  .stack-tight ul.checks li .box{ width:4mm; height:4mm; }
+  ul.bul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.4mm; }
+  ul.bul li{ display:flex; gap:10px; align-items:flex-start; font-size:10.5pt; line-height:1.5; color:var(--ink-2); padding:1.2mm 0; border-bottom:1px dotted var(--line); }
+  ul.bul li:last-child{ border-bottom:none; }
+  ul.bul li::before{ content:""; flex:0 0 auto; width:5px; height:5px; margin-top:2.6mm; background:var(--accent); border-radius:50%; }
+
+  .cols-2{ display:grid; grid-template-columns:1fr 1fr; column-gap:12mm; align-items:start; }
+  ol.enum{ list-style:none; padding:0; margin:0; counter-reset:en; display:flex; flex-direction:column; gap:2mm; }
+  ol.enum li{ counter-increment:en; display:flex; gap:10px; align-items:baseline; font-size:9.5pt; line-height:1.4; color:var(--ink-2); padding:1.4mm 0; border-bottom:1px dotted var(--line); }
+  ol.enum li::before{ content:counter(en, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--accent); flex:0 0 9mm; }
+  ol.enum li b{ color:var(--ink); }
+
+  .callout{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 6mm; font-size:9.5pt; line-height:1.55; color:var(--ink-2); margin-top:4mm; }
+  .callout b{ color:var(--ink); }
+  .quote-block{ background:var(--cream); border:1px solid var(--line); padding:7mm 8mm; font-family:"Instrument Serif"; font-style:italic; font-size:13pt; line-height:1.5; color:var(--ink); }
+  .quote-block .signature{ margin-top:4mm; font-family:"Manrope"; font-style:normal; font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .survival{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 7mm; display:flex; flex-direction:column; gap:2mm; }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; line-height:1.3; color:var(--ink); }
+
+  .tag{ display:inline-flex; align-items:center; gap:6px; font-size:8pt; letter-spacing:.18em; text-transform:uppercase; color:var(--ink); background:var(--cream); padding:2.2mm 3.6mm; border-radius:100px; border:1px solid var(--line); font-weight:600; }
+  .hr-orn{ display:flex; align-items:center; gap:10px; color:var(--accent); margin:4mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent);}
+
+  /* refrain: anaphoric soft block (gentle treatment for emotional rhythm) */
+  .refrain{ display:flex; flex-direction:column; gap:1.5mm; padding:4mm 6mm; border-left:2px solid var(--line); }
+  .refrain p{ margin:0; font-size:10.5pt; line-height:1.5; color:var(--ink-2); }
+  .refrain p b{ color:var(--ink); font-weight:600; }
+
+  /* tier interpretation rows */
+  .tiers{ display:flex; flex-direction:column; gap:3mm; }
+  .tier{ display:grid; grid-template-columns: 22mm 1fr; gap:5mm; align-items:start; padding:3.5mm 5mm; background:var(--cream); border-left:3px solid var(--line); }
+  .tier .range{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent); line-height:1; }
+  .tier p{ margin:0; font-size:9.5pt; line-height:1.45; color:var(--ink-2); }
+  .tier.t2{ border-left-color:var(--gold); }
+  .tier.t3{ border-left-color:var(--accent-2); }
+  .tier.t4{ border-left-color:var(--accent); background:var(--paper-2); }
+  .tier.t4 p{ color:var(--ink); font-weight:500; }
+
+  /* mini checklist for autoavaliação */
+  .mini-grid{ display:grid; grid-template-columns:1fr 1fr; gap:5mm 9mm; align-content:start; }
+  .mini .h-sub{ margin-bottom:2.5mm; font-size:8.5pt; }
+  .mini ul.checks li{ font-size:9pt; padding:.5mm 0; }
+  .mini ul.checks li .box{ width:3.6mm; height:3.6mm; margin-top:1mm; }
+
+  /* COVER */
+  .cover{ background: radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.10), transparent 55%), radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%), var(--paper); }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:var(--rule); padding-bottom:6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap:10px; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); }
+  .cover-brand .logo .mark{ width:30px; height:30px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border:2px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .cover-brand .sub{ font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--accent); }
+  .cover-meta .label{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:12mm 0 8mm; }
+  .cover-eyebrow{ font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:8mm; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size:50pt; line-height:1.02; letter-spacing:-.022em; color:var(--ink); margin:0 0 6mm; }
+  .cover-title .it{ font-style:italic; color:var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size:12.5pt; line-height:1.5; color:var(--ink-2); max-width:158mm; }
+  .cover-bottom{ border-top:var(--rule); padding-top:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap:13mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size:36pt; line-height:1; color:var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color:var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:2mm; }
+
+  /* OPENER */
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size:46pt; line-height:1.02; color:var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style:italic; color:var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:7mm; }
+  .opener-grid p{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 4mm; }
+
+  /* TOC */
+  .toc-list{ display:grid; grid-template-columns:1fr; margin-top:4mm; }
+  .toc-item{ display:flex; align-items:baseline; gap:8px; padding:2.6mm 0; border-bottom:1px dotted var(--line); font-size:10pt; color:var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent); flex:0 0 12mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--muted); }
+
+  /* SECTION HEAD */
+  .section-head{ display:flex; gap:10mm; align-items:flex-start; padding-bottom:6mm; border-bottom:var(--rule); margin-bottom:6mm; }
+  .section-head .big{ flex:0 0 auto; }
+  .section-head .meta{ flex:1; padding-top:4mm;}
+  .section-body{ display:flex; flex-direction:column; gap:5mm; flex:1;}
+  .block-card{ background:var(--cream); border:1px solid var(--line); padding:6mm 7mm; }
+  .twoframe{ display:grid; grid-template-columns:1fr 1fr; gap:8mm; }
+
+  /* capture */
+  .capture{ background: radial-gradient(120% 80% at 0% 0%, rgba(140,106,42,.12), transparent 55%), radial-gradient(90% 70% at 100% 100%, rgba(184,84,59,.12), transparent 55%), var(--paper); }
+  .cta-band{ background:var(--ink); color:var(--paper); padding:8mm 9mm; display:flex; flex-direction:column; gap:3mm; margin-top:2mm; }
+  .cta-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .cta-band .t{ font-family:"Instrument Serif"; font-size:26pt; line-height:1.05; color:var(--paper); }
+  .cta-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .cta-band .u{ font-family:"Manrope"; font-weight:700; font-size:11pt; letter-spacing:.04em; color:var(--paper); margin-top:1mm; }
+  .cta-band .u span{ color:var(--accent-2); }
+
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  /* Save-as-PDF FAB */
+  .pdf-fab{ position:fixed; right:22px; bottom:22px; z-index:9999; display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:#0E1A2B; color:#F4EEDF; border:none; border-radius:999px; font-family:"Manrope", system-ui, sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; box-shadow:0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30), inset 0 0 0 1px rgba(255,255,255,.06); transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .pdf-fab:hover{ transform:translateY(-2px); background:#B8543B; box-shadow:0 18px 42px rgba(184,84,59,.45), 0 4px 12px rgba(184,84,59,.30); }
+  .pdf-fab svg{ width:16px; height:16px; flex:0 0 auto; }
+  .pdf-fab .dot-accent{ width:6px; height:6px; border-radius:50%; background:#B8543B; box-shadow:0 0 0 3px rgba(184,84,59,.22); }
+  .pdf-fab:hover .dot-accent{ background:#F4EEDF; box-shadow:0 0 0 3px rgba(244,238,223,.22); }
+  .pdf-hint{ position:fixed; right:22px; bottom:74px; z-index:9998; max-width:280px; padding:12px 14px; background:#FBF7EC; border:1px solid #D9D2C2; border-radius:10px; font-family:"Manrope", system-ui, sans-serif; font-size:11.5px; line-height:1.5; color:#1F2C3F; box-shadow:0 10px 30px rgba(0,0,0,.18); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .pdf-hint.show{ opacity:1; transform:translateY(0); }
+  .pdf-hint b{ color:#B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display:none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 09</div>
+          <div class="label">Saúde mental do síndico</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">O custo emocional invisível da profissão</div>
+        <h1 class="cover-title">O síndico está <span class="it">adoecendo.</span><br/>E ninguém fala sobre isso.</h1>
+        <p class="cover-deck">A profissão que todo mundo cobra, mas poucos compreendem. Um convite para reconhecer os sinais, recolocar limites e cuidar de quem cuida do condomínio.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">10</span></div><div class="l">Capítulos</div></div>
+          <div class="s"><div class="n">+50</div><div class="l">Itens de autoavaliação</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · OPENER (APRESENTAÇÃO) -->
+  <section class="page opener" data-screen-label="02 Apresentação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Apresentação</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:8mm;">Antes de começar</div>
+        <h2 class="opener-title">Ninguém fala sobre <span class="it">até quando.</span></h2>
+        <div class="opener-grid">
+          <div>
+            <p>Se você é síndico profissional, síndico morador, gestor condominial ou está começando agora, provavelmente já ouviu frases assim: “você precisa ter jogo de cintura”, “não pode levar para o lado pessoal”, “tem que ter sangue frio”, “quem escolheu ser síndico precisa aguentar”.</p>
+            <p>O problema é que ninguém explica <b>até quando</b>.</p>
+          </div>
+          <div>
+            <div class="refrain" style="border-color:var(--accent);">
+              <p>Ninguém fala sobre o preço emocional.</p>
+              <p>Ninguém fala sobre as noites sem dormir.</p>
+              <p>Ninguém fala sobre a ansiedade antes da assembleia.</p>
+              <p>Ninguém fala sobre a culpa de decisões impopulares.</p>
+              <p>Ninguém fala sobre o medo de errar.</p>
+              <p>Ninguém fala sobre o peso de ser responsável por centenas de pessoas, funcionários, contratos e conflitos.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">Para quem é</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Síndicos, conselheiros e gestores que sentem que a profissão começou a invadir a vida pessoal e querem reconhecer os sinais antes que o corpo cobre a conta.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">O que este material faz</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">O mercado fala muito sobre gestão. Fala pouco sobre o gestor. Aqui a conversa é sobre você, com 10 reflexões e 3 ferramentas práticas para recolocar limites.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 09</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · TOC -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:4mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">—</span><span class="ttl">Introdução · A epidemia silenciosa</span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">01</span><span class="ttl">A profissão que nunca desliga</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">02</span><span class="ttl">O peso da responsabilidade</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">03</span><span class="ttl">O síndico virou depósito emocional</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">04</span><span class="ttl">A dor das decisões impopulares</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">05</span><span class="ttl">Os ataques pessoais</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">06</span><span class="ttl">A solidão da liderança</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">07</span><span class="ttl">Quando o corpo começa a dar sinais</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">08</span><span class="ttl">O mito do síndico herói</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">09</span><span class="ttl">O que pode ser feito</span><span class="pg">13</span></div>
+        <div class="toc-item"><span class="num">10</span><span class="ttl">Cuidar de si também é gestão</span><span class="pg">14</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Autoavaliação de saúde mental</span><span class="pg">15</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Resultado e checklist de limites saudáveis</span><span class="pg">16</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Plano de ação para os próximos 30 dias</span><span class="pg">17</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Conclusão</span><span class="pg">18</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">A mentoria Bastidores da Sindicatura</span><span class="pg">19</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · INTRODUÇÃO -->
+  <section class="page" data-screen-label="04 Introdução">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Introdução</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">§</div></div>
+        <div class="meta">
+          <div class="section-kicker">Introdução</div>
+          <h2 class="section-title">A epidemia <span class="serif" style="font-style:italic;color:var(--accent);">silenciosa</span>.</h2>
+          <p class="section-lede">Existe uma epidemia silenciosa acontecendo dentro dos condomínios. Ela não aparece nos balancetes. Não aparece nos relatórios. Não aparece nas atas. Não aparece nas prestações de contas. Mas existe. E está adoecendo profissionais extremamente competentes.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="refrain">
+          <p>Muitos síndicos estão exaustos.</p>
+          <p>Fisicamente.</p>
+          <p>Mentalmente.</p>
+          <p>Emocionalmente.</p>
+          <p>Alguns estão à beira do <b>burnout</b>. Outros já perderam o prazer pela profissão.</p>
+          <p>E muitos sequer percebem que estão adoecendo, porque se acostumaram a viver no limite.</p>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">A premissa deste guia</span>
+          <span class="txt">Este e-book não é sobre fraqueza. É sobre sobrevivência. Por trás do cargo existe uma pessoa, e essa pessoa também precisa ser cuidada.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Introdução · A epidemia silenciosa</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · CAP 01 -->
+  <section class="page" data-screen-label="05 Cap 01">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 01 · Nunca desliga</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">01</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo um</div>
+          <h2 class="section-title">A profissão que nunca <span class="serif" style="font-style:italic;color:var(--accent);">desliga</span>.</h2>
+          <p class="section-lede">Poucas profissões carregam uma característica tão perigosa quanto a sindicatura. Ela nunca termina. O síndico raramente sente que concluiu o trabalho. Apenas passa de um problema para outro.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">A rotina que nunca pausa</div>
+            <ul class="bul">
+              <li>O celular toca durante o jantar.</li>
+              <li>Chegam mensagens no fim de semana.</li>
+              <li>Aparecem emergências nas férias.</li>
+              <li>O elevador para no feriado.</li>
+              <li>O vazamento surge de madrugada.</li>
+              <li>O morador reclama no domingo.</li>
+              <li>O fornecedor atrasa na sexta à noite.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">O resultado, dentro do corpo</div>
+            <ul class="bul">
+              <li>Cansaço acumulado.</li>
+              <li>Ansiedade que não passa.</li>
+              <li>Irritabilidade fácil.</li>
+              <li>Perda de qualidade de vida.</li>
+            </ul>
+            <div class="callout" style="margin-top:4mm;">Quando o cérebro não consegue desligar, ele entra em estado permanente de alerta. E ninguém sustenta esse estado por muito tempo sem pagar a conta.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 01 · A profissão que nunca desliga</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · CAP 02 -->
+  <section class="page" data-screen-label="06 Cap 02">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 02 · A responsabilidade</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">02</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo dois</div>
+          <h2 class="section-title">O peso da <span class="serif" style="font-style:italic;color:var(--accent);">responsabilidade</span>.</h2>
+          <p class="section-lede">Quando tudo funciona, quase ninguém percebe. Quando algo falha, todos percebem. O síndico precisa lidar com várias frentes ao mesmo tempo, todos os dias.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div>
+          <div class="h-sub">Tudo isso ao mesmo tempo, no mesmo dia</div>
+          <div class="cols-2">
+            <ul class="bul">
+              <li>Funcionários e moradores.</li>
+              <li>Conselheiros e prestadores.</li>
+              <li>Administradora e advogados.</li>
+              <li>Engenheiros e assembleias.</li>
+            </ul>
+            <ul class="bul">
+              <li>Obras e manutenção.</li>
+              <li>Inadimplência e conflitos.</li>
+              <li>Emergências e prazos.</li>
+              <li>Comunicação e prestação de contas.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="quote-block" style="margin-top:auto;">
+          A mente humana não foi projetada para viver permanentemente sob pressão. Mas muitos síndicos fazem exatamente isso durante anos, e seguem se cobrando para parecerem inteiros.
+          <div class="signature">Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 02 · O peso da responsabilidade</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · CAP 03 -->
+  <section class="page" data-screen-label="07 Cap 03">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 03 · Depósito emocional</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">03</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo três</div>
+          <h2 class="section-title">O síndico virou <span class="serif" style="font-style:italic;color:var(--accent);">depósito emocional</span>.</h2>
+          <p class="section-lede">Existe um fenômeno muito comum nos condomínios. As pessoas despejam suas frustrações no síndico. E poucos profissionais foram treinados para receber tudo isso sem absorver.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="refrain">
+          <p>O morador brigou com o vizinho. <b>Liga para o síndico.</b></p>
+          <p>O morador está insatisfeito com uma regra. <b>Liga para o síndico.</b></p>
+          <p>O fornecedor atrasou. <b>Culpa o síndico.</b></p>
+          <p>O conselho discorda. <b>Questiona o síndico.</b></p>
+          <p>O funcionário comete um erro. <b>O síndico precisa resolver.</b></p>
+        </div>
+        <p class="body">Pouco a pouco o profissional se transforma em um depósito emocional. Recebe reclamações, críticas, cobranças e frustrações alheias. Quase nunca recebe treinamento para lidar com tudo isso.</p>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">A imagem que ajuda</span>
+          <span class="txt">Você é o canal que conduz a água, não a represa que precisa segurar tudo. Sem fluxo, o reservatório transborda ou racha.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 03 · O síndico virou depósito emocional</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · CAP 04 -->
+  <section class="page" data-screen-label="08 Cap 04">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 04 · Decisões impopulares</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">04</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo quatro</div>
+          <h2 class="section-title">A dor das decisões <span class="serif" style="font-style:italic;color:var(--accent);">impopulares</span>.</h2>
+          <p class="section-lede">Todo síndico vive um dilema constante: fazer o que é certo ou fazer o que agrada. Muitas vezes, as duas coisas não caminham juntas.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Decisões que custam caro</div>
+            <ul class="bul">
+              <li>Cobrar inadimplentes.</li>
+              <li>Aplicar multas.</li>
+              <li>Cancelar privilégios.</li>
+              <li>Negar pedidos.</li>
+              <li>Executar regras.</li>
+              <li>Cortar gastos.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="block-card">
+              <div class="h-sub">O que acontece por dentro</div>
+              <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Quem toma decisão cria descontentamento. E muitos síndicos passam a viver com medo da rejeição, escondendo a própria opinião para não desagradar. Esse silêncio adoece tanto quanto o conflito.</p>
+            </div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">O que lembrar</span>
+          <span class="txt">Liderar não é agradar a todos. É decidir com critério, sustentar a decisão e seguir, mesmo quando incomoda.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 04 · A dor das decisões impopulares</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · CAP 05 -->
+  <section class="page" data-screen-label="09 Cap 05">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 05 · Ataques pessoais</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">05</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo cinco</div>
+          <h2 class="section-title">Os ataques <span class="serif" style="font-style:italic;color:var(--accent);">pessoais</span>.</h2>
+          <p class="section-lede">Crítica faz parte da gestão. Ataque pessoal, não. Infelizmente, muitos síndicos convivem com situações que ultrapassam o limite do que qualquer profissional deveria ter que suportar.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">O que muitos síndicos enfrentam</div>
+            <ul class="bul">
+              <li>Acusações sem prova.</li>
+              <li>Difamações.</li>
+              <li>Insinuações.</li>
+              <li>Mentiras.</li>
+              <li>Grupos paralelos.</li>
+              <li>Campanhas de desgaste.</li>
+              <li>Comentários ofensivos.</li>
+              <li>Tentativas de desmoralização.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="block-card">
+              <div class="h-sub">A verdade desconfortável</div>
+              <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">O ser humano não foi feito para ouvir ataques constantes sem consequência emocional. Mesmo os profissionais mais experientes sentem.</p>
+              <p style="margin:3mm 0 0;font-size:10pt;line-height:1.6;color:var(--ink-2);">E sentir não é sinal de fraqueza. <b>É sinal de humanidade.</b></p>
+            </div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Para guardar</span>
+          <span class="txt">Documentar o ataque protege a gestão. Reconhecer a dor protege a pessoa. As duas coisas precisam coexistir.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 05 · Os ataques pessoais</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · CAP 06 -->
+  <section class="page" data-screen-label="10 Cap 06">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 06 · A solidão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">06</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo seis</div>
+          <h2 class="section-title">A solidão da <span class="serif" style="font-style:italic;color:var(--accent);">liderança</span>.</h2>
+          <p class="section-lede">Talvez essa seja uma das dores menos faladas da sindicatura. A solidão. Muitas vezes o síndico está cercado por pessoas, mas não tem com quem conversar de verdade.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="refrain">
+          <p>Não tem com quem dividir as dúvidas.</p>
+          <p>Não tem com quem compartilhar os medos.</p>
+          <p>Não tem com quem falar sobre os bastidores.</p>
+          <p>Não tem com quem reclamar quando a semana foi pesada.</p>
+        </div>
+        <p class="body">Espera-se que ele seja sempre forte, sempre seguro, sempre preparado. Mas ninguém sustenta essa imagem para sempre. A solidão crônica do síndico não vem da falta de pessoas em volta. Vem da falta de escuta qualificada.</p>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Um lembrete</span>
+          <span class="txt">Conversar com outro síndico, com mentor, com terapeuta ou com grupo de pares não é luxo. É manutenção.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 06 · A solidão da liderança</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · CAP 07 -->
+  <section class="page" data-screen-label="11 Cap 07">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 07 · O corpo dá sinais</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">07</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo sete</div>
+          <h2 class="section-title">Quando o corpo começa a dar <span class="serif" style="font-style:italic;color:var(--accent);">sinais</span>.</h2>
+          <p class="section-lede">O adoecimento raramente acontece de uma vez. Ele vai chegando aos poucos. Primeiro surge a irritação. Depois a insônia. Depois o cansaço. Depois a ansiedade. Depois o desânimo. Até que um dia o corpo simplesmente não aguenta mais.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Sinais mais comuns</div>
+            <ul class="bul">
+              <li>Falta de paciência.</li>
+              <li>Dificuldade para dormir.</li>
+              <li>Exaustão constante.</li>
+              <li>Ansiedade.</li>
+              <li>Dores de cabeça.</li>
+              <li>Problemas gastrointestinais.</li>
+              <li>Falta de motivação.</li>
+              <li>Sensação de sobrecarga.</li>
+              <li>Vontade de abandonar tudo.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="block-card">
+              <div class="h-sub">O que muitas vezes acontece</div>
+              <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">O síndico minimiza. Diz que é só uma fase. Diz que vai descansar quando passar a obra. Quando terminar a assembleia. Quando virar o ano. E o corpo segue acumulando o que a mente não nomeou.</p>
+            </div>
+            <div class="survival" style="margin-top:4mm;">
+              <span class="lbl">Frase para guardar</span>
+              <span class="txt">Ignorar os sinais nunca é uma boa estratégia. Eles voltam, sempre, com voz mais alta.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 07 · Quando o corpo começa a dar sinais</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · CAP 08 -->
+  <section class="page" data-screen-label="12 Cap 08">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 08 · O mito do herói</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">08</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo oito</div>
+          <h2 class="section-title">O mito do síndico <span class="serif" style="font-style:italic;color:var(--accent);">herói</span>.</h2>
+          <p class="section-lede">O mercado costuma admirar o profissional que aguenta tudo. Que nunca para. Que nunca reclama. Que responde a qualquer horário. Que resolve qualquer problema. Mas existe uma armadilha nisso.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="quote-block">
+          Heróis quebram. Pessoas precisam descansar. O síndico não precisa ser uma máquina. Precisa ser sustentável.
+          <div class="signature">Bastidores da Sindicatura</div>
+        </div>
+        <p class="body">Uma carreira construída no esgotamento não dura. O síndico que se vende como o profissional que “está sempre disponível” entrega um produto que ele próprio não consegue sustentar. E quando ele desaba, o condomínio desaba junto.</p>
+        <div class="callout">A admiração pelo síndico-herói vende ilusão. O síndico sustentável vende continuidade. Continuidade é o que protege a gestão, a família e a própria saúde.</div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Para guardar</span>
+          <span class="txt">A pergunta certa não é “quanto eu aguento”. É “por quanto tempo eu consigo aguentar com qualidade”.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 08 · O mito do síndico herói</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · CAP 09 -->
+  <section class="page" data-screen-label="13 Cap 09">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 09 · O que pode ser feito</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">09</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo nove</div>
+          <h2 class="section-title">O que pode ser <span class="serif" style="font-style:italic;color:var(--accent);">feito</span>.</h2>
+          <p class="section-lede">Existem atitudes simples que fazem enorme diferença. Nenhuma delas elimina os problemas da gestão. O que elas fazem é impedir que esses problemas eliminem você.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2">
+          <ul class="bul">
+            <li>Criar horário de atendimento.</li>
+            <li>Definir canais oficiais.</li>
+            <li>Delegar.</li>
+            <li>Construir equipe.</li>
+            <li>Aprender a dizer não.</li>
+            <li>Praticar atividade física.</li>
+          </ul>
+          <ul class="bul">
+            <li>Reservar tempo para a família.</li>
+            <li>Ter momentos sem celular.</li>
+            <li>Buscar apoio profissional quando precisar.</li>
+            <li>Participar de grupos de síndicos.</li>
+            <li>Compartilhar experiências.</li>
+            <li>Pedir ajuda.</li>
+          </ul>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">A regra silenciosa</span>
+          <span class="txt">Pedir ajuda não diminui o síndico. Diminui o peso. E é justamente esse peso que adoece quem tenta carregar sozinho.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 09 · O que pode ser feito</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · CAP 10 -->
+  <section class="page" data-screen-label="14 Cap 10">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 10 · Cuidar de si</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">10</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo dez</div>
+          <h2 class="section-title">Cuidar de si também é <span class="serif" style="font-style:italic;color:var(--accent);">gestão</span>.</h2>
+          <p class="section-lede">Muitos síndicos cuidam melhor do condomínio do que de si mesmos. Fazem manutenção preventiva no elevador, mas não na própria saúde. Controlam indicadores financeiros, mas ignoram os indicadores emocionais.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="refrain">
+          <p>Planejam obras para os próximos anos.</p>
+          <p>Mas não planejam o próprio equilíbrio.</p>
+          <p>Cuidam do ativo do condomínio.</p>
+          <p>Mas esquecem que <b>são o principal ativo</b> da própria gestão.</p>
+        </div>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          A verdade é simples. Você é o principal ativo da sua gestão. Se você quebra, tudo fica mais difícil.
+          <div class="signature">Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 10 · Cuidar de si também é gestão</div><div class="pg-num">14</div></div>
+  </section>
+
+  <!-- PAGE 15 · AUTOAVALIAÇÃO -->
+  <section class="page" data-screen-label="15 Autoavaliação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Autoavaliação</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Ferramenta 01</div>
+      <h2 class="section-title" style="margin-bottom:4mm;">Autoavaliação de <span class="serif" style="font-style:italic;color:var(--accent);">saúde mental</span>.</h2>
+      <p class="body" style="max-width:160mm;margin-bottom:5mm;">Responda com honestidade. Marque um quadrado para cada afirmação verdadeira para você nas últimas semanas. Conte os “sim” ao final e leia o resultado na próxima página.</p>
+      <div class="mini-grid" style="flex:1;">
+        <div class="mini">
+          <div class="h-sub">Cansaço e energia</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Acordo cansado mesmo depois de dormir</li>
+            <li><span class="box"></span>Tenho dificuldade de desligar do condomínio</li>
+            <li><span class="box"></span>Levo problemas da gestão para a vida pessoal</li>
+            <li><span class="box"></span>Trabalho mais horas do que gostaria</li>
+            <li><span class="box"></span>Sinto culpa quando descanso</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">Emoções</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Estou mais irritado do que costumava ser</li>
+            <li><span class="box"></span>Pequenos problemas me tiram do sério</li>
+            <li><span class="box"></span>Tenho sentido ansiedade com frequência</li>
+            <li><span class="box"></span>Vivo em estado constante de alerta</li>
+            <li><span class="box"></span>Tenho medo de tomar decisões</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">Saúde física</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Minha qualidade de sono piorou</li>
+            <li><span class="box"></span>Tenho dores de cabeça frequentes</li>
+            <li><span class="box"></span>Estou negligenciando exercícios</li>
+            <li><span class="box"></span>Minha alimentação piorou</li>
+            <li><span class="box"></span>Sinto tensão muscular constante</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">Motivação</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Já pensei em desistir da sindicatura</li>
+            <li><span class="box"></span>Sinto que meu esforço não é reconhecido</li>
+            <li><span class="box"></span>Tenho perdido o prazer pelo trabalho</li>
+            <li><span class="box"></span>Vivo apenas apagando incêndios</li>
+            <li><span class="box"></span>Estou sem energia para novos projetos</li>
+          </ul>
+        </div>
+        <div class="mini" style="grid-column:1/-1;">
+          <div class="h-sub">Relacionamentos</div>
+          <div class="cols-2">
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Minha família reclama da minha ausência</li>
+              <li><span class="box"></span>Converso sobre trabalho o tempo todo</li>
+              <li><span class="box"></span>Minha vida pessoal está sendo afetada</li>
+            </ul>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Tenho me afastado de amigos</li>
+              <li><span class="box"></span>Sinto que enfrento tudo sozinho</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Autoavaliação · Saúde mental do síndico</div><div class="pg-num">15</div></div>
+  </section>
+
+  <!-- PAGE 16 · RESULTADO + LIMITES -->
+  <section class="page" data-screen-label="16 Resultado">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Resultado e limites</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Como ler o resultado</div>
+      <h2 class="section-title" style="margin-bottom:5mm;">Some os “sim” e leia com <span class="serif" style="font-style:italic;color:var(--accent);">honestidade</span>.</h2>
+      <div class="twoframe" style="flex:1; align-content:start;">
+        <div>
+          <div class="h-sub">Resultado da autoavaliação</div>
+          <div class="tiers">
+            <div class="tier">
+              <div class="range">até 5</div>
+              <p>Você provavelmente vive o desgaste natural da profissão. Continue atento aos sinais e cultive os limites saudáveis.</p>
+            </div>
+            <div class="tier t2">
+              <div class="range">6 a 12</div>
+              <p>Seu nível de desgaste merece atenção. Reavalie rotina, sono e canais de atendimento antes que se acumule.</p>
+            </div>
+            <div class="tier t3">
+              <div class="range">13 a 20</div>
+              <p>Existe forte indicativo de esgotamento emocional. Vale procurar apoio profissional e reorganizar a gestão para reduzir a sobrecarga.</p>
+            </div>
+            <div class="tier t4">
+              <div class="range">+20</div>
+              <p>É hora de procurar ajuda e rever sua rotina com urgência. Saúde mental não pode esperar a próxima assembleia terminar.</p>
+            </div>
+          </div>
+        </div>
+        <div>
+          <div class="h-sub">Ferramenta 02 · Limites saudáveis</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Tenho horário definido para atendimento</li>
+            <li><span class="box"></span>Não respondo mensagens só por pressão</li>
+            <li><span class="box"></span>Tenho canais oficiais de comunicação</li>
+            <li><span class="box"></span>Delego tarefas sempre que possível</li>
+            <li><span class="box"></span>Tenho rede de apoio</li>
+            <li><span class="box"></span>Faço atividade física regularmente</li>
+            <li><span class="box"></span>Tenho hobbies fora da sindicatura</li>
+            <li><span class="box"></span>Consigo ficar horas sem olhar o celular</li>
+            <li><span class="box"></span>Reservo tempo para a família</li>
+            <li><span class="box"></span>Faço pausas durante o dia</li>
+            <li><span class="box"></span>Tiro férias de verdade</li>
+            <li><span class="box"></span>Converso com outros síndicos</li>
+            <li><span class="box"></span>Evito discussões improdutivas</li>
+            <li><span class="box"></span>Sei que nem toda reclamação exige resposta imediata</li>
+            <li><span class="box"></span>Respeito meus próprios limites</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Resultado e checklist de limites saudáveis</div><div class="pg-num">16</div></div>
+  </section>
+
+  <!-- PAGE 17 · PLANO 30 DIAS -->
+  <section class="page" data-screen-label="17 Plano">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Plano de ação · 30 dias</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Ferramenta 03</div>
+      <h2 class="section-title" style="margin-bottom:4mm;">Plano de ação dos próximos <span class="serif" style="font-style:italic;color:var(--accent);">30 dias</span>.</h2>
+      <p class="body" style="max-width:160mm;margin-bottom:5mm;">Não tente mudar tudo de uma vez. Escolha apenas <b>três</b> ações abaixo para implementar nos próximos 30 dias. Pequenas mudanças mantidas valem mais que um plano gigante abandonado na primeira semana.</p>
+      <div class="cols-2" style="flex:1; align-content:start;">
+        <ul class="checks">
+          <li><span class="box"></span>Definir horário de atendimento</li>
+          <li><span class="box"></span>Reduzir o tempo em grupos de WhatsApp</li>
+          <li><span class="box"></span>Criar canais oficiais de comunicação</li>
+          <li><span class="box"></span>Fazer atividade física três vezes por semana</li>
+          <li><span class="box"></span>Reservar uma noite sem falar de condomínio</li>
+        </ul>
+        <ul class="checks">
+          <li><span class="box"></span>Marcar consulta médica</li>
+          <li><span class="box"></span>Marcar consulta psicológica</li>
+          <li><span class="box"></span>Delegar uma atividade que hoje faço sozinho</li>
+          <li><span class="box"></span>Conversar com outro síndico sobre os desafios da profissão</li>
+          <li><span class="box"></span>Tirar um dia inteiro de descanso</li>
+        </ul>
+      </div>
+      <div class="survival" style="margin-top:5mm;">
+        <span class="lbl">Como acompanhar</span>
+        <span class="txt">Marque três quadrados. Anote uma data ao lado de cada um. Reveja na sexta-feira de cada semana. Não precisa ser perfeito. Precisa ser constante.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Plano de ação · 30 dias</div><div class="pg-num">17</div></div>
+  </section>
+
+  <!-- PAGE 18 · CONCLUSÃO -->
+  <section class="page" data-screen-label="18 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">Por trás de cada síndico existe uma <span class="serif" style="font-style:italic;color:var(--accent);">pessoa</span>.</h2>
+          <p class="section-lede">Se você chegou até aqui, provavelmente se identificou com vários pontos. E isso acontece porque existe uma realidade que o mercado raramente mostra.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="refrain">
+          <p>Por trás de cada assembleia existe pressão.</p>
+          <p>Por trás de cada obra existe preocupação.</p>
+          <p>Por trás de cada decisão existe responsabilidade.</p>
+          <p>Por trás de cada condomínio existe um síndico.</p>
+          <p><b>E por trás de cada síndico existe uma pessoa.</b></p>
+        </div>
+        <p class="body">Uma pessoa que sente, que se preocupa, que erra, que acerta, que tenta fazer o melhor possível. Cuidar do condomínio é importante. Cuidar de quem cuida do condomínio, também.</p>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          Saúde mental não é luxo. É sobrevivência.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · Por trás de cada síndico existe uma pessoa</div><div class="pg-num">18</div></div>
+  </section>
+
+  <!-- PAGE 19 · CAPTAÇÃO -->
+  <section class="page capture" data-screen-label="19 Captação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>A mentoria</div></div>
+    <div class="pg-body">
+      <div class="cover-eyebrow" style="margin-bottom:5mm;">Um convite especial</div>
+      <h2 class="opener-title" style="font-size:38pt;">Os maiores desafios da sindicatura acontecem nos <span class="it">bastidores</span>.</h2>
+      <div class="opener-grid" style="margin-top:6mm;">
+        <div>
+          <p style="font-size:10.5pt;line-height:1.6;color:var(--ink-2);margin:0 0 3mm;">Eles raramente aparecem nos cursos tradicionais. Aparecem nas crises, nos conflitos, nas decisões difíceis, naquelas situações que ninguém te ensinou a enfrentar.</p>
+          <p style="font-size:10.5pt;line-height:1.6;color:var(--ink-2);margin:0;">Foi exatamente para isso que nasceu a <b>Mentoria Bastidores da Sindicatura</b>: um espaço para quem quer aprender o que a teoria não mostra.</p>
+        </div>
+        <div>
+          <p style="font-size:10.5pt;line-height:1.6;color:var(--ink-2);margin:0 0 3mm;">Conflitos, pressão emocional, comunicação, liderança, gestão de crise, tomada de decisão e os bastidores que fazem a diferença entre sobreviver e prosperar na profissão.</p>
+          <p style="font-size:10.5pt;line-height:1.6;color:var(--ink-2);margin:0;">Porque o mercado ensina teoria. <b>A vida real ensina sobrevivência.</b></p>
+        </div>
+      </div>
+      <div class="cta-band" style="margin-top:auto;">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Aprenda o que a teoria não mostra: a <span class="it">vida real</span> da gestão condominial.</div>
+        <p style="margin:1mm 0 0;font-size:9.5pt;line-height:1.6;color:rgba(244,238,223,.82);">Segue o site com mais informações sobre a mentoria, conteúdos e como participar:</p>
+        <div class="u">→ <span>www.bastidoresdasindicatura.com.br</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>A mentoria · Bastidores da Sindicatura</div><div class="pg-num">19</div></div>
+  </section>
+
+  <!-- PAGE 20 · MANIFESTO / CLOSE -->
+  <section class="page manifesto" data-screen-label="20 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top:30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:12mm;">
+        <div class="cover-eyebrow" style="margin:0;">Saúde mental do síndico · Vol. 09</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:165mm;">
+          Saúde mental não é <em style="font-style:italic;color:var(--accent);">luxo.</em><br/>
+          É <em style="font-style:italic;color:var(--accent);">sobrevivência.</em>
+        </h2>
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          Cuidar do condomínio é importante. Cuidar de quem cuida do condomínio, também. Você é o principal ativo da sua gestão.
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 09 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<!-- Floating Save-as-PDF button -->
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite"><b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab=document.getElementById('pdfFab'); var hint=document.getElementById('pdfHint');
+    if(!fab) return; var t;
+    fab.addEventListener('mouseenter',function(){ clearTimeout(t); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave',function(){ t=setTimeout(function(){ hint.classList.remove('show'); },250); });
+    fab.addEventListener('click',function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); },120); setTimeout(function(){ hint.classList.remove('show'); },4000); });
+  })();
+</script>
+</body>
+</html>
