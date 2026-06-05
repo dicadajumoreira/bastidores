@@ -137,7 +137,7 @@ Os três concorrentes analisados ocupam **posições estratégicas distintas**, 
 ## 5. Lacunas de mercado e oportunidades de diferenciação
 
 ### Lacunas identificadas
-1. **Jornalismo condominial de verdade** — apuração, opinião, investigação, pautas de bastidores. Os três pecam aqui: SindicoNet é raso/comercial, Condomínio Interativo é regional, SindicoLab é educacional. *(O nome do repositório — "bastidores" — aponta exatamente para essa veia: o que ninguém conta sobre a sindicatura.)*
+1. **Jornalismo condominial de verdade** — apuração, opinião, investigação, pautas de bastidores. Os três pecam aqui: SindicoNet é raso/comercial, Condomínio Interativo é regional, SindicoLab é educacional. Há espaço claro para um veículo que conte "o que ninguém conta" sobre o mercado condominial.
 2. **Independência percebida** — falta um veículo sem conflito de interesse evidente com fornecedores ou cursos próprios.
 3. **Cobertura regional estruturada nacionalmente** — só o Nordeste tem um player local forte; SP, Sul e outras regiões carecem de cobertura local sob uma marca nacional.
 4. **Formato moderno e mobile-first** — newsletter de qualidade, áudio/podcast diário, vídeos curtos, conteúdo "snackable". SindicoNet ainda carrega legado pesado.
@@ -155,7 +155,7 @@ Os três concorrentes analisados ocupam **posições estratégicas distintas**, 
 ### Modelos de monetização possíveis (combinar)
 1. **Publicidade/branded content** de fornecedores (mercado de R$ bilhões) — mas com transparência.
 2. **Assinatura/membership** premium (conteúdo aprofundado, dados, comunidade) — lição do SindicoLab.
-3. **Infoprodutos/educação** (ebooks, cursos) — já em curso neste repositório (linha de ebooks de sindicatura) → ativo de partida.
+3. **Infoprodutos/educação** (ebooks, cursos, guias práticos) — receita complementar e ferramenta de captação de base.
 4. **Eventos** (online e presenciais) e patrocínios.
 5. **Geração de leads / marketplace** num momento posterior (cuidando do conflito editorial).
 
@@ -166,7 +166,7 @@ Os três concorrentes analisados ocupam **posições estratégicas distintas**, 
 1. **Não competir de frente com o SindicoNet em escala/SEO** no início — é uma guerra cara e perdida. Competir em **profundidade, voz e confiança**.
 2. **Atacar o "vão" do mercado:** jornalismo independente de qualidade + comunidade, servindo profissional e morador com formatos modernos.
 3. **Começar por um nicho defensável** (ex.: uma região, um vertical como jurídico/trabalhista, ou o ângulo "bastidores/histórias reais") e expandir.
-4. **Usar os ebooks já existentes** como isca de captação (lead magnet) para construir a base de e-mails/WhatsApp — ativo de aquisição barato.
+4. **Criar iscas de captação (lead magnets)** — ebooks, guias e checklists gratuitos — para construir base própria de e-mails/WhatsApp a baixo custo.
 5. **Diversificar receita desde cedo** (membership + educação + eventos), evitando a dependência exclusiva de publicidade que pressiona a independência editorial.
 
 ---
