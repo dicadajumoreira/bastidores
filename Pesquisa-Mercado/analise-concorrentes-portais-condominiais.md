@@ -130,7 +130,39 @@ Os três concorrentes analisados ocupam **posições estratégicas distintas**, 
 | **Monetização** | Publicidade + leads + serviços | Publicidade + guia + sinergia | Cursos + assinatura + eventos |
 | **Independência editorial** | Média (conflito mídia/marketplace) | Baixa (braço de fornecedora) | Alta (mas comercial-educacional) |
 
-**Concorrentes adjacentes a monitorar:** Jornal do Síndico, Folha do Condomínio (formato "jornal"), Condo.news, Revista dos Condomínios, Universo Condomínio, Click Síndico, uCondo (blog forte + SaaS).
+---
+
+## 4.A Concorrentes monitorados (players adjacentes)
+
+Quatro veículos que disputam a mesma atenção/verba e revelam movimentos de mercado relevantes. Devem ser acompanhados de perto.
+
+### 4.A.1 Jornal do Síndico — o veterano impresso+digital com modelo de franquia
+- **O quê:** publicação dirigida ao mercado condominial com **~40 anos de mercado**, em formato **impresso e digital**, com **edições regionais** (DF, São Paulo, etc.) e **modelo de franquia** (já citado em guia de franquias da Pequenas Empresas & Grandes Negócios).
+- **Força:** longevidade, capilaridade regional, relacionamento local com anunciantes e distribuição física dentro dos condomínios.
+- **Fraqueza:** marca e site datados, baixa inovação digital, fragmentação entre múltiplos domínios/edições.
+- **Lição:** o **modelo de franquia/licenciamento regional** é uma alavanca de expansão de baixo capital e o impresso ainda tem valor de distribuição dentro do condomínio.
+
+### 4.A.2 Folha do Condomínio — a aposta no formato editorial diferenciado
+- **O quê:** portal cuja principal característica é a **experiência visual de jornal impresso** (diagramação de "papel" na web). Categorias: manutenção predial, finanças, administração, direito condominial e inovação.
+- **Força:** **identidade visual e experiência de leitura diferenciadas** — destaca-se num mar de sites padronizados; bom para percepção de "jornalismo sério".
+- **Fraqueza:** formato pode prejudicar mobile/SEO; escala e audiência modestas.
+- **Lição:** **design e experiência de leitura são, por si só, um diferenciador** num mercado de portais visualmente genéricos.
+
+### 4.A.3 Condo.news — o entrante recente com foco em tecnologia & inovação
+- **O quê:** posiciona-se como "o **novo** portal de notícias para síndicos e gestores", com **recorte editorial em tecnologia e inovação** (5G, carros elétricos/recarga, IA na gestão). Lançou também a **Revista Condo.news** (PDF gratuito) e mantém canal no YouTube e LinkedIn.
+- **Força:** **nicho temático claro** (inovação/tecnologia), marca moderna, multiformato (portal + revista + vídeo) desde cedo.
+- **Fraqueza:** entrante, audiência ainda em construção, escopo temático estreito.
+- **Lição:** dá pra **entrar pegando um vertical bem definido** (tech/inovação) em vez de competir no generalismo — exatamente uma estratégia de entrada viável.
+
+### 4.A.4 uCondo — o SaaS que virou autoridade de conteúdo (content-led growth)
+- **O quê:** **software/app de gestão condominial** (fundado em 2015), atendendo **7.000+ condomínios e ~700 mil moradores**, com ~40 funcionalidades e IA. Seu **blog é referência de SEO** e, sobretudo, é o autor do **"Censo dos Condomínios"** (2ª edição em nov/2025) — estudo de mercado que virou material de imprensa citado por todo o setor.
+- **Força:** **conteúdo a serviço do produto (content-led growth)** — o blog e o Censo geram autoridade, backlinks e leads para o SaaS. Não vive de mídia, então pode "dar conteúdo de graça" para captar clientes.
+- **Fraqueza:** o objetivo final é vender software; o conteúdo é meio, não fim — abre espaço para um veículo de **jornalismo independente** de verdade.
+- **Lição:** **produzir dados proprietários** (censo, índices, pesquisas) é a forma mais eficiente de virar fonte obrigatória da imprensa e do mercado. **Recomendação forte: o novo portal deveria ter seu próprio estudo/índice anual.**
+
+> **Síntese dos monitorados:** eles validam quatro estratégias de entrada que o gigante (SindicoNet) não cobre bem — **(1) franquia/regionalização** (Jornal do Síndico), **(2) experiência editorial diferenciada** (Folha do Condomínio), **(3) vertical temático** (Condo.news/tech), e **(4) dado proprietário como autoridade** (uCondo/Censo).
+
+**Outros para radar:** Revista dos Condomínios, Universo Condomínio, Click Síndico, Direcional Condomínios, O Condomínio (Rosely Schwartz).
 
 ---
 
@@ -179,5 +211,6 @@ Os três concorrentes analisados ocupam **posições estratégicas distintas**, 
 - Comparativo de portais (uCondo): https://www.ucondo.com.br/blog/sites-para-sindicos-e-administradoras-confira-os-principais-portais-da-gestao-condominial
 - Dados de mercado (Censo Condominial 2024/25, uCondo, INFOIMÓVEIS, ABRASSP): https://www.ucondo.com.br/blog/censo-dos-condominios-2024-25-o-perfil-do-mercado-condominial · https://www.infoimoveis.com.br/noticia/condominios-movimentam-r-165-bilhoes-por-ano-no-brasil/2626
 - Concorrentes adjacentes: https://condo.news/ · https://jornaldosindico.com.br/ · https://revistadoscondominios.com.br/
+- Concorrentes monitorados: Jornal do Síndico (https://jornaldosindico.com.br/ · https://jornaldosindicobsb.com.br/) · Folha do Condomínio (via comparativo uCondo) · Condo.news (https://condo.news/ · Revista Condo.news) · uCondo (https://www.ucondo.com.br/ · Censo dos Condomínios: https://www.ucondo.com.br/blog/censo-dos-condominios-2024-25-o-perfil-do-mercado-condominial)
 
 > *Observação metodológica: os números de audiência (visitas, seguidores, cadastros) são autodeclarados pelos portais ou reportados por terceiros e devem ser tratados como indicativos, não auditados.*
