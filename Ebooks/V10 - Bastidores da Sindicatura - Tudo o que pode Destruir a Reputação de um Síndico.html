@@ -1,0 +1,1350 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Tudo o que pode Destruir a Reputação de um Síndico · Bastidores da Sindicatura · Vol. 10</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <circle r="120" fill="none" stroke="#B8543B" stroke-width="6"/>
+      <path d="M-46 -8 a46 40 0 1 0 18 -34 L-46 -54 Z" fill="none" stroke="#B8543B" stroke-width="12" stroke-linejoin="round"/>
+      <text y="180" font-family="serif" font-style="italic" font-size="64" fill="#0E1A2B">Bastidores</text>
+      <text y="240" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A; --rule:1px solid var(--line);
+  }
+  @page { size: 210mm 297mm; margin: 0; }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; width:210mm; background:#2A2522; font-family:"Manrope", system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; color:var(--ink); page-break-after:always; break-after:page; margin:0 auto; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen { html, body{ width:auto; } body{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 0 60px; } .page{ box-shadow:0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); } }
+  @media print{ html, body{ background:#fff; width:210mm; margin:0; padding:0; display:block; } .page{ box-shadow:none; margin:0; display:block; } }
+  html.show-overflow .pg-body{ outline:1px dashed rgba(184,84,59,.4); }
+  html.show-overflow .page{ outline:1px dashed rgba(14,26,43,.25); }
+
+  .frame{ position:absolute; inset:14mm 16mm; }
+  .pg-head{ position:absolute; top:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); padding-bottom:4mm; border-bottom:var(--rule); }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{ width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  .pg-foot{ position:absolute; bottom:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:8.5pt; color:var(--muted); padding-top:4mm; border-top:var(--rule); }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .pg-body{ position:absolute; top:22mm; bottom:18mm; left:16mm; right:16mm; display:flex; flex-direction:column; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif","Times New Roman",serif; font-weight:400; }
+  .section-num{ font-family:"Instrument Serif"; font-style:italic; font-size:58pt; line-height:1; color:var(--accent); letter-spacing:-.02em; }
+  .section-kicker{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-title{ font-family:"Instrument Serif"; font-weight:400; font-size:30pt; line-height:1.04; letter-spacing:-.01em; color:var(--ink); margin-top:2mm; }
+  .section-lede{ font-size:10pt; line-height:1.55; color:var(--ink-2); max-width:135mm; margin-top:4mm; }
+  .h-sub{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:3.5mm; }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.2mm; }
+  ul.checks li{ display:flex; gap:9px; align-items:flex-start; font-size:9.5pt; line-height:1.4; color:var(--ink-2); padding:.9mm 0; border-bottom:1px dotted var(--line); }
+  ul.checks li:last-child{ border-bottom:none; }
+  ul.checks li .box{ flex:0 0 auto; width:4mm; height:4mm; border:1.2px solid var(--ink); border-radius:1.2px; background:var(--cream); margin-top:1.2mm; }
+  .stack-tight ul.checks li{ font-size:9pt; padding:.5mm 0; }
+  .stack-tight ul.checks li .box{ width:3.6mm; height:3.6mm; margin-top:1mm; }
+  ul.bul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.2mm; }
+  ul.bul li{ display:flex; gap:9px; align-items:flex-start; font-size:9.5pt; line-height:1.45; color:var(--ink-2); padding:.9mm 0; border-bottom:1px dotted var(--line); }
+  ul.bul li:last-child{ border-bottom:none; }
+  ul.bul li::before{ content:""; flex:0 0 auto; width:5px; height:5px; margin-top:2.4mm; background:var(--accent); border-radius:50%; }
+
+  .cols-2{ display:grid; grid-template-columns:1fr 1fr; column-gap:10mm; align-items:start; }
+  ol.enum{ list-style:none; padding:0; margin:0; counter-reset:en; display:flex; flex-direction:column; gap:1.5mm; }
+  ol.enum li{ counter-increment:en; display:flex; gap:9px; align-items:baseline; font-size:9.5pt; line-height:1.4; color:var(--ink-2); padding:1mm 0; border-bottom:1px dotted var(--line); }
+  ol.enum li::before{ content:counter(en, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--accent); flex:0 0 9mm; }
+  ol.enum li b{ color:var(--ink); }
+
+  .callout{ background:var(--paper-2); border-left:3px solid var(--accent); padding:4mm 5mm; font-size:9pt; line-height:1.5; color:var(--ink-2); margin-top:3mm; }
+  .callout b{ color:var(--ink); }
+  .quote-block{ background:var(--cream); border:1px solid var(--line); padding:6mm 7mm; font-family:"Instrument Serif"; font-style:italic; font-size:12pt; line-height:1.45; color:var(--ink); }
+  .quote-block .signature{ margin-top:3mm; font-family:"Manrope"; font-style:normal; font-size:8pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .survival{ background:var(--paper-2); border-left:3px solid var(--accent); padding:4mm 6mm; display:flex; flex-direction:column; gap:1.5mm; }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size:7.8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; line-height:1.3; color:var(--ink); }
+
+  .tag{ display:inline-flex; align-items:center; gap:6px; font-size:8pt; letter-spacing:.18em; text-transform:uppercase; color:var(--ink); background:var(--cream); padding:2mm 3.5mm; border-radius:100px; border:1px solid var(--line); font-weight:600; }
+  .hr-orn{ display:flex; align-items:center; gap:10px; color:var(--accent); margin:3mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent);}
+
+  /* refrain – soft anaphoric block */
+  .refrain{ display:flex; flex-direction:column; gap:1.2mm; padding:3mm 5mm; border-left:2px solid var(--line); }
+  .refrain p{ margin:0; font-size:10pt; line-height:1.5; color:var(--ink-2); }
+  .refrain p b{ color:var(--ink); font-weight:600; }
+
+  /* tier interpretation rows */
+  .tiers{ display:flex; flex-direction:column; gap:2.5mm; }
+  .tier{ display:grid; grid-template-columns: 24mm 1fr; gap:5mm; align-items:start; padding:3mm 5mm; background:var(--cream); border-left:3px solid var(--line); }
+  .tier .range{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent); line-height:1; }
+  .tier p{ margin:0; font-size:9pt; line-height:1.42; color:var(--ink-2); }
+  .tier.t2{ border-left-color:var(--gold); }
+  .tier.t3{ border-left-color:var(--accent-2); }
+  .tier.t4{ border-left-color:var(--accent); background:var(--paper-2); }
+  .tier.t4 p{ color:var(--ink); font-weight:500; }
+  .tier.t5{ border-left-color:#7A2C1E; background:var(--paper-2); }
+  .tier.t5 .range{ color:#7A2C1E; }
+
+  /* mini checklist grid */
+  .mini-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:4mm 8mm; align-content:start; }
+  .mini-grid.two-col{ grid-template-columns:1fr 1fr; }
+  .mini .h-sub{ margin-bottom:2.5mm; font-size:8.5pt; }
+  .mini ul.checks li{ font-size:8.8pt; padding:.3mm 0; }
+  .mini ul.checks li .box{ width:3.4mm; height:3.4mm; margin-top:.9mm; }
+
+  /* compare ruim/melhor */
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+  .compare .box{ padding:4mm 5mm; }
+  .compare .bad{ background:var(--paper-2); border-left:3px solid var(--accent); }
+  .compare .good{ background:var(--cream); border-left:3px solid var(--gold); }
+  .compare .lbl{ font-family:"Manrope"; font-weight:700; font-size:7.6pt; letter-spacing:.18em; text-transform:uppercase; margin-bottom:1.5mm; display:block; }
+  .compare .bad .lbl{ color:var(--accent); }
+  .compare .good .lbl{ color:var(--gold); }
+  .compare p{ margin:0; font-family:"Instrument Serif"; font-style:italic; font-size:9.5pt; line-height:1.3; color:var(--ink); }
+
+  /* model */
+  .model{ background:var(--cream); border:1px dashed var(--gold); padding:5mm 6mm; font-family:"Instrument Serif", serif; font-size:10pt; line-height:1.45; color:var(--ink-2); position:relative; }
+  .model::before{ content:"MODELO"; position:absolute; top:-3mm; left:6mm; background:var(--paper); padding:0 3mm; font-family:"Manrope"; font-size:8pt; letter-spacing:.24em; color:var(--gold); font-weight:700; }
+  .model p{ margin:0; }
+
+  /* replies */
+  .replies{ display:grid; grid-template-columns:1fr 1fr; gap:3.5mm 8mm; }
+  .reply-card{ border-left:2px solid var(--accent); padding-left:4mm; }
+  .reply-card .sit{ font-family:"Manrope"; font-weight:700; font-size:7.6pt; letter-spacing:.12em; text-transform:uppercase; color:var(--gold); display:block; margin-bottom:1.2mm; }
+  .reply-card p{ margin:0; font-family:"Instrument Serif"; font-style:italic; font-size:9.5pt; line-height:1.35; color:var(--ink-2); }
+
+  /* sinal blocks (Cap 02) */
+  .sinais{ display:grid; grid-template-columns:1fr 1fr; gap:4mm 8mm; }
+  .sinal{ display:grid; grid-template-columns:14mm 1fr; gap:0 4mm; align-items:start; }
+  .sinal .n{ font-family:"Instrument Serif"; font-style:italic; font-size:24pt; line-height:.85; color:var(--accent); }
+  .sinal .ttl{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--ink); display:block; margin-bottom:1.2mm; }
+  .sinal p{ margin:0; font-size:9pt; line-height:1.4; color:var(--ink-2); }
+
+  /* COVER */
+  .cover{ background: radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.12), transparent 55%), radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%), var(--paper); }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:var(--rule); padding-bottom:6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap:10px; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); }
+  .cover-brand .logo .mark{ width:30px; height:30px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border:2px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .cover-brand .sub{ font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--accent); }
+  .cover-meta .label{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:12mm 0 8mm; }
+  .cover-eyebrow{ font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:8mm; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size:54pt; line-height:.98; letter-spacing:-.022em; color:var(--ink); margin:0 0 6mm; }
+  .cover-title .it{ font-style:italic; color:var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size:12pt; line-height:1.5; color:var(--ink-2); max-width:158mm; }
+  .cover-bottom{ border-top:var(--rule); padding-top:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap:13mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size:36pt; line-height:1; color:var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color:var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:2mm; }
+
+  /* OPENER */
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size:44pt; line-height:1.02; color:var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style:italic; color:var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:7mm; }
+  .opener-grid p{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  /* TOC */
+  .toc-list{ display:grid; grid-template-columns:1fr 1fr; column-gap:10mm; margin-top:3mm; }
+  .toc-item{ display:flex; align-items:baseline; gap:8px; padding:1.8mm 0; border-bottom:1px dotted var(--line); font-size:9pt; color:var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--accent); flex:0 0 9mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size:10pt; color:var(--muted); }
+
+  /* SECTION HEAD */
+  .section-head{ display:flex; gap:9mm; align-items:flex-start; padding-bottom:5mm; border-bottom:var(--rule); margin-bottom:5mm; }
+  .section-head .big{ flex:0 0 auto; }
+  .section-head .meta{ flex:1; padding-top:4mm;}
+  .section-body{ display:flex; flex-direction:column; gap:4mm; flex:1;}
+  .block-card{ background:var(--cream); border:1px solid var(--line); padding:5mm 6mm; }
+  .twoframe{ display:grid; grid-template-columns:1fr 1fr; gap:7mm; }
+  .threeframe{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:7mm; }
+
+  /* compact head for combined chapter pages */
+  .frases-head{ display:flex; align-items:baseline; gap:6mm; flex-wrap:wrap; padding-bottom:3mm; border-bottom:var(--rule); margin-bottom:4mm; }
+  .frases-head .section-kicker{ flex:0 0 auto; }
+  .frases-head h2{ font-family:"Instrument Serif"; font-weight:400; font-size:22pt; line-height:1.05; color:var(--ink); margin:0; }
+  .frases-head h2 .it{ font-style:italic; color:var(--accent); }
+
+  /* capture */
+  .capture{ background: radial-gradient(120% 80% at 0% 0%, rgba(140,106,42,.12), transparent 55%), radial-gradient(90% 70% at 100% 100%, rgba(184,84,59,.12), transparent 55%), var(--paper); }
+  .cta-band{ background:var(--ink); color:var(--paper); padding:8mm 9mm; display:flex; flex-direction:column; gap:3mm; margin-top:2mm; }
+  .cta-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .cta-band .t{ font-family:"Instrument Serif"; font-size:24pt; line-height:1.05; color:var(--paper); }
+  .cta-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .cta-band .u{ font-family:"Manrope"; font-weight:700; font-size:11pt; letter-spacing:.04em; color:var(--paper); margin-top:1mm; }
+  .cta-band .u span{ color:var(--accent-2); }
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  /* Save-as-PDF FAB */
+  .pdf-fab{ position:fixed; right:22px; bottom:22px; z-index:9999; display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:#0E1A2B; color:#F4EEDF; border:none; border-radius:999px; font-family:"Manrope", system-ui, sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; box-shadow:0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30), inset 0 0 0 1px rgba(255,255,255,.06); transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .pdf-fab:hover{ transform:translateY(-2px); background:#B8543B; box-shadow:0 18px 42px rgba(184,84,59,.45), 0 4px 12px rgba(184,84,59,.30); }
+  .pdf-fab svg{ width:16px; height:16px; flex:0 0 auto; }
+  .pdf-fab .dot-accent{ width:6px; height:6px; border-radius:50%; background:#B8543B; box-shadow:0 0 0 3px rgba(184,84,59,.22); }
+  .pdf-fab:hover .dot-accent{ background:#F4EEDF; box-shadow:0 0 0 3px rgba(244,238,223,.22); }
+  .pdf-hint{ position:fixed; right:22px; bottom:74px; z-index:9998; max-width:280px; padding:12px 14px; background:#FBF7EC; border:1px solid #D9D2C2; border-radius:10px; font-family:"Manrope", system-ui, sans-serif; font-size:11.5px; line-height:1.5; color:#1F2C3F; box-shadow:0 10px 30px rgba(0,0,0,.18); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .pdf-hint.show{ opacity:1; transform:translateY(0); }
+  .pdf-hint b{ color:#B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display:none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 10</div>
+          <div class="label">Carreira em sindicatura</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">Guia direto da carreira em sindicatura</div>
+        <h1 class="cover-title">Tudo o que pode <span class="it">destruir</span> a reputação de um síndico.</h1>
+        <p class="cover-deck">Um guia prático para quem quer crescer na sindicatura sem perder autoridade, credibilidade e mercado. Com testes, checklists e um diagnóstico completo da sua imagem profissional.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">18</span></div><div class="l">Capítulos</div></div>
+          <div class="s"><div class="n">5</div><div class="l">Testes diagnósticos</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · OPENER -->
+  <section class="page opener" data-screen-label="02 Posicionamento">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Introdução</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:8mm;">Antes de começar</div>
+        <h2 class="opener-title">Reputação não é detalhe. É <span class="it">patrimônio.</span></h2>
+        <div class="opener-grid">
+          <div>
+            <p>A reputação de um síndico não é construída só pelo que ele faz. É construída pelo que ele comunica, pelo que registra, pelo que decide, pelo que evita, pelo que tolera e, principalmente, pelo que as pessoas percebem da sua postura.</p>
+            <p>Um síndico pode ser tecnicamente excelente, dominar legislação, manutenção, finanças e contratos. Se a imagem estiver desgastada, a gestão fica vulnerável.</p>
+          </div>
+          <div>
+            <p>Reputação raramente é destruída por um grande erro. Ela é corroída aos poucos: uma mensagem mal respondida, uma decisão sem registro, uma promessa não cumprida, uma assembleia mal conduzida.</p>
+            <p>Este e-book ajuda síndicos, gestores e administradoras a reconhecerem os fatores que podem desgastar a imagem profissional. Mais que apontar riscos, traz testes, checklists e um diagnóstico completo.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">Para quem é</div>
+            <p style="margin:0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Síndicos profissionais, síndicos moradores, conselheiros, administradoras e gestores condominiais que querem proteger autoridade e crescer no mercado com método.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">A premissa</div>
+            <p style="margin:0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Reputação não se recupera com discurso. Reputação se protege com método. E método é o que este guia entrega, capítulo a capítulo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 10</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · TOC -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:3mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">01</span><span class="ttl">O que é reputação na sindicatura</span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">10</span><span class="ttl">Favorecimento e privilégio</span><span class="pg">14</span></div>
+        <div class="toc-item"><span class="num">02</span><span class="ttl">Sete sinais de risco</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">11</span><span class="ttl">Contratação de fornecedores</span><span class="pg">15</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Teste · Sua reputação está protegida?</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">12</span><span class="ttl">Crises mal administradas</span><span class="pg">16</span></div>
+        <div class="toc-item"><span class="num">03</span><span class="ttl">Falta de comunicação</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">13</span><span class="ttl">Assembleia mal conduzida</span><span class="pg">17</span></div>
+        <div class="toc-item"><span class="num">04</span><span class="ttl">Prometer o que não depende só de você</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">14</span><span class="ttl">Ignorar pequenos problemas</span><span class="pg">18</span></div>
+        <div class="toc-item"><span class="num">05</span><span class="ttl">Falta de registro</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">15·16</span><span class="ttl">Dizer não, e separar pessoal de profissional</span><span class="pg">19</span></div>
+        <div class="toc-item"><span class="num">06</span><span class="ttl">Relação ruim com o conselho</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">17·18</span><span class="ttl">Imagem digital e incoerência</span><span class="pg">20</span></div>
+        <div class="toc-item"><span class="num">07</span><span class="ttl">Prestação de contas confusa</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Diagnóstico · Mapa de risco reputacional</span><span class="pg">21</span></div>
+        <div class="toc-item"><span class="num">08</span><span class="ttl">WhatsApp em tempo real</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Plano de ação para 30 dias</span><span class="pg">22</span></div>
+        <div class="toc-item"><span class="num">09</span><span class="ttl">Falta de postura profissional</span><span class="pg">13</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Checklist final e dez frases que protegem</span><span class="pg">23</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Conclusão</span><span class="pg">24</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">A mentoria Bastidores da Sindicatura</span><span class="pg">25</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · CAP 01 -->
+  <section class="page" data-screen-label="04 Cap 01">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 01 · Reputação</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">01</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo um</div>
+          <h2 class="section-title">O que é <span class="serif" style="font-style:italic;color:var(--accent);">reputação</span> na sindicatura.</h2>
+          <p class="section-lede">É a soma entre aquilo que você entrega e aquilo que as pessoas acreditam que você entrega. Essa percepção nasce de fragmentos: uma mensagem sem resposta, um relatório incompleto, um retorno fora do prazo.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="threeframe">
+          <div class="block-card">
+            <div class="h-sub">1 · Entrega</div>
+            <p style="margin:0;font-size:9.5pt;line-height:1.5;color:var(--ink-2);">O que de fato está sendo feito: manutenção, segurança, contratos, obras, atendimento, finanças, documentação e condução de assembleias.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">2 · Comunicação</div>
+            <p style="margin:0;font-size:9.5pt;line-height:1.5;color:var(--ink-2);">Como as pessoas ficam sabendo: relatórios, comunicados, atas, mensagens, reuniões, circulares, respostas e prestação de contas.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">3 · Percepção</div>
+            <p style="margin:0;font-size:9.5pt;line-height:1.5;color:var(--ink-2);">Como moradores, conselho e administradora interpretam a atuação. O ponto mais delicado, porque a percepção nem sempre acompanha a verdade.</p>
+          </div>
+        </div>
+        <div class="refrain">
+          <p>Você pode estar trabalhando muito. Sem comunicação, a percepção é de <b>ausência</b>.</p>
+          <p>Você pode estar sendo técnico. Sem explicação, a percepção é de <b>arrogância</b>.</p>
+          <p>Você pode estar sendo prudente. Sem registro, a percepção é de <b>omissão</b>.</p>
+          <p>Você pode estar economizando dinheiro. Sem critério visível, a percepção é de <b>favorecimento</b>.</p>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase para guardar</span>
+          <span class="txt">Na sindicatura, reputação não é vaidade. É proteção.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 01 · O que é reputação na sindicatura</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · CAP 02 · 7 SINAIS -->
+  <section class="page" data-screen-label="05 Cap 02">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 02 · Sinais de risco</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 02</div>
+        <h2>Sete sinais de que a reputação está em <span class="it">risco</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:4mm;">Antes de a reputação ser destruída, ela começa a dar avisos. O problema é que muitos síndicos só percebem quando a crise já está instalada. Reconhecer os sinais cedo é parte do método.</p>
+      <div class="sinais" style="flex:1; align-content:start;">
+        <div class="sinal"><div class="n">01</div><div><span class="ttl">O grupo virou tribunal</span><p>Qualquer tema vira julgamento público. A autoridade da gestão já começou a ser testada.</p></div></div>
+        <div class="sinal"><div class="n">02</div><div><span class="ttl">Conselho pede prova de tudo</span><p>Cada decisão precisa ser defendida como se fosse acusação. Existe ruído na confiança.</p></div></div>
+        <div class="sinal"><div class="n">03</div><div><span class="ttl">“Ninguém faz nada”</span><p>A gestão atua, mas o morador não sabe. O que não se sabe, se interpreta.</p></div></div>
+        <div class="sinal"><div class="n">04</div><div><span class="ttl">Pequenos erros viram munição</span><p>Quando a reputação está forte, erro é incidente. Quando está fraca, vira prova.</p></div></div>
+        <div class="sinal"><div class="n">05</div><div><span class="ttl">Assembleia contaminada</span><p>A pauta é dominada por ressentimentos, suspeitas e histórias antigas, e pouca técnica.</p></div></div>
+        <div class="sinal"><div class="n">06</div><div><span class="ttl">O síndico se explica demais</span><p>Explicar é necessário. Justificar o tempo inteiro desgasta a autoridade.</p></div></div>
+        <div class="sinal" style="grid-column:1/-1;"><div class="n">07</div><div><span class="ttl">A comunicação oficial perde força</span><p>Quando o morador acredita mais no boato do grupo do que no comunicado da gestão, o problema é institucional.</p></div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 02 · Sete sinais de risco</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · TESTE 1 -->
+  <section class="page" data-screen-label="06 Teste 1">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Teste rápido</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Teste rápido</div>
+        <h2>Sua reputação como síndico está <span class="it">protegida</span>?</h2>
+      </div>
+      <p class="body" style="margin-bottom:3mm;">Responda <b>sim</b> ou <b>não</b> a cada pergunta. Conte os “sim” ao final e leia o resultado abaixo.</p>
+      <div class="cols-2" style="margin-bottom:4mm;">
+        <ol class="enum">
+          <li>Você envia comunicados claros sobre os principais assuntos?</li>
+          <li>Você registra decisões importantes por escrito?</li>
+          <li>Você evita decidir temas relevantes só pelo WhatsApp?</li>
+          <li>O conselho recebe informações de forma organizada?</li>
+          <li>A prestação de contas é compreensível para leigos?</li>
+          <li>Você evita prometer prazos que dependem de terceiros?</li>
+          <li>Você responde críticas sem confronto pessoal?</li>
+          <li>Você consegue explicar tecnicamente suas decisões?</li>
+        </ol>
+        <ol class="enum" style="counter-reset:en 8;">
+          <li>Você arquiva orçamentos, contratos e aprovações?</li>
+          <li>Você consegue provar o que foi feito na gestão?</li>
+          <li>Você comunica problemas antes que virem crise?</li>
+          <li>Você evita exposição desnecessária no grupo?</li>
+          <li>Você mantém postura profissional sob provocação?</li>
+          <li>Você acompanha fornecedores com critérios claros?</li>
+          <li>Você sabe quando um conflito precisa sair do emocional?</li>
+        </ol>
+      </div>
+      <div class="h-sub">Resultado</div>
+      <div class="tiers">
+        <div class="tier"><div class="range">13 a 15</div><p>Sua reputação tende a estar bem protegida, desde que você mantenha método e consistência.</p></div>
+        <div class="tier t2"><div class="range">9 a 12</div><p>Base positiva, mas há pontos vulneráveis que podem ser explorados em momentos de crise.</p></div>
+        <div class="tier t3"><div class="range">5 a 8</div><p>Atenção. A gestão pode estar funcionando, mas a imagem pode estar mais exposta do que você imagina.</p></div>
+        <div class="tier t4"><div class="range">menos de 5</div><p>Sua reputação está em zona de risco. Reorganize comunicação, registros, processos e postura com urgência.</p></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Teste · Sua reputação está protegida?</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · CAP 03 -->
+  <section class="page" data-screen-label="07 Cap 03">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 03 · Comunicação</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">03</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo três</div>
+          <h2 class="section-title">O erro que mais destrói reputação: falta de <span class="serif" style="font-style:italic;color:var(--accent);">comunicação</span>.</h2>
+          <p class="section-lede">Não comunicar gera espaço para interpretação. Em condomínio, interpretação vira narrativa. E quando o síndico não comunica, alguém comunica por ele, geralmente com opinião, recorte ou interesse.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="compare">
+          <div class="box bad"><span class="lbl">Comunicação vaga</span><p>“Estamos vendo o problema do portão.”</p></div>
+          <div class="box good"><span class="lbl">Comunicação que mostra gestão</span><p>“Identificamos falha intermitente no portão da garagem. O fornecedor foi acionado em tal data, a visita técnica está prevista para tal período. Enquanto isso, a portaria acompanha os acessos manualmente em caso de travamento.”</p></div>
+        </div>
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Checklist do comunicado</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>O assunto principal está claro no início</li>
+              <li><span class="box"></span>O morador entende o que aconteceu</li>
+              <li><span class="box"></span>O morador entende o que a gestão está fazendo</li>
+              <li><span class="box"></span>Há prazo, previsão ou próximo passo</li>
+              <li><span class="box"></span>Sem linguagem agressiva ou defensiva</li>
+              <li><span class="box"></span>Termos técnicos foram explicados</li>
+              <li><span class="box"></span>Pessoas não foram expostas sem necessidade</li>
+              <li><span class="box"></span>Há orientação prática</li>
+              <li><span class="box"></span>O texto foi revisado antes do envio</li>
+              <li><span class="box"></span>O comunicado deixa registro útil</li>
+            </ul>
+          </div>
+          <div>
+            <div class="block-card">
+              <div class="h-sub">O que uma boa comunicação precisa ser</div>
+              <p style="margin:0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Clara. Objetiva. Temporal. Rastreável. Profissional. Sem ironia. Sem defensividade. Sem excesso de emoção.</p>
+            </div>
+            <div class="survival" style="margin-top:4mm;">
+              <span class="lbl">Princípio</span>
+              <span class="txt">Comunicação boa não é comunicação longa. É comunicação que protege.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 03 · Falta de comunicação</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · CAP 04 -->
+  <section class="page" data-screen-label="08 Cap 04">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 04 · Prometer</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">04</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo quatro</div>
+          <h2 class="section-title">O perigo de prometer o que não depende só de <span class="serif" style="font-style:italic;color:var(--accent);">você</span>.</h2>
+          <p class="section-lede">Toda promessa vira cobrança. Toda promessa não cumprida vira argumento contra a reputação. O síndico não controla prazo de fornecedor, agenda de assistência técnica, chuva, decisão de assembleia ou comportamento humano.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="compare">
+          <div class="box bad"><span class="lbl">Frases que viram armadilha</span><p>“Até amanhã resolvemos.” / “Pode deixar que eu resolvo.” / “Semana que vem isso estará pronto.” / “Vou cobrar e já te retorno.”</p></div>
+          <div class="box good"><span class="lbl">Frases que mostram processo</span><p>“A gestão já acionou o fornecedor e acompanhará a evolução do chamado. Assim que houver retorno formal, comunicaremos os próximos passos. A previsão depende do diagnóstico técnico.”</p></div>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">O que o síndico controla, de fato</div>
+          <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Ele controla a forma como comunica o processo. Não o prazo do terceiro. Por isso a regra de ouro é comunicar o método, não o resultado final que ainda depende de outros.</p>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">A reputação do síndico não depende de prometer muito. Depende de prometer certo.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 04 · Prometer o que não depende só de você</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · CAP 05 -->
+  <section class="page" data-screen-label="09 Cap 05">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 05 · Registro</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">05</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo cinco</div>
+          <h2 class="section-title">Falta de registro · o buraco invisível da <span class="serif" style="font-style:italic;color:var(--accent);">gestão</span>.</h2>
+          <p class="section-lede">Memória não é prova. Conversa não é processo. Print solto não é gestão. Trabalhar muito e registrar pouco torna a reputação vulnerável na hora da cobrança, da assembleia ou da auditoria.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Documentos que protegem o síndico</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Atas de assembleia atualizadas</li>
+              <li><span class="box"></span>Convenção e regulamento acessíveis</li>
+              <li><span class="box"></span>Contratos vigentes organizados</li>
+              <li><span class="box"></span>Orçamentos arquivados</li>
+              <li><span class="box"></span>Aprovações do conselho registradas</li>
+              <li><span class="box"></span>Relatórios de manutenção e visita</li>
+              <li><span class="box"></span>Chamados com número de protocolo</li>
+              <li><span class="box"></span>Comunicados enviados aos moradores</li>
+              <li><span class="box"></span>Notificações e multas documentadas</li>
+            </ul>
+          </div>
+          <div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Relatórios financeiros mensais</li>
+              <li><span class="box"></span>Prestação de contas organizada</li>
+              <li><span class="box"></span>Cronograma de obras e manutenções</li>
+              <li><span class="box"></span>Evidências fotográficas quando necessário</li>
+              <li><span class="box"></span>Histórico de tratativas com fornecedores</li>
+              <li><span class="box"></span>Lista de pendências atualizada</li>
+              <li><span class="box"></span>Plano de ação para problemas recorrentes</li>
+              <li><span class="box"></span>Justificativas técnicas para decisões</li>
+            </ul>
+            <div class="callout" style="margin-top:4mm;"><b>Risco do “combinado no grupo”.</b> Grupo não substitui ata. Mensagem não substitui contrato. Áudio não substitui parecer.</div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">Documentar não é burocracia. É proteção. A gestão profissional deixa rastro.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 05 · Falta de registro</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · CAP 06 + TESTE 2 -->
+  <section class="page" data-screen-label="10 Cap 06">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 06 · Conselho</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 06</div>
+        <h2>Relação ruim com o <span class="it">conselho</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:3mm;">Ignorar o conselho cria resistência. Depender demais dele tira autoridade. O equilíbrio está em tratá-lo como órgão consultivo e fiscalizador, com canal próprio, agenda e registro de aprovações.</p>
+      <div class="twoframe" style="margin-bottom:4mm;">
+        <div>
+          <div class="h-sub">O que desgasta a relação</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Não prestar informações</li>
+            <li><span class="box"></span>Tomar decisões sensíveis sem alinhamento</li>
+            <li><span class="box"></span>Expor conselheiros no grupo</li>
+            <li><span class="box"></span>Aceitar interferência operacional excessiva</li>
+            <li><span class="box"></span>Não separar opinião pessoal de papel institucional</li>
+            <li><span class="box"></span>Não registrar aprovações</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h-sub">O que fortalece a relação</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Agenda periódica de alinhamento</li>
+            <li><span class="box"></span>Relatórios claros e pauta objetiva</li>
+            <li><span class="box"></span>Decisões registradas</li>
+            <li><span class="box"></span>Separação entre operacional, financeiro e jurídico</li>
+            <li><span class="box"></span>Limites bem definidos</li>
+            <li><span class="box"></span>Firmeza sem arrogância</li>
+          </ul>
+        </div>
+      </div>
+      <div class="frases-head" style="margin-bottom:3mm;">
+        <div class="section-kicker">Teste</div>
+        <h2 style="font-size:18pt;">Sua relação com o conselho está <span class="it">saudável</span>?</h2>
+      </div>
+      <p class="body" style="font-size:9pt;margin-bottom:2mm;">Dê uma nota de 0 a 2 para cada item (0: não acontece, 1: às vezes, 2: com frequência) e some os pontos. Resultado abaixo.</p>
+      <div class="tiers">
+        <div class="tier"><div class="range">16 a 20</div><p>Relação saudável e com boa proteção institucional.</p></div>
+        <div class="tier t2"><div class="range">10 a 15</div><p>Relação funcional, mas com pontos que podem gerar desgaste.</p></div>
+        <div class="tier t3"><div class="range">5 a 9</div><p>Relação instável. Risco de conflito, perda de confiança ou ruído político.</p></div>
+        <div class="tier t4"><div class="range">0 a 4</div><p>Relação crítica. A reputação da gestão pode estar diretamente ameaçada.</p></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 06 · Relação com o conselho</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · CAP 07 -->
+  <section class="page" data-screen-label="11 Cap 07">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 07 · Prestação de contas</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">07</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo sete</div>
+          <h2 class="section-title">Prestação de contas confusa destrói <span class="serif" style="font-style:italic;color:var(--accent);">confiança</span>.</h2>
+          <p class="section-lede">Mesmo sem irregularidade, uma prestação mal apresentada gera suspeita. E suspeita financeira é uma das narrativas mais difíceis de reverter. Não basta estar certo, é preciso conseguir demonstrar.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">O que precisa ficar evidente</div>
+            <ul class="bul">
+              <li>Quanto entrou, quanto saiu e quanto ficou.</li>
+              <li>O que foi gasto e por que foi gasto.</li>
+              <li>Qual despesa aumentou e qual reduziu.</li>
+              <li>Qual o impacto da inadimplência.</li>
+              <li>Quais contratos pesam mais.</li>
+              <li>Quais obras e manutenções aconteceram.</li>
+              <li>Saldo dos fundos e riscos financeiros.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Checklist da prestação de contas</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Balancete revisado antes da apresentação</li>
+              <li><span class="box"></span>Principais variações explicadas</li>
+              <li><span class="box"></span>Inadimplência demonstrada</li>
+              <li><span class="box"></span>Fundos separados corretamente</li>
+              <li><span class="box"></span>Despesas extraordinárias destacadas</li>
+              <li><span class="box"></span>Obras com fotos, notas ou relatórios</li>
+              <li><span class="box"></span>Linguagem acessível para quem não é da área</li>
+              <li><span class="box"></span>Previsão orçamentária justificada</li>
+              <li><span class="box"></span>Aumentos contextualizados</li>
+              <li><span class="box"></span>Decisões registradas em ata</li>
+            </ul>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio editorial</span>
+          <span class="txt">A reputação financeira do síndico não depende só de não fazer errado. Depende de conseguir provar que está certo.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 07 · Prestação de contas confusa</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · CAP 08 + TESTE 3 -->
+  <section class="page" data-screen-label="12 Cap 08">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 08 · WhatsApp</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 08</div>
+        <h2>WhatsApp · onde reputações são destruídas em <span class="it">tempo real</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:3mm;">A crítica vem em público. A acusação vem no calor da emoção. A ironia contamina. O print circula. A resposta atravessada viraliza. Grupo de WhatsApp não é assembleia, não é tribunal, não é SAC ilimitado.</p>
+      <div class="twoframe" style="margin-bottom:4mm;">
+        <div>
+          <div class="h-sub">Erros que destroem reputação</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Responder com irritação</li>
+            <li><span class="box"></span>Entrar em discussão longa</li>
+            <li><span class="box"></span>Mandar áudio emocional</li>
+            <li><span class="box"></span>Expor morador</li>
+            <li><span class="box"></span>Discutir temas jurídicos no grupo</li>
+            <li><span class="box"></span>Prometer solução sem análise</li>
+            <li><span class="box"></span>Usar ironia em momento de tensão</li>
+          </ul>
+        </div>
+        <div>
+          <div class="model">
+            <p>Entendemos a preocupação. Para que a demanda seja tratada corretamente, pedimos que seja formalizada pelo canal oficial. A gestão analisará o caso conforme regulamento interno, registros disponíveis e procedimento aplicável.</p>
+          </div>
+          <div class="callout" style="margin-top:4mm;">Proteger reputação é, muitas vezes, saber não entrar no palco errado.</div>
+        </div>
+      </div>
+      <div class="frases-head" style="margin-bottom:3mm;">
+        <div class="section-kicker">Teste</div>
+        <h2 style="font-size:18pt;">Você está se expondo demais no <span class="it">grupo</span>?</h2>
+      </div>
+      <p class="body" style="font-size:9pt;margin-bottom:2mm;">Conte os “sim” entre 10 perguntas como: você responde fora do horário? Já se arrependeu de uma resposta no impulso? Sente ansiedade ao ver notificação?</p>
+      <div class="tiers">
+        <div class="tier"><div class="range">0 a 2</div><p>Boa proteção. Você tende a usar o WhatsApp com maturidade.</p></div>
+        <div class="tier t2"><div class="range">3 a 5</div><p>Atenção. Existem pontos de exposição que podem gerar desgaste.</p></div>
+        <div class="tier t3"><div class="range">6 a 8</div><p>Risco alto. O WhatsApp pode estar enfraquecendo sua autoridade.</p></div>
+        <div class="tier t4"><div class="range">9 a 10</div><p>Risco crítico. A reputação pode estar sendo decidida no grupo, e não pela gestão.</p></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 08 · WhatsApp e exposição</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · CAP 09 -->
+  <section class="page" data-screen-label="13 Cap 09">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 09 · Postura</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">09</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo nove</div>
+          <h2 class="section-title">Falta de postura <span class="serif" style="font-style:italic;color:var(--accent);">profissional</span>.</h2>
+          <p class="section-lede">O síndico é observado o tempo todo. Na assembleia, no elevador, no grupo, na portaria, no comunicado e até na forma como cobra. Não precisa ser distante ou artificial. Precisa ter consciência de posição.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Posturas que destroem reputação</div>
+            <ul class="bul">
+              <li>Falar mal de morador para outro morador.</li>
+              <li>Fazer piada com situação sensível.</li>
+              <li>Gritar em assembleia.</li>
+              <li>Responder com deboche ou indireta.</li>
+              <li>Demonstrar preferência por grupos.</li>
+              <li>Misturar amizade com decisão técnica.</li>
+              <li>Aplicar regra de forma seletiva.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Posturas que protegem reputação</div>
+            <ul class="bul">
+              <li>Escuta ativa.</li>
+              <li>Firmeza e previsibilidade.</li>
+              <li>Coerência e neutralidade.</li>
+              <li>Comunicação objetiva.</li>
+              <li>Controle emocional.</li>
+              <li>Respeito ao procedimento.</li>
+              <li>Capacidade de dizer não.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">O síndico não pode se comportar como mais um participante da confusão. Precisa ser a referência de condução.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 09 · Falta de postura profissional</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · CAP 10 -->
+  <section class="page" data-screen-label="14 Cap 10">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 10 · Favorecimento</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">10</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo dez</div>
+          <h2 class="section-title">Favorecimento, seletividade e aparência de <span class="serif" style="font-style:italic;color:var(--accent);">privilégio</span>.</h2>
+          <p class="section-lede">Nem sempre o problema é o favorecimento real. Às vezes é a aparência. Quando moradores acreditam que alguns recebem tratamento especial, a gestão perde legitimidade rapidamente.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Situações de risco</div>
+            <ul class="bul">
+              <li>Multar um morador e só advertir outro em caso semelhante.</li>
+              <li>Liberar exceção para um conhecido.</li>
+              <li>Tratar conselheiro com prioridade injustificada.</li>
+              <li>Ignorar infração de morador influente.</li>
+              <li>Contratar fornecedor indicado sem comparação.</li>
+              <li>Aprovar algo sem critério claro.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Checklist de decisão sem aparência de favorecimento</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>A decisão tem base na convenção ou em assembleia</li>
+              <li><span class="box"></span>Casos semelhantes foram tratados igual</li>
+              <li><span class="box"></span>Existe registro da justificativa</li>
+              <li><span class="box"></span>A exceção, se houver, é defensável tecnicamente</li>
+              <li><span class="box"></span>O conselho foi informado quando necessário</li>
+              <li><span class="box"></span>O morador beneficiado não teve privilégio</li>
+              <li><span class="box"></span>A decisão pode ser explicada em assembleia</li>
+              <li><span class="box"></span>A documentação está arquivada</li>
+            </ul>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">Mesmo quando a decisão desagrada, ela precisa parecer coerente. A sensação de justiça sustenta a autoridade.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 10 · Favorecimento e privilégio</div><div class="pg-num">14</div></div>
+  </section>
+
+  <!-- PAGE 15 · CAP 11 -->
+  <section class="page" data-screen-label="15 Cap 11">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 11 · Fornecedores</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">11</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo onze</div>
+          <h2 class="section-title">Contratação mal conduzida de <span class="serif" style="font-style:italic;color:var(--accent);">fornecedores</span>.</h2>
+          <p class="section-lede">Quando o fornecedor falha, quem é cobrado é o síndico. Quando a obra atrasa, o síndico responde. Por isso contratação não pode ser só preço. Precisa ser processo.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">O que analisar antes de contratar</div>
+            <ul class="bul">
+              <li>Escopo, preço e prazo.</li>
+              <li>Capacidade técnica e histórico.</li>
+              <li>Garantia e condições de pagamento.</li>
+              <li>Documentação e responsabilidade civil.</li>
+              <li>Segurança do trabalho.</li>
+              <li>Atendimento pós-venda.</li>
+              <li>Impacto na rotina do condomínio.</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Checklist de contratação segura</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Pelo menos três orçamentos quando aplicável</li>
+              <li><span class="box"></span>Escopos comparados de forma equivalente</li>
+              <li><span class="box"></span>Documentação mínima apresentada</li>
+              <li><span class="box"></span>Contrato ou proposta formal aprovada</li>
+              <li><span class="box"></span>Prazo, garantia e responsabilidades descritos</li>
+              <li><span class="box"></span>Conselho envolvido quando necessário</li>
+              <li><span class="box"></span>Previsão orçamentária respeitada</li>
+              <li><span class="box"></span>Início comunicado aos moradores</li>
+              <li><span class="box"></span>Execução acompanhada</li>
+              <li><span class="box"></span>Encerramento documentado</li>
+            </ul>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">Contratação mal feita vira crise técnica, financeira e reputacional. Boa contratação é o que separa gestão de improviso.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 11 · Contratação de fornecedores</div><div class="pg-num">15</div></div>
+  </section>
+
+  <!-- PAGE 16 · CAP 12 · CRISES -->
+  <section class="page" data-screen-label="16 Cap 12">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 12 · Crises</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">12</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo doze</div>
+          <h2 class="section-title">Crises mal <span class="serif" style="font-style:italic;color:var(--accent);">administradas</span>.</h2>
+          <p class="section-lede">Toda gestão enfrenta crise. A crise em si não destrói a reputação. O que destrói é a forma como ela é conduzida. Quando a gestão some, a crise cresce. Quando a gestão fala demais sem informação, a crise cresce.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Protocolo básico de crise</div>
+            <ol class="enum">
+              <li>Identifique o problema.</li>
+              <li>Acione os responsáveis.</li>
+              <li>Registre os fatos.</li>
+              <li>Comunique a situação inicial.</li>
+              <li>Informe o que está sendo feito.</li>
+              <li>Evite promessas sem base.</li>
+              <li>Atualize periodicamente.</li>
+              <li>Documente custos e decisões.</li>
+              <li>Encaminhe responsabilidades.</li>
+              <li>Faça pós-crise com aprendizado.</li>
+            </ol>
+          </div>
+          <div>
+            <div class="h-sub">Checklist da comunicação de crise</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>O comunicado informa o que aconteceu</li>
+              <li><span class="box"></span>O texto evita especulação</li>
+              <li><span class="box"></span>Há lista das providências adotadas</li>
+              <li><span class="box"></span>Há previsão de nova atualização</li>
+              <li><span class="box"></span>Os moradores sabem o que fazer ou evitar</li>
+              <li><span class="box"></span>Conselho e administradora foram envolvidos</li>
+              <li><span class="box"></span>A comunicação foi revisada antes do envio</li>
+              <li><span class="box"></span>Haverá fechamento após a solução</li>
+            </ul>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase para guardar</span>
+          <span class="txt">Na crise, o silêncio da gestão não acalma. Ele assusta.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 12 · Crises mal administradas</div><div class="pg-num">16</div></div>
+  </section>
+
+  <!-- PAGE 17 · CAP 13 + TESTE 4 -->
+  <section class="page" data-screen-label="17 Cap 13">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 13 · Assembleia</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 13</div>
+        <h2>Assembleia mal <span class="it">conduzida</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:3mm;">É um dos principais palcos de reputação do síndico. Ali muitos moradores formam ou confirmam sua percepção sobre a gestão. Pauta clara, documentos preparados e condução firme valem mais que qualquer microfone.</p>
+      <div class="twoframe" style="margin-bottom:4mm;">
+        <div>
+          <div class="h-sub">O que destrói reputação</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Chegar sem domínio da pauta</li>
+            <li><span class="box"></span>Não ter documentos organizados</li>
+            <li><span class="box"></span>Permitir ataques pessoais</li>
+            <li><span class="box"></span>Não controlar tempo de fala</li>
+            <li><span class="box"></span>Responder com irritação</li>
+            <li><span class="box"></span>Ignorar dúvidas legítimas</li>
+            <li><span class="box"></span>Prometer o que não foi aprovado</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h-sub">O que fortalece reputação</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Pauta clara e documentos prévios</li>
+            <li><span class="box"></span>Abertura objetiva</li>
+            <li><span class="box"></span>Explicação técnica acessível</li>
+            <li><span class="box"></span>Controle emocional</li>
+            <li><span class="box"></span>Respeito ao direito de fala, com limite</li>
+            <li><span class="box"></span>Votação organizada</li>
+            <li><span class="box"></span>Ata fiel e próximos passos claros</li>
+          </ul>
+        </div>
+      </div>
+      <div class="frases-head" style="margin-bottom:3mm;">
+        <div class="section-kicker">Teste</div>
+        <h2 style="font-size:18pt;">Sua assembleia protege ou enfraquece sua <span class="it">imagem</span>?</h2>
+      </div>
+      <div class="tiers">
+        <div class="tier"><div class="range">8 a 10</div><p>Sua assembleia tende a fortalecer sua reputação.</p></div>
+        <div class="tier t2"><div class="range">5 a 7</div><p>A condução funciona, mas ainda tem pontos vulneráveis.</p></div>
+        <div class="tier t4"><div class="range">0 a 4</div><p>A assembleia pode estar colocando sua reputação em risco.</p></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 13 · Assembleia mal conduzida</div><div class="pg-num">17</div></div>
+  </section>
+
+  <!-- PAGE 18 · CAP 14 -->
+  <section class="page" data-screen-label="18 Cap 14">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 14 · Pequenos problemas</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">14</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo catorze</div>
+          <h2 class="section-title">Ignorar pequenos problemas até virarem <span class="serif" style="font-style:italic;color:var(--accent);">grandes</span>.</h2>
+          <p class="section-lede">Reputações raramente desmoronam de uma vez. Elas racham. Uma lâmpada queimada, um portão falhando, uma reclamação repetida. O problema pequeno ignorado vira narrativa. E narrativa repetida vira reputação.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">As frases que nascem da repetição</div>
+            <ul class="bul">
+              <li>“Esse síndico nunca responde.”</li>
+              <li>“Essa gestão não fiscaliza.”</li>
+              <li>“Ninguém resolve nada.”</li>
+              <li>“Tudo demora.”</li>
+              <li>“Só atende quem é amigo.”</li>
+              <li>“Contrata sempre os mesmos fornecedores.”</li>
+              <li>“Está perdido.”</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Sinais que pedem acompanhamento</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Reclamações recorrentes de barulho</li>
+              <li><span class="box"></span>Problemas em portões e elevadores</li>
+              <li><span class="box"></span>Iluminação queimada e limpeza irregular</li>
+              <li><span class="box"></span>Funcionários sem orientação clara</li>
+              <li><span class="box"></span>Moradores reincidentes em infrações</li>
+              <li><span class="box"></span>Falta de retorno em chamados</li>
+              <li><span class="box"></span>Inadimplência crescente</li>
+              <li><span class="box"></span>Conselho desalinhado</li>
+              <li><span class="box"></span>Boatos circulando no grupo</li>
+              <li><span class="box"></span>Comunicados confusos</li>
+            </ul>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">O cuidado com o pequeno detalhe é o que diferencia o síndico que conduz do síndico que reage.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 14 · Pequenos problemas que crescem</div><div class="pg-num">18</div></div>
+  </section>
+
+  <!-- PAGE 19 · CAP 15 + 16 -->
+  <section class="page" data-screen-label="19 Caps 15 e 16">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 15 e 16</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulos 15 e 16</div>
+        <h2>Saber dizer não, e separar pessoal de <span class="it">profissional</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:3mm;"><b>Síndico que quer agradar todo mundo coloca a própria reputação em risco.</b> O “não” mal dado gera conflito. O “não” bem dado protege autoridade.</p>
+      <div class="compare" style="margin-bottom:4mm;">
+        <div class="box bad"><span class="lbl">Não mal dado</span><p>“Não pode.” “Está no regulamento.” “Já falei que não.” “Não é problema meu.”</p></div>
+        <div class="box good"><span class="lbl">Não bem dado</span><p>“Entendemos sua solicitação, mas a regra vigente não permite essa exceção. A gestão precisa aplicar o regulamento de forma igual para todos.”</p></div>
+      </div>
+      <p class="body" style="margin-bottom:3mm;"><b>Proximidade sem limite destrói reputação.</b> Síndico vive cercado por moradores, conselheiros, funcionários, fornecedores. Quando a intimidade compromete a decisão, a autoridade vai junto.</p>
+      <div class="block-card" style="margin-bottom:4mm;">
+        <div class="h-sub">Regra prática do bastidor</div>
+        <p style="margin:0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Se você não conseguiria sustentar aquela fala em uma reunião formal, não fale no bastidor. Se não conseguiria justificar a decisão para todos, não aplique para um. Se não conseguiria mostrar aquele print em assembleia, não escreva.</p>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">A reputação do síndico se protege, antes de tudo, no que ele decide não fazer.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 15 e 16 · Dizer não e separar pessoal de profissional</div><div class="pg-num">19</div></div>
+  </section>
+
+  <!-- PAGE 20 · CAP 17 + 18 -->
+  <section class="page" data-screen-label="20 Caps 17 e 18">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 17 e 18</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulos 17 e 18</div>
+        <h2>Imagem digital e <span class="it">incoerência</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:3mm;">Hoje a reputação do síndico vive fora do condomínio. Está no Instagram, no LinkedIn, no Google, nos grupos de mercado, nos prints e nas conversas entre conselheiros de prédios diferentes. Imagem digital é parte da autoridade profissional.</p>
+      <div class="twoframe" style="margin-bottom:4mm;">
+        <div>
+          <div class="h-sub">O que pode prejudicar</div>
+          <ul class="bul">
+            <li>Postagens agressivas.</li>
+            <li>Exposição indevida de moradores.</li>
+            <li>Brigas públicas e comentários debochados.</li>
+            <li>Promessas exageradas e conteúdo sem consistência.</li>
+            <li>Perfis abandonados.</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h-sub">O que fortalece</div>
+          <ul class="bul">
+            <li>Conteúdo educativo.</li>
+            <li>Postura institucional.</li>
+            <li>Clareza de posicionamento.</li>
+            <li>Provas sociais e depoimentos.</li>
+            <li>Presença consistente.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="quote-block" style="background:var(--paper-2);">
+        O maior inimigo da reputação é a incoerência. Entre o que se fala e o que se faz. Entre a regra de hoje e a de amanhã. Entre o discurso de transparência e a prestação de contas. Quando a gestão é coerente, até a crítica perde força.
+        <div class="signature">Princípio editorial · Bastidores da Sindicatura</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 17 e 18 · Imagem digital e incoerência</div><div class="pg-num">20</div></div>
+  </section>
+
+  <!-- PAGE 21 · DIAGNÓSTICO -->
+  <section class="page" data-screen-label="21 Diagnóstico">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Diagnóstico completo</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Diagnóstico</div>
+        <h2>Mapa de risco <span class="it">reputacional</span> do síndico.</h2>
+      </div>
+      <p class="body" style="font-size:9pt;margin-bottom:3mm;">Marque de <b>0 a 3</b> em cada item (0: muito ruim, 1: precisa melhorar, 2: bom, 3: excelente). Some os subtotais e leia a interpretação abaixo. Pontuação máxima: 105.</p>
+      <div class="mini-grid" style="margin-bottom:3mm;">
+        <div class="mini">
+          <div class="h-sub">Comunicação</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Comunicados claros</li>
+            <li><span class="box"></span>Frequência adequada</li>
+            <li><span class="box"></span>Respostas profissionais</li>
+            <li><span class="box"></span>Linguagem acessível</li>
+            <li><span class="box"></span>Canais bem definidos</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">Registro</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Decisões registradas</li>
+            <li><span class="box"></span>Contratos organizados</li>
+            <li><span class="box"></span>Orçamentos arquivados</li>
+            <li><span class="box"></span>Chamados documentados</li>
+            <li><span class="box"></span>Histórico de ocorrências</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">Finanças</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Prestação clara</li>
+            <li><span class="box"></span>Variações explicadas</li>
+            <li><span class="box"></span>Inadimplência controlada</li>
+            <li><span class="box"></span>Fundos separados</li>
+            <li><span class="box"></span>Transparência com conselho</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">Conselho</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Rotina de alinhamento</li>
+            <li><span class="box"></span>Limites definidos</li>
+            <li><span class="box"></span>Aprovações registradas</li>
+            <li><span class="box"></span>Relação respeitosa</li>
+            <li><span class="box"></span>Confiança institucional</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">Assembleia</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Pauta organizada</li>
+            <li><span class="box"></span>Documentos prévios</li>
+            <li><span class="box"></span>Controle emocional</li>
+            <li><span class="box"></span>Encaminhamentos claros</li>
+            <li><span class="box"></span>Ata fiel</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">Fornecedores</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Contratações formais</li>
+            <li><span class="box"></span>Propostas comparadas</li>
+            <li><span class="box"></span>Serviços acompanhados</li>
+            <li><span class="box"></span>Garantias registradas</li>
+            <li><span class="box"></span>Comunicação aos moradores</li>
+          </ul>
+        </div>
+        <div class="mini" style="grid-column:1/-1;">
+          <div class="h-sub">Postura profissional</div>
+          <div class="threeframe">
+            <ul class="checks stack-tight"><li><span class="box"></span>Firmeza</li><li><span class="box"></span>Educação</li></ul>
+            <ul class="checks stack-tight"><li><span class="box"></span>Neutralidade</li><li><span class="box"></span>Coerência</li></ul>
+            <ul class="checks stack-tight"><li><span class="box"></span>Controle emocional</li></ul>
+          </div>
+        </div>
+      </div>
+      <div class="tiers">
+        <div class="tier"><div class="range">90 a 105</div><p>Reputação muito bem protegida. Mantenha método e consistência.</p></div>
+        <div class="tier t2"><div class="range">70 a 89</div><p>Reputação positiva, com vulnerabilidades que podem crescer sob pressão.</p></div>
+        <div class="tier t3"><div class="range">50 a 69</div><p>Zona de atenção. Corrija processos antes que a imagem seja afetada.</p></div>
+        <div class="tier t4"><div class="range">30 a 49</div><p>Reputação vulnerável. Pequenas crises podem ganhar proporção desproporcional.</p></div>
+        <div class="tier t5"><div class="range">abaixo de 30</div><p>Risco crítico. Reestruture comunicação, documentação, conselho, prestação de contas e postura.</p></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Diagnóstico · Mapa de risco reputacional</div><div class="pg-num">21</div></div>
+  </section>
+
+  <!-- PAGE 22 · PLANO DE AÇÃO -->
+  <section class="page" data-screen-label="22 Plano 30 dias">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Plano de ação</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Plano de ação</div>
+        <h2>Como proteger sua reputação nos próximos <span class="it">30 dias</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:4mm;">Quatro semanas, quatro frentes. Não tente mudar tudo. Marque as ações abaixo e dê um pequeno passo concreto por semana.</p>
+      <div class="twoframe" style="flex:1; align-content:start;">
+        <div>
+          <div class="h-sub">Semana 01 · Organize a comunicação</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Revisar canais oficiais</li>
+            <li><span class="box"></span>Definir onde cada tipo de demanda será tratado</li>
+            <li><span class="box"></span>Criar modelo padrão de comunicado</li>
+            <li><span class="box"></span>Listar temas que precisam de atualização</li>
+            <li><span class="box"></span>Padronizar respostas para críticas recorrentes</li>
+          </ul>
+          <div class="h-sub" style="margin-top:5mm;">Semana 02 · Fortaleça registros</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Organizar contratos vigentes</li>
+            <li><span class="box"></span>Atualizar lista de pendências</li>
+            <li><span class="box"></span>Registrar aprovações recentes</li>
+            <li><span class="box"></span>Formalizar decisões só do WhatsApp</li>
+            <li><span class="box"></span>Criar pasta de evidências da gestão</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h-sub">Semana 03 · Reforce o conselho</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Agendar alinhamento objetivo</li>
+            <li><span class="box"></span>Apresentar pendências prioritárias</li>
+            <li><span class="box"></span>Separar temas por tipo (operacional, financeiro, jurídico)</li>
+            <li><span class="box"></span>Registrar encaminhamentos</li>
+            <li><span class="box"></span>Combinar rotina de prestação de informações</li>
+          </ul>
+          <div class="h-sub" style="margin-top:5mm;">Semana 04 · Prepare a próxima assembleia</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Revisar números</li>
+            <li><span class="box"></span>Explicar principais despesas</li>
+            <li><span class="box"></span>Separar documentos de apoio</li>
+            <li><span class="box"></span>Antecipar perguntas difíceis</li>
+            <li><span class="box"></span>Preparar comunicação pós-assembleia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:5mm;">
+        <span class="lbl">Princípio do plano</span>
+        <span class="txt">Pequenas mudanças mantidas valem mais que um plano gigante abandonado na primeira semana.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Plano de ação · 30 dias</div><div class="pg-num">22</div></div>
+  </section>
+
+  <!-- PAGE 23 · CHECKLIST FINAL + 10 FRASES -->
+  <section class="page" data-screen-label="23 Checklist + Frases">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Para guardar</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Para guardar</div>
+        <h2>Checklist final e dez frases que <span class="it">protegem</span>.</h2>
+      </div>
+      <div class="twoframe" style="flex:1; align-content:start;">
+        <div>
+          <div class="h-sub">O que um síndico nunca deve negligenciar</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Comunicação clara</li>
+            <li><span class="box"></span>Registro formal</li>
+            <li><span class="box"></span>Prestação de contas compreensível</li>
+            <li><span class="box"></span>Relação organizada com o conselho</li>
+            <li><span class="box"></span>Postura profissional</li>
+            <li><span class="box"></span>Resposta técnica a críticas</li>
+            <li><span class="box"></span>Controle emocional</li>
+            <li><span class="box"></span>Transparência financeira</li>
+            <li><span class="box"></span>Processo de contratação</li>
+            <li><span class="box"></span>Acompanhamento de manutenção</li>
+            <li><span class="box"></span>Gestão de crise</li>
+            <li><span class="box"></span>Assembleia preparada</li>
+            <li><span class="box"></span>Aplicação uniforme das regras</li>
+            <li><span class="box"></span>Separação pessoal e profissional</li>
+            <li><span class="box"></span>Cuidado com imagem digital</li>
+            <li><span class="box"></span>Coerência nas decisões</li>
+            <li><span class="box"></span>Capacidade de dizer não</li>
+            <li><span class="box"></span>Relatórios periódicos</li>
+            <li><span class="box"></span>Prevenção de boatos</li>
+            <li><span class="box"></span>Proteção documental</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h-sub">Dez frases que protegem a reputação</div>
+          <ul class="bul" style="font-family:'Instrument Serif'; font-style:italic;">
+            <li>Vamos tratar esse assunto pelo canal adequado para garantir registro e acompanhamento.</li>
+            <li>A gestão compreende o incômodo, mas precisa seguir o procedimento previsto.</li>
+            <li>Essa decisão não depende só da vontade do síndico, depende da regra vigente.</li>
+            <li>Assim que houver retorno formal do fornecedor, atualizaremos os moradores.</li>
+            <li>Para evitar informações incompletas, comunicaremos os próximos passos após a análise técnica.</li>
+            <li>A gestão não pode aplicar exceções sem critério, isso comprometeria a igualdade.</li>
+            <li>O tema será registrado e avaliado conforme convenção e documentos disponíveis.</li>
+            <li>Entendemos a urgência. Precisamos agir com responsabilidade para evitar improviso.</li>
+            <li>Esse assunto será levado para deliberação, pois ultrapassa a competência isolada.</li>
+            <li>Transparência não está só em mostrar documentos. Está em explicar o que eles significam.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Checklist final e dez frases que protegem</div><div class="pg-num">23</div></div>
+  </section>
+
+  <!-- PAGE 24 · CONCLUSÃO -->
+  <section class="page" data-screen-label="24 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">Reputação se constrói todos os <span class="serif" style="font-style:italic;color:var(--accent);">dias</span>.</h2>
+          <p class="section-lede">Não se constrói em um único ato. Ela se forma no comunicado que você envia, na resposta que você escolhe dar, na crítica que você decide não comprar, na regra que você aplica com coerência, na assembleia que você conduz.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="refrain">
+          <p>Ser síndico profissional não é só administrar prédios.</p>
+          <p>É administrar expectativas, conflitos, dinheiro, patrimônio, convivência e <b>reputação</b>.</p>
+        </div>
+        <p class="body">A boa notícia é que reputação pode ser protegida. Com técnica, processo, comunicação, posicionamento, preparo, inteligência emocional e bastidor bem feito.</p>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          O que aparece para o morador é só uma parte da gestão. O que sustenta a reputação do síndico é aquilo que ele faz quando ninguém está vendo.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · Reputação se constrói todos os dias</div><div class="pg-num">24</div></div>
+  </section>
+
+  <!-- PAGE 25 · CAPTAÇÃO -->
+  <section class="page capture" data-screen-label="25 Captação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>A mentoria</div></div>
+    <div class="pg-body">
+      <div class="cover-eyebrow" style="margin-bottom:5mm;">Chamada final</div>
+      <h2 class="opener-title" style="font-size:38pt;">A teoria ensina o que <span class="it">deveria</span> acontecer. A vida real mostra o que acontece.</h2>
+      <div class="opener-grid" style="margin-top:6mm;">
+        <div>
+          <p style="font-size:10pt;line-height:1.55;color:var(--ink-2);margin:0 0 3mm;">É no bastidor que a reputação de um síndico é construída ou destruída. É ali que você aprende a responder sem se desgastar, a comunicar sem se expor, a decidir sem perder autoridade.</p>
+          <p style="font-size:10pt;line-height:1.55;color:var(--ink-2);margin:0;">A lidar com conselho difícil, a enfrentar morador agressivo, a conduzir assembleia tensa, a organizar gestão, documentação e posicionamento.</p>
+        </div>
+        <div>
+          <p style="font-size:10pt;line-height:1.55;color:var(--ink-2);margin:0 0 3mm;">Foi por isso que nasceu a mentoria <b>Bastidores da Sindicatura</b>: para síndicos que querem parar de atuar no improviso e começar a construir uma carreira com método, autoridade e reputação.</p>
+          <p style="font-size:10pt;line-height:1.55;color:var(--ink-2);margin:0;">Porque o mercado ensina teoria. <b>A vida real ensina sobrevivência.</b> E quem aprende os bastidores joga outro jogo.</p>
+        </div>
+      </div>
+      <div class="cta-band" style="margin-top:auto;">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Construa uma carreira com método, <span class="it">autoridade e reputação</span>.</div>
+        <p style="margin:1mm 0 0;font-size:9.5pt;line-height:1.5;color:rgba(244,238,223,.82);">Segue o site com mais informações sobre a mentoria, conteúdos e como participar:</p>
+        <div class="u">→ <span>www.bastidoresdasindicatura.com.br</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>A mentoria · Bastidores da Sindicatura</div><div class="pg-num">25</div></div>
+  </section>
+
+  <!-- PAGE 26 · MANIFESTO / CLOSE -->
+  <section class="page manifesto" data-screen-label="26 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top:30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:12mm;">
+        <div class="cover-eyebrow" style="margin:0;">Reputação do síndico · Vol. 10</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:165mm;">
+          Reputação não se recupera com <em style="font-style:italic;color:var(--accent);">discurso.</em><br/>
+          Reputação se protege com <em style="font-style:italic;color:var(--accent);">método.</em>
+        </h2>
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          O que aparece para o morador é só uma parte da gestão. O que sustenta o síndico é aquilo que ele faz quando ninguém está vendo.
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 10 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite"><b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab=document.getElementById('pdfFab'); var hint=document.getElementById('pdfHint');
+    if(!fab) return; var t;
+    fab.addEventListener('mouseenter',function(){ clearTimeout(t); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave',function(){ t=setTimeout(function(){ hint.classList.remove('show'); },250); });
+    fab.addEventListener('click',function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); },120); setTimeout(function(){ hint.classList.remove('show'); },4000); });
+  })();
+</script>
+</body>
+</html>
