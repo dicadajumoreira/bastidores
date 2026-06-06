@@ -34,6 +34,19 @@
 
 > **Sugestão de método:** escolher 3 finalistas → checar `.com.br` e `@` nas redes → busca no INPI → teste rápido com 5–10 pessoas do público.
 
+### Nomes propostos pela cliente (avaliados)
+
+| Nome | Força | Atenção |
+|---|---|---|
+| **Condomínio em Pauta** ⭐ | "Pauta" = duplo sentido (pauta jornalística + estar em discussão). Muito editorial, memorável, nacional | Levemente longo |
+| **Radar Condominial** ⭐ | "Ficar por dentro / monitorar tendências"; moderno e ativo, ótimo p/ portal de notícias | Construção "X Condominial" é comum no setor |
+| **Giro Condominial** | Dinâmico, remete a "giro de notícias"/roundup; leve | Pode soar a seção/coluna, não a marca-mãe |
+| **Panorama Condominial** | Visão ampla, sério, ar de revista/análise | Mais estático/formal |
+| **Condo Talk** | Moderno; ideal como **sub-marca do podcast/comunidade** | Inglês pode não conectar com parte do público |
+| **Condo News** | Descritivo, SEO-friendly | ⚠️ **Colide com o concorrente `Condo.news`** (monitorado) — risco de confusão e conflito de marca. Evitar |
+
+**Recomendação entre as propostas:** **Condomínio em Pauta** (marca jornalística mais forte) e **Radar Condominial** (mais ágil/moderno). Reservar **Condo Talk** para o podcast. Descartar **Condo News** pela colisão com concorrente.
+
 ---
 
 ## 3. Posicionamento e tagline
