@@ -1,0 +1,662 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, viewport-fit=cover" />
+<meta name="theme-color" content="#F4EEDF" />
+<title>Que tipo de síndico você é? · Bastidores da Sindicatura</title>
+<meta name="description" content="Descubra em 2 minutos seu arquétipo de gestão condominial e onde está a armadilha do seu jeito." />
+<meta property="og:title" content="Que tipo de síndico você é?" />
+<meta property="og:description" content="Quiz da Bastidores da Sindicatura. 10 perguntas. 6 arquétipos. Em 2 minutos." />
+<meta property="og:type" content="website" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A;
+    --shadow-sm: 0 2px 8px rgba(14,26,43,.06);
+    --shadow-md: 0 10px 30px rgba(14,26,43,.10);
+    --shadow-lg: 0 22px 60px rgba(14,26,43,.18);
+  }
+  *{ box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  html,body{
+    margin:0; padding:0; min-height:100vh; min-height:100dvh;
+    background:
+      radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.12), transparent 55%),
+      radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%),
+      var(--paper);
+    font-family:"Manrope", system-ui, -apple-system, sans-serif;
+    color:var(--ink);
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    overflow-x:hidden;
+  }
+  .serif{ font-family:"Instrument Serif", "Times New Roman", serif; font-weight:400; }
+  .it{ font-style:italic; color:var(--accent); }
+
+  /* APP CONTAINER */
+  .app{
+    width:100%; min-height:100vh; min-height:100dvh;
+    display:flex; flex-direction:column;
+    padding:env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
+  }
+  .container{
+    width:100%; max-width:560px; margin:0 auto;
+    padding:24px 22px 32px;
+    flex:1; display:flex; flex-direction:column;
+  }
+
+  /* HEADER */
+  .topbar{
+    display:flex; justify-content:space-between; align-items:center;
+    padding-bottom:18px; margin-bottom:6px;
+    border-bottom:1px solid var(--line);
+  }
+  .brand{ display:flex; align-items:center; gap:9px; font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--ink); }
+  .brand .mark{ width:22px; height:22px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .brand .mark::after{ content:""; position:absolute; inset:4px; border:1.5px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .topbar .site{ font-family:"Manrope"; font-weight:600; font-size:8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); }
+
+  /* SCREENS */
+  .screen{ flex:1; display:flex; flex-direction:column; padding-top:14px; animation:fadeIn .35s ease; }
+  .screen[hidden]{ display:none !important; }
+  @keyframes fadeIn{ from{ opacity:0; transform:translateY(6px); } to{ opacity:1; transform:none; } }
+
+  /* WELCOME */
+  .eyebrow{ font-family:"Manrope"; font-weight:700; font-size:10pt; letter-spacing:.28em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:10px; margin-top:6px; margin-bottom:18px; }
+  .eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .hero{ font-family:"Instrument Serif"; font-weight:400; font-size:46pt; line-height:.98; letter-spacing:-.02em; color:var(--ink); margin:0 0 18px; }
+  .hero .it{ font-style:italic; color:var(--accent); }
+  .deck{ font-family:"Manrope"; font-size:14pt; line-height:1.45; color:var(--ink-2); margin:0 0 26px; }
+  .meta-row{ display:flex; gap:14px; margin-bottom:30px; }
+  .meta{ flex:1; padding:14px 16px; background:var(--cream); border:1px solid var(--line); border-radius:14px; }
+  .meta .n{ font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--accent); line-height:1; }
+  .meta .l{ font-family:"Manrope"; font-weight:600; font-size:8.5pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); margin-top:6px; }
+
+  /* BUTTONS */
+  .btn{
+    appearance:none; border:none; cursor:pointer;
+    display:inline-flex; align-items:center; justify-content:center; gap:10px;
+    padding:18px 24px; border-radius:14px;
+    font-family:"Manrope"; font-weight:700; font-size:14pt; letter-spacing:.02em;
+    background:var(--ink); color:var(--paper);
+    box-shadow:var(--shadow-md);
+    transition:transform .15s ease, box-shadow .15s ease, background .15s ease;
+    width:100%;
+  }
+  .btn:hover{ transform:translateY(-2px); background:var(--accent); box-shadow:0 22px 48px rgba(184,84,59,.45); }
+  .btn:active{ transform:translateY(0); }
+  .btn .arrow{ font-family:"Instrument Serif"; font-style:italic; font-size:18pt; line-height:0; }
+  .btn.ghost{ background:transparent; color:var(--ink); box-shadow:none; border:1.5px solid var(--ink); }
+  .btn.ghost:hover{ background:var(--ink); color:var(--paper); }
+  .btn.accent{ background:var(--accent); }
+  .btn.accent:hover{ background:var(--ink); }
+
+  .note{ font-family:"Manrope"; font-size:9pt; line-height:1.5; color:var(--muted); margin-top:18px; text-align:center; }
+
+  /* QUIZ */
+  .progress-wrap{ margin:4px 0 22px; }
+  .progress-meta{ display:flex; justify-content:space-between; font-family:"Manrope"; font-weight:600; font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); margin-bottom:8px; }
+  .progress-bar{ height:6px; background:var(--line-soft); border-radius:99px; overflow:hidden; position:relative; }
+  .progress-fill{ height:100%; background:linear-gradient(90deg, var(--gold), var(--accent)); border-radius:99px; transition:width .35s ease; }
+  .question{ font-family:"Instrument Serif"; font-weight:400; font-size:30pt; line-height:1.05; letter-spacing:-.01em; color:var(--ink); margin:6px 0 22px; }
+  .question .it{ font-style:italic; color:var(--accent); }
+  .options{ display:flex; flex-direction:column; gap:11px; }
+  .option{
+    appearance:none; border:none; cursor:pointer; text-align:left; width:100%;
+    background:var(--cream); border:1px solid var(--line); border-radius:14px;
+    padding:16px 18px;
+    font-family:"Manrope"; font-size:13pt; line-height:1.4; color:var(--ink);
+    display:flex; align-items:flex-start; gap:14px;
+    transition:transform .12s ease, border-color .12s ease, background .12s ease, box-shadow .12s ease;
+  }
+  .option .letter{
+    flex:0 0 auto;
+    width:30px; height:30px; border-radius:50%;
+    border:1.5px solid var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--ink);
+    transition:background .12s ease, color .12s ease;
+  }
+  .option:hover, .option:focus-visible{
+    border-color:var(--accent); background:#fff;
+    box-shadow:var(--shadow-md);
+    outline:none;
+  }
+  .option:hover .letter{ background:var(--accent); color:var(--paper); border-color:var(--accent); }
+  .option.selected{ border-color:var(--accent); background:#fff; box-shadow:var(--shadow-md); }
+  .option.selected .letter{ background:var(--accent); color:var(--paper); border-color:var(--accent); }
+
+  .quiz-nav{ display:flex; justify-content:space-between; align-items:center; margin-top:18px; }
+  .link-btn{ appearance:none; background:none; border:none; cursor:pointer; font-family:"Manrope"; font-weight:600; font-size:11pt; color:var(--muted); padding:8px 0; }
+  .link-btn:hover{ color:var(--accent); }
+  .link-btn[disabled]{ opacity:.25; cursor:not-allowed; }
+
+  /* CAPTURE */
+  .capture-card{
+    background:#fff; border:1px solid var(--line); border-radius:18px;
+    padding:24px 22px; box-shadow:var(--shadow-md);
+  }
+  .capture-eyebrow{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent); margin-bottom:10px; }
+  .capture-title{ font-family:"Instrument Serif"; font-size:32pt; line-height:1.02; color:var(--ink); margin:0 0 8px; }
+  .capture-title .it{ font-style:italic; color:var(--accent); }
+  .capture-sub{ font-family:"Manrope"; font-size:11.5pt; line-height:1.5; color:var(--ink-2); margin:0 0 22px; }
+  .field{ display:flex; flex-direction:column; gap:6px; margin-bottom:14px; }
+  .field label{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); }
+  .field input{
+    appearance:none; width:100%;
+    padding:14px 16px;
+    border:1.5px solid var(--line); border-radius:12px;
+    background:var(--cream);
+    font-family:"Manrope"; font-size:13pt; color:var(--ink);
+    transition:border-color .15s ease, background .15s ease;
+  }
+  .field input:focus{ outline:none; border-color:var(--accent); background:#fff; }
+  .privacy{ font-family:"Manrope"; font-size:9pt; line-height:1.5; color:var(--muted); margin-top:6px; }
+
+  /* RESULT */
+  .result-card{
+    background:#fff; border:1px solid var(--line); border-radius:20px;
+    overflow:hidden; box-shadow:var(--shadow-lg);
+  }
+  .result-top{ padding:26px 24px 18px; border-bottom:1px solid var(--line-soft); position:relative; background:linear-gradient(180deg, var(--cream), #fff); }
+  .result-kicker{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.28em; text-transform:uppercase; color:var(--accent); margin-bottom:6px; }
+  .result-archetype{
+    font-family:"Instrument Serif"; font-style:italic; font-weight:400;
+    font-size:42pt; line-height:1.0; color:var(--ink); margin:0 0 6px;
+    letter-spacing:-.02em;
+  }
+  .result-archetype .ac{ color:var(--accent); }
+  .result-voz{
+    font-family:"Instrument Serif"; font-style:italic;
+    font-size:14pt; line-height:1.4; color:var(--ink-2); margin:0;
+    border-left:3px solid var(--accent); padding-left:12px;
+  }
+  .result-body{ padding:22px 24px 24px; display:flex; flex-direction:column; gap:18px; }
+  .result-block .h-sub{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:7px; }
+  .result-block .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  .result-block p{ margin:0; font-family:"Manrope"; font-size:11pt; line-height:1.55; color:var(--ink-2); }
+  .result-armadilha{ background:var(--paper-2); border-left:3px solid var(--accent); padding:14px 16px; border-radius:0 10px 10px 0; }
+  .result-armadilha p{ color:var(--ink); }
+  .result-next{ background:var(--cream); border:1px solid var(--line); padding:14px 16px; border-radius:12px; }
+
+  .cta-band{
+    margin-top:22px;
+    background:var(--ink); color:var(--paper);
+    border-radius:18px; padding:24px 22px;
+    display:flex; flex-direction:column; gap:8px;
+    box-shadow:var(--shadow-lg);
+  }
+  .cta-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .cta-band .t{ font-family:"Instrument Serif"; font-size:22pt; line-height:1.1; color:var(--paper); margin:2px 0 4px; }
+  .cta-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .cta-band p{ margin:0; font-family:"Manrope"; font-size:10pt; line-height:1.5; color:rgba(244,238,223,.82); }
+  .cta-band .btn{ background:var(--accent); color:var(--paper); margin-top:10px; }
+  .cta-band .btn:hover{ background:var(--accent-2); color:var(--ink); }
+
+  .share-row{ display:flex; gap:10px; margin-top:18px; }
+  .share-row .btn{ flex:1; padding:14px; font-size:11pt; }
+
+  .retake{ text-align:center; margin-top:20px; }
+
+  /* desktop refinements */
+  @media (min-width: 720px){
+    .container{ padding:38px 28px 48px; max-width:600px; }
+    .hero{ font-size:60pt; }
+    .deck{ font-size:15pt; }
+    .question{ font-size:34pt; }
+    .result-archetype{ font-size:50pt; }
+    .result-voz{ font-size:15pt; }
+    .cta-band .t{ font-size:26pt; }
+  }
+</style>
+</head>
+<body>
+
+<main class="app">
+  <div class="container">
+    <header class="topbar">
+      <div class="brand"><span class="mark"></span><span><i>Bastidores</i> da Sindicatura</span></div>
+      <span class="site">por Juliana Moreira</span>
+    </header>
+
+    <!-- SCREEN · WELCOME -->
+    <section id="screen-welcome" class="screen">
+      <div class="eyebrow">Quiz · 2 minutos</div>
+      <h1 class="hero">Que tipo de síndico <span class="it">você é?</span></h1>
+      <p class="deck">Toda gestão tem uma “voz” por trás. Em 10 perguntas, descubra seu arquétipo, onde está a armadilha do seu jeito e o próximo passo para evoluir.</p>
+      <div class="meta-row">
+        <div class="meta"><div class="n">10</div><div class="l">Perguntas</div></div>
+        <div class="meta"><div class="n">6</div><div class="l">Arquétipos</div></div>
+        <div class="meta"><div class="n">2&apos;</div><div class="l">Minutos</div></div>
+      </div>
+      <button class="btn" onclick="startQuiz()">Começar o teste <span class="arrow">→</span></button>
+      <p class="note">Sem julgamento. Sem certo ou errado. Só uma leitura honesta da sua gestão.</p>
+    </section>
+
+    <!-- SCREEN · QUIZ -->
+    <section id="screen-quiz" class="screen" hidden>
+      <div class="progress-wrap">
+        <div class="progress-meta">
+          <span id="q-counter">Pergunta 1 de 10</span>
+          <span id="q-percent">10%</span>
+        </div>
+        <div class="progress-bar"><div id="progress-fill" class="progress-fill" style="width:10%"></div></div>
+      </div>
+      <h2 id="q-text" class="question"></h2>
+      <div id="q-options" class="options"></div>
+      <div class="quiz-nav">
+        <button id="btn-back" class="link-btn" onclick="goBack()">← Voltar</button>
+        <span id="q-hint" class="link-btn" style="cursor:default;">Toque para avançar</span>
+      </div>
+    </section>
+
+    <!-- SCREEN · CAPTURE -->
+    <section id="screen-capture" class="screen" hidden>
+      <div class="capture-card">
+        <div class="capture-eyebrow">Seu resultado está pronto</div>
+        <h2 class="capture-title">Para ver seu <span class="it">arquétipo</span>, deixe seu contato.</h2>
+        <p class="capture-sub">Vamos enviar também um pequeno guia em PDF com a leitura completa do seu tipo.</p>
+        <form id="capture-form" onsubmit="submitCapture(event)" novalidate>
+          <div class="field">
+            <label for="lead-name">Seu nome</label>
+            <input id="lead-name" name="name" type="text" autocomplete="given-name" required placeholder="Como podemos te chamar" />
+          </div>
+          <div class="field">
+            <label for="lead-email">E-mail</label>
+            <input id="lead-email" name="email" type="email" autocomplete="email" inputmode="email" required placeholder="seu@email.com" />
+          </div>
+          <button class="btn accent" type="submit">Ver meu resultado <span class="arrow">→</span></button>
+          <p class="privacy">Seus dados são tratados com responsabilidade. Você poderá descadastrar a qualquer momento.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- SCREEN · RESULT -->
+    <section id="screen-result" class="screen" hidden>
+      <div class="result-card">
+        <div class="result-top">
+          <div id="result-kicker" class="result-kicker">Seu arquétipo</div>
+          <h2 id="result-name" class="result-archetype"></h2>
+          <p id="result-voz" class="result-voz"></p>
+        </div>
+        <div class="result-body">
+          <div class="result-block">
+            <div class="h-sub">Como você é</div>
+            <p id="result-desc"></p>
+          </div>
+          <div class="result-block result-armadilha">
+            <div class="h-sub">A armadilha do seu tipo</div>
+            <p id="result-armadilha"></p>
+          </div>
+          <div class="result-block result-next">
+            <div class="h-sub">O próximo passo</div>
+            <p id="result-next"></p>
+          </div>
+        </div>
+      </div>
+
+      <div class="cta-band">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Saia do improviso. Construa uma gestão com <span class="it">método.</span></div>
+        <p>Conheça a mentoria que ensina o que a teoria não mostra: a vida real da gestão condominial.</p>
+        <a class="btn" href="https://www.bastidoresdasindicatura.com.br" target="_blank" rel="noopener">Conhecer a mentoria <span class="arrow">→</span></a>
+      </div>
+
+      <div class="share-row">
+        <button class="btn ghost" onclick="shareResult()">Compartilhar</button>
+        <button class="btn ghost" onclick="restart()">Refazer</button>
+      </div>
+      <div class="retake"><span class="note">Tire um print do seu resultado e marque a Juliana 😉</span></div>
+    </section>
+
+  </div>
+</main>
+
+<script>
+/* =====================================================================
+   ARCHETYPES
+   ===================================================================== */
+const ARCHETYPES = {
+  bombeiro: {
+    name: 'O Bombeiro',
+    accent: 'Bombeiro',
+    voz: '“Já resolvi vinte coisas, ainda não tomei café.”',
+    desc: 'Você não administra o condomínio, você combate o condomínio. Vive em modo reativo, apagando incêndio atrás de incêndio. É o primeiro a chegar na emergência e o último a sair. O telefone só desliga quando descarrega.',
+    armadilha: 'Você é confiável demais. Tudo acaba caindo no seu colo porque ninguém aprendeu a fazer sem você. O resultado é exaustão, falhas pequenas se acumulando e a sensação de que sua gestão não anda, ela apaga.',
+    proximo: 'Construir processo. Não para fazer menos, mas para que as coisas funcionem mesmo quando você não está olhando.'
+  },
+  politico: {
+    name: 'O Político',
+    accent: 'Político',
+    voz: '“Vamos conversar para todo mundo sair satisfeito.”',
+    desc: 'Você cuida da convivência. Lê o termômetro do grupo, sente quando o clima muda, evita confronto. Sua maior força é a habilidade de costurar acordos. Sua maior fraqueza é a dificuldade de bater o martelo quando alguém precisa ser contrariado.',
+    armadilha: 'Querer agradar é uma estratégia que envelhece mal. Cedo ou tarde alguém vai precisar ouvir um não. E quando esse momento chegar, ele virá com o peso de tudo que você adiou.',
+    proximo: 'Aprender a dizer não com técnica, sem perder o relacional. Firmeza não é frieza.'
+  },
+  sargento: {
+    name: 'O Sargento',
+    accent: 'Sargento',
+    voz: '“É assim, e quem não gostar leva para a assembleia.”',
+    desc: 'Você comanda. Não pede licença, manda. Sua autoridade vem da convicção. Você sabe que condomínio sem mão firme vira anarquia. E entrega resultado.',
+    armadilha: 'Autoridade no grito tem prazo de validade. Quando o cansaço bate ou a oposição se organiza, a base que você não conquistou cobra a conta. Hoje você manda, amanhã te destituem.',
+    proximo: 'Trocar autoridade por método. Comando claro com argumento técnico sustenta o longo prazo. Grito, não.'
+  },
+  solitario: {
+    name: 'O Solitário',
+    accent: 'Solitário',
+    voz: '“Se eu não fizer, ninguém faz direito.”',
+    desc: 'Você é o filtro de tudo. Não confia em delegação. Quando alguém vai cuidar, você revisa. Quando o conselho aprova, você redobra. É detalhista, exigente, presente e profundamente cansado.',
+    armadilha: 'A gestão fica refém de você. Se você adoecer, viajar, decidir parar, o condomínio trava. Você não construiu uma operação, construiu uma dependência.',
+    proximo: 'Construir equipe e processo. Delegar não é abrir mão, é multiplicar.'
+  },
+  burocrata: {
+    name: 'O Burocrata',
+    accent: 'Burocrata',
+    voz: '“Está tudo na ata, está tudo no e-mail.”',
+    desc: 'Você registra tudo. Cada decisão tem documento, cada conversa tem ata, cada chamado tem protocolo. Sua organização é exemplar. Sua proteção jurídica também.',
+    armadilha: 'O morador não entra no seu arquivo. Ele entra no grupo. E enquanto você registra, ele interpreta. Quem comunica mal pode ter um cofre de ata e ainda assim ter uma gestão percebida como ausente.',
+    proximo: 'Documentar é proteção. Comunicar é autoridade. Você precisa das duas.'
+  },
+  estrategista: {
+    name: 'O Estrategista',
+    accent: 'Estrategista',
+    voz: '“Antes de responder eu pergunto: isso resolve ou inflama?”',
+    desc: 'Você administra com método. Tem canal, tem horário, tem critério. Sabe quando responder e quando esperar. Documenta, comunica, conduz. Sua autoridade não está no volume da voz, está na previsibilidade da postura.',
+    armadilha: 'Você é o tipo mais raro. O perigo é o cansaço silencioso. Quem conduz bem costuma absorver demais por tempo demais. O método te protege da gestão, mas não te protege de você mesmo.',
+    proximo: 'Continuar aprimorando e construir rede. O estrategista solitário também quebra.'
+  }
+};
+
+/* =====================================================================
+   QUESTIONS · cada opção atribui +1 a um ou mais arquétipos
+   ===================================================================== */
+const QUESTIONS = [
+  {
+    q: 'São 22h47. Cai uma mensagem agressiva no grupo. Você...',
+    opts: [
+      { t: 'Respondo na hora, na mesma intensidade.',                    s: { sargento:1 } },
+      { t: 'Respondo educadamente para acalmar.',                        s: { politico:1 } },
+      { t: 'Mando o artigo do regulamento e encerro.',                   s: { sargento:1, burocrata:1 } },
+      { t: 'Não respondo. Amanhã trato no canal oficial.',               s: { estrategista:1 } },
+      { t: 'Respondo na hora, “vamos conversar, me explica”.',           s: { bombeiro:1 } },
+      { t: 'Registro a ocorrência e respondo só no horário comercial.', s: { burocrata:1 } }
+    ]
+  },
+  {
+    q: 'A assembleia entrou em fogo cruzado. Sua estratégia?',
+    opts: [
+      { t: 'Falo mais alto. Quem manda na reunião sou eu.',             s: { sargento:1 } },
+      { t: 'Tento pacificar, mediar, achar consenso.',                  s: { politico:1 } },
+      { t: 'Suspendo a reunião e marco outra com pauta clara.',         s: { estrategista:1 } },
+      { t: 'Continuo, mesmo sob ataque. Não posso parar.',              s: { bombeiro:1 } },
+      { t: 'Anoto tudo. Quem disse o quê, em que momento.',             s: { burocrata:1 } },
+      { t: 'Decido sozinho o que precisa ser decidido e sigo.',         s: { solitario:1 } }
+    ]
+  },
+  {
+    q: 'Conselheiro te marca às 23h cobrando explicação. Você...',
+    opts: [
+      { t: 'Explico imediatamente, em detalhes.',                       s: { bombeiro:1 } },
+      { t: 'Respondo “vamos conversar amanhã” e mantenho a relação.',   s: { politico:1 } },
+      { t: 'Mando o documento que comprova. Acabou.',                   s: { burocrata:1, sargento:1 } },
+      { t: 'Reposiciono o tema para a próxima reunião do conselho.',    s: { estrategista:1 } },
+      { t: 'Penso “que prove o contrário” e não respondo.',             s: { solitario:1 } }
+    ]
+  },
+  {
+    q: 'Hora de aplicar uma multa pela primeira vez. Você...',
+    opts: [
+      { t: 'Apliquei. Está no regulamento. Fim.',                       s: { sargento:1 } },
+      { t: 'Adio. Tento conversar antes de bater o martelo.',           s: { politico:1 } },
+      { t: 'Faço com jurídico ao lado, texto revisado, tudo registrado.', s: { burocrata:1 } },
+      { t: 'Sigo o procedimento exato da convenção.',                   s: { estrategista:1 } },
+      { t: 'Apliquei sem pensar muito. Já tinha vinte outras coisas.',  s: { bombeiro:1 } },
+      { t: 'Faço eu mesmo o texto, eu mesmo entrego, eu mesmo respondo.', s: { solitario:1 } }
+    ]
+  },
+  {
+    q: 'Sexta à noite. Como termina sua semana?',
+    opts: [
+      { t: 'Sem fechar nada. Sempre tem coisa pra resolver.',           s: { bombeiro:1 } },
+      { t: 'Com a sensação de não ter agradado todo mundo.',            s: { politico:1 } },
+      { t: 'Com a satisfação de ter botado regra em alguém.',           s: { sargento:1 } },
+      { t: 'Cansado, mas com tudo na pasta organizado.',                s: { burocrata:1 } },
+      { t: 'Sem conseguir desligar o celular.',                          s: { solitario:1 } },
+      { t: 'Com a próxima semana planejada.',                            s: { estrategista:1 } }
+    ]
+  },
+  {
+    q: 'Surgiu uma obra inesperada. Como você comunica?',
+    opts: [
+      { t: 'Mando áudio no grupo explicando tudo, na hora.',             s: { bombeiro:1 } },
+      { t: 'Pergunto antes “será que vocês gostam dessa ideia?”.',       s: { politico:1 } },
+      { t: 'Avisei que vai acontecer. Quem não gostar, abre processo.',  s: { sargento:1 } },
+      { t: 'Comunicado com escopo, prazo, valor, fornecedor e contato.', s: { estrategista:1 } },
+      { t: 'Escrevo uma ata específica antes de comunicar.',             s: { burocrata:1 } },
+      { t: 'Cuido eu mesmo. Aviso depois.',                              s: { solitario:1 } }
+    ]
+  },
+  {
+    q: 'Como está sua relação com o conselho?',
+    opts: [
+      { t: 'Tensa. Eles desconfiam de tudo.',                           s: { sargento:1, solitario:1 } },
+      { t: 'Próxima. Conselheiros são meus aliados, quase amigos.',     s: { politico:1 } },
+      { t: 'Profissional. Pauta, ata, encaminhamento.',                 s: { estrategista:1 } },
+      { t: 'Mínima. Faço o que precisa e mando relatório.',             s: { solitario:1 } },
+      { t: 'Documental. Tudo passa por escrito.',                       s: { burocrata:1 } },
+      { t: 'Variada. Depende do dia.',                                  s: { bombeiro:1 } }
+    ]
+  },
+  {
+    q: 'Morador inadimplente apela na sua emoção. Você...',
+    opts: [
+      { t: 'Suspendo a cobrança até segunda ordem.',                    s: { politico:1 } },
+      { t: 'Aplico o procedimento. Inadimplência tem fluxo.',           s: { estrategista:1, sargento:1 } },
+      { t: 'Encaminho para o jurídico do condomínio.',                  s: { burocrata:1 } },
+      { t: 'Tento ajudar pessoalmente, talvez parcelando.',             s: { bombeiro:1 } },
+      { t: 'Não dou ouvido. Tem regra para todos.',                     s: { sargento:1 } },
+      { t: 'Eu mesmo entro em acordo. Sem envolver o conselho.',        s: { solitario:1 } }
+    ]
+  },
+  {
+    q: 'Sua maior dor como síndico é...',
+    opts: [
+      { t: 'Não conseguir desligar. Não tem fim.',                      s: { bombeiro:1 } },
+      { t: 'Ser mal interpretado. Sempre tem alguém com raiva.',        s: { politico:1 } },
+      { t: 'Falta de respeito. Não respeitam a regra.',                 s: { sargento:1 } },
+      { t: 'Sentir que faço tudo sozinho.',                             s: { solitario:1 } },
+      { t: 'Sentir que o trabalho não é visto.',                        s: { burocrata:1 } },
+      { t: 'Não tenho dor grave. Tenho desgaste natural da função.',    s: { estrategista:1 } }
+    ]
+  },
+  {
+    q: 'Se tivesse uma frase tatuada como síndico, seria...',
+    opts: [
+      { t: '“Apaga o fogo agora, pensa depois.”',                       s: { bombeiro:1 } },
+      { t: '“Vamos costurar uma solução.”',                             s: { politico:1 } },
+      { t: '“Está no regulamento.”',                                     s: { sargento:1 } },
+      { t: '“Se eu não fizer, não fica feito.”',                         s: { solitario:1 } },
+      { t: '“Está tudo registrado.”',                                    s: { burocrata:1 } },
+      { t: '“Antes de responder, eu respiro.”',                          s: { estrategista:1 } }
+    ]
+  }
+];
+
+/* =====================================================================
+   STATE + LOGIC
+   ===================================================================== */
+const STATE = {
+  index: 0,
+  answers: new Array(QUESTIONS.length).fill(null),
+  scores: { bombeiro:0, politico:0, sargento:0, solitario:0, burocrata:0, estrategista:0 },
+  archetype: null,
+  lead: { name:'', email:'' }
+};
+
+const $ = (id) => document.getElementById(id);
+
+function show(id){
+  ['screen-welcome','screen-quiz','screen-capture','screen-result'].forEach(s => $(s).hidden = (s !== id));
+  window.scrollTo({ top:0, behavior:'instant' });
+}
+
+function startQuiz(){
+  STATE.index = 0;
+  STATE.answers = new Array(QUESTIONS.length).fill(null);
+  Object.keys(STATE.scores).forEach(k => STATE.scores[k] = 0);
+  renderQuestion();
+  show('screen-quiz');
+}
+
+function renderQuestion(){
+  const q = QUESTIONS[STATE.index];
+  const total = QUESTIONS.length;
+  const pct = Math.round(((STATE.index + 1) / total) * 100);
+  $('q-counter').textContent = `Pergunta ${STATE.index + 1} de ${total}`;
+  $('q-percent').textContent = `${pct}%`;
+  $('progress-fill').style.width = `${pct}%`;
+  $('q-text').textContent = q.q;
+  $('btn-back').disabled = STATE.index === 0;
+
+  const wrap = $('q-options');
+  wrap.innerHTML = '';
+  const letters = ['A','B','C','D','E','F','G'];
+  q.opts.forEach((opt, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'option' + (STATE.answers[STATE.index] === idx ? ' selected' : '');
+    btn.type = 'button';
+    btn.innerHTML = `<span class="letter">${letters[idx]}</span><span class="opt-text">${opt.t}</span>`;
+    btn.onclick = () => pickOption(idx);
+    wrap.appendChild(btn);
+  });
+}
+
+function pickOption(idx){
+  // If user is changing a previous answer, subtract its score first
+  const prev = STATE.answers[STATE.index];
+  if (prev !== null){
+    const prevOpt = QUESTIONS[STATE.index].opts[prev];
+    Object.entries(prevOpt.s).forEach(([k,v]) => STATE.scores[k] -= v);
+  }
+  const opt = QUESTIONS[STATE.index].opts[idx];
+  Object.entries(opt.s).forEach(([k,v]) => STATE.scores[k] += v);
+  STATE.answers[STATE.index] = idx;
+
+  // Update UI selection briefly
+  document.querySelectorAll('.option').forEach((el, i) => el.classList.toggle('selected', i === idx));
+
+  // Auto-advance after a tiny pause for feedback
+  setTimeout(() => {
+    if (STATE.index < QUESTIONS.length - 1){
+      STATE.index++;
+      renderQuestion();
+    } else {
+      computeArchetype();
+      show('screen-capture');
+      setTimeout(() => $('lead-name').focus({ preventScroll:true }), 350);
+    }
+  }, 220);
+}
+
+function goBack(){
+  if (STATE.index === 0) return;
+  STATE.index--;
+  renderQuestion();
+}
+
+function computeArchetype(){
+  // Highest score wins. Tie-break: by order in this list (Estrategista hardest to win)
+  const order = ['bombeiro','politico','sargento','solitario','burocrata','estrategista'];
+  let best = order[0];
+  let bestScore = STATE.scores[best];
+  for (const k of order){
+    if (STATE.scores[k] > bestScore){ best = k; bestScore = STATE.scores[k]; }
+  }
+  STATE.archetype = best;
+}
+
+function submitCapture(ev){
+  ev.preventDefault();
+  const name = $('lead-name').value.trim();
+  const email = $('lead-email').value.trim();
+  if (!name || !email){ return; }
+  STATE.lead = { name, email };
+
+  // Persist locally so the user can return to the result
+  try {
+    const utm = new URLSearchParams(window.location.search);
+    const payload = {
+      name, email,
+      archetype: STATE.archetype,
+      scores: STATE.scores,
+      answers: STATE.answers,
+      utm_source: utm.get('utm_source') || '',
+      utm_campaign: utm.get('utm_campaign') || '',
+      utm_medium: utm.get('utm_medium') || '',
+      timestamp: new Date().toISOString()
+    };
+    localStorage.setItem('bs_lead_last', JSON.stringify(payload));
+    const all = JSON.parse(localStorage.getItem('bs_leads') || '[]');
+    all.push(payload);
+    localStorage.setItem('bs_leads', JSON.stringify(all));
+  } catch(e){}
+
+  // ============================================================
+  // INTEGRAÇÃO DE LEAD CAPTURE
+  // Para enviar o lead pro seu CRM (RD Station, Mailchimp,
+  // HubSpot, Active Campaign, etc.), substitua o bloco abaixo
+  // pelo snippet/endpoint do seu serviço. Exemplo de fetch:
+  //
+  // fetch('https://seu-endpoint.com/leads', {
+  //   method:'POST',
+  //   headers:{'Content-Type':'application/json'},
+  //   body: JSON.stringify(payload)
+  // });
+  // ============================================================
+
+  renderResult();
+  show('screen-result');
+}
+
+function renderResult(){
+  const a = ARCHETYPES[STATE.archetype];
+  const name = STATE.lead.name ? STATE.lead.name.split(' ')[0] : '';
+  $('result-kicker').textContent = name ? `${name}, seu arquétipo é` : 'Seu arquétipo';
+  // Render "O <accent>" with the archetype noun in accent color
+  $('result-name').innerHTML = `O <span class="ac">${a.accent}</span>`;
+  $('result-voz').textContent = a.voz;
+  $('result-desc').textContent = a.desc;
+  $('result-armadilha').textContent = a.armadilha;
+  $('result-next').textContent = a.proximo;
+  document.title = `Sou ${a.name} · Quiz Bastidores da Sindicatura`;
+}
+
+function shareResult(){
+  const a = ARCHETYPES[STATE.archetype];
+  const url = window.location.origin + window.location.pathname;
+  const text = `Fiz o quiz da Bastidores da Sindicatura e meu arquétipo é ${a.name}. Qual é o seu? ${url}`;
+  if (navigator.share){
+    navigator.share({ title:'Que tipo de síndico você é?', text, url }).catch(()=>{});
+  } else {
+    const wa = `https://wa.me/?text=${encodeURIComponent(text)}`;
+    window.open(wa, '_blank', 'noopener');
+  }
+}
+
+function restart(){
+  show('screen-welcome');
+  STATE.index = 0;
+  STATE.answers = new Array(QUESTIONS.length).fill(null);
+  Object.keys(STATE.scores).forEach(k => STATE.scores[k] = 0);
+  STATE.archetype = null;
+  $('capture-form').reset();
+}
+
+/* Initialize */
+document.addEventListener('DOMContentLoaded', () => show('screen-welcome'));
+</script>
+</body>
+</html>
