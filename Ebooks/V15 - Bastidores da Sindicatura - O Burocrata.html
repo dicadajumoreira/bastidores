@@ -1,0 +1,758 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>O Burocrata · Transforme informação em conexão · Bastidores da Sindicatura · Vol. 15</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <circle r="120" fill="none" stroke="#B8543B" stroke-width="6"/>
+      <path d="M-46 -8 a46 40 0 1 0 18 -34 L-46 -54 Z" fill="none" stroke="#B8543B" stroke-width="12" stroke-linejoin="round"/>
+      <text y="180" font-family="serif" font-style="italic" font-size="64" fill="#0E1A2B">Bastidores</text>
+      <text y="240" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A; --rule:1px solid var(--line);
+  }
+  @page { size: 210mm 297mm; margin: 0; }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; width:210mm; background:#2A2522; font-family:"Manrope", system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; color:var(--ink); page-break-after:always; break-after:page; margin:0 auto; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen { html, body{ width:auto; } body{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 0 60px; } .page{ box-shadow:0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); } }
+  @media print{ html, body{ background:#fff; width:210mm; margin:0; padding:0; display:block; } .page{ box-shadow:none; margin:0; display:block; } }
+
+  .frame{ position:absolute; inset:14mm 16mm; }
+  .pg-head{ position:absolute; top:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); padding-bottom:4mm; border-bottom:var(--rule); }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{ width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  .pg-foot{ position:absolute; bottom:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:8.5pt; color:var(--muted); padding-top:4mm; border-top:var(--rule); }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .pg-body{ position:absolute; top:22mm; bottom:18mm; left:16mm; right:16mm; display:flex; flex-direction:column; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif","Times New Roman",serif; font-weight:400; }
+  .section-num{ font-family:"Instrument Serif"; font-style:italic; font-size:64pt; line-height:1; color:var(--accent); letter-spacing:-.02em; }
+  .section-kicker{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-title{ font-family:"Instrument Serif"; font-weight:400; font-size:32pt; line-height:1.04; letter-spacing:-.01em; color:var(--ink); margin-top:2mm; }
+  .section-lede{ font-size:10.5pt; line-height:1.55; color:var(--ink-2); max-width:135mm; margin-top:5mm; }
+  .h-sub{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:4mm; }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.4mm; }
+  ul.checks li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.42; color:var(--ink-2); padding:1.2mm 0; border-bottom:1px dotted var(--line); }
+  ul.checks li:last-child{ border-bottom:none; }
+  ul.checks li .box{ flex:0 0 auto; width:4.4mm; height:4.4mm; border:1.2px solid var(--ink); border-radius:1.2px; background:var(--cream); margin-top:1.2mm; }
+  .stack-tight ul.checks li{ font-size:9.5pt; padding:.7mm 0; }
+  .stack-tight ul.checks li .box{ width:4mm; height:4mm; }
+  ul.bul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.2mm; }
+  ul.bul li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.45; color:var(--ink-2); padding:1mm 0; border-bottom:1px dotted var(--line); }
+  ul.bul li:last-child{ border-bottom:none; }
+  ul.bul li::before{ content:""; flex:0 0 auto; width:5px; height:5px; margin-top:2.4mm; background:var(--accent); border-radius:50%; }
+
+  .cols-2{ display:grid; grid-template-columns:1fr 1fr; column-gap:12mm; align-items:start; }
+  ol.enum{ list-style:none; padding:0; margin:0; counter-reset:en; display:flex; flex-direction:column; gap:2mm; }
+  ol.enum li{ counter-increment:en; display:flex; gap:10px; align-items:baseline; font-size:9.5pt; line-height:1.45; color:var(--ink-2); padding:1.4mm 0; border-bottom:1px dotted var(--line); }
+  ol.enum li::before{ content:counter(en, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--accent); flex:0 0 9mm; }
+  ol.enum li b{ color:var(--ink); }
+
+  .callout{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 6mm; font-size:9.5pt; line-height:1.55; color:var(--ink-2); margin-top:4mm; }
+  .callout b{ color:var(--ink); }
+  .quote-block{ background:var(--cream); border:1px solid var(--line); padding:7mm 8mm; font-family:"Instrument Serif"; font-style:italic; font-size:13pt; line-height:1.5; color:var(--ink); }
+  .quote-block .signature{ margin-top:4mm; font-family:"Manrope"; font-style:normal; font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .survival{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 7mm; display:flex; flex-direction:column; gap:2mm; }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; line-height:1.3; color:var(--ink); }
+
+  .hr-orn{ display:flex; align-items:center; gap:10px; color:var(--accent); margin:4mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent);}
+
+  /* refrain */
+  .refrain{ display:flex; flex-direction:column; gap:1.5mm; padding:4mm 6mm; border-left:2px solid var(--line); }
+  .refrain p{ margin:0; font-size:10.5pt; line-height:1.5; color:var(--ink-2); }
+  .refrain p b{ color:var(--ink); font-weight:600; }
+
+  /* compare (signature deste volume) */
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
+  .compare .box{ padding:5mm 6mm; }
+  .compare .bad{ background:var(--paper-2); border-left:3px solid var(--accent); }
+  .compare .good{ background:var(--cream); border-left:3px solid var(--gold); }
+  .compare .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.18em; text-transform:uppercase; margin-bottom:2.5mm; display:block; }
+  .compare .bad .lbl{ color:var(--accent); }
+  .compare .good .lbl{ color:var(--gold); }
+  .compare p{ margin:0; font-family:"Instrument Serif"; font-style:italic; font-size:11pt; line-height:1.4; color:var(--ink); }
+
+  /* three column block */
+  .threeframe{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:6mm; }
+  .threeframe .block-card{ padding:5mm 6mm; }
+  .threeframe .block-card .word{ font-family:"Instrument Serif"; font-style:italic; font-size:18pt; color:var(--accent); line-height:1; margin:0 0 2mm; }
+  .threeframe .block-card p{ margin:0; font-size:9.5pt; line-height:1.5; color:var(--ink-2); }
+
+  /* tool */
+  .tool{ background:var(--cream); border:1px dashed var(--gold); padding:6mm 7mm; position:relative; }
+  .tool::before{ content:"FERRAMENTA"; position:absolute; top:-3mm; left:6mm; background:var(--paper); padding:0 3mm; font-family:"Manrope"; font-size:8pt; letter-spacing:.24em; color:var(--gold); font-weight:700; }
+
+  /* COVER */
+  .cover{ background: radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.14), transparent 55%), radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%), var(--paper); }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:var(--rule); padding-bottom:6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap:10px; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); }
+  .cover-brand .logo .mark{ width:30px; height:30px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border:2px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .cover-brand .sub{ font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--accent); }
+  .cover-meta .label{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:12mm 0 8mm; }
+  .cover-eyebrow{ font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6mm; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .cover-arquetype{ font-family:"Instrument Serif"; font-style:italic; font-size:88pt; line-height:.9; color:var(--accent); letter-spacing:-.025em; margin:0 0 4mm; }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size:32pt; line-height:1.05; letter-spacing:-.01em; color:var(--ink); margin:0 0 6mm; max-width:160mm; }
+  .cover-title .it{ font-style:italic; color:var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size:12pt; line-height:1.5; color:var(--ink-2); max-width:160mm; }
+  .cover-bottom{ border-top:var(--rule); padding-top:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap:13mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size:36pt; line-height:1; color:var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color:var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:2mm; }
+
+  /* OPENER */
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size:42pt; line-height:1.02; color:var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style:italic; color:var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:7mm; }
+  .opener-grid p{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+
+  /* TOC */
+  .toc-list{ display:grid; grid-template-columns:1fr; margin-top:4mm; }
+  .toc-item{ display:flex; align-items:baseline; gap:8px; padding:2.4mm 0; border-bottom:1px dotted var(--line); font-size:10pt; color:var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent); flex:0 0 12mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--muted); }
+
+  .section-head{ display:flex; gap:10mm; align-items:flex-start; padding-bottom:6mm; border-bottom:var(--rule); margin-bottom:6mm; }
+  .section-head .big{ flex:0 0 auto; }
+  .section-head .meta{ flex:1; padding-top:4mm;}
+  .section-body{ display:flex; flex-direction:column; gap:5mm; flex:1;}
+  .block-card{ background:var(--cream); border:1px solid var(--line); padding:6mm 7mm; }
+  .twoframe{ display:grid; grid-template-columns:1fr 1fr; gap:8mm; }
+
+  .frases-head{ display:flex; align-items:baseline; gap:8mm; flex-wrap:wrap; padding-bottom:4mm; border-bottom:var(--rule); margin-bottom:5mm; }
+  .frases-head .section-kicker{ flex:0 0 auto; }
+  .frases-head h2{ font-family:"Instrument Serif"; font-weight:400; font-size:24pt; line-height:1.05; color:var(--ink); margin:0; }
+  .frases-head h2 .it{ font-style:italic; color:var(--accent); }
+
+  /* capture */
+  .capture{ background: radial-gradient(120% 80% at 0% 0%, rgba(184,84,59,.16), transparent 55%), radial-gradient(90% 70% at 100% 100%, rgba(14,26,43,.10), transparent 55%), var(--paper); }
+  .invite-head{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:12px; margin-bottom:6mm; }
+  .invite-head::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .invite-title{ font-family:"Instrument Serif"; font-weight:400; font-size:44pt; line-height:1.02; letter-spacing:-.02em; color:var(--ink); margin:0; }
+  .invite-title .it{ font-style:italic; color:var(--accent); }
+  .invite-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:8mm; }
+  .invite-grid p{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+  .invite-grid p b{ color:var(--ink); }
+  .selection-band{ background:var(--ink); color:var(--paper); padding:8mm 9mm; display:flex; flex-direction:column; gap:3mm; margin-top:auto; }
+  .selection-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .selection-band .t{ font-family:"Instrument Serif"; font-size:26pt; line-height:1.08; color:var(--paper); }
+  .selection-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .selection-band .lines{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; line-height:1.45; color:rgba(244,238,223,.92); margin:2mm 0 0; }
+  .selection-band .u{ font-family:"Manrope"; font-weight:700; font-size:11pt; letter-spacing:.04em; color:var(--paper); margin-top:2mm; }
+  .selection-band .u span{ color:var(--accent-2); }
+  .selection-band .note{ font-family:"Manrope"; font-size:8.5pt; letter-spacing:.16em; text-transform:uppercase; color:rgba(244,238,223,.6); margin-top:1mm; }
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  /* Save-as-PDF FAB */
+  .pdf-fab{ position:fixed; right:22px; bottom:22px; z-index:9999; display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:#0E1A2B; color:#F4EEDF; border:none; border-radius:999px; font-family:"Manrope", system-ui, sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; box-shadow:0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30), inset 0 0 0 1px rgba(255,255,255,.06); transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .pdf-fab:hover{ transform:translateY(-2px); background:#B8543B; }
+  .pdf-fab svg{ width:16px; height:16px; flex:0 0 auto; }
+  .pdf-fab .dot-accent{ width:6px; height:6px; border-radius:50%; background:#B8543B; box-shadow:0 0 0 3px rgba(184,84,59,.22); }
+  .pdf-hint{ position:fixed; right:22px; bottom:74px; z-index:9998; max-width:280px; padding:12px 14px; background:#FBF7EC; border:1px solid #D9D2C2; border-radius:10px; font-family:"Manrope", system-ui, sans-serif; font-size:11.5px; line-height:1.5; color:#1F2C3F; box-shadow:0 10px 30px rgba(0,0,0,.18); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .pdf-hint.show{ opacity:1; transform:translateY(0); }
+  .pdf-hint b{ color:#B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display:none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 15</div>
+          <div class="label">Série Arquétipos</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">O guia do seu arquétipo</div>
+        <h1 class="cover-arquetype">O Burocrata.</h1>
+        <p class="cover-title">Transforme informação em <span class="it">conexão.</span></p>
+        <p class="cover-deck">Como engajar os moradores, reduzir conflitos e fazer com que a sua gestão seja vista, entendida e valorizada. Porque informar não é a mesma coisa que comunicar.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">13</span></div><div class="l">Capítulos</div></div>
+          <div class="s"><div class="n">3</div><div class="l">Ferramentas práticas</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · APRESENTAÇÃO -->
+  <section class="page opener" data-screen-label="02 Apresentação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Apresentação</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:8mm;">Antes de começar</div>
+        <h2 class="opener-title">Informar não é a mesma coisa que <span class="it">comunicar.</span></h2>
+        <div class="opener-grid">
+          <div>
+            <p>Você fez o teste e descobriu que seu perfil é o Burocrata. Antes de continuar, é importante dizer uma coisa: ser organizado não é problema. Ser técnico não é problema. Ser criterioso não é problema. Muitos dos melhores síndicos têm justamente essas marcas.</p>
+            <p>Você gosta de documento, de procedimento, de registro, de relatório, de comprovação. De fazer tudo da forma correta. Isso é excelente. O problema começa quando você acredita que <b>informar é o mesmo que comunicar</b>. Porque não é.</p>
+          </div>
+          <div>
+            <p>Você pode escrever um comunicado impecável e ninguém ler. Pode apresentar uma prestação de contas detalhada e ainda ouvir “ninguém explica nada nesse condomínio”. Pode documentar tudo, formalizar tudo, e mesmo assim ser acusado de falta de transparência.</p>
+            <p>Parece injusto, mas acontece todo dia. A qualidade da sua gestão não depende só do que você faz. Depende também da capacidade que você tem de fazer as pessoas <b>compreenderem</b> o que foi feito.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">A virada que este guia propõe</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Manter a organização que sempre foi sua marca, e somar a ela a comunicação que transforma documento em entendimento, e entendimento em apoio.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">O que você vai encontrar</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Treze capítulos, três ferramentas (a regra dos 30 segundos, os 3 fatores de conflito, o teste do comunicado) e um plano de 30 dias para virar a chave entre informar e engajar.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 15</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · TOC -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:5mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">01·02</span><span class="ttl">O maior erro dos síndicos organizados, e por que os moradores não leem</span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">03·04</span><span class="ttl">O mito do comunicado perfeito, e para quem você está escrevendo</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">05</span><span class="ttl">Transparência não é excesso de informação</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">06·07</span><span class="ttl">A regra dos 30 segundos e o problema do silêncio</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">08</span><span class="ttl">Como reduzir conflitos pela comunicação</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">09·10</span><span class="ttl">A comunicação que gera engajamento, e o erro de só falar de problema</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">11</span><span class="ttl">Como fazer o morador sentir que está sendo ouvido</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">12·13</span><span class="ttl">O poder do storytelling e o teste do comunicado eficaz</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Checklist, exercício prático e teste final</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Plano de evolução em 30 dias</span><span class="pg">13</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Conclusão · de gestor eficiente a líder que engaja</span><span class="pg">14</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">Convite · a Mentoria Bastidores da Sindicatura</span><span class="pg">15</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · CAP 01 + 02 -->
+  <section class="page" data-screen-label="04 Cap 01-02">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 01 e 02</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 01</div>
+        <h2>O maior erro dos síndicos <span class="it">organizados</span>.</h2>
+      </div>
+      <p class="body">O Burocrata costuma acreditar que “se eu enviei o comunicado, minha parte está feita”. Mas <b>comunicação não é envio. Comunicação é entendimento.</b> Existe uma enorme diferença.</p>
+      <p class="body">Muitos moradores não estão lendo. Muitos estão passando os olhos. Outros sequer abriram. E alguns abriram sem entender. O resultado: você acredita que comunicou, eles acreditam que não foram informados, e nasce mais um conflito.</p>
+      <div class="frases-head" style="margin-top:5mm;">
+        <div class="section-kicker">Capítulo 02</div>
+        <h2 style="font-size:18pt;">Por que os moradores não <span class="it">leem</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:4mm;">Resposta simples: porque eles vivem a vida deles, não a gestão do condomínio.</p>
+      <div class="twoframe" style="flex:1; align-content:start;">
+        <div>
+          <div class="h-sub">Enquanto você pensa</div>
+          <ul class="bul">
+            <li>Contratos</li>
+            <li>Orçamentos</li>
+            <li>Obras</li>
+            <li>Manutenções</li>
+            <li>Assembleias</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h-sub">O morador pensa</div>
+          <ul class="bul">
+            <li>Trabalho e família</li>
+            <li>Filhos e escola</li>
+            <li>Trânsito e contas</li>
+            <li>Saúde</li>
+            <li>Problemas pessoais</li>
+          </ul>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:5mm;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">O condomínio ocupa só alguns minutos do dia do morador. Por isso a sua comunicação precisa competir pela atenção dele.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 01 e 02 · Informar não é comunicar</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · CAP 03 + 04 -->
+  <section class="page" data-screen-label="05 Cap 03-04">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 03 e 04</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 03</div>
+        <h2>O mito do comunicado <span class="it">perfeito</span>.</h2>
+      </div>
+      <p class="body">Muitos síndicos acreditam que quanto mais informações colocarem, melhor. Acontece exatamente o contrário. Quando o comunicado fica enorme, as pessoas desistem. Quando fica excessivamente técnico, não entendem. Quando fica jurídico demais, ignoram. <b>Clareza vale mais que quantidade.</b></p>
+      <div class="frases-head" style="margin-top:5mm;">
+        <div class="section-kicker">Capítulo 04</div>
+        <h2 style="font-size:18pt;">Você está escrevendo para um advogado ou para um <span class="it">morador</span>?</h2>
+      </div>
+      <p class="body" style="margin-bottom:4mm;">Leia os dois comunicados. A informação é a mesma. A percepção, completamente diferente.</p>
+      <div class="compare" style="margin-bottom:5mm;">
+        <div class="box bad">
+          <span class="lbl">Para advogado</span>
+          <p>“Informamos que será realizada manutenção preventiva no sistema hidrossanitário com interrupção temporária do abastecimento.”</p>
+        </div>
+        <div class="box good">
+          <span class="lbl">Para morador</span>
+          <p>“Na próxima terça-feira faltará água das 9h às 14h para manutenção da rede hidráulica.”</p>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">Moradores não precisam de termos complexos. Precisam entender rapidamente o que vai acontecer.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 03 e 04 · Clareza vale mais que quantidade</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · CAP 05 -->
+  <section class="page" data-screen-label="06 Cap 05">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 05 · Transparência</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">05</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo cinco</div>
+          <h2 class="section-title">Transparência não é excesso de <span class="serif" style="font-style:italic;color:var(--accent);">informação</span>.</h2>
+          <p class="section-lede">Muitos síndicos confundem transparência com volume. Mandam planilhas gigantes, relatórios extensos, textos intermináveis, documentos técnicos. Mas transparência verdadeira significa <b>clareza</b>.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">A prestação que afasta</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">50 páginas de balancete, com notas técnicas, classificação contábil, tabelas que ninguém abre. Tudo certo, ninguém entende.</p>
+          </div>
+          <div>
+            <div class="h-sub">A prestação que aproxima</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Cinco pontos claros: o que entrou, o que saiu, o que melhorou, o que preocupa e o que será feito a seguir.</p>
+          </div>
+        </div>
+        <div class="callout"><b>A regra é simples.</b> Documentos completos protegem a gestão juridicamente. Comunicação clara protege a gestão politicamente. Você precisa das duas, e elas têm linguagens diferentes.</div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase para guardar</span>
+          <span class="txt">Nem sempre mais informação gera mais compreensão. Às vezes, gera mais distância.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 05 · Transparência não é excesso</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · CAP 06 + 07 -->
+  <section class="page" data-screen-label="07 Cap 06-07">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 06 e 07</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 06 · ferramenta</div>
+        <h2>A regra dos <span class="it">30 segundos</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:3mm;">Todo comunicado deveria responder rapidamente cinco perguntas. Se o morador conseguir entender isso em menos de 30 segundos, sua comunicação está funcionando.</p>
+      <div class="tool" style="margin-bottom:5mm;">
+        <ol class="enum" style="margin-top:1mm;">
+          <li><b>O que aconteceu?</b></li>
+          <li><b>O que vai acontecer?</b></li>
+          <li><b>Quando?</b></li>
+          <li><b>Como impacta a minha vida?</b></li>
+          <li><b>O que eu preciso fazer?</b></li>
+        </ol>
+      </div>
+      <div class="frases-head" style="margin-bottom:4mm;">
+        <div class="section-kicker">Capítulo 07</div>
+        <h2 style="font-size:18pt;">O problema do <span class="it">silêncio</span>.</h2>
+      </div>
+      <p class="body">Um dos erros mais comuns do Burocrata é comunicar apenas quando existe obrigação. Mas moradores querem previsibilidade. Quando o condomínio fica em silêncio por muito tempo, surgem boatos, especulações e desconfiança.</p>
+      <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+        Onde falta informação, a imaginação assume o controle. E a imaginação, em condomínio, raramente é amigável com a gestão.
+        <div class="signature">Bastidores da Sindicatura</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 06 e 07 · A regra dos 30 segundos e o silêncio</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · CAP 08 -->
+  <section class="page" data-screen-label="08 Cap 08">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 08 · Conflitos</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">08</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo oito</div>
+          <h2 class="section-title">Como reduzir conflitos pela <span class="serif" style="font-style:italic;color:var(--accent);">comunicação</span>.</h2>
+          <p class="section-lede">Grande parte dos conflitos condominiais nasce de três fatores. Quando a gestão comunica considerando os três, a resistência cai antes da decisão chegar.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="threeframe">
+          <div class="block-card">
+            <p class="word">Surpresa</p>
+            <p>O morador não sabia que ia acontecer. A decisão chegou pronta, e o impacto pegou todo mundo no contrapé.</p>
+          </div>
+          <div class="block-card">
+            <p class="word">Interpretação</p>
+            <p>O morador entendeu errado. O texto ficou ambíguo, e a leitura virou narrativa contra a gestão.</p>
+          </div>
+          <div class="block-card">
+            <p class="word">Falta de contexto</p>
+            <p>O morador não entendeu o motivo. Sem o porquê, a regra parece arbitrária e a decisão parece pessoal.</p>
+          </div>
+        </div>
+        <div class="callout"><b>Antes de comunicar qualquer decisão, explique:</b> o problema, o motivo, a solução e o impacto. Quando as pessoas entendem o contexto, a resistência diminui sozinha.</div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">A maior parte do conflito condominial nasce antes da decisão. Nasce na ausência de informação sobre a decisão.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 08 · Como reduzir conflitos pela comunicação</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · CAP 09 + 10 -->
+  <section class="page" data-screen-label="09 Cap 09-10">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 09 e 10</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 09</div>
+        <h2>A comunicação que gera <span class="it">engajamento</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:4mm;">Comunicar não é apenas informar. É gerar interesse. Mesma informação, formulação diferente. O resultado muda.</p>
+      <div class="compare" style="margin-bottom:5mm;">
+        <div class="box bad"><span class="lbl">Informa</span><p>“Será realizada poda das árvores.”</p></div>
+        <div class="box good"><span class="lbl">Engaja</span><p>“Nos próximos dias vamos podar as árvores para aumentar a segurança e melhorar a iluminação das áreas comuns.”</p></div>
+      </div>
+      <div class="frases-head" style="margin-bottom:4mm;">
+        <div class="section-kicker">Capítulo 10</div>
+        <h2 style="font-size:18pt;">O erro de falar só quando há <span class="it">problemas</span>.</h2>
+      </div>
+      <p class="body">Se a única comunicação do condomínio é sobre multas, cobranças, regras e restrições, os moradores começam a associar a gestão a experiências negativas. Comunique também as <b>conquistas</b>: melhorias, economias, obras concluídas, resultados alcançados.</p>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">Pessoas se conectam com progresso. Se a sua gestão só aparece quando algo deu errado, ela vira sinônimo do problema.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 09 e 10 · Engajamento e comunicar conquistas</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · CAP 11 -->
+  <section class="page" data-screen-label="10 Cap 11">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 11 · Ser ouvido</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">11</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo onze</div>
+          <h2 class="section-title">Como fazer o morador sentir que está sendo <span class="serif" style="font-style:italic;color:var(--accent);">ouvido</span>.</h2>
+          <p class="section-lede">Nem toda reclamação precisa ser aceita. Mas toda reclamação merece retorno. Existe uma diferença enorme entre uma negativa que fecha a porta e uma negativa que explica.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="compare">
+          <div class="box bad">
+            <span class="lbl">A negativa que fecha</span>
+            <p>“Pedido negado.”</p>
+          </div>
+          <div class="box good">
+            <span class="lbl">A negativa que explica</span>
+            <p>“Analisamos sua solicitação. Neste momento não será possível atender pelos seguintes motivos…”</p>
+          </div>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">A virada</div>
+          <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">A decisão pode ser a mesma. A percepção muda completamente. O morador que se sente ouvido aceita o não. O morador que se sente ignorado vai brigar com o sim na semana seguinte.</p>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase para guardar</span>
+          <span class="txt">A diferença entre obediência e adesão está no respeito que o morador sentiu no caminho.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 11 · Como fazer o morador sentir que está sendo ouvido</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · CAP 12 + 13 -->
+  <section class="page" data-screen-label="11 Cap 12-13">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 12 e 13</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 12</div>
+        <h2>O poder do <span class="it">storytelling</span> na gestão.</h2>
+      </div>
+      <p class="body" style="margin-bottom:4mm;">Moradores raramente se conectam com números. Eles se conectam com histórias. Pegue o mesmo resultado e mude o formato.</p>
+      <div class="compare" style="margin-bottom:5mm;">
+        <div class="box bad"><span class="lbl">Número solto</span><p>“Economizamos R$ 20.000 este ano.”</p></div>
+        <div class="box good"><span class="lbl">Número com história</span><p>“As medidas adotadas permitiram uma economia equivalente à pintura completa de um andar do condomínio.”</p></div>
+      </div>
+      <p class="body" style="font-size:10pt;margin-bottom:4mm;">O resultado é o mesmo. Mas agora ele virou imagem. E imagem fica.</p>
+      <div class="frases-head" style="margin-bottom:3mm;">
+        <div class="section-kicker">Capítulo 13 · ferramenta</div>
+        <h2 style="font-size:18pt;">O teste do comunicado <span class="it">eficaz</span>.</h2>
+      </div>
+      <div class="tool">
+        <p style="margin:0 0 3mm;font-size:10pt;line-height:1.55;color:var(--ink-2);">Antes de enviar qualquer comunicado, passe ele por seis perguntas:</p>
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>Está claro?</li>
+          <li><span class="box"></span>Está simples?</li>
+          <li><span class="box"></span>Está objetivo?</li>
+          <li><span class="box"></span>Está completo?</li>
+          <li><span class="box"></span>Está fácil de entender?</li>
+          <li><span class="box"></span>Eu leria isso se fosse morador?</li>
+        </ul>
+        <p style="margin:3mm 0 0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Se a resposta for não para qualquer uma delas, reescreva.</p>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 12 e 13 · Storytelling e o teste do comunicado</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · CHECKLIST + EXERCÍCIO + TESTE FINAL -->
+  <section class="page" data-screen-label="12 Autoavaliação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Autoavaliação</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Autoavaliação</div>
+        <h2>Você está comunicando ou só <span class="it">informando</span>?</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Marque os itens verdadeiros para a sua gestão hoje.</p>
+      <div class="cols-2" style="margin-bottom:5mm;">
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>Faço comunicações frequentes</li>
+          <li><span class="box"></span>Evito excesso de linguagem técnica</li>
+          <li><span class="box"></span>Explico os motivos das decisões</li>
+          <li><span class="box"></span>Informo resultados da gestão</li>
+          <li><span class="box"></span>Dou retorno às solicitações</li>
+        </ul>
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>Uso linguagem simples</li>
+          <li><span class="box"></span>Compartilho conquistas</li>
+          <li><span class="box"></span>Evito textos excessivamente longos</li>
+          <li><span class="box"></span>Crio previsibilidade</li>
+          <li><span class="box"></span>Faço os moradores entenderem o contexto</li>
+        </ul>
+      </div>
+      <div class="frases-head" style="margin-bottom:3mm;">
+        <div class="section-kicker">Exercício prático</div>
+        <h2 style="font-size:18pt;">O teste do <span class="it">leitor real</span>.</h2>
+      </div>
+      <div class="block-card" style="margin-bottom:5mm;">
+        <p style="margin:0 0 3mm;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Pegue o último comunicado enviado pelo condomínio. Agora responda com sinceridade:</p>
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>Um adolescente de 15 anos entenderia esse texto?</li>
+          <li><span class="box"></span>Um morador que nunca participou de assembleia entenderia?</li>
+          <li><span class="box"></span>Alguém conseguiria resumir o conteúdo em uma frase?</li>
+        </ul>
+        <p style="margin:3mm 0 0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Se a resposta for não, existe espaço para melhorar.</p>
+      </div>
+      <div class="frases-head" style="margin-bottom:3mm;">
+        <div class="section-kicker">Teste final</div>
+        <h2 style="font-size:18pt;">Dois síndicos. Qual gera mais <span class="it">apoio</span>?</h2>
+      </div>
+      <div class="compare">
+        <div class="box bad"><span class="lbl">O primeiro</span><p>Tem relatórios impecáveis. Ninguém entende a gestão dele.</p></div>
+        <div class="box good"><span class="lbl">O segundo</span><p>Tem relatórios bons. Todos entendem claramente o que está acontecendo.</p></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Autoavaliação, exercício e teste final</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · PLANO 30 DIAS -->
+  <section class="page" data-screen-label="13 Plano">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Plano de evolução</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Plano de evolução · 30 dias</div>
+        <h2>Quatro semanas para virar a chave entre informar e <span class="it">engajar</span>.</h2>
+      </div>
+      <p class="body" style="font-size:10pt;margin-bottom:5mm;">Uma frente por semana. Não tente reformular toda a comunicação de uma vez. Pequenas mudanças mantidas semana a semana mudam a percepção da gestão inteira em poucos meses.</p>
+      <div class="cols-2" style="flex:1; align-content:start;">
+        <div>
+          <div class="h-sub">Semana 01 · Revisar</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Reler os comunicados enviados nos últimos meses</li>
+            <li><span class="box"></span>Aplicar a regra dos 30 segundos a cada um</li>
+            <li><span class="box"></span>Identificar os comunicados que pegaram repercussão (boa ou ruim)</li>
+            <li><span class="box"></span>Anotar o padrão dos que funcionaram melhor</li>
+          </ul>
+          <div class="h-sub" style="margin-top:5mm;">Semana 02 · Simplificar</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Eliminar termos excessivamente técnicos</li>
+            <li><span class="box"></span>Substituir frases jurídicas por linguagem de morador</li>
+            <li><span class="box"></span>Criar modelo padrão de comunicado curto</li>
+            <li><span class="box"></span>Pedir a alguém de fora para ler antes de enviar</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h-sub">Semana 03 · Antecipar</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Criar rotina de comunicação preventiva</li>
+            <li><span class="box"></span>Listar os temas onde quase sempre há boato</li>
+            <li><span class="box"></span>Definir frequência mínima de comunicado (mensal, quinzenal)</li>
+            <li><span class="box"></span>Combinar com a administradora o fluxo</li>
+          </ul>
+          <div class="h-sub" style="margin-top:5mm;">Semana 04 · Engajar</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Comunicar conquistas e resultados da gestão</li>
+            <li><span class="box"></span>Transformar números em histórias visuais</li>
+            <li><span class="box"></span>Dar retorno público a uma solicitação relevante</li>
+            <li><span class="box"></span>Encerrar a semana com balanço positivo</li>
+          </ul>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:5mm;">
+        <span class="lbl">Princípio do plano</span>
+        <span class="txt">A reputação de uma gestão é construída comunicado a comunicado. Cada texto bem escrito é um voto silencioso a favor da sua continuidade.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Plano de evolução · 30 dias</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · CONCLUSÃO -->
+  <section class="page" data-screen-label="14 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">De gestor eficiente a líder que <span class="serif" style="font-style:italic;color:var(--accent);">engaja</span>.</h2>
+          <p class="section-lede">O Burocrata costuma ter uma virtude grande: faz as coisas da maneira correta. Mas existe uma armadilha: as pessoas não conseguem valorizar aquilo que não compreendem.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p class="body">Você pode ter a melhor prestação de contas, o melhor relatório, o melhor controle, o melhor processo. Se os moradores não entenderem, a percepção será completamente diferente da realidade. A <b>comunicação não é um complemento da gestão. Ela é parte da gestão.</b></p>
+        <div class="refrain">
+          <p>Uma gestão invisível dificilmente será reconhecida.</p>
+          <p>Uma gestão bem comunicada gera confiança.</p>
+          <p>Gera previsibilidade.</p>
+          <p>Gera apoio.</p>
+          <p>E <b>reduz conflitos</b>.</p>
+        </div>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          Quando você aprende a transformar informação em conexão, deixa de ser apenas um gestor eficiente. Passa a ser um líder que engaja. E essa é uma das habilidades mais valiosas da sindicatura moderna.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · De gestor eficiente a líder que engaja</div><div class="pg-num">14</div></div>
+  </section>
+
+  <!-- PAGE 15 · CONVITE -->
+  <section class="page capture" data-screen-label="15 Mentoria">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>O convite</div></div>
+    <div class="pg-body">
+      <div class="invite-head">Convite · não é para todo síndico</div>
+      <h2 class="invite-title">A Mentoria não é um curso. É um <span class="it">espaço fechado.</span></h2>
+      <div class="invite-grid">
+        <div>
+          <p>A Mentoria Bastidores da Sindicatura não é aberta. É uma turma pequena, com vagas escolhidas a dedo. <b>Eu seleciono pessoalmente cada participante.</b></p>
+          <p>Por dois motivos. O primeiro é o nível da conversa. Os bastidores que eu compartilho ali dentro não cabem em sala lotada. O segundo é o método. Um espaço fechado garante que cada decisão seja debatida com a profundidade que esse mercado exige.</p>
+          <p>Se você reconheceu o Burocrata em você e decidiu transformar técnica em influência, você tem o primeiro requisito.</p>
+        </div>
+        <div>
+          <p>A parte mais difícil você já tem: <b>organização, método e controle.</b> O próximo passo é desenvolver comunicação estratégica, influência, posicionamento e engajamento dos moradores.</p>
+          <p>Você vai aprender a comunicar decisões difíceis, construir reputação, reduzir conflitos, conduzir assembleias e criar uma gestão que seja <b>percebida e valorizada</b> pelos moradores.</p>
+          <p>Não é para quem quer aprender mais sobre sindicatura. É para quem decidiu construir uma <b>carreira</b> na sindicatura, com método, autoridade e reputação.</p>
+        </div>
+      </div>
+      <div class="selection-band">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Vagas <span class="it">limitadas</span> por turma. Seleção por <span class="it">perfil.</span></div>
+        <p class="lines">Os bastidores que ninguém mostra.<br/>As conversas que ninguém grava.<br/>As decisões que mudam uma gestão inteira.</p>
+        <div class="u">→ Candidate-se em <span>www.bastidoresdasindicatura.com.br</span></div>
+        <div class="note">Próxima turma com vagas restritas. A seleção é feita pessoalmente pela Juliana Moreira.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>O convite · Mentoria Bastidores da Sindicatura</div><div class="pg-num">15</div></div>
+  </section>
+
+  <!-- PAGE 16 · MANIFESTO -->
+  <section class="page manifesto" data-screen-label="16 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top:30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:12mm;">
+        <div class="cover-eyebrow" style="margin:0;">Arquétipo Burocrata · Vol. 15</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:165mm;">
+          Informar <em style="font-style:italic;color:var(--accent);">protege a gestão.</em><br/>
+          Comunicar <em style="font-style:italic;color:var(--accent);">constrói reputação.</em>
+        </h2>
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          Sua organização e seu método trazem proteção. A próxima camada da sua gestão é a comunicação que faz isso tudo virar valor reconhecido.
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 15 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite"><b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab=document.getElementById('pdfFab'); var hint=document.getElementById('pdfHint');
+    if(!fab) return; var t;
+    fab.addEventListener('mouseenter',function(){ clearTimeout(t); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave',function(){ t=setTimeout(function(){ hint.classList.remove('show'); },250); });
+    fab.addEventListener('click',function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); },120); setTimeout(function(){ hint.classList.remove('show'); },4000); });
+  })();
+</script>
+</body>
+</html>
