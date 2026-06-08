@@ -1,0 +1,825 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>O Bombeiro · Como parar de apagar incêndios · Bastidores da Sindicatura · Vol. 12</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <circle r="120" fill="none" stroke="#B8543B" stroke-width="6"/>
+      <path d="M-46 -8 a46 40 0 1 0 18 -34 L-46 -54 Z" fill="none" stroke="#B8543B" stroke-width="12" stroke-linejoin="round"/>
+      <text y="180" font-family="serif" font-style="italic" font-size="64" fill="#0E1A2B">Bastidores</text>
+      <text y="240" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A; --rule:1px solid var(--line);
+  }
+  @page { size: 210mm 297mm; margin: 0; }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; width:210mm; background:#2A2522; font-family:"Manrope", system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; color:var(--ink); page-break-after:always; break-after:page; margin:0 auto; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen { html, body{ width:auto; } body{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 0 60px; } .page{ box-shadow:0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); } }
+  @media print{ html, body{ background:#fff; width:210mm; margin:0; padding:0; display:block; } .page{ box-shadow:none; margin:0; display:block; } }
+  html.show-overflow .pg-body{ outline:1px dashed rgba(184,84,59,.4); }
+
+  .frame{ position:absolute; inset:14mm 16mm; }
+  .pg-head{ position:absolute; top:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); padding-bottom:4mm; border-bottom:var(--rule); }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{ width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  .pg-foot{ position:absolute; bottom:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:8.5pt; color:var(--muted); padding-top:4mm; border-top:var(--rule); }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .pg-body{ position:absolute; top:22mm; bottom:18mm; left:16mm; right:16mm; display:flex; flex-direction:column; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif","Times New Roman",serif; font-weight:400; }
+  .section-num{ font-family:"Instrument Serif"; font-style:italic; font-size:64pt; line-height:1; color:var(--accent); letter-spacing:-.02em; }
+  .section-kicker{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-title{ font-family:"Instrument Serif"; font-weight:400; font-size:32pt; line-height:1.04; letter-spacing:-.01em; color:var(--ink); margin-top:2mm; }
+  .section-lede{ font-size:10.5pt; line-height:1.55; color:var(--ink-2); max-width:135mm; margin-top:5mm; }
+  .h-sub{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:4mm; }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.4mm; }
+  ul.checks li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.42; color:var(--ink-2); padding:1.2mm 0; border-bottom:1px dotted var(--line); }
+  ul.checks li:last-child{ border-bottom:none; }
+  ul.checks li .box{ flex:0 0 auto; width:4.4mm; height:4.4mm; border:1.2px solid var(--ink); border-radius:1.2px; background:var(--cream); margin-top:1.2mm; }
+  .stack-tight ul.checks li{ font-size:9.5pt; padding:.7mm 0; }
+  .stack-tight ul.checks li .box{ width:4mm; height:4mm; }
+  ul.bul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.2mm; }
+  ul.bul li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.45; color:var(--ink-2); padding:1mm 0; border-bottom:1px dotted var(--line); }
+  ul.bul li:last-child{ border-bottom:none; }
+  ul.bul li::before{ content:""; flex:0 0 auto; width:5px; height:5px; margin-top:2.4mm; background:var(--accent); border-radius:50%; }
+
+  .cols-2{ display:grid; grid-template-columns:1fr 1fr; column-gap:12mm; align-items:start; }
+  ol.enum{ list-style:none; padding:0; margin:0; counter-reset:en; display:flex; flex-direction:column; gap:2mm; }
+  ol.enum li{ counter-increment:en; display:flex; gap:10px; align-items:baseline; font-size:9.5pt; line-height:1.45; color:var(--ink-2); padding:1.4mm 0; border-bottom:1px dotted var(--line); }
+  ol.enum li::before{ content:counter(en, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--accent); flex:0 0 9mm; }
+  ol.enum li b{ color:var(--ink); }
+
+  .callout{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 6mm; font-size:9.5pt; line-height:1.55; color:var(--ink-2); margin-top:4mm; }
+  .callout b{ color:var(--ink); }
+  .quote-block{ background:var(--cream); border:1px solid var(--line); padding:7mm 8mm; font-family:"Instrument Serif"; font-style:italic; font-size:13pt; line-height:1.5; color:var(--ink); }
+  .quote-block .signature{ margin-top:4mm; font-family:"Manrope"; font-style:normal; font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .survival{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 7mm; display:flex; flex-direction:column; gap:2mm; }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; line-height:1.3; color:var(--ink); }
+
+  .tag{ display:inline-flex; align-items:center; gap:6px; font-size:8pt; letter-spacing:.18em; text-transform:uppercase; color:var(--ink); background:var(--cream); padding:2.2mm 3.6mm; border-radius:100px; border:1px solid var(--line); font-weight:600; }
+  .hr-orn{ display:flex; align-items:center; gap:10px; color:var(--accent); margin:4mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent);}
+
+  /* refrain */
+  .refrain{ display:flex; flex-direction:column; gap:1.5mm; padding:4mm 6mm; border-left:2px solid var(--line); }
+  .refrain p{ margin:0; font-size:10.5pt; line-height:1.5; color:var(--ink-2); }
+  .refrain p b{ color:var(--ink); font-weight:600; }
+
+  /* tier */
+  .tiers{ display:flex; flex-direction:column; gap:2.5mm; }
+  .tier{ display:grid; grid-template-columns: 30mm 1fr; gap:5mm; align-items:start; padding:3.5mm 5mm; background:var(--cream); border-left:3px solid var(--line); }
+  .tier .range{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent); line-height:1; }
+  .tier p{ margin:0; font-size:9.5pt; line-height:1.45; color:var(--ink-2); }
+  .tier.t2{ border-left-color:var(--gold); }
+  .tier.t3{ border-left-color:var(--accent); background:var(--paper-2); }
+  .tier.t3 p{ color:var(--ink); font-weight:500; }
+
+  /* compare */
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
+  .compare .box{ padding:5mm 6mm; }
+  .compare .bad{ background:var(--paper-2); border-left:3px solid var(--accent); }
+  .compare .good{ background:var(--cream); border-left:3px solid var(--gold); }
+  .compare .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.18em; text-transform:uppercase; margin-bottom:2mm; display:block; }
+  .compare .bad .lbl{ color:var(--accent); }
+  .compare .good .lbl{ color:var(--gold); }
+  .compare ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1mm; }
+  .compare ul li{ font-size:9.5pt; line-height:1.45; color:var(--ink); padding:.6mm 0; }
+  .compare ul li::before{ content:"·  "; color:var(--accent); font-weight:700; }
+
+  /* Eisenhower matrix */
+  .matrix{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+  .quad{ padding:5mm 6mm; background:var(--cream); border:1px solid var(--line); border-radius:0; min-height:50mm; }
+  .quad.q1{ background:var(--paper-2); border-left:3px solid var(--accent); }
+  .quad.q2{ border-left:3px solid var(--gold); }
+  .quad.q3{ border-left:3px solid var(--accent-2); }
+  .quad.q4{ border-left:3px solid var(--line); background:var(--cream); }
+  .quad .label{ font-family:"Manrope"; font-weight:700; font-size:7.8pt; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-bottom:2mm; }
+  .quad .action{ font-family:"Instrument Serif"; font-style:italic; font-size:18pt; color:var(--accent); margin:0 0 3mm; line-height:1; }
+  .quad p{ margin:0; font-size:9pt; line-height:1.45; color:var(--ink-2); }
+  .quad ul{ list-style:none; padding:0; margin:2mm 0 0; display:flex; flex-direction:column; gap:1mm; }
+  .quad ul li{ font-size:8.6pt; line-height:1.4; color:var(--ink-2); }
+  .quad ul li::before{ content:"·  "; color:var(--accent); }
+
+  /* 7 incêndios */
+  .sinais{ display:grid; grid-template-columns:1fr 1fr; gap:4mm 8mm; }
+  .sinal{ display:grid; grid-template-columns:14mm 1fr; gap:0 4mm; align-items:start; }
+  .sinal .n{ font-family:"Instrument Serif"; font-style:italic; font-size:24pt; line-height:.85; color:var(--accent); }
+  .sinal .ttl{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.12em; text-transform:uppercase; color:var(--ink); display:block; margin-bottom:1.4mm; }
+  .sinal p{ margin:0; font-size:9pt; line-height:1.42; color:var(--ink-2); }
+
+  /* 30-30-30 block */
+  .triple{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:5mm; }
+  .triple .t{ background:var(--cream); border:1px solid var(--line); padding:6mm 7mm; text-align:center; }
+  .triple .t .min{ font-family:"Instrument Serif"; font-style:italic; font-size:32pt; line-height:1; color:var(--accent); }
+  .triple .t .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.2em; text-transform:uppercase; color:var(--gold); margin-top:2mm; }
+  .triple .t p{ margin:3mm 0 0; font-size:9.5pt; line-height:1.45; color:var(--ink-2); }
+
+  /* COVER */
+  .cover{ background: radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.14), transparent 55%), radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%), var(--paper); }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:var(--rule); padding-bottom:6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap:10px; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); }
+  .cover-brand .logo .mark{ width:30px; height:30px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border:2px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .cover-brand .sub{ font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--accent); }
+  .cover-meta .label{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:12mm 0 8mm; }
+  .cover-eyebrow{ font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6mm; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .cover-arquetype{ font-family:"Instrument Serif"; font-style:italic; font-size:88pt; line-height:.9; color:var(--accent); letter-spacing:-.025em; margin:0 0 4mm; }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size:32pt; line-height:1.05; letter-spacing:-.01em; color:var(--ink); margin:0 0 6mm; max-width:160mm; }
+  .cover-title .it{ font-style:italic; color:var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size:12pt; line-height:1.5; color:var(--ink-2); max-width:160mm; }
+  .cover-bottom{ border-top:var(--rule); padding-top:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap:13mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size:36pt; line-height:1; color:var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color:var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:2mm; }
+
+  /* OPENER */
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size:46pt; line-height:1.02; color:var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style:italic; color:var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:7mm; }
+  .opener-grid p{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+
+  /* TOC */
+  .toc-list{ display:grid; grid-template-columns:1fr; margin-top:4mm; }
+  .toc-item{ display:flex; align-items:baseline; gap:8px; padding:2.6mm 0; border-bottom:1px dotted var(--line); font-size:10pt; color:var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent); flex:0 0 12mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--muted); }
+
+  /* SECTION HEAD */
+  .section-head{ display:flex; gap:10mm; align-items:flex-start; padding-bottom:6mm; border-bottom:var(--rule); margin-bottom:6mm; }
+  .section-head .big{ flex:0 0 auto; }
+  .section-head .meta{ flex:1; padding-top:4mm;}
+  .section-body{ display:flex; flex-direction:column; gap:5mm; flex:1;}
+  .block-card{ background:var(--cream); border:1px solid var(--line); padding:6mm 7mm; }
+  .twoframe{ display:grid; grid-template-columns:1fr 1fr; gap:8mm; }
+
+  /* compact head */
+  .frases-head{ display:flex; align-items:baseline; gap:8mm; flex-wrap:wrap; padding-bottom:4mm; border-bottom:var(--rule); margin-bottom:5mm; }
+  .frases-head .section-kicker{ flex:0 0 auto; }
+  .frases-head h2{ font-family:"Instrument Serif"; font-weight:400; font-size:24pt; line-height:1.05; color:var(--ink); margin:0; }
+  .frases-head h2 .it{ font-style:italic; color:var(--accent); }
+
+  /* persuasive capture page */
+  .capture{ background: radial-gradient(120% 80% at 0% 0%, rgba(184,84,59,.16), transparent 55%), radial-gradient(90% 70% at 100% 100%, rgba(14,26,43,.10), transparent 55%), var(--paper); }
+  .invite-head{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:12px; margin-bottom:6mm; }
+  .invite-head::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .invite-title{ font-family:"Instrument Serif"; font-weight:400; font-size:44pt; line-height:1.02; letter-spacing:-.02em; color:var(--ink); margin:0; }
+  .invite-title .it{ font-style:italic; color:var(--accent); }
+  .invite-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:8mm; }
+  .invite-grid p{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+  .invite-grid p b{ color:var(--ink); }
+  .selection-band{
+    background:var(--ink); color:var(--paper);
+    padding:8mm 9mm; display:flex; flex-direction:column; gap:3mm;
+    margin-top:auto;
+  }
+  .selection-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .selection-band .t{ font-family:"Instrument Serif"; font-size:26pt; line-height:1.08; color:var(--paper); }
+  .selection-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .selection-band .lines{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; line-height:1.45; color:rgba(244,238,223,.92); margin:2mm 0 0; }
+  .selection-band .u{ font-family:"Manrope"; font-weight:700; font-size:11pt; letter-spacing:.04em; color:var(--paper); margin-top:2mm; }
+  .selection-band .u span{ color:var(--accent-2); }
+  .selection-band .note{ font-family:"Manrope"; font-size:8.5pt; letter-spacing:.16em; text-transform:uppercase; color:rgba(244,238,223,.6); margin-top:1mm; }
+
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  /* Save-as-PDF FAB */
+  .pdf-fab{ position:fixed; right:22px; bottom:22px; z-index:9999; display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:#0E1A2B; color:#F4EEDF; border:none; border-radius:999px; font-family:"Manrope", system-ui, sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; box-shadow:0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30), inset 0 0 0 1px rgba(255,255,255,.06); transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .pdf-fab:hover{ transform:translateY(-2px); background:#B8543B; box-shadow:0 18px 42px rgba(184,84,59,.45), 0 4px 12px rgba(184,84,59,.30); }
+  .pdf-fab svg{ width:16px; height:16px; flex:0 0 auto; }
+  .pdf-fab .dot-accent{ width:6px; height:6px; border-radius:50%; background:#B8543B; box-shadow:0 0 0 3px rgba(184,84,59,.22); }
+  .pdf-fab:hover .dot-accent{ background:#F4EEDF; box-shadow:0 0 0 3px rgba(244,238,223,.22); }
+  .pdf-hint{ position:fixed; right:22px; bottom:74px; z-index:9998; max-width:280px; padding:12px 14px; background:#FBF7EC; border:1px solid #D9D2C2; border-radius:10px; font-family:"Manrope", system-ui, sans-serif; font-size:11.5px; line-height:1.5; color:#1F2C3F; box-shadow:0 10px 30px rgba(0,0,0,.18); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .pdf-hint.show{ opacity:1; transform:translateY(0); }
+  .pdf-hint b{ color:#B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display:none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 12</div>
+          <div class="label">Série Arquétipos</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">O guia do seu arquétipo</div>
+        <h1 class="cover-arquetype">O Bombeiro.</h1>
+        <p class="cover-title">Como parar de apagar <span class="it">incêndios</span> e assumir o controle da sua gestão.</p>
+        <p class="cover-deck">Um guia para síndicos que vivem correndo atrás dos problemas e querem virar a chave para uma gestão estratégica.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">08</span></div><div class="l">Capítulos</div></div>
+          <div class="s"><div class="n">3</div><div class="l">Ferramentas práticas</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · OPENER · APRESENTAÇÃO -->
+  <section class="page opener" data-screen-label="02 Apresentação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Apresentação</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:8mm;">Antes de começar</div>
+        <h2 class="opener-title">Você não é um <span class="it">mau síndico.</span></h2>
+        <div class="opener-grid">
+          <div>
+            <p>Se você chegou até este guia, provavelmente fez o teste “Que tipo de síndico você é?” e descobriu que seu perfil é o Bombeiro. Antes de qualquer coisa, saiba uma coisa: você não é um mau síndico.</p>
+            <p>Muito pelo contrário. Na maioria dos casos, o Bombeiro é alguém comprometido, responsável, presente e preocupado com o condomínio. O problema é outro.</p>
+          </div>
+          <div>
+            <p>Você passa tanto tempo resolvendo emergências que nunca consegue construir uma gestão capaz de reduzir essas emergências.</p>
+            <p>Vive ocupado, mas nem sempre produtivo. Trabalha muito, mas nem sempre avança. Resolve inúmeros problemas, mas sente que os mesmos voltam. Se isso é familiar, este material é para você.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">A virada que este guia propõe</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Sair do papel de quem combate o condomínio e entrar no papel de quem o conduz. Sem perder a presença que te trouxe até aqui.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">O que você vai encontrar</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Oito capítulos, uma matriz de prioridades, o método 30-30-30 e um plano prático de 30 dias para sair do modo emergência.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 12</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · TOC -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:5mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">01</span><span class="ttl">Como saber se você é um síndico Bombeiro</span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">02</span><span class="ttl">O maior mito da gestão condominial</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">03</span><span class="ttl">Os 7 incêndios que mais consomem o síndico</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">04</span><span class="ttl">O ciclo do caos</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">05</span><span class="ttl">O preço invisível de apagar incêndios</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">06</span><span class="ttl">A matriz das prioridades</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">07</span><span class="ttl">Como sair do modo Bombeiro</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">08</span><span class="ttl">O método 30-30-30</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Checklist · você está evoluindo? + teste final</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Plano de ação para 30 dias</span><span class="pg">13</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Conclusão · do Bombeiro ao Estrategista</span><span class="pg">14</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">Convite · a Mentoria Bastidores da Sindicatura</span><span class="pg">15</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · CAP 01 -->
+  <section class="page" data-screen-label="04 Cap 01">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 01 · Sinais</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">01</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo um</div>
+          <h2 class="section-title">Como saber se você é um <span class="serif" style="font-style:italic;color:var(--accent);">Bombeiro</span>.</h2>
+          <p class="section-lede">Leia as frases abaixo. Quantas parecem a sua rotina? Se você marcar mais de 5 itens, provavelmente está operando em modo Bombeiro.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2">
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Meu celular não para</li>
+            <li><span class="box"></span>Sempre aparece uma nova urgência</li>
+            <li><span class="box"></span>Tenho dificuldade de planejar o mês seguinte</li>
+            <li><span class="box"></span>Minha agenda muda várias vezes por dia</li>
+            <li><span class="box"></span>Passo boa parte do tempo resolvendo reclamações</li>
+          </ul>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Vivo correndo atrás de fornecedores</li>
+            <li><span class="box"></span>Tenho sensação constante de estar atrasado</li>
+            <li><span class="box"></span>Os moradores me procuram para tudo</li>
+            <li><span class="box"></span>Quase nunca trabalho em projetos de longo prazo</li>
+            <li><span class="box"></span>Quando resolvo um problema, outro aparece logo</li>
+          </ul>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Diagnóstico</span>
+          <span class="txt">Bombeiro não é sinônimo de mau síndico. É sinônimo de gestão sem espaço para respirar.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 01 · Como saber se você é um Bombeiro</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · CAP 02 -->
+  <section class="page" data-screen-label="05 Cap 02">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 02 · O mito</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">02</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo dois</div>
+          <h2 class="section-title">O maior mito da gestão <span class="serif" style="font-style:italic;color:var(--accent);">condominial</span>.</h2>
+          <p class="section-lede">Muitos síndicos acreditam que ser eficiente é resolver qualquer problema rapidamente. Mas existe uma pergunta muito mais importante: <b>por que esse problema aconteceu?</b></p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p class="body">Imagine um vazamento recorrente no mesmo apartamento.</p>
+        <div class="compare">
+          <div class="box bad">
+            <span class="lbl">O Bombeiro</span>
+            <ul>
+              <li>Chama o encanador</li>
+              <li>Resolve o vazamento</li>
+              <li>Fecha a ocorrência</li>
+            </ul>
+          </div>
+          <div class="box good">
+            <span class="lbl">O Estrategista</span>
+            <ul>
+              <li>Resolve o vazamento</li>
+              <li>Descobre a causa raiz</li>
+              <li>Mapeia riscos semelhantes em outras unidades</li>
+              <li>Cria manutenção preventiva</li>
+              <li>Evita novos vazamentos</li>
+            </ul>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">A virada</span>
+          <span class="txt">O Bombeiro resolve. O Estrategista evolui. A diferença está na pergunta que ele faz depois.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 02 · O maior mito da gestão condominial</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · CAP 03 -->
+  <section class="page" data-screen-label="06 Cap 03">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 03 · Os 7 incêndios</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 03</div>
+        <h2>Os 7 incêndios que mais consomem a vida do <span class="it">síndico</span>.</h2>
+      </div>
+      <div class="sinais" style="flex:1; align-content:start;">
+        <div class="sinal"><div class="n">01</div><div><span class="ttl">Grupo de WhatsApp</span><p>O maior sequestrador de tempo da gestão moderna. Quando tudo chega pelo WhatsApp, nada é priorizado corretamente. Criar canais oficiais, horários e protocolos resolve metade do problema.</p></div></div>
+        <div class="sinal"><div class="n">02</div><div><span class="ttl">Reclamações repetidas</span><p>Quando a mesma reclamação volta diversas vezes, o problema não está no morador. Está no processo. A pergunta que muda o jogo: por que isso continua acontecendo?</p></div></div>
+        <div class="sinal"><div class="n">03</div><div><span class="ttl">Fornecedores desorganizados</span><p>Fornecedor sem prazo gera incêndio. Sem acompanhamento, gera incêndio. Sem contrato, gera incêndio. A diferença está no que se exige na entrada.</p></div></div>
+        <div class="sinal"><div class="n">04</div><div><span class="ttl">Falta de planejamento financeiro</span><p>Quando não existe previsão, qualquer despesa vira crise. Orçamento previsto deixa de ser surpresa.</p></div></div>
+        <div class="sinal"><div class="n">05</div><div><span class="ttl">Manutenção negligenciada</span><p>Grande parte das emergências nasce de pequenas negligências adiadas. Preventiva custa pouco, corretiva custa mais, emergencial custa muito mais.</p></div></div>
+        <div class="sinal"><div class="n">06</div><div><span class="ttl">Comunicação ruim</span><p>Muitas crises poderiam ter sido evitadas com um comunicado simples enviado a tempo. Quando a gestão não comunica, alguém comunica por ela.</p></div></div>
+        <div class="sinal" style="grid-column:1/-1;"><div class="n">07</div><div><span class="ttl">Excesso de centralização</span><p>Quando tudo depende do síndico, qualquer ausência vira problema. O que protege a gestão é processo, não presença permanente.</p></div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 03 · Os 7 incêndios que mais consomem a vida do síndico</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · CAP 04 -->
+  <section class="page" data-screen-label="07 Cap 04">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 04 · O ciclo</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">04</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo quatro</div>
+          <h2 class="section-title">O ciclo do <span class="serif" style="font-style:italic;color:var(--accent);">caos</span>.</h2>
+          <p class="section-lede">O síndico Bombeiro normalmente vive preso neste loop. E o ciclo recomeça antes mesmo dele perceber.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="refrain">
+          <p><b>Problema.</b></p>
+          <p>Correria.</p>
+          <p>Solução rápida.</p>
+          <p>Alívio.</p>
+          <p><b>Novo problema.</b></p>
+          <p>E o ciclo recomeça.</p>
+        </div>
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">O que falta no ciclo</div>
+            <ul class="bul">
+              <li>Análise da causa</li>
+              <li>Planejamento</li>
+              <li>Prevenção</li>
+              <li>Delegação</li>
+            </ul>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">O que entra no lugar</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Um pouco de tempo para olhar para trás antes de seguir para a próxima crise. É na análise que mora a próxima evolução da sua gestão.</p>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase para guardar</span>
+          <span class="txt">Quando você não pensa entre dois problemas, a gestão não cresce. Ela apenas resiste.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 04 · O ciclo do caos</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · CAP 05 -->
+  <section class="page" data-screen-label="08 Cap 05">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 05 · O preço</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">05</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo cinco</div>
+          <h2 class="section-title">O preço invisível de apagar <span class="serif" style="font-style:italic;color:var(--accent);">incêndios</span>.</h2>
+          <p class="section-lede">Poucos síndicos percebem isso, mas trabalhar constantemente em modo emergência cobra um preço silencioso. Ele aparece primeiro no corpo, depois na gestão, depois na vida fora do prédio.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">O que aparece em você</div>
+            <ul class="bul">
+              <li>Ansiedade</li>
+              <li>Cansaço mental</li>
+              <li>Irritabilidade</li>
+              <li>Perda de foco</li>
+              <li>Dificuldade de decidir</li>
+              <li>Sensação constante de insuficiência</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">O que aparece à sua volta</div>
+            <ul class="bul">
+              <li>A gestão começa a perder qualidade</li>
+              <li>A reputação começa a oscilar</li>
+              <li>A família começa a sentir a ausência</li>
+              <li>A saúde começa a cobrar a conta</li>
+            </ul>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase para guardar</span>
+          <span class="txt">O modo emergência não é grátis. Ele é financiado pelo seu corpo, pela sua casa e pela sua reputação.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 05 · O preço invisível de apagar incêndios</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · CAP 06 · MATRIZ -->
+  <section class="page" data-screen-label="09 Cap 06">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 06 · Matriz</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 06 · ferramenta</div>
+        <h2>A matriz das <span class="it">prioridades</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:4mm;">Comece classificando tudo o que chega para você em quatro categorias. A virada do Bombeiro acontece quando ele para de tratar tudo como urgente.</p>
+      <div class="matrix" style="flex:1; align-content:start;">
+        <div class="quad q1">
+          <div class="label">Urgente e importante</div>
+          <div class="action">Resolver</div>
+          <p>Trate agora. Tudo o que envolve risco, segurança ou impacto imediato.</p>
+          <ul>
+            <li>Falta de água</li>
+            <li>Pane em elevador</li>
+            <li>Risco à segurança</li>
+          </ul>
+        </div>
+        <div class="quad q2">
+          <div class="label">Importante, não urgente</div>
+          <div class="action">Planejar</div>
+          <p>O quadrante que muda a sua gestão. É onde mora a saída do modo Bombeiro.</p>
+          <ul>
+            <li>Orçamento anual</li>
+            <li>Plano de manutenção</li>
+            <li>Revisão de contratos</li>
+          </ul>
+        </div>
+        <div class="quad q3">
+          <div class="label">Urgente, pouco importante</div>
+          <div class="action">Delegar</div>
+          <p>O que precisa ser feito hoje, mas não precisa ser feito por você.</p>
+          <ul>
+            <li>Solicitações operacionais simples</li>
+            <li>Encaminhamentos de rotina</li>
+          </ul>
+        </div>
+        <div class="quad q4">
+          <div class="label">Nem urgente, nem importante</div>
+          <div class="action">Eliminar</div>
+          <p>Coragem para tirar do seu dia o que só consome energia.</p>
+          <ul>
+            <li>Discussões improdutivas</li>
+            <li>Conflitos sem relevância para a gestão</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 06 · A matriz das prioridades</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · CAP 07 -->
+  <section class="page" data-screen-label="10 Cap 07">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 07 · 5 passos</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">07</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo sete</div>
+          <h2 class="section-title">Como sair do modo <span class="serif" style="font-style:italic;color:var(--accent);">Bombeiro</span>.</h2>
+          <p class="section-lede">Não é por motivação. É por método. Cinco passos que constroem, na prática, a gestão que não precisa apagar tantos incêndios.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <ol class="enum">
+          <li><b>Mapeie as emergências dos últimos 90 dias.</b> Liste todas. Agora pergunte: quantas poderiam ter sido evitadas?</li>
+          <li><b>Crie um plano de manutenção preventiva.</b> A preventiva custa pouco, a corretiva custa mais, a emergencial custa muito mais.</li>
+          <li><b>Tenha indicadores.</b> Inadimplência, chamados, reclamações, gastos extraordinários, prazo de fornecedores. O que não é medido, não é gerenciado.</li>
+          <li><b>Delegue.</b> Você não precisa ser a operação inteira. Seu papel é liderar, não executar tudo.</li>
+          <li><b>Crie rotina estratégica.</b> Reserve, toda semana, uma hora para finanças, uma para contratos, uma para manutenção, uma para comunicação.</li>
+        </ol>
+        <div class="callout">A diferença entre o Bombeiro e o Estrategista não está na inteligência ou no esforço. Está em quantos minutos por semana cada um reserva para pensar, em vez de reagir.</div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">Sair do modo Bombeiro não é fazer menos. É decidir melhor o que entra no seu dia.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 07 · Como sair do modo Bombeiro</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · CAP 08 · MÉTODO 30-30-30 -->
+  <section class="page" data-screen-label="11 Cap 08">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 08 · 30-30-30</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 08 · método</div>
+        <h2>O método <span class="it">30-30-30</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:5mm;">Uma prática simples para começar a virar a chave. Todo mês, três blocos de meia hora. Apenas 90 minutos por mês, que podem economizar dezenas de horas de crise.</p>
+      <div class="triple" style="flex:0 0 auto;">
+        <div class="t">
+          <div class="min">30</div>
+          <div class="lbl">Minutos</div>
+          <p><b>Analisar indicadores.</b> Inadimplência, chamados abertos, gastos do mês, retorno de fornecedores.</p>
+        </div>
+        <div class="t">
+          <div class="min">30</div>
+          <div class="lbl">Minutos</div>
+          <p><b>Avaliar riscos futuros.</b> O que pode virar emergência nas próximas semanas? Onde tem manutenção atrasada?</p>
+        </div>
+        <div class="t">
+          <div class="min">30</div>
+          <div class="lbl">Minutos</div>
+          <p><b>Planejar ações preventivas.</b> Quais combinados precisa fazer com a equipe? Que comunicação precisa sair antes da próxima crise?</p>
+        </div>
+      </div>
+      <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+        São 90 minutos por mês. O Bombeiro acha que não tem esse tempo. O Estrategista sabe que não tem como não ter.
+        <div class="signature">Bastidores da Sindicatura</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 08 · O método 30-30-30</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · CHECKLIST + TESTE FINAL -->
+  <section class="page" data-screen-label="12 Checklist + Teste">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Checklist + teste</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Autoavaliação</div>
+        <h2>Você está <span class="it">evoluindo</span>?</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Marque os itens verdadeiros para a sua gestão hoje. Conte ao final.</p>
+      <div class="cols-2" style="margin-bottom:4mm;">
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>Tenho plano de manutenção preventiva</li>
+          <li><span class="box"></span>Tenho fornecedores homologados</li>
+          <li><span class="box"></span>Tenho cronograma anual</li>
+          <li><span class="box"></span>Tenho indicadores</li>
+          <li><span class="box"></span>Tenho canal oficial de atendimento</li>
+        </ul>
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>Tenho processos documentados</li>
+          <li><span class="box"></span>Delego tarefas operacionais</li>
+          <li><span class="box"></span>Faço acompanhamento financeiro</li>
+          <li><span class="box"></span>Faço comunicação preventiva</li>
+          <li><span class="box"></span>Reservo tempo para planejamento</li>
+        </ul>
+      </div>
+      <div class="tiers" style="margin-bottom:5mm;">
+        <div class="tier"><div class="range">0 a 3 itens</div><p>Você ainda vive em modo emergência. A boa notícia é que o capítulo 7 deste guia te tira daí em 30 dias.</p></div>
+        <div class="tier t2"><div class="range">4 a 7 itens</div><p>Você está em transição. Já tem pilares, mas ainda apaga incêndio demais. O método 30-30-30 vai acelerar.</p></div>
+        <div class="tier t3"><div class="range">8 a 10 itens</div><p>Você está construindo uma gestão estratégica. O próximo passo é proteger esse jeito de trabalhar.</p></div>
+      </div>
+      <div class="frases-head" style="margin-bottom:3mm;">
+        <div class="section-kicker">Teste final</div>
+        <h2 style="font-size:18pt;">Se você sumir por <span class="it">15 dias</span>...</h2>
+      </div>
+      <div class="block-card">
+        <p style="margin:0 0 2mm;font-size:10pt;line-height:1.55;color:var(--ink-2);">Responda com sinceridade. Amanhã você entra em férias por 15 dias.</p>
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>O condomínio continua funcionando normalmente</li>
+          <li><span class="box"></span>Ou tudo para até você voltar</li>
+        </ul>
+        <p style="margin:3mm 0 0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Se a segunda opção for verdadeira, você ainda é o centro da operação. E nenhuma gestão saudável pode depender de uma pessoa só.</p>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Autoavaliação + teste final</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · PLANO 30 DIAS -->
+  <section class="page" data-screen-label="13 Plano">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Plano de ação</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Plano de ação · 30 dias</div>
+        <h2>Quatro semanas para sair do <span class="it">modo emergência</span>.</h2>
+      </div>
+      <p class="body" style="font-size:10pt;margin-bottom:5mm;">Não tente mudar tudo de uma vez. Faça uma frente por semana. Depois do primeiro ciclo, repita todo mês. Quando virar hábito, você não vai mais reconhecer a gestão que tinha antes.</p>
+      <div class="cols-2" style="flex:1; align-content:start;">
+        <div>
+          <div class="h-sub">Semana 01 · Diagnóstico</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Listar todas as emergências dos últimos 90 dias</li>
+            <li><span class="box"></span>Marcar quantas poderiam ter sido evitadas</li>
+            <li><span class="box"></span>Identificar os 3 maiores sequestradores do seu tempo</li>
+            <li><span class="box"></span>Anotar onde o ciclo do caos te pega com mais frequência</li>
+          </ul>
+          <div class="h-sub" style="margin-top:5mm;">Semana 02 · Causas</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Identificar as causas recorrentes por trás dos incêndios</li>
+            <li><span class="box"></span>Separar o que é problema operacional do que é processo ausente</li>
+            <li><span class="box"></span>Mapear fornecedores que mais geram retrabalho</li>
+            <li><span class="box"></span>Listar manutenções atrasadas</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h-sub">Semana 03 · Prevenção</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Criar plano preventivo para os 3 incêndios mais frequentes</li>
+            <li><span class="box"></span>Definir canais oficiais e horário de atendimento</li>
+            <li><span class="box"></span>Combinar com a administradora os fluxos formais</li>
+            <li><span class="box"></span>Escrever os comunicados que antecipam as próximas crises</li>
+          </ul>
+          <div class="h-sub" style="margin-top:5mm;">Semana 04 · Estrutura</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Definir os indicadores que você vai acompanhar todo mês</li>
+            <li><span class="box"></span>Definir responsáveis para cada frente</li>
+            <li><span class="box"></span>Bloquear na agenda o método 30-30-30</li>
+            <li><span class="box"></span>Avaliar o que pode delegar a partir da próxima semana</li>
+          </ul>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:5mm;">
+        <span class="lbl">Princípio do plano</span>
+        <span class="txt">Quatro semanas de método valem mais que quatro anos de boa intenção.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Plano de ação · 30 dias</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · CONCLUSÃO -->
+  <section class="page" data-screen-label="14 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">Do Bombeiro ao <span class="serif" style="font-style:italic;color:var(--accent);">Estrategista</span>.</h2>
+          <p class="section-lede">O síndico Bombeiro costuma ser admirado. Está sempre presente, sempre disponível, sempre resolvendo. Mas existe um problema. Condomínios não crescem porque alguém apaga incêndios. Condomínios evoluem porque alguém impede que eles aconteçam.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="refrain">
+          <p>A pergunta não é quantos incêndios você consegue apagar.</p>
+          <p>A pergunta é: <b>quantos incêndios você consegue evitar?</b></p>
+          <p>É nesse momento que nasce o síndico Estrategista.</p>
+        </div>
+        <p class="body">A verdadeira maturidade na sindicatura acontece quando você deixa de ser apenas o solucionador de problemas e passa a ser o construtor de sistemas. Não é virar uma pessoa diferente. É colocar método entre você e o caos.</p>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          O Bombeiro corre o dia inteiro e termina cansado. O Estrategista trabalha com método e termina inteiro. As duas gestões funcionam, mas só uma dura.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · Do Bombeiro ao Estrategista</div><div class="pg-num">14</div></div>
+  </section>
+
+  <!-- PAGE 15 · CONVITE PERSUASIVO MENTORIA -->
+  <section class="page capture" data-screen-label="15 Mentoria">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>O convite</div></div>
+    <div class="pg-body">
+      <div class="invite-head">Convite · não é para todo síndico</div>
+      <h2 class="invite-title">A Mentoria não é um curso. É um <span class="it">espaço fechado.</span></h2>
+      <div class="invite-grid">
+        <div>
+          <p>A Mentoria Bastidores da Sindicatura não é aberta. É uma turma pequena, com vagas escolhidas a dedo. <b>Eu seleciono pessoalmente cada participante.</b></p>
+          <p>Por dois motivos. O primeiro é o nível da conversa. Os bastidores que eu compartilho ali dentro não cabem em sala lotada. O segundo é o método. Um espaço fechado garante que cada decisão seja debatida com a profundidade que esse mercado exige.</p>
+          <p>Se você decidiu que o jeito Bombeiro acaba aqui, você tem o primeiro requisito.</p>
+        </div>
+        <div>
+          <p>Você não vai aprender mais coisas. Vai aprender a <b>fazer diferente.</b></p>
+          <p>É onde a teoria encontra a vida real. Conflito, pressão, comunicação, liderança, tomada de decisão, posicionamento e tudo aquilo que os cursos tradicionais não mostram. Em conversas que não acontecem em público.</p>
+          <p>Não é para quem quer aprender sindicatura. É para quem decidiu construir uma <b>carreira</b> na sindicatura, com método, autoridade e reputação.</p>
+        </div>
+      </div>
+      <div class="selection-band">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Vagas <span class="it">limitadas</span> por turma. Seleção por <span class="it">perfil.</span></div>
+        <p class="lines">Os bastidores que ninguém mostra.<br/>As conversas que ninguém grava.<br/>As decisões que mudam uma gestão inteira.</p>
+        <div class="u">→ Candidate-se em <span>www.bastidoresdasindicatura.com.br</span></div>
+        <div class="note">Próxima turma com vagas restritas. A seleção é feita pessoalmente pela Juliana Moreira.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>O convite · Mentoria Bastidores da Sindicatura</div><div class="pg-num">15</div></div>
+  </section>
+
+  <!-- PAGE 16 · MANIFESTO / CLOSE -->
+  <section class="page manifesto" data-screen-label="16 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top:30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:12mm;">
+        <div class="cover-eyebrow" style="margin:0;">Arquétipo Bombeiro · Vol. 12</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:165mm;">
+          O Bombeiro <em style="font-style:italic;color:var(--accent);">resolve.</em><br/>
+          O Estrategista <em style="font-style:italic;color:var(--accent);">evolui.</em>
+        </h2>
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          Você reconheceu o Bombeiro em você. Esse é o primeiro requisito da virada. O próximo passo é construir o método que te leva de onde você está para onde a sua gestão precisa chegar.
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 12 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite"><b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab=document.getElementById('pdfFab'); var hint=document.getElementById('pdfHint');
+    if(!fab) return; var t;
+    fab.addEventListener('mouseenter',function(){ clearTimeout(t); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave',function(){ t=setTimeout(function(){ hint.classList.remove('show'); },250); });
+    fab.addEventListener('click',function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); },120); setTimeout(function(){ hint.classList.remove('show'); },4000); });
+  })();
+</script>
+</body>
+</html>
