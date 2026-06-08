@@ -1,0 +1,811 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>O Solitário · Pare de carregar o condomínio sozinho · Bastidores da Sindicatura · Vol. 14</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <circle r="120" fill="none" stroke="#B8543B" stroke-width="6"/>
+      <path d="M-46 -8 a46 40 0 1 0 18 -34 L-46 -54 Z" fill="none" stroke="#B8543B" stroke-width="12" stroke-linejoin="round"/>
+      <text y="180" font-family="serif" font-style="italic" font-size="64" fill="#0E1A2B">Bastidores</text>
+      <text y="240" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A; --rule:1px solid var(--line);
+  }
+  @page { size: 210mm 297mm; margin: 0; }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; width:210mm; background:#2A2522; font-family:"Manrope", system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; color:var(--ink); page-break-after:always; break-after:page; margin:0 auto; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen { html, body{ width:auto; } body{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 0 60px; } .page{ box-shadow:0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); } }
+  @media print{ html, body{ background:#fff; width:210mm; margin:0; padding:0; display:block; } .page{ box-shadow:none; margin:0; display:block; } }
+
+  .frame{ position:absolute; inset:14mm 16mm; }
+  .pg-head{ position:absolute; top:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); padding-bottom:4mm; border-bottom:var(--rule); }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{ width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  .pg-foot{ position:absolute; bottom:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:8.5pt; color:var(--muted); padding-top:4mm; border-top:var(--rule); }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .pg-body{ position:absolute; top:22mm; bottom:18mm; left:16mm; right:16mm; display:flex; flex-direction:column; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif","Times New Roman",serif; font-weight:400; }
+  .section-num{ font-family:"Instrument Serif"; font-style:italic; font-size:64pt; line-height:1; color:var(--accent); letter-spacing:-.02em; }
+  .section-kicker{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-title{ font-family:"Instrument Serif"; font-weight:400; font-size:32pt; line-height:1.04; letter-spacing:-.01em; color:var(--ink); margin-top:2mm; }
+  .section-lede{ font-size:10.5pt; line-height:1.55; color:var(--ink-2); max-width:135mm; margin-top:5mm; }
+  .h-sub{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:4mm; }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.4mm; }
+  ul.checks li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.42; color:var(--ink-2); padding:1.2mm 0; border-bottom:1px dotted var(--line); }
+  ul.checks li:last-child{ border-bottom:none; }
+  ul.checks li .box{ flex:0 0 auto; width:4.4mm; height:4.4mm; border:1.2px solid var(--ink); border-radius:1.2px; background:var(--cream); margin-top:1.2mm; }
+  .stack-tight ul.checks li{ font-size:9.5pt; padding:.7mm 0; }
+  .stack-tight ul.checks li .box{ width:4mm; height:4mm; }
+  ul.bul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.2mm; }
+  ul.bul li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.45; color:var(--ink-2); padding:1mm 0; border-bottom:1px dotted var(--line); }
+  ul.bul li:last-child{ border-bottom:none; }
+  ul.bul li::before{ content:""; flex:0 0 auto; width:5px; height:5px; margin-top:2.4mm; background:var(--accent); border-radius:50%; }
+
+  .cols-2{ display:grid; grid-template-columns:1fr 1fr; column-gap:12mm; align-items:start; }
+  ol.enum{ list-style:none; padding:0; margin:0; counter-reset:en; display:flex; flex-direction:column; gap:2mm; }
+  ol.enum li{ counter-increment:en; display:flex; gap:10px; align-items:baseline; font-size:9.5pt; line-height:1.45; color:var(--ink-2); padding:1.4mm 0; border-bottom:1px dotted var(--line); }
+  ol.enum li::before{ content:counter(en, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--accent); flex:0 0 9mm; }
+  ol.enum li b{ color:var(--ink); }
+
+  .callout{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 6mm; font-size:9.5pt; line-height:1.55; color:var(--ink-2); margin-top:4mm; }
+  .callout b{ color:var(--ink); }
+  .quote-block{ background:var(--cream); border:1px solid var(--line); padding:7mm 8mm; font-family:"Instrument Serif"; font-style:italic; font-size:13pt; line-height:1.5; color:var(--ink); }
+  .quote-block .signature{ margin-top:4mm; font-family:"Manrope"; font-style:normal; font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .survival{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 7mm; display:flex; flex-direction:column; gap:2mm; }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; line-height:1.3; color:var(--ink); }
+
+  .tag{ display:inline-flex; align-items:center; gap:6px; font-size:8pt; letter-spacing:.18em; text-transform:uppercase; color:var(--ink); background:var(--cream); padding:2.2mm 3.6mm; border-radius:100px; border:1px solid var(--line); font-weight:600; }
+  .hr-orn{ display:flex; align-items:center; gap:10px; color:var(--accent); margin:4mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent);}
+
+  /* refrain */
+  .refrain{ display:flex; flex-direction:column; gap:1.5mm; padding:4mm 6mm; border-left:2px solid var(--line); }
+  .refrain p{ margin:0; font-size:10.5pt; line-height:1.5; color:var(--ink-2); }
+  .refrain p b{ color:var(--ink); font-weight:600; }
+
+  /* compare */
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
+  .compare .box{ padding:5mm 6mm; }
+  .compare .bad{ background:var(--paper-2); border-left:3px solid var(--accent); }
+  .compare .good{ background:var(--cream); border-left:3px solid var(--gold); }
+  .compare .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.18em; text-transform:uppercase; margin-bottom:2mm; display:block; }
+  .compare .bad .lbl{ color:var(--accent); }
+  .compare .good .lbl{ color:var(--gold); }
+  .compare p{ margin:0; font-family:"Instrument Serif"; font-style:italic; font-size:11pt; line-height:1.35; color:var(--ink); }
+
+  /* tier */
+  .tiers{ display:flex; flex-direction:column; gap:2.5mm; }
+  .tier{ display:grid; grid-template-columns: 28mm 1fr; gap:5mm; align-items:start; padding:3.5mm 5mm; background:var(--cream); border-left:3px solid var(--line); }
+  .tier .range{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent); line-height:1; }
+  .tier p{ margin:0; font-size:9.5pt; line-height:1.45; color:var(--ink-2); }
+  .tier.t2{ border-left-color:var(--gold); }
+  .tier.t3{ border-left-color:var(--accent); background:var(--paper-2); }
+  .tier.t3 p{ color:var(--ink); font-weight:500; }
+
+  /* matrix (mapa da delegação) */
+  .matrix{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+  .quad{ padding:5mm 6mm; background:var(--cream); border:1px solid var(--line); min-height:48mm; }
+  .quad.q1{ background:var(--paper-2); border-left:3px solid var(--accent); }
+  .quad.q2{ border-left:3px solid var(--gold); }
+  .quad.q3{ border-left:3px solid var(--accent-2); }
+  .quad.q4{ border-left:3px solid var(--line); }
+  .quad .label{ font-family:"Manrope"; font-weight:700; font-size:7.8pt; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); margin-bottom:2mm; }
+  .quad .action{ font-family:"Instrument Serif"; font-style:italic; font-size:18pt; color:var(--accent); margin:0 0 3mm; line-height:1; }
+  .quad p{ margin:0; font-size:9pt; line-height:1.45; color:var(--ink-2); }
+  .quad ul{ list-style:none; padding:0; margin:2mm 0 0; display:flex; flex-direction:column; gap:1mm; }
+  .quad ul li{ font-size:8.6pt; line-height:1.4; color:var(--ink-2); }
+  .quad ul li::before{ content:"·  "; color:var(--accent); }
+
+  /* tool frame */
+  .tool{ background:var(--cream); border:1px dashed var(--gold); padding:6mm 7mm; position:relative; }
+  .tool::before{ content:"FERRAMENTA"; position:absolute; top:-3mm; left:6mm; background:var(--paper); padding:0 3mm; font-family:"Manrope"; font-size:8pt; letter-spacing:.24em; color:var(--gold); font-weight:700; }
+
+  /* the 5 lies cards (italic phrases) */
+  .lies{ display:flex; flex-direction:column; gap:3mm; }
+  .lie{ background:var(--cream); border:1px solid var(--line); border-left:3px solid var(--accent); padding:4mm 5mm; }
+  .lie .q{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--ink); line-height:1.3; margin:0; }
+
+  /* nota field for maturity test */
+  .nota-row{ display:grid; grid-template-columns:1fr 26mm; align-items:center; gap:5mm; padding:2mm 0; border-bottom:1px dotted var(--line); }
+  .nota-row:last-child{ border-bottom:none; }
+  .nota-row .q{ font-family:"Manrope"; font-size:9.5pt; line-height:1.35; color:var(--ink-2); }
+  .nota-row .n{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.18em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:5px; }
+  .nota-row .n .b{ width:16mm; height:6.5mm; border:1.2px solid var(--ink); border-radius:1.5mm; background:var(--cream); }
+
+  /* COVER */
+  .cover{ background: radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.14), transparent 55%), radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%), var(--paper); }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:var(--rule); padding-bottom:6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap:10px; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); }
+  .cover-brand .logo .mark{ width:30px; height:30px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border:2px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .cover-brand .sub{ font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--accent); }
+  .cover-meta .label{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:12mm 0 8mm; }
+  .cover-eyebrow{ font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6mm; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .cover-arquetype{ font-family:"Instrument Serif"; font-style:italic; font-size:88pt; line-height:.9; color:var(--accent); letter-spacing:-.025em; margin:0 0 4mm; }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size:32pt; line-height:1.05; letter-spacing:-.01em; color:var(--ink); margin:0 0 6mm; max-width:160mm; }
+  .cover-title .it{ font-style:italic; color:var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size:12pt; line-height:1.5; color:var(--ink-2); max-width:160mm; }
+  .cover-bottom{ border-top:var(--rule); padding-top:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap:13mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size:36pt; line-height:1; color:var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color:var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:2mm; }
+
+  /* OPENER */
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size:42pt; line-height:1.02; color:var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style:italic; color:var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:7mm; }
+  .opener-grid p{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+
+  /* TOC */
+  .toc-list{ display:grid; grid-template-columns:1fr; margin-top:4mm; }
+  .toc-item{ display:flex; align-items:baseline; gap:8px; padding:2.4mm 0; border-bottom:1px dotted var(--line); font-size:10pt; color:var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent); flex:0 0 12mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--muted); }
+
+  /* SECTION HEAD */
+  .section-head{ display:flex; gap:10mm; align-items:flex-start; padding-bottom:6mm; border-bottom:var(--rule); margin-bottom:6mm; }
+  .section-head .big{ flex:0 0 auto; }
+  .section-head .meta{ flex:1; padding-top:4mm;}
+  .section-body{ display:flex; flex-direction:column; gap:5mm; flex:1;}
+  .block-card{ background:var(--cream); border:1px solid var(--line); padding:6mm 7mm; }
+  .twoframe{ display:grid; grid-template-columns:1fr 1fr; gap:8mm; }
+
+  .frases-head{ display:flex; align-items:baseline; gap:8mm; flex-wrap:wrap; padding-bottom:4mm; border-bottom:var(--rule); margin-bottom:5mm; }
+  .frases-head .section-kicker{ flex:0 0 auto; }
+  .frases-head h2{ font-family:"Instrument Serif"; font-weight:400; font-size:24pt; line-height:1.05; color:var(--ink); margin:0; }
+  .frases-head h2 .it{ font-style:italic; color:var(--accent); }
+
+  /* capture */
+  .capture{ background: radial-gradient(120% 80% at 0% 0%, rgba(184,84,59,.16), transparent 55%), radial-gradient(90% 70% at 100% 100%, rgba(14,26,43,.10), transparent 55%), var(--paper); }
+  .invite-head{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:12px; margin-bottom:6mm; }
+  .invite-head::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .invite-title{ font-family:"Instrument Serif"; font-weight:400; font-size:44pt; line-height:1.02; letter-spacing:-.02em; color:var(--ink); margin:0; }
+  .invite-title .it{ font-style:italic; color:var(--accent); }
+  .invite-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:8mm; }
+  .invite-grid p{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+  .invite-grid p b{ color:var(--ink); }
+  .selection-band{ background:var(--ink); color:var(--paper); padding:8mm 9mm; display:flex; flex-direction:column; gap:3mm; margin-top:auto; }
+  .selection-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .selection-band .t{ font-family:"Instrument Serif"; font-size:26pt; line-height:1.08; color:var(--paper); }
+  .selection-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .selection-band .lines{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; line-height:1.45; color:rgba(244,238,223,.92); margin:2mm 0 0; }
+  .selection-band .u{ font-family:"Manrope"; font-weight:700; font-size:11pt; letter-spacing:.04em; color:var(--paper); margin-top:2mm; }
+  .selection-band .u span{ color:var(--accent-2); }
+  .selection-band .note{ font-family:"Manrope"; font-size:8.5pt; letter-spacing:.16em; text-transform:uppercase; color:rgba(244,238,223,.6); margin-top:1mm; }
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  /* Save-as-PDF FAB */
+  .pdf-fab{ position:fixed; right:22px; bottom:22px; z-index:9999; display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:#0E1A2B; color:#F4EEDF; border:none; border-radius:999px; font-family:"Manrope", system-ui, sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; box-shadow:0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30), inset 0 0 0 1px rgba(255,255,255,.06); transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .pdf-fab:hover{ transform:translateY(-2px); background:#B8543B; box-shadow:0 18px 42px rgba(184,84,59,.45), 0 4px 12px rgba(184,84,59,.30); }
+  .pdf-fab svg{ width:16px; height:16px; flex:0 0 auto; }
+  .pdf-fab .dot-accent{ width:6px; height:6px; border-radius:50%; background:#B8543B; box-shadow:0 0 0 3px rgba(184,84,59,.22); }
+  .pdf-fab:hover .dot-accent{ background:#F4EEDF; box-shadow:0 0 0 3px rgba(244,238,223,.22); }
+  .pdf-hint{ position:fixed; right:22px; bottom:74px; z-index:9998; max-width:280px; padding:12px 14px; background:#FBF7EC; border:1px solid #D9D2C2; border-radius:10px; font-family:"Manrope", system-ui, sans-serif; font-size:11.5px; line-height:1.5; color:#1F2C3F; box-shadow:0 10px 30px rgba(0,0,0,.18); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .pdf-hint.show{ opacity:1; transform:translateY(0); }
+  .pdf-hint b{ color:#B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display:none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 14</div>
+          <div class="label">Série Arquétipos</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">O guia do seu arquétipo</div>
+        <h1 class="cover-arquetype">O Solitário.</h1>
+        <p class="cover-title">Pare de carregar o condomínio <span class="it">sozinho.</span></p>
+        <p class="cover-deck">Como deixar de ser o gargalo da gestão e construir um condomínio que funciona sem depender de você para tudo.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">13</span></div><div class="l">Capítulos</div></div>
+          <div class="s"><div class="n">3</div><div class="l">Ferramentas práticas</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · APRESENTAÇÃO -->
+  <section class="page opener" data-screen-label="02 Apresentação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Apresentação</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:8mm;">Antes de começar</div>
+        <h2 class="opener-title">Quando tudo depende de você, nada realmente <span class="it">funciona.</span></h2>
+        <div class="opener-grid">
+          <div>
+            <p>Você fez o teste e descobriu que seu perfil é o Solitário. Se chegou até aqui, é provável que escute frases como “você resolve tudo”, “ninguém conhece o condomínio como você”, “ainda bem que você está aqui”.</p>
+            <p>No começo isso é bom. Você se sente necessário, importante, reconhecido, indispensável. Mas existe uma armadilha escondida nessa sensação: quando tudo depende de você, <b>nada realmente funciona</b>. Pelo menos não de forma sustentável.</p>
+          </div>
+          <div>
+            <p>O síndico Solitário costuma ser dedicado, responsável e comprometido. Mas também costuma estar cansado, sobrecarregado e ansioso. Sem férias de verdade. Sem descanso de verdade. Sem tempo para pensar no futuro.</p>
+            <p>Enquanto outros líderes constroem sistemas, ele continua carregando o condomínio nas costas. Este guia mostra uma forma melhor de liderar. Uma gestão madura não depende de heróis. Depende de <b>processos</b>.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">A virada que este guia propõe</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Manter o comprometimento que sempre foi sua marca, e somar a ele a estrutura que está faltando. Comprometimento sem método cansa. Comprometimento com método transforma.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">O que você vai encontrar</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Treze capítulos, três ferramentas (as 5 mentiras, o método das 4 perguntas, o mapa da delegação) e um plano de 30 dias para sair do modo gargalo.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 14</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · TOC -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:5mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">01·02</span><span class="ttl">O síndico que virou o centro do universo e o teste da viagem</span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">03</span><span class="ttl">A mentira que o Solitário conta para si mesmo</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">04·13</span><span class="ttl">O preço de carregar tudo, e a armadilha do ego</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">05</span><span class="ttl">Você é síndico ou central de atendimento?</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">06·07</span><span class="ttl">O mito do controle e a cultura da dependência</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">08·09</span><span class="ttl">Delegação não é abandono, e o método das 4 perguntas</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">10</span><span class="ttl">O mapa da delegação · Fazer · Delegar · Automatizar · Eliminar</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">11·12</span><span class="ttl">Documentar para não repetir, e o poder dos processos</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Checklist, exercício prático e teste final</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Plano de 30 dias e teste de maturidade da gestão</span><span class="pg">13</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Conclusão · liderança é garantir que tudo aconteça</span><span class="pg">14</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">Convite · a Mentoria Bastidores da Sindicatura</span><span class="pg">15</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · CAP 01 + 02 -->
+  <section class="page" data-screen-label="04 Cap 01-02">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 01 e 02</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 01</div>
+        <h2>O síndico que virou o <span class="it">centro do universo</span>.</h2>
+      </div>
+      <p class="body">O perfil Solitário nasce de uma boa intenção. Você percebe falhas, resolve. Percebe erros, corrige. Percebe atrasos, assume. Percebe que ninguém fez, faz. E sem perceber cria um problema enorme: <b>todos passam a depender de você.</b></p>
+      <p class="body">O condomínio deixa de funcionar através de processos e passa a funcionar através da sua presença. Funciona enquanto você está acordado, disponível e conectado. Quando você não está, trava.</p>
+      <div class="frases-head" style="margin-top:5mm;">
+        <div class="section-kicker">Capítulo 02 · teste</div>
+        <h2 style="font-size:18pt;">O teste da <span class="it">viagem</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Responda com sinceridade. Se você desaparecer por 15 dias, o que acontece no condomínio?</p>
+      <div class="cols-2" style="margin-bottom:4mm;">
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>O condomínio continua funcionando normalmente</li>
+          <li><span class="box"></span>O condomínio entra em pânico</li>
+          <li><span class="box"></span>O WhatsApp explode</li>
+        </ul>
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>As decisões param</li>
+          <li><span class="box"></span>Os fornecedores ficam perdidos</li>
+          <li><span class="box"></span>O conselho não sabe o que fazer</li>
+        </ul>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Diagnóstico</span>
+        <span class="txt">Se você marcou vários itens, existe dependência excessiva da sua figura. Isso não é elogio. É alerta.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 01 e 02 · Centro do universo e teste da viagem</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · CAP 03 -->
+  <section class="page" data-screen-label="05 Cap 03">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 03 · As 5 mentiras</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">03</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo três</div>
+          <h2 class="section-title">A mentira que o Solitário conta para <span class="serif" style="font-style:italic;color:var(--accent);">si mesmo</span>.</h2>
+          <p class="section-lede">Normalmente ela aparece em cinco versões. Todas parecem verdadeiras no curto prazo. Todas são destrutivas no longo prazo. Veja se reconhece alguma delas saindo da sua boca esta semana.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="lies">
+          <div class="lie"><p class="q">“É mais rápido eu fazer.”</p></div>
+          <div class="lie"><p class="q">“Ninguém faz tão bem quanto eu.”</p></div>
+          <div class="lie"><p class="q">“Depois eu explico.”</p></div>
+          <div class="lie"><p class="q">“Se eu delegar vai dar errado.”</p></div>
+          <div class="lie"><p class="q">“Não tenho tempo para ensinar.”</p></div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">A virada</span>
+          <span class="txt">Não tem tempo para ensinar é exatamente por isso que você nunca tem tempo. Treinar é investimento que devolve horas, todo mês.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 03 · As cinco mentiras do Solitário</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · CAP 04 + 13 -->
+  <section class="page" data-screen-label="06 Cap 04-13">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 04 e 13</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 04</div>
+        <h2>O preço de carregar tudo <span class="it">sozinho</span>.</h2>
+      </div>
+      <p class="body">O Solitário costuma pagar uma conta invisível. Ela aparece aos poucos. Primeiro surge o cansaço, depois a irritação, depois a exaustão, depois a sensação de que ninguém ajuda. Depois a frustração. E, muitas vezes, o burnout.</p>
+      <div class="refrain" style="margin-bottom:5mm;">
+        <p>Você começa a trabalhar mais, mas <b>produzir menos</b>.</p>
+        <p>Ficar mais ocupado, mas <b>menos estratégico</b>.</p>
+        <p>Resolver mais problemas, mas <b>crescer menos</b>.</p>
+      </div>
+      <div class="frases-head" style="margin-bottom:4mm;">
+        <div class="section-kicker">Capítulo 13</div>
+        <h2 style="font-size:18pt;">A armadilha do <span class="it">ego</span>.</h2>
+      </div>
+      <p class="body">Parte desconfortável e necessária. Às vezes não carregamos tudo porque precisamos. Carregamos porque <b>gostamos de ser necessários</b>. Gostamos de ser procurados. Gostamos de ser indispensáveis.</p>
+      <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+        Líderes maduros não medem seu valor pela dependência que criam. Medem pelo sistema que constroem. A pergunta certa não é “o que aconteceria sem mim?”, é “o que continua acontecendo, mesmo sem mim?”.
+        <div class="signature">Bastidores da Sindicatura</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 04 e 13 · O preço e a armadilha do ego</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · CAP 05 -->
+  <section class="page" data-screen-label="07 Cap 05">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 05 · Central</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">05</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo cinco</div>
+          <h2 class="section-title">Você é síndico ou central de <span class="serif" style="font-style:italic;color:var(--accent);">atendimento</span>?</h2>
+          <p class="section-lede">Vamos fazer uma reflexão honesta. Quantas das atividades abaixo passam por você hoje? Se tudo passa, você não está liderando. Está centralizando. E existe uma enorme diferença entre essas duas coisas.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2">
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Aprovação de orçamento</li>
+            <li><span class="box"></span>Reclamações simples</li>
+            <li><span class="box"></span>Cobrança de fornecedor</li>
+            <li><span class="box"></span>Problemas operacionais</li>
+            <li><span class="box"></span>Conflitos entre moradores</li>
+            <li><span class="box"></span>Comunicação aos moradores</li>
+          </ul>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Contratos</li>
+            <li><span class="box"></span>Manutenção</li>
+            <li><span class="box"></span>Compras</li>
+            <li><span class="box"></span>Acompanhamento de obras</li>
+            <li><span class="box"></span>Questões administrativas</li>
+            <li><span class="box"></span>Dúvidas rotineiras</li>
+          </ul>
+        </div>
+        <div class="callout">Marcou mais de 8 itens? Você não está conduzindo a operação. Você é a operação. E qualquer dia de descanso seu é, automaticamente, um dia parado para o condomínio.</div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">Liderança não é estar em tudo. É garantir que tudo aconteça, mesmo onde você não está.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 05 · Síndico ou central de atendimento</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · CAP 06 + 07 -->
+  <section class="page" data-screen-label="08 Cap 06-07">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 06 e 07</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 06</div>
+        <h2>O mito do <span class="it">controle</span>.</h2>
+      </div>
+      <p class="body">Muitos síndicos confundem controle com concentração. Mas não são a mesma coisa. <b>Controle significa acompanhar.</b> Concentração significa fazer.</p>
+      <div class="compare" style="margin-bottom:5mm;">
+        <div class="box bad"><span class="lbl">Concentração</span><p>Faz tudo. Não delega. Não confia. Vive ocupado.</p></div>
+        <div class="box good"><span class="lbl">Controle</span><p>Define quem faz, acompanha o resultado, ajusta o que precisa. Lidera.</p></div>
+      </div>
+      <div class="frases-head" style="margin-bottom:4mm;">
+        <div class="section-kicker">Capítulo 07</div>
+        <h2 style="font-size:18pt;">Por que as pessoas param de assumir <span class="it">responsabilidades</span>.</h2>
+      </div>
+      <p class="body">Lógica simples. Quando alguém resolve tudo, os demais aprendem a não resolver nada. Com o tempo, as pessoas pensam: “deixa que o síndico resolve”, “ele gosta de fazer”, “ele sempre faz mesmo”.</p>
+      <div class="callout">Sem perceber, você treinou as pessoas para dependerem de você. A dependência não nasceu sozinha. Foi alimentada.</div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Frase para guardar</span>
+        <span class="txt">Quanto mais você resolve, menos os outros resolvem. Quanto menos os outros resolvem, mais você precisa resolver. O ciclo se alimenta sozinho.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 06 e 07 · Controle e dependência criada</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · CAP 08 + 09 -->
+  <section class="page" data-screen-label="09 Cap 08-09">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 08 e 09</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 08</div>
+        <h2>Delegação não é <span class="it">abandono</span>.</h2>
+      </div>
+      <p class="body">Um dos maiores medos do Solitário é perder o controle. Mas delegar não significa desaparecer. Delegação não elimina sua responsabilidade. Apenas elimina sua sobrecarga.</p>
+      <div class="refrain" style="margin-bottom:5mm;">
+        <p>Delegar significa <b>definir.</b></p>
+        <p>Significa <b>orientar.</b></p>
+        <p>Significa <b>acompanhar.</b></p>
+        <p>Significa <b>cobrar.</b></p>
+        <p>Significa <b>corrigir.</b></p>
+        <p>Significa <b>evoluir.</b></p>
+      </div>
+      <div class="frases-head" style="margin-bottom:3mm;">
+        <div class="section-kicker">Capítulo 09 · ferramenta</div>
+        <h2 style="font-size:18pt;">O método das <span class="it">4 perguntas</span>.</h2>
+      </div>
+      <div class="tool" style="margin-top:1mm;">
+        <p style="margin:0 0 3mm;font-size:10pt;line-height:1.55;color:var(--ink-2);">Antes de assumir qualquer tarefa, passe ela por estas quatro perguntas:</p>
+        <ol class="enum" style="margin-top:1mm;">
+          <li><b>Isso realmente precisa ser feito por mim?</b></li>
+          <li><b>Existe alguém que pode executar agora?</b></li>
+          <li><b>Existe alguém que pode aprender?</b></li>
+          <li><b>Existe um processo que pode resolver?</b></li>
+        </ol>
+        <p style="margin:3mm 0 0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Se a resposta for sim para qualquer uma delas, talvez você não precise fazer pessoalmente.</p>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 08 e 09 · Delegação e o método das 4 perguntas</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · CAP 10 · MAPA DA DELEGAÇÃO -->
+  <section class="page" data-screen-label="10 Cap 10">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 10 · Mapa</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 10 · ferramenta</div>
+        <h2>O mapa da <span class="it">delegação</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:4mm;">Pegue cada tarefa que entra na sua semana e classifique em um dos quatro grupos. A virada do Solitário acontece quando esse mapa começa a ser usado todo dia.</p>
+      <div class="matrix" style="flex:1; align-content:start;">
+        <div class="quad q1">
+          <div class="label">Sua zona</div>
+          <div class="action">Fazer</div>
+          <p>Aquilo que é exclusivamente sua responsabilidade. Não pode ser feito por outra pessoa.</p>
+          <ul>
+            <li>Liderança e representação</li>
+            <li>Estratégia da gestão</li>
+            <li>Tomada de decisão crítica</li>
+          </ul>
+        </div>
+        <div class="quad q2">
+          <div class="label">Multiplicar pessoas</div>
+          <div class="action">Delegar</div>
+          <p>Aquilo que outra pessoa pode (e deve) executar com orientação e acompanhamento.</p>
+          <ul>
+            <li>Acompanhamentos operacionais</li>
+            <li>Rotinas administrativas</li>
+            <li>Cobranças simples</li>
+          </ul>
+        </div>
+        <div class="quad q3">
+          <div class="label">Multiplicar sistema</div>
+          <div class="action">Automatizar</div>
+          <p>Aquilo que pode ser resolvido por sistema, app, formulário ou regra clara.</p>
+          <ul>
+            <li>Comunicados padrão</li>
+            <li>Abertura de chamados</li>
+            <li>Controle de tarefas</li>
+          </ul>
+        </div>
+        <div class="quad q4">
+          <div class="label">Liberar agenda</div>
+          <div class="action">Eliminar</div>
+          <p>Aquilo que não gera valor para a gestão e só consome o seu tempo.</p>
+          <ul>
+            <li>Discussões improdutivas</li>
+            <li>Reuniões desnecessárias</li>
+            <li>Conflitos sem relevância</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 10 · O mapa da delegação</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · CAP 11 + 12 -->
+  <section class="page" data-screen-label="11 Cap 11-12">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 11 e 12</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 11</div>
+        <h2>Como ensinar sem repetir para <span class="it">sempre</span>.</h2>
+      </div>
+      <p class="body">A maioria dos síndicos explica verbalmente. Os melhores documentam. O que está escrito depende menos da sua memória, e mais do processo. Você ensina uma vez e a documentação ensina cem.</p>
+      <div class="twoframe" style="margin-bottom:5mm;">
+        <div>
+          <div class="h-sub">Crie</div>
+          <ul class="bul">
+            <li>Procedimentos curtos</li>
+            <li>Checklists impressos</li>
+            <li>Fluxos visuais simples</li>
+            <li>Rotinas semanais</li>
+            <li>Manuais de função</li>
+          </ul>
+        </div>
+        <div>
+          <div class="block-card">
+            <div class="h-sub">A regra</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Toda vez que você explicar a mesma coisa pela segunda vez, escreva. Toda vez que escrever, salve em um lugar onde a equipe encontre sozinha.</p>
+          </div>
+        </div>
+      </div>
+      <div class="frases-head" style="margin-bottom:4mm;">
+        <div class="section-kicker">Capítulo 12</div>
+        <h2 style="font-size:18pt;">O poder dos <span class="it">processos</span>.</h2>
+      </div>
+      <p class="body">Processos não servem para burocratizar. Servem para <b>libertar</b>. Toda vez que você cria um processo, ganha tempo. Toda vez que depende apenas da memória, cria vulnerabilidade.</p>
+      <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+        Condomínios profissionais não vivem de improviso. Vivem de método. O improviso parece eficiência no curto prazo. No longo prazo, é o que mantém o síndico preso ao próprio prédio.
+        <div class="signature">Bastidores da Sindicatura</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 11 e 12 · Documentar e o poder dos processos</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · CHECKLIST + EXERCÍCIO + TESTE FINAL -->
+  <section class="page" data-screen-label="12 Checklist">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Autoavaliação</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Autoavaliação</div>
+        <h2>Você está delegando ou <span class="it">acumulando</span>?</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Marque os itens verdadeiros para a sua gestão hoje.</p>
+      <div class="cols-2" style="margin-bottom:5mm;">
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>Tenho processos documentados</li>
+          <li><span class="box"></span>Minha equipe sabe o que fazer sem me perguntar tudo</li>
+          <li><span class="box"></span>Consigo tirar férias sem caos</li>
+          <li><span class="box"></span>Nem toda decisão passa por mim</li>
+          <li><span class="box"></span>Tenho indicadores de acompanhamento</li>
+        </ul>
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>Faço reuniões de alinhamento</li>
+          <li><span class="box"></span>Tenho responsáveis definidos</li>
+          <li><span class="box"></span>Sei diferenciar liderança de execução</li>
+          <li><span class="box"></span>Não centralizo tarefas operacionais</li>
+          <li><span class="box"></span>Tenho tempo para pensar estrategicamente</li>
+        </ul>
+      </div>
+      <div class="frases-head" style="margin-bottom:3mm;">
+        <div class="section-kicker">Exercício prático</div>
+        <h2 style="font-size:18pt;">Liste sua semana e <span class="it">marque</span>.</h2>
+      </div>
+      <div class="block-card" style="margin-bottom:5mm;">
+        <p style="margin:0 0 3mm;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Pegue uma folha. Liste tudo o que você fez na última semana. Agora marque cada item com uma letra:</p>
+        <ul class="bul" style="margin-bottom:3mm;">
+          <li><b>F</b> · Apenas eu posso fazer.</li>
+          <li><b>D</b> · Posso delegar.</li>
+          <li><b>A</b> · Posso automatizar.</li>
+          <li><b>E</b> · Posso eliminar.</li>
+        </ul>
+        <p style="margin:0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Você vai se surpreender com quantas atividades está carregando sem necessidade.</p>
+      </div>
+      <div class="frases-head" style="margin-bottom:3mm;">
+        <div class="section-kicker">Teste final</div>
+        <h2 style="font-size:18pt;">Dois síndicos. Quem é mais <span class="it">profissional</span>?</h2>
+      </div>
+      <div class="compare">
+        <div class="box bad"><span class="lbl">O primeiro</span><p>Faz tudo sozinho. Quando ele sai, tudo para.</p></div>
+        <div class="box good"><span class="lbl">O segundo</span><p>Construiu operação organizada. Quando ele sai, o condomínio continua funcionando.</p></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Autoavaliação, exercício e teste final</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · PLANO 30 + TESTE MATURIDADE -->
+  <section class="page" data-screen-label="13 Plano + Maturidade">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Plano + maturidade</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Plano de ação · 30 dias</div>
+        <h2>Quatro semanas para sair do <span class="it">gargalo</span>.</h2>
+      </div>
+      <div class="cols-2" style="margin-bottom:4mm;">
+        <div>
+          <div class="h-sub">Semana 01 · Mapeie</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Liste todas as atividades que passaram por você</li>
+            <li><span class="box"></span>Marque F, D, A ou E em cada uma</li>
+            <li><span class="box"></span>Identifique as 5 que mais consomem tempo</li>
+          </ul>
+          <div class="h-sub" style="margin-top:5mm;">Semana 02 · Delegue cinco</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Escolha cinco tarefas para delegar</li>
+            <li><span class="box"></span>Defina responsáveis e prazo</li>
+            <li><span class="box"></span>Faça a transição com acompanhamento</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h-sub">Semana 03 · Documente</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Crie processo simples para cada tarefa delegada</li>
+            <li><span class="box"></span>Escreva checklist de uma página</li>
+            <li><span class="box"></span>Salve em local acessível à equipe</li>
+          </ul>
+          <div class="h-sub" style="margin-top:5mm;">Semana 04 · Acompanhe</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Faça uma reunião curta de status</li>
+            <li><span class="box"></span>Ajuste o que precisa ser ajustado</li>
+            <li><span class="box"></span>Não assuma de volta o que delegou</li>
+          </ul>
+        </div>
+      </div>
+      <div class="frases-head" style="margin-bottom:3mm;">
+        <div class="section-kicker">Teste de maturidade</div>
+        <h2 style="font-size:18pt;">Dê uma nota de <span class="it">1 a 10</span>.</h2>
+      </div>
+      <div class="block-card" style="margin-bottom:3mm;padding:4mm 5mm;">
+        <div class="nota-row"><div class="q">Minha equipe consegue operar sem minha presença.</div><div class="n">Nota <span class="b"></span></div></div>
+        <div class="nota-row"><div class="q">Os processos estão documentados.</div><div class="n">Nota <span class="b"></span></div></div>
+        <div class="nota-row"><div class="q">Existe clareza sobre responsabilidades.</div><div class="n">Nota <span class="b"></span></div></div>
+        <div class="nota-row"><div class="q">O condomínio não depende exclusivamente de mim.</div><div class="n">Nota <span class="b"></span></div></div>
+        <div class="nota-row"><div class="q">Tenho tempo para pensar no futuro.</div><div class="n">Nota <span class="b"></span></div></div>
+      </div>
+      <div class="tiers">
+        <div class="tier"><div class="range">até 20</div><p>Você ainda está carregando o condomínio nas costas.</p></div>
+        <div class="tier t2"><div class="range">21 a 35</div><p>Você iniciou a transição. Há pilares no lugar.</p></div>
+        <div class="tier t3"><div class="range">36 a 50</div><p>Você está construindo uma gestão escalável. Proteja esse jeito de trabalhar.</p></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Plano de 30 dias e teste de maturidade</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · CONCLUSÃO -->
+  <section class="page" data-screen-label="14 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">Liderança é garantir que tudo <span class="serif" style="font-style:italic;color:var(--accent);">aconteça</span>.</h2>
+          <p class="section-lede">O síndico Solitário costuma ser admirado. As pessoas enxergam dedicação, comprometimento, disponibilidade. Mas poucas enxergam o peso que isso gera, e o tamanho do risco quando uma gestão inteira passa por uma única pessoa.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="refrain">
+          <p>Nenhum líder deveria ser o sistema.</p>
+          <p>Nenhum condomínio deveria depender exclusivamente de uma pessoa.</p>
+          <p>Nenhuma gestão deveria funcionar apenas enquanto o síndico está acordado, disponível ou conectado.</p>
+        </div>
+        <p class="body">O verdadeiro crescimento profissional acontece quando você deixa de ser o centro de tudo e passa a construir uma estrutura capaz de funcionar sem você. Porque liderança não é fazer tudo. Liderança é <b>garantir que tudo aconteça</b>. Existe uma enorme diferença entre as duas coisas, e é justamente nessa diferença que nasce o síndico Estrategista.</p>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          A maturidade da gestão se mede no dia em que o síndico viaja, dorme cedo, fica doente, e o condomínio segue funcionando. Tudo o que existe antes desse dia é improviso disfarçado de dedicação.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · Liderança é garantir que tudo aconteça</div><div class="pg-num">14</div></div>
+  </section>
+
+  <!-- PAGE 15 · CONVITE -->
+  <section class="page capture" data-screen-label="15 Mentoria">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>O convite</div></div>
+    <div class="pg-body">
+      <div class="invite-head">Convite · não é para todo síndico</div>
+      <h2 class="invite-title">A Mentoria não é um curso. É um <span class="it">espaço fechado.</span></h2>
+      <div class="invite-grid">
+        <div>
+          <p>A Mentoria Bastidores da Sindicatura não é aberta. É uma turma pequena, com vagas escolhidas a dedo. <b>Eu seleciono pessoalmente cada participante.</b></p>
+          <p>Por dois motivos. O primeiro é o nível da conversa. Os bastidores que eu compartilho ali dentro não cabem em sala lotada. O segundo é o método. Um espaço fechado garante que cada decisão seja debatida com a profundidade que esse mercado exige.</p>
+          <p>Se você reconheceu o Solitário em você e decidiu que esse jeito acaba aqui, você tem o primeiro requisito.</p>
+        </div>
+        <div>
+          <p>Seu comprometimento já existe. O próximo passo é desenvolver <b>processos, delegação, gestão de pessoas e visão estratégica.</b></p>
+          <p>Você vai aprender como estruturar operações, organizar equipes, criar processos, liderar sem sobrecarga e construir uma gestão profissional que <b>não dependa exclusivamente de você.</b></p>
+          <p>Não é para quem quer aprender mais sobre sindicatura. É para quem decidiu parar de ser o gargalo da própria gestão e construir uma <b>carreira</b> com método, autoridade e reputação.</p>
+        </div>
+      </div>
+      <div class="selection-band">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Vagas <span class="it">limitadas</span> por turma. Seleção por <span class="it">perfil.</span></div>
+        <p class="lines">Os bastidores que ninguém mostra.<br/>As conversas que ninguém grava.<br/>As decisões que mudam uma gestão inteira.</p>
+        <div class="u">→ Candidate-se em <span>www.bastidoresdasindicatura.com.br</span></div>
+        <div class="note">Próxima turma com vagas restritas. A seleção é feita pessoalmente pela Juliana Moreira.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>O convite · Mentoria Bastidores da Sindicatura</div><div class="pg-num">15</div></div>
+  </section>
+
+  <!-- PAGE 16 · MANIFESTO / CLOSE -->
+  <section class="page manifesto" data-screen-label="16 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top:30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:12mm;">
+        <div class="cover-eyebrow" style="margin:0;">Arquétipo Solitário · Vol. 14</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:165mm;">
+          Liderança não é <em style="font-style:italic;color:var(--accent);">fazer tudo.</em><br/>
+          É garantir que <em style="font-style:italic;color:var(--accent);">tudo aconteça.</em>
+        </h2>
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          Sua dedicação te trouxe até aqui. Daqui pra frente, é o método que te leva mais longe. E te devolve o tempo que você nem lembra mais como era ter.
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 14 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite"><b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab=document.getElementById('pdfFab'); var hint=document.getElementById('pdfHint');
+    if(!fab) return; var t;
+    fab.addEventListener('mouseenter',function(){ clearTimeout(t); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave',function(){ t=setTimeout(function(){ hint.classList.remove('show'); },250); });
+    fab.addEventListener('click',function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); },120); setTimeout(function(){ hint.classList.remove('show'); },4000); });
+  })();
+</script>
+</body>
+</html>
