@@ -1,0 +1,652 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>O Sargento · Manda no grito, autoridade pelo volume · Bastidores da Sindicatura · Vol. 17</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <circle r="120" fill="none" stroke="#B8543B" stroke-width="6"/>
+      <path d="M-46 -8 a46 40 0 1 0 18 -34 L-46 -54 Z" fill="none" stroke="#B8543B" stroke-width="12" stroke-linejoin="round"/>
+      <text y="180" font-family="serif" font-style="italic" font-size="64" fill="#0E1A2B">Bastidores</text>
+      <text y="240" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A; --rule:1px solid var(--line);
+  }
+  @page { size: 210mm 297mm; margin: 0; }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; width:210mm; background:#2A2522; font-family:"Manrope", system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; color:var(--ink); page-break-after:always; break-after:page; margin:0 auto; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen { html, body{ width:auto; } body{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 0 60px; } .page{ box-shadow:0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); } }
+  @media print{ html, body{ background:#fff; width:210mm; margin:0; padding:0; display:block; } .page{ box-shadow:none; margin:0; display:block; } }
+
+  .frame{ position:absolute; inset:14mm 16mm; }
+  .pg-head{ position:absolute; top:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); padding-bottom:4mm; border-bottom:var(--rule); }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{ width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  .pg-foot{ position:absolute; bottom:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:8.5pt; color:var(--muted); padding-top:4mm; border-top:var(--rule); }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .pg-body{ position:absolute; top:22mm; bottom:18mm; left:16mm; right:16mm; display:flex; flex-direction:column; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif","Times New Roman",serif; font-weight:400; }
+  .section-num{ font-family:"Instrument Serif"; font-style:italic; font-size:64pt; line-height:1; color:var(--accent); letter-spacing:-.02em; }
+  .section-kicker{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-title{ font-family:"Instrument Serif"; font-weight:400; font-size:32pt; line-height:1.04; letter-spacing:-.01em; color:var(--ink); margin-top:2mm; }
+  .section-lede{ font-size:10.5pt; line-height:1.55; color:var(--ink-2); max-width:135mm; margin-top:5mm; }
+  .h-sub{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:4mm; }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.4mm; }
+  ul.checks li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.42; color:var(--ink-2); padding:1.2mm 0; border-bottom:1px dotted var(--line); }
+  ul.checks li:last-child{ border-bottom:none; }
+  ul.checks li .box{ flex:0 0 auto; width:4.4mm; height:4.4mm; border:1.2px solid var(--ink); border-radius:1.2px; background:var(--cream); margin-top:1.2mm; }
+  .stack-tight ul.checks li{ font-size:9.5pt; padding:.7mm 0; }
+  .stack-tight ul.checks li .box{ width:4mm; height:4mm; }
+  ul.bul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.2mm; }
+  ul.bul li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.45; color:var(--ink-2); padding:1mm 0; border-bottom:1px dotted var(--line); }
+  ul.bul li:last-child{ border-bottom:none; }
+  ul.bul li::before{ content:""; flex:0 0 auto; width:5px; height:5px; margin-top:2.4mm; background:var(--accent); border-radius:50%; }
+
+  .cols-2{ display:grid; grid-template-columns:1fr 1fr; column-gap:12mm; align-items:start; }
+  ol.enum{ list-style:none; padding:0; margin:0; counter-reset:en; display:flex; flex-direction:column; gap:2mm; }
+  ol.enum li{ counter-increment:en; display:flex; gap:10px; align-items:baseline; font-size:9.5pt; line-height:1.45; color:var(--ink-2); padding:1.4mm 0; border-bottom:1px dotted var(--line); }
+  ol.enum li::before{ content:counter(en, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--accent); flex:0 0 9mm; }
+  ol.enum li b{ color:var(--ink); }
+
+  .callout{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 6mm; font-size:9.5pt; line-height:1.55; color:var(--ink-2); margin-top:4mm; }
+  .callout b{ color:var(--ink); }
+  .quote-block{ background:var(--cream); border:1px solid var(--line); padding:7mm 8mm; font-family:"Instrument Serif"; font-style:italic; font-size:13pt; line-height:1.5; color:var(--ink); }
+  .quote-block .signature{ margin-top:4mm; font-family:"Manrope"; font-style:normal; font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .survival{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 7mm; display:flex; flex-direction:column; gap:2mm; }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; line-height:1.3; color:var(--ink); }
+
+  .hr-orn{ display:flex; align-items:center; gap:10px; color:var(--accent); margin:4mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent);}
+
+  /* refrain */
+  .refrain{ display:flex; flex-direction:column; gap:1.5mm; padding:4mm 6mm; border-left:2px solid var(--line); }
+  .refrain p{ margin:0; font-size:10.5pt; line-height:1.5; color:var(--ink-2); }
+  .refrain p b{ color:var(--ink); font-weight:600; }
+
+  /* compare */
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
+  .compare .box{ padding:5mm 6mm; }
+  .compare .bad{ background:var(--paper-2); border-left:3px solid var(--accent); }
+  .compare .good{ background:var(--cream); border-left:3px solid var(--gold); }
+  .compare .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.18em; text-transform:uppercase; margin-bottom:2.5mm; display:block; }
+  .compare .bad .lbl{ color:var(--accent); }
+  .compare .good .lbl{ color:var(--gold); }
+  .compare p{ margin:0; font-family:"Instrument Serif"; font-style:italic; font-size:11pt; line-height:1.4; color:var(--ink); }
+  .compare ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:3mm; }
+  .compare ul li{ font-family:"Instrument Serif"; font-style:italic; font-size:11pt; line-height:1.3; color:var(--ink); padding:1.5mm 0; border-bottom:1px dotted rgba(184,84,59,.15); }
+  .compare ul li:last-child{ border-bottom:none; }
+
+  /* pillars */
+  .pillars{ display:grid; grid-template-columns:1fr 1fr 1fr 1fr 1fr; gap:3mm; }
+  .pillar{ background:var(--cream); border:1px solid var(--line); border-left:3px solid var(--accent); padding:4mm 5mm; }
+  .pillar .word{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent); line-height:1; margin:0 0 2mm; }
+  .pillar p{ margin:0; font-size:8.4pt; line-height:1.4; color:var(--ink-2); }
+
+  /* COVER */
+  .cover{ background: radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.14), transparent 55%), radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%), var(--paper); }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:var(--rule); padding-bottom:6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap:10px; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); }
+  .cover-brand .logo .mark{ width:30px; height:30px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border:2px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .cover-brand .sub{ font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--accent); }
+  .cover-meta .label{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:12mm 0 8mm; }
+  .cover-eyebrow{ font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6mm; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .cover-arquetype{ font-family:"Instrument Serif"; font-style:italic; font-size:88pt; line-height:.9; color:var(--accent); letter-spacing:-.025em; margin:0 0 4mm; }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size:32pt; line-height:1.05; letter-spacing:-.01em; color:var(--ink); margin:0 0 6mm; max-width:160mm; }
+  .cover-title .it{ font-style:italic; color:var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size:12pt; line-height:1.5; color:var(--ink-2); max-width:160mm; }
+  .cover-bottom{ border-top:var(--rule); padding-top:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap:13mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size:36pt; line-height:1; color:var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color:var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:2mm; }
+
+  /* OPENER */
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size:42pt; line-height:1.02; color:var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style:italic; color:var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:7mm; }
+  .opener-grid p{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+
+  /* TOC */
+  .toc-list{ display:grid; grid-template-columns:1fr; margin-top:4mm; }
+  .toc-item{ display:flex; align-items:baseline; gap:8px; padding:2.4mm 0; border-bottom:1px dotted var(--line); font-size:10pt; color:var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent); flex:0 0 12mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--muted); }
+
+  .section-head{ display:flex; gap:10mm; align-items:flex-start; padding-bottom:6mm; border-bottom:var(--rule); margin-bottom:6mm; }
+  .section-head .big{ flex:0 0 auto; }
+  .section-head .meta{ flex:1; padding-top:4mm;}
+  .section-body{ display:flex; flex-direction:column; gap:5mm; flex:1;}
+  .block-card{ background:var(--cream); border:1px solid var(--line); padding:6mm 7mm; }
+  .twoframe{ display:grid; grid-template-columns:1fr 1fr; gap:8mm; }
+  .threeframe{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:7mm; }
+
+  .frases-head{ display:flex; align-items:baseline; gap:8mm; flex-wrap:wrap; padding-bottom:4mm; border-bottom:var(--rule); margin-bottom:5mm; }
+  .frases-head .section-kicker{ flex:0 0 auto; }
+  .frases-head h2{ font-family:"Instrument Serif"; font-weight:400; font-size:24pt; line-height:1.05; color:var(--ink); margin:0; }
+  .frases-head h2 .it{ font-style:italic; color:var(--accent); }
+
+  /* capture */
+  .capture{ background: radial-gradient(120% 80% at 0% 0%, rgba(184,84,59,.16), transparent 55%), radial-gradient(90% 70% at 100% 100%, rgba(14,26,43,.10), transparent 55%), var(--paper); }
+  .invite-head{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:12px; margin-bottom:6mm; }
+  .invite-head::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .invite-title{ font-family:"Instrument Serif"; font-weight:400; font-size:42pt; line-height:1.02; letter-spacing:-.02em; color:var(--ink); margin:0; }
+  .invite-title .it{ font-style:italic; color:var(--accent); }
+  .invite-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:8mm; }
+  .invite-grid p{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+  .invite-grid p b{ color:var(--ink); }
+  .selection-band{ background:var(--ink); color:var(--paper); padding:8mm 9mm; display:flex; flex-direction:column; gap:3mm; margin-top:auto; }
+  .selection-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .selection-band .t{ font-family:"Instrument Serif"; font-size:26pt; line-height:1.08; color:var(--paper); }
+  .selection-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .selection-band .lines{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; line-height:1.45; color:rgba(244,238,223,.92); margin:2mm 0 0; }
+  .selection-band .u{ font-family:"Manrope"; font-weight:700; font-size:11pt; letter-spacing:.04em; color:var(--paper); margin-top:2mm; }
+  .selection-band .u span{ color:var(--accent-2); }
+  .selection-band .note{ font-family:"Manrope"; font-size:8.5pt; letter-spacing:.16em; text-transform:uppercase; color:rgba(244,238,223,.6); margin-top:1mm; }
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  /* Save-as-PDF FAB */
+  .pdf-fab{ position:fixed; right:22px; bottom:22px; z-index:9999; display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:#0E1A2B; color:#F4EEDF; border:none; border-radius:999px; font-family:"Manrope", system-ui, sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; box-shadow:0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30), inset 0 0 0 1px rgba(255,255,255,.06); transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .pdf-fab:hover{ transform:translateY(-2px); background:#B8543B; }
+  .pdf-fab svg{ width:16px; height:16px; flex:0 0 auto; }
+  .pdf-fab .dot-accent{ width:6px; height:6px; border-radius:50%; background:#B8543B; box-shadow:0 0 0 3px rgba(184,84,59,.22); }
+  .pdf-hint{ position:fixed; right:22px; bottom:74px; z-index:9998; max-width:280px; padding:12px 14px; background:#FBF7EC; border:1px solid #D9D2C2; border-radius:10px; font-family:"Manrope", system-ui, sans-serif; font-size:11.5px; line-height:1.5; color:#1F2C3F; box-shadow:0 10px 30px rgba(0,0,0,.18); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .pdf-hint.show{ opacity:1; transform:translateY(0); }
+  .pdf-hint b{ color:#B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display:none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 17</div>
+          <div class="label">Série Arquétipos</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">O guia do seu arquétipo</div>
+        <h1 class="cover-arquetype">O Sargento.</h1>
+        <p class="cover-title">Manda no grito. Autoridade pelo <span class="it">volume.</span></p>
+        <p class="cover-deck">Por que alguns síndicos são obedecidos, mas nunca admirados. E como deixar de depender do medo para começar a ser, de fato, respeitado.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">12</span></div><div class="l">Capítulos</div></div>
+          <div class="s"><div class="n">10</div><div class="l">Sinais de alerta</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · APRESENTAÇÃO -->
+  <section class="page opener" data-screen-label="02 Apresentação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Apresentação</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:8mm;">Antes de começar, uma pergunta</div>
+        <h2 class="opener-title">Você lidera pessoas? Ou apenas consegue <span class="it">controlá-las?</span></h2>
+        <div class="opener-grid">
+          <div>
+            <p>Existe um tipo de síndico muito comum nos condomínios. Não foge da briga. Não tem medo de confronto. Não deixa assunto sem resposta. Não tolera desorganização. Não aceita desculpa.</p>
+            <p>À primeira vista, parece o líder que o condomínio precisa. E muitas vezes <b>é</b>. O problema surge quando a firmeza começa a ser substituída pela imposição. Quando a autoridade passa a depender do medo. Quando o respeito passa a depender do constrangimento.</p>
+          </div>
+          <div>
+            <p>Esse é o perfil do Sargento. E a verdade desconfortável é que ele <b>raramente percebe</b> quando cruza a linha. Porque a intenção costuma ser boa: ele quer resultado, quer ordem, quer disciplina.</p>
+            <p>Mas acaba criando um ambiente perigoso: um lugar onde as pessoas obedecem por receio, e não por confiança. E esse ambiente tem prazo de validade mais curto do que parece.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">A virada que este guia propõe</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Manter a coragem para agir que sempre foi sua marca, e trocar o grito pelo argumento. Trocar imposição por influência. O resultado sustenta o longo prazo. O grito, não.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">O que você vai encontrar</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Doze capítulos provocativos, comparativos diretos entre firmeza e agressividade, os cinco pilares da autoridade verdadeira e perguntas que custam responder com honestidade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 17</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · TOC -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:5mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">01</span><span class="ttl">Como identificar o síndico Sargento · 10 sinais</span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">02·03</span><span class="ttl">O mito da autoridade, e o problema de ganhar todas as discussões</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">04·05</span><span class="ttl">O medo é um péssimo aliado, e o desgaste invisível</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">06</span><span class="ttl">Quando firmeza vira agressividade</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">07·08</span><span class="ttl">O teste da reunião, e o poder da escuta</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">09·10</span><span class="ttl">O respeito que sobrevive à sua ausência, e os 5 pilares da autoridade</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">11·12</span><span class="ttl">O ego é um conselheiro perigoso, e a força da calma</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Checklist, exercício prático e teste final</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Conclusão · obedecido por medo ou seguido por confiança</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">Convite · a Mentoria Bastidores da Sindicatura</span><span class="pg">13</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · CAP 01 · 10 SINAIS -->
+  <section class="page" data-screen-label="04 Cap 01">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 01 · Sinais</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">01</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo um</div>
+          <h2 class="section-title">Como identificar o síndico <span class="serif" style="font-style:italic;color:var(--accent);">Sargento</span>.</h2>
+          <p class="section-lede">Leia com honestidade. Se você marcar vários itens, há uma boa chance de estar exercendo uma liderança baseada mais na imposição do que na influência. Reconhecer é o primeiro passo. Muitos Sargentos não percebem que são.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2">
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Fica irritado quando alguém questiona suas decisões</li>
+            <li><span class="box"></span>Tem dificuldade em ouvir opiniões contrárias</li>
+            <li><span class="box"></span>Acredita que precisa demonstrar força constantemente</li>
+            <li><span class="box"></span>Interrompe as pessoas durante discussões</li>
+            <li><span class="box"></span>Perde a paciência com facilidade</li>
+          </ul>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Sente que precisa controlar tudo</li>
+            <li><span class="box"></span>Tem fama de “duro”</li>
+            <li><span class="box"></span>Acredita que muita gente só aprende sob pressão</li>
+            <li><span class="box"></span>Escuta com frequência que é “explosivo”</li>
+            <li><span class="box"></span>Tem dificuldade em admitir erros</li>
+          </ul>
+        </div>
+        <div class="callout">A pior versão do Sargento é o que se acha equilibrado. Aquele que diz “sou direto, é o jeito”, e usa essa frase como passaporte para tudo. Direto é uma qualidade. Agressivo é um problema. E nem sempre são a mesma coisa.</div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">O Sargento não percebe que cruzou a linha. Quem está ao redor percebe. E começa a ficar em silêncio.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 01 · Os 10 sinais</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · CAP 02 + 03 -->
+  <section class="page" data-screen-label="05 Cap 02-03">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 02 e 03</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 02</div>
+        <h2>O mito da <span class="it">autoridade</span>.</h2>
+      </div>
+      <p class="body">Muitos síndicos acreditam que autoridade é algo que se impõe. Mas a autoridade verdadeira não é imposta. É <b>concedida</b>. As pessoas escolhem seguir líderes que demonstram competência, justiça, coerência, segurança e credibilidade.</p>
+      <div class="quote-block" style="margin-top:4mm;background:var(--paper-2);margin-bottom:5mm;">
+        Quando você precisa lembrar constantemente que está no comando, talvez o comando não seja tão forte quanto parece.
+        <div class="signature">Bastidores da Sindicatura</div>
+      </div>
+      <div class="frases-head" style="margin-top:5mm;">
+        <div class="section-kicker">Capítulo 03</div>
+        <h2 style="font-size:18pt;">O problema de ganhar todas as <span class="it">discussões</span>.</h2>
+      </div>
+      <p class="body">O Sargento frequentemente vence os debates. Mas perde algo muito mais importante: a <b>colaboração</b>. Quando moradores, conselheiros e funcionários percebem que qualquer discordância gera conflito, eles param de contribuir.</p>
+      <div class="refrain" style="margin-top:4mm;">
+        <p>Param de sugerir.</p>
+        <p>Param de participar.</p>
+        <p>Param de alertar.</p>
+        <p>E começam apenas a <b>concordar</b>.</p>
+        <p>Nem sempre porque acreditam. Porque não querem desgaste.</p>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 02 e 03 · O mito e o preço de vencer</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · CAP 04 + 05 -->
+  <section class="page" data-screen-label="06 Cap 04-05">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 04 e 05</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 04</div>
+        <h2>O medo é um péssimo <span class="it">aliado</span>.</h2>
+      </div>
+      <p class="body">O medo produz resultados rápidos. Mas também produz efeitos colaterais. Funcionários escondem erros. Fornecedores evitam dar más notícias. Moradores deixam de comunicar problemas. Conselheiros evitam opiniões sinceras.</p>
+      <div class="callout" style="margin-top:4mm;margin-bottom:5mm;"><b>A gestão continua funcionando.</b> Mas você passa a enxergar apenas uma parte da realidade. E isso é mais perigoso do que ser questionado. Você decide com base num retrato editado.</div>
+      <div class="frases-head" style="margin-top:5mm;">
+        <div class="section-kicker">Capítulo 05</div>
+        <h2 style="font-size:18pt;">O desgaste <span class="it">invisível</span>.</h2>
+      </div>
+      <p class="body">O síndico que vive em estado de confronto permanente paga um preço alto. E paga sozinho.</p>
+      <div class="refrain" style="margin-top:3mm;">
+        <p>Primeiro vem a irritação.</p>
+        <p>Depois o cansaço.</p>
+        <p>Depois a exaustão.</p>
+        <p>Depois a <b>solidão</b>.</p>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A conta que ninguém vê</span>
+        <span class="txt">Liderar brigando com todo mundo é uma das formas mais rápidas de adoecer emocionalmente. E o pior: o ambiente que você criou não vai te dar suporte.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 04 e 05 · O medo e o desgaste invisível</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · CAP 06 · COMPARE -->
+  <section class="page" data-screen-label="07 Cap 06">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 06 · Firmeza × Agressividade</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 06</div>
+        <h2>Quando firmeza vira <span class="it">agressividade</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:5mm;">Existe uma diferença enorme. A mensagem pode parecer a mesma. O impacto é completamente diferente. Quem ouve sente, mesmo quando não verbaliza.</p>
+      <div class="compare" style="margin-bottom:5mm;">
+        <div class="box bad">
+          <span class="lbl">Agressividade</span>
+          <ul>
+            <li>“Vocês nunca entendem nada.”</li>
+            <li>“Vocês fazem tudo errado.”</li>
+            <li>“Eu sou o síndico aqui.”</li>
+            <li>“Discorda? Põe no papel.”</li>
+          </ul>
+        </div>
+        <div class="box good">
+          <span class="lbl">Firmeza</span>
+          <ul>
+            <li>“Essa é a regra e ela será cumprida.”</li>
+            <li>“Precisamos corrigir esse procedimento.”</li>
+            <li>“A decisão foi tomada com base na convenção.”</li>
+            <li>“Vou ouvir, e depois decido pelo critério.”</li>
+          </ul>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A linha que separa</span>
+        <span class="txt">Firmeza fala da regra. Agressividade fala da pessoa. Quem ataca a pessoa pode ganhar a discussão, mas perde quem estava do seu lado.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 06 · Quando firmeza vira agressividade</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · CAP 07 + 08 -->
+  <section class="page" data-screen-label="08 Cap 07-08">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 07 e 08</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 07 · teste</div>
+        <h2>O teste da <span class="it">reunião</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:3mm;">Pense na última reunião que você conduziu. Responda com honestidade.</p>
+      <div class="cols-2" style="margin-bottom:5mm;">
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>As pessoas participaram? Ou apenas ouviram?</li>
+          <li><span class="box"></span>Trouxeram ideias? Ou apenas concordaram?</li>
+        </ul>
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>Fizeram perguntas? Ou evitaram se expor?</li>
+          <li><span class="box"></span>Saíram aliviadas por ter acabado, ou recarregadas pelo que foi discutido?</li>
+        </ul>
+      </div>
+      <p class="body">A resposta revela muito sobre o ambiente que você está criando. Silêncio em reunião raramente é alinhamento. Quase sempre é cuidado, ou cansaço.</p>
+      <div class="frases-head" style="margin-top:5mm;">
+        <div class="section-kicker">Capítulo 08</div>
+        <h2 style="font-size:18pt;">O poder da <span class="it">escuta</span>.</h2>
+      </div>
+      <p class="body">Uma das maiores características dos líderes admirados é a capacidade de ouvir. Não para concordar. Para <b>compreender</b>.</p>
+      <div class="quote-block" style="margin-top:auto;">
+        Escutar não enfraquece sua autoridade. Fortalece. Porque pessoas que se sentem ouvidas tendem a aceitar melhor decisões difíceis. Inclusive aquelas em que perderam.
+        <div class="signature">Bastidores da Sindicatura</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 07 e 08 · O teste da reunião e o poder da escuta</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · CAP 09 + 10 · 5 PILARES -->
+  <section class="page" data-screen-label="09 Cap 09-10">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 09 e 10</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 09</div>
+        <h2>O respeito que sobrevive à sua <span class="it">ausência</span>.</h2>
+      </div>
+      <p class="body">Existe uma pergunta poderosa. Quando você não está presente, as pessoas continuam seguindo suas orientações? Ou só fazem porque você está olhando? A primeira resposta indica liderança. A segunda indica controle. E a diferença entre as duas decide se a sua autoridade dura, ou só funciona enquanto você está perto.</p>
+      <div class="frases-head" style="margin-top:5mm;">
+        <div class="section-kicker">Capítulo 10 · ferramenta</div>
+        <h2 style="font-size:18pt;">Os 5 pilares da <span class="it">autoridade verdadeira</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:4mm;font-size:10pt;">Autoridade sólida não nasce do grito. Nasce da combinação destes cinco fatores. Quem os tem, não precisa elevar a voz.</p>
+      <div class="pillars">
+        <div class="pillar"><p class="word">Coerência</p><p>Você faz o que fala.</p></div>
+        <div class="pillar"><p class="word">Justiça</p><p>As regras valem para todos.</p></div>
+        <div class="pillar"><p class="word">Competência</p><p>Você sabe o que está fazendo.</p></div>
+        <div class="pillar"><p class="word">Transparência</p><p>As decisões são explicadas.</p></div>
+        <div class="pillar"><p class="word">Equilíbrio</p><p>Você não perde o controle sob pressão.</p></div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Frase para guardar</span>
+        <span class="txt">Quem tem os cinco pilares fala baixo. E ainda assim, é o primeiro a ser ouvido na sala.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 09 e 10 · O respeito sem você e os 5 pilares</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · CAP 11 + 12 -->
+  <section class="page" data-screen-label="10 Cap 11-12">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 11 e 12</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 11</div>
+        <h2>O ego é um conselheiro <span class="it">perigoso</span>.</h2>
+      </div>
+      <p class="body">Muitas discussões em condomínio não acontecem por necessidade. Acontecem por ego. Alguém precisa provar que está certo. Alguém precisa vencer. Alguém precisa mostrar poder.</p>
+      <div class="quote-block" style="margin-top:4mm;background:var(--paper-2);margin-bottom:5mm;">
+        O síndico estrategista faz uma pergunta simples antes de entrar em qualquer briga: <b>isso ajuda o condomínio?</b> Se a resposta for não, ele não entra na disputa. Não por covardia. Por economia de energia.
+        <div class="signature">Bastidores da Sindicatura</div>
+      </div>
+      <div class="frases-head" style="margin-top:5mm;">
+        <div class="section-kicker">Capítulo 12</div>
+        <h2 style="font-size:18pt;">A força da <span class="it">calma</span>.</h2>
+      </div>
+      <div class="refrain" style="margin-top:3mm;">
+        <p>Quanto mais experiente o líder, <b>menos ele precisa gritar</b>.</p>
+        <p>Quanto mais seguro, menos precisa provar.</p>
+        <p>Quanto mais preparado, menos precisa intimidar.</p>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">A calma é uma das maiores demonstrações de poder que existem. Porque mostra domínio da situação. E, principalmente, domínio de si mesmo.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 11 e 12 · O ego e a força da calma</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · CHECKLIST + EXERCÍCIO + TESTE FINAL -->
+  <section class="page" data-screen-label="11 Autoavaliação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Autoavaliação</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Autoavaliação</div>
+        <h2>Sua autoridade depende do tom de <span class="it">voz</span>?</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Marque os itens verdadeiros para a sua gestão hoje. Sem suavizar.</p>
+      <div class="cols-2" style="margin-bottom:5mm;">
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>Consigo discordar sem atacar</li>
+          <li><span class="box"></span>Escuto opiniões diferentes</li>
+          <li><span class="box"></span>Não transformo crítica em confronto pessoal</li>
+          <li><span class="box"></span>Corrijo sem humilhar</li>
+          <li><span class="box"></span>Mantenho a calma sob pressão</li>
+        </ul>
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>As pessoas se sentem confortáveis para falar comigo</li>
+          <li><span class="box"></span>Não preciso elevar a voz para ser respeitado</li>
+          <li><span class="box"></span>Tomo decisões baseadas em critérios</li>
+          <li><span class="box"></span>Consigo admitir erros</li>
+          <li><span class="box"></span>Inspiro mais do que intimido</li>
+        </ul>
+      </div>
+      <div class="frases-head" style="margin-bottom:3mm;">
+        <div class="section-kicker">Exercício prático</div>
+        <h2 style="font-size:18pt;">Os três últimos <span class="it">conflitos</span>.</h2>
+      </div>
+      <div class="block-card" style="margin-bottom:5mm;">
+        <p style="margin:0 0 3mm;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Lembre dos últimos três conflitos que você enfrentou. Agora responda com sinceridade:</p>
+        <p style="margin:0;font-family:'Instrument Serif';font-style:italic;font-size:13pt;line-height:1.4;color:var(--ink);">O objetivo era resolver o problema, ou vencer a discussão?</p>
+        <p style="margin:3mm 0 0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">A resposta costuma revelar mais do que qualquer curso de liderança.</p>
+      </div>
+      <div class="frases-head" style="margin-bottom:3mm;">
+        <div class="section-kicker">Teste final</div>
+        <h2 style="font-size:18pt;">Dois síndicos. O silêncio é <span class="it">o mesmo</span>?</h2>
+      </div>
+      <div class="compare">
+        <div class="box bad"><span class="lbl">O primeiro</span><p>Entra na reunião e todos ficam em silêncio por <b>medo</b>.</p></div>
+        <div class="box good"><span class="lbl">O segundo</span><p>Entra na reunião e todos ficam em silêncio por <b>respeito</b>.</p></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Autoavaliação, exercício e teste final</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · CONCLUSÃO -->
+  <section class="page" data-screen-label="12 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">Obedecido por medo, ou seguido por <span class="serif" style="font-style:italic;color:var(--accent);">confiança</span>.</h2>
+          <p class="section-lede">O Sargento possui qualidades valiosas: coragem, rapidez, determinação, capacidade de decisão. Essas mesmas qualidades viram armadilha quando a liderança passa a depender da imposição.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="refrain">
+          <p>No início, o grito funciona.</p>
+          <p>A pressão funciona.</p>
+          <p>A intimidação funciona.</p>
+          <p>Com o tempo, surge desgaste, resistência e <b>isolamento</b>.</p>
+        </div>
+        <p class="body">Os grandes líderes não são os que controlam mais pessoas. São os que <b>influenciam</b> mais pessoas. Porque autoridade verdadeira não vem do cargo. Não vem do tom de voz. Não vem do medo. Ela nasce da <b>confiança</b>.</p>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          A confiança continua funcionando mesmo quando você não está presente. O grito, não. E é nesse detalhe que se vê qual gestão dura, e qual é apenas uma sequência de assembleias barulhentas.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · Obedecido por medo ou seguido por confiança</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · CONVITE -->
+  <section class="page capture" data-screen-label="13 Mentoria">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>O convite</div></div>
+    <div class="pg-body">
+      <div class="invite-head">Convite · trocar imposição por influência</div>
+      <h2 class="invite-title">Sua coragem te trouxe até aqui. O <span class="it">próximo passo</span> não cabe no grito.</h2>
+      <div class="invite-grid">
+        <div>
+          <p>A Mentoria Bastidores da Sindicatura não é aberta. É uma turma pequena, com vagas escolhidas a dedo. <b>Eu seleciono pessoalmente cada participante.</b></p>
+          <p>Por dois motivos. O primeiro é o nível da conversa. Os bastidores que eu compartilho ali dentro não cabem em sala lotada. O segundo é o método. Um espaço fechado garante que cada decisão seja debatida com a profundidade que esse mercado exige.</p>
+          <p>Se você reconheceu o Sargento em você e decidiu que a sua autoridade pode crescer sem o grito, você tem o primeiro requisito.</p>
+        </div>
+        <div>
+          <p>A parte mais difícil você já tem: <b>coragem para agir.</b> O próximo passo é desenvolver influência, inteligência emocional, comunicação estratégica e liderança de alta performance.</p>
+          <p>Você vai aprender os bastidores da <b>liderança real</b>: a que constrói respeito duradouro, reduz conflitos e transforma síndicos em referências do mercado.</p>
+          <p>Não é para quem quer aprender mais sobre sindicatura. É para quem decidiu trocar imposição por <b>influência</b>, e construir uma carreira com método, autoridade e reputação.</p>
+        </div>
+      </div>
+      <div class="selection-band">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Vagas <span class="it">limitadas</span> por turma. Seleção por <span class="it">perfil.</span></div>
+        <p class="lines">Os bastidores que ninguém mostra.<br/>As conversas que ninguém grava.<br/>As decisões que mudam uma gestão inteira.</p>
+        <div class="u">→ Candidate-se em <span>www.bastidoresdasindicatura.com.br</span></div>
+        <div class="note">Próxima turma com vagas restritas. A seleção é feita pessoalmente pela Juliana Moreira.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>O convite · Mentoria Bastidores da Sindicatura</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · MANIFESTO -->
+  <section class="page manifesto" data-screen-label="14 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top:30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:12mm;">
+        <div class="cover-eyebrow" style="margin:0;">Arquétipo Sargento · Vol. 17</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:165mm;">
+          Você pode ser obedecido <em style="font-style:italic;color:var(--accent);">por medo.</em><br/>
+          Ou seguido <em style="font-style:italic;color:var(--accent);">por confiança.</em>
+        </h2>
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          Os dois geram silêncio quando você fala. Só um continua funcionando quando você sai da sala.
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 17 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite"><b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab=document.getElementById('pdfFab'); var hint=document.getElementById('pdfHint');
+    if(!fab) return; var t;
+    fab.addEventListener('mouseenter',function(){ clearTimeout(t); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave',function(){ t=setTimeout(function(){ hint.classList.remove('show'); },250); });
+    fab.addEventListener('click',function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); },120); setTimeout(function(){ hint.classList.remove('show'); },4000); });
+  })();
+</script>
+</body>
+</html>
