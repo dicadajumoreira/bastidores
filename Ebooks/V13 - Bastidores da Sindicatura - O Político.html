@@ -1,0 +1,750 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>O Político · O perigo de querer agradar todo mundo · Bastidores da Sindicatura · Vol. 13</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <circle r="120" fill="none" stroke="#B8543B" stroke-width="6"/>
+      <path d="M-46 -8 a46 40 0 1 0 18 -34 L-46 -54 Z" fill="none" stroke="#B8543B" stroke-width="12" stroke-linejoin="round"/>
+      <text y="180" font-family="serif" font-style="italic" font-size="64" fill="#0E1A2B">Bastidores</text>
+      <text y="240" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A; --rule:1px solid var(--line);
+  }
+  @page { size: 210mm 297mm; margin: 0; }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; width:210mm; background:#2A2522; font-family:"Manrope", system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; color:var(--ink); page-break-after:always; break-after:page; margin:0 auto; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen { html, body{ width:auto; } body{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 0 60px; } .page{ box-shadow:0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); } }
+  @media print{ html, body{ background:#fff; width:210mm; margin:0; padding:0; display:block; } .page{ box-shadow:none; margin:0; display:block; } }
+
+  .frame{ position:absolute; inset:14mm 16mm; }
+  .pg-head{ position:absolute; top:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); padding-bottom:4mm; border-bottom:var(--rule); }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{ width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  .pg-foot{ position:absolute; bottom:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:8.5pt; color:var(--muted); padding-top:4mm; border-top:var(--rule); }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .pg-body{ position:absolute; top:22mm; bottom:18mm; left:16mm; right:16mm; display:flex; flex-direction:column; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif","Times New Roman",serif; font-weight:400; }
+  .section-num{ font-family:"Instrument Serif"; font-style:italic; font-size:64pt; line-height:1; color:var(--accent); letter-spacing:-.02em; }
+  .section-kicker{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-title{ font-family:"Instrument Serif"; font-weight:400; font-size:32pt; line-height:1.04; letter-spacing:-.01em; color:var(--ink); margin-top:2mm; }
+  .section-lede{ font-size:10.5pt; line-height:1.55; color:var(--ink-2); max-width:135mm; margin-top:5mm; }
+  .h-sub{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:4mm; }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.4mm; }
+  ul.checks li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.42; color:var(--ink-2); padding:1.2mm 0; border-bottom:1px dotted var(--line); }
+  ul.checks li:last-child{ border-bottom:none; }
+  ul.checks li .box{ flex:0 0 auto; width:4.4mm; height:4.4mm; border:1.2px solid var(--ink); border-radius:1.2px; background:var(--cream); margin-top:1.2mm; }
+  .stack-tight ul.checks li{ font-size:9.5pt; padding:.7mm 0; }
+  .stack-tight ul.checks li .box{ width:4mm; height:4mm; }
+  ul.bul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.2mm; }
+  ul.bul li{ display:flex; gap:10px; align-items:flex-start; font-size:10pt; line-height:1.45; color:var(--ink-2); padding:1mm 0; border-bottom:1px dotted var(--line); }
+  ul.bul li:last-child{ border-bottom:none; }
+  ul.bul li::before{ content:""; flex:0 0 auto; width:5px; height:5px; margin-top:2.4mm; background:var(--accent); border-radius:50%; }
+
+  .cols-2{ display:grid; grid-template-columns:1fr 1fr; column-gap:12mm; align-items:start; }
+  ol.enum{ list-style:none; padding:0; margin:0; counter-reset:en; display:flex; flex-direction:column; gap:2mm; }
+  ol.enum li{ counter-increment:en; display:flex; gap:10px; align-items:baseline; font-size:9.5pt; line-height:1.45; color:var(--ink-2); padding:1.4mm 0; border-bottom:1px dotted var(--line); }
+  ol.enum li::before{ content:counter(en, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--accent); flex:0 0 9mm; }
+  ol.enum li b{ color:var(--ink); }
+
+  .callout{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 6mm; font-size:9.5pt; line-height:1.55; color:var(--ink-2); margin-top:4mm; }
+  .callout b{ color:var(--ink); }
+  .quote-block{ background:var(--cream); border:1px solid var(--line); padding:7mm 8mm; font-family:"Instrument Serif"; font-style:italic; font-size:13pt; line-height:1.5; color:var(--ink); }
+  .quote-block .signature{ margin-top:4mm; font-family:"Manrope"; font-style:normal; font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .survival{ background:var(--paper-2); border-left:3px solid var(--accent); padding:5mm 7mm; display:flex; flex-direction:column; gap:2mm; }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; line-height:1.3; color:var(--ink); }
+
+  .tag{ display:inline-flex; align-items:center; gap:6px; font-size:8pt; letter-spacing:.18em; text-transform:uppercase; color:var(--ink); background:var(--cream); padding:2.2mm 3.6mm; border-radius:100px; border:1px solid var(--line); font-weight:600; }
+  .hr-orn{ display:flex; align-items:center; gap:10px; color:var(--accent); margin:4mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent);}
+
+  /* refrain */
+  .refrain{ display:flex; flex-direction:column; gap:1.5mm; padding:4mm 6mm; border-left:2px solid var(--line); }
+  .refrain p{ margin:0; font-size:10.5pt; line-height:1.5; color:var(--ink-2); }
+  .refrain p b{ color:var(--ink); font-weight:600; }
+
+  /* compare */
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
+  .compare .box{ padding:5mm 6mm; }
+  .compare .bad{ background:var(--paper-2); border-left:3px solid var(--accent); }
+  .compare .good{ background:var(--cream); border-left:3px solid var(--gold); }
+  .compare .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.18em; text-transform:uppercase; margin-bottom:2mm; display:block; }
+  .compare .bad .lbl{ color:var(--accent); }
+  .compare .good .lbl{ color:var(--gold); }
+  .compare p{ margin:0; font-family:"Instrument Serif"; font-style:italic; font-size:11pt; line-height:1.35; color:var(--ink); }
+  .compare ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1mm; }
+  .compare ul li{ font-size:10pt; line-height:1.4; color:var(--ink); padding:.5mm 0; }
+  .compare ul li::before{ content:"·  "; color:var(--accent); font-weight:700; }
+
+  /* sinais */
+  .sinais{ display:grid; grid-template-columns:1fr 1fr; gap:4mm 8mm; }
+  .sinal{ display:grid; grid-template-columns:14mm 1fr; gap:0 4mm; align-items:start; }
+  .sinal .n{ font-family:"Instrument Serif"; font-style:italic; font-size:22pt; line-height:.85; color:var(--accent); }
+  .sinal .ttl{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.12em; text-transform:uppercase; color:var(--ink); display:block; margin-bottom:1.4mm; }
+  .sinal p{ margin:0; font-size:9pt; line-height:1.42; color:var(--ink-2); }
+
+  /* 5 pillars cards */
+  .pillars{ display:grid; grid-template-columns:1fr 1fr 1fr 1fr 1fr; gap:3mm; }
+  .pillar{ background:var(--cream); border:1px solid var(--line); border-left:3px solid var(--accent); padding:4mm 5mm; }
+  .pillar .word{ font-family:"Instrument Serif"; font-style:italic; font-size:15pt; color:var(--accent); line-height:1; margin:0 0 2mm; }
+  .pillar p{ margin:0; font-size:8.4pt; line-height:1.4; color:var(--ink-2); }
+
+  /* chair frame (cadeira vazia) */
+  .chair{
+    background:var(--cream); border:1px dashed var(--gold); padding:6mm 7mm; position:relative;
+  }
+  .chair::before{ content:"FERRAMENTA"; position:absolute; top:-3mm; left:6mm; background:var(--paper); padding:0 3mm; font-family:"Manrope"; font-size:8pt; letter-spacing:.24em; color:var(--gold); font-weight:700; }
+  .chair p{ margin:0 0 2.6mm; font-family:"Instrument Serif"; font-size:11.5pt; line-height:1.5; color:var(--ink-2); }
+  .chair p:last-child{ margin:0; }
+  .chair .q{ font-style:italic; color:var(--accent); font-size:14pt; }
+
+  /* COVER */
+  .cover{ background: radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.14), transparent 55%), radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%), var(--paper); }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:var(--rule); padding-bottom:6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap:10px; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); }
+  .cover-brand .logo .mark{ width:30px; height:30px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border:2px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .cover-brand .sub{ font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--accent); }
+  .cover-meta .label{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:12mm 0 8mm; }
+  .cover-eyebrow{ font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6mm; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .cover-arquetype{ font-family:"Instrument Serif"; font-style:italic; font-size:88pt; line-height:.9; color:var(--accent); letter-spacing:-.025em; margin:0 0 4mm; }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size:32pt; line-height:1.05; letter-spacing:-.01em; color:var(--ink); margin:0 0 6mm; max-width:160mm; }
+  .cover-title .it{ font-style:italic; color:var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size:12pt; line-height:1.5; color:var(--ink-2); max-width:160mm; }
+  .cover-bottom{ border-top:var(--rule); padding-top:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap:13mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size:36pt; line-height:1; color:var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color:var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:2mm; }
+
+  /* OPENER */
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size:42pt; line-height:1.02; color:var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style:italic; color:var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:7mm; }
+  .opener-grid p{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+
+  /* TOC */
+  .toc-list{ display:grid; grid-template-columns:1fr; margin-top:4mm; }
+  .toc-item{ display:flex; align-items:baseline; gap:8px; padding:2.4mm 0; border-bottom:1px dotted var(--line); font-size:10pt; color:var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent); flex:0 0 12mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--muted); }
+
+  /* SECTION HEAD */
+  .section-head{ display:flex; gap:10mm; align-items:flex-start; padding-bottom:6mm; border-bottom:var(--rule); margin-bottom:6mm; }
+  .section-head .big{ flex:0 0 auto; }
+  .section-head .meta{ flex:1; padding-top:4mm;}
+  .section-body{ display:flex; flex-direction:column; gap:5mm; flex:1;}
+  .block-card{ background:var(--cream); border:1px solid var(--line); padding:6mm 7mm; }
+  .twoframe{ display:grid; grid-template-columns:1fr 1fr; gap:8mm; }
+  .threeframe{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:7mm; }
+
+  /* compact head */
+  .frases-head{ display:flex; align-items:baseline; gap:8mm; flex-wrap:wrap; padding-bottom:4mm; border-bottom:var(--rule); margin-bottom:5mm; }
+  .frases-head .section-kicker{ flex:0 0 auto; }
+  .frases-head h2{ font-family:"Instrument Serif"; font-weight:400; font-size:24pt; line-height:1.05; color:var(--ink); margin:0; }
+  .frases-head h2 .it{ font-style:italic; color:var(--accent); }
+
+  /* persuasive capture page (mesma do V12) */
+  .capture{ background: radial-gradient(120% 80% at 0% 0%, rgba(184,84,59,.16), transparent 55%), radial-gradient(90% 70% at 100% 100%, rgba(14,26,43,.10), transparent 55%), var(--paper); }
+  .invite-head{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:12px; margin-bottom:6mm; }
+  .invite-head::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .invite-title{ font-family:"Instrument Serif"; font-weight:400; font-size:44pt; line-height:1.02; letter-spacing:-.02em; color:var(--ink); margin:0; }
+  .invite-title .it{ font-style:italic; color:var(--accent); }
+  .invite-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:8mm; }
+  .invite-grid p{ font-size:10.5pt; line-height:1.6; color:var(--ink-2); margin:0 0 3mm; }
+  .invite-grid p b{ color:var(--ink); }
+  .selection-band{ background:var(--ink); color:var(--paper); padding:8mm 9mm; display:flex; flex-direction:column; gap:3mm; margin-top:auto; }
+  .selection-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .selection-band .t{ font-family:"Instrument Serif"; font-size:26pt; line-height:1.08; color:var(--paper); }
+  .selection-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .selection-band .lines{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; line-height:1.45; color:rgba(244,238,223,.92); margin:2mm 0 0; }
+  .selection-band .u{ font-family:"Manrope"; font-weight:700; font-size:11pt; letter-spacing:.04em; color:var(--paper); margin-top:2mm; }
+  .selection-band .u span{ color:var(--accent-2); }
+  .selection-band .note{ font-family:"Manrope"; font-size:8.5pt; letter-spacing:.16em; text-transform:uppercase; color:rgba(244,238,223,.6); margin-top:1mm; }
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  /* Save-as-PDF FAB */
+  .pdf-fab{ position:fixed; right:22px; bottom:22px; z-index:9999; display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:#0E1A2B; color:#F4EEDF; border:none; border-radius:999px; font-family:"Manrope", system-ui, sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; box-shadow:0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30), inset 0 0 0 1px rgba(255,255,255,.06); transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .pdf-fab:hover{ transform:translateY(-2px); background:#B8543B; box-shadow:0 18px 42px rgba(184,84,59,.45), 0 4px 12px rgba(184,84,59,.30); }
+  .pdf-fab svg{ width:16px; height:16px; flex:0 0 auto; }
+  .pdf-fab .dot-accent{ width:6px; height:6px; border-radius:50%; background:#B8543B; box-shadow:0 0 0 3px rgba(184,84,59,.22); }
+  .pdf-fab:hover .dot-accent{ background:#F4EEDF; box-shadow:0 0 0 3px rgba(244,238,223,.22); }
+  .pdf-hint{ position:fixed; right:22px; bottom:74px; z-index:9998; max-width:280px; padding:12px 14px; background:#FBF7EC; border:1px solid #D9D2C2; border-radius:10px; font-family:"Manrope", system-ui, sans-serif; font-size:11.5px; line-height:1.5; color:#1F2C3F; box-shadow:0 10px 30px rgba(0,0,0,.18); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .pdf-hint.show{ opacity:1; transform:translateY(0); }
+  .pdf-hint b{ color:#B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display:none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 13</div>
+          <div class="label">Série Arquétipos</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">O guia do seu arquétipo</div>
+        <h1 class="cover-arquetype">O Político.</h1>
+        <p class="cover-title">O perigo de querer agradar <span class="it">todo mundo</span>.</p>
+        <p class="cover-deck">Como liderar um condomínio sem se tornar refém da aprovação dos moradores. Um guia para virar a chave entre ser aprovado e ser respeitado.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">10</span></div><div class="l">Capítulos</div></div>
+          <div class="s"><div class="n">3</div><div class="l">Ferramentas práticas</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · APRESENTAÇÃO -->
+  <section class="page opener" data-screen-label="02 Apresentação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Apresentação</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:8mm;">Antes de começar</div>
+        <h2 class="opener-title">O problema não é ser <span class="it">gentil.</span></h2>
+        <div class="opener-grid">
+          <div>
+            <p>Você fez o teste e descobriu que seu perfil predominante é o Político. Talvez tenha lido o resultado e pensado: “mas isso é ruim?”. Afinal, quem não gosta de ser visto como educado, conciliador, acessível e querido?</p>
+            <p>O problema não está em ser gentil. O problema está em <b>precisar da aprovação de todos</b> para conseguir tomar decisões. É exatamente aí que muitos síndicos começam a perder a própria autoridade.</p>
+          </div>
+          <div>
+            <p>O síndico Político costuma ser bem-intencionado. Escuta, dialoga, tenta entender todos os lados, evita confronto, busca consenso. Em algum momento, porém, a busca pela paz começa a custar caro.</p>
+            <p>Administrar condomínio não é um concurso de popularidade. É um exercício diário de liderança. E liderança exige decisões que nem sempre agradam. Este guia te ajuda a encontrar o equilíbrio entre <b>ser respeitado e ser aprovado</b>, que são coisas completamente diferentes.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">A virada que este guia propõe</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Manter o relacional que sempre foi sua força, e somar a ele a firmeza que está faltando.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">O que você vai encontrar</div>
+            <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Dez capítulos, três ferramentas (sinais, método para dizer não, teste da cadeira vazia) e um plano de 30 dias para sair do modo refém da aprovação.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 13</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · TOC -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:5mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">01·02</span><span class="ttl">O síndico não foi eleito para agradar, e como nasce o Político</span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">03</span><span class="ttl">Sinais de que você está sendo refém da aprovação</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">04</span><span class="ttl">A doença do “deixa pra depois”</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">05·06</span><span class="ttl">O preço de agradar todos, e empatia não é concordância</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">07</span><span class="ttl">O poder da decisão impopular</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">08</span><span class="ttl">Como dizer não sem criar uma guerra</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">09·10</span><span class="ttl">O teste da cadeira vazia e como construir respeito</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Checklist, exercício prático e teste final</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Plano de ação para 30 dias</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Conclusão · do candidato ao líder</span><span class="pg">13</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">Convite · a Mentoria Bastidores da Sindicatura</span><span class="pg">14</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · CAP 01 + 02 -->
+  <section class="page" data-screen-label="04 Cap 01-02">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 01 e 02</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulos 01 e 02</div>
+        <h2>O síndico não foi eleito para <span class="it">agradar</span>.</h2>
+      </div>
+      <p class="body">Uma verdade difícil para começar. Nem todos os moradores vão gostar de você. Nem todos vão concordar com suas decisões. Nem todos vão reconhecer seu trabalho. E isso não significa que sua gestão esteja errada.</p>
+      <p class="body">Uma das maiores armadilhas da sindicatura é acreditar que uma boa gestão será unanimidade. Não será. Se você toma decisões, vai criar desconforto em alguém. Toda decisão gera beneficiados e contrariados. Faz parte do jogo.</p>
+      <div class="frases-head" style="margin-top:5mm;">
+        <div class="section-kicker">Como nasce o Político</div>
+        <h2 style="font-size:18pt;">Três motivos por trás do <span class="it">comportamento</span>.</h2>
+      </div>
+      <div class="threeframe" style="flex:1; align-content:start;">
+        <div class="block-card">
+          <div class="h-sub">1 · Medo de rejeição</div>
+          <p style="margin:0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Quer ser bem-visto, evitar críticas, ser reconhecido. Aos poucos, começa a adaptar decisões só para reduzir conflitos.</p>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">2 · Medo de perder o cargo</div>
+          <p style="margin:0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Passa a governar pensando na próxima eleição, não no próximo resultado. Toma decisões populares, adia as necessárias, e o condomínio paga depois.</p>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">3 · Empatia que vira permissividade</div>
+          <p style="margin:0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Escutar é importante. Compreender é importante. Mas permitir tudo não é gestão. É omissão. A confusão entre acolher e ceder cobra caro.</p>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:5mm;">
+        <span class="lbl">Frase para guardar</span>
+        <span class="txt">Toda decisão gera beneficiados e contrariados. Negar essa realidade é negar o próprio papel do síndico.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 01 e 02 · O síndico não foi eleito para agradar</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · CAP 03 -->
+  <section class="page" data-screen-label="05 Cap 03">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 03 · Sinais</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">03</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo três</div>
+          <h2 class="section-title">Sinais de que você está sendo refém da <span class="serif" style="font-style:italic;color:var(--accent);">aprovação</span>.</h2>
+          <p class="section-lede">Leia com calma. Quanto mais itens você marcar, maior a chance de a sua gestão estar sendo conduzida pelo medo da desaprovação. E é nesse ponto que a autoridade começa a vazar.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2">
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Muda de opinião para evitar discussão</li>
+            <li><span class="box"></span>Adia decisões difíceis</li>
+            <li><span class="box"></span>Evita responder de forma direta</li>
+            <li><span class="box"></span>Diz “vou pensar” quando já sabe a resposta</li>
+            <li><span class="box"></span>Faz concessões excessivas</li>
+          </ul>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Sente desconforto quando alguém fica insatisfeito</li>
+            <li><span class="box"></span>Gasta energia tentando convencer todos</li>
+            <li><span class="box"></span>Reabre discussões já encerradas</li>
+            <li><span class="box"></span>Busca constantemente validação</li>
+            <li><span class="box"></span>Tem medo de ser visto como “duro”</li>
+          </ul>
+        </div>
+        <div class="callout">O Político não percebe o desgaste enquanto está acontecendo. Ele só descobre quando alguém finalmente diz na cara: “você muda de posição dependendo de quem está falando”. E aí já é narrativa.</div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">Quem precisa ser aprovado por todos não tem autoridade real. Tem autoridade emprestada por quem ainda não retirou o apoio.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 03 · Sinais de refém da aprovação</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · CAP 04 -->
+  <section class="page" data-screen-label="06 Cap 04">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 04 · Deixa pra depois</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">04</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo quatro</div>
+          <h2 class="section-title">A doença do <span class="serif" style="font-style:italic;color:var(--accent);">“deixa pra depois”</span>.</h2>
+          <p class="section-lede">O Político raramente diz não. Ele adia, empurra, prorroga. Promete analisar, estudar, conversar de novo. Mas a realidade não muda: problema adiado não desaparece, ele cresce.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Os clássicos que ficam pra depois</div>
+            <ul class="bul">
+              <li>Morador inadimplente que não é cobrado</li>
+              <li>Obra irregular que não é interrompida</li>
+              <li>Funcionário inadequado que não é substituído</li>
+              <li>Fornecedor ruim que continua prestando serviço</li>
+              <li>Conflitos recorrentes que nunca são enfrentados</li>
+            </ul>
+          </div>
+          <div>
+            <div class="block-card">
+              <div class="h-sub">A conta vem dobrada</div>
+              <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">A tentativa de evitar desconforto agora gera problemas maiores depois. O que custa uma conversa firme hoje pode virar perda financeira, ação judicial ou desgaste público amanhã.</p>
+            </div>
+            <div class="callout" style="margin-top:4mm;">A virada começa quando o síndico percebe que adiar não é uma forma de evitar conflito. É uma forma de financiar o conflito futuro com juros.</div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Frase para guardar</span>
+          <span class="txt">O que você não enfrenta hoje, te enfrenta amanhã. Geralmente em assembleia, com plateia.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 04 · A doença do “deixa pra depois”</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · CAP 05 + 06 -->
+  <section class="page" data-screen-label="07 Cap 05-06">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 05 e 06</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulos 05 e 06</div>
+        <h2>O preço de agradar todos, e empatia não é <span class="it">concordância</span>.</h2>
+      </div>
+      <p class="body">Quando o síndico tenta agradar todos os grupos ao mesmo tempo, perde algo bem mais importante: a <b>credibilidade</b>. Os moradores começam a perceber: “ele muda de posição dependendo de quem está falando”, “hoje disse uma coisa, amanhã outra”, “não sabemos qual é a posição dele”.</p>
+      <p class="body">A consequência é perigosa. A gestão perde previsibilidade. E quando a previsibilidade desaparece, a confiança vai junto.</p>
+      <div class="frases-head" style="margin-top:4mm;">
+        <div class="section-kicker">Capítulo 06</div>
+        <h2 style="font-size:18pt;">Escutar não significa <span class="it">ceder</span>.</h2>
+      </div>
+      <p class="body">Uma das habilidades mais importantes da liderança é aprender a separar escuta de concordância. Você pode ouvir alguém com respeito, acolher uma reclamação, compreender uma frustração, e ainda assim dizer não. Sem culpa, sem agressividade, sem justificativas intermináveis.</p>
+      <div class="compare" style="margin-top:auto;">
+        <div class="box bad">
+          <span class="lbl">Político</span>
+          <p>“Eu te entendo, vou ver o que posso fazer.” E reabre o assunto na semana seguinte.</p>
+        </div>
+        <div class="box good">
+          <span class="lbl">Líder</span>
+          <p>“Eu te entendo. A decisão segue baseada na convenção e na assembleia. O assunto fica encerrado neste ponto.”</p>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 05 e 06 · O preço e a empatia</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · CAP 07 -->
+  <section class="page" data-screen-label="08 Cap 07">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 07 · Decisão impopular</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">07</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo sete</div>
+          <h2 class="section-title">O poder da decisão <span class="serif" style="font-style:italic;color:var(--accent);">impopular</span>.</h2>
+          <p class="section-lede">Existem decisões que ninguém quer tomar. Mas alguém precisa. E esse alguém é o síndico. A pergunta correta nunca foi “as pessoas vão gostar?”. A pergunta correta é “isso é o melhor para o condomínio?”.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">As decisões que ninguém quer</div>
+            <ul class="bul">
+              <li>Cobrança de inadimplentes</li>
+              <li>Aplicação de multas</li>
+              <li>Troca de fornecedores</li>
+              <li>Reformas necessárias</li>
+              <li>Aumento de taxa condominial</li>
+              <li>Atualização de regras</li>
+            </ul>
+          </div>
+          <div>
+            <div class="block-card">
+              <div class="h-sub">O que muda quando você assume</div>
+              <p style="margin:0;font-size:10pt;line-height:1.6;color:var(--ink-2);">Você deixa de governar pela próxima eleição e começa a governar pelo próximo balancete. A diferença, no ano seguinte, fica em todo lugar: caixa, manutenção, ambiente, reputação.</p>
+            </div>
+            <div class="survival" style="margin-top:4mm;">
+              <span class="lbl">Pergunta certa</span>
+              <span class="txt">Isso é o melhor para o condomínio? Se for, faça. O resto é narrativa para administrar depois.</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 07 · O poder da decisão impopular</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · CAP 08 · MÉTODO DIZER NÃO -->
+  <section class="page" data-screen-label="09 Cap 08">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 08 · Método</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 08 · método</div>
+        <h2>Como dizer não sem criar uma <span class="it">guerra</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:5mm;">Quatro etapas. Funciona em conversa de elevador, em mensagem no canal oficial e em assembleia. O segredo é não pular nenhuma e não inverter a ordem.</p>
+      <ol class="enum" style="flex:1; align-content:start;">
+        <li><b>Escute.</b> Deixe a pessoa falar até o fim. Não interrompa, não defenda. O outro precisa sentir que foi ouvido antes de qualquer resposta.</li>
+        <li><b>Reconheça.</b> “Entendo sua preocupação.” “Compreendo seu ponto de vista.” Reconhecer não é concordar. É confirmar que a fala foi recebida.</li>
+        <li><b>Fundamente.</b> Explique a razão da decisão com base em convenção, regulamento, deliberação de assembleia, contrato ou aspecto técnico. Argumento, não opinião.</li>
+        <li><b>Encerre.</b> Decisão tomada. Sem reabrir o assunto indefinidamente. Se o outro insiste, retome a fundamentação e finalize com educação.</li>
+      </ol>
+      <div class="quote-block" style="margin-top:5mm;background:var(--paper-2);">
+        Dizer não com técnica não destrói relação. Destrói relação dizer sim sem critério, e ter que voltar atrás depois.
+        <div class="signature">Bastidores da Sindicatura</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 08 · Como dizer não sem criar uma guerra</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · CAP 09 + 10 -->
+  <section class="page" data-screen-label="10 Cap 09-10">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 09 e 10</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 09 · ferramenta</div>
+        <h2>O teste da <span class="it">cadeira vazia</span>.</h2>
+      </div>
+      <div class="chair" style="margin-bottom:6mm;">
+        <p>Antes de qualquer decisão delicada, imagine uma cadeira vazia na sua frente. Nela está sentado um morador que nunca te conheceu. Ele não é seu amigo, não vota em você, não está no conselho, não participa dos grupos.</p>
+        <p class="q">Agora pergunte: essa decisão ainda seria a mesma?</p>
+        <p>Se a resposta for sim, você está sendo justo. Se for não, talvez esteja tentando agradar alguém específico.</p>
+      </div>
+      <div class="frases-head" style="margin-bottom:4mm;">
+        <div class="section-kicker">Capítulo 10</div>
+        <h2 style="font-size:18pt;">Como construir <span class="it">respeito</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:4mm;font-size:10pt;">Respeito não nasce da simpatia. Nasce da combinação de cinco fatores. Quando os cinco estão presentes, ninguém precisa pedir respeito. Ele acontece.</p>
+      <div class="pillars">
+        <div class="pillar"><p class="word">Clareza</p><p>As pessoas sabem o que esperar de você.</p></div>
+        <div class="pillar"><p class="word">Coerência</p><p>Você mantém o mesmo padrão em todas as situações.</p></div>
+        <div class="pillar"><p class="word">Justiça</p><p>Trata situações semelhantes da mesma forma.</p></div>
+        <div class="pillar"><p class="word">Coragem</p><p>Enfrenta decisões difíceis em vez de adiar.</p></div>
+        <div class="pillar"><p class="word">Transparência</p><p>Explica os motivos por trás de cada decisão.</p></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 09 e 10 · Cadeira vazia e construir respeito</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · CHECKLIST + EXERCÍCIO + TESTE FINAL -->
+  <section class="page" data-screen-label="11 Checklist">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Autoavaliação</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Autoavaliação</div>
+        <h2>Você está governando ou <span class="it">agradando</span>?</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Marque os itens verdadeiros para a sua gestão hoje.</p>
+      <div class="cols-2" style="margin-bottom:5mm;">
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>Consigo dizer não quando necessário</li>
+          <li><span class="box"></span>Não altero decisões para evitar críticas</li>
+          <li><span class="box"></span>Cobro regras independentemente de quem é</li>
+          <li><span class="box"></span>Não decido pensando na próxima eleição</li>
+          <li><span class="box"></span>Consigo lidar com pessoas insatisfeitas</li>
+        </ul>
+        <ul class="checks stack-tight">
+          <li><span class="box"></span>Não preciso ser aprovado por todos</li>
+          <li><span class="box"></span>Tomo decisões baseadas em critérios</li>
+          <li><span class="box"></span>Encaminho conflitos em vez de ignorar</li>
+          <li><span class="box"></span>Não adio conversas difíceis</li>
+          <li><span class="box"></span>Priorizo o condomínio acima da popularidade</li>
+        </ul>
+      </div>
+      <div class="frases-head" style="margin-bottom:3mm;">
+        <div class="section-kicker">Exercício prático</div>
+        <h2 style="font-size:18pt;">Três decisões que você está <span class="it">adiando</span>.</h2>
+      </div>
+      <div class="block-card" style="margin-bottom:5mm;">
+        <p style="margin:0 0 3mm;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Liste no papel, sem julgamento.</p>
+        <ol style="margin:0;padding:0 0 0 16mm;list-style:none;counter-reset:ex;">
+          <li style="counter-increment:ex;padding:1.2mm 0;border-bottom:1px dotted var(--line);position:relative;font-size:10pt;color:var(--ink-2);">
+            <span style="position:absolute;left:-14mm;font-family:'Instrument Serif';font-style:italic;font-size:13pt;color:var(--accent);">01</span>
+            ____________________________________________________
+          </li>
+          <li style="counter-increment:ex;padding:1.2mm 0;border-bottom:1px dotted var(--line);position:relative;font-size:10pt;color:var(--ink-2);">
+            <span style="position:absolute;left:-14mm;font-family:'Instrument Serif';font-style:italic;font-size:13pt;color:var(--accent);">02</span>
+            ____________________________________________________
+          </li>
+          <li style="counter-increment:ex;padding:1.2mm 0;position:relative;font-size:10pt;color:var(--ink-2);">
+            <span style="position:absolute;left:-14mm;font-family:'Instrument Serif';font-style:italic;font-size:13pt;color:var(--accent);">03</span>
+            ____________________________________________________
+          </li>
+        </ol>
+        <p style="margin:3mm 0 0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Agora responda: por que ainda não tomou essas decisões? Medo de conflito? Medo de crítica? Medo de perder apoio? Seja honesto. A resposta revela mais sobre a gestão do que qualquer relatório financeiro.</p>
+      </div>
+      <div class="frases-head" style="margin-bottom:3mm;">
+        <div class="section-kicker">Teste final</div>
+        <h2 style="font-size:18pt;">Dois síndicos. Qual <span class="it">você</span> é?</h2>
+      </div>
+      <div class="compare">
+        <div class="box bad"><span class="lbl">O primeiro</span><p>É amado por todos, mas evita decisões difíceis. Recebe aplauso na assembleia e deixa o caixa apertado.</p></div>
+        <div class="box good"><span class="lbl">O segundo</span><p>É respeitado. Toma decisões corretas, recebe críticas, segue firme. Deixa o condomínio melhor do que encontrou.</p></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Autoavaliação, exercício e teste final</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · PLANO 30 DIAS -->
+  <section class="page" data-screen-label="12 Plano">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Plano de ação</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Plano de ação · 30 dias</div>
+        <h2>Quatro semanas para sair do modo <span class="it">refém</span>.</h2>
+      </div>
+      <p class="body" style="font-size:10pt;margin-bottom:5mm;">Uma frente por semana. Não tente mudar tudo de uma vez. Quando virar hábito, você não vai mais reconhecer a gestão que tinha antes.</p>
+      <div class="cols-2" style="flex:1; align-content:start;">
+        <div>
+          <div class="h-sub">Semana 01 · Diagnóstico</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Listar as decisões que você está adiando</li>
+            <li><span class="box"></span>Anotar o medo por trás de cada uma</li>
+            <li><span class="box"></span>Identificar moradores que você tenta agradar com mais frequência</li>
+            <li><span class="box"></span>Mapear os assuntos onde você muda de opinião com facilidade</li>
+          </ul>
+          <div class="h-sub" style="margin-top:5mm;">Semana 02 · Priorize</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Escolher as três decisões mais importantes</li>
+            <li><span class="box"></span>Reunir os documentos que fundamentam cada uma</li>
+            <li><span class="box"></span>Aplicar o teste da cadeira vazia em cada uma</li>
+            <li><span class="box"></span>Definir prazo para a comunicação</li>
+          </ul>
+        </div>
+        <div>
+          <div class="h-sub">Semana 03 · Comunique</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Comunicar cada decisão pelo canal correto</li>
+            <li><span class="box"></span>Usar o método de quatro etapas (escute, reconheça, fundamente, encerre)</li>
+            <li><span class="box"></span>Registrar tudo em ata ou e-mail</li>
+            <li><span class="box"></span>Não reabrir discussão fora dos canais formais</li>
+          </ul>
+          <div class="h-sub" style="margin-top:5mm;">Semana 04 · Execute</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Aplicar a decisão, mesmo que alguém não goste</li>
+            <li><span class="box"></span>Acompanhar a execução pelos canais formais</li>
+            <li><span class="box"></span>Documentar o que funcionou e o que precisou ajustar</li>
+            <li><span class="box"></span>Reservar 30 minutos para refletir sobre a virada</li>
+          </ul>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:5mm;">
+        <span class="lbl">Princípio do plano</span>
+        <span class="txt">Coragem se constrói por repetição. Cada decisão bem fundamentada que você sustenta torna a próxima mais leve.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Plano de ação · 30 dias</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · CONCLUSÃO -->
+  <section class="page" data-screen-label="13 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">Do candidato ao <span class="serif" style="font-style:italic;color:var(--accent);">líder</span>.</h2>
+          <p class="section-lede">O síndico Político tem uma qualidade valiosa: se importa com as pessoas. Mas existe uma diferença enorme entre liderar pessoas e depender da aprovação delas.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p class="body">A liderança verdadeira começa quando você entende que sua responsabilidade não é fazer todo mundo feliz. Sua responsabilidade é proteger os interesses do condomínio. Nem sempre a decisão correta será popular. Nem sempre a medida necessária será confortável. Nem sempre você vai receber aplausos.</p>
+        <div class="refrain">
+          <p>Os melhores síndicos não são lembrados porque agradaram a todos.</p>
+          <p>São lembrados porque tiveram <b>coragem</b> de fazer o que precisava ser feito.</p>
+          <p>Mesmo quando isso era desconfortável.</p>
+          <p>Mesmo quando isso gerava críticas.</p>
+          <p>Mesmo quando isso exigia firmeza.</p>
+        </div>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          Condomínio não precisa de um candidato permanente. Precisa de um líder. A diferença entre os dois é só uma: a coragem de sustentar uma decisão depois de tomá-la.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · Do candidato ao líder</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · CONVITE -->
+  <section class="page capture" data-screen-label="14 Mentoria">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>O convite</div></div>
+    <div class="pg-body">
+      <div class="invite-head">Convite · não é para todo síndico</div>
+      <h2 class="invite-title">A Mentoria não é um curso. É um <span class="it">espaço fechado.</span></h2>
+      <div class="invite-grid">
+        <div>
+          <p>A Mentoria Bastidores da Sindicatura não é aberta. É uma turma pequena, com vagas escolhidas a dedo. <b>Eu seleciono pessoalmente cada participante.</b></p>
+          <p>Por dois motivos. O primeiro é o nível da conversa. Os bastidores que eu compartilho ali dentro não cabem em sala lotada. O segundo é o método. Um espaço fechado garante que cada decisão seja debatida com a profundidade que esse mercado exige.</p>
+          <p>Se você reconheceu o Político em você e decidiu que esse jeito acaba aqui, você tem o primeiro requisito.</p>
+        </div>
+        <div>
+          <p>Sua habilidade de relacionamento já existe. O próximo passo é desenvolver <b>firmeza, posicionamento, comunicação estratégica e tomada de decisão.</b></p>
+          <p>Você vai aprender o que raramente aparece nos cursos: como lidar com pressão, críticas, grupos de interesse, conflitos, conselhos, moradores difíceis e decisões impopulares sem perder autoridade.</p>
+          <p>Não é para quem quer aprender mais sobre sindicatura. É para quem decidiu construir uma <b>carreira</b> na sindicatura, com método, autoridade e reputação.</p>
+        </div>
+      </div>
+      <div class="selection-band">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Vagas <span class="it">limitadas</span> por turma. Seleção por <span class="it">perfil.</span></div>
+        <p class="lines">Os bastidores que ninguém mostra.<br/>As conversas que ninguém grava.<br/>As decisões que mudam uma gestão inteira.</p>
+        <div class="u">→ Candidate-se em <span>www.bastidoresdasindicatura.com.br</span></div>
+        <div class="note">Próxima turma com vagas restritas. A seleção é feita pessoalmente pela Juliana Moreira.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>O convite · Mentoria Bastidores da Sindicatura</div><div class="pg-num">14</div></div>
+  </section>
+
+  <!-- PAGE 15 · MANIFESTO / CLOSE -->
+  <section class="page manifesto" data-screen-label="15 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top:30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:12mm;">
+        <div class="cover-eyebrow" style="margin:0;">Arquétipo Político · Vol. 13</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:165mm;">
+          O Político busca <em style="font-style:italic;color:var(--accent);">aprovação.</em><br/>
+          O líder busca <em style="font-style:italic;color:var(--accent);">o melhor para o condomínio.</em>
+        </h2>
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          Ser respeitado e ser aprovado são coisas diferentes. O dia em que isso fica claro, a sindicatura muda de patamar. E você também.
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 13 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite"><b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab=document.getElementById('pdfFab'); var hint=document.getElementById('pdfHint');
+    if(!fab) return; var t;
+    fab.addEventListener('mouseenter',function(){ clearTimeout(t); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave',function(){ t=setTimeout(function(){ hint.classList.remove('show'); },250); });
+    fab.addEventListener('click',function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); },120); setTimeout(function(){ hint.classList.remove('show'); },4000); });
+  })();
+</script>
+</body>
+</html>
