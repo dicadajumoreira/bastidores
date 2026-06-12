@@ -1,0 +1,1155 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>As 50 Confusões da Copa do Mundo no Condomínio · Bastidores da Sindicatura · Vol. 18</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <circle r="120" fill="none" stroke="#B8543B" stroke-width="6"/>
+      <path d="M-46 -8 a46 40 0 1 0 18 -34 L-46 -54 Z" fill="none" stroke="#B8543B" stroke-width="12" stroke-linejoin="round"/>
+      <text y="180" font-family="serif" font-style="italic" font-size="64" fill="#0E1A2B">Bastidores</text>
+      <text y="240" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A;
+    --risk-low:#5C9A5C; --risk-med:#D6A24A; --risk-high:#B8543B;
+    --rule:1px solid var(--line);
+  }
+  @page { size: 210mm 297mm; margin: 0; }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; width:210mm; background:#2A2522; font-family:"Manrope", system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; color:var(--ink); page-break-after:always; break-after:page; margin:0 auto; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen { html, body{ width:auto; } body{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 0 60px; } .page{ box-shadow:0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); } }
+  @media print{ html, body{ background:#fff; width:210mm; margin:0; padding:0; display:block; } .page{ box-shadow:none; margin:0; display:block; } }
+
+  .frame{ position:absolute; inset:14mm 16mm; }
+  .pg-head{ position:absolute; top:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); padding-bottom:4mm; border-bottom:var(--rule); }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{ width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  .pg-foot{ position:absolute; bottom:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:8.5pt; color:var(--muted); padding-top:4mm; border-top:var(--rule); }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .pg-body{ position:absolute; top:22mm; bottom:18mm; left:16mm; right:16mm; display:flex; flex-direction:column; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif","Times New Roman",serif; font-weight:400; }
+  .section-num{ font-family:"Instrument Serif"; font-style:italic; font-size:64pt; line-height:1; color:var(--accent); letter-spacing:-.02em; }
+  .section-kicker{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-title{ font-family:"Instrument Serif"; font-weight:400; font-size:32pt; line-height:1.04; letter-spacing:-.01em; color:var(--ink); margin-top:2mm; }
+  .section-lede{ font-size:10pt; line-height:1.55; color:var(--ink-2); max-width:135mm; margin-top:5mm; }
+  .h-sub{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:4mm; }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2.2mm; }
+  ul.checks li{ display:flex; gap:9px; align-items:flex-start; font-size:9.5pt; line-height:1.4; color:var(--ink-2); padding:.9mm 0; border-bottom:1px dotted var(--line); }
+  ul.checks li:last-child{ border-bottom:none; }
+  ul.checks li .box{ flex:0 0 auto; width:4mm; height:4mm; border:1.2px solid var(--ink); border-radius:1.2px; background:var(--cream); margin-top:1.2mm; }
+  .stack-tight ul.checks li{ font-size:8.8pt; padding:.5mm 0; }
+  .stack-tight ul.checks li .box{ width:3.5mm; height:3.5mm; margin-top:.9mm; }
+  ul.bul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:2mm; }
+  ul.bul li{ display:flex; gap:9px; align-items:flex-start; font-size:9.5pt; line-height:1.45; color:var(--ink-2); padding:.9mm 0; border-bottom:1px dotted var(--line); }
+  ul.bul li:last-child{ border-bottom:none; }
+  ul.bul li::before{ content:""; flex:0 0 auto; width:4px; height:4px; margin-top:2.4mm; background:var(--accent); border-radius:50%; }
+
+  .cols-2{ display:grid; grid-template-columns:1fr 1fr; column-gap:10mm; align-items:start; }
+  ol.enum{ list-style:none; padding:0; margin:0; counter-reset:en; display:flex; flex-direction:column; gap:1.5mm; }
+  ol.enum li{ counter-increment:en; display:flex; gap:9px; align-items:baseline; font-size:9.5pt; line-height:1.45; color:var(--ink-2); padding:1mm 0; border-bottom:1px dotted var(--line); }
+  ol.enum li::before{ content:counter(en, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--accent); flex:0 0 9mm; }
+  ol.enum li b{ color:var(--ink); }
+
+  .callout{ background:var(--paper-2); border-left:3px solid var(--accent); padding:4mm 5mm; font-size:9pt; line-height:1.5; color:var(--ink-2); margin-top:3mm; }
+  .callout b{ color:var(--ink); }
+  .quote-block{ background:var(--cream); border:1px solid var(--line); padding:6mm 7mm; font-family:"Instrument Serif"; font-style:italic; font-size:12pt; line-height:1.45; color:var(--ink); }
+  .quote-block .signature{ margin-top:3mm; font-family:"Manrope"; font-style:normal; font-size:8pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .survival{ background:var(--paper-2); border-left:3px solid var(--accent); padding:4mm 6mm; display:flex; flex-direction:column; gap:1.5mm; }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size:7.8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; line-height:1.3; color:var(--ink); }
+
+  .hr-orn{ display:flex; align-items:center; gap:10px; color:var(--accent); margin:3mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent);}
+
+  .refrain{ display:flex; flex-direction:column; gap:1.2mm; padding:3mm 5mm; border-left:2px solid var(--line); }
+  .refrain p{ margin:0; font-size:10pt; line-height:1.5; color:var(--ink-2); }
+  .refrain p b{ color:var(--ink); font-weight:600; }
+
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+  .compare .box{ padding:4mm 5mm; }
+  .compare .bad{ background:var(--paper-2); border-left:3px solid var(--accent); }
+  .compare .good{ background:var(--cream); border-left:3px solid var(--gold); }
+  .compare .lbl{ font-family:"Manrope"; font-weight:700; font-size:7.8pt; letter-spacing:.18em; text-transform:uppercase; margin-bottom:1.8mm; display:block; }
+  .compare .bad .lbl{ color:var(--accent); }
+  .compare .good .lbl{ color:var(--gold); }
+  .compare p{ margin:0; font-family:"Instrument Serif"; font-style:italic; font-size:10pt; line-height:1.35; color:var(--ink); }
+
+  /* CONFUSÃO cards */
+  .bloco-head{ display:flex; align-items:baseline; gap:8mm; flex-wrap:wrap; padding-bottom:3mm; border-bottom:var(--rule); margin-bottom:5mm; }
+  .bloco-head .kicker{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); }
+  .bloco-head h2{ font-family:"Instrument Serif"; font-weight:400; font-size:22pt; line-height:1.05; color:var(--ink); margin:0; }
+  .bloco-head h2 .it{ font-style:italic; color:var(--accent); }
+  .bloco-head .range{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--muted); margin-left:auto; }
+
+  .confusoes{ display:grid; grid-template-columns:1fr 1fr; gap:5mm 8mm; flex:1; align-content:start; }
+  .confusao{ display:grid; grid-template-columns:11mm 1fr; gap:0 3mm; align-items:start; }
+  .confusao .num{ font-family:"Instrument Serif"; font-style:italic; font-size:22pt; line-height:.85; color:var(--accent); }
+  .confusao .body{ min-width:0; }
+  .confusao .titulo{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.05em; text-transform:uppercase; color:var(--ink); display:block; margin-bottom:1mm; }
+  .confusao .problema{ font-family:"Instrument Serif"; font-style:italic; font-size:9.5pt; line-height:1.3; color:var(--ink-2); margin:0 0 2mm; }
+  .confusao .tags{ display:flex; flex-wrap:wrap; gap:1.5mm; margin-bottom:1.8mm; }
+  .tag-status{ display:inline-flex; align-items:center; gap:3px; padding:.7mm 1.8mm; background:var(--cream); border:1px solid var(--line); border-radius:1mm; font-family:"Manrope"; font-size:6.8pt; letter-spacing:.06em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .tag-status b{ color:var(--ink); font-weight:700; }
+  .tag-status .dot{ width:5px; height:5px; border-radius:50%; }
+  .tag-status .dot.low{ background:var(--risk-low); }
+  .tag-status .dot.med{ background:var(--risk-med); }
+  .tag-status .dot.high{ background:var(--risk-high); }
+  .confusao .acao{ font-family:"Manrope"; font-size:8.3pt; line-height:1.38; color:var(--ink-2); margin:0 0 1mm; }
+  .confusao .acao::before{ content:"▸ "; color:var(--accent); font-weight:700; }
+  .confusao .base{ font-family:"Manrope"; font-size:7pt; line-height:1.3; color:var(--muted); margin:0; font-style:italic; }
+  .confusao .base::before{ content:"§ "; color:var(--accent); font-style:normal; }
+
+  /* matriz */
+  .matriz{ display:grid; grid-template-columns:45mm 1fr 1fr; border:1px solid var(--line); border-radius:1mm; overflow:hidden; }
+  .matriz .row{ display:contents; }
+  .matriz .row > div{ padding:2mm 4mm; border-bottom:1px dotted var(--line); font-size:8.5pt; line-height:1.35; color:var(--ink-2); }
+  .matriz .row:last-child > div{ border-bottom:none; }
+  .matriz .header > div{ background:var(--ink); color:var(--paper); font-family:"Manrope"; font-weight:700; font-size:7.8pt; letter-spacing:.16em; text-transform:uppercase; border-bottom:none; }
+  .matriz .row > div:first-child{ font-weight:600; color:var(--ink); background:var(--cream); }
+
+  /* timeline / plano */
+  .timeline{ display:flex; flex-direction:column; gap:3mm; }
+  .tline{ display:grid; grid-template-columns:22mm 1fr; gap:5mm; align-items:start; padding:3mm 5mm; background:var(--cream); border-left:3px solid var(--accent); }
+  .tline .when{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent); line-height:1.05; }
+  .tline .what{ font-size:9pt; line-height:1.45; color:var(--ink-2); }
+  .tline .what b{ color:var(--ink); font-weight:700; }
+
+  /* models grid */
+  .models-grid{ display:grid; grid-template-columns:1fr 1fr; gap:4mm; }
+  .model{ background:var(--cream); border:1px dashed var(--gold); padding:4mm 5mm; position:relative; }
+  .model::before{ content:attr(data-label); position:absolute; top:-3mm; left:5mm; background:var(--paper); padding:0 2mm; font-family:"Manrope"; font-size:7.5pt; letter-spacing:.18em; color:var(--gold); font-weight:700; text-transform:uppercase; }
+  .model p{ margin:0; font-family:"Instrument Serif"; font-style:italic; font-size:9.5pt; line-height:1.4; color:var(--ink-2); }
+  .model p+p{ margin-top:2mm; }
+
+  /* mini-grid for checklists */
+  .mini-grid{ display:grid; grid-template-columns:1fr 1fr; gap:4mm 8mm; align-content:start; }
+  .mini-grid.cols-3{ grid-template-columns:1fr 1fr 1fr; }
+  .mini .h-sub{ margin-bottom:2.5mm; font-size:8.2pt; }
+  .mini ul.checks li{ font-size:8.5pt; padding:.3mm 0; }
+  .mini ul.checks li .box{ width:3mm; height:3mm; margin-top:.8mm; }
+
+  /* replies (10 frases) */
+  .replies{ display:grid; grid-template-columns:1fr 1fr; gap:3mm 8mm; }
+  .reply-card{ border-left:2px solid var(--accent); padding-left:4mm; }
+  .reply-card .sit{ font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--ink); display:block; margin-bottom:1mm; }
+  .reply-card p{ margin:0; font-family:"Manrope"; font-size:8.5pt; line-height:1.42; color:var(--ink-2); }
+
+  /* COVER */
+  .cover{ background: radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.14), transparent 55%), radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%), var(--paper); }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:var(--rule); padding-bottom:6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap:10px; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); }
+  .cover-brand .logo .mark{ width:30px; height:30px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border:2px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .cover-brand .sub{ font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--accent); }
+  .cover-meta .label{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:12mm 0 8mm; }
+  .cover-eyebrow{ font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:8mm; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size:56pt; line-height:.98; letter-spacing:-.022em; color:var(--ink); margin:0 0 6mm; }
+  .cover-title .it{ font-style:italic; color:var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size:12pt; line-height:1.5; color:var(--ink-2); max-width:158mm; }
+  .cover-bottom{ border-top:var(--rule); padding-top:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap:13mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size:36pt; line-height:1; color:var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color:var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:2mm; }
+
+  /* OPENER */
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size:42pt; line-height:1.02; color:var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style:italic; color:var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:7mm; }
+  .opener-grid p{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  /* TOC */
+  .toc-list{ display:grid; grid-template-columns:1fr 1fr; column-gap:10mm; margin-top:3mm; }
+  .toc-item{ display:flex; align-items:baseline; gap:8px; padding:1.8mm 0; border-bottom:1px dotted var(--line); font-size:9pt; color:var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--accent); flex:0 0 11mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size:10pt; color:var(--muted); }
+
+  .section-head{ display:flex; gap:9mm; align-items:flex-start; padding-bottom:5mm; border-bottom:var(--rule); margin-bottom:5mm; }
+  .section-head .big{ flex:0 0 auto; }
+  .section-head .meta{ flex:1; padding-top:4mm;}
+  .section-body{ display:flex; flex-direction:column; gap:4mm; flex:1;}
+  .block-card{ background:var(--cream); border:1px solid var(--line); padding:5mm 6mm; }
+  .twoframe{ display:grid; grid-template-columns:1fr 1fr; gap:7mm; }
+
+  /* capture */
+  .capture{ background: radial-gradient(120% 80% at 0% 0%, rgba(184,84,59,.16), transparent 55%), radial-gradient(90% 70% at 100% 100%, rgba(14,26,43,.10), transparent 55%), var(--paper); }
+  .invite-head{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:12px; margin-bottom:6mm; }
+  .invite-head::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .invite-title{ font-family:"Instrument Serif"; font-weight:400; font-size:40pt; line-height:1.02; letter-spacing:-.02em; color:var(--ink); margin:0; }
+  .invite-title .it{ font-style:italic; color:var(--accent); }
+  .invite-grid{ display:grid; grid-template-columns:1fr 1fr; gap:10mm; margin-top:8mm; }
+  .invite-grid p{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+  .invite-grid p b{ color:var(--ink); }
+  .selection-band{ background:var(--ink); color:var(--paper); padding:7mm 9mm; display:flex; flex-direction:column; gap:3mm; margin-top:auto; }
+  .selection-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .selection-band .t{ font-family:"Instrument Serif"; font-size:24pt; line-height:1.08; color:var(--paper); }
+  .selection-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .selection-band .lines{ font-family:"Instrument Serif"; font-style:italic; font-size:11pt; line-height:1.4; color:rgba(244,238,223,.92); margin:1mm 0 0; }
+  .selection-band .u{ font-family:"Manrope"; font-weight:700; font-size:11pt; letter-spacing:.04em; color:var(--paper); margin-top:2mm; }
+  .selection-band .u span{ color:var(--accent-2); }
+  .selection-band .note{ font-family:"Manrope"; font-size:8.5pt; letter-spacing:.16em; text-transform:uppercase; color:rgba(244,238,223,.6); margin-top:1mm; }
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  /* legend */
+  .legend{ display:flex; gap:5mm; flex-wrap:wrap; font-family:"Manrope"; font-size:8pt; color:var(--muted); }
+  .legend .item{ display:flex; align-items:center; gap:4px; }
+  .legend .dot{ width:7px; height:7px; border-radius:50%; }
+
+  /* Save-as-PDF FAB */
+  .pdf-fab{ position:fixed; right:22px; bottom:22px; z-index:9999; display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:#0E1A2B; color:#F4EEDF; border:none; border-radius:999px; font-family:"Manrope", system-ui, sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; box-shadow:0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30); transition:transform .15s ease, background .15s ease; }
+  .pdf-fab:hover{ transform:translateY(-2px); background:#B8543B; }
+  .pdf-fab svg{ width:16px; height:16px; flex:0 0 auto; }
+  .pdf-fab .dot-accent{ width:6px; height:6px; border-radius:50%; background:#B8543B; }
+  .pdf-hint{ position:fixed; right:22px; bottom:74px; z-index:9998; max-width:280px; padding:12px 14px; background:#FBF7EC; border:1px solid #D9D2C2; border-radius:10px; font-family:"Manrope", system-ui, sans-serif; font-size:11.5px; line-height:1.5; color:#1F2C3F; box-shadow:0 10px 30px rgba(0,0,0,.18); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .pdf-hint.show{ opacity:1; transform:translateY(0); }
+  .pdf-hint b{ color:#B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display:none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 18</div>
+          <div class="label">Guia da Copa do Mundo</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">Guia jurídico e prático para síndicos</div>
+        <h1 class="cover-title">As 50 confusões que a <span class="it">Copa do Mundo</span> vai gerar no seu condomínio.</h1>
+        <p class="cover-deck">E como o síndico pode evitar reclamações, conflitos e dores de cabeça durante os jogos. Com base legal, modelos de comunicado, checklists operacionais e plano de ação.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">50</span></div><div class="l">Confusões resolvidas</div></div>
+          <div class="s"><div class="n">9</div><div class="l">Bônus práticos</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · APRESENTAÇÃO -->
+  <section class="page opener" data-screen-label="02 Apresentação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Apresentação</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:8mm;">Antes do apito inicial</div>
+        <h2 class="opener-title">A Copa não cria problemas. Ela <span class="it">amplifica</span> o que já existe.</h2>
+        <div class="opener-grid">
+          <div>
+            <p>A Copa é um dos eventos mais aguardados pelos brasileiros. Ela une famílias, vizinhos e transforma qualquer ambiente em arquibancada. Para o síndico, porém, representa aumento de circulação, uso intenso de áreas comuns, visitantes, festas improvisadas e dezenas de situações que viram conflito.</p>
+            <p>Basta um gol para o grupo de WhatsApp explodir. Basta uma bandeira na varanda para surgir discussão sobre fachada. Basta um churrasco para aparecer reclamação de barulho.</p>
+          </div>
+          <div>
+            <p>Aqui você encontra as <b>50 situações mais comuns e mais absurdas</b> que costumam acontecer nos condomínios durante os jogos. Cada uma com base legal, orientação de ação, nível de risco e modelo de comunicação.</p>
+            <p>Mais: <b>9 bônus práticos</b> com matriz jurídica, kit de comunicados, plano de ação Copa em sete marcos, checklists operacionais e respostas para as frases que você vai ouvir.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">O objetivo deste guia</div>
+            <p style="margin:0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Não é impedir a diversão. É atravessar esse período com organização, segurança, respaldo jurídico e muito menos dor de cabeça do que você esperaria.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">Como ler cada confusão</div>
+            <p style="margin:0;font-size:9.5pt;line-height:1.55;color:var(--ink-2);">Cada cena traz três status (restringir, multar, risco), uma orientação prática de ação e a base legal aplicável. Decisão informada em 30 segundos.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 18</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · CAPÍTULO ESPECIAL · HIERARQUIA -->
+  <section class="page" data-screen-label="03 Capítulo Especial">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo especial · hierarquia</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">§</div></div>
+        <div class="meta">
+          <div class="section-kicker">Antes de qualquer decisão</div>
+          <h2 class="section-title">O que vale mais: a lei, a convenção ou o <span class="serif" style="font-style:italic;color:var(--accent);">regulamento</span>?</h2>
+          <p class="section-lede">Uma das maiores dúvidas do síndico é entender qual norma prevalece quando há conflito entre regras. A resposta está na hierarquia normativa. Sem ela, qualquer decisão fica frágil.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">A hierarquia das normas</div>
+            <ol class="enum">
+              <li><b>Constituição Federal</b></li>
+              <li><b>Leis Federais</b> (Código Civil, leis específicas)</li>
+              <li><b>Convenção Condominial</b></li>
+              <li><b>Regulamento Interno</b></li>
+              <li><b>Comunicados e normas administrativas</b></li>
+            </ol>
+          </div>
+          <div>
+            <div class="block-card">
+              <div class="h-sub">As três regras de ouro</div>
+              <ul class="bul">
+                <li>A convenção não pode contrariar a lei.</li>
+                <li>O regulamento não pode contrariar a convenção.</li>
+                <li>Um comunicado do síndico não pode contrariar nenhuma das normas acima.</li>
+              </ul>
+            </div>
+            <div class="callout" style="margin-top:4mm;"><b>Exemplo prático.</b> A Bandeira Nacional tem proteção legal específica na Lei 5.700/71. A discussão jurídica sobre ela é diferente da discussão sobre uma bandeira de clube de futebol.</div>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">O síndico que decide sem checar a hierarquia constrói problema futuro. Quem checa, decide com tranquilidade.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo especial · A hierarquia das normas</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · TOC + COMO USAR -->
+  <section class="page" data-screen-label="04 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:4mm;">Como navegar pelas <span class="serif" style="font-style:italic;color:var(--accent);">50 confusões</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">01–05</span><span class="ttl">Bloco 1 · Fachada, decoração e bandeiras</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">06–10</span><span class="ttl">Bloco 2 · O grupo de WhatsApp entra em campo</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">11–15</span><span class="ttl">Bloco 3 · Visitantes e segurança</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">16–20</span><span class="ttl">Bloco 4 · Barulho e sossego</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">21–25</span><span class="ttl">Bloco 5 · Churrasqueiras e áreas comuns</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">26–30</span><span class="ttl">Bloco 6 · Crianças, pets e famílias</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">31–35</span><span class="ttl">Bloco 7 · Fogos, comemorações e exageros</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">36–40</span><span class="ttl">Bloco 8 · Funcionários e operação</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">41–45</span><span class="ttl">Bloco 9 · Tecnologia, manutenção e infraestrutura</span><span class="pg">13</span></div>
+        <div class="toc-item"><span class="num">46–50</span><span class="ttl">Bloco 10 · As confusões mais absurdas</span><span class="pg">14</span></div>
+        <div class="toc-item"><span class="num">B1</span><span class="ttl">Matriz · o que a lei permite × condomínio restringe</span><span class="pg">15</span></div>
+        <div class="toc-item"><span class="num">B2</span><span class="ttl">Kit de comunicados prontos</span><span class="pg">16</span></div>
+        <div class="toc-item"><span class="num">B3</span><span class="ttl">Plano de ação Copa · 7 marcos temporais</span><span class="pg">17</span></div>
+        <div class="toc-item"><span class="num">B4–8</span><span class="ttl">Checklists operacionais</span><span class="pg">18</span></div>
+        <div class="toc-item"><span class="num">B9</span><span class="ttl">As 10 frases que você vai ouvir</span><span class="pg">19</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Conclusão · o que as 50 têm em comum</span><span class="pg">20</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">A mentoria Bastidores da Sindicatura</span><span class="pg">21</span></div>
+      </div>
+      <div style="margin-top:auto;padding-top:5mm;">
+        <div class="legend">
+          <div class="item"><span class="dot" style="background:var(--risk-low);"></span><b>Risco baixo</b></div>
+          <div class="item"><span class="dot" style="background:var(--risk-med);"></span><b>Risco médio</b></div>
+          <div class="item"><span class="dot" style="background:var(--risk-high);"></span><b>Risco alto</b></div>
+          <div class="item"><b>▸</b> Ação recomendada</div>
+          <div class="item"><b>§</b> Base legal</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário e legenda</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · BLOCO 1 · FACHADA E BANDEIRAS -->
+  <section class="page" data-screen-label="05 Bloco 1">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bloco 1 · Fachada e bandeiras</div></div>
+    <div class="pg-body">
+      <div class="bloco-head">
+        <div><div class="kicker">Bloco 01</div><h2>Fachada, decoração e <span class="it">bandeiras</span>.</h2></div>
+        <div class="range">01 a 05</div>
+      </div>
+      <div class="confusoes">
+        <div class="confusao"><div class="num">01</div><div class="body">
+          <span class="titulo">A bandeira gigante na varanda</span>
+          <p class="problema">Estética da fachada, fixação e risco de queda em via pública.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Depende</b></span><span class="tag-status">Multar <b>Depende</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Reforce a regra de fachada antes do primeiro jogo. Critérios objetivos de tamanho, fixação e prazo de retirada.</p>
+          <p class="base">CC art. 1.336; convenção; Lei 5.700/71 para a Bandeira Nacional.</p>
+        </div></div>
+        <div class="confusao"><div class="num">02</div><div class="body">
+          <span class="titulo">A bandeira do time na sacada</span>
+          <p class="problema">Conflito estético e valor patrimonial coletivo.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot low"></span>Risco <b>Baixo</b></span></div>
+          <p class="acao">Aplicar a regra de fachada que vale o ano inteiro, sem exceção pela Copa. Comunicar antes do primeiro jogo.</p>
+          <p class="base">CC art. 1.336, IV; regulamento e convenção.</p>
+        </div></div>
+        <div class="confusao"><div class="num">03</div><div class="body">
+          <span class="titulo">A sacada que virou arquibancada</span>
+          <p class="problema">Risco estrutural, queda de objetos e barulho.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot high"></span>Risco <b>Alto</b></span></div>
+          <p class="acao">Notifique imediatamente. Ofereça alternativa em área comum apropriada. Documente.</p>
+          <p class="base">CC art. 1.277 (uso anormal da propriedade); responsabilidade civil.</p>
+        </div></div>
+        <div class="confusao"><div class="num">04</div><div class="body">
+          <span class="titulo">Decoração de área comum por conta própria</span>
+          <p class="problema">Decisão coletiva sendo tomada por um morador isolado.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Depende</b></span><span class="tag-status"><span class="dot low"></span>Risco <b>Baixo</b></span></div>
+          <p class="acao">Reforce que decoração coletiva passa pelo síndico ou pelo conselho. Oriente o canal correto.</p>
+          <p class="base">CC art. 1.331 e seguintes (uso das áreas comuns).</p>
+        </div></div>
+        <div class="confusao"><div class="num">05</div><div class="body">
+          <span class="titulo">A faixa pendurada na fachada</span>
+          <p class="problema">Padrão estético rompido e risco de queda em via pública.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Comunique antes. Aplique a regra no primeiro caso para evitar precedente.</p>
+          <p class="base">CC art. 1.336, IV; convenção.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bloco 1 · Fachada, decoração e bandeiras</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · BLOCO 2 · WHATSAPP -->
+  <section class="page" data-screen-label="06 Bloco 2">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bloco 2 · WhatsApp</div></div>
+    <div class="pg-body">
+      <div class="bloco-head">
+        <div><div class="kicker">Bloco 02</div><h2>O grupo de WhatsApp entra em <span class="it">campo</span>.</h2></div>
+        <div class="range">06 a 10</div>
+      </div>
+      <div class="confusoes">
+        <div class="confusao"><div class="num">06</div><div class="body">
+          <span class="titulo">O grupo vira torcida organizada</span>
+          <p class="problema">Polarização contamina a comunicação institucional.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Indireta</b></span><span class="tag-status">Multar <b>Não</b></span><span class="tag-status"><span class="dot low"></span>Risco <b>Baixo</b></span></div>
+          <p class="acao">Reforce as regras do grupo. Mantenha comunicação oficial em canal próprio. Não responda provocação.</p>
+          <p class="base">Política interna do grupo. Convenção sobre comunicação.</p>
+        </div></div>
+        <div class="confusao"><div class="num">07</div><div class="body">
+          <span class="titulo">A discussão política durante o jogo</span>
+          <p class="problema">Briga pessoal exposta a todos os moradores.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Indireta</b></span><span class="tag-status">Multar <b>Não</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Modere com firmeza. Encerre conversa improdutiva. Se houver ofensa, oriente a vítima sobre o caminho formal.</p>
+          <p class="base">CC art. 186 (dano moral) em caso de ofensa.</p>
+        </div></div>
+        <div class="confusao"><div class="num">08</div><div class="body">
+          <span class="titulo">200 mensagens por partida</span>
+          <p class="problema">Spam dificulta encontrar comunicação útil depois.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Não</b></span><span class="tag-status"><span class="dot low"></span>Risco <b>Baixo</b></span></div>
+          <p class="acao">Estabeleça e divulgue regras de uso. Crie canal secundário para descontração.</p>
+          <p class="base">Regras internas do grupo.</p>
+        </div></div>
+        <div class="confusao"><div class="num">09</div><div class="body">
+          <span class="titulo">Os memes que viram reclamação</span>
+          <p class="problema">Humor pode ofender, expor ou criar mal-estar.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Não</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Lembre que o grupo não é informal sem responsabilidade. Print pode virar processo.</p>
+          <p class="base">CC art. 186, 187 (abuso de direito).</p>
+        </div></div>
+        <div class="confusao"><div class="num">10</div><div class="body">
+          <span class="titulo">O fiscal da Copa</span>
+          <p class="problema">Morador cobra outros sem ter mandato.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Indireta</b></span><span class="tag-status">Multar <b>Não</b></span><span class="tag-status"><span class="dot low"></span>Risco <b>Baixo</b></span></div>
+          <p class="acao">Centralize denúncias no canal oficial. Não responda ao “fiscal” no grupo. Reforce o canal correto.</p>
+          <p class="base">Convenção. Atribuições do síndico (CC art. 1.348).</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bloco 2 · O grupo de WhatsApp entra em campo</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · BLOCO 3 · VISITANTES E SEGURANÇA -->
+  <section class="page" data-screen-label="07 Bloco 3">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bloco 3 · Segurança</div></div>
+    <div class="pg-body">
+      <div class="bloco-head">
+        <div><div class="kicker">Bloco 03</div><h2>Visitantes e <span class="it">segurança</span>.</h2></div>
+        <div class="range">11 a 15</div>
+      </div>
+      <div class="confusoes">
+        <div class="confusao"><div class="num">11</div><div class="body">
+          <span class="titulo">O churrasco de 10 que recebeu 40</span>
+          <p class="problema">Lotação excedida; risco AVCB e segurança.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot high"></span>Risco <b>Alto</b></span></div>
+          <p class="acao">Reforce a lotação do espaço antes do jogo. A portaria controla acesso e bloqueia excesso.</p>
+          <p class="base">Regulamento de áreas comuns; normas de AVCB.</p>
+        </div></div>
+        <div class="confusao"><div class="num">12</div><div class="body">
+          <span class="titulo">O visitante não autorizado</span>
+          <p class="problema">Falha grave no controle de acesso.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Notifique o morador anfitrião. Documente. Reforce protocolo da portaria.</p>
+          <p class="base">Convenção; regulamento de portaria.</p>
+        </div></div>
+        <div class="confusao"><div class="num">13</div><div class="body">
+          <span class="titulo">O entregador entrando sem controle</span>
+          <p class="problema">Quebra do protocolo de segurança.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Não</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Reforço de treinamento. Recepção no térreo. Sem subida ao apartamento sem autorização.</p>
+          <p class="base">Protocolo de portaria; LGPD para dados do visitante.</p>
+        </div></div>
+        <div class="confusao"><div class="num">14</div><div class="body">
+          <span class="titulo">A fila na portaria</span>
+          <p class="problema">Operacional. Pressão sobre o porteiro.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Não</b></span><span class="tag-status">Multar <b>Não</b></span><span class="tag-status"><span class="dot low"></span>Risco <b>Baixo</b></span></div>
+          <p class="acao">Reforço de pessoal nos dias de jogo. Comunicação prévia aos moradores sobre o fluxo.</p>
+          <p class="base">Planejamento operacional.</p>
+        </div></div>
+        <div class="confusao"><div class="num">15</div><div class="body">
+          <span class="titulo">O porteiro distraído com o jogo</span>
+          <p class="problema">Falha grave de segurança no momento mais crítico.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>N/A</b></span><span class="tag-status"><span class="dot high"></span>Risco <b>Alto</b></span></div>
+          <p class="acao">Orientação formal por escrito. Revezamento. Sem TV na guarita durante o jogo.</p>
+          <p class="base">CLT (subordinação); regimento interno.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bloco 3 · Visitantes e segurança</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · BLOCO 4 · BARULHO -->
+  <section class="page" data-screen-label="08 Bloco 4">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bloco 4 · Barulho</div></div>
+    <div class="pg-body">
+      <div class="bloco-head">
+        <div><div class="kicker">Bloco 04</div><h2>Barulho e <span class="it">sossego</span>.</h2></div>
+        <div class="range">16 a 20</div>
+      </div>
+      <div class="confusoes">
+        <div class="confusao"><div class="num">16</div><div class="body">
+          <span class="titulo">O grito do gol às 23h</span>
+          <p class="problema">Sossego em horário noturno protegido por lei.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Comunique a regra antes. Aplique com critério de razoabilidade no primeiro ato; firmeza se recorrente.</p>
+          <p class="base">CC art. 1.277; Lei de Contravenções Penais art. 42; código municipal.</p>
+        </div></div>
+        <div class="confusao"><div class="num">17</div><div class="body">
+          <span class="titulo">A corneta profissional</span>
+          <p class="problema">Ruído contínuo e alto durante a partida.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot high"></span>Risco <b>Alto</b></span></div>
+          <p class="acao">Notifique imediatamente. Documente. Acione segurança se persistir.</p>
+          <p class="base">CC art. 1.277; LCP art. 42; PROCON e código municipal.</p>
+        </div></div>
+        <div class="confusao"><div class="num">18</div><div class="body">
+          <span class="titulo">O tambor improvisado</span>
+          <p class="problema">Ruído percussivo de alta intensidade.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot high"></span>Risco <b>Alto</b></span></div>
+          <p class="acao">Notifique. Comunique antes do próximo jogo que instrumentos amplificados não serão tolerados.</p>
+          <p class="base">CC art. 1.277; convenção sobre sossego.</p>
+        </div></div>
+        <div class="confusao"><div class="num">19</div><div class="body">
+          <span class="titulo">A caixa de som na varanda</span>
+          <p class="problema">Volume alto, propagação para todos os apartamentos.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot high"></span>Risco <b>Alto</b></span></div>
+          <p class="acao">Notifique. Documente o horário. Aplique regra sem distinção entre moradores.</p>
+          <p class="base">CC art. 1.277; LCP art. 42.</p>
+        </div></div>
+        <div class="confusao"><div class="num">20</div><div class="body">
+          <span class="titulo">O karaokê pós-jogo</span>
+          <p class="problema">Som amplificado em horário noturno.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot high"></span>Risco <b>Alto</b></span></div>
+          <p class="acao">Notifique. Suspenda se persistir. Acione polícia em caso extremo.</p>
+          <p class="base">CC art. 1.277; LCP art. 42; código municipal de posturas.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bloco 4 · Barulho e sossego</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · BLOCO 5 · CHURRASQUEIRAS -->
+  <section class="page" data-screen-label="09 Bloco 5">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bloco 5 · Áreas comuns</div></div>
+    <div class="pg-body">
+      <div class="bloco-head">
+        <div><div class="kicker">Bloco 05</div><h2>Churrasqueiras e áreas <span class="it">comuns</span>.</h2></div>
+        <div class="range">21 a 25</div>
+      </div>
+      <div class="confusoes">
+        <div class="confusao"><div class="num">21</div><div class="body">
+          <span class="titulo">O campeonato da churrasqueira</span>
+          <p class="problema">Disputa por reservas nas mesmas datas.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Não</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Sistema único de reserva com comprovante. Bloqueio automático de data ocupada.</p>
+          <p class="base">Regulamento de áreas comuns.</p>
+        </div></div>
+        <div class="confusao"><div class="num">22</div><div class="body">
+          <span class="titulo">A guerra pelo espaço gourmet</span>
+          <p class="problema">Duas reservas; ambos com confirmação verbal.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>N/A</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Regra de prioridade documentada. Apenas reservas por escrito têm validade.</p>
+          <p class="base">Regulamento de áreas comuns.</p>
+        </div></div>
+        <div class="confusao"><div class="num">23</div><div class="body">
+          <span class="titulo">A reserva para terceiros</span>
+          <p class="problema">Uso da área comum por quem não é morador, sem presença do anfitrião.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Exija presença do morador. Identificação no ingresso. Responsabilidade do anfitrião.</p>
+          <p class="base">Convenção; regulamento; responsabilidade civil.</p>
+        </div></div>
+        <div class="confusao"><div class="num">24</div><div class="body">
+          <span class="titulo">O morador que monopoliza o ambiente</span>
+          <p class="problema">Reservas seguidas; outros sem acesso.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>N/A</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Limite de reservas por unidade no período da Copa. Regra divulgada antes do primeiro jogo.</p>
+          <p class="base">Regulamento de áreas comuns.</p>
+        </div></div>
+        <div class="confusao"><div class="num">25</div><div class="body">
+          <span class="titulo">O salão de festas virou estádio</span>
+          <p class="problema">Uso inadequado para a finalidade prevista.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Regra clara de finalidade. Comprovante de reserva. Caução para danos.</p>
+          <p class="base">Convenção; regulamento.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bloco 5 · Churrasqueiras e áreas comuns</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · BLOCO 6 · CRIANÇAS, PETS, FAMÍLIAS -->
+  <section class="page" data-screen-label="10 Bloco 6">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bloco 6 · Famílias e pets</div></div>
+    <div class="pg-body">
+      <div class="bloco-head">
+        <div><div class="kicker">Bloco 06</div><h2>Crianças, pets e <span class="it">famílias</span>.</h2></div>
+        <div class="range">26 a 30</div>
+      </div>
+      <div class="confusoes">
+        <div class="confusao"><div class="num">26</div><div class="body">
+          <span class="titulo">As crianças dominam o condomínio</span>
+          <p class="problema">Áreas comuns superlotadas; responsabilidade dos pais.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Não</b></span><span class="tag-status">Multar <b>Depende</b></span><span class="tag-status"><span class="dot low"></span>Risco <b>Baixo</b></span></div>
+          <p class="acao">Não pode discriminar. Reforce regra de uso e supervisão dos pais. Multa só em caso de dano.</p>
+          <p class="base">ECA; CC art. 932 (responsabilidade dos pais).</p>
+        </div></div>
+        <div class="confusao"><div class="num">27</div><div class="body">
+          <span class="titulo">O pet que foge por causa dos fogos</span>
+          <p class="problema">Bem-estar animal; risco em via pública.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Fogos sim</b></span><span class="tag-status">Multar <b>Quem soltou</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Comunique a regra contra fogos. Oriente moradores com pets sobre prevenção.</p>
+          <p class="base">Lei 14.064/20 (maus-tratos); convenção.</p>
+        </div></div>
+        <div class="confusao"><div class="num">28</div><div class="body">
+          <span class="titulo">O cachorro que late o jogo inteiro</span>
+          <p class="problema">Latido recorrente; perturbação do sossego.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Notifique o tutor por escrito. Converse antes da multa. Documente reincidência.</p>
+          <p class="base">CC art. 1.277; convenção.</p>
+        </div></div>
+        <div class="confusao"><div class="num">29</div><div class="body">
+          <span class="titulo">O carrinho de bebê no meio do hall</span>
+          <p class="problema">Acessibilidade comprometida; rota de emergência.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Não</b></span><span class="tag-status"><span class="dot low"></span>Risco <b>Baixo</b></span></div>
+          <p class="acao">Orientação direta. Sinalização da circulação livre. Sem ofensa pessoal.</p>
+          <p class="base">Lei 13.146/15 (acessibilidade); normas de segurança.</p>
+        </div></div>
+        <div class="confusao"><div class="num">30</div><div class="body">
+          <span class="titulo">O playground lotado</span>
+          <p class="problema">Capacidade do espaço e segurança das crianças.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Não</b></span><span class="tag-status"><span class="dot low"></span>Risco <b>Baixo</b></span></div>
+          <p class="acao">Comunique a capacidade. Reforço de supervisão dos pais. Sinalize horários.</p>
+          <p class="base">Convenção; regulamento; ECA.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bloco 6 · Crianças, pets e famílias</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · BLOCO 7 · FOGOS E EXAGEROS -->
+  <section class="page" data-screen-label="11 Bloco 7">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bloco 7 · Exageros</div></div>
+    <div class="pg-body">
+      <div class="bloco-head">
+        <div><div class="kicker">Bloco 07</div><h2>Fogos, comemorações e <span class="it">exageros</span>.</h2></div>
+        <div class="range">31 a 35</div>
+      </div>
+      <div class="confusoes">
+        <div class="confusao"><div class="num">31</div><div class="body">
+          <span class="titulo">O show pirotécnico particular</span>
+          <p class="problema">Risco de incêndio e maus-tratos a pets.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot high"></span>Risco <b>Alto</b></span></div>
+          <p class="acao">Notifique imediatamente. Acione autoridade se persistir. Comunique antes do mata-mata.</p>
+          <p class="base">Lei 14.064/20; código municipal; normas de AVCB.</p>
+        </div></div>
+        <div class="confusao"><div class="num">32</div><div class="body">
+          <span class="titulo">A buzina que ecoa na garagem</span>
+          <p class="problema">Sossego e segurança no fluxo da garagem.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Notifique. Reforce regra de circulação na garagem antes do próximo jogo.</p>
+          <p class="base">Regulamento de garagem; CC art. 1.277.</p>
+        </div></div>
+        <div class="confusao"><div class="num">33</div><div class="body">
+          <span class="titulo">A comemoração que atravessou a madrugada</span>
+          <p class="problema">Som em horário noturno; sossego coletivo.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot high"></span>Risco <b>Alto</b></span></div>
+          <p class="acao">Notificação imediata. Advertência se recorrente. Documente para multa.</p>
+          <p class="base">CC art. 1.277; LCP art. 42.</p>
+        </div></div>
+        <div class="confusao"><div class="num">34</div><div class="body">
+          <span class="titulo">A bateria de escola de samba</span>
+          <p class="problema">Ruído extremo, ensaiado, persistente.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot high"></span>Risco <b>Alto</b></span></div>
+          <p class="acao">Não permitir. Comunicado prévio sobre eventos com instrumentos.</p>
+          <p class="base">CC art. 1.277; LCP art. 42.</p>
+        </div></div>
+        <div class="confusao"><div class="num">35</div><div class="body">
+          <span class="titulo">“Só hoje pode tudo”</span>
+          <p class="problema">Aplicação seletiva da regra; precedente perigoso.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Mensagem prévia: as regras valem em dia de jogo. Coerência protege a gestão.</p>
+          <p class="base">Princípio da isonomia; convenção.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bloco 7 · Fogos, comemorações e exageros</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · BLOCO 8 · FUNCIONÁRIOS -->
+  <section class="page" data-screen-label="12 Bloco 8">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bloco 8 · Operação</div></div>
+    <div class="pg-body">
+      <div class="bloco-head">
+        <div><div class="kicker">Bloco 08</div><h2>Funcionários e <span class="it">operação</span>.</h2></div>
+        <div class="range">36 a 40</div>
+      </div>
+      <div class="confusoes">
+        <div class="confusao"><div class="num">36</div><div class="body">
+          <span class="titulo">O porteiro que não viu quem entrou</span>
+          <p class="problema">Falha grave de segurança no momento mais sensível.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>N/A</b></span><span class="tag-status">Multar <b>N/A</b></span><span class="tag-status"><span class="dot high"></span>Risco <b>Alto</b></span></div>
+          <p class="acao">Treinamento operacional. Sem TV na guarita. Revezamento garantido.</p>
+          <p class="base">CLT; regimento interno; normas de segurança.</p>
+        </div></div>
+        <div class="confusao"><div class="num">37</div><div class="body">
+          <span class="titulo">O zelador vira técnico da seleção</span>
+          <p class="problema">Falta de atenção operacional durante o jogo.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>N/A</b></span><span class="tag-status">Multar <b>N/A</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Reforce a expectativa de prioridade operacional. Plano escrito de tarefas.</p>
+          <p class="base">CLT; regimento.</p>
+        </div></div>
+        <div class="confusao"><div class="num">38</div><div class="body">
+          <span class="titulo">A equipe quer assistir ao jogo</span>
+          <p class="problema">Conflito legítimo entre dever e lazer.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>N/A</b></span><span class="tag-status">Multar <b>N/A</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Acordo prévio. Revezamento. Pausa formal garantida. Comunicado humanizado.</p>
+          <p class="base">CLT (intervalos); convenção coletiva da categoria.</p>
+        </div></div>
+        <div class="confusao"><div class="num">39</div><div class="body">
+          <span class="titulo">Aumento repentino das demandas</span>
+          <p class="problema">Operação sobrecarregada.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>N/A</b></span><span class="tag-status">Multar <b>N/A</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Reforço de equipe nos dias de jogo. Comunicação clara aos moradores sobre prazos.</p>
+          <p class="base">Planejamento operacional.</p>
+        </div></div>
+        <div class="confusao"><div class="num">40</div><div class="body">
+          <span class="titulo">O condomínio para de funcionar</span>
+          <p class="problema">Operação total comprometida.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>N/A</b></span><span class="tag-status">Multar <b>N/A</b></span><span class="tag-status"><span class="dot high"></span>Risco <b>Alto</b></span></div>
+          <p class="acao">Plano operacional por escrito. Responsáveis e horários definidos. Plantão de emergência.</p>
+          <p class="base">Planejamento; CLT; convenção coletiva.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bloco 8 · Funcionários e operação</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · BLOCO 9 · TECNOLOGIA -->
+  <section class="page" data-screen-label="13 Bloco 9">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bloco 9 · Tecnologia</div></div>
+    <div class="pg-body">
+      <div class="bloco-head">
+        <div><div class="kicker">Bloco 09</div><h2>Tecnologia, manutenção e <span class="it">infraestrutura</span>.</h2></div>
+        <div class="range">41 a 45</div>
+      </div>
+      <div class="confusoes">
+        <div class="confusao"><div class="num">41</div><div class="body">
+          <span class="titulo">O telão improvisado</span>
+          <p class="problema">Segurança elétrica; uso não previsto da área comum.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Exija autorização prévia. Instalação profissional. Responsabilidade documentada.</p>
+          <p class="base">Convenção; regulamento; normas elétricas.</p>
+        </div></div>
+        <div class="confusao"><div class="num">42</div><div class="body">
+          <span class="titulo">A internet não suporta a transmissão</span>
+          <p class="problema">Infraestrutura coletiva insuficiente para o pico de uso.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>N/A</b></span><span class="tag-status">Multar <b>N/A</b></span><span class="tag-status"><span class="dot low"></span>Risco <b>Baixo</b></span></div>
+          <p class="acao">Acione o fornecedor antes da Copa. Comunique o limite aos moradores.</p>
+          <p class="base">Contrato com o provedor.</p>
+        </div></div>
+        <div class="confusao"><div class="num">43</div><div class="body">
+          <span class="titulo">A queda de energia no meio do jogo</span>
+          <p class="problema">Operacional somado a estresse coletivo.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>N/A</b></span><span class="tag-status">Multar <b>N/A</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Manutenção preventiva antes da Copa. Gerador testado. Plano B comunicado.</p>
+          <p class="base">Manutenção preventiva; normas elétricas.</p>
+        </div></div>
+        <div class="confusao"><div class="num">44</div><div class="body">
+          <span class="titulo">O elevador sobrecarregado</span>
+          <p class="problema">Capacidade e segurança comprometidas.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Não</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Comunique capacidade. Reforço de manutenção preventiva. Alerta visual.</p>
+          <p class="base">Normas técnicas de elevadores; convenção.</p>
+        </div></div>
+        <div class="confusao"><div class="num">45</div><div class="body">
+          <span class="titulo">O banheiro da área comum não dá conta</span>
+          <p class="problema">Operacional. Demanda além da capacidade.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>N/A</b></span><span class="tag-status">Multar <b>N/A</b></span><span class="tag-status"><span class="dot low"></span>Risco <b>Baixo</b></span></div>
+          <p class="acao">Reforço de limpeza nos dias de jogo. Orientação aos anfitriões sobre uso.</p>
+          <p class="base">Planejamento operacional.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bloco 9 · Tecnologia, manutenção e infraestrutura</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · BLOCO 10 · ABSURDAS -->
+  <section class="page" data-screen-label="14 Bloco 10">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bloco 10 · As absurdas</div></div>
+    <div class="pg-body">
+      <div class="bloco-head">
+        <div><div class="kicker">Bloco 10</div><h2>As confusões mais <span class="it">absurdas</span>.</h2></div>
+        <div class="range">46 a 50</div>
+      </div>
+      <div class="confusoes">
+        <div class="confusao"><div class="num">46</div><div class="body">
+          <span class="titulo">Exclusividade da TV da academia</span>
+          <p class="problema">Uso individual de bem coletivo.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>N/A</b></span><span class="tag-status"><span class="dot low"></span>Risco <b>Baixo</b></span></div>
+          <p class="acao">Negue formalmente. Explique a finalidade coletiva da área. Sem precedente.</p>
+          <p class="base">CC art. 1.331; regulamento.</p>
+        </div></div>
+        <div class="confusao"><div class="num">47</div><div class="body">
+          <span class="titulo">Abaixo-assinado contra a bandeira do vizinho</span>
+          <p class="problema">Pressão coletiva sem fundamento legal.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>N/A</b></span><span class="tag-status">Multar <b>N/A</b></span><span class="tag-status"><span class="dot low"></span>Risco <b>Baixo</b></span></div>
+          <p class="acao">Resposta institucional. A regra de fachada vale para todos, e não muda por votação informal.</p>
+          <p class="base">Convenção; CC art. 1.336.</p>
+        </div></div>
+        <div class="confusao"><div class="num">48</div><div class="body">
+          <span class="titulo">A briga por causa do gol anulado</span>
+          <p class="problema">Conflito pessoal; risco de agressão.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>N/A</b></span><span class="tag-status">Multar <b>N/A</b></span><span class="tag-status"><span class="dot med"></span>Risco <b>Médio</b></span></div>
+          <p class="acao">Acione segurança ou polícia. Documente. Não envolva o síndico como árbitro pessoal.</p>
+          <p class="base">CC art. 186; CP em casos de agressão.</p>
+        </div></div>
+        <div class="confusao"><div class="num">49</div><div class="body">
+          <span class="titulo">O grupo que quase provocou assembleia</span>
+          <p class="problema">Polarização vira pauta. Energia desviada.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>N/A</b></span><span class="tag-status">Multar <b>N/A</b></span><span class="tag-status"><span class="dot low"></span>Risco <b>Baixo</b></span></div>
+          <p class="acao">Comunicação prévia. Canal oficial separado. Encerre o tema com clareza.</p>
+          <p class="base">Convenção; atribuições do síndico.</p>
+        </div></div>
+        <div class="confusao"><div class="num">50</div><div class="body">
+          <span class="titulo">“Eu pago condomínio, tenho direito”</span>
+          <p class="problema">Confusão entre direito e dever; tentativa de pressão.</p>
+          <div class="tags"><span class="tag-status">Restringir <b>Sim</b></span><span class="tag-status">Multar <b>Sim</b></span><span class="tag-status"><span class="dot low"></span>Risco <b>Baixo</b></span></div>
+          <p class="acao">Resposta institucional curta. A regra vale para todos. Pagar a taxa não cria privilégio.</p>
+          <p class="base">CC art. 1.336; convenção.</p>
+        </div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bloco 10 · As confusões mais absurdas</div><div class="pg-num">14</div></div>
+  </section>
+
+  <!-- PAGE 15 · BÔNUS 1 · MATRIZ -->
+  <section class="page" data-screen-label="15 Bonus 1">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bônus 1 · Matriz jurídica</div></div>
+    <div class="pg-body">
+      <div class="bloco-head">
+        <div><div class="kicker">Bônus 01</div><h2>O que a lei permite × o que o condomínio pode <span class="it">restringir</span>.</h2></div>
+      </div>
+      <p class="body" style="font-size:9pt;margin-bottom:4mm;">Tabela prática para decisão rápida durante a Copa. Cada tema com a regra geral da lei e o que o regulamento interno pode adicionar.</p>
+      <div class="matriz" style="flex:1; align-content:start;">
+        <div class="row header"><div>Tema</div><div>O que a lei permite</div><div>O condomínio pode restringir</div></div>
+        <div class="row"><div>Bandeira do Brasil</div><div>Uso permitido com regras (Lei 5.700/71)</div><div>Não pode proibir; pode regular fixação e tamanho</div></div>
+        <div class="row"><div>Bandeira de clube</div><div>Uso permitido</div><div>Sim, pela convenção e regulamento</div></div>
+        <div class="row"><div>Faixas em fachada</div><div>Não há proibição geral</div><div>Sim, pela regra de fachada</div></div>
+        <div class="row"><div>Telões em área comum</div><div>Permitido com autorização</div><div>Sim, exige autorização prévia</div></div>
+        <div class="row"><div>Eventos coletivos</div><div>Permitidos</div><div>Sim, com regra de reserva e responsabilidade</div></div>
+        <div class="row"><div>Visitantes</div><div>Permitidos</div><div>Sim, regra de identificação e lotação</div></div>
+        <div class="row"><div>Churrascos</div><div>Permitidos</div><div>Sim, por regulamento e horário</div></div>
+        <div class="row"><div>Fogos</div><div>Restrição local crescente</div><div>Sim, podem ser proibidos</div></div>
+        <div class="row"><div>Música amplificada</div><div>Permitida fora do horário de silêncio</div><div>Sim, por horário e volume</div></div>
+        <div class="row"><div>Piscina e playground</div><div>Uso coletivo</div><div>Sim, por horário e capacidade</div></div>
+        <div class="row"><div>Pets</div><div>Permitidos</div><div>Não em proibição total; sim em regra de uso</div></div>
+        <div class="row"><div>Áreas comuns</div><div>Uso compartilhado</div><div>Sim, por regulamento e finalidade</div></div>
+        <div class="row"><div>Estacionamento</div><div>Uso de quem tem vaga</div><div>Sim, regra de circulação e visitante</div></div>
+        <div class="row"><div>Delivery</div><div>Permitido</div><div>Sim, regra de acesso e horário</div></div>
+        <div class="row"><div>Transmissões coletivas</div><div>Permitidas, com autorização e direitos</div><div>Sim, regra de uso da área comum</div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bônus 1 · Matriz jurídica</div><div class="pg-num">15</div></div>
+  </section>
+
+  <!-- PAGE 16 · BÔNUS 2 · KIT DE COMUNICADOS -->
+  <section class="page" data-screen-label="16 Bonus 2">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bônus 2 · Kit de comunicados</div></div>
+    <div class="pg-body">
+      <div class="bloco-head">
+        <div><div class="kicker">Bônus 02</div><h2>Kit de comunicados <span class="it">prontos</span>.</h2></div>
+      </div>
+      <p class="body" style="font-size:9pt;margin-bottom:4mm;">Quatro modelos prontos para copiar, ajustar e enviar pelos canais oficiais. Linguagem clara, sem ameaça, com orientação prática.</p>
+      <div class="models-grid" style="flex:1; align-content:start;">
+        <div class="model" data-label="Modelo 1 · Bandeiras e fachada">
+          <p>Prezados moradores. Com a aproximação da Copa do Mundo, reforçamos as regras de fachada do nosso condomínio.</p>
+          <p>Bandeiras, faixas e elementos decorativos devem respeitar tamanho, fixação segura e o padrão estético da edificação. A regra vale durante todo o evento e a remoção é responsabilidade do morador ao final.</p>
+        </div>
+        <div class="model" data-label="Modelo 2 · Visitantes e portaria">
+          <p>Durante os jogos da Copa, a portaria seguirá protocolo reforçado de controle de acesso. Pedimos a colaboração dos anfitriões: lista prévia de visitantes, identificação na chegada e respeito à lotação dos espaços reservados.</p>
+          <p>A portaria não autorizará acesso fora dessas regras.</p>
+        </div>
+        <div class="model" data-label="Modelo 3 · Barulho e sossego">
+          <p>O respeito ao sossego segue valendo todos os dias da Copa. Comemorar o gol faz parte da emoção, mas instrumentos amplificados (cornetas, tambores, caixas de som na varanda) não são permitidos pelo regulamento.</p>
+          <p>Reincidência será tratada conforme a convenção do condomínio.</p>
+        </div>
+        <div class="model" data-label="Modelo 4 · Áreas comuns">
+          <p>O salão de festas, o espaço gourmet e a churrasqueira seguem regras específicas de reserva. As reservas válidas são apenas as registradas no canal oficial, com confirmação por escrito.</p>
+          <p>A presença do morador anfitrião durante todo o uso é obrigatória.</p>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bônus 2 · Kit de comunicados prontos</div><div class="pg-num">16</div></div>
+  </section>
+
+  <!-- PAGE 17 · BÔNUS 3 · PLANO DE AÇÃO -->
+  <section class="page" data-screen-label="17 Bonus 3">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bônus 3 · Plano</div></div>
+    <div class="pg-body">
+      <div class="bloco-head">
+        <div><div class="kicker">Bônus 03</div><h2>Plano de ação Copa em <span class="it">7 marcos</span>.</h2></div>
+      </div>
+      <p class="body" style="font-size:9pt;margin-bottom:4mm;">Sequência prática para atravessar a Copa com calma. Cada marco com a ação essencial daquele momento.</p>
+      <div class="timeline" style="flex:1; align-content:start;">
+        <div class="tline"><div class="when">60 dias antes</div><div class="what"><b>Revisar regulamento.</b> Identificar regras desatualizadas. Alinhar com o conselho. Reservar com a manutenção preventiva (elevadores, gerador, AVCB).</div></div>
+        <div class="tline"><div class="when">30 dias antes</div><div class="what"><b>Comunicar regras.</b> Enviar comunicado geral. Treinar equipe operacional. Confirmar reforço de portaria e limpeza.</div></div>
+        <div class="tline"><div class="when">15 dias antes</div><div class="what"><b>Sistema de reservas.</b> Abrir reservas de áreas comuns. Divulgar regras de capacidade. Antecipar dúvidas no canal oficial.</div></div>
+        <div class="tline"><div class="when">7 dias antes</div><div class="what"><b>Checklist operacional.</b> Confirmar plantão de manutenção. Validar internet e energia. Reforçar comunicação sobre sossego e visitantes.</div></div>
+        <div class="tline"><div class="when">48 horas antes</div><div class="what"><b>Lembrete final.</b> Comunicado curto reforçando os três pontos mais sensíveis do condomínio. Conferir lotação dos espaços reservados.</div></div>
+        <div class="tline"><div class="when">Dia do jogo</div><div class="what"><b>Operação no protocolo.</b> Portaria reforçada. Sem TV na guarita. Síndico ou representante de plantão para emergência.</div></div>
+        <div class="tline"><div class="when">Pós-jogo</div><div class="what"><b>Avaliação.</b> Registrar ocorrências. Notificar quem precisar. Ajustar regra para o próximo jogo. Comunicar o que funcionou.</div></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bônus 3 · Plano de ação Copa · 7 marcos</div><div class="pg-num">17</div></div>
+  </section>
+
+  <!-- PAGE 18 · BÔNUS 4-8 · CHECKLISTS -->
+  <section class="page" data-screen-label="18 Bonus 4-8">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bônus 4 a 8 · Checklists</div></div>
+    <div class="pg-body">
+      <div class="bloco-head">
+        <div><div class="kicker">Bônus 04 a 08</div><h2>Checklists <span class="it">operacionais</span>.</h2></div>
+      </div>
+      <p class="body" style="font-size:9pt;margin-bottom:4mm;">Cinco listas de bolso para cada frente da operação. Imprima e use no dia.</p>
+      <div class="mini-grid cols-3" style="flex:1; align-content:start;">
+        <div class="mini">
+          <div class="h-sub">B4 · Portaria</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Lista de visitantes recebida</li>
+            <li><span class="box"></span>Sem TV na guarita</li>
+            <li><span class="box"></span>Identificação obrigatória</li>
+            <li><span class="box"></span>Lotação dos espaços conferida</li>
+            <li><span class="box"></span>Plantão de revezamento</li>
+            <li><span class="box"></span>Registro de ocorrências</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">B5 · Zelador</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Equipe alinhada</li>
+            <li><span class="box"></span>Áreas comuns inspecionadas</li>
+            <li><span class="box"></span>Manutenção crítica verificada</li>
+            <li><span class="box"></span>Gerador testado</li>
+            <li><span class="box"></span>Plantão definido</li>
+            <li><span class="box"></span>Canal aberto com a portaria</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">B6 · Limpeza</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Reforço antes do jogo</li>
+            <li><span class="box"></span>Banheiros abastecidos</li>
+            <li><span class="box"></span>Lixeiras vazias</li>
+            <li><span class="box"></span>Encerramento pós-evento</li>
+            <li><span class="box"></span>Registro de danos</li>
+            <li><span class="box"></span>Comunicação ao síndico</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">B7 · Segurança</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Controle de acesso reforçado</li>
+            <li><span class="box"></span>Visitantes identificados</li>
+            <li><span class="box"></span>Câmeras operacionais</li>
+            <li><span class="box"></span>Áreas comuns monitoradas</li>
+            <li><span class="box"></span>Plano de emergência ativo</li>
+            <li><span class="box"></span>Plantão de plantonista</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">B8 · Eventos coletivos</div>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Planejamento prévio</li>
+            <li><span class="box"></span>Reserva válida e por escrito</li>
+            <li><span class="box"></span>Lotação dentro do limite</li>
+            <li><span class="box"></span>Anfitrião presente</li>
+            <li><span class="box"></span>Encerramento no horário</li>
+            <li><span class="box"></span>Avaliação pós-evento</li>
+          </ul>
+        </div>
+        <div class="mini">
+          <div class="h-sub">Antes · Durante · Depois</div>
+          <p style="margin:0;font-size:8.5pt;line-height:1.45;color:var(--ink-2);">Cada checklist deve ser revisitado nas três fases. <b>Antes</b> prepara, <b>durante</b> sustenta, <b>depois</b> registra e ajusta para o próximo jogo. A repetição constrói disciplina operacional.</p>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bônus 4 a 8 · Checklists operacionais</div><div class="pg-num">18</div></div>
+  </section>
+
+  <!-- PAGE 19 · BÔNUS 9 · 10 FRASES -->
+  <section class="page" data-screen-label="19 Bonus 9">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bônus 9 · 10 frases</div></div>
+    <div class="pg-body">
+      <div class="bloco-head">
+        <div><div class="kicker">Bônus 09</div><h2>As 10 frases que você vai <span class="it">ouvir</span>.</h2></div>
+      </div>
+      <p class="body" style="font-size:9pt;margin-bottom:4mm;">Catálogo de provocações típicas com resposta institucional pronta. Copie, adapte ao seu condomínio, mantenha o tom.</p>
+      <div class="replies" style="flex:1; align-content:start;">
+        <div class="reply-card"><span class="sit">“É só dessa vez.”</span><p>A regra do condomínio vale em todos os dias do ano. A gestão não pode abrir exceção sem critério.</p></div>
+        <div class="reply-card"><span class="sit">“Mas todo mundo faz.”</span><p>O fato de outros descumprirem a regra não autoriza descumprimento. Estamos tratando cada caso individualmente.</p></div>
+        <div class="reply-card"><span class="sit">“Você é contra o Brasil?”</span><p>A gestão respeita o entusiasmo dos moradores. A regra que preserva a convivência segue valendo, independentemente do evento.</p></div>
+        <div class="reply-card"><span class="sit">“Eu pago condomínio.”</span><p>Pagar a taxa é um dever do morador, e dá direito ao uso das áreas e serviços dentro das regras coletivas.</p></div>
+        <div class="reply-card"><span class="sit">“Quem reclamou?”</span><p>A gestão preserva a identidade dos moradores. A apuração é feita com base nos fatos verificados, não em pessoas.</p></div>
+        <div class="reply-card"><span class="sit">“Não tem nada na convenção.”</span><p>Vamos indicar o trecho aplicável da convenção, do regulamento ou da legislação. As regras estão fundamentadas em documento.</p></div>
+        <div class="reply-card"><span class="sit">“Foi só um churrasquinho.”</span><p>Independentemente do tamanho do evento, a regra de lotação e de uso da área comum segue valendo. A diferença está no respeito ao coletivo.</p></div>
+        <div class="reply-card"><span class="sit">“É só uma bandeira.”</span><p>A regra de fachada do condomínio é objetiva: tamanho, fixação e padrão estético. Vale para todos os elementos.</p></div>
+        <div class="reply-card"><span class="sit">“Você está exagerando.”</span><p>Estamos seguindo o regulamento e a convenção. Qualquer questionamento formal pode ser feito pelo canal oficial.</p></div>
+        <div class="reply-card"><span class="sit">“Então pode tudo agora?”</span><p>Pelo contrário. A regra existe justamente para que o entusiasmo do evento não comprometa a convivência do dia seguinte.</p></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bônus 9 · As 10 frases que você vai ouvir</div><div class="pg-num">19</div></div>
+  </section>
+
+  <!-- PAGE 20 · CONCLUSÃO -->
+  <section class="page" data-screen-label="20 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">O que as 50 confusões têm em <span class="serif" style="font-style:italic;color:var(--accent);">comum</span>.</h2>
+          <p class="section-lede">Nenhuma delas acontece por causa do futebol. Nenhuma por causa da Copa. Nenhuma por causa da bandeira. Elas acontecem por causa das pessoas. A Copa só amplia o que já existe.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="refrain">
+          <p>A Copa <b>reduz filtros</b>.</p>
+          <p>Potencializa comportamentos.</p>
+          <p>O morador que respeita as regras continuará respeitando.</p>
+          <p>O morador que testa limites continuará testando.</p>
+        </div>
+        <p class="body">A Copa não muda o condomínio. Ela <b>revela</b> o condomínio. E o síndico que atravessa o evento com calma, regra clara e comunicação preventiva sai mais forte do outro lado, com a reputação reforçada.</p>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          A Copa dura poucas semanas. A reputação do síndico é construída ao longo de anos. Se você conseguir atravessar uma Copa do Mundo sem grandes conflitos, sem crises de comunicação e sem desgaste excessivo, estará construindo algo muito maior do que uma boa gestão. Estará construindo confiança.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · O que as 50 têm em comum</div><div class="pg-num">20</div></div>
+  </section>
+
+  <!-- PAGE 21 · CONVITE -->
+  <section class="page capture" data-screen-label="21 Mentoria">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>O convite</div></div>
+    <div class="pg-body">
+      <div class="invite-head">Convite · administração de pessoas</div>
+      <h2 class="invite-title">Administrar prédio é simples. O desafio sempre foi administrar <span class="it">pessoas.</span></h2>
+      <div class="invite-grid">
+        <div>
+          <p>A Mentoria Bastidores da Sindicatura não é aberta. É uma turma pequena, com vagas escolhidas a dedo. <b>Eu seleciono pessoalmente cada participante.</b></p>
+          <p>Por dois motivos. O primeiro é o nível da conversa. Os bastidores que eu compartilho ali dentro não cabem em sala lotada. O segundo é o método. Um espaço fechado garante que cada decisão seja debatida com a profundidade que esse mercado exige.</p>
+        </div>
+        <div>
+          <p>Os maiores desafios do síndico raramente estão nos contratos, nos boletos ou na manutenção. Estão nas <b>pessoas</b>: na comunicação, nos conflitos, nas decisões difíceis, na construção de autoridade e na gestão da própria reputação.</p>
+          <p>A mentoria foi criada para mostrar o que quase ninguém ensina sobre a profissão: os <b>bastidores reais</b> da gestão condominial. Não é para quem quer aprender sindicatura. É para quem decidiu construir carreira nela.</p>
+        </div>
+      </div>
+      <div class="selection-band">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Vagas <span class="it">limitadas</span> por turma. Seleção por <span class="it">perfil.</span></div>
+        <p class="lines">Os bastidores que ninguém mostra.<br/>As conversas que ninguém grava.<br/>As decisões que mudam uma gestão inteira.</p>
+        <div class="u">→ Candidate-se em <span>www.bastidoresdasindicatura.com.br</span></div>
+        <div class="note">Próxima turma com vagas restritas. A seleção é feita pessoalmente pela Juliana Moreira.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>O convite · Mentoria Bastidores da Sindicatura</div><div class="pg-num">21</div></div>
+  </section>
+
+  <!-- PAGE 22 · MANIFESTO -->
+  <section class="page manifesto" data-screen-label="22 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top:30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:12mm;">
+        <div class="cover-eyebrow" style="margin:0;">Guia da Copa do Mundo · Vol. 18</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:165mm;">
+          A Copa não muda o <em style="font-style:italic;color:var(--accent);">condomínio.</em><br/>
+          Ela <em style="font-style:italic;color:var(--accent);">revela</em> o condomínio.
+        </h2>
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          Se você atravessa esse período com regra clara, comunicação preventiva e calma, sai do outro lado com algo maior do que uma boa gestão. Sai com confiança coletiva acumulada.
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 18 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite"><b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab=document.getElementById('pdfFab'); var hint=document.getElementById('pdfHint');
+    if(!fab) return; var t;
+    fab.addEventListener('mouseenter',function(){ clearTimeout(t); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave',function(){ t=setTimeout(function(){ hint.classList.remove('show'); },250); });
+    fab.addEventListener('click',function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); },120); setTimeout(function(){ hint.classList.remove('show'); },4000); });
+  })();
+</script>
+</body>
+</html>
