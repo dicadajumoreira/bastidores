@@ -1,0 +1,1193 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Terceirizados em Condomínios · Bastidores da Sindicatura · Vol. 20</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <text y="-40" font-family="serif" font-style="italic" font-size="92" fill="#B8543B">Terceirizados.</text>
+      <text y="100" font-family="serif" font-size="34" fill="#0E1A2B">O que ninguém fiscaliza</text>
+      <text y="150" font-family="serif" font-size="34" fill="#0E1A2B">até dar problema.</text>
+      <text y="240" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">BASTIDORES DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A; --rule:1px solid var(--line);
+  }
+  @page { size: 210mm 297mm; margin: 0; }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; width:210mm; background:#2A2522; font-family:"Manrope", system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; color:var(--ink); page-break-after:always; break-after:page; margin:0 auto; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen { html, body{ width:auto; } body{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 0 60px; } .page{ box-shadow:0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); } }
+  @media print{ html, body{ background:#fff; width:210mm; margin:0; padding:0; display:block; } .page{ box-shadow:none; margin:0; display:block; } }
+
+  .frame{ position:absolute; inset:14mm 16mm; }
+  .pg-head{ position:absolute; top:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); padding-bottom:4mm; border-bottom:var(--rule); }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{ width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  .pg-foot{ position:absolute; bottom:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:8.5pt; color:var(--muted); padding-top:4mm; border-top:var(--rule); }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .pg-body{ position:absolute; top:22mm; bottom:18mm; left:16mm; right:16mm; display:flex; flex-direction:column; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif","Times New Roman",serif; font-weight:400; }
+  .section-num{ font-family:"Instrument Serif"; font-style:italic; font-size:60pt; line-height:1; color:var(--accent); letter-spacing:-.02em; }
+  .section-kicker{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-title{ font-family:"Instrument Serif"; font-weight:400; font-size:30pt; line-height:1.04; letter-spacing:-.01em; color:var(--ink); margin-top:2mm; }
+  .section-lede{ font-size:10pt; line-height:1.55; color:var(--ink-2); max-width:135mm; margin-top:4mm; }
+  .h-sub{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:3mm; }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  ul.bul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.4mm; }
+  ul.bul li{ display:flex; gap:8px; align-items:flex-start; font-size:9pt; line-height:1.4; color:var(--ink-2); padding:.6mm 0; border-bottom:1px dotted var(--line); }
+  ul.bul li:last-child{ border-bottom:none; }
+  ul.bul li::before{ content:""; flex:0 0 auto; width:4px; height:4px; margin-top:2.2mm; background:var(--accent); border-radius:50%; }
+  ul.bul.tight li{ font-size:8.6pt; padding:.4mm 0; }
+
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.6mm; }
+  ul.checks li{ display:flex; gap:8px; align-items:flex-start; font-size:9pt; line-height:1.38; color:var(--ink-2); padding:.6mm 0; border-bottom:1px dotted var(--line); }
+  ul.checks li:last-child{ border-bottom:none; }
+  ul.checks li .box{ flex:0 0 auto; width:3.8mm; height:3.8mm; border:1.2px solid var(--ink); border-radius:1.2px; background:var(--cream); margin-top:1mm; }
+
+  .cols-2{ display:grid; grid-template-columns:1fr 1fr; column-gap:8mm; align-items:start; }
+  .cols-3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:5mm; align-items:start; }
+  ol.enum{ list-style:none; padding:0; margin:0; counter-reset:en; display:flex; flex-direction:column; gap:1.4mm; }
+  ol.enum li{ counter-increment:en; display:flex; gap:8px; align-items:baseline; font-size:9pt; line-height:1.42; color:var(--ink-2); padding:1mm 0; border-bottom:1px dotted var(--line); }
+  ol.enum li::before{ content:counter(en, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--accent); flex:0 0 8mm; }
+  ol.enum li b{ color:var(--ink); }
+
+  .callout{ background:var(--paper-2); border-left:3px solid var(--accent); padding:4mm 5mm; font-size:9pt; line-height:1.5; color:var(--ink-2); margin-top:3mm; }
+  .callout b{ color:var(--ink); }
+  .quote-block{ background:var(--cream); border:1px solid var(--line); padding:5mm 6mm; font-family:"Instrument Serif"; font-style:italic; font-size:11.5pt; line-height:1.45; color:var(--ink); }
+  .quote-block .signature{ margin-top:3mm; font-family:"Manrope"; font-style:normal; font-size:8pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .survival{ background:var(--paper-2); border-left:3px solid var(--accent); padding:4mm 6mm; display:flex; flex-direction:column; gap:1.6mm; }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; line-height:1.3; color:var(--ink); }
+
+  .hr-orn{ display:flex; align-items:center; gap:10px; color:var(--accent); margin:3mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent);}
+
+  .refrain{ display:flex; flex-direction:column; gap:1.2mm; padding:3mm 5mm; border-left:2px solid var(--line); }
+  .refrain p{ margin:0; font-size:10pt; line-height:1.45; color:var(--ink-2); }
+  .refrain p b{ color:var(--ink); font-weight:600; }
+
+  .block-card{ background:var(--cream); border:1px solid var(--line); border-left:3px solid var(--accent); padding:4mm 5mm; }
+  .block-card .h-sub{ margin-bottom:2.5mm; font-size:8pt; }
+  .block-card ul.bul li{ font-size:8.6pt; padding:.4mm 0; }
+
+  /* compare */
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+  .compare .box{ padding:4mm 5mm; }
+  .compare .bad{ background:var(--paper-2); border-left:3px solid var(--accent); }
+  .compare .good{ background:var(--cream); border-left:3px solid var(--gold); }
+  .compare .lbl{ font-family:"Manrope"; font-weight:700; font-size:7.8pt; letter-spacing:.18em; text-transform:uppercase; margin-bottom:2mm; display:block; }
+  .compare .bad .lbl{ color:var(--accent); }
+  .compare .good .lbl{ color:var(--gold); }
+  .compare ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.6mm; }
+  .compare ul li{ font-family:"Manrope"; font-size:8.8pt; line-height:1.4; color:var(--ink-2); padding:.8mm 0; border-bottom:1px dotted rgba(184,84,59,.15); }
+  .compare ul li:last-child{ border-bottom:none; }
+
+  /* dual section */
+  .frases-head{ display:flex; align-items:baseline; gap:6mm; flex-wrap:wrap; padding-bottom:3mm; border-bottom:var(--rule); margin-bottom:4mm; }
+  .frases-head .section-kicker{ flex:0 0 auto; }
+  .frases-head h2{ font-family:"Instrument Serif"; font-weight:400; font-size:20pt; line-height:1.05; color:var(--ink); margin:0; }
+  .frases-head h2 .it{ font-style:italic; color:var(--accent); }
+
+  /* timeline rotina */
+  .timeline{ display:flex; flex-direction:column; gap:2.5mm; }
+  .tline{ display:grid; grid-template-columns:38mm 1fr; gap:5mm; padding:3mm 0; border-bottom:1px dotted var(--line); align-items:start; }
+  .tline:last-child{ border-bottom:none; }
+  .tline .when{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent); line-height:1.15; }
+  .tline .what{ font-family:"Manrope"; font-size:9pt; line-height:1.45; color:var(--ink-2); }
+  .tline .what b{ color:var(--ink); }
+
+  /* checklist 3 colunas */
+  .check-grid{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:5mm; }
+  .check-col{ background:var(--cream); border:1px solid var(--line); padding:4mm 5mm; }
+  .check-col .h-sub{ margin-bottom:2.5mm; font-size:8pt; }
+  .check-col ul.checks li{ font-size:8.4pt; padding:.4mm 0; }
+  .check-col ul.checks li .box{ width:3.2mm; height:3.2mm; margin-top:.8mm; }
+
+  /* sinais grid */
+  .sinais{ display:grid; grid-template-columns:1fr 1fr; gap:1.4mm 5mm; }
+  .sinais .item{ font-family:"Manrope"; font-size:9pt; line-height:1.4; color:var(--ink-2); padding:.8mm 0; border-bottom:1px dotted var(--line); display:flex; gap:6px; align-items:flex-start; }
+  .sinais .item::before{ content:"!"; font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--accent); flex:0 0 4mm; margin-top:-.5mm; }
+
+  /* contract clause */
+  .clausula{ background:var(--cream); border:1px solid var(--line); padding:4mm 5mm; }
+  .clausula .tag{ font-family:"Manrope"; font-weight:700; font-size:7.8pt; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin-bottom:2mm; }
+  .clausula .modelo{ font-family:"Instrument Serif"; font-style:italic; font-size:9.5pt; line-height:1.4; color:var(--ink-2); }
+  .clausula .modelo b{ color:var(--ink); font-style:normal; }
+
+  /* etapas régua */
+  .etapas{ display:grid; grid-template-columns:repeat(6, 1fr); gap:3mm; }
+  .etapa{ background:var(--cream); border:1px solid var(--line); border-top:3px solid var(--accent); padding:3mm 3mm 3mm; }
+  .etapa .n{ font-family:"Instrument Serif"; font-style:italic; font-size:18pt; color:var(--accent); line-height:1; }
+  .etapa .t{ font-family:"Manrope"; font-weight:700; font-size:8.2pt; letter-spacing:.06em; color:var(--ink); margin-top:1.5mm; line-height:1.2; }
+  .etapa .d{ font-family:"Manrope"; font-size:7.8pt; line-height:1.35; color:var(--ink-2); margin-top:1.5mm; }
+
+  /* frases (bônus 3) */
+  .frase-list{ display:grid; grid-template-columns:1fr; gap:0; }
+  .frase{ display:grid; grid-template-columns:9mm 1fr; gap:6mm; padding:2.6mm 0; border-bottom:1px dotted var(--line); }
+  .frase:last-child{ border-bottom:none; }
+  .frase .n{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent); line-height:1; }
+  .frase .t{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; line-height:1.3; color:var(--ink); }
+
+  /* COVER */
+  .cover{ background: radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.14), transparent 55%), radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%), var(--paper); }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:var(--rule); padding-bottom:6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap:10px; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); }
+  .cover-brand .logo .mark{ width:30px; height:30px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border:2px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .cover-brand .sub{ font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--accent); }
+  .cover-meta .label{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:8mm 0 6mm; }
+  .cover-eyebrow{ font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6mm; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .cover-big{ font-family:"Instrument Serif"; font-style:italic; font-size:78pt; line-height:.92; color:var(--accent); letter-spacing:-.025em; margin:0 0 4mm; }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size:32pt; line-height:1.05; letter-spacing:-.01em; color:var(--ink); margin:0 0 5mm; max-width:170mm; }
+  .cover-title .it{ font-style:italic; color:var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size:11.5pt; line-height:1.5; color:var(--ink-2); max-width:165mm; }
+  .cover-bottom{ border-top:var(--rule); padding-top:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap:11mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size:32pt; line-height:1; color:var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color:var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:2mm; }
+
+  /* OPENER */
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size:36pt; line-height:1.04; color:var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style:italic; color:var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns:1fr 1fr; gap:9mm; margin-top:6mm; }
+  .opener-grid p{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  /* TOC */
+  .toc-list{ display:grid; grid-template-columns:1fr; margin-top:3mm; }
+  .toc-item{ display:flex; align-items:baseline; gap:8px; padding:1.9mm 0; border-bottom:1px dotted var(--line); font-size:9.5pt; color:var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--accent); flex:0 0 14mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--muted); }
+
+  .section-head{ display:flex; gap:9mm; align-items:flex-start; padding-bottom:5mm; border-bottom:var(--rule); margin-bottom:5mm; }
+  .section-head .big{ flex:0 0 auto; }
+  .section-head .meta{ flex:1; padding-top:3mm;}
+  .section-body{ display:flex; flex-direction:column; gap:4mm; flex:1;}
+
+  /* capture */
+  .capture{ background: radial-gradient(120% 80% at 0% 0%, rgba(184,84,59,.16), transparent 55%), radial-gradient(90% 70% at 100% 100%, rgba(14,26,43,.10), transparent 55%), var(--paper); }
+  .invite-head{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:12px; margin-bottom:5mm; }
+  .invite-head::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .invite-title{ font-family:"Instrument Serif"; font-weight:400; font-size:36pt; line-height:1.04; letter-spacing:-.02em; color:var(--ink); margin:0; }
+  .invite-title .it{ font-style:italic; color:var(--accent); }
+  .invite-grid{ display:grid; grid-template-columns:1fr 1fr; gap:9mm; margin-top:6mm; }
+  .invite-grid p{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+  .invite-grid p b{ color:var(--ink); }
+  .selection-band{ background:var(--ink); color:var(--paper); padding:7mm 8mm; display:flex; flex-direction:column; gap:2.5mm; margin-top:auto; }
+  .selection-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .selection-band .t{ font-family:"Instrument Serif"; font-size:24pt; line-height:1.08; color:var(--paper); }
+  .selection-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .selection-band .lines{ font-family:"Instrument Serif"; font-style:italic; font-size:11.5pt; line-height:1.45; color:rgba(244,238,223,.92); margin:1.5mm 0 0; }
+  .selection-band .u{ font-family:"Manrope"; font-weight:700; font-size:10.5pt; letter-spacing:.04em; color:var(--paper); margin-top:2mm; }
+  .selection-band .u span{ color:var(--accent-2); }
+  .selection-band .note{ font-family:"Manrope"; font-size:8.5pt; letter-spacing:.16em; text-transform:uppercase; color:rgba(244,238,223,.6); margin-top:.5mm; }
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  /* Save-as-PDF FAB */
+  .pdf-fab{ position:fixed; right:22px; bottom:22px; z-index:9999; display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:#0E1A2B; color:#F4EEDF; border:none; border-radius:999px; font-family:"Manrope", system-ui, sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; box-shadow:0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30), inset 0 0 0 1px rgba(255,255,255,.06); transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .pdf-fab:hover{ transform:translateY(-2px); background:#B8543B; }
+  .pdf-fab svg{ width:16px; height:16px; flex:0 0 auto; }
+  .pdf-fab .dot-accent{ width:6px; height:6px; border-radius:50%; background:#B8543B; box-shadow:0 0 0 3px rgba(184,84,59,.22); }
+  .pdf-hint{ position:fixed; right:22px; bottom:74px; z-index:9998; max-width:280px; padding:12px 14px; background:#FBF7EC; border:1px solid #D9D2C2; border-radius:10px; font-family:"Manrope", system-ui, sans-serif; font-size:11.5px; line-height:1.5; color:#1F2C3F; box-shadow:0 10px 30px rgba(0,0,0,.18); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .pdf-hint.show{ opacity:1; transform:translateY(0); }
+  .pdf-hint b{ color:#B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display:none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 20</div>
+          <div class="label">Guia Prático</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">O guia que protege seu mandato</div>
+        <h1 class="cover-big">Terceirizados.</h1>
+        <p class="cover-title">O que ninguém fiscaliza até <span class="it">dar problema.</span></p>
+        <p class="cover-deck">Um guia prático para o síndico evitar passivo trabalhista, falha contratual, acidente, desvio de função e prejuízo que aparece sempre tarde demais. Tudo o que o contrato de portaria, limpeza, zeladoria e manutenção esconde até a primeira audiência.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">30</span></div><div class="l">Capítulos</div></div>
+          <div class="s"><div class="n">04</div><div class="l">Bônus práticos</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · APRESENTAÇÃO -->
+  <section class="page opener" data-screen-label="02 Apresentação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Apresentação</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:7mm;">Antes de virar a página</div>
+        <h2 class="opener-title">O condomínio não precisa contratar errado para ter <span class="it">problema.</span></h2>
+        <p style="font-family:'Instrument Serif';font-style:italic;font-size:14pt;line-height:1.4;color:var(--ink-2);margin:4mm 0 0;max-width:160mm;">Às vezes, basta contratar certo e fiscalizar mal.</p>
+        <div class="opener-grid">
+          <div>
+            <p>Terceirizar parece simples. Contrata uma empresa. Assina um contrato. A equipe começa. A portaria funciona. A limpeza aparece. O zelador cobre o posto. Todo mundo acha que está resolvido.</p>
+            <p>Até o dia em que chega uma reclamação trabalhista. E aí o condomínio descobre, com aquele requinte de crueldade que só o passivo trabalhista tem, que o problema não era apenas da terceirizada. Era também de quem contratou, recebeu o serviço, pagou todo mês e não fiscalizou.</p>
+          </div>
+          <div>
+            <p>Esse e-book foi feito para síndicos, conselheiros e gestores entenderem os principais riscos da terceirização em condomínios. E, principalmente, o que precisa ser acompanhado antes que o contrato vire dor de cabeça, condenação ou cobrança fora de hora.</p>
+            <p>A terceirização é uma ferramenta excelente de gestão. <b>Mas terceirização sem fiscalização é só uma bomba com crachá.</b></p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="cols-2" style="gap:7mm;">
+          <div class="block-card">
+            <div class="h-sub">Base jurídica</div>
+            <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Lei nº 6.019/1974, atualizada pela Lei nº 13.429/2017, disciplina a terceirização. A Súmula 331 do TST consolida a responsabilidade subsidiária do tomador de serviços quando há falha na fiscalização.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">O que você vai encontrar</div>
+            <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Trinta capítulos diretos sobre risco, contrato, fiscalização, jornada, desvio de função, acidente, LGPD e gestão da terceirizada. Mais quatro bônus práticos para usar no condomínio na segunda-feira de manhã.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 20</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · TOC -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:4mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">01·02</span><span class="ttl">O que é terceirização e o maior erro do síndico</span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">03·04</span><span class="ttl">Responsabilidade subsidiária e documentação mínima</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">05·06</span><span class="ttl">Folha de pagamento, encargos e jornada de trabalho</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">07·08</span><span class="ttl">Desvio de função, uniformes e EPIs</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">09·10</span><span class="ttl">Treinamento e acidentes de trabalho</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">11·13</span><span class="ttl">Substituição e obrigações de cada lado</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">14·15</span><span class="ttl">O que o síndico não deve fazer e como fiscalizar sem criar vínculo</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">16</span><span class="ttl">Rotina mensal de fiscalização</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">17</span><span class="ttl">Checklist mensal completo</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">18·19</span><span class="ttl">Sinais de alerta e planilha de composição de custos</span><span class="pg">13</span></div>
+        <div class="toc-item"><span class="num">20</span><span class="ttl">Cláusulas essenciais e modelos de redação</span><span class="pg">14</span></div>
+        <div class="toc-item"><span class="num">21·22</span><span class="ttl">Cobrança de documentos e riscos da portaria</span><span class="pg">15</span></div>
+        <div class="toc-item"><span class="num">23·24</span><span class="ttl">Riscos específicos da limpeza, zeladoria e manutenção</span><span class="pg">16</span></div>
+        <div class="toc-item"><span class="num">25·26</span><span class="ttl">Morador dando ordem e LGPD na terceirização</span><span class="pg">17</span></div>
+        <div class="toc-item"><span class="num">27·28</span><span class="ttl">Como escolher a empresa e o papel do conselho</span><span class="pg">18</span></div>
+        <div class="toc-item"><span class="num">29·30</span><span class="ttl">Régua de fiscalização e checklist final de proteção</span><span class="pg">19</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Bônus · 10 frases que o síndico deve parar de dizer</span><span class="pg">20</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Conclusão · gestão séria não depende de sorte</span><span class="pg">21</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">Convite · Mentoria Bastidores da Sindicatura</span><span class="pg">22</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · CAP 01 + 02 -->
+  <section class="page" data-screen-label="04 Cap 01-02">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 01 e 02</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 01</div>
+        <h2>O que é <span class="it">terceirização</span> no condomínio.</h2>
+      </div>
+      <p class="body">A terceirização acontece quando o condomínio contrata uma empresa especializada para prestar um serviço, usando empregados próprios dessa empresa. Costuma envolver portaria, controle de acesso, limpeza, zeladoria, jardinagem, manutenção predial, segurança patrimonial, recepção e garagista.</p>
+      <p class="body" style="margin-bottom:4mm;">O ponto central é simples. O trabalhador que está todos os dias dentro do condomínio <b>não é empregado direto do condomínio</b>, e sim da empresa terceirizada. Parece óbvio. Mas na prática, a confusão começa exatamente aí. Porque o funcionário veste uniforme, convive com morador, recebe pedido no dia a dia, conhece a rotina do prédio, e quando ninguém coloca limite, começa a virar quase parte da casa.</p>
+      <div class="callout" style="margin-bottom:5mm;"><b>A separação que precisa existir.</b> Quem contrata o serviço é o condomínio. Quem emprega o trabalhador é a terceirizada. Quem dá ordens diretas é a terceirizada. Quem fiscaliza o contrato é o condomínio. Quando essa fronteira fica nebulosa, o passivo começa a sorrir no canto da sala.</div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 02</div>
+        <h2 style="font-size:17pt;">Terceirizar não é <span class="it">lavar as mãos</span>.</h2>
+      </div>
+      <p class="body">O síndico não precisa fazer a folha da terceirizada. Mas precisa exigir comprovação de que a folha foi paga. Não precisa recolher o FGTS dos terceirizados. Mas precisa exigir documento que mostre que a empresa cumpriu a obrigação. Existe uma diferença enorme entre não ser empregador direto e não ter responsabilidade nenhuma. É exatamente nesse espaço que muitos condomínios se perdem.</p>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">Se a empresa terceirizada não paga corretamente e o condomínio não fiscaliza, o problema pode bater na porta do prédio. E geralmente bate com processo, audiência e boleto.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 01 e 02 · O que é terceirização e o erro de achar que não envolve</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · CAP 03 + 04 -->
+  <section class="page" data-screen-label="05 Cap 03-04">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 03 e 04</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 03</div>
+        <h2>Responsabilidade <span class="it">subsidiária</span>.</h2>
+      </div>
+      <p class="body">O nome bonito do "sobrou para o condomínio". Significa que o condomínio pode ser chamado a pagar verbas trabalhistas se a empresa terceirizada não cumprir suas obrigações e não tiver condições de arcar com a condenação. Não é automático em todos os casos. Mas também não é raro.</p>
+      <div class="quote-block" style="margin-top:3mm;background:var(--paper-2);margin-bottom:5mm;">
+        Confiança é linda. Mas em processo trabalhista, quem brilha é PDF.
+        <div class="signature">Bastidores da Sindicatura</div>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 04</div>
+        <h2 style="font-size:17pt;">Documentação <span class="it">mínima</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:3mm;font-size:9.5pt;">Todo condomínio com contrato terceirizado precisa de rotina mensal de conferência. A lista varia conforme o tipo de contrato, a categoria e a convenção coletiva, mas três momentos são inegociáveis.</p>
+      <div class="cols-3" style="gap:4mm;">
+        <div class="block-card">
+          <div class="h-sub">Antes de contratar</div>
+          <ul class="bul tight">
+            <li>Contrato social e CNPJ ativo</li>
+            <li>Certidões de regularidade fiscal e trabalhista</li>
+            <li>Atestados de capacidade técnica</li>
+            <li>Planilha de composição de custos</li>
+            <li>Convenção coletiva aplicada</li>
+            <li>Referências comerciais</li>
+          </ul>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Na assinatura</div>
+          <ul class="bul tight">
+            <li>Objeto, postos, escala e jornada</li>
+            <li>Obrigações de cada lado</li>
+            <li>Documentação mensal obrigatória</li>
+            <li>Penalidades por descumprimento</li>
+            <li>Cláusula de fiscalização</li>
+            <li>Cláusula de LGPD</li>
+          </ul>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Mensalmente</div>
+          <ul class="bul tight">
+            <li>Nota fiscal e folha de pagamento</li>
+            <li>Comprovante de FGTS e INSS</li>
+            <li>Espelho de jornada</li>
+            <li>Relação de empregados alocados</li>
+            <li>Comprovantes de uniforme e EPIs</li>
+            <li>Certidões periódicas</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:auto;"><b>O eSocial.</b> Obrigatório desde 2018. O condomínio não opera o eSocial da terceirizada, mas precisa saber que as obrigações existem. Ausência de documento não é detalhe administrativo. Detalhe administrativo é esquecer senha do Wi-Fi. Não comprovar encargo trabalhista é outra categoria de emoção.</div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 03 e 04 · Responsabilidade e documentação</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · CAP 05 + 06 -->
+  <section class="page" data-screen-label="06 Cap 05-06">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 05 e 06</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 05</div>
+        <h2>Folha de pagamento e <span class="it">encargos</span>.</h2>
+      </div>
+      <p class="body">Grande parte dos problemas com terceirizados nasce na folha. É ali que aparecem salário em atraso, hora extra não quitada, adicional noturno não pago, intervalo descumprido, benefício suprimido, FGTS não recolhido, INSS não recolhido, férias vencidas, 13º atrasado e verba rescisória pendente.</p>
+      <div class="callout" style="margin-bottom:4mm;"><b>Atenção ao preço.</b> Preço muito baixo em terceirização quase sempre tem alguém pagando a conta. Pode ser o trabalhador, com direito suprimido. Pode ser o condomínio, no futuro. Ou os dois, porque desgraça trabalhista adora fazer pacote família.</div>
+      <div class="h-sub" style="margin-bottom:2mm;">O que olhar na proposta</div>
+      <div class="cols-2" style="gap:6mm;margin-bottom:4mm;">
+        <ul class="bul tight">
+          <li>Quantidade de funcionários por posto</li>
+          <li>Jornada e escala detalhada</li>
+          <li>Salário-base da categoria</li>
+          <li>Benefícios obrigatórios da convenção</li>
+        </ul>
+        <ul class="bul tight">
+          <li>Encargos sociais e provisões</li>
+          <li>Custo de uniformes e EPIs</li>
+          <li>Supervisão e treinamentos</li>
+          <li>Taxa administrativa e margem</li>
+        </ul>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 06</div>
+        <h2 style="font-size:17pt;">Jornada · o risco que mora na <span class="it">rotina</span>.</h2>
+      </div>
+      <p class="body">Em condomínio, a rotina é intensa. Portaria 24 horas, limpeza diária, zeladoria sob demanda, manutenção urgente, morador chamando, prestador esperando, cano vazando, elevador parado, grupo de WhatsApp em combustão espontânea. Nesse cenário, é muito comum o terceirizado ser puxado para além da jornada.</p>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A linha que separa</span>
+        <span class="txt">O síndico pode apontar a necessidade do serviço. Quem deve administrar o empregado é a empregadora. "Fica mais duas horas hoje" não é ordem que sai da sua boca. Sai do canal formal com a empresa.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 05 e 06 · Folha de pagamento e jornada</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · CAP 07 + 08 -->
+  <section class="page" data-screen-label="07 Cap 07-08">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 07 e 08</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 07</div>
+        <h2>Desvio de <span class="it">função</span>.</h2>
+      </div>
+      <p class="body">Quando o "só ajuda ali" vira problema. O porteiro começa controlando acesso. Depois recebe encomenda. Depois ajuda morador com mudança. Depois carrega caixa. Depois limpa área comum. Depois vira quase gerente operacional do prédio. E alguém ainda diz: "mas ele sempre fez com boa vontade". Boa vontade não substitui contrato. Muito menos descrição de função.</p>
+      <div class="h-sub" style="margin:4mm 0 2mm;">Exemplos de risco</div>
+      <div class="cols-2" style="gap:6mm;margin-bottom:4mm;">
+        <ul class="bul tight">
+          <li>Porteiro fazendo serviço de limpeza pesada</li>
+          <li>Auxiliar de limpeza atuando como zelador</li>
+          <li>Zelador fazendo manutenção elétrica sem qualificação</li>
+          <li>Controlador de acesso atuando como segurança</li>
+        </ul>
+        <ul class="bul tight">
+          <li>Funcionário em altura sem treinamento</li>
+          <li>Terceirizado carregando mudança particular</li>
+          <li>Porteiro manuseando equipamento sem capacitação</li>
+          <li>Cobertura de outro posto sem formalização</li>
+        </ul>
+      </div>
+      <div class="callout" style="margin-bottom:5mm;">Uma coisa é o funcionário informar que chegou encomenda. Outra é virar carregador oficial do prédio porque "o morador pediu com jeitinho". Condomínio que funciona na base do quebra-galho um dia descobre que o galho era uma árvore caindo no jurídico.</div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 08</div>
+        <h2 style="font-size:17pt;">Uniformes, EPIs e <span class="it">apresentação</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">A terceirizada fornece uniforme, identificação e EPI quando a função exige. O condomínio fiscaliza se a equipe está uniformizada, identificada, se o EPI é compatível com a atividade, se houve entrega formal, se está sendo usado e se há substituição quando necessário. A NR-1 trata do gerenciamento de risco ocupacional e reforça que isso não é favor. É gestão preventiva.</p>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">Não basta ter luva. É preciso que a empresa comprove fornecimento, orientação e substituição. Documento protege. Boa vontade comove e depois cobra.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 07 e 08 · Desvio de função, uniformes e EPIs</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · CAP 09 + 10 -->
+  <section class="page" data-screen-label="08 Cap 09-10">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 09 e 10</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 09</div>
+        <h2><span class="it">Treinamento</span> · não basta colocar alguém na portaria.</h2>
+      </div>
+      <p class="body">A empresa treina. O condomínio exige comprovação. Treinamento ruim gera falha operacional. Falha operacional gera reclamação. Reclamação gera desgaste. Desgaste gera grupo de WhatsApp. E o grupo de WhatsApp, como sabemos, é onde a civilização vai pedir demissão.</p>
+      <div class="cols-2" style="gap:6mm;margin:3mm 0 4mm;">
+        <div class="block-card">
+          <div class="h-sub">Treinamentos da empresa</div>
+          <ul class="bul tight">
+            <li>Controle de acesso e atendimento</li>
+            <li>Uso de sistemas e câmeras</li>
+            <li>Procedimentos de emergência</li>
+            <li>Abandono de área e combate inicial a incêndio</li>
+            <li>Uso de EPIs e produtos químicos</li>
+            <li>Trabalho em altura, quando aplicável</li>
+            <li>LGPD e tratamento de dados</li>
+          </ul>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Normas internas do condomínio</div>
+          <ul class="bul tight">
+            <li>Regimento interno e procedimentos da portaria</li>
+            <li>Manual de encomendas e protocolo de visitantes</li>
+            <li>Regras de garagem e áreas comuns</li>
+            <li>Contatos emergenciais</li>
+            <li>Plano de contingência</li>
+            <li>Canais oficiais de comunicação</li>
+          </ul>
+        </div>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 10</div>
+        <h2 style="font-size:17pt;">Acidente de <span class="it">trabalho</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">A responsabilidade primária sobre o empregado é da terceirizada. Mas o condomínio pode ser envolvido se houver falha no ambiente, omissão, risco não tratado ou negligência na fiscalização. Auxiliar de limpeza usando produto químico sem orientação, manutenção sem EPI, trabalho em altura sem treinamento, porteiro sofrendo agressão sem protocolo. Tudo aparece no laudo.</p>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A regra de ouro</span>
+        <span class="txt">Em acidente, o pior erro é agir só na conversa. Conversa acalma no dia. Documento protege no processo. Foto, vídeo, CAT, comunicação enviada e medida preventiva: tudo arquivado.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 09 e 10 · Treinamento e acidente de trabalho</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · CAP 11 + 12 + 13 -->
+  <section class="page" data-screen-label="09 Cap 11-13">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 11 a 13</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 11</div>
+        <h2>Substituição de <span class="it">funcionário</span>.</h2>
+      </div>
+      <p class="body">Troca de terceirizado precisa ser formalizada. Nome do substituto, função, escala, data de início, comprovação de vínculo, treinamento, uniforme e orientação sobre as normas internas. O síndico não aceita substituição informal, ainda mais em portaria. Em condomínio, uma troca mal comunicada vira problema trabalhista, operacional e de segurança. "Acho" é uma palavra péssima para gestão. Boa para fofoca, ruim para controle de acesso.</p>
+      <div class="frases-head" style="margin-top:4mm;">
+        <div class="section-kicker">Capítulos 12 e 13</div>
+        <h2 style="font-size:17pt;">Quem responde pelo <span class="it">quê</span>.</h2>
+      </div>
+      <div class="cols-2" style="gap:6mm;margin-top:3mm;">
+        <div class="block-card">
+          <div class="h-sub">Obrigações da terceirizada</div>
+          <ul class="bul tight">
+            <li>Contratar e registrar empregados</li>
+            <li>Pagar salário e recolher encargo</li>
+            <li>Cumprir convenção coletiva</li>
+            <li>Fornecer uniforme, EPI e treinamento</li>
+            <li>Controlar jornada e substituir falta</li>
+            <li>Supervisionar postos com presença</li>
+            <li>Responder por acidente sob sua responsabilidade</li>
+            <li>Entregar documentação mensal completa</li>
+            <li>Indenizar prejuízo causado por sua falha</li>
+          </ul>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Obrigações do condomínio</div>
+          <ul class="bul tight">
+            <li>Pagar conforme contrato</li>
+            <li>Permitir a execução do serviço</li>
+            <li>Informar normas internas</li>
+            <li>Não dar ordem direta indevida</li>
+            <li>Não alterar função sem formalização</li>
+            <li>Fiscalizar a documentação mensal</li>
+            <li>Registrar e notificar falhas</li>
+            <li>Preservar ambiente seguro</li>
+            <li>Respeitar limite contratual</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:auto;"><b>Empresa terceirizada séria não vende apenas posto.</b> Vende gestão, controle, supervisão, treinamento e responsabilidade. Se a empresa só entrega gente e desaparece, não é terceirização. É aplicativo de funcionário com CNPJ.</div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 11 a 13 · Substituição e obrigações de cada lado</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · CAP 14 + 15 -->
+  <section class="page" data-screen-label="10 Cap 14-15">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 14 e 15</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 14</div>
+        <h2>O que o síndico não <span class="it">deve fazer</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:4mm;font-size:9.5pt;">A maioria dos vínculos diretos nasce de gesto pequeno repetido com confiança. Lista para colar no espelho.</p>
+      <div class="cols-2" style="gap:6mm;margin-bottom:4mm;">
+        <ul class="bul tight">
+          <li>Dar ordem pessoal direta ao terceirizado</li>
+          <li>Mudar escala sem falar com a empresa</li>
+          <li>Mandar dobrar turno informalmente</li>
+          <li>Autorizar falta sem comunicação formal</li>
+          <li>Pedir serviço fora da função</li>
+          <li>Usar terceirizado para demanda particular</li>
+          <li>Permitir que morador dê ordem direta</li>
+          <li>Aceitar funcionário sem identificação</li>
+        </ul>
+        <ul class="bul tight">
+          <li>Pagar valor diretamente ao trabalhador</li>
+          <li>Dar gratificação informal</li>
+          <li>Prometer folga ou negociar férias</li>
+          <li>Interferir em punição disciplinar</li>
+          <li>Renovar contrato sem análise</li>
+          <li>Contratar apenas pelo menor preço</li>
+          <li>Ignorar ausência de documento</li>
+          <li>Resolver tudo por áudio de WhatsApp</li>
+        </ul>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 15</div>
+        <h2 style="font-size:17pt;">Fiscalizar sem criar <span class="it">vínculo</span> direto.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">A frase-chave é simples. <b>O síndico cobra a empresa. A empresa gerencia o empregado.</b></p>
+      <div class="compare" style="margin-top:3mm;">
+        <div class="box good">
+          <span class="lbl">Pode</span>
+          <ul>
+            <li>Cobrar cumprimento do contrato da empresa</li>
+            <li>Solicitar documentação mensal</li>
+            <li>Registrar falha operacional</li>
+            <li>Exigir substituição formal</li>
+            <li>Verificar posto, uniforme e postura</li>
+            <li>Aplicar penalidade contratual</li>
+          </ul>
+        </div>
+        <div class="box bad">
+          <span class="lbl">Não pode</span>
+          <ul>
+            <li>Advertir o empregado diretamente</li>
+            <li>Suspender, demitir ou punir</li>
+            <li>Alterar horário sem a empresa</li>
+            <li>Definir férias ou negociar salário</li>
+            <li>Prometer promoção ou aumento</li>
+            <li>Exigir atividade fora do contrato</li>
+          </ul>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Frase para guardar</span>
+        <span class="txt">O óbvio, em condomínio, precisa ser registrado em ata, comunicado, repetido e desenhado em PowerPoint. Não é exagero. É autoproteção.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 14 e 15 · O que não fazer e como fiscalizar com limite</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · CAP 16 · ROTINA MENSAL -->
+  <section class="page" data-screen-label="11 Cap 16">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 16 · Rotina mensal</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">16</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo dezesseis</div>
+          <h2 class="section-title">Calendário fixo de <span class="serif" style="font-style:italic;color:var(--accent);">fiscalização</span>.</h2>
+          <p class="section-lede">A fiscalização precisa ser previsível. Não pode depender do humor do mês, da crise da semana ou da pressão do conselho. Calendário aprovado, executado e arquivado.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="timeline">
+          <div class="tline">
+            <div class="when">Até o 5º dia útil</div>
+            <div class="what"><b>Solicitar documentação mensal</b> da terceirizada. E-mail formal com lista anexa. Prazo objetivo de retorno.</div>
+          </div>
+          <div class="tline">
+            <div class="when">Até o dia 10</div>
+            <div class="what"><b>Conferir documentos recebidos.</b> Comparar folha com convenção, conferir guias de FGTS e INSS, validar relação de empregados alocados.</div>
+          </div>
+          <div class="tline">
+            <div class="when">Até o dia 15</div>
+            <div class="what"><b>Registrar pendência e notificar regularização.</b> Por canal formal. Com prazo. Com cópia para o arquivo do condomínio.</div>
+          </div>
+          <div class="tline">
+            <div class="when">Antes do próximo pagamento</div>
+            <div class="what"><b>Verificar pendência grave.</b> Se houver, avaliar retenção contratual com orientação jurídica antes de liberar a próxima nota.</div>
+          </div>
+          <div class="tline">
+            <div class="when">Mensalmente</div>
+            <div class="what"><b>Emitir relatório interno de fiscalização.</b> Resumo objetivo, status documental, ocorrências e providências do mês.</div>
+          </div>
+          <div class="tline">
+            <div class="when">A cada trimestre</div>
+            <div class="what"><b>Reunião de performance com a empresa.</b> Indicadores, falhas, plano de ação, ata assinada.</div>
+          </div>
+          <div class="tline">
+            <div class="when">A cada semestre</div>
+            <div class="what"><b>Reavaliar contrato</b>, equipe, custo, qualidade e risco. Revisar postos e necessidades operacionais.</div>
+          </div>
+          <div class="tline">
+            <div class="when">Anualmente</div>
+            <div class="what"><b>Revisar escopo</b>, convenção coletiva, reajuste, certidão e histórico de falha. Atualização preventiva antes do próximo ciclo.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 16 · Rotina mensal de fiscalização</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · CAP 17 · CHECKLIST MENSAL -->
+  <section class="page" data-screen-label="12 Cap 17">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 17 · Checklist mensal</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 17</div>
+        <h2>Checklist mensal de <span class="it">fiscalização</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:5mm;font-size:9.5pt;">Use esse checklist como rotina padrão. Marque tudo que foi entregue. O que não foi vira pendência formal, notificada por escrito.</p>
+      <div class="check-grid">
+        <div class="check-col">
+          <div class="h-sub" style="color:var(--accent);">Trabalhistas</div>
+          <ul class="checks">
+            <li><span class="box"></span>Relação dos empregados alocados</li>
+            <li><span class="box"></span>Folha de pagamento</li>
+            <li><span class="box"></span>Comprovante de salário</li>
+            <li><span class="box"></span>Comprovante de FGTS</li>
+            <li><span class="box"></span>Comprovante de INSS</li>
+            <li><span class="box"></span>Comprovante de benefícios</li>
+            <li><span class="box"></span>Controle de jornada</li>
+            <li><span class="box"></span>Escala atualizada</li>
+            <li><span class="box"></span>Comprovante de férias</li>
+            <li><span class="box"></span>Comprovante de 13º</li>
+            <li><span class="box"></span>Termos rescisórios</li>
+            <li><span class="box"></span>Verbas rescisórias pagas</li>
+          </ul>
+        </div>
+        <div class="check-col">
+          <div class="h-sub" style="color:var(--accent);">Operacionais</div>
+          <ul class="checks">
+            <li><span class="box"></span>Nota fiscal</li>
+            <li><span class="box"></span>Relatório de supervisão</li>
+            <li><span class="box"></span>Registro de faltas</li>
+            <li><span class="box"></span>Registro de substituições</li>
+            <li><span class="box"></span>Ocorrências do mês</li>
+            <li><span class="box"></span>Plano de ação para falha</li>
+            <li><span class="box"></span>Comprovação de treinamento</li>
+            <li><span class="box"></span>Entrega de uniforme</li>
+            <li><span class="box"></span>Entrega de EPIs</li>
+            <li><span class="box"></span>Lista de funcionários autorizados</li>
+            <li><span class="box"></span>Indicadores de qualidade</li>
+            <li><span class="box"></span>Pesquisa de satisfação interna</li>
+          </ul>
+        </div>
+        <div class="check-col">
+          <div class="h-sub" style="color:var(--accent);">Regularidade</div>
+          <ul class="checks">
+            <li><span class="box"></span>Certidão trabalhista</li>
+            <li><span class="box"></span>Certidão fiscal</li>
+            <li><span class="box"></span>Regularidade do FGTS</li>
+            <li><span class="box"></span>Regularidade previdenciária</li>
+            <li><span class="box"></span>Convenção coletiva atualizada</li>
+            <li><span class="box"></span>Apólice de seguro</li>
+            <li><span class="box"></span>Comprovação societária</li>
+            <li><span class="box"></span>Cadastro de fornecedor ativo</li>
+            <li><span class="box"></span>Histórico de denúncia</li>
+            <li><span class="box"></span>Compliance vigente</li>
+            <li><span class="box"></span>Resposta a notificações</li>
+            <li><span class="box"></span>Arquivo organizado</li>
+          </ul>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">Documento que entra no arquivo organizado é defesa pronta. Documento perdido na caixa de e-mail é só intenção que ninguém prova.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 17 · Checklist mensal completo</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · CAP 18 + 19 -->
+  <section class="page" data-screen-label="13 Cap 18-19">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 18 e 19</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 18</div>
+        <h2>Sinais de alerta em uma <span class="it">terceirizada</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:3mm;font-size:9.5pt;">Sinal isolado pode ser falha pontual. Vários sinais juntos viram placa luminosa escrita "problema chegando". Problema, quando avisa antes, é porque quer ver se o síndico está prestando atenção.</p>
+      <div class="sinais" style="margin-bottom:5mm;">
+        <div class="item">Atraso recorrente de salário</div>
+        <div class="item">Não envia documento mensal</div>
+        <div class="item">Documento incompleto ou ilegível</div>
+        <div class="item">Troca de funcionário em excesso</div>
+        <div class="item">Não tem supervisor presente</div>
+        <div class="item">Não responde formalmente</div>
+        <div class="item">Não comprova encargo</div>
+        <div class="item">Não entrega uniforme ou EPI</div>
+        <div class="item">Muitas reclamações trabalhistas</div>
+        <div class="item">Preço muito abaixo do mercado</div>
+        <div class="item">Não informa convenção coletiva</div>
+        <div class="item">Não apresenta planilha de custos</div>
+        <div class="item">Posto descoberto sem aviso</div>
+        <div class="item">Funcionário sem treinamento</div>
+        <div class="item">Substituição informal</div>
+        <div class="item">Estrutura administrativa frágil</div>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 19</div>
+        <h2 style="font-size:17pt;">Planilha de <span class="it">composição de custos</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">O síndico não analisa apenas o valor final. Precisa entender como aquele preço foi formado. Quando a empresa não apresenta composição clara, o condomínio não consegue avaliar se o preço é sustentável. E preço insustentável gera três coisas em sequência: queda de qualidade, descumprimento trabalhista e passivo futuro.</p>
+      <div class="quote-block" style="margin-top:3mm;background:var(--paper-2);">
+        O barato, em terceirização, às vezes não sai caro. Sai com condenação, correção, honorário e reunião extraordinária.
+        <div class="signature">Bastidores da Sindicatura</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 18 e 19 · Sinais de alerta e composição de custos</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · CAP 20 · CLÁUSULAS -->
+  <section class="page" data-screen-label="14 Cap 20">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 20 · Cláusulas essenciais</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 20</div>
+        <h2>Cláusulas que não podem <span class="it">faltar</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:4mm;font-size:9.5pt;">O contrato deve ser revisado por advogado. Mas o síndico precisa saber o que pedir. Três modelos abaixo, prontos para o jurídico ajustar à realidade do prédio.</p>
+
+      <div class="clausula" style="margin-bottom:3mm;">
+        <div class="tag">Modelo · Fiscalização documental</div>
+        <div class="modelo"><b>A CONTRATADA deverá encaminhar mensalmente à CONTRATANTE</b>, até o dia ___ de cada mês, todos os documentos comprobatórios do cumprimento das obrigações trabalhistas, previdenciárias, fiscais e convencionais relativas aos empregados alocados na prestação dos serviços, incluindo folha de pagamento, comprovantes de pagamento salarial, recolhimentos de FGTS, recolhimentos previdenciários, comprovantes de benefícios, controles de jornada, relação nominal dos empregados, comprovantes de entrega de EPIs e uniformes, bem como documentos rescisórios quando aplicável. A ausência, atraso ou inconsistência poderá ensejar notificação, aplicação de penalidade contratual e demais medidas previstas neste instrumento.</div>
+      </div>
+
+      <div class="clausula" style="margin-bottom:3mm;">
+        <div class="tag">Modelo · Inexistência de vínculo</div>
+        <div class="modelo"><b>Os empregados, prepostos ou colaboradores designados pela CONTRATADA</b> não manterão qualquer vínculo empregatício com a CONTRATANTE, competindo exclusivamente à CONTRATADA a contratação, remuneração, direção, fiscalização funcional, controle de jornada, aplicação de medidas disciplinares, concessão de férias, pagamento de verbas trabalhistas, previdenciárias, fiscais e convencionais, bem como o cumprimento integral da legislação aplicável.</div>
+      </div>
+
+      <div class="clausula">
+        <div class="tag">Modelo · Substituição de empregado</div>
+        <div class="modelo"><b>A substituição de qualquer empregado alocado</b> deverá ser previamente comunicada à CONTRATANTE, com indicação do nome completo, função, escala, data de início, comprovação de vínculo com a CONTRATADA, entrega de uniforme, EPIs necessários e treinamentos exigidos para a função, especialmente em postos de portaria, controle de acesso, segurança operacional, manutenção ou atividade com risco.</div>
+      </div>
+
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">Cláusula bem redigida não defende o condomínio na assinatura. Defende na audiência. E é lá, na audiência, que se descobre o valor de cada vírgula que ninguém quis discutir antes.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 20 · Cláusulas essenciais e modelos prontos</div><div class="pg-num">14</div></div>
+  </section>
+
+  <!-- PAGE 15 · CAP 21 + 22 -->
+  <section class="page" data-screen-label="15 Cap 21-22">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 21 e 22</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 21</div>
+        <h2>Quando a empresa não envia <span class="it">documento</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:4mm;">Régua de cobrança formal. Não é gentileza. É procedimento.</p>
+      <div class="etapas" style="margin-bottom:5mm;">
+        <div class="etapa"><div class="n">01</div><div class="t">Cobrança formal</div><div class="d">E-mail com prazo objetivo e lista anexa</div></div>
+        <div class="etapa"><div class="n">02</div><div class="t">Registro interno</div><div class="d">Pendência arquivada no histórico</div></div>
+        <div class="etapa"><div class="n">03</div><div class="t">Advertência</div><div class="d">Se previsto no contrato, aplicar</div></div>
+        <div class="etapa"><div class="n">04</div><div class="t">Reunião</div><div class="d">Com ata, compromisso e prazo</div></div>
+        <div class="etapa"><div class="n">05</div><div class="t">Análise jurídica</div><div class="d">Se persistir, envio ao jurídico</div></div>
+        <div class="etapa"><div class="n">06</div><div class="t">Medida contratual</div><div class="d">Multa, retenção, troca ou rescisão</div></div>
+      </div>
+      <p class="body" style="font-size:9.5pt;">O que o síndico não pode fazer é continuar pagando normalmente, renovando contrato e fingindo que "mês que vem eles mandam". Spoiler: mês que vem eles também não mandam.</p>
+
+      <div class="frases-head" style="margin-top:4mm;">
+        <div class="section-kicker">Capítulo 22</div>
+        <h2 style="font-size:17pt;">Portaria · o posto mais <span class="it">sensível</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">O porteiro lida com morador, visitante, prestador, entrega, cadastro, câmera, chave, controle, ocorrência, conflito, dado pessoal e acesso físico ao prédio. O contrato precisa prever treinamento em controle de acesso, procedimento para visitante e entrega, regra de cadastro, sigilo de informação, LGPD, uso de sistemas, conduta em conflito, limite de atuação, proibição de favor particular e supervisão periódica.</p>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A regra silenciosa</span>
+        <span class="txt">Falha de segurança em condomínio não termina em "vamos alinhar". Termina em assembleia tensa, morador exaltado e síndico explicando o inexplicável.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 21 e 22 · Cobrança de documento e riscos da portaria</div><div class="pg-num">15</div></div>
+  </section>
+
+  <!-- PAGE 16 · CAP 23 + 24 -->
+  <section class="page" data-screen-label="16 Cap 23-24">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 23 e 24</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 23</div>
+        <h2><span class="it">Limpeza</span> · risco que parece pequeno.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">Os principais riscos envolvem produto químico, queda, escada, área molhada, coleta de lixo, peso, EPI, insalubridade conforme análise, desvio de função, jornada e falta de treinamento. O condomínio fiscaliza se a empresa fornece luva, bota, máscara quando necessário, óculos quando aplicável, uniforme adequado, treinamento sobre produto, orientação sobre diluição, ficha técnica, placa de sinalização e procedimento de limpeza segura.</p>
+      <div class="callout" style="margin:3mm 0 4mm;"><b>Evitar.</b> Auxiliar de limpeza carregando mudança, fazendo manutenção, lavando fachada, subindo em altura sem treinamento, limpando área não prevista ou atendendo demanda particular de morador. A limpeza precisa ser eficiente, mas eficiência sem segurança é só imprudência bem-intencionada.</div>
+
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 24</div>
+        <h2 style="font-size:17pt;">Zeladoria e <span class="it">manutenção</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">O zelador terceirizado vira o "resolve tudo" do prédio. Troca lâmpada, acompanha prestador, vê bomba, olha caixa d'água, ajuda morador, sobe em escada, abre casa de máquinas, mexe em equipamento, faz vistoria, carrega coisa. Quando ninguém limita, começa a executar atividade para a qual não foi contratado nem treinado.</p>
+      <div class="h-sub" style="margin:4mm 0 2mm;">O contrato precisa deixar claro</div>
+      <div class="cols-2" style="gap:6mm;margin-bottom:4mm;">
+        <ul class="bul tight">
+          <li>Função exata e atividade permitida</li>
+          <li>Atividade proibida sem qualificação</li>
+          <li>Treinamento obrigatório por função</li>
+          <li>Uso de EPI documentado</li>
+        </ul>
+        <ul class="bul tight">
+          <li>Limite da manutenção simples</li>
+          <li>Proibição de intervenção elétrica complexa</li>
+          <li>Proibição de altura sem treinamento</li>
+          <li>Acionamento de empresa especializada</li>
+        </ul>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A verdade nua</span>
+        <span class="txt">O zelador pode ser essencial. Mas ele não é eletricista, encanador, bombeiro civil, engenheiro, psicólogo e santo padroeiro do prédio ao mesmo tempo. Embora alguns condomínios tentem.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 23 e 24 · Limpeza, zeladoria e manutenção</div><div class="pg-num">16</div></div>
+  </section>
+
+  <!-- PAGE 17 · CAP 25 + 26 -->
+  <section class="page" data-screen-label="17 Cap 25-26">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 25 e 26</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 25</div>
+        <h2>Morador dando ordem · o <span class="it">caos gourmet</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">"Porteiro, sobe aqui para me ajudar." "Moça da limpeza, limpa minha vaga." "Zelador, troca isso dentro do meu apartamento." "Você pode levar essa caixa?" "Faz esse favor rapidinho." "Libera meu visitante mesmo sem cadastro." "Não conta para o síndico." O condomínio precisa ter regra clara. Terceirizado atende ao escopo contratado. Não a vontade particular.</p>
+      <div class="callout" style="margin:3mm 0 4mm;"><b>Quando isso acontece, surgem riscos de.</b> Desvio de função. Acidente. Responsabilidade civil. Falha de segurança. Conflito com a empresa. Desorganização operacional. Tratamento desigual entre moradores. O síndico comunica formalmente que pedido a terceirizado precisa respeitar o contrato e o canal oficial. Sim, alguém vai achar ruim. Normal. Toda regra boa incomoda justamente quem estava se beneficiando da bagunça.</div>
+
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 26</div>
+        <h2 style="font-size:17pt;">LGPD e <span class="it">terceirizado</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">Terceirizado acessa dados pessoais em vários pontos. Portaria, controle de acesso, cadastro de visitante, sistema de câmera, aplicativo do condomínio, livro de ocorrência, controle de encomenda, autorização de entrada, registro de veículo.</p>
+      <div class="h-sub" style="margin:4mm 0 2mm;">O contrato precisa prever</div>
+      <div class="cols-2" style="gap:6mm;">
+        <ul class="bul tight">
+          <li>Sigilo e uso correto da informação</li>
+          <li>Proibição de compartilhar dado</li>
+          <li>Proibição de divulgar imagem</li>
+          <li>Cuidado no manuseio de documento</li>
+        </ul>
+        <ul class="bul tight">
+          <li>Uso correto dos sistemas</li>
+          <li>Tratamento de dado de visitante</li>
+          <li>Comunicação de incidente</li>
+          <li>Treinamento periódico em LGPD</li>
+        </ul>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A regra invisível</span>
+        <span class="txt">Porteiro que comenta rotina de morador, envia foto da câmera ou repassa informação não está "sendo simpático". Está criando risco. Risco com dado pessoal costuma ser silencioso até virar reclamação formal.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 25 e 26 · Morador dando ordem e LGPD</div><div class="pg-num">17</div></div>
+  </section>
+
+  <!-- PAGE 18 · CAP 27 + 28 -->
+  <section class="page" data-screen-label="18 Cap 27-28">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 27 e 28</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 27</div>
+        <h2>Como escolher uma boa <span class="it">terceirizada</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Empresa boa responde com clareza. Empresa ruim responde com enrolação, desconto e promessa. Promessa, em terceirização, não substitui planilha.</p>
+      <div class="cols-2" style="gap:6mm;margin-bottom:4mm;">
+        <div class="block-card">
+          <div class="h-sub">Avaliar</div>
+          <ul class="bul tight">
+            <li>Tempo de mercado e estrutura</li>
+            <li>Carteira de clientes ativos</li>
+            <li>Regularidade documental</li>
+            <li>Supervisão presencial nos postos</li>
+            <li>Capacidade financeira</li>
+            <li>Histórico de processo trabalhista</li>
+            <li>Plano de substituição em falta</li>
+            <li>Experiência específica em condomínio</li>
+          </ul>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Perguntar antes</div>
+          <ul class="bul tight">
+            <li>Qual convenção coletiva é aplicada</li>
+            <li>Como é feita a supervisão</li>
+            <li>Qual o prazo de substituição</li>
+            <li>Como comprova pagamento salarial</li>
+            <li>Quem é o gestor do contrato</li>
+            <li>Há plantão operacional</li>
+            <li>Existe reserva técnica</li>
+            <li>Qual a política de EPI e uniforme</li>
+          </ul>
+        </div>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 28</div>
+        <h2 style="font-size:17pt;">O papel do <span class="it">conselho</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">Conselho atuante não é aquele que só pergunta "dá para baixar mais?". Conselho atuante pergunta se está dentro da convenção coletiva, se a planilha tem encargo, se há supervisão, reserva técnica, documento mensal, histórico e risco.</p>
+      <div class="quote-block" style="margin-top:3mm;background:var(--paper-2);">
+        Reduzir custo ignorando passivo é economia cenográfica. Fica bonito na previsão orçamentária. Depois vira incêndio na prestação de contas.
+        <div class="signature">Bastidores da Sindicatura</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 27 e 28 · Escolha da empresa e conselho atuante</div><div class="pg-num">18</div></div>
+  </section>
+
+  <!-- PAGE 19 · CAP 29 + 30 -->
+  <section class="page" data-screen-label="19 Cap 29-30">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 29 e 30</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 29</div>
+        <h2>Régua de fiscalização do <span class="it">síndico</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">A régua transforma rotina em método. E método é o que separa quem se protege de quem só promete que vai se proteger.</p>
+      <div class="cols-2" style="gap:6mm;margin-bottom:4mm;">
+        <div class="block-card">
+          <div class="h-sub">Mensal</div>
+          <ul class="bul tight">
+            <li>Documentação trabalhista e previdenciária</li>
+            <li>Escala e jornada</li>
+            <li>Faltas, substituições e ocorrências</li>
+            <li>Cobrança de pendência</li>
+            <li>Validação de nota fiscal</li>
+          </ul>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Trimestral e semestral</div>
+          <ul class="bul tight">
+            <li>Reunião e desempenho da empresa</li>
+            <li>Revisão de posto, treinamento e EPI</li>
+            <li>Relatório ao conselho</li>
+            <li>Análise de risco e passivo aparente</li>
+            <li>Revisão de certidão e indicador</li>
+          </ul>
+        </div>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 30 · autoavaliação</div>
+        <h2 style="font-size:17pt;">O condomínio está <span class="it">protegido</span>?</h2>
+      </div>
+      <p class="body" style="font-size:9.4pt;margin-bottom:3mm;">Marque as afirmações verdadeiras hoje no seu condomínio. Sem suavizar.</p>
+      <div class="cols-2" style="gap:6mm;">
+        <ul class="checks">
+          <li><span class="box"></span>Contrato descreve exatamente os serviços</li>
+          <li><span class="box"></span>Quantidade de postos e escala estão claras</li>
+          <li><span class="box"></span>Documento chega todo mês</li>
+          <li><span class="box"></span>Pendência é notificada formalmente</li>
+          <li><span class="box"></span>FGTS e INSS comprovados</li>
+          <li><span class="box"></span>Equipe uniformizada e identificada</li>
+          <li><span class="box"></span>EPI entregue e comprovado</li>
+        </ul>
+        <ul class="checks">
+          <li><span class="box"></span>Treinamento documentado</li>
+          <li><span class="box"></span>Substituição é formalizada</li>
+          <li><span class="box"></span>Morador sabe que não dá ordem</li>
+          <li><span class="box"></span>Conselho acompanha relatório</li>
+          <li><span class="box"></span>Proposta tem composição de custos</li>
+          <li><span class="box"></span>Contrato foi revisado pelo jurídico</li>
+          <li><span class="box"></span>Arquivo está organizado</li>
+        </ul>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Leitura</span>
+        <span class="txt">Mais de 12 marcadas é boa estrutura. Entre 7 e 11 é brecha aberta esperando passivo. Menos de 7 é modo "confia", primo administrativo do "vai dar ruim".</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 29 e 30 · Régua de fiscalização e autoavaliação</div><div class="pg-num">19</div></div>
+  </section>
+
+  <!-- PAGE 20 · BÔNUS · 10 FRASES -->
+  <section class="page" data-screen-label="20 Bônus">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Bônus · 10 frases</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Bônus prático</div>
+        <h2>10 frases que o síndico deve parar de <span class="it">dizer</span>.</h2>
+      </div>
+      <p class="body" style="margin-bottom:4mm;font-size:9.5pt;">Cada frase abaixo já fundou um processo trabalhista em algum lugar do Brasil. Se você se reconhecer em alguma, respira fundo. E reescreve a postura antes de reescrever o orçamento da defesa.</p>
+      <div class="frase-list">
+        <div class="frase"><div class="n">01</div><div class="t">"Mas ele nem é funcionário do condomínio."</div></div>
+        <div class="frase"><div class="n">02</div><div class="t">"A empresa que se vire."</div></div>
+        <div class="frase"><div class="n">03</div><div class="t">"Depois a gente pede os documentos."</div></div>
+        <div class="frase"><div class="n">04</div><div class="t">"Está barato, vamos fechar."</div></div>
+        <div class="frase"><div class="n">05</div><div class="t">"Ele sempre ajuda os moradores."</div></div>
+        <div class="frase"><div class="n">06</div><div class="t">"Só hoje ele dobra."</div></div>
+        <div class="frase"><div class="n">07</div><div class="t">"Não precisa formalizar."</div></div>
+        <div class="frase"><div class="n">08</div><div class="t">"Confio no supervisor."</div></div>
+        <div class="frase"><div class="n">09</div><div class="t">"Está tudo no WhatsApp."</div></div>
+        <div class="frase"><div class="n">10</div><div class="t">"Se der problema, a culpa é da terceirizada."</div></div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">A reclamação trabalhista raramente nasce de um único erro. Nasce de pequenas frases repetidas com muita confiança e pouco arquivo. Repare nas suas. As do prédio também.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bônus · As 10 frases que custam caro</div><div class="pg-num">20</div></div>
+  </section>
+
+  <!-- PAGE 21 · CONCLUSÃO -->
+  <section class="page" data-screen-label="21 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">Gestão séria não depende de <span class="serif" style="font-style:italic;color:var(--accent);">sorte</span>.</h2>
+          <p class="section-lede">Terceirização não é problema. O problema é terceirizar sem critério, contratar pelo menor preço, não fiscalizar documento, permitir desvio de função, aceitar informalidade e só lembrar do contrato quando chega a reclamação trabalhista.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="refrain">
+          <p>O síndico profissional contrata <b>bem</b>.</p>
+          <p>Formaliza <b>tudo</b>.</p>
+          <p>Fiscaliza <b>mensalmente</b>.</p>
+          <p>Documenta <b>pendência</b>.</p>
+          <p>Corrige <b>rápido</b>.</p>
+          <p>E não confunde terceirização com <b>abandono</b>.</p>
+        </div>
+        <p class="body">A terceirizada não é apenas fornecedora de mão de obra. É parte da operação do condomínio. E tudo que acontece dentro do condomínio precisa ser minimamente controlado, documentado e fiscalizado. Não porque o síndico precisa viver com medo. Porque gestão séria não depende de sorte. Depende de método.</p>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          O passivo trabalhista raramente nasce de um único erro. Ele nasce de pequenas negligências repetidas com muita confiança e pouco arquivo.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · Gestão séria não depende de sorte</div><div class="pg-num">21</div></div>
+  </section>
+
+  <!-- PAGE 22 · CONVITE MENTORIA -->
+  <section class="page capture" data-screen-label="22 Mentoria">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>O convite</div></div>
+    <div class="pg-body">
+      <div class="invite-head">Convite · da reação ao método</div>
+      <h2 class="invite-title">Síndico que entende os bastidores constrói <span class="it">gestão</span>.</h2>
+      <div class="invite-grid">
+        <div>
+          <p>A Mentoria Bastidores da Sindicatura não é aberta. É uma turma pequena, com vagas escolhidas a dedo. <b>Eu seleciono pessoalmente cada participante.</b> Por dois motivos. O primeiro é o nível da conversa. O segundo é o método. Um espaço fechado garante que cada decisão seja debatida com a profundidade que esse mercado exige.</p>
+          <p>Se você leu esse e-book e percebeu que o seu condomínio opera em "modo confia", você já tem o primeiro requisito: <b>coragem de reconhecer.</b></p>
+        </div>
+        <div>
+          <p>Na mentoria, você aprende o que ninguém mostra no palco bonito da gestão condominial. Como tomar decisão difícil, proteger sua atuação, organizar processo, lidar com conselho, morador e fornecedor, evitar passivo e construir uma gestão com autoridade, método e resultado.</p>
+          <p>Não é para quem quer aprender mais sobre sindicatura. É para quem decidiu trocar improviso por <b>método</b>, e construir uma carreira que sobrevive ao próximo mandato. E ao mandato depois desse.</p>
+        </div>
+      </div>
+      <div class="selection-band">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Vagas <span class="it">limitadas</span> por turma. Seleção por <span class="it">perfil.</span></div>
+        <p class="lines">Os bastidores que ninguém mostra.<br/>As conversas que ninguém grava.<br/>As decisões que protegem o seu mandato.</p>
+        <div class="u">→ Candidate-se em <span>www.bastidoresdasindicatura.com.br</span></div>
+        <div class="note">Próxima turma com vagas restritas. Seleção feita pessoalmente pela Juliana Moreira.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>O convite · Mentoria Bastidores da Sindicatura</div><div class="pg-num">22</div></div>
+  </section>
+
+  <!-- PAGE 23 · MANIFESTO -->
+  <section class="page manifesto" data-screen-label="23 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top:30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:12mm;">
+        <div class="cover-eyebrow" style="margin:0;">Terceirizados · Vol. 20</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:165mm;">
+          Quem confia, <em style="font-style:italic;color:var(--accent);">paga depois.</em><br/>
+          Quem fiscaliza, <em style="font-style:italic;color:var(--accent);">dorme em paz.</em>
+        </h2>
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          O contrato bom não evita a reclamação. Evita a condenação. E essa é a diferença entre quem sai do mandato com o nome limpo, e quem sai com boleto de honorário.
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 20 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite"><b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab=document.getElementById('pdfFab'); var hint=document.getElementById('pdfHint');
+    if(!fab) return; var t;
+    fab.addEventListener('mouseenter',function(){ clearTimeout(t); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave',function(){ t=setTimeout(function(){ hint.classList.remove('show'); },250); });
+    fab.addEventListener('click',function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); },120); setTimeout(function(){ hint.classList.remove('show'); },4000); });
+  })();
+</script>
+</body></html>
