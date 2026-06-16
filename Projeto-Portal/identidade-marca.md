@@ -47,6 +47,28 @@
 
 **Recomendação entre as propostas:** **Condomínio em Pauta** (marca jornalística mais forte) e **Radar Condominial** (mais ágil/moderno). Reservar **Condo Talk** para o podcast. Descartar **Condo News** pela colisão com concorrente.
 
+### Disponibilidade — pesquisa preliminar (jun/2026)
+
+> ⚠️ **Metodologia e limites:** consulta de resolução DNS via `curl` + buscas web. "Domínio não resolve" sugere disponibilidade, **mas não é prova** — pode estar registrado sem site. A busca de marca (base US) tem cobertura BR parcial: ausência não é garantia. **Confirmar sempre em registro.br (domínio) e INPI (marca) antes de fechar.**
+
+| Nome | Domínio `.com.br` | Marca / redes já existentes | Veredito |
+|---|---|---|---|
+| **Radar Condominial** | `radarcondominial.com.br` não resolve → provável livre | Nenhuma marca/portal encontrado | ✅ **Mais promissor** |
+| **Giro Condominial** | `girocondominial.com.br` não resolve → provável livre | Nenhuma encontrada | ✅ Promissor |
+| **Convívio** | `convivio.com.br` e `revistaconvivio.com.br` não resolvem → provável livre | Nada no nicho condominial (palavra comum em outros setores) | ✅ Promissor (checar — palavra comum) |
+| **Condomínio em Pauta** | `condominioempauta.com.br` não resolve | ⚠️ **JÁ EM USO**: podcast + Instagram **@condoempauta** + programa "Condomínio em Pauta" (Ricardo Karpat / CondTV) | ❌ **Evitar** — colisão ativa no mesmo mercado |
+| **Panorama Condominial** | não resolve | ⚠️ "Panorama Administradora de Condomínios" (@panorama.condominios, ~8,7k) | ⚠️ Risco moderado (marca adjacente) |
+| **Ágora** | `agora.com.br` **OCUPADO** (Ágora Investimentos/Bradesco) | Marca muito difundida | ❌ Evitar domínio puro |
+| **Elo (Condominial)** | `elocondominial.com.br` **REGISTRADO** | ⚠️ bandeira de cartão "Elo" | ❌ Evitar |
+
+**Handles sociais:** não foram encontrados perfis públicos para `@radarcondominial`, `@girocondominial` nem `@revistaconvivio` (indício de disponibilidade — confirmar no cadastro de cada rede). Já `@condoempauta` e `@panorama.condominios` estão **ocupados**.
+
+### 🏆 Recomendação final (pós-disponibilidade)
+1. **Radar Condominial** — melhor combinação de "soa a notícias/monitoramento" + provável domínio e redes livres. **Favorito.**
+2. **Giro Condominial** — vice, mesmo perfil de disponibilidade; tom mais leve.
+3. **Convívio** — se quiser marca mais quente/revista e diferenciada (checar domínio por ser palavra comum).
+> **Reverter o curso anterior:** "Condomínio em Pauta", apesar de forte como nome, **deve ser evitado** — já existe podcast/programa/Instagram com esse nome no setor.
+
 ---
 
 ## 3. Posicionamento e tagline
