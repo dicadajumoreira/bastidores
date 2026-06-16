@@ -1,0 +1,1142 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Carregadores Elétricos em Condomínios · Bastidores da Sindicatura · Vol. 21</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <text y="-30" font-family="serif" font-style="italic" font-size="86" fill="#B8543B">Carregadores.</text>
+      <text y="100" font-family="serif" font-size="32" fill="#0E1A2B">O que o síndico precisa saber</text>
+      <text y="142" font-family="serif" font-size="32" fill="#0E1A2B">antes de aprovar.</text>
+      <text y="230" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">BASTIDORES DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A; --rule:1px solid var(--line);
+  }
+  @page { size: 210mm 297mm; margin: 0; }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; width:210mm; background:#2A2522; font-family:"Manrope", system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; color:var(--ink); page-break-after:always; break-after:page; margin:0 auto; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen { html, body{ width:auto; } body{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 0 60px; } .page{ box-shadow:0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); } }
+  @media print{ html, body{ background:#fff; width:210mm; margin:0; padding:0; display:block; } .page{ box-shadow:none; margin:0; display:block; } }
+
+  .frame{ position:absolute; inset:14mm 16mm; }
+  .pg-head{ position:absolute; top:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); padding-bottom:4mm; border-bottom:var(--rule); }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{ width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  .pg-foot{ position:absolute; bottom:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:8.5pt; color:var(--muted); padding-top:4mm; border-top:var(--rule); }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .pg-body{ position:absolute; top:22mm; bottom:18mm; left:16mm; right:16mm; display:flex; flex-direction:column; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif","Times New Roman",serif; font-weight:400; }
+  .section-num{ font-family:"Instrument Serif"; font-style:italic; font-size:60pt; line-height:1; color:var(--accent); letter-spacing:-.02em; }
+  .section-kicker{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-title{ font-family:"Instrument Serif"; font-weight:400; font-size:30pt; line-height:1.04; letter-spacing:-.01em; color:var(--ink); margin-top:2mm; }
+  .section-lede{ font-size:10pt; line-height:1.55; color:var(--ink-2); max-width:135mm; margin-top:4mm; }
+  .h-sub{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:3mm; }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  ul.bul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.4mm; }
+  ul.bul li{ display:flex; gap:8px; align-items:flex-start; font-size:9pt; line-height:1.4; color:var(--ink-2); padding:.6mm 0; border-bottom:1px dotted var(--line); }
+  ul.bul li:last-child{ border-bottom:none; }
+  ul.bul li::before{ content:""; flex:0 0 auto; width:4px; height:4px; margin-top:2.2mm; background:var(--accent); border-radius:50%; }
+  ul.bul.tight li{ font-size:8.6pt; padding:.4mm 0; }
+
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.5mm; }
+  ul.checks li{ display:flex; gap:8px; align-items:flex-start; font-size:9pt; line-height:1.38; color:var(--ink-2); padding:.6mm 0; border-bottom:1px dotted var(--line); }
+  ul.checks li:last-child{ border-bottom:none; }
+  ul.checks li .box{ flex:0 0 auto; width:3.8mm; height:3.8mm; border:1.2px solid var(--ink); border-radius:1.2px; background:var(--cream); margin-top:1mm; }
+
+  .cols-2{ display:grid; grid-template-columns:1fr 1fr; column-gap:8mm; align-items:start; }
+  .cols-3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:5mm; align-items:start; }
+
+  ol.enum{ list-style:none; padding:0; margin:0; counter-reset:en; display:flex; flex-direction:column; gap:1.4mm; }
+  ol.enum li{ counter-increment:en; display:flex; gap:8px; align-items:baseline; font-size:9pt; line-height:1.4; color:var(--ink-2); padding:.8mm 0; border-bottom:1px dotted var(--line); }
+  ol.enum li::before{ content:counter(en, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--accent); flex:0 0 8mm; }
+  ol.enum li b{ color:var(--ink); }
+
+  .callout{ background:var(--paper-2); border-left:3px solid var(--accent); padding:4mm 5mm; font-size:9pt; line-height:1.5; color:var(--ink-2); margin-top:3mm; }
+  .callout b{ color:var(--ink); }
+  .quote-block{ background:var(--cream); border:1px solid var(--line); padding:5mm 6mm; font-family:"Instrument Serif"; font-style:italic; font-size:11.5pt; line-height:1.45; color:var(--ink); }
+  .quote-block .signature{ margin-top:3mm; font-family:"Manrope"; font-style:normal; font-size:8pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .survival{ background:var(--paper-2); border-left:3px solid var(--accent); padding:4mm 6mm; display:flex; flex-direction:column; gap:1.6mm; }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; line-height:1.3; color:var(--ink); }
+
+  .hr-orn{ display:flex; align-items:center; gap:10px; color:var(--accent); margin:3mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent);}
+
+  .refrain{ display:flex; flex-direction:column; gap:1.2mm; padding:3mm 5mm; border-left:2px solid var(--line); }
+  .refrain p{ margin:0; font-size:10pt; line-height:1.45; color:var(--ink-2); }
+  .refrain p b{ color:var(--ink); font-weight:600; }
+
+  .block-card{ background:var(--cream); border:1px solid var(--line); border-left:3px solid var(--accent); padding:4mm 5mm; }
+  .block-card .h-sub{ margin-bottom:2.5mm; font-size:8pt; }
+  .block-card ul.bul li{ font-size:8.6pt; padding:.4mm 0; }
+
+  /* compare */
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+  .compare .box{ padding:4mm 5mm; }
+  .compare .bad{ background:var(--paper-2); border-left:3px solid var(--accent); }
+  .compare .good{ background:var(--cream); border-left:3px solid var(--gold); }
+  .compare .lbl{ font-family:"Manrope"; font-weight:700; font-size:7.8pt; letter-spacing:.18em; text-transform:uppercase; margin-bottom:2mm; display:block; }
+  .compare .bad .lbl{ color:var(--accent); }
+  .compare .good .lbl{ color:var(--gold); }
+  .compare ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.6mm; }
+  .compare ul li{ font-family:"Manrope"; font-size:8.8pt; line-height:1.4; color:var(--ink-2); padding:.8mm 0; border-bottom:1px dotted rgba(184,84,59,.15); }
+  .compare ul li:last-child{ border-bottom:none; }
+
+  .frases-head{ display:flex; align-items:baseline; gap:6mm; flex-wrap:wrap; padding-bottom:3mm; border-bottom:var(--rule); margin-bottom:4mm; }
+  .frases-head .section-kicker{ flex:0 0 auto; }
+  .frases-head h2{ font-family:"Instrument Serif"; font-weight:400; font-size:20pt; line-height:1.05; color:var(--ink); margin:0; }
+  .frases-head h2 .it{ font-style:italic; color:var(--accent); }
+
+  /* tabela formas */
+  .modtab{ display:grid; grid-template-columns:1fr; gap:0; border:1px solid var(--line); }
+  .modtab .row{ display:grid; grid-template-columns:36mm 1fr 1fr 1fr; border-bottom:1px solid var(--line); }
+  .modtab .row:last-child{ border-bottom:none; }
+  .modtab .row.hdr{ background:var(--paper-2); }
+  .modtab .row.hdr .cell{ font-family:"Manrope"; font-weight:700; font-size:7.6pt; letter-spacing:.16em; text-transform:uppercase; color:var(--ink); }
+  .modtab .cell{ padding:3mm 4mm; border-right:1px solid var(--line); font-size:8.4pt; line-height:1.4; color:var(--ink-2); }
+  .modtab .cell:last-child{ border-right:none; }
+  .modtab .cell .ttl{ font-family:"Instrument Serif"; font-style:italic; font-size:10.5pt; color:var(--ink); display:block; margin-bottom:1mm; }
+  .modtab .cell.ok{ color:var(--ink); }
+  .modtab .cell.bad{ color:var(--accent); }
+
+  /* tabela responsabilidades */
+  .resptab{ display:grid; grid-template-columns:1fr; gap:0; border:1px solid var(--line); }
+  .resptab .row{ display:grid; grid-template-columns:50mm 1fr 1fr; border-bottom:1px solid var(--line); }
+  .resptab .row:last-child{ border-bottom:none; }
+  .resptab .row.hdr{ background:var(--paper-2); }
+  .resptab .row.hdr .cell{ font-family:"Manrope"; font-weight:700; font-size:7.6pt; letter-spacing:.16em; text-transform:uppercase; color:var(--ink); }
+  .resptab .cell{ padding:2.6mm 4mm; border-right:1px solid var(--line); font-size:8.6pt; line-height:1.4; color:var(--ink-2); }
+  .resptab .cell:last-child{ border-right:none; }
+  .resptab .cell.tema{ font-family:"Manrope"; font-weight:600; color:var(--ink); font-size:8.6pt; }
+
+  /* fluxo */
+  .fluxo{ display:grid; grid-template-columns:repeat(5, 1fr); gap:3mm; }
+  .fluxo .step{ background:var(--cream); border:1px solid var(--line); border-top:3px solid var(--accent); padding:3mm 3mm 3mm; }
+  .fluxo .step .n{ font-family:"Instrument Serif"; font-style:italic; font-size:15pt; color:var(--accent); line-height:1; }
+  .fluxo .step .t{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.06em; color:var(--ink); margin-top:1.5mm; line-height:1.2; }
+  .fluxo .step .d{ font-family:"Manrope"; font-size:7.6pt; line-height:1.35; color:var(--ink-2); margin-top:1.5mm; }
+
+  /* sinais */
+  .sinais{ display:grid; grid-template-columns:1fr 1fr; gap:1.2mm 5mm; }
+  .sinais .item{ font-family:"Manrope"; font-size:8.8pt; line-height:1.4; color:var(--ink-2); padding:.6mm 0; border-bottom:1px dotted var(--line); display:flex; gap:6px; align-items:flex-start; }
+  .sinais .item::before{ content:"\""; font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--accent); flex:0 0 4mm; margin-top:-1mm; }
+
+  /* normas card */
+  .norma{ background:var(--cream); border:1px solid var(--line); padding:4mm 5mm; display:flex; flex-direction:column; gap:1.5mm; }
+  .norma .tag{ font-family:"Manrope"; font-weight:700; font-size:7.6pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); }
+  .norma .ttl{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; line-height:1.2; color:var(--ink); }
+  .norma .d{ font-family:"Manrope"; font-size:8.4pt; line-height:1.45; color:var(--ink-2); }
+  .norma .d b{ color:var(--ink); }
+
+  /* COVER */
+  .cover{ background: radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.14), transparent 55%), radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%), var(--paper); }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:var(--rule); padding-bottom:6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap:10px; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); }
+  .cover-brand .logo .mark{ width:30px; height:30px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border:2px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .cover-brand .sub{ font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--accent); }
+  .cover-meta .label{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:8mm 0 6mm; }
+  .cover-eyebrow{ font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6mm; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .cover-big{ font-family:"Instrument Serif"; font-style:italic; font-size:74pt; line-height:.92; color:var(--accent); letter-spacing:-.025em; margin:0 0 4mm; }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size:30pt; line-height:1.05; letter-spacing:-.01em; color:var(--ink); margin:0 0 5mm; max-width:170mm; }
+  .cover-title .it{ font-style:italic; color:var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size:11.5pt; line-height:1.5; color:var(--ink-2); max-width:165mm; }
+  .cover-bottom{ border-top:var(--rule); padding-top:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap:11mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size:32pt; line-height:1; color:var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color:var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:2mm; }
+
+  /* OPENER */
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size:34pt; line-height:1.04; color:var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style:italic; color:var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns:1fr 1fr; gap:9mm; margin-top:6mm; }
+  .opener-grid p{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  /* TOC */
+  .toc-list{ display:grid; grid-template-columns:1fr; margin-top:3mm; }
+  .toc-item{ display:flex; align-items:baseline; gap:8px; padding:1.9mm 0; border-bottom:1px dotted var(--line); font-size:9.5pt; color:var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--accent); flex:0 0 14mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--muted); }
+
+  .section-head{ display:flex; gap:9mm; align-items:flex-start; padding-bottom:5mm; border-bottom:var(--rule); margin-bottom:5mm; }
+  .section-head .big{ flex:0 0 auto; }
+  .section-head .meta{ flex:1; padding-top:3mm;}
+  .section-body{ display:flex; flex-direction:column; gap:4mm; flex:1;}
+
+  /* capture */
+  .capture{ background: radial-gradient(120% 80% at 0% 0%, rgba(184,84,59,.16), transparent 55%), radial-gradient(90% 70% at 100% 100%, rgba(14,26,43,.10), transparent 55%), var(--paper); }
+  .invite-head{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:12px; margin-bottom:5mm; }
+  .invite-head::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .invite-title{ font-family:"Instrument Serif"; font-weight:400; font-size:36pt; line-height:1.04; letter-spacing:-.02em; color:var(--ink); margin:0; }
+  .invite-title .it{ font-style:italic; color:var(--accent); }
+  .invite-grid{ display:grid; grid-template-columns:1fr 1fr; gap:9mm; margin-top:6mm; }
+  .invite-grid p{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+  .invite-grid p b{ color:var(--ink); }
+  .selection-band{ background:var(--ink); color:var(--paper); padding:7mm 8mm; display:flex; flex-direction:column; gap:2.5mm; margin-top:auto; }
+  .selection-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .selection-band .t{ font-family:"Instrument Serif"; font-size:24pt; line-height:1.08; color:var(--paper); }
+  .selection-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .selection-band .lines{ font-family:"Instrument Serif"; font-style:italic; font-size:11.5pt; line-height:1.45; color:rgba(244,238,223,.92); margin:1.5mm 0 0; }
+  .selection-band .u{ font-family:"Manrope"; font-weight:700; font-size:10.5pt; letter-spacing:.04em; color:var(--paper); margin-top:2mm; }
+  .selection-band .u span{ color:var(--accent-2); }
+  .selection-band .note{ font-family:"Manrope"; font-size:8.5pt; letter-spacing:.16em; text-transform:uppercase; color:rgba(244,238,223,.6); margin-top:.5mm; }
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  /* FAB */
+  .pdf-fab{ position:fixed; right:22px; bottom:22px; z-index:9999; display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:#0E1A2B; color:#F4EEDF; border:none; border-radius:999px; font-family:"Manrope", system-ui, sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; box-shadow:0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30), inset 0 0 0 1px rgba(255,255,255,.06); transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .pdf-fab:hover{ transform:translateY(-2px); background:#B8543B; }
+  .pdf-fab svg{ width:16px; height:16px; flex:0 0 auto; }
+  .pdf-fab .dot-accent{ width:6px; height:6px; border-radius:50%; background:#B8543B; box-shadow:0 0 0 3px rgba(184,84,59,.22); }
+  .pdf-hint{ position:fixed; right:22px; bottom:74px; z-index:9998; max-width:280px; padding:12px 14px; background:#FBF7EC; border:1px solid #D9D2C2; border-radius:10px; font-family:"Manrope", system-ui, sans-serif; font-size:11.5px; line-height:1.5; color:#1F2C3F; box-shadow:0 10px 30px rgba(0,0,0,.18); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .pdf-hint.show{ opacity:1; transform:translateY(0); }
+  .pdf-hint b{ color:#B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display:none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 21</div>
+          <div class="label">Guia Prático</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">O guia que protege a garagem</div>
+        <h1 class="cover-big">Carregadores.</h1>
+        <p class="cover-title">O que o síndico precisa saber <span class="it">antes de aprovar.</span></p>
+        <p class="cover-deck">Um guia direto para evitar improviso elétrico, risco de incêndio, conflito entre moradores, passivo para o condomínio e aquela clássica assembleia em que todo mundo tem opinião e ninguém trouxe laudo. Com base na NBR 17019, na NBR 5410, na Diretriz Nacional LIGABOM 029/2025 e no que está em vigor para garagens com veículo elétrico.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">27</span></div><div class="l">Capítulos</div></div>
+          <div class="s"><div class="n">04</div><div class="l">Modelos prontos</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · APRESENTAÇÃO -->
+  <section class="page opener" data-screen-label="02 Apresentação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Apresentação</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:7mm;">Antes de virar a página</div>
+        <h2 class="opener-title">O carro elétrico chegou na garagem. E veio com <span class="it">pressa.</span></h2>
+        <p style="font-family:'Instrument Serif';font-style:italic;font-size:13.5pt;line-height:1.4;color:var(--ink-2);margin:4mm 0 0;max-width:165mm;">Acompanhado de três coisas. Dúvida, pressa e morador dizendo que "é só puxar um fio". Spoiler: não é.</p>
+        <div class="opener-grid">
+          <div>
+            <p>Instalar carregador em condomínio não é colocar tomada para carregar celular. Envolve carga elétrica, segurança contra incêndio, responsabilidade técnica, capacidade da instalação, rateio de consumo, documentação, aprovação interna e, principalmente, bom senso. O síndico não precisa ser engenheiro. Mas precisa exigir engenheiro. E a diferença entre as duas coisas é o que evita virar responsável técnico por osmose.</p>
+          </div>
+          <div>
+            <p>Esse e-book ajuda síndico, conselheiro e gestor a entender o básico indispensável antes de aprovar a primeira instalação. Sem juridiquês, sem terrorismo, sem palestra técnica que dá vontade de fingir queda de internet. Aqui o foco é o que olhar, o que cobrar e o que documentar para tomar uma decisão segura. <b>O problema não é o condomínio ter carregador. É aprovar carregador no "vai dar certo".</b></p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="cols-2" style="gap:7mm;">
+          <div class="block-card">
+            <div class="h-sub">O que está em vigor</div>
+            <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">ABNT NBR 17019:2022 disciplina o Sistema de Alimentação de Veículos Elétricos (SAVE). Junto com a NBR 5410 e a NBR IEC 61851-1, formam a base obrigatória. A Diretriz Nacional LIGABOM 029/2025 entrou em vigência em fevereiro de 2026.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">O que você vai encontrar</div>
+            <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Tabela comparativa de modelos de implantação, checklist de aprovação, fluxo em dez passos, perguntas para administradora e fornecedor, modelo de comunicado, termo de responsabilidade e tudo o que o síndico precisa ter pronto antes do primeiro pedido bater na portaria.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 21</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · SUMÁRIO -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:4mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Marco regulatório · normas técnicas e diretriz nacional 2026</span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">01·02</span><span class="ttl">O que é o SAVE e por que o tema virou urgente</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">03·04</span><span class="ttl">O síndico pode aprovar? E o erro de tratar como pedido particular</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">05</span><span class="ttl">Cinco modelos de implantação · tabela comparativa</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">06</span><span class="ttl">O que o síndico deve cobrar antes de aprovar</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">07</span><span class="ttl">Documentos mínimos · checklist completo</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">08</span><span class="ttl">Sinais de alerta · as frases que devem acender a luz</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">09</span><span class="ttl">Oito erros recorrentes em condomínios</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">10·11</span><span class="ttl">Perguntas para a administradora e para o fornecedor</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">12·13</span><span class="ttl">Política interna e checklist de aprovação</span><span class="pg">13</span></div>
+        <div class="toc-item"><span class="num">14</span><span class="ttl">Fluxo de aprovação em dez passos</span><span class="pg">14</span></div>
+        <div class="toc-item"><span class="num">15</span><span class="ttl">Tabela · o que é do morador e o que é do condomínio</span><span class="pg">15</span></div>
+        <div class="toc-item"><span class="num">16·17</span><span class="ttl">Assembleia · cuidados e pauta sugerida</span><span class="pg">16</span></div>
+        <div class="toc-item"><span class="num">18·19</span><span class="ttl">Modelo de comunicado e termo de responsabilidade</span><span class="pg">17</span></div>
+        <div class="toc-item"><span class="num">20·21</span><span class="ttl">A pressa do morador e o que não deve ser permitido</span><span class="pg">18</span></div>
+        <div class="toc-item"><span class="num">22·24</span><span class="ttl">Pasta do condomínio, papel da administradora e do conselho</span><span class="pg">19</span></div>
+        <div class="toc-item"><span class="num">25·26</span><span class="ttl">Roteiro de resposta e checklist final · posso aprovar?</span><span class="pg">20</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Conclusão · técnica antes de torcida</span><span class="pg">21</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">Convite · Mentoria Bastidores da Sindicatura</span><span class="pg">22</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · MARCO REGULATÓRIO -->
+  <section class="page" data-screen-label="04 Normas">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Marco regulatório</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">§</div></div>
+        <div class="meta">
+          <div class="section-kicker">Marco regulatório</div>
+          <h2 class="section-title">As normas que <span class="serif" style="font-style:italic;color:var(--accent);">decidem</span> a sua decisão.</h2>
+          <p class="section-lede">Antes de qualquer modelo de implantação, é preciso saber qual é a régua. Cinco referências formam o esqueleto da decisão em 2026. Quem aprova ignorando alguma, aprova no escuro.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2" style="gap:5mm;">
+          <div class="norma">
+            <div class="tag">ABNT NBR 17019:2022</div>
+            <div class="ttl">Sistema de Alimentação de Veículos Elétricos</div>
+            <div class="d">Norma específica do SAVE. Define os requisitos da instalação fixa para fornecimento de energia ao veículo elétrico. <b>É a referência central da decisão.</b></div>
+          </div>
+          <div class="norma">
+            <div class="tag">ABNT NBR 5410</div>
+            <div class="ttl">Instalações elétricas de baixa tensão</div>
+            <div class="d">Base de toda a instalação predial. Dimensionamento, proteção, identificação de circuito, aterramento. <b>Sem ela, nada é regular.</b></div>
+          </div>
+          <div class="norma">
+            <div class="tag">ABNT NBR IEC 61851-1</div>
+            <div class="ttl">Sistema condutivo de carga</div>
+            <div class="d">Requisitos do equipamento de carga conectivo. Modos de carga, comunicação, segurança elétrica e mecânica. <b>O carregador precisa atender.</b></div>
+          </div>
+          <div class="norma">
+            <div class="tag">Portaria 029/LIGABOM/2025</div>
+            <div class="ttl">Diretriz Nacional para garagens com SAVE</div>
+            <div class="d">Primeira diretriz nacional unificada. Vigência fevereiro de 2026. <b>Cada estado adapta na própria Instrução Técnica do Corpo de Bombeiros.</b></div>
+          </div>
+        </div>
+        <div class="callout"><b>Lei estadual paralela.</b> Em São Paulo, a Lei 18.403/2026 autoriza expressamente a instalação de carregadores em vagas de condomínio, observadas as normas técnicas e a deliberação do condomínio. Outros estados seguem com regulação própria. <b>Antes de aprovar, confirme a regra do seu estado.</b></div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Resumo prático</span>
+          <span class="txt">Toda instalação precisa de circuito exclusivo com disjuntor, DR e DPS, ART ou RRT do profissional, vedação a tomada comum e extensão, e ponto de desconexão manual a no máximo cinco metros da estação e da entrada da garagem.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Marco regulatório · NBR 17019, NBR 5410, IEC 61851-1, LIGABOM 029/2025</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · CAP 01 + 02 -->
+  <section class="page" data-screen-label="05 Cap 01-02">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 01 e 02</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 01</div>
+        <h2>O que é um carregador no <span class="it">condomínio</span>.</h2>
+      </div>
+      <p class="body">Carregador elétrico é o equipamento que alimenta a bateria de veículos elétricos ou híbridos plug-in. No condomínio, ele pode ser instalado em vaga privativa, vaga determinada, área comum ou estação coletiva de recarga, conforme estrutura do prédio, convenção, projeto elétrico e decisão do condomínio. O ponto mais importante é entender que ele não é uma simples tomada. Exige análise técnica, instalação adequada, responsável técnico, documentação, controle de consumo e regra clara.</p>
+      <div class="callout" style="margin-bottom:5mm;">Quando o condomínio não cria regra, ele cria confusão. E confusão, como sabemos, é a modalidade esportiva preferida de alguns moradores.</div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 02</div>
+        <h2 style="font-size:17pt;">Por que o tema virou <span class="it">urgente</span>.</h2>
+      </div>
+      <p class="body">O crescimento dos elétricos trouxe uma demanda nova. Onde e como carregar. Antes parecia distante. Hoje o morador compra o carro e aparece na administração perguntando "posso instalar meu carregador na minha vaga?". E o síndico, se não está preparado, fica entre dois riscos. Negar tudo sem fundamento técnico, ou aprovar tudo sem segurança. Nenhum dos dois caminhos é bom.</p>
+      <div class="quote-block" style="margin-top:3mm;background:var(--paper-2);">
+        O papel do síndico não é ser contra a tecnologia. Também não é liberar qualquer coisa porque o morador chegou animado com o carro novo. O papel é fazer a pergunta certa antes de assinar embaixo.
+        <div class="signature">Bastidores da Sindicatura</div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A pergunta-chave</span>
+        <span class="txt">Essa instalação é tecnicamente viável, segura, documentada e compatível com a estrutura do condomínio? Se a resposta for sim, o caminho pode ser construído. Se for não, o condomínio precisa ajustar antes.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 01 e 02 · O que é o SAVE e por que virou urgente</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · CAP 03 + 04 -->
+  <section class="page" data-screen-label="06 Cap 03-04">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 03 e 04</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 03</div>
+        <h2>O síndico pode simplesmente <span class="it">aprovar</span>?</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">Depende. E essa é a resposta que irrita quem quer solução mágica, mas salva o síndico de muita dor de cabeça. Antes de aprovar, é preciso avaliar capacidade elétrica, local de instalação, impacto na garagem, risco para área comum, forma de medição, responsabilidade pela obra, documentação técnica, normas aplicáveis, necessidade de assembleia, comunicação aos moradores e eventual atualização do regulamento interno.</p>
+      <div class="refrain" style="margin:3mm 0 4mm;">
+        <p>A vaga pode ser do morador.</p>
+        <p>A parede pode ser da área comum.</p>
+        <p>A prumada elétrica pode ser <b>coletiva</b>.</p>
+        <p>O quadro pode ser do <b>condomínio</b>.</p>
+        <p>E o problema, se acontecer, não pergunta quem pagou o carregador.</p>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 04</div>
+        <h2 style="font-size:17pt;">O grande erro · tratar como <span class="it">pedido particular</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">"Ele paga, ele instala." Parece simples. Não é. Mesmo quando o morador arca com todos os custos, o condomínio precisa saber de onde virá a energia, se há capacidade disponível, se haverá sobrecarga, se a instalação passa por área comum, se há risco para outros moradores, se o consumo será medido corretamente, como será a manutenção, quem responde por falha e quem remove ou regulariza se houver problema.</p>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A frase que não blinda</span>
+        <span class="txt">"Foi o morador que fez" não defende o síndico em uma instalação autorizada sem critério. O síndico não precisa ser engenheiro. Precisa exigir engenheiro. Essa diferença impede o síndico de virar responsável técnico por osmose.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 03 e 04 · Aprovação e o erro do "pedido particular"</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · CAP 05 · TABELA MODELOS -->
+  <section class="page" data-screen-label="07 Cap 05">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 05 · Modelos de implantação</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 05</div>
+        <h2>Cinco caminhos. Cada um com <span class="it">consequência</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:4mm;">Não existe modelo único. Existe o modelo certo para o seu prédio. O condomínio precisa avaliar capacidade elétrica, número de moradores interessados, vagas aptas e apetite por gestão. A escolha define os próximos cinco anos de garagem.</p>
+      <div class="modtab">
+        <div class="row hdr">
+          <div class="cell">Modelo</div>
+          <div class="cell">Como funciona</div>
+          <div class="cell">Vantagem</div>
+          <div class="cell">Risco</div>
+        </div>
+        <div class="row">
+          <div class="cell"><span class="ttl">Individual na vaga</span><span style="font-size:8pt;color:var(--muted);">Demanda pontual</span></div>
+          <div class="cell">Morador solicita e instala carregador exclusivo para uso próprio na vaga privativa.</div>
+          <div class="cell ok">Atende demanda imediata. Custo individual.</div>
+          <div class="cell bad">Sem padrão entre vagas. Conflito futuro se não houver regra.</div>
+        </div>
+        <div class="row">
+          <div class="cell"><span class="ttl">Infraestrutura coletiva</span><span style="font-size:8pt;color:var(--muted);">Base preparada</span></div>
+          <div class="cell">Condomínio prepara prumada, quadro e pontos para instalações futuras.</div>
+          <div class="cell ok">Mais organizado. Evita obra repetida.</div>
+          <div class="cell bad">Exige projeto, investimento e deliberação.</div>
+        </div>
+        <div class="row">
+          <div class="cell"><span class="ttl">Estação compartilhada</span><span style="font-size:8pt;color:var(--muted);">Área comum</span></div>
+          <div class="cell">Condomínio instala pontos de uso comum, com agendamento ou rotatividade.</div>
+          <div class="cell ok">Democratiza o uso. Controla acesso.</div>
+          <div class="cell bad">Disputa de horário, regra de uso e cobrança.</div>
+        </div>
+        <div class="row">
+          <div class="cell"><span class="ttl">Empresa terceirizada</span><span style="font-size:8pt;color:var(--muted);">Operação completa</span></div>
+          <div class="cell">Fornecedor instala, opera, cobra e mantém a infraestrutura.</div>
+          <div class="cell ok">Menor gestão direta do condomínio.</div>
+          <div class="cell bad">Contrato mal feito vira dor de cabeça.</div>
+        </div>
+        <div class="row">
+          <div class="cell"><span class="ttl">Suspensão temporária</span><span style="font-size:8pt;color:var(--muted);">Até diagnóstico</span></div>
+          <div class="cell">Condomínio suspende aprovação até concluir laudo e política interna.</div>
+          <div class="cell ok">Evita aprovação no escuro.</div>
+          <div class="cell bad">Insatisfação se não houver prazo nem justificativa.</div>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio de decisão</span>
+        <span class="txt">A escolha é estratégica, não preferencial. Modelo certo para o prédio errado vira problema técnico. Modelo errado para o prédio certo vira insatisfação política.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 05 · Cinco modelos de implantação comparados</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · CAP 06 -->
+  <section class="page" data-screen-label="08 Cap 06">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 06 · O que cobrar</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 06</div>
+        <h2>O que o síndico deve cobrar antes de <span class="it">aprovar</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:4mm;">Cinco itens inegociáveis. Não é burocracia. É a defesa que aparece quando o problema também aparecer.</p>
+      <div class="cols-2" style="gap:6mm;">
+        <div class="block-card">
+          <div class="h-sub">01 · Estudo de viabilidade</div>
+          <p style="margin:0 0 2mm;font-size:8.6pt;line-height:1.45;color:var(--ink-2);">Avaliação técnica da demanda atual, capacidade disponível, quadro elétrico, prumada, cabo, disjuntor, necessidade de adequação, impacto de instalações futuras, possibilidade de balanceamento e risco de sobrecarga.</p>
+          <p style="margin:0;font-size:8.4pt;line-height:1.4;color:var(--muted);font-style:italic;">Sem estudo, aprovação é só esperança.</p>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">02 · Projeto elétrico</div>
+          <p style="margin:0;font-size:8.6pt;line-height:1.45;color:var(--ink-2);">Indicação do local do carregador, caminho dos cabos, ponto de alimentação, proteção, disjuntor, dispositivo de segurança, identificação dos circuitos, forma de medição, especificação do equipamento e compatibilidade com a estrutura existente.</p>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">03 · Responsável técnico</div>
+          <p style="margin:0 0 2mm;font-size:8.6pt;line-height:1.45;color:var(--ink-2);">ART do CREA ou RRT do CAU, emitida pelo profissional habilitado, cobrindo instalação, dimensionamento de carga e identificação dos pontos SAVE nas plantas do prédio.</p>
+          <p style="margin:0;font-size:8.4pt;line-height:1.4;color:var(--muted);font-style:italic;">"Meu primo entende de elétrica" não é categoria técnica.</p>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">04 · Equipamento adequado</div>
+          <p style="margin:0;font-size:8.6pt;line-height:1.45;color:var(--ink-2);">Compatível com NBR 17019 e NBR IEC 61851-1. Vedado tomada improvisada, extensão, adaptador, carregador sem procedência, equipamento sem especificação e solução "provisória" que todo mundo sabe que vai ficar definitiva.</p>
+        </div>
+      </div>
+      <div class="block-card" style="margin-top:4mm;">
+        <div class="h-sub">05 · Medição e cobrança do consumo</div>
+        <p style="margin:0;font-size:9pt;line-height:1.45;color:var(--ink-2);">Como será medida a energia, quem paga, quando é cobrado, se há taxa administrativa, se o consumo passa pelo medidor da unidade ou do condomínio, como é a conferência, o que acontece em inadimplência e quem paga manutenção e adequação futura. <b>Não pode virar conta coletiva disfarçada de modernidade.</b></p>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">Esperança é linda para frase motivacional. Péssima para projeto elétrico.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 06 · Os cinco itens inegociáveis</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · CAP 07 · CHECKLIST DOCUMENTAL -->
+  <section class="page" data-screen-label="09 Cap 07">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 07 · Documentos mínimos</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 07</div>
+        <h2>Checklist documental antes da <span class="it">liberação</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:4mm;">A memória do condomínio é curta. A documentação precisa ser longa. Sem essa pasta arquivada, seis meses depois ninguém sabe quem instalou, como instalou, onde passa o cabo e quem autorizou.</p>
+      <div class="cols-2" style="gap:6mm;">
+        <ul class="checks">
+          <li><span class="box"></span>Requerimento formal do morador</li>
+          <li><span class="box"></span>Dados da unidade e da vaga</li>
+          <li><span class="box"></span>Modelo do veículo, quando relevante</li>
+          <li><span class="box"></span>Especificação técnica do carregador</li>
+          <li><span class="box"></span>Projeto elétrico da instalação</li>
+          <li><span class="box"></span>Estudo de viabilidade ou parecer técnico</li>
+          <li><span class="box"></span>ART ou RRT do profissional habilitado</li>
+          <li><span class="box"></span>Dados da empresa instaladora</li>
+          <li><span class="box"></span>Comprovação de regularidade da empresa</li>
+          <li><span class="box"></span>Memorial descritivo da instalação</li>
+        </ul>
+        <ul class="checks">
+          <li><span class="box"></span>Indicação do trajeto dos cabos</li>
+          <li><span class="box"></span>Forma de medição do consumo</li>
+          <li><span class="box"></span>Termo de responsabilidade assinado</li>
+          <li><span class="box"></span>Declaração de não interferência em área comum</li>
+          <li><span class="box"></span>Manual do equipamento</li>
+          <li><span class="box"></span>Garantia do equipamento</li>
+          <li><span class="box"></span>Plano de manutenção, se aplicável</li>
+          <li><span class="box"></span>Fotos da instalação após conclusão</li>
+          <li><span class="box"></span>Declaração de conformidade da instalação</li>
+          <li><span class="box"></span>Atualização cadastral no condomínio</li>
+        </ul>
+      </div>
+      <div class="quote-block" style="margin-top:4mm;background:var(--paper-2);">
+        Documento que entra no arquivo organizado é defesa pronta. Documento perdido na caixa de e-mail é só intenção que ninguém prova.
+        <div class="signature">Bastidores da Sindicatura</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 07 · Documentos mínimos antes da aprovação</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · CAP 08 · SINAIS -->
+  <section class="page" data-screen-label="10 Cap 08">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 08 · Sinais de alerta</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 08</div>
+        <h2>Frases que devem acender a <span class="it">luz vermelha</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:4mm;">Quando o fornecedor ou o instalador tenta convencer o síndico a pular etapa, o problema não está na etapa. Está no fornecedor. Cada frase abaixo já levou um condomínio a uma instalação que custou dez vezes mais do que parecia.</p>
+      <div class="sinais" style="margin-bottom:4mm;">
+        <div class="item">Não precisa de projeto</div>
+        <div class="item">É só uma tomada reforçada</div>
+        <div class="item">Já fizemos assim em vários lugares</div>
+        <div class="item">Não precisa passar pelo condomínio</div>
+        <div class="item">O consumo é baixinho</div>
+        <div class="item">Depois a gente regulariza</div>
+        <div class="item">Não precisa de responsável técnico</div>
+        <div class="item">A instalação é provisória</div>
+        <div class="item">Vamos puxar do quadro mais próximo</div>
+        <div class="item">O morador assume tudo</div>
+        <div class="item">Não precisa avisar assembleia</div>
+        <div class="item">Pode usar extensão</div>
+        <div class="item">O fornecedor não entrega projeto</div>
+        <div class="item">O instalador não emite ART</div>
+        <div class="item">Não sabemos se suporta, mas dá para tentar</div>
+        <div class="item">O carregador é universal, dá certo</div>
+      </div>
+      <div class="callout" style="margin-bottom:4mm;"><b>Atenção dobrada.</b> A NBR 17019 e a NBR 5410 vedam o uso de tomada comum e de extensão para alimentação do veículo elétrico. Quem propõe isso, propõe contra a norma. E contra a norma vira contra o condomínio quando o sinistro chega.</div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A regra do dedo no ar</span>
+        <span class="txt">Em condomínio, o provisório tem uma capacidade sobrenatural de envelhecer no local. Se vier com cara de provisório, sai com cara de passivo.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 08 · As 16 frases que custam caro</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · CAP 09 · OITO ERROS -->
+  <section class="page" data-screen-label="11 Cap 09">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 09 · Oito erros</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 09</div>
+        <h2>Os oito erros que aparecem em <span class="it">repetição</span>.</h2>
+      </div>
+      <ol class="enum">
+        <li><div><b>Liberar o primeiro pedido sem criar regra.</b> Cada vaga acaba com uma solução diferente. Cada cabo passa por um lugar. O síndico vira curador de gambiarra premium. Antes do primeiro caso, crie o procedimento.</div></li>
+        <li><div><b>Não avaliar a capacidade elétrica.</b> O problema pode não aparecer no primeiro carregador. Pode aparecer no quinto. Ou no décimo. Ou no dia em que todo mundo resolver carregar ao mesmo tempo. O caos é democrático. Espera todos participarem.</div></li>
+        <li><div><b>Não definir quem paga.</b> Projeto, instalação, adequação do quadro, manutenção, ampliação de infraestrutura, energia, falha futura. Se não for definido antes, vai ser discutido depois. E discussão depois custa mais caro.</div></li>
+        <li><div><b>Permitir instalação sem padronização.</b> Cada morador contrata uma empresa, cada empresa instala de um jeito. O condomínio vira exposição permanente de decisão ruim. Padrão reduz risco, facilita manutenção e baixa conflito.</div></li>
+        <li><div><b>Esquecer do AVCB e dos Bombeiros.</b> Verifique a Instrução Técnica do seu estado. O tema envolve segurança contra incêndio, garagem, instalação elétrica e rota de emergência. Não basta olhar para o desejo do morador. Olhe para o prédio inteiro.</div></li>
+        <li><div><b>Deixar o assunto só na administradora.</b> A administradora ajuda. Não substitui análise técnica nem decisão deliberativa. Administradora não é escudo mágico. É parceira operacional. O síndico continua conduzindo.</div></li>
+        <li><div><b>Não fazer termo de responsabilidade.</b> O termo não resolve tudo. Mas organiza responsabilidade, registra a ciência do morador, autoriza vistoria do condomínio e prevê retirada em caso de irregularidade.</div></li>
+        <li><div><b>Aprovar no grupo de WhatsApp.</b> Pedido de carregador não se resolve com enquete. Grupo de WhatsApp não é assembleia, não é laudo, não é projeto, não é ata. É só o lugar onde a certeza técnica nasce em quem nunca abriu nem o manual do micro-ondas.</div></li>
+      </ol>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A consequência</span>
+        <span class="txt">Improviso elétrico em garagem não é economia. É roleta-russa patrimonial. E o prédio inteiro entra na partida sem ter sido convidado.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 09 · Oito erros recorrentes em condomínios</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · CAP 10 + 11 · PERGUNTAS -->
+  <section class="page" data-screen-label="12 Cap 10-11">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 10 e 11</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 10</div>
+        <h2>Perguntas para a <span class="it">administradora</span>.</h2>
+      </div>
+      <div class="cols-2" style="gap:6mm;margin-bottom:5mm;">
+        <ul class="bul tight">
+          <li>A convenção ou regulamento trata de obra em vaga?</li>
+          <li>Existe regra interna para instalação elétrica em garagem?</li>
+          <li>Será necessária assembleia para política geral?</li>
+          <li>Como será feita a cobrança do consumo?</li>
+          <li>Há histórico atualizado da carga disponível?</li>
+          <li>Existe laudo elétrico recente?</li>
+          <li>O seguro do condomínio precisa ser comunicado?</li>
+        </ul>
+        <ul class="bul tight">
+          <li>Há impacto no AVCB ou consulta aos Bombeiros?</li>
+          <li>O regulamento interno precisa de atualização?</li>
+          <li>Como será arquivada a documentação técnica?</li>
+          <li>Quem fiscalizará a execução?</li>
+          <li>Como tratar pedidos futuros de outros moradores?</li>
+          <li>Há risco de tratamento desigual entre moradores?</li>
+          <li>Vale contratar diagnóstico global antes de casos isolados?</li>
+        </ul>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 11</div>
+        <h2 style="font-size:17pt;">Perguntas para o <span class="it">fornecedor</span>.</h2>
+      </div>
+      <div class="cols-2" style="gap:6mm;">
+        <ul class="bul tight">
+          <li>Já instalou em condomínio residencial?</li>
+          <li>Entrega projeto elétrico completo?</li>
+          <li>A instalação terá responsável técnico?</li>
+          <li>Vai emitir ART ou RRT?</li>
+          <li>O equipamento atende NBR 17019 e IEC 61851-1?</li>
+          <li>Qual é a potência do carregador?</li>
+          <li>Qual o impacto na demanda elétrica?</li>
+          <li>O sistema permite controle e balanceamento de carga?</li>
+        </ul>
+        <ul class="bul tight">
+          <li>Como será feita a medição individual?</li>
+          <li>O equipamento tem garantia? Quem mantém?</li>
+          <li>Qual o tempo de resposta em caso de falha?</li>
+          <li>A instalação exige passagem por área comum?</li>
+          <li>Como os cabos serão protegidos e identificados?</li>
+          <li>Há sinalização e desligamento de emergência?</li>
+          <li>O disjuntor será identificado individualmente?</li>
+          <li>Treina o usuário sobre uso correto?</li>
+        </ul>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">Se o fornecedor não responde com clareza, ele já respondeu. Empresa boa entrega projeto, ART e relatório final. Empresa ruim entrega promessa, desconto e silêncio depois da nota.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 10 e 11 · Perguntas para administradora e fornecedor</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · CAP 12 + 13 -->
+  <section class="page" data-screen-label="13 Cap 12-13">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 12 e 13</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 12</div>
+        <h2>O que entra na <span class="it">política interna</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">O condomínio cria uma política mínima de carregadores. Não para travar morador. Para proteger o prédio. Regra boa não impede avanço. Regra boa impede bagunça.</p>
+      <div class="cols-2" style="gap:6mm;margin-bottom:4mm;">
+        <ul class="bul tight">
+          <li>Procedimento de solicitação e documentos obrigatórios</li>
+          <li>Necessidade de análise técnica prévia</li>
+          <li>Padrão mínimo dos equipamentos</li>
+          <li>Responsabilidade por custos e manutenção</li>
+          <li>Forma de medição e cobrança do consumo</li>
+          <li>Vedação a improvisos, extensão e adaptador</li>
+          <li>Fiscalização do condomínio e penalidade por irregularidade</li>
+        </ul>
+        <ul class="bul tight">
+          <li>Regra para retirada ou adequação</li>
+          <li>Tratamento para futuras solicitações</li>
+          <li>Procedimento em caso de emergência</li>
+          <li>Comunicação obrigatória em troca de equipamento</li>
+          <li>Definição sobre uso de áreas comuns</li>
+          <li>Regra para vaga alugada ou cedida</li>
+          <li>Critério para estação compartilhada</li>
+        </ul>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 13</div>
+        <h2 style="font-size:17pt;">Checklist de <span class="it">aprovação</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Antes de dizer "aprovado", confirme. Se vários ficarem em branco, a autorização ainda não está madura. E autorização imatura em condomínio costuma virar adulto problemático.</p>
+      <div class="cols-2" style="gap:6mm;">
+        <ul class="checks">
+          <li><span class="box"></span>Pedido formal recebido</li>
+          <li><span class="box"></span>Vaga identificada</li>
+          <li><span class="box"></span>Origem da energia definida</li>
+          <li><span class="box"></span>Consumo medido corretamente</li>
+          <li><span class="box"></span>Análise de capacidade elétrica feita</li>
+          <li><span class="box"></span>Projeto técnico aprovado</li>
+          <li><span class="box"></span>ART ou RRT emitida</li>
+          <li><span class="box"></span>Empresa instaladora identificada</li>
+        </ul>
+        <ul class="checks">
+          <li><span class="box"></span>Trajeto dos cabos aprovado</li>
+          <li><span class="box"></span>Proteção elétrica prevista</li>
+          <li><span class="box"></span>Sinalização e desligamento previstos</li>
+          <li><span class="box"></span>Administradora consultada</li>
+          <li><span class="box"></span>Bombeiros e norma local consideradas</li>
+          <li><span class="box"></span>Seguro avaliado, quando aplicável</li>
+          <li><span class="box"></span>Termo de responsabilidade assinado</li>
+          <li><span class="box"></span>Política interna pronta para próximos pedidos</li>
+        </ul>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 12 e 13 · Política interna e checklist de aprovação</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · CAP 14 · FLUXO 10 PASSOS -->
+  <section class="page" data-screen-label="14 Cap 14">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 14 · Fluxo</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 14</div>
+        <h2>Fluxo de aprovação em dez <span class="it">passos</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:4mm;">Cole esse fluxo no procedimento padrão do condomínio. Ele transforma cada pedido em processo previsível, e cada decisão em registro arquivado.</p>
+      <div class="fluxo" style="margin-bottom:4mm;">
+        <div class="step"><div class="n">01</div><div class="t">Pedido formal</div><div class="d">Unidade, vaga, equipamento e empresa</div></div>
+        <div class="step"><div class="n">02</div><div class="t">Análise documental</div><div class="d">Conferência da documentação mínima</div></div>
+        <div class="step"><div class="n">03</div><div class="t">Avaliação técnica</div><div class="d">Engenheiro habilitado analisa viabilidade</div></div>
+        <div class="step"><div class="n">04</div><div class="t">Custo e responsabilidade</div><div class="d">Quem paga o quê e quem responde</div></div>
+        <div class="step"><div class="n">05</div><div class="t">Deliberação</div><div class="d">Assembleia, se houver impacto coletivo</div></div>
+      </div>
+      <div class="fluxo">
+        <div class="step"><div class="n">06</div><div class="t">Autorização formal</div><div class="d">Escrita e condicionada ao projeto</div></div>
+        <div class="step"><div class="n">07</div><div class="t">Execução</div><div class="d">Conforme projeto, horário e norma</div></div>
+        <div class="step"><div class="n">08</div><div class="t">Entrega final</div><div class="d">Relatório, fotos, documento técnico</div></div>
+        <div class="step"><div class="n">09</div><div class="t">Arquivo</div><div class="d">Pasta da unidade e histórico do prédio</div></div>
+        <div class="step"><div class="n">10</div><div class="t">Fiscalização</div><div class="d">Uso, manutenção e alteração futura</div></div>
+      </div>
+      <div class="callout" style="margin-top:5mm;"><b>O detalhe que importa.</b> O passo 5 só vira assembleia quando há uso relevante de área comum, alteração de infraestrutura coletiva ou investimento do condomínio. Pedido individual com infraestrutura existente pode ser autorizado administrativamente, desde que a política interna esteja aprovada.</div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">Fluxo claro substitui a torcida pelo "vai dar certo". Processo previsível defende o síndico antes, durante e depois da instalação.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 14 · Fluxo de aprovação em dez passos</div><div class="pg-num">14</div></div>
+  </section>
+
+  <!-- PAGE 15 · CAP 15 · TABELA RESPONSABILIDADES -->
+  <section class="page" data-screen-label="15 Cap 15">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 15 · Responsabilidades</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 15</div>
+        <h2>O que é do morador e o que é do <span class="it">condomínio</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:4mm;">Quadro de referência. Deve ser ajustado ao caso concreto, à convenção, à estrutura do prédio e à orientação técnica. Ajuda a tirar o assunto do campo da emoção. E condomínio precisa disso, porque emoção em condomínio já está ocupada discutindo vaga, barulho e cachorro no elevador.</p>
+      <div class="resptab">
+        <div class="row hdr">
+          <div class="cell">Tema</div>
+          <div class="cell">Responsabilidade do morador</div>
+          <div class="cell">Responsabilidade do condomínio</div>
+        </div>
+        <div class="row"><div class="cell tema">Pedido de instalação</div><div class="cell">Solicitar formalmente</div><div class="cell">Receber, analisar e responder</div></div>
+        <div class="row"><div class="cell tema">Projeto individual</div><div class="cell">Contratar e custear</div><div class="cell">Exigir, validar e arquivar</div></div>
+        <div class="row"><div class="cell tema">Estudo global da rede</div><div class="cell">Pode participar conforme o caso</div><div class="cell">Avaliar necessidade coletiva</div></div>
+        <div class="row"><div class="cell tema">Instalação na vaga</div><div class="cell">Contratar e custear</div><div class="cell">Autorizar e fiscalizar execução</div></div>
+        <div class="row"><div class="cell tema">Adequação de área comum</div><div class="cell">Pode arcar conforme deliberação</div><div class="cell">Deliberar e controlar a obra</div></div>
+        <div class="row"><div class="cell tema">Consumo de energia</div><div class="cell">Pagar integralmente</div><div class="cell">Definir e operar a cobrança</div></div>
+        <div class="row"><div class="cell tema">Manutenção do carregador</div><div class="cell">Responsabilidade do usuário</div><div class="cell">Fiscalizar risco à coletividade</div></div>
+        <div class="row"><div class="cell tema">Normas internas</div><div class="cell">Cumprir as regras estabelecidas</div><div class="cell">Criar, atualizar e aplicar</div></div>
+        <div class="row"><div class="cell tema">Documentação técnica</div><div class="cell">Entregar e atualizar</div><div class="cell">Conferir, arquivar e guardar histórico</div></div>
+        <div class="row"><div class="cell tema">Segurança da garagem</div><div class="cell">Usar corretamente o equipamento</div><div class="cell">Garantir política geral de segurança</div></div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A leitura honesta</span>
+        <span class="txt">A vaga pode ser do morador. O risco coletivo nunca é totalmente dele. Esse quadro deixa a divisão clara antes do problema. Depois, todo mundo cobra todo mundo.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 15 · Tabela de responsabilidades</div><div class="pg-num">15</div></div>
+  </section>
+
+  <!-- PAGE 16 · CAP 16 + 17 · ASSEMBLEIA -->
+  <section class="page" data-screen-label="16 Cap 16-17">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 16 e 17</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 16</div>
+        <h2>Cuidados com a <span class="it">assembleia</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">Nem todo pedido individual exige assembleia. Mas alguns casos sim. Uso ou alteração de área comum, investimento coletivo, criação de infraestrutura geral, mudança de regulamento, contratação para operação coletiva, definição de cobrança, impacto relevante na rede elétrica, padronização obrigatória ou limitação do uso da garagem.</p>
+      <div class="compare" style="margin:4mm 0;">
+        <div class="box good">
+          <span class="lbl">Levar à pauta</span>
+          <ul>
+            <li>Diagnóstico técnico do prédio</li>
+            <li>Alternativas e modelo de implantação</li>
+            <li>Custos e forma de cobrança</li>
+            <li>Documentos exigidos do morador</li>
+            <li>Responsabilidades e regras de uso</li>
+          </ul>
+        </div>
+        <div class="box bad">
+          <span class="lbl">Evitar</span>
+          <ul>
+            <li>Votação genérica sem laudo</li>
+            <li>Promessa de custo sem orçamento</li>
+            <li>Liberação ampla sem regra</li>
+            <li>Aprovação por pressão de morador</li>
+            <li>Disputa entre quem tem e quem não tem carro elétrico</li>
+          </ul>
+        </div>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 17</div>
+        <h2 style="font-size:17pt;">Pauta <span class="it">sugerida</span>.</h2>
+      </div>
+      <div class="block-card">
+        <p style="margin:0;font-family:'Instrument Serif';font-style:italic;font-size:10.5pt;line-height:1.5;color:var(--ink);">Deliberação sobre política interna para instalação e uso de carregadores de veículos elétricos no condomínio, incluindo critérios técnicos, documentação obrigatória, responsabilidades, forma de medição de consumo, eventual necessidade de adequação da infraestrutura elétrica, padronização dos equipamentos e regras de uso das áreas comuns.</p>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">Assembleia sem informação vira festival de opinião. E opinião sem informação é só barulho com ata. O tema é técnico, não ideológico.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 16 e 17 · Assembleia e pauta sugerida</div><div class="pg-num">16</div></div>
+  </section>
+
+  <!-- PAGE 17 · CAP 18 + 19 -->
+  <section class="page" data-screen-label="17 Cap 18-19">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 18 e 19</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 18 · modelo</div>
+        <h2>Comunicado aos <span class="it">moradores</span>.</h2>
+      </div>
+      <div class="block-card" style="margin-bottom:5mm;">
+        <p style="margin:0 0 2mm;font-size:9pt;line-height:1.5;color:var(--ink-2);">Prezados moradores,</p>
+        <p style="margin:0 0 2mm;font-size:9pt;line-height:1.5;color:var(--ink-2);">Com o aumento de solicitações relacionadas à instalação de carregadores para veículos elétricos, o condomínio informa que está estruturando um procedimento técnico e seguro para análise dos pedidos.</p>
+        <p style="margin:0 0 2mm;font-size:9pt;line-height:1.5;color:var(--ink-2);">A instalação em garagem envolve avaliação de capacidade elétrica, segurança da edificação, forma de medição do consumo, responsabilidade técnica, documentação específica e observância das normas aplicáveis, em especial as ABNT NBR 17019, NBR 5410 e NBR IEC 61851-1 e a Diretriz Nacional LIGABOM 029/2025.</p>
+        <p style="margin:0 0 2mm;font-size:9pt;line-height:1.5;color:var(--ink-2);">Por esse motivo, nenhuma instalação poderá ser realizada sem autorização formal prévia. O objetivo não é impedir a modernização, mas garantir que ela ocorra com segurança, organização e responsabilidade.</p>
+        <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Em breve, serão divulgados os documentos necessários e o fluxo de solicitação. Atenciosamente, Síndico e Administração.</p>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 19 · modelo</div>
+        <h2 style="font-size:17pt;">Termo de <span class="it">responsabilidade</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.4pt;margin-bottom:3mm;">O termo não substitui projeto, laudo ou norma. Mas registra a ciência do morador e organiza a responsabilidade. Deve conter:</p>
+      <div class="cols-2" style="gap:6mm;">
+        <ul class="bul tight">
+          <li>Identificação do morador, unidade e vaga</li>
+          <li>Equipamento e empresa instaladora</li>
+          <li>Profissional técnico responsável (ART/RRT)</li>
+          <li>Obrigação de seguir o projeto aprovado</li>
+          <li>Proibição de alteração sem autorização</li>
+          <li>Responsabilidade por dano de mau uso ou irregularidade</li>
+        </ul>
+        <ul class="bul tight">
+          <li>Obrigação de manutenção periódica</li>
+          <li>Autorização para vistoria pelo condomínio</li>
+          <li>Entrega de documentos finais</li>
+          <li>Ciência sobre cobrança do consumo</li>
+          <li>Previsão de retirada em caso de irregularidade</li>
+          <li>Comunicação obrigatória em venda, locação ou troca</li>
+        </ul>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A função real do termo</span>
+        <span class="txt">Ele não evita o sinistro. Mas registra que o condomínio não liberou aventura elétrica com assinatura embaixo.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 18 e 19 · Comunicado e termo de responsabilidade</div><div class="pg-num">17</div></div>
+  </section>
+
+  <!-- PAGE 18 · CAP 20 + 21 -->
+  <section class="page" data-screen-label="18 Cap 20-21">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 20 e 21</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 20</div>
+        <h2>Síndico, cuidado com a <span class="it">pressa</span> do morador.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">O morador compra o carro. Quer carregar amanhã. A concessionária prometeu facilidade. O vendedor disse que todo prédio aceita. O instalador disse que é rápido. A família está pressionando. E de repente o síndico vira o vilão da mobilidade elétrica nacional.</p>
+      <div class="quote-block" style="margin:3mm 0 5mm;background:var(--paper-2);">
+        Respire. O síndico não está proibindo tecnologia. Está exigindo segurança. E segurança não é atraso. É gestão. A pressa do morador não pode virar passivo do condomínio.
+        <div class="signature">Bastidores da Sindicatura</div>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 21</div>
+        <h2 style="font-size:17pt;">O que <span class="it">não</span> deve ser permitido.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">A política interna precisa vedar expressamente cada item abaixo. Quem deixa zona cinzenta, abre porta para improviso.</p>
+      <div class="cols-2" style="gap:6mm;">
+        <ul class="bul tight">
+          <li>Uso de extensão para carregamento</li>
+          <li>Tomada comum sem análise técnica</li>
+          <li>Instalação sem autorização formal</li>
+          <li>Instalação sem projeto e sem ART</li>
+          <li>Equipamento sem especificação técnica</li>
+          <li>Passagem irregular de cabos</li>
+          <li>Fixação em área comum sem aprovação</li>
+        </ul>
+        <ul class="bul tight">
+          <li>Alteração posterior sem comunicação</li>
+          <li>Compartilhamento irregular de ponto</li>
+          <li>Ligação clandestina</li>
+          <li>Uso de energia comum sem medição</li>
+          <li>Carregamento em local não autorizado</li>
+          <li>Obstrução de rota de fuga ou circulação</li>
+          <li>Qualquer improviso</li>
+        </ul>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">Improviso elétrico em garagem é roleta-russa patrimonial. O prédio inteiro entra na partida sem ter sido convidado.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 20 e 21 · A pressa do morador e o que não deve ser permitido</div><div class="pg-num">18</div></div>
+  </section>
+
+  <!-- PAGE 19 · CAP 22 + 23 + 24 -->
+  <section class="page" data-screen-label="19 Cap 22-24">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 22 a 24</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 22</div>
+        <h2>A pasta "<span class="it">Carregadores Elétricos</span>".</h2>
+      </div>
+      <p class="body" style="font-size:9.4pt;margin-bottom:3mm;">Crie uma pasta específica no arquivo do condomínio. Ela vai ser útil em troca de síndico, renovação de AVCB, auditoria, seguradora, administradora, assembleia, eventual conflito judicial e gestão de manutenção. Condomínio organizado não depende de memória. Depende de processo.</p>
+      <div class="cols-2" style="gap:6mm;margin-bottom:4mm;">
+        <ul class="bul tight">
+          <li>Política interna aprovada</li>
+          <li>Atas sobre o tema</li>
+          <li>Pareceres técnicos e laudo elétrico</li>
+          <li>Projetos aprovados</li>
+          <li>Relação de unidades com carregador</li>
+          <li>Relação de equipamentos instalados</li>
+        </ul>
+        <ul class="bul tight">
+          <li>ART ou RRT de cada instalação</li>
+          <li>Termos de responsabilidade assinados</li>
+          <li>Relatórios de vistoria e manutenção</li>
+          <li>Comunicados enviados aos moradores</li>
+          <li>Contatos dos fornecedores</li>
+          <li>Histórico de ocorrência e medição</li>
+        </ul>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulos 23 e 24</div>
+        <h2 style="font-size:17pt;">O papel da <span class="it">administradora</span> e do <span class="it">conselho</span>.</h2>
+      </div>
+      <div class="cols-2" style="gap:6mm;">
+        <div class="block-card">
+          <div class="h-sub">Administradora</div>
+          <p style="margin:0;font-size:8.6pt;line-height:1.45;color:var(--ink-2);">Apoia no recebimento de solicitação, conferência documental, organização da pasta, comunicação, lançamento de consumo, convocação e registro em ata, controle financeiro e apoio jurídico-administrativo. <b>Não aprova tecnicamente sozinha.</b> "A administradora autorizou" não é plano de segurança. É só uma frase que aparece muito quando o problema já aconteceu.</p>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Conselho</div>
+          <p style="margin:0;font-size:8.6pt;line-height:1.45;color:var(--ink-2);">Acompanha diagnóstico, ajuda na construção da política interna, fiscaliza custo e cobra documentação. <b>Não substitui engenheiro.</b> Conselho bom ajuda a gestão. Conselho perdido cria mais uma garagem pegando fogo. Metaforicamente, claro. Às vezes nem tão metaforicamente assim.</p>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">O síndico não precisa estar sozinho. Mas a responsabilidade técnica não se divide por boa vontade. Ela se divide por documento, por papel e por critério.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 22 a 24 · Pasta, administradora e conselho</div><div class="pg-num">19</div></div>
+  </section>
+
+  <!-- PAGE 20 · CAP 25 + 26 -->
+  <section class="page" data-screen-label="20 Cap 25-26">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 25 e 26</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 25 · modelo</div>
+        <h2>Roteiro prático de <span class="it">resposta</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Quando o pedido chega, responda assim. A resposta é educada, técnica e firme. Não fecha a porta. Mas também não entrega a chave da garagem para o improviso.</p>
+      <div class="block-card" style="margin-bottom:5mm;">
+        <p style="margin:0;font-family:'Instrument Serif';font-style:italic;font-size:10.5pt;line-height:1.5;color:var(--ink);">Prezado morador, recebemos sua solicitação para instalação de carregador de veículo elétrico. Para análise, será necessário apresentar a documentação técnica mínima, incluindo especificação do equipamento, projeto de instalação, responsável técnico, forma de medição do consumo e demais documentos exigidos pelo condomínio. A instalação somente poderá ser realizada após análise e autorização formal, considerando a segurança da edificação, a capacidade elétrica e as normas aplicáveis.</p>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 26 · autoavaliação</div>
+        <h2 style="font-size:17pt;">Posso <span class="it">aprovar</span>?</h2>
+      </div>
+      <p class="body" style="font-size:9.4pt;margin-bottom:3mm;">Marque com sinceridade. Se vários itens ficarem em branco, não aprove. Peça estudo. Peça documento. Peça orientação. Peça tempo. O síndico não é obrigado a decidir no escuro só porque alguém chegou com pressa e carro novo.</p>
+      <div class="cols-2" style="gap:6mm;">
+        <ul class="checks">
+          <li><span class="box"></span>Sei qual equipamento será instalado</li>
+          <li><span class="box"></span>Sei de onde virá a energia</li>
+          <li><span class="box"></span>Sei se a rede suporta</li>
+          <li><span class="box"></span>Tenho projeto técnico</li>
+          <li><span class="box"></span>Tenho ART ou RRT</li>
+          <li><span class="box"></span>Sei quem executará</li>
+          <li><span class="box"></span>Sei quem pagará</li>
+        </ul>
+        <ul class="checks">
+          <li><span class="box"></span>Sei como será medido o consumo</li>
+          <li><span class="box"></span>Sei se afeta AVCB ou norma local</li>
+          <li><span class="box"></span>Sei se precisa de assembleia</li>
+          <li><span class="box"></span>Tenho termo de responsabilidade</li>
+          <li><span class="box"></span>Tenho regra para próximos pedidos</li>
+          <li><span class="box"></span>Tenho documentação arquivada</li>
+          <li><span class="box"></span>Consigo explicar em assembleia sem suar frio</li>
+        </ul>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A regra final</span>
+        <span class="txt">Se em qualquer item a resposta for "acho que sim", a resposta real é não. Aprovar com dúvida é deixar para o futuro um problema que cabia no presente.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 25 e 26 · Roteiro e autoavaliação final</div><div class="pg-num">20</div></div>
+  </section>
+
+  <!-- PAGE 21 · CONCLUSÃO -->
+  <section class="page" data-screen-label="21 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">Técnica antes da <span class="serif" style="font-style:italic;color:var(--accent);">torcida</span>.</h2>
+          <p class="section-lede">Carregadores em condomínios são realidade. Negar essa realidade não é gestão. Aprovar sem critério também não é modernidade. É imprudência com tomada bonita.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="refrain">
+          <p>Boa sindicatura não diz <b>sim</b> para tudo.</p>
+          <p>Também não diz <b>não</b> por medo.</p>
+          <p>Boa sindicatura faz <b>a pergunta certa</b> antes de assinar embaixo.</p>
+        </div>
+        <p class="body">O carregador é uma excelente solução quando existe planejamento, projeto, documentação, medição, padronização e responsabilidade. Vira um enorme problema quando entra pela porta dos fundos da informalidade. A pergunta principal é uma só. Estamos aprovando uma instalação segura, ou apenas empurrando um risco para dentro da garagem?</p>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          No condomínio, o que não é decidido com técnica, depois é cobrado com juros, desgaste e ata extraordinária.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · Técnica antes da torcida</div><div class="pg-num">21</div></div>
+  </section>
+
+  <!-- PAGE 22 · CONVITE MENTORIA -->
+  <section class="page capture" data-screen-label="22 Mentoria">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>O convite</div></div>
+    <div class="pg-body">
+      <div class="invite-head">Convite · do improviso ao método</div>
+      <h2 class="invite-title">O síndico não sofre por falta de <span class="it">lei</span>. Sofre por falta de <span class="it">método</span>.</h2>
+      <div class="invite-grid">
+        <div>
+          <p>A Mentoria Bastidores da Sindicatura não é aberta. É uma turma pequena, com vagas escolhidas a dedo. <b>Eu seleciono pessoalmente cada participante.</b> Por dois motivos. O primeiro é o nível da conversa. O segundo é o método. Um espaço fechado garante que cada decisão seja debatida com a profundidade que esse mercado exige.</p>
+          <p>Se você terminou esse e-book reconhecendo que o seu condomínio aprova carregador no "vai dar certo", você já tem o primeiro requisito: <b>coragem de reconhecer.</b></p>
+        </div>
+        <div>
+          <p>Na mentoria, você aprende o que ninguém mostra no palco bonito da gestão. Como sair da gestão reativa, parar de apagar incêndio todo dia e tomar decisão com segurança, estratégia e posicionamento. Como construir processo onde hoje só existe pressão.</p>
+          <p>Não é para quem quer aprender mais sobre sindicatura. É para quem decidiu trocar improviso por <b>método</b>, e construir uma carreira que sobrevive ao próximo mandato. E ao mandato depois desse.</p>
+        </div>
+      </div>
+      <div class="selection-band">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Vagas <span class="it">limitadas</span> por turma. Seleção por <span class="it">perfil.</span></div>
+        <p class="lines">Os bastidores que ninguém mostra.<br/>As conversas que ninguém grava.<br/>As decisões que protegem o seu mandato.</p>
+        <div class="u">→ Candidate-se em <span>www.bastidoresdasindicatura.com.br</span></div>
+        <div class="note">Próxima turma com vagas restritas. Seleção feita pessoalmente pela Juliana Moreira.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>O convite · Mentoria Bastidores da Sindicatura</div><div class="pg-num">22</div></div>
+  </section>
+
+  <!-- PAGE 23 · MANIFESTO -->
+  <section class="page manifesto" data-screen-label="23 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top:30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:12mm;">
+        <div class="cover-eyebrow" style="margin:0;">Carregadores · Vol. 21</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:170mm;">
+          Aprovar é <em style="font-style:italic;color:var(--accent);">fácil.</em><br/>
+          Responder depois <em style="font-style:italic;color:var(--accent);">é que custa.</em>
+        </h2>
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          A garagem do condomínio é coletiva. A decisão técnica do síndico, também. Tudo que entra ali, entra na sua responsabilidade. Inclusive o "vai dar certo".
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 21 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite"><b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab=document.getElementById('pdfFab'); var hint=document.getElementById('pdfHint');
+    if(!fab) return; var t;
+    fab.addEventListener('mouseenter',function(){ clearTimeout(t); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave',function(){ t=setTimeout(function(){ hint.classList.remove('show'); },250); });
+    fab.addEventListener('click',function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); },120); setTimeout(function(){ hint.classList.remove('show'); },4000); });
+  })();
+</script>
+</body></html>
