@@ -1,0 +1,1116 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>LGPD em Condomínios · Bastidores da Sindicatura · Vol. 22</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <text y="-20" font-family="serif" font-style="italic" font-size="120" fill="#B8543B">LGPD.</text>
+      <text y="120" font-family="serif" font-size="32" fill="#0E1A2B">O guia para síndicos, administradoras</text>
+      <text y="162" font-family="serif" font-size="32" fill="#0E1A2B">e gestores condominiais.</text>
+      <text y="240" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">BASTIDORES DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A;
+    --risk-low:#5C9A5C; --risk-med:#D6A24A; --risk-high:#B8543B; --risk-crit:#8C2F1E;
+    --rule:1px solid var(--line);
+  }
+  @page { size: 210mm 297mm; margin: 0; }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; width:210mm; background:#2A2522; font-family:"Manrope", system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; color:var(--ink); page-break-after:always; break-after:page; margin:0 auto; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen { html, body{ width:auto; } body{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 0 60px; } .page{ box-shadow:0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); } }
+  @media print{ html, body{ background:#fff; width:210mm; margin:0; padding:0; display:block; } .page{ box-shadow:none; margin:0; display:block; } }
+
+  .frame{ position:absolute; inset:14mm 16mm; }
+  .pg-head{ position:absolute; top:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); padding-bottom:4mm; border-bottom:var(--rule); }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{ width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  .pg-foot{ position:absolute; bottom:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:8.5pt; color:var(--muted); padding-top:4mm; border-top:var(--rule); }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .pg-body{ position:absolute; top:22mm; bottom:18mm; left:16mm; right:16mm; display:flex; flex-direction:column; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif","Times New Roman",serif; font-weight:400; }
+  .section-num{ font-family:"Instrument Serif"; font-style:italic; font-size:60pt; line-height:1; color:var(--accent); letter-spacing:-.02em; }
+  .section-kicker{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-title{ font-family:"Instrument Serif"; font-weight:400; font-size:30pt; line-height:1.04; letter-spacing:-.01em; color:var(--ink); margin-top:2mm; }
+  .section-lede{ font-size:10pt; line-height:1.55; color:var(--ink-2); max-width:135mm; margin-top:4mm; }
+  .h-sub{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:3mm; }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  ul.bul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.4mm; }
+  ul.bul li{ display:flex; gap:8px; align-items:flex-start; font-size:9pt; line-height:1.4; color:var(--ink-2); padding:.6mm 0; border-bottom:1px dotted var(--line); }
+  ul.bul li:last-child{ border-bottom:none; }
+  ul.bul li::before{ content:""; flex:0 0 auto; width:4px; height:4px; margin-top:2.2mm; background:var(--accent); border-radius:50%; }
+  ul.bul.tight li{ font-size:8.6pt; padding:.4mm 0; }
+
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.5mm; }
+  ul.checks li{ display:flex; gap:8px; align-items:flex-start; font-size:9pt; line-height:1.38; color:var(--ink-2); padding:.6mm 0; border-bottom:1px dotted var(--line); }
+  ul.checks li:last-child{ border-bottom:none; }
+  ul.checks li .box{ flex:0 0 auto; width:3.8mm; height:3.8mm; border:1.2px solid var(--ink); border-radius:1.2px; background:var(--cream); margin-top:1mm; }
+
+  ul.xnot{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.4mm; }
+  ul.xnot li{ display:flex; gap:8px; align-items:flex-start; font-size:9pt; line-height:1.4; color:var(--ink-2); padding:.6mm 0; border-bottom:1px dotted var(--line); }
+  ul.xnot li:last-child{ border-bottom:none; }
+  ul.xnot li::before{ content:"×"; font-family:"Manrope"; font-weight:700; font-size:11pt; color:var(--accent); flex:0 0 auto; line-height:1; margin-top:.6mm; }
+
+  ul.ynot{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.4mm; }
+  ul.ynot li{ display:flex; gap:8px; align-items:flex-start; font-size:9pt; line-height:1.4; color:var(--ink-2); padding:.6mm 0; border-bottom:1px dotted var(--line); }
+  ul.ynot li:last-child{ border-bottom:none; }
+  ul.ynot li::before{ content:"✓"; font-family:"Manrope"; font-weight:700; font-size:10pt; color:var(--gold); flex:0 0 auto; line-height:1; margin-top:.8mm; }
+
+  .cols-2{ display:grid; grid-template-columns:1fr 1fr; column-gap:8mm; align-items:start; }
+  .cols-3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:5mm; align-items:start; }
+  .cols-4{ display:grid; grid-template-columns:1fr 1fr 1fr 1fr; gap:4mm; align-items:start; }
+
+  ol.enum{ list-style:none; padding:0; margin:0; counter-reset:en; display:flex; flex-direction:column; gap:1.4mm; }
+  ol.enum li{ counter-increment:en; display:flex; gap:8px; align-items:baseline; font-size:9pt; line-height:1.42; color:var(--ink-2); padding:.8mm 0; border-bottom:1px dotted var(--line); }
+  ol.enum li::before{ content:counter(en, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--accent); flex:0 0 8mm; }
+  ol.enum li b{ color:var(--ink); }
+
+  .callout{ background:var(--paper-2); border-left:3px solid var(--accent); padding:4mm 5mm; font-size:9pt; line-height:1.5; color:var(--ink-2); margin-top:3mm; }
+  .callout b{ color:var(--ink); }
+  .quote-block{ background:var(--cream); border:1px solid var(--line); padding:5mm 6mm; font-family:"Instrument Serif"; font-style:italic; font-size:11.5pt; line-height:1.45; color:var(--ink); }
+  .quote-block .signature{ margin-top:3mm; font-family:"Manrope"; font-style:normal; font-size:8pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .survival{ background:var(--paper-2); border-left:3px solid var(--accent); padding:4mm 6mm; display:flex; flex-direction:column; gap:1.6mm; }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; line-height:1.3; color:var(--ink); }
+
+  .hr-orn{ display:flex; align-items:center; gap:10px; color:var(--accent); margin:3mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent);}
+
+  .refrain{ display:flex; flex-direction:column; gap:1.2mm; padding:3mm 5mm; border-left:2px solid var(--line); }
+  .refrain p{ margin:0; font-size:10pt; line-height:1.45; color:var(--ink-2); }
+  .refrain p b{ color:var(--ink); font-weight:600; }
+
+  .block-card{ background:var(--cream); border:1px solid var(--line); border-left:3px solid var(--accent); padding:4mm 5mm; }
+  .block-card .h-sub{ margin-bottom:2.5mm; font-size:8pt; }
+  .block-card ul.bul li, .block-card ul.xnot li, .block-card ul.ynot li{ font-size:8.6pt; padding:.4mm 0; }
+
+  /* compare */
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+  .compare .box{ padding:4mm 5mm; }
+  .compare .bad{ background:var(--paper-2); border-left:3px solid var(--accent); }
+  .compare .good{ background:var(--cream); border-left:3px solid var(--gold); }
+  .compare .lbl{ font-family:"Manrope"; font-weight:700; font-size:7.8pt; letter-spacing:.18em; text-transform:uppercase; margin-bottom:2mm; display:block; }
+  .compare .bad .lbl{ color:var(--accent); }
+  .compare .good .lbl{ color:var(--gold); }
+  .compare ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.4mm; }
+  .compare ul li{ font-family:"Manrope"; font-size:8.6pt; line-height:1.4; color:var(--ink-2); padding:.7mm 0; border-bottom:1px dotted rgba(184,84,59,.15); }
+  .compare ul li:last-child{ border-bottom:none; }
+
+  .frases-head{ display:flex; align-items:baseline; gap:6mm; flex-wrap:wrap; padding-bottom:3mm; border-bottom:var(--rule); margin-bottom:4mm; }
+  .frases-head .section-kicker{ flex:0 0 auto; }
+  .frases-head h2{ font-family:"Instrument Serif"; font-weight:400; font-size:20pt; line-height:1.05; color:var(--ink); margin:0; }
+  .frases-head h2 .it{ font-style:italic; color:var(--accent); }
+
+  /* matriz dados */
+  .matriz{ display:grid; grid-template-columns:1fr; gap:0; border:1px solid var(--line); }
+  .matriz .row{ display:grid; grid-template-columns:32mm 1fr 26mm; border-bottom:1px solid var(--line); }
+  .matriz .row:last-child{ border-bottom:none; }
+  .matriz .row.hdr{ background:var(--paper-2); }
+  .matriz .row.hdr .cell{ font-family:"Manrope"; font-weight:700; font-size:7.6pt; letter-spacing:.16em; text-transform:uppercase; color:var(--ink); }
+  .matriz .cell{ padding:3mm 4mm; border-right:1px solid var(--line); font-size:8.6pt; line-height:1.4; color:var(--ink-2); }
+  .matriz .cell:last-child{ border-right:none; text-align:right; }
+  .matriz .grupo{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .matriz .risco{ display:inline-flex; align-items:center; gap:5px; font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.14em; text-transform:uppercase; }
+  .matriz .risco .d{ width:8px; height:8px; border-radius:50%; }
+  .matriz .risco.med{ color:var(--risk-med); }
+  .matriz .risco.med .d{ background:var(--risk-med); }
+  .matriz .risco.high{ color:var(--risk-high); }
+  .matriz .risco.high .d{ background:var(--risk-high); }
+  .matriz .risco.crit{ color:var(--risk-crit); }
+  .matriz .risco.crit .d{ background:var(--risk-crit); }
+
+  /* normas */
+  .norma{ background:var(--cream); border:1px solid var(--line); padding:4mm 5mm; display:flex; flex-direction:column; gap:1.5mm; }
+  .norma .tag{ font-family:"Manrope"; font-weight:700; font-size:7.6pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); }
+  .norma .ttl{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; line-height:1.2; color:var(--ink); }
+  .norma .d{ font-family:"Manrope"; font-size:8.4pt; line-height:1.45; color:var(--ink-2); }
+  .norma .d b{ color:var(--ink); }
+
+  /* falhas grid */
+  .falhas{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+  .falhas .grp{ background:var(--cream); border:1px solid var(--line); padding:4mm 5mm; }
+  .falhas .grp .ttl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin-bottom:2.5mm; }
+  .falhas .grp ul.checks li{ font-size:8.2pt; padding:.3mm 0; }
+  .falhas .grp ul.checks li .box{ width:3.2mm; height:3.2mm; margin-top:.7mm; }
+
+  /* teste rápido */
+  .teste{ background:var(--ink); color:var(--paper); padding:6mm 7mm; }
+  .teste .k{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.24em; text-transform:uppercase; color:var(--accent-2); margin-bottom:2mm; }
+  .teste .t{ font-family:"Instrument Serif"; font-size:20pt; line-height:1.05; color:var(--paper); }
+  .teste .t .it{ font-style:italic; color:var(--accent-2); }
+  .teste ol{ list-style:none; padding:0; margin:3mm 0 0; display:flex; flex-direction:column; gap:1.4mm; counter-reset:tk; }
+  .teste ol li{ counter-increment:tk; font-family:"Manrope"; font-size:9.2pt; line-height:1.4; color:rgba(244,238,223,.92); display:flex; gap:8px; align-items:baseline; padding:.6mm 0; border-bottom:1px dotted rgba(244,238,223,.18); }
+  .teste ol li::before{ content:counter(tk, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--accent-2); flex:0 0 8mm; }
+
+  /* COVER */
+  .cover{ background: radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.14), transparent 55%), radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%), var(--paper); }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:var(--rule); padding-bottom:6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap:10px; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); }
+  .cover-brand .logo .mark{ width:30px; height:30px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border:2px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .cover-brand .sub{ font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--accent); }
+  .cover-meta .label{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:8mm 0 6mm; }
+  .cover-eyebrow{ font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6mm; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .cover-big{ font-family:"Instrument Serif"; font-style:italic; font-size:120pt; line-height:.9; color:var(--accent); letter-spacing:-.025em; margin:0 0 4mm; }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size:30pt; line-height:1.05; letter-spacing:-.01em; color:var(--ink); margin:0 0 5mm; max-width:170mm; }
+  .cover-title .it{ font-style:italic; color:var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size:11.5pt; line-height:1.5; color:var(--ink-2); max-width:165mm; }
+  .cover-bottom{ border-top:var(--rule); padding-top:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap:11mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size:32pt; line-height:1; color:var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color:var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:2mm; }
+
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size:34pt; line-height:1.04; color:var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style:italic; color:var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns:1fr 1fr; gap:9mm; margin-top:6mm; }
+  .opener-grid p{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  .toc-list{ display:grid; grid-template-columns:1fr; margin-top:3mm; }
+  .toc-item{ display:flex; align-items:baseline; gap:8px; padding:1.9mm 0; border-bottom:1px dotted var(--line); font-size:9.5pt; color:var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--accent); flex:0 0 14mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--muted); }
+
+  .section-head{ display:flex; gap:9mm; align-items:flex-start; padding-bottom:5mm; border-bottom:var(--rule); margin-bottom:5mm; }
+  .section-head .big{ flex:0 0 auto; }
+  .section-head .meta{ flex:1; padding-top:3mm;}
+  .section-body{ display:flex; flex-direction:column; gap:4mm; flex:1;}
+
+  .capture{ background: radial-gradient(120% 80% at 0% 0%, rgba(184,84,59,.16), transparent 55%), radial-gradient(90% 70% at 100% 100%, rgba(14,26,43,.10), transparent 55%), var(--paper); }
+  .invite-head{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:12px; margin-bottom:5mm; }
+  .invite-head::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .invite-title{ font-family:"Instrument Serif"; font-weight:400; font-size:36pt; line-height:1.04; letter-spacing:-.02em; color:var(--ink); margin:0; }
+  .invite-title .it{ font-style:italic; color:var(--accent); }
+  .invite-grid{ display:grid; grid-template-columns:1fr 1fr; gap:9mm; margin-top:6mm; }
+  .invite-grid p{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+  .invite-grid p b{ color:var(--ink); }
+  .selection-band{ background:var(--ink); color:var(--paper); padding:7mm 8mm; display:flex; flex-direction:column; gap:2.5mm; margin-top:auto; }
+  .selection-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .selection-band .t{ font-family:"Instrument Serif"; font-size:24pt; line-height:1.08; color:var(--paper); }
+  .selection-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .selection-band .lines{ font-family:"Instrument Serif"; font-style:italic; font-size:11.5pt; line-height:1.45; color:rgba(244,238,223,.92); margin:1.5mm 0 0; }
+  .selection-band .u{ font-family:"Manrope"; font-weight:700; font-size:10.5pt; letter-spacing:.04em; color:var(--paper); margin-top:2mm; }
+  .selection-band .u span{ color:var(--accent-2); }
+  .selection-band .note{ font-family:"Manrope"; font-size:8.5pt; letter-spacing:.16em; text-transform:uppercase; color:rgba(244,238,223,.6); margin-top:.5mm; }
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  .pdf-fab{ position:fixed; right:22px; bottom:22px; z-index:9999; display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:#0E1A2B; color:#F4EEDF; border:none; border-radius:999px; font-family:"Manrope", system-ui, sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; box-shadow:0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30), inset 0 0 0 1px rgba(255,255,255,.06); transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .pdf-fab:hover{ transform:translateY(-2px); background:#B8543B; }
+  .pdf-fab svg{ width:16px; height:16px; flex:0 0 auto; }
+  .pdf-fab .dot-accent{ width:6px; height:6px; border-radius:50%; background:#B8543B; box-shadow:0 0 0 3px rgba(184,84,59,.22); }
+  .pdf-hint{ position:fixed; right:22px; bottom:74px; z-index:9998; max-width:280px; padding:12px 14px; background:#FBF7EC; border:1px solid #D9D2C2; border-radius:10px; font-family:"Manrope", system-ui, sans-serif; font-size:11.5px; line-height:1.5; color:#1F2C3F; box-shadow:0 10px 30px rgba(0,0,0,.18); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .pdf-hint.show{ opacity:1; transform:translateY(0); }
+  .pdf-hint b{ color:#B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display:none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 22</div>
+          <div class="label">Guia Definitivo</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">O guia que protege moradores e mandato</div>
+        <h1 class="cover-big">LGPD.</h1>
+        <p class="cover-title">O guia definitivo para síndicos, administradoras e <span class="it">gestores condominiais.</span></p>
+        <p class="cover-deck">Como proteger morador, funcionário, visitante e o próprio condomínio dos riscos relacionados ao tratamento de dados pessoais. Sem juridiquês, sem terror, com aquilo que o síndico precisa olhar, cobrar e documentar antes que o vazamento bata na porta da assembleia.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">16</span></div><div class="l">Capítulos</div></div>
+          <div class="s"><div class="n">25</div><div class="l">Falhas mapeadas</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · APRESENTAÇÃO -->
+  <section class="page opener" data-screen-label="02 Apresentação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Apresentação</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:7mm;">Antes de virar a página</div>
+        <h2 class="opener-title">Se alguém perguntasse hoje, seu condomínio trata <span class="it">dados pessoais?</span></h2>
+        <p style="font-family:'Instrument Serif';font-style:italic;font-size:13.5pt;line-height:1.4;color:var(--ink-2);margin:4mm 0 0;max-width:165mm;">A maioria responderia que não. E a maioria estaria errada.</p>
+        <div class="opener-grid">
+          <div>
+            <p>Poucos ambientes coletam e guardam tantas informações quanto um condomínio. Nome, telefone, documento, placa, imagem de câmera, dado de visitante, dado de prestador, ficha de funcionário, até biometria por reconhecimento facial. Todo dia. Em vários pontos. Em vários sistemas. Quase sempre sem inventário.</p>
+            <p>Cada coleta, armazenamento, compartilhamento ou uso é tratamento de dados. E é nesse momento que a LGPD entra em cena. <b>Estar adequado não é colocar plaquinha de monitoramento na portaria.</b></p>
+          </div>
+          <div>
+            <p>Uma imagem repassada num grupo de WhatsApp, um vídeo compartilhado sem critério, uma lista de inadimplentes no elevador ou um sistema de reconhecimento facial contratado sem análise podem virar problema jurídico, financeiro e reputacional para o condomínio.</p>
+            <p>Esse guia foi feito para mostrar, com método, onde estão os riscos e que medidas adotar para tornar a gestão mais segura. <b>Não é um manual jurídico. É um manual de quem vive a portaria.</b></p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="cols-2" style="gap:7mm;">
+          <div class="block-card">
+            <div class="h-sub">O que está em vigor</div>
+            <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Lei 13.709/2018 (LGPD), em vigor desde 2020 e com sanções aplicáveis desde agosto de 2021. ANPD em pleno funcionamento, com resoluções específicas para dosimetria, incidente e tratamento por agente de pequeno porte.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">O que você vai encontrar</div>
+            <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Mapa dos dados do condomínio, matriz de risco, dez maiores armadilhas, capítulos práticos sobre câmera, portaria, WhatsApp, assembleia, criança, funcionário, fornecedor, redes sociais, incidente e checklist final do síndico.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 22</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · SUMÁRIO -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:4mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Marco regulatório · LGPD, ANPD e o que mudou em 2026</span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">01·02</span><span class="ttl">Entendendo a LGPD e por que ela se aplica a condomínios</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">03</span><span class="ttl">Quem é responsável pelos dados dentro do condomínio</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">04</span><span class="ttl">O mapa completo dos dados · matriz de risco</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">05</span><span class="ttl">Os dez maiores riscos de LGPD em condomínios</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">06</span><span class="ttl">Reconhecimento facial · biometria e responsabilidade</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">07·08</span><span class="ttl">Câmeras de segurança e portaria · pontos sensíveis</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">09</span><span class="ttl">WhatsApp · o maior campo minado da LGPD</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">10·11</span><span class="ttl">Assembleias, atas e proteção de crianças e adolescentes</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">12·13</span><span class="ttl">Funcionários e responsabilidade compartilhada com fornecedor</span><span class="pg">13</span></div>
+        <div class="toc-item"><span class="num">14·15</span><span class="ttl">Redes sociais e o que fazer no vazamento de dados</span><span class="pg">14</span></div>
+        <div class="toc-item"><span class="num">16</span><span class="ttl">As 25 maiores falhas de LGPD em condomínios</span><span class="pg">15</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Checklist final do síndico</span><span class="pg">16</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Conclusão · LGPD não é projeto jurídico. É projeto de gestão</span><span class="pg">17</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">Convite · Mentoria Bastidores da Sindicatura</span><span class="pg">18</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · MARCO REGULATÓRIO -->
+  <section class="page" data-screen-label="04 Marco">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Marco regulatório</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">§</div></div>
+        <div class="meta">
+          <div class="section-kicker">Marco regulatório</div>
+          <h2 class="section-title">A régua que decide a sua <span class="serif" style="font-style:italic;color:var(--accent);">decisão</span>.</h2>
+          <p class="section-lede">Antes de qualquer política interna, é preciso saber qual é a base legal. Cinco referências formam o esqueleto da LGPD para o condomínio. Quem aplica ignorando uma, aplica errado.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2" style="gap:5mm;">
+          <div class="norma">
+            <div class="tag">Lei 13.709/2018</div>
+            <div class="ttl">Lei Geral de Proteção de Dados</div>
+            <div class="d">Disciplina o tratamento de dados pessoais no Brasil. <b>Aplica-se a qualquer pessoa física ou jurídica</b>, pública ou privada, que faça tratamento. Condomínio incluído.</div>
+          </div>
+          <div class="norma">
+            <div class="tag">ANPD</div>
+            <div class="ttl">Autoridade Nacional de Proteção de Dados</div>
+            <div class="d">Órgão federal responsável por fiscalizar, regulamentar e aplicar sanções. <b>Em operação plena</b>, com resoluções publicadas e processos administrativos em curso.</div>
+          </div>
+          <div class="norma">
+            <div class="tag">Resolução CD/ANPD 4/2023</div>
+            <div class="ttl">Dosimetria e sanções</div>
+            <div class="d">Define como a multa é calculada, do percentual do faturamento à aplicação de sanção isolada. <b>Até 2% sobre o faturamento, limitado a R$ 50 milhões por infração.</b></div>
+          </div>
+          <div class="norma">
+            <div class="tag">Resolução CD/ANPD 15/2024</div>
+            <div class="ttl">Comunicação de incidente</div>
+            <div class="d">Estabelece prazo e formato para reportar incidente à ANPD e aos titulares. <b>O condomínio tem três dias úteis</b> a partir do conhecimento de incidente relevante.</div>
+          </div>
+        </div>
+        <div class="callout"><b>O Encarregado (DPO).</b> A LGPD exige a indicação de encarregado pelo tratamento de dados. Pode ser pessoa física ou jurídica, interna ou externa, do condomínio ou da administradora. <b>O nome e o contato precisam ser públicos.</b> Aplica-se também ao agente de pequeno porte conforme Resolução CD/ANPD 2/2022, com flexibilizações de forma.</div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Resumo prático</span>
+          <span class="txt">Condomínio que coleta dado é controlador. Administradora e fornecedor que tratam dado por conta do condomínio são operadores. Os dois respondem. Mas é o condomínio que define a finalidade. E define a defesa.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Marco regulatório · LGPD, ANPD e resoluções aplicáveis</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · CAP 01 + 02 -->
+  <section class="page" data-screen-label="05 Cap 01-02">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 01 e 02</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 01</div>
+        <h2>LGPD em linguagem <span class="it">simples</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">A LGPD regula como dado pessoal pode ser coletado, usado, armazenado, compartilhado e eliminado. Dado pessoal é toda informação que identifica ou torna identificável uma pessoa. Nome, CPF, RG, telefone, e-mail, endereço, unidade, placa, imagem de câmera, registro de entrada.</p>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Existe uma categoria especial chamada <b>dado sensível</b>. Biometria, reconhecimento facial, impressão digital, dado de saúde, origem racial, convicção religiosa, informação genética. Esses exigem cuidado redobrado, porque o impacto na vida do titular é maior.</p>
+      <div class="callout" style="margin-bottom:5mm;"><b>O erro que muitos síndicos cometem.</b> Achar que a responsabilidade termina quando se contrata uma empresa especializada. Não termina. Contratar fornecedor não transfere a responsabilidade pelo dado. Se houver falha grave, o condomínio entra no processo. A escolha do fornecedor é parte da adequação, não dispensa dela.</div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 02</div>
+        <h2 style="font-size:17pt;">Por que a LGPD se aplica ao <span class="it">condomínio</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">"Mas condomínio não é empresa, então não se aplica." Aplica. A LGPD não vê CNPJ comercial. Ela vê tratamento de dado. Quando o condomínio cadastra visitante, controla acesso, mantém imagem de câmera ou guarda ficha de morador, está tratando dado pessoal.</p>
+      <div class="cols-2" style="gap:6mm;margin-top:3mm;">
+        <div class="block-card">
+          <div class="h-sub">Onde aparece no dia a dia</div>
+          <ul class="bul tight">
+            <li>Portaria · cadastro de visitante, prestador, entrega</li>
+            <li>Administração · cadastro de morador, boleto, cobrança</li>
+            <li>Segurança · câmera, monitoramento, reconhecimento facial</li>
+            <li>RH · ficha funcionário, exame, folha, advertência</li>
+            <li>Aplicativo · reserva, comunicado, ocorrência</li>
+          </ul>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Teste rápido</div>
+          <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Seu condomínio usa reconhecimento facial? Tem grupo de WhatsApp com morador? Câmera grava área comum? Portaria cadastra visitante? Tem funcionário próprio? Usa aplicativo condominial? Registra veículo?</p>
+          <p style="margin:2mm 0 0;font-size:9pt;line-height:1.5;color:var(--ink);"><b>Se respondeu sim a um, a LGPD já é sua realidade.</b></p>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">Quando o condomínio não cuida do dado, ele cuida do problema depois. E problema com dado pessoal tem um talento especial para crescer no escuro.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 01 e 02 · LGPD em linguagem simples e por que se aplica</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · CAP 03 -->
+  <section class="page" data-screen-label="06 Cap 03">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 03 · Responsabilidade</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">03</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo três</div>
+          <h2 class="section-title">Quem responde pelos <span class="serif" style="font-style:italic;color:var(--accent);">dados</span>.</h2>
+          <p class="section-lede">Quando ocorre vazamento, a primeira reação é procurar um culpado. Mas a LGPD trabalha com responsabilidades compartilhadas. Conheça os quatro participantes antes que apareça o quinto: o processo.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2" style="gap:6mm;">
+          <div class="block-card">
+            <div class="h-sub">Condomínio · controlador</div>
+            <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">É quem define a finalidade do tratamento. Por que aquele dado é coletado. Para que ele é usado. Quanto tempo será guardado. <b>É o titular da decisão e o titular da responsabilidade principal.</b></p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">Síndico · representante legal</div>
+            <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Representa o condomínio. Conduz a adequação, contrata o encarregado, supervisiona política interna, valida fornecedor, responde administrativamente diante de incidente e perante a ANPD.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">Administradora · operador</div>
+            <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Opera parte do tratamento por conta e ordem do condomínio. Boleto, cadastro, cobrança, ata, comunicado. <b>Não toma decisão sobre finalidade.</b> Mas responde por desvio operacional.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">Fornecedor · operador</div>
+            <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Empresa de portaria, aplicativo, monitoramento, reconhecimento facial, segurança. <b>Trata dado a serviço do condomínio.</b> Responde pelo que faz e por aquilo que deveria proteger e não protegeu.</p>
+          </div>
+        </div>
+        <div class="quote-block" style="margin-top:5mm;background:var(--paper-2);">
+          O condomínio define o "para quê". A administradora e o fornecedor fazem o "como". A LGPD pergunta pelos dois. E cobra de quem estava na cadeira.
+          <div class="signature">Bastidores da Sindicatura</div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">A leitura honesta</span>
+          <span class="txt">A frase "a administradora autorizou" não é defesa. É só uma frase que aparece muito quando o problema já chegou. Quem define a finalidade é o controlador. E o controlador é o condomínio.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 03 · Os quatro participantes do tratamento de dados</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · CAP 04 · MAPA DOS DADOS -->
+  <section class="page" data-screen-label="07 Cap 04">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 04 · Mapa dos dados</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 04</div>
+        <h2>O mapa completo dos <span class="it">dados</span> do condomínio.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Se você não sabe quais dados o condomínio guarda, não tem como protegê-los. E esse é exatamente o maior problema encontrado nas auditorias. Os dados estão espalhados em lugares que ninguém mapeou.</p>
+      <div class="cols-2" style="gap:6mm;margin-bottom:5mm;">
+        <ul class="bul tight">
+          <li>No computador do síndico</li>
+          <li>No celular do zelador</li>
+          <li>No aplicativo do condomínio</li>
+          <li>Na administradora</li>
+          <li>Nas câmeras e gravadores</li>
+        </ul>
+        <ul class="bul tight">
+          <li>Em planilhas avulsas</li>
+          <li>Em arquivos físicos</li>
+          <li>Em grupos de WhatsApp</li>
+          <li>Em sistemas de controle de acesso</li>
+          <li>Em e-mails antigos de gestões passadas</li>
+        </ul>
+      </div>
+      <div class="h-sub" style="margin-bottom:2mm;">Matriz de dados · agrupamento e risco</div>
+      <div class="matriz">
+        <div class="row hdr">
+          <div class="cell">Grupo</div>
+          <div class="cell">Dados típicos</div>
+          <div class="cell">Risco</div>
+        </div>
+        <div class="row">
+          <div class="cell"><span class="grupo">Moradores</span></div>
+          <div class="cell">Nome, CPF, RG, telefone, e-mail, unidade, veículos</div>
+          <div class="cell"><span class="risco med"><span class="d"></span>Médio</span></div>
+        </div>
+        <div class="row">
+          <div class="cell"><span class="grupo">Visitantes</span></div>
+          <div class="cell">Nome, documento, foto, horário de entrada e saída</div>
+          <div class="cell"><span class="risco high"><span class="d"></span>Alto</span></div>
+        </div>
+        <div class="row">
+          <div class="cell"><span class="grupo">Funcionários</span></div>
+          <div class="cell">CPF, RG, endereço, dado bancário, exame médico, advertência</div>
+          <div class="cell"><span class="risco high"><span class="d"></span>Alto</span></div>
+        </div>
+        <div class="row">
+          <div class="cell"><span class="grupo">Biométricos</span></div>
+          <div class="cell">Reconhecimento facial, impressão digital, características biométricas</div>
+          <div class="cell"><span class="risco crit"><span class="d"></span>Crítico</span></div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:4mm;"><b>Por que biométrico é crítico.</b> Senha você troca. Dado biométrico, não. Ele acompanha a pessoa para a vida toda. Por isso a LGPD coloca biometria na categoria de dado sensível, com exigências reforçadas de finalidade, base legal e segurança.</div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">O inventário é o primeiro passo de qualquer adequação. Sem inventário, política é só intenção bonita. Com inventário, vira gestão.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 04 · Mapa e matriz de risco dos dados do condomínio</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · CAP 05 · 10 RISCOS -->
+  <section class="page" data-screen-label="08 Cap 05">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 05 · Dez riscos</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 05</div>
+        <h2>Os dez maiores riscos dentro dos <span class="it">condomínios</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Cada item abaixo já levou condomínio à ANPD, à mesa de mediação ou a um pedido formal de explicação. Não é cenário hipotético. É manual do que evitar.</p>
+      <ol class="enum">
+        <li><div><b>Grupos de WhatsApp.</b> O ponto número um de exposição. Imagem, documento, cobrança e dado de visitante circulando sem critério, sem moderação e sem retenção.</div></li>
+        <li><div><b>Exposição de inadimplentes.</b> Lista no elevador, na recepção, no grupo, na ata. Identificação direta gera dano moral e violação de princípio da finalidade.</div></li>
+        <li><div><b>Compartilhamento de imagens.</b> Vídeo de câmera enviado por WhatsApp, postado em rede social ou repassado a quem não tem competência para receber.</div></li>
+        <li><div><b>Fotografia de documento.</b> Porteiro fotografando RG, CNH ou comprovante no celular pessoal, sem retenção, sem critério, sem descarte.</div></li>
+        <li><div><b>Planilhas sem controle.</b> Cadastro de morador em Excel no Drive pessoal, sem senha, sem acesso restrito, sem revisão de permissão.</div></li>
+        <li><div><b>E-mails antigos.</b> Gestões passadas que deixaram caixa de e-mail aberta, com anos de dado sensível arquivado e ninguém sabe quem ainda tem acesso.</div></li>
+        <li><div><b>Celulares particulares.</b> Funcionário usando aparelho pessoal para receber foto de morador, encaminhar imagem ou guardar arquivo do condomínio.</div></li>
+        <li><div><b>Portaria sem treinamento.</b> Equipe que não sabe o que pode informar, o que precisa registrar e o que jamais deveria sair pela boca ou pelo aplicativo.</div></li>
+        <li><div><b>Sistemas sem auditoria.</b> Aplicativo, gravador, controle de acesso. Ninguém audita acesso, log, exclusão e ciclo de vida do dado.</div></li>
+        <li><div><b>Falso sentimento de segurança.</b> "Aqui nunca aconteceu nada." A maioria dos vazamentos só aparece quando vira problema. E quando aparece, costuma estar lá há meses.</div></li>
+      </ol>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">O vazamento raramente é uma porta arrombada. É uma janela aberta que ninguém percebeu durante meses. A adequação trata das janelas antes do ladrão passar na rua.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 05 · Os dez maiores riscos em condomínios</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · CAP 06 · RECONHECIMENTO FACIAL -->
+  <section class="page" data-screen-label="09 Cap 06">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 06 · Reconhecimento facial</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 06</div>
+        <h2>Reconhecimento <span class="it">facial</span> · biometria não é senha.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Senha você troca. Face, não. Por isso o reconhecimento facial entra na categoria de dado sensível e exige cuidado redobrado de finalidade, base legal, contrato, segurança e ciclo de vida do dado. <b>Antes de contratar, o síndico precisa perguntar.</b></p>
+      <div class="cols-2" style="gap:6mm;margin-bottom:4mm;">
+        <div class="block-card">
+          <div class="h-sub">Perguntar ao fornecedor</div>
+          <ol class="enum" style="gap:.8mm;">
+            <li><div>Onde os dados são armazenados (servidor, nuvem, local)?</div></li>
+            <li><div>Existe criptografia em repouso e em trânsito?</div></li>
+            <li><div>Quem tem acesso e como o acesso é controlado?</div></li>
+            <li><div>Como é feita a exclusão do dado quando o morador sai?</div></li>
+            <li><div>Existe plano de resposta a incidente?</div></li>
+            <li><div>Existe registro de auditoria e log de acesso?</div></li>
+            <li><div>Existe política de privacidade pública?</div></li>
+            <li><div>Há cláusula de LGPD e responsabilidade no contrato?</div></li>
+          </ol>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Checklist de contratação</div>
+          <ul class="checks">
+            <li><span class="box"></span>Contrato com cláusula LGPD específica</li>
+            <li><span class="box"></span>Política de privacidade publicada</li>
+            <li><span class="box"></span>Criptografia em repouso e em trânsito</li>
+            <li><span class="box"></span>Controle de acesso com permissão por nível</li>
+            <li><span class="box"></span>Registro de auditoria habilitado</li>
+            <li><span class="box"></span>Plano de resposta a incidente formalizado</li>
+            <li><span class="box"></span>Treinamento dos operadores</li>
+            <li><span class="box"></span>Alternativa de acesso ao morador que recusar</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout"><b>O ponto-cego mais comum.</b> Ofertar o reconhecimento facial como única forma de acesso. Sempre deve existir alternativa equivalente (chave, tag, senha, biometria com base distinta) para o morador que não autorizar o uso de dado biométrico. Negar acesso à unidade é, no mínimo, problema. <b>No pior cenário, é violação somada a constrangimento.</b></div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">Biometria não é conveniência. É decisão sensível. Quem contrata sem checklist, contrata a próxima notificação da ANPD junto.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 06 · Reconhecimento facial e dado biométrico</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · CAP 07 + 08 -->
+  <section class="page" data-screen-label="10 Cap 07-08">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 07 e 08</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 07</div>
+        <h2>Câmeras de segurança e <span class="it">imagens gravadas</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Uma das maiores dúvidas da gestão. A regra é simples: imagem de câmera é dado pessoal, e exige finalidade, prazo de retenção, controle de acesso e procedimento documentado.</p>
+      <div class="compare" style="margin-bottom:5mm;">
+        <div class="box good">
+          <span class="lbl">Quem pode acessar</span>
+          <ul>
+            <li>Síndico no exercício do mandato</li>
+            <li>Administradora autorizada formalmente</li>
+            <li>Empresa de monitoramento contratada</li>
+            <li>Autoridade competente, mediante requisição</li>
+          </ul>
+        </div>
+        <div class="box bad">
+          <span class="lbl">O que não fazer</span>
+          <ul>
+            <li>Compartilhar vídeo em grupo de WhatsApp</li>
+            <li>Enviar gravação por aplicativo pessoal</li>
+            <li>Divulgar imagem em rede social</li>
+            <li>Mostrar gravação para morador curioso</li>
+          </ul>
+        </div>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 08</div>
+        <h2 style="font-size:17pt;">Portaria · o front da <span class="it">coleta</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">A portaria é o principal ponto de coleta de dado no condomínio. Cada visitante, cada prestador, cada entrega. Cada decisão errada vira incidente.</p>
+      <div class="cols-2" style="gap:6mm;">
+        <div class="block-card">
+          <div class="h-sub">O porteiro não deve</div>
+          <ul class="xnot">
+            <li>Informar telefone de morador a terceiro</li>
+            <li>Compartilhar imagem ou vídeo da câmera</li>
+            <li>Fotografar documento sem necessidade</li>
+            <li>Informar se o morador está em casa</li>
+            <li>Compartilhar lista de moradores</li>
+          </ul>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">O porteiro deve</div>
+          <ul class="ynot">
+            <li>Seguir o procedimento institucional</li>
+            <li>Manter sigilo sobre dado coletado</li>
+            <li>Registrar ocorrência no canal oficial</li>
+            <li>Reportar incidente ao síndico</li>
+            <li>Recusar pedido fora do escopo</li>
+          </ul>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">Porteiro que comenta rotina, manda foto da câmera ou repassa informação não está "sendo simpático". Está criando incidente. Treinamento e procedimento não são burocracia. É blindagem operacional.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 07 e 08 · Câmeras de segurança e portaria</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · CAP 09 · WHATSAPP -->
+  <section class="page" data-screen-label="11 Cap 09">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 09 · WhatsApp</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">09</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo nove</div>
+          <h2 class="section-title">WhatsApp · o maior campo minado da <span class="serif" style="font-style:italic;color:var(--accent);">LGPD</span>.</h2>
+          <p class="section-lede">O aplicativo responde por boa parte dos incidentes em condomínios. Ele não é o vilão. O vilão é o uso desordenado. Quando vira canal oficial de troca sem regra, vira fábrica de violação.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2" style="gap:6mm;">
+          <div class="block-card">
+            <div class="h-sub">Nunca compartilhar</div>
+            <ul class="xnot">
+              <li>CPF, RG, número de documento</li>
+              <li>Telefone particular de morador</li>
+              <li>Boleto e dado financeiro</li>
+              <li>Fotografia de documento</li>
+              <li>Dado de visitante (nome, foto, registro)</li>
+              <li>Imagem de câmera ou gravação</li>
+              <li>Lista de inadimplente</li>
+              <li>Ata com dado sensível exposto</li>
+            </ul>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">Política mínima para grupos</div>
+            <ul class="ynot">
+              <li>Comunicação institucional apenas</li>
+              <li>Sem exposição direta de morador</li>
+              <li>Sem documento, sem dado, sem foto pessoal</li>
+              <li>Sem divulgação de inadimplente</li>
+              <li>Moderação ativa do síndico ou administradora</li>
+              <li>Regras escritas, fixadas e revisadas</li>
+              <li>Grupo informativo, não deliberativo</li>
+              <li>Histórico não substitui ata nem documento oficial</li>
+            </ul>
+          </div>
+        </div>
+        <div class="quote-block" style="margin-top:4mm;background:var(--paper-2);">
+          Grupo de WhatsApp não é assembleia, não é livro de ata, não é canal oficial, não é arquivo do condomínio. É só o lugar onde a violação acontece em alta velocidade quando ninguém estabelece regra.
+          <div class="signature">Bastidores da Sindicatura</div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">O WhatsApp pode ser ferramenta de comunicação. Não pode ser base operacional da gestão. E nunca, jamais, pode ser banco de dados informal do condomínio.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 09 · WhatsApp · o maior campo minado da LGPD</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · CAP 10 + 11 -->
+  <section class="page" data-screen-label="12 Cap 10-11">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 10 e 11</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 10</div>
+        <h2>Assembleias, atas e <span class="it">votações</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">A assembleia também é tratamento de dado. Lista de presença, procuração, gravação, voto eletrônico, ata. Tudo gera registro com identificação de pessoa.</p>
+      <div class="cols-2" style="gap:6mm;margin-bottom:4mm;">
+        <div class="block-card">
+          <div class="h-sub">Atenção especial</div>
+          <ul class="bul tight">
+            <li>Lista de presença com CPF e contato</li>
+            <li>Procuração assinada com dado completo</li>
+            <li>Gravação de assembleia presencial e virtual</li>
+            <li>Voto eletrônico e log de participação</li>
+            <li>Anexo de ata com prestação de contas</li>
+          </ul>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">A ata não é livro de fofoca</div>
+          <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Boa ata registra decisão, não pessoa. Não expõe conflito individual, não cita nome com julgamento, não detalha denúncia sem critério, não divulga dado sensível. <b>Ata bem feita decide. Ata mal feita expõe.</b></p>
+        </div>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 11</div>
+        <h2 style="font-size:17pt;">Criança, adolescente e <span class="it">uso de imagem</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">A LGPD protege criança e adolescente com base no melhor interesse e exige consentimento específico do responsável quando aplicável. Festa junina, dia das crianças, colônia de férias, recreação, evento esportivo. Tudo gera imagem.</p>
+      <div class="cols-2" style="gap:6mm;">
+        <div class="block-card">
+          <div class="h-sub">Cuidados práticos</div>
+          <ul class="ynot">
+            <li>Política de uso de imagem aprovada pelo condomínio</li>
+            <li>Critério escrito para publicação em qualquer canal</li>
+            <li>Avaliação prévia do conteúdo antes da divulgação</li>
+            <li>Controle ativo das redes sociais oficiais</li>
+            <li>Consentimento do responsável quando publicar identificação</li>
+          </ul>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">O que evitar</div>
+          <ul class="xnot">
+            <li>Postar foto de criança identificável sem autorização</li>
+            <li>Marcar perfil de morador menor de idade</li>
+            <li>Repassar vídeo de evento em grupo aberto</li>
+            <li>Manter imagem de criança indefinidamente sem revisão</li>
+          </ul>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">A imagem de uma criança protegida por uma assembleia tranquila vale mais do que uma foto bonita no Instagram do condomínio. A foto vai, a responsabilidade fica.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 10 e 11 · Assembleia, ata, criança e adolescente</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · CAP 12 + 13 -->
+  <section class="page" data-screen-label="13 Cap 12-13">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 12 e 13</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 12</div>
+        <h2>Funcionários e dados <span class="it">trabalhistas</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">O quadro de funcionários concentra um dos maiores volumes de dado pessoal sensível do condomínio. CPF, RG, endereço, dado bancário, exame médico, atestado, advertência, folha. Cada documento é tratamento.</p>
+      <div class="cols-2" style="gap:6mm;margin-bottom:4mm;">
+        <div class="block-card">
+          <div class="h-sub">Dados típicos</div>
+          <ul class="bul tight">
+            <li>Documento pessoal e endereço residencial</li>
+            <li>Dado bancário e folha de pagamento</li>
+            <li>Exame admissional, periódico e demissional</li>
+            <li>Atestado médico e dado de saúde ocupacional</li>
+            <li>Advertência, suspensão e medida disciplinar</li>
+          </ul>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Cuidados mínimos</div>
+          <ul class="ynot">
+            <li>Acesso restrito por nível e perfil</li>
+            <li>Arquivo físico protegido com chave</li>
+            <li>Arquivo digital com senha e controle</li>
+            <li>Descarte adequado e documentado</li>
+            <li>Confidencialidade contratual de quem manuseia</li>
+          </ul>
+        </div>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 13</div>
+        <h2 style="font-size:17pt;">Terceirização e responsabilidade <span class="it">compartilhada</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Contratar fornecedor não transfere responsabilidade. Operador e controlador respondem juntos. O contrato com o fornecedor precisa refletir isso.</p>
+      <div class="block-card">
+        <div class="h-sub">Exigir do fornecedor</div>
+        <div class="cols-2" style="gap:6mm;">
+          <ul class="checks">
+            <li><span class="box"></span>Política de privacidade pública</li>
+            <li><span class="box"></span>Cláusula contratual de LGPD detalhada</li>
+            <li><span class="box"></span>Treinamento de equipe documentado</li>
+            <li><span class="box"></span>Controle de acesso interno</li>
+          </ul>
+          <ul class="checks">
+            <li><span class="box"></span>Plano de resposta a incidente</li>
+            <li><span class="box"></span>Processo formal de descarte</li>
+            <li><span class="box"></span>Histórico de auditoria</li>
+            <li><span class="box"></span>Indicação de encarregado da empresa</li>
+          </ul>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">"A empresa que se vire" não é defesa. É só uma frase que aparece muito quando o problema já entrou pela portaria. Operador também responde. Mas o condomínio não sai do processo.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 12 e 13 · Funcionário e responsabilidade compartilhada</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · CAP 14 + 15 -->
+  <section class="page" data-screen-label="14 Cap 14-15">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulos 14 e 15</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 14</div>
+        <h2>Redes sociais e <span class="it">comunicação</span> do condomínio.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">O que parece inofensivo nem sempre é. Uma foto de evento pode expor criança, morador, visitante e dado pessoal sem que ninguém perceba na hora da postagem.</p>
+      <div class="cols-2" style="gap:6mm;margin-bottom:5mm;">
+        <div class="block-card">
+          <div class="h-sub">Boas práticas</div>
+          <ul class="ynot">
+            <li>Comunicação impessoal, sem identificação direta</li>
+            <li>Não divulgar dado pessoal em publicação</li>
+            <li>Não identificar morador desnecessariamente</li>
+            <li>Revisar conteúdo antes de divulgar</li>
+            <li>Política de uso de imagem aprovada</li>
+          </ul>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">O que evitar</div>
+          <ul class="xnot">
+            <li>Foto de evento sem autorização do retratado</li>
+            <li>Marcação de perfil de morador em publicação</li>
+            <li>Exposição de placa de veículo</li>
+            <li>Exposição de funcionário sem ciência</li>
+            <li>Divulgação financeira em rede social</li>
+          </ul>
+        </div>
+      </div>
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 15</div>
+        <h2 style="font-size:17pt;">Vazamento · o que <span class="it">fazer</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Incidente vai acontecer. A diferença entre dano contido e crise nacional está no procedimento. A Resolução CD/ANPD 15/2024 estabelece o prazo de três dias úteis para comunicação à autoridade quando há risco relevante.</p>
+      <div class="compare">
+        <div class="box good">
+          <span class="lbl">Passo a passo</span>
+          <ul>
+            <li>Identificar o incidente e a extensão</li>
+            <li>Conter o problema imediatamente</li>
+            <li>Preservar evidência (log, e-mail, captura)</li>
+            <li>Acionar encarregado e jurídico</li>
+            <li>Avaliar impacto sobre o titular</li>
+            <li>Comunicar ANPD em até 3 dias úteis</li>
+            <li>Comunicar titular afetado</li>
+            <li>Definir medida corretiva e arquivar</li>
+          </ul>
+        </div>
+        <div class="box bad">
+          <span class="lbl">O que não fazer</span>
+          <ul>
+            <li>Esconder o problema da gestão</li>
+            <li>Apagar evidência por reflexo</li>
+            <li>Ignorar o ocorrido por orgulho</li>
+            <li>Agir sem análise técnica</li>
+            <li>Comunicar em grupo de WhatsApp</li>
+            <li>Adiar a notificação por desconforto</li>
+          </ul>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">O incidente reportado a tempo vira processo administrativo. O incidente escondido vira manchete. A ANPD perdoa o erro. Não perdoa o silêncio.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulos 14 e 15 · Redes sociais e procedimento de incidente</div><div class="pg-num">14</div></div>
+  </section>
+
+  <!-- PAGE 15 · CAP 16 · 25 FALHAS -->
+  <section class="page" data-screen-label="15 Cap 16">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 16 · As 25 falhas</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 16</div>
+        <h2>As 25 maiores falhas em cinco <span class="it">áreas críticas</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.4pt;margin-bottom:4mm;">Marque o que acontece no seu condomínio hoje. Cada item marcado é um ponto de exposição. Cada ponto de exposição é uma porta. E porta aberta em LGPD não é convite, é estatística.</p>
+      <div class="falhas">
+        <div class="grp">
+          <div class="ttl">Cadastro</div>
+          <ul class="checks">
+            <li><span class="box"></span>Guarda documento sem necessidade</li>
+            <li><span class="box"></span>Compartilha documento por WhatsApp</li>
+            <li><span class="box"></span>Não controla quem acessa cadastro</li>
+            <li><span class="box"></span>Não revisa permissão periodicamente</li>
+            <li><span class="box"></span>Não tem inventário de dados</li>
+          </ul>
+        </div>
+        <div class="grp">
+          <div class="ttl">Portaria</div>
+          <ul class="checks">
+            <li><span class="box"></span>Compartilha dado de visitante</li>
+            <li><span class="box"></span>Informa telefone de morador</li>
+            <li><span class="box"></span>Fotografa documento sem necessidade</li>
+            <li><span class="box"></span>Usa celular particular para registro</li>
+            <li><span class="box"></span>Não tem treinamento periódico</li>
+          </ul>
+        </div>
+        <div class="grp">
+          <div class="ttl">Câmeras</div>
+          <ul class="checks">
+            <li><span class="box"></span>Compartilha vídeo em grupo</li>
+            <li><span class="box"></span>Não controla acesso à gravação</li>
+            <li><span class="box"></span>Não registra solicitação de imagem</li>
+            <li><span class="box"></span>Não tem política de retenção</li>
+            <li><span class="box"></span>Não revisa permissões</li>
+          </ul>
+        </div>
+        <div class="grp">
+          <div class="ttl">Comunicação</div>
+          <ul class="checks">
+            <li><span class="box"></span>Expõe inadimplente publicamente</li>
+            <li><span class="box"></span>Compartilha dado pessoal em ata</li>
+            <li><span class="box"></span>Divulga placa de veículo</li>
+            <li><span class="box"></span>Expõe funcionário em comunicado</li>
+            <li><span class="box"></span>Divulga informação financeira aberta</li>
+          </ul>
+        </div>
+        <div class="grp" style="grid-column:1 / -1;">
+          <div class="ttl">Tecnologia e fornecedor</div>
+          <div class="cols-2" style="gap:6mm;">
+            <ul class="checks">
+              <li><span class="box"></span>Contrata sem avaliar adequação LGPD</li>
+              <li><span class="box"></span>Não exige cláusula contratual de LGPD</li>
+              <li><span class="box"></span>Não revisa aplicativo periodicamente</li>
+            </ul>
+            <ul class="checks">
+              <li><span class="box"></span>Não audita fornecedor</li>
+              <li><span class="box"></span>Não tem plano de resposta a incidente</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Leitura</span>
+        <span class="txt">Mais de 10 marcadas é alerta máximo. Entre 5 e 10 é brecha aberta esperando incidente. Menos de 5 é boa gestão, e nunca, jamais, está pronto. LGPD é processo contínuo, não certificado de prateleira.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 16 · As 25 falhas em cinco áreas críticas</div><div class="pg-num">15</div></div>
+  </section>
+
+  <!-- PAGE 16 · CHECKLIST FINAL -->
+  <section class="page" data-screen-label="16 Checklist">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Checklist final do síndico</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✓</div></div>
+        <div class="meta">
+          <div class="section-kicker">Checklist final</div>
+          <h2 class="section-title">Onde a sua gestão está <span class="serif" style="font-style:italic;color:var(--accent);">hoje</span>.</h2>
+          <p class="section-lede">Dez marcos que separam a gestão que já se adequou da que ainda está prometendo se adequar. Sem ordem de importância. Todos pesam.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2" style="gap:6mm;">
+          <ul class="checks">
+            <li><span class="box"></span>Inventário de dados realizado e atualizado</li>
+            <li><span class="box"></span>Política de privacidade do condomínio publicada</li>
+            <li><span class="box"></span>Procedimento para câmera e imagem definido</li>
+            <li><span class="box"></span>Política para WhatsApp implantada</li>
+            <li><span class="box"></span>Equipe (porteiro, zelador, faxina) treinada</li>
+          </ul>
+          <ul class="checks">
+            <li><span class="box"></span>Fornecedores auditados periodicamente</li>
+            <li><span class="box"></span>Contratos revisados com cláusula LGPD</li>
+            <li><span class="box"></span>Política de descarte de dados criada</li>
+            <li><span class="box"></span>Plano de resposta a incidente implantado</li>
+            <li><span class="box"></span>Auditoria anual no calendário do condomínio</li>
+          </ul>
+        </div>
+        <div class="callout"><b>Indicação de encarregado.</b> A LGPD exige indicação formal do encarregado pelo tratamento de dados, com nome e contato públicos. O agente de pequeno porte tem flexibilizações conforme Resolução CD/ANPD 2/2022, mas a obrigação de indicar e divulgar permanece. <b>Sem encarregado, não há gestão de LGPD. Há apenas torcida.</b></div>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          O síndico não precisa virar especialista em LGPD. Precisa ter encarregado, política, treinamento, contrato e processo. O resto, contrata. O que não pode é não ter dono.
+          <div class="signature">Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Checklist final do síndico</div><div class="pg-num">16</div></div>
+  </section>
+
+  <!-- PAGE 17 · CONCLUSÃO -->
+  <section class="page" data-screen-label="17 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">LGPD não é projeto jurídico. É projeto de <span class="serif" style="font-style:italic;color:var(--accent);">gestão</span>.</h2>
+          <p class="section-lede">Não é projeto de tecnologia. Não é projeto de marketing. É decisão diária de quem está na cadeira e responde pelo que entra e pelo que sai da garagem, da portaria e do servidor.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="refrain">
+          <p>O condomínio que protege dado protege <b>pessoas</b>.</p>
+          <p>Protege a sua <b>reputação</b>.</p>
+          <p>Protege a sua <b>operação</b>.</p>
+          <p>Protege o seu <b>patrimônio</b>.</p>
+          <p>E protege a própria <b>gestão</b>.</p>
+        </div>
+        <p class="body">Os maiores problemas da administração condominial raramente surgem de uma grande falha. Eles nascem da soma de pequenos descuidos ignorados durante anos. A boa notícia é que a maioria pode ser evitada com organização, processo, treinamento e consciência. É exatamente isso que separa gestão amadora de gestão profissional.</p>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          O dado vazado nunca volta. Mas a gestão pode escolher se vai construir a porta antes ou explicar a janela aberta depois. A primeira opção custa tempo. A segunda custa muito mais.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · LGPD é projeto de gestão</div><div class="pg-num">17</div></div>
+  </section>
+
+  <!-- PAGE 18 · CONVITE -->
+  <section class="page capture" data-screen-label="18 Mentoria">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>O convite</div></div>
+    <div class="pg-body">
+      <div class="invite-head">Convite · ir além da operação</div>
+      <h2 class="invite-title">Os maiores problemas do condomínio quase sempre começam nos <span class="it">bastidores</span>.</h2>
+      <div class="invite-grid">
+        <div>
+          <p>A Mentoria Bastidores da Sindicatura não é aberta. É uma turma pequena, com vagas escolhidas a dedo. <b>Eu seleciono pessoalmente cada participante.</b> Por dois motivos. O primeiro é o nível da conversa. O segundo é o método. Um espaço fechado garante que cada decisão seja debatida com a profundidade que esse mercado exige.</p>
+          <p>Se você terminou esse e-book reconhecendo que a sua gestão opera com janela aberta em algum lugar, você já tem o primeiro requisito: <b>coragem de olhar para dentro.</b></p>
+        </div>
+        <div>
+          <p>Na mentoria, você aprende o que cursos tradicionais raramente ensinam. Como sair da gestão reativa, evitar risco invisível, montar processo, posicionar o seu nome e construir uma gestão que sobrevive ao próximo mandato e ao mandato depois desse.</p>
+          <p>Não é para quem quer aprender mais sobre sindicatura. É para quem decidiu trocar improviso por <b>método</b>, e enxergar os bastidores que decidem segurança, reputação e resultado.</p>
+        </div>
+      </div>
+      <div class="selection-band">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Vagas <span class="it">limitadas</span> por turma. Seleção por <span class="it">perfil.</span></div>
+        <p class="lines">Os bastidores que ninguém mostra.<br/>As conversas que ninguém grava.<br/>As decisões que protegem o seu mandato.</p>
+        <div class="u">→ Candidate-se em <span>www.bastidoresdasindicatura.com.br</span></div>
+        <div class="note">Próxima turma com vagas restritas. Seleção feita pessoalmente pela Juliana Moreira.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>O convite · Mentoria Bastidores da Sindicatura</div><div class="pg-num">18</div></div>
+  </section>
+
+  <!-- PAGE 19 · MANIFESTO -->
+  <section class="page manifesto" data-screen-label="19 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top:30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:12mm;">
+        <div class="cover-eyebrow" style="margin:0;">LGPD · Vol. 22</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:170mm;">
+          Dado vazado <em style="font-style:italic;color:var(--accent);">não volta.</em><br/>
+          Gestão protegida <em style="font-style:italic;color:var(--accent);">se constrói.</em>
+        </h2>
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          O condomínio que cuida do dado, cuida da pessoa. E quem cuida da pessoa, fica. Quem cuida só da câmera, sai no próximo mandato com problema novo na herança.
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 22 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite"><b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab=document.getElementById('pdfFab'); var hint=document.getElementById('pdfHint');
+    if(!fab) return; var t;
+    fab.addEventListener('mouseenter',function(){ clearTimeout(t); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave',function(){ t=setTimeout(function(){ hint.classList.remove('show'); },250); });
+    fab.addEventListener('click',function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); },120); setTimeout(function(){ hint.classList.remove('show'); },4000); });
+  })();
+</script>
+</body></html>
