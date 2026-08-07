@@ -1,0 +1,948 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Reforma Tributária nos Condomínios · Bastidores da Sindicatura · Vol. 23</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<template id="__bundler_thumbnail" data-bg-color="#F4EEDF">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F4EEDF"/>
+    <g transform="translate(600 400)" text-anchor="middle">
+      <text y="-30" font-family="serif" font-style="italic" font-size="86" fill="#B8543B">Reforma Tributária.</text>
+      <text y="90" font-family="serif" font-size="30" fill="#0E1A2B">O que já está definido</text>
+      <text y="132" font-family="serif" font-size="30" fill="#0E1A2B">e o que ainda depende de regulamentação.</text>
+      <text y="230" font-family="sans-serif" font-size="22" letter-spacing="6" fill="#6A7385">BASTIDORES DA SINDICATURA</text>
+    </g>
+  </svg>
+</template>
+<style>
+  :root{
+    --ink:#0E1A2B; --ink-2:#1F2C3F; --muted:#6A7385;
+    --line:#D9D2C2; --line-soft:#EAE3D2; --paper:#F4EEDF; --paper-2:#ECE3CC; --cream:#FBF7EC;
+    --accent:#B8543B; --accent-2:#C68B3B; --gold:#8C6A2A;
+    --confirmed:#5C9A5C; --pending:#D6A24A; --refuted:#B8543B;
+    --rule:1px solid var(--line);
+  }
+  @page { size: 210mm 297mm; margin: 0; }
+  *{ box-sizing: border-box; }
+  html, body{ margin:0; padding:0; width:210mm; background:#2A2522; font-family:"Manrope", system-ui, sans-serif; color:var(--ink); -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+  .page{ width:210mm; height:297mm; background:var(--paper); position:relative; overflow:hidden; color:var(--ink); page-break-after:always; break-after:page; margin:0 auto; }
+  .page:last-child{ page-break-after:auto; }
+  @media screen { html, body{ width:auto; } body{ display:flex; flex-direction:column; align-items:center; gap:18px; padding:28px 0 60px; } .page{ box-shadow:0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25); } }
+  @media print{ html, body{ background:#fff; width:210mm; margin:0; padding:0; display:block; } .page{ box-shadow:none; margin:0; display:block; } }
+
+  .frame{ position:absolute; inset:14mm 16mm; }
+  .pg-head{ position:absolute; top:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); padding-bottom:4mm; border-bottom:var(--rule); }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{ width:8px; height:8px; background:var(--accent); border-radius:50%; box-shadow:0 0 0 3px var(--paper), 0 0 0 4px var(--accent); }
+  .pg-foot{ position:absolute; bottom:10mm; left:16mm; right:16mm; display:flex; align-items:center; justify-content:space-between; font-family:"Manrope"; font-size:8.5pt; color:var(--muted); padding-top:4mm; border-top:var(--rule); }
+  .pg-foot .pg-num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); }
+  .pg-body{ position:absolute; top:22mm; bottom:18mm; left:16mm; right:16mm; display:flex; flex-direction:column; }
+
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif","Times New Roman",serif; font-weight:400; }
+  .section-num{ font-family:"Instrument Serif"; font-style:italic; font-size:60pt; line-height:1; color:var(--accent); letter-spacing:-.02em; }
+  .section-kicker{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .section-title{ font-family:"Instrument Serif"; font-weight:400; font-size:30pt; line-height:1.04; letter-spacing:-.01em; color:var(--ink); margin-top:2mm; }
+  .section-lede{ font-size:10pt; line-height:1.55; color:var(--ink-2); max-width:135mm; margin-top:4mm; }
+  .h-sub{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); display:flex; align-items:center; gap:8px; margin-bottom:3mm; }
+  .h-sub::before{ content:""; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  p.body{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  ul.bul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.4mm; }
+  ul.bul li{ display:flex; gap:8px; align-items:flex-start; font-size:9pt; line-height:1.4; color:var(--ink-2); padding:.6mm 0; border-bottom:1px dotted var(--line); }
+  ul.bul li:last-child{ border-bottom:none; }
+  ul.bul li::before{ content:""; flex:0 0 auto; width:4px; height:4px; margin-top:2.2mm; background:var(--accent); border-radius:50%; }
+  ul.bul.tight li{ font-size:8.6pt; padding:.4mm 0; }
+
+  ul.checks{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.5mm; }
+  ul.checks li{ display:flex; gap:8px; align-items:flex-start; font-size:9pt; line-height:1.38; color:var(--ink-2); padding:.6mm 0; border-bottom:1px dotted var(--line); }
+  ul.checks li:last-child{ border-bottom:none; }
+  ul.checks li .box{ flex:0 0 auto; width:3.8mm; height:3.8mm; border:1.2px solid var(--ink); border-radius:1.2px; background:var(--cream); margin-top:1mm; }
+
+  .cols-2{ display:grid; grid-template-columns:1fr 1fr; column-gap:8mm; align-items:start; }
+  .cols-3{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:5mm; align-items:start; }
+
+  ol.enum{ list-style:none; padding:0; margin:0; counter-reset:en; display:flex; flex-direction:column; gap:1.4mm; }
+  ol.enum li{ counter-increment:en; display:flex; gap:8px; align-items:baseline; font-size:9pt; line-height:1.42; color:var(--ink-2); padding:.8mm 0; border-bottom:1px dotted var(--line); }
+  ol.enum li::before{ content:counter(en, decimal-leading-zero); font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--accent); flex:0 0 8mm; }
+  ol.enum li b{ color:var(--ink); }
+
+  .callout{ background:var(--paper-2); border-left:3px solid var(--accent); padding:4mm 5mm; font-size:9pt; line-height:1.5; color:var(--ink-2); margin-top:3mm; }
+  .callout b{ color:var(--ink); }
+  .quote-block{ background:var(--cream); border:1px solid var(--line); padding:5mm 6mm; font-family:"Instrument Serif"; font-style:italic; font-size:11.5pt; line-height:1.45; color:var(--ink); }
+  .quote-block .signature{ margin-top:3mm; font-family:"Manrope"; font-style:normal; font-size:8pt; letter-spacing:.2em; text-transform:uppercase; color:var(--muted); }
+  .survival{ background:var(--paper-2); border-left:3px solid var(--accent); padding:4mm 6mm; display:flex; flex-direction:column; gap:1.6mm; }
+  .survival .lbl{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.22em; text-transform:uppercase; color:var(--gold); }
+  .survival .txt{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; line-height:1.3; color:var(--ink); }
+
+  .hr-orn{ display:flex; align-items:center; gap:10px; color:var(--accent); margin:3mm 0; }
+  .hr-orn::before, .hr-orn::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--accent);}
+
+  .refrain{ display:flex; flex-direction:column; gap:1.2mm; padding:3mm 5mm; border-left:2px solid var(--line); }
+  .refrain p{ margin:0; font-size:10pt; line-height:1.45; color:var(--ink-2); }
+  .refrain p b{ color:var(--ink); font-weight:600; }
+
+  .block-card{ background:var(--cream); border:1px solid var(--line); border-left:3px solid var(--accent); padding:4mm 5mm; }
+  .block-card .h-sub{ margin-bottom:2.5mm; font-size:8pt; }
+  .block-card ul.bul li{ font-size:8.6pt; padding:.4mm 0; }
+
+  /* compare */
+  .compare{ display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+  .compare .box{ padding:4mm 5mm; }
+  .compare .bad{ background:var(--paper-2); border-left:3px solid var(--accent); }
+  .compare .good{ background:var(--cream); border-left:3px solid var(--gold); }
+  .compare .lbl{ font-family:"Manrope"; font-weight:700; font-size:7.8pt; letter-spacing:.18em; text-transform:uppercase; margin-bottom:2mm; display:block; }
+  .compare .bad .lbl{ color:var(--accent); }
+  .compare .good .lbl{ color:var(--gold); }
+  .compare ul{ list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap:1.4mm; }
+  .compare ul li{ font-family:"Manrope"; font-size:8.6pt; line-height:1.4; color:var(--ink-2); padding:.7mm 0; border-bottom:1px dotted rgba(184,84,59,.15); }
+  .compare ul li:last-child{ border-bottom:none; }
+
+  .frases-head{ display:flex; align-items:baseline; gap:6mm; flex-wrap:wrap; padding-bottom:3mm; border-bottom:var(--rule); margin-bottom:4mm; }
+  .frases-head .section-kicker{ flex:0 0 auto; }
+  .frases-head h2{ font-family:"Instrument Serif"; font-weight:400; font-size:20pt; line-height:1.05; color:var(--ink); margin:0; }
+  .frases-head h2 .it{ font-style:italic; color:var(--accent); }
+
+  /* norma card */
+  .norma{ background:var(--cream); border:1px solid var(--line); padding:4mm 5mm; display:flex; flex-direction:column; gap:1.5mm; }
+  .norma .tag{ font-family:"Manrope"; font-weight:700; font-size:7.6pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); }
+  .norma .ttl{ font-family:"Instrument Serif"; font-style:italic; font-size:13pt; line-height:1.2; color:var(--ink); }
+  .norma .d{ font-family:"Manrope"; font-size:8.4pt; line-height:1.45; color:var(--ink-2); }
+  .norma .d b{ color:var(--ink); }
+
+  /* barra 80% */
+  .barra80{ margin:5mm 0; }
+  .barra80 .rail{ height:26px; background:var(--paper-2); border:1px solid var(--line); border-radius:14px; position:relative; overflow:hidden; }
+  .barra80 .fill{ position:absolute; left:0; top:0; bottom:0; width:80%; background:linear-gradient(90deg, var(--gold), var(--accent-2)); border-radius:14px 0 0 14px; }
+  .barra80 .marker{ position:absolute; top:-4mm; bottom:-4mm; left:80%; width:2px; background:var(--ink); }
+  .barra80 .marker::after{ content:"80%"; position:absolute; top:-6mm; left:50%; transform:translateX(-50%); font-family:"Instrument Serif"; font-style:italic; font-size:13pt; color:var(--ink); white-space:nowrap; }
+  .barra80 .legend{ display:flex; justify-content:space-between; margin-top:8mm; font-family:"Manrope"; font-size:9pt; color:var(--ink-2); }
+  .barra80 .legend .low{ color:var(--accent); font-weight:600; }
+  .barra80 .legend .high{ color:var(--gold); font-weight:600; }
+
+  /* status tag */
+  .status{ display:inline-flex; align-items:center; gap:6px; font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.16em; text-transform:uppercase; padding:2px 8px; border-radius:12px; }
+  .status .d{ width:7px; height:7px; border-radius:50%; }
+  .status.ok{ background:rgba(92,154,92,.14); color:var(--confirmed); }
+  .status.ok .d{ background:var(--confirmed); }
+  .status.pen{ background:rgba(214,162,74,.14); color:var(--pending); }
+  .status.pen .d{ background:var(--pending); }
+  .status.no{ background:rgba(184,84,59,.14); color:var(--refuted); }
+  .status.no .d{ background:var(--refuted); }
+
+  /* receita table */
+  .rectab{ display:grid; grid-template-columns:1fr; gap:0; border:1px solid var(--line); }
+  .rectab .row{ display:grid; grid-template-columns:44mm 1fr 1fr; border-bottom:1px solid var(--line); }
+  .rectab .row:last-child{ border-bottom:none; }
+  .rectab .row.hdr{ background:var(--paper-2); }
+  .rectab .row.hdr .cell{ font-family:"Manrope"; font-weight:700; font-size:7.6pt; letter-spacing:.16em; text-transform:uppercase; color:var(--ink); }
+  .rectab .cell{ padding:2.6mm 4mm; border-right:1px solid var(--line); font-size:8.6pt; line-height:1.4; color:var(--ink-2); }
+  .rectab .cell:last-child{ border-right:none; }
+  .rectab .cell.tema{ font-family:"Manrope"; font-weight:600; color:var(--ink); font-size:8.6pt; }
+
+  /* mito vs verdade */
+  .mito{ display:grid; grid-template-columns:1fr; gap:3mm; }
+  .mito-card{ background:var(--cream); border:1px solid var(--line); padding:4mm 5mm; }
+  .mito-card .top{ display:flex; gap:8px; align-items:baseline; margin-bottom:2mm; flex-wrap:wrap; }
+  .mito-card .top .frase{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--ink); flex:1; min-width:100mm; }
+  .mito-card .d{ font-family:"Manrope"; font-size:8.6pt; line-height:1.5; color:var(--ink-2); }
+  .mito-card .d b{ color:var(--ink); }
+
+  /* pending list */
+  .aberto{ display:flex; flex-direction:column; gap:2mm; }
+  .aberto .item{ background:var(--cream); border:1px solid var(--line); border-left:3px solid var(--pending); padding:3.5mm 5mm; display:grid; grid-template-columns:12mm 1fr; gap:5mm; align-items:baseline; }
+  .aberto .item .n{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--pending); }
+  .aberto .item .t{ font-family:"Manrope"; font-size:8.8pt; line-height:1.45; color:var(--ink-2); }
+  .aberto .item .t b{ color:var(--ink); }
+
+  /* atores 3 cards */
+  .atores{ display:grid; grid-template-columns:1fr 1fr 1fr; gap:5mm; }
+  .ator{ background:var(--cream); border:1px solid var(--line); border-top:3px solid var(--accent); padding:5mm 5mm; }
+  .ator .role{ font-family:"Manrope"; font-weight:700; font-size:8pt; letter-spacing:.2em; text-transform:uppercase; color:var(--accent); margin-bottom:2mm; }
+  .ator .ttl{ font-family:"Instrument Serif"; font-style:italic; font-size:14pt; color:var(--ink); margin-bottom:3mm; line-height:1.15; }
+  .ator ul.bul li{ font-size:8.4pt; padding:.3mm 0; }
+
+  /* COVER */
+  .cover{ background: radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.14), transparent 55%), radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%), var(--paper); }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{ display:flex; justify-content:space-between; align-items:flex-start; border-bottom:var(--rule); padding-bottom:6mm; }
+  .cover-brand{ display:flex; flex-direction:column; gap:2mm; }
+  .cover-brand .logo{ display:flex; align-items:center; gap:10px; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; color:var(--ink); }
+  .cover-brand .logo .mark{ width:30px; height:30px; border-radius:50%; background:var(--ink); position:relative; flex:0 0 auto; }
+  .cover-brand .logo .mark::after{ content:""; position:absolute; inset:5px; border:2px solid var(--paper); border-radius:50%; border-top-color:var(--accent); transform:rotate(35deg); }
+  .cover-brand .sub{ font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{ font-family:"Instrument Serif"; font-style:italic; font-size:16pt; color:var(--accent); }
+  .cover-meta .label{ font-size:8.5pt; letter-spacing:.24em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-title-wrap{ flex:1; display:flex; flex-direction:column; justify-content:center; padding:8mm 0 6mm; }
+  .cover-eyebrow{ font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); font-weight:700; margin-bottom:6mm; display:flex; align-items:center; gap:12px; }
+  .cover-eyebrow::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .cover-big{ font-family:"Instrument Serif"; font-style:italic; font-size:70pt; line-height:.92; color:var(--accent); letter-spacing:-.025em; margin:0 0 4mm; }
+  .cover-title{ font-family:"Instrument Serif"; font-weight:400; font-size:28pt; line-height:1.06; letter-spacing:-.01em; color:var(--ink); margin:0 0 5mm; max-width:170mm; }
+  .cover-title .it{ font-style:italic; color:var(--accent); }
+  .cover-deck{ font-family:"Manrope"; font-size:11.5pt; line-height:1.5; color:var(--ink-2); max-width:165mm; }
+  .cover-bottom{ border-top:var(--rule); padding-top:6mm; display:flex; justify-content:space-between; align-items:flex-end; }
+  .cover-stats{ display:flex; gap:11mm; }
+  .cover-stats .s .n{ font-family:"Instrument Serif"; font-size:32pt; line-height:1; color:var(--ink); letter-spacing:-.02em; }
+  .cover-stats .s .n .it{ font-style:italic; color:var(--accent); }
+  .cover-stats .s .l{ font-size:8.5pt; letter-spacing:.18em; text-transform:uppercase; color:var(--muted); font-weight:600; margin-top:2mm; }
+  .cover-edition{ text-align:right; font-family:"Manrope"; font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  .cover-edition .yr{ display:block; font-family:"Instrument Serif"; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:2mm; }
+
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{ font-family:"Instrument Serif"; font-size:32pt; line-height:1.04; color:var(--ink); letter-spacing:-.02em; }
+  .opener-title .it{ font-style:italic; color:var(--accent); }
+  .opener-grid{ display:grid; grid-template-columns:1fr 1fr; gap:9mm; margin-top:6mm; }
+  .opener-grid p{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+
+  .toc-list{ display:grid; grid-template-columns:1fr; margin-top:3mm; }
+  .toc-item{ display:flex; align-items:baseline; gap:8px; padding:1.9mm 0; border-bottom:1px dotted var(--line); font-size:9.5pt; color:var(--ink); }
+  .toc-item .num{ font-family:"Instrument Serif"; font-style:italic; font-size:12pt; color:var(--accent); flex:0 0 14mm; }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .pg{ font-family:"Instrument Serif"; font-style:italic; font-size:11pt; color:var(--muted); }
+
+  .section-head{ display:flex; gap:9mm; align-items:flex-start; padding-bottom:5mm; border-bottom:var(--rule); margin-bottom:5mm; }
+  .section-head .big{ flex:0 0 auto; }
+  .section-head .meta{ flex:1; padding-top:3mm;}
+  .section-body{ display:flex; flex-direction:column; gap:4mm; flex:1;}
+
+  .capture{ background: radial-gradient(120% 80% at 0% 0%, rgba(184,84,59,.16), transparent 55%), radial-gradient(90% 70% at 100% 100%, rgba(14,26,43,.10), transparent 55%), var(--paper); }
+  .invite-head{ font-family:"Manrope"; font-weight:700; font-size:9pt; letter-spacing:.32em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:12px; margin-bottom:5mm; }
+  .invite-head::before{ content:""; width:28px; height:1.5px; background:var(--accent); }
+  .invite-title{ font-family:"Instrument Serif"; font-weight:400; font-size:34pt; line-height:1.04; letter-spacing:-.02em; color:var(--ink); margin:0; }
+  .invite-title .it{ font-style:italic; color:var(--accent); }
+  .invite-grid{ display:grid; grid-template-columns:1fr 1fr; gap:9mm; margin-top:6mm; }
+  .invite-grid p{ font-size:10pt; line-height:1.55; color:var(--ink-2); margin:0 0 3mm; }
+  .invite-grid p b{ color:var(--ink); }
+  .selection-band{ background:var(--ink); color:var(--paper); padding:7mm 8mm; display:flex; flex-direction:column; gap:2.5mm; margin-top:auto; }
+  .selection-band .k{ font-family:"Manrope"; font-weight:700; font-size:8.5pt; letter-spacing:.26em; text-transform:uppercase; color:var(--accent-2); }
+  .selection-band .t{ font-family:"Instrument Serif"; font-size:24pt; line-height:1.08; color:var(--paper); }
+  .selection-band .t .it{ font-style:italic; color:var(--accent-2); }
+  .selection-band .lines{ font-family:"Instrument Serif"; font-style:italic; font-size:11.5pt; line-height:1.45; color:rgba(244,238,223,.92); margin:1.5mm 0 0; }
+  .selection-band .u{ font-family:"Manrope"; font-weight:700; font-size:10.5pt; letter-spacing:.04em; color:var(--paper); margin-top:2mm; }
+  .selection-band .u span{ color:var(--accent-2); }
+  .selection-band .note{ font-family:"Manrope"; font-size:8.5pt; letter-spacing:.16em; text-transform:uppercase; color:rgba(244,238,223,.6); margin-top:.5mm; }
+  .manifesto .frame{ display:flex; flex-direction:column; }
+
+  .pdf-fab{ position:fixed; right:22px; bottom:22px; z-index:9999; display:inline-flex; align-items:center; gap:10px; padding:14px 22px; background:#0E1A2B; color:#F4EEDF; border:none; border-radius:999px; font-family:"Manrope", system-ui, sans-serif; font-size:13px; font-weight:600; letter-spacing:.08em; text-transform:uppercase; cursor:pointer; box-shadow:0 14px 38px rgba(14,26,43,.45), 0 3px 10px rgba(14,26,43,.30), inset 0 0 0 1px rgba(255,255,255,.06); transition:transform .15s ease, box-shadow .15s ease, background .15s ease; }
+  .pdf-fab:hover{ transform:translateY(-2px); background:#B8543B; }
+  .pdf-fab svg{ width:16px; height:16px; flex:0 0 auto; }
+  .pdf-fab .dot-accent{ width:6px; height:6px; border-radius:50%; background:#B8543B; box-shadow:0 0 0 3px rgba(184,84,59,.22); }
+  .pdf-hint{ position:fixed; right:22px; bottom:74px; z-index:9998; max-width:280px; padding:12px 14px; background:#FBF7EC; border:1px solid #D9D2C2; border-radius:10px; font-family:"Manrope", system-ui, sans-serif; font-size:11.5px; line-height:1.5; color:#1F2C3F; box-shadow:0 10px 30px rgba(0,0,0,.18); opacity:0; transform:translateY(8px); pointer-events:none; transition:opacity .2s ease, transform .2s ease; }
+  .pdf-hint.show{ opacity:1; transform:translateY(0); }
+  .pdf-hint b{ color:#B8543B; }
+  @media print{ .pdf-fab, .pdf-hint{ display:none !important; } }
+</style>
+</head>
+<body>
+
+  <!-- PAGE 01 · COVER -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 23</div>
+          <div class="label">Guia Técnico</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">O guia que separa fato de manchete</div>
+        <h1 class="cover-big">Reforma Tributária.</h1>
+        <p class="cover-title">O que <span class="it">já está definido</span> e o que ainda <span class="it">depende de regulamentação.</span></p>
+        <p class="cover-deck">Um guia técnico para síndicos, administradoras e gestores condominiais entenderem, com rigor, o que a LC 214/2025 e o Decreto 12.955/2026 mudam no condomínio. Sem simplificação de rede social, sem manchete precipitada, com a data de corte na capa e o que ainda depende de regulamentação separado no fim.</p>
+      </div>
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">18</span></div><div class="l">Páginas</div></div>
+          <div class="s"><div class="n">10</div><div class="l">Capítulos</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Data de corte · ago/2026</div></div>
+        </div>
+        <div class="cover-edition">Edição<span class="yr">2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAGE 02 · APRESENTAÇÃO -->
+  <section class="page opener" data-screen-label="02 Apresentação">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Apresentação</div></div>
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:7mm;">Antes de virar a página</div>
+        <h2 class="opener-title">Enquanto o mercado simplifica, esse guia <span class="it">diferencia.</span></h2>
+        <p style="font-family:'Instrument Serif';font-style:italic;font-size:13.5pt;line-height:1.4;color:var(--ink-2);margin:4mm 0 0;max-width:165mm;">A manchete circulando diz "todo condomínio vai emitir NFS-e em dezembro". A lei diz outra coisa. E a diferença entre uma e outra é o seu mandato.</p>
+        <div class="opener-grid">
+          <div>
+            <p>A Reforma Tributária chegou ao condomínio. E chegou com o mesmo padrão de sempre. Manchete que vira post, post que vira grupo de WhatsApp, grupo de WhatsApp que vira dúvida do conselho, dúvida do conselho que vira decisão apressada. Nenhum desses degraus leu o artigo 26 da LC 214/2025.</p>
+            <p>O texto legal existe, é público e é preciso. Ele separa duas situações que a rede social confundiu. E o Decreto 12.955/2026, publicado depois, confirmou o desenho sem alterar o gatilho.</p>
+          </div>
+          <div>
+            <p>Esse guia foi construído a partir do texto literal da LC 214/2025, do Decreto 12.955/2026 e da doutrina publicada até <b>agosto de 2026</b>. Cada afirmação tem base citada. E, o que é raro no assunto, cada ponto que ainda depende de regulamentação está marcado com o mesmo peso dos pontos já definidos.</p>
+            <p><b>Não é a versão simplificada. É a versão honesta.</b> A que você mostra para o conselho sem precisar voltar atrás.</p>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="cols-2" style="gap:7mm;">
+          <div class="block-card">
+            <div class="h-sub">O que está confirmado</div>
+            <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Art. 26 da LC 214/2025 (regra dos 80% e regime regular opcional), Decreto 12.955/2026 art. 15 (energia com geração compartilhada), doutrina ConJur (jul/2026) e princípios gerais do regime.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">O que ainda depende de regulamentação</div>
+            <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Período de apuração dos 80%, alcance específico dos Atos Conjuntos RFB/CGIBS, tratamento de rubricas atípicas (fundo de reserva, multas, locações) e cronograma detalhado da NFS-e para condomínios não contribuintes.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Bastidores da Sindicatura · Vol. 23</div><div class="pg-num">02</div></div>
+  </section>
+
+  <!-- PAGE 03 · SUMÁRIO -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Sumário</div></div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:4mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">§</span><span class="ttl">Marco regulatório · LC 214/2025, Decreto 12.955/2026 e doutrina</span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">01</span><span class="ttl">O que muda com a Reforma Tributária no condomínio</span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">02</span><span class="ttl">O condomínio é contribuinte de IBS e CBS?</span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">03</span><span class="ttl">A regra dos 80% explicada com precisão</span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">04</span><span class="ttl">Regime regular opcional · a matemática da decisão</span><span class="pg">08</span></div>
+        <div class="toc-item"><span class="num">05</span><span class="ttl">Receita ordinária × receita de terceiros</span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">06</span><span class="ttl">Locação de antena, salão, publicidade e vending</span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">07</span><span class="ttl">Energia elétrica com geração compartilhada</span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">08</span><span class="ttl">O que muda para administradora, contabilidade e síndico</span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">09</span><span class="ttl">Mito ou verdade · o boleto vai virar nota fiscal?</span><span class="pg">13</span></div>
+        <div class="toc-item"><span class="num">10</span><span class="ttl">Pontos em aberto até agosto de 2026</span><span class="pg">14</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Checklist para síndico e para administradora</span><span class="pg">15</span></div>
+        <div class="toc-item"><span class="num">★</span><span class="ttl">Conclusão · técnica antes de manchete</span><span class="pg">16</span></div>
+        <div class="toc-item"><span class="num">→</span><span class="ttl">Convite · Mentoria Bastidores da Sindicatura</span><span class="pg">17</span></div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Sumário</div><div class="pg-num">03</div></div>
+  </section>
+
+  <!-- PAGE 04 · MARCO REGULATÓRIO -->
+  <section class="page" data-screen-label="04 Marco">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Marco regulatório</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">§</div></div>
+        <div class="meta">
+          <div class="section-kicker">Marco regulatório</div>
+          <h2 class="section-title">A régua que decide a sua <span class="serif" style="font-style:italic;color:var(--accent);">decisão</span>.</h2>
+          <p class="section-lede">Cinco referências formam o esqueleto do tema até agosto de 2026. Duas normas centrais e três fontes doutrinárias. Quem interpretar sem consultar as duas primeiras, interpreta no ar.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2" style="gap:5mm;">
+          <div class="norma">
+            <div class="tag">LC 214/2025 · art. 26</div>
+            <div class="ttl">Regra específica para condomínio edilício</div>
+            <div class="d">Define quando o condomínio é ou não contribuinte de IBS e CBS, a regra dos 80% e o regime regular opcional. <b>É a coluna vertebral do tema.</b> <span class="status ok"><span class="d"></span>vigente</span></div>
+          </div>
+          <div class="norma">
+            <div class="tag">Decreto 12.955/2026</div>
+            <div class="ttl">Regulamentação de aplicação</div>
+            <div class="d">Regulamenta a LC 214/2025 e trata especificamente da não exclusão da base de cálculo para energia com geração compartilhada em condomínios (art. 15 § 2º II). <b>Não alterou o gatilho dos 80%.</b> <span class="status ok"><span class="d"></span>vigente</span></div>
+          </div>
+          <div class="norma">
+            <div class="tag">ConJur · jul/2026</div>
+            <div class="ttl">"Condomínios edilícios no IBS e na CBS"</div>
+            <div class="d">Análise doutrinária publicada em 20/07/2026. <b>Mapeia expressamente a "não incidência", o regime regular e as incertezas ainda existentes.</b> Base interpretativa principal.</div>
+          </div>
+          <div class="norma">
+            <div class="tag">Ato Conjunto RFB/CGIBS</div>
+            <div class="ttl">Documentos fiscais eletrônicos</div>
+            <div class="d">Instrumentos que disciplinam obrigação acessória de emissão de documento fiscal na Reforma. Nº 1/2025 e nº 4/2026 estão publicados. <b>Aplicação específica a condomínios ainda depende de interpretação.</b> <span class="status pen"><span class="d"></span>pendente</span></div>
+          </div>
+        </div>
+        <div class="callout"><b>Uma correção de rota importante.</b> Circula na internet a afirmação de que "o art. 25 trata o condomínio como fornecedor por padrão, mesmo sem personalidade jurídica". <b>Essa afirmação não se sustenta.</b> A regra específica do condomínio está no art. 26, não no 25. O art. 26 estabelece uma não incidência como regra e uma tributação condicionada. Guardar a diferença é meio caminho para não errar no conselho.</div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Data de corte</span>
+          <span class="txt">Este guia foi fechado com base na legislação, regulamentação e doutrina publicadas até agosto de 2026. Cada novo Ato Conjunto e Nota Técnica pode adicionar detalhe operacional. O núcleo do art. 26, porém, é lei complementar e não muda por instrução normativa.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Marco regulatório · LC 214/2025, Decreto 12.955/2026 e doutrina</div><div class="pg-num">04</div></div>
+  </section>
+
+  <!-- PAGE 05 · CAP 01 -->
+  <section class="page" data-screen-label="05 Cap 01">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 01 · O que muda</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">01</div></div>
+        <div class="meta">
+          <div class="section-kicker">Capítulo um</div>
+          <h2 class="section-title">O que muda com a <span class="serif" style="font-style:italic;color:var(--accent);">Reforma</span>.</h2>
+          <p class="section-lede">A Reforma substituiu, na prática, cinco tributos por dois: IBS (competência estadual e municipal) e CBS (federal). O sistema é de valor agregado, com crédito e débito. Para o condomínio, isso não vira automaticamente obrigação de nota fiscal.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <p class="body">O modelo mudou. Antes, cada ente tributava por conta própria, com incidência em cascata em alguns pontos. Agora, o sistema é único e não cumulativo. Mas o texto legal reservou tratamento específico para o condomínio edilício em um artigo próprio, o 26. E esse artigo é o que interessa para o síndico.</p>
+        <div class="cols-2" style="gap:6mm;margin-top:3mm;">
+          <div class="block-card">
+            <div class="h-sub">O que a Reforma faz</div>
+            <ul class="bul tight">
+              <li>Unifica cinco tributos em IBS e CBS</li>
+              <li>Cria sistema de crédito e débito</li>
+              <li>Padroniza documento fiscal eletrônico</li>
+              <li>Fixa cronograma de transição até 2033</li>
+              <li>Trata condomínio em artigo próprio (art. 26)</li>
+            </ul>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">O que a Reforma não faz</div>
+            <ul class="bul tight">
+              <li>Não transforma todo condomínio em contribuinte</li>
+              <li>Não cria obrigação automática de NFS-e sobre cota ordinária</li>
+              <li>Não altera a natureza jurídica de rateio de despesa</li>
+              <li>Não elimina a análise caso a caso de composição de receita</li>
+            </ul>
+          </div>
+        </div>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          A Reforma não trata o condomínio como uma empresa comum. Trata como um ente com regra própria. Ignorar essa distinção é a raiz da manchete errada.
+          <div class="signature">Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 01 · O que muda com a Reforma no condomínio</div><div class="pg-num">05</div></div>
+  </section>
+
+  <!-- PAGE 06 · CAP 02 -->
+  <section class="page" data-screen-label="06 Cap 02">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 02 · É contribuinte?</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 02</div>
+        <h2>O condomínio é <span class="it">contribuinte</span> de IBS e CBS?</h2>
+      </div>
+      <p class="body">Resposta curta: <b>como regra, não</b>. A LC 214/2025 dedicou o art. 26 ao condomínio edilício e disse expressamente que, em determinadas condições, ele não é contribuinte de IBS e CBS. A resposta longa é onde mora a diferença que o guia precisa fazer.</p>
+      <div class="callout" style="margin:3mm 0 4mm;"><b>Duas situações que a lei separa.</b> A primeira é a regra geral, sem opção do condomínio, ligada à composição da receita (a regra dos 80% do próximo capítulo). A segunda é a escolha do condomínio de aderir voluntariamente ao regime regular, com efeitos amplos sobre toda a arrecadação.</p>
+      <div class="cols-2" style="gap:6mm;">
+        <div class="block-card">
+          <div class="h-sub">Situação 1 · regra geral</div>
+          <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Se as cotas condominiais e valores cobrados dos condôminos representarem <b>80% ou mais</b> da receita total, o condomínio <b>não é contribuinte</b>. Se caírem abaixo desse piso, torna-se contribuinte apenas sobre as operações com terceiros.</p>
+          <p style="margin:2mm 0 0;font-size:8.4pt;color:var(--muted);font-style:italic;">Base: LC 214/2025 art. 26 § 2º II.</p>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Situação 2 · opção do condomínio</div>
+          <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Se o condomínio <b>optar</b> pelo regime regular, passa a ter direito a créditos sobre aquisições, mas obriga-se a tributar <b>todas</b> as receitas (inclusive as cotas ordinárias dos moradores).</p>
+          <p style="margin:2mm 0 0;font-size:8.4pt;color:var(--muted);font-style:italic;">Base: LC 214/2025 art. 26 § 2º I.</p>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A pergunta que decide a resposta</span>
+        <span class="txt">"Quais são as receitas do meu condomínio?" O tamanho dessa lista, e o peso de cada linha, decide se o condomínio é ou não contribuinte. Sem esse mapeamento, qualquer resposta é chute.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 02 · O condomínio é contribuinte?</div><div class="pg-num">06</div></div>
+  </section>
+
+  <!-- PAGE 07 · CAP 03 · REGRA DOS 80% -->
+  <section class="page" data-screen-label="07 Cap 03">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 03 · Regra dos 80%</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 03</div>
+        <h2>A regra dos <span class="it">80%</span> explicada com precisão.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">A regra parece simples e tem uma pegadinha linguística que ninguém repara. O art. 26, § 2º, II usa a expressão literal <b>"menos de 80%"</b>. Isso significa que exatamente 80% ainda mantém o condomínio fora da tributação. Só cai para dentro da regra quando a proporção fica em 79,99% ou menos.</p>
+      <div class="barra80">
+        <div class="rail">
+          <div class="fill"></div>
+          <div class="marker"></div>
+        </div>
+        <div class="legend">
+          <span class="low">0% cotas · contribuinte pleno sobre terceiros</span>
+          <span class="high">100% cotas · não contribuinte</span>
+        </div>
+      </div>
+      <div class="cols-2" style="gap:6mm;margin-top:3mm;">
+        <div class="block-card">
+          <div class="h-sub">Como calcular</div>
+          <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);"><b>Numerador:</b> cotas condominiais e valores cobrados dos condôminos.<br/><b>Denominador:</b> receita total do condomínio no período.<br/><b>Divisão:</b> se resultar em 0,80 ou mais, sem incidência. Se resultar em menos, incidência apenas sobre a receita de terceiros.</p>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Efeito prático</div>
+          <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Condomínio 100% residencial, sem receita de terceiros, fica <b>fora</b> por definição. Condomínio com aluguel de antena, loja no térreo, publicidade em fachada ou vending machine precisa <b>acompanhar o índice</b> para não virar contribuinte de forma involuntária.</p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:3mm;"><b>Ponto pendente de regulamentação.</b> A LC não fixou o período de apuração dos 80% (mensal, trimestral, anual ou móvel). Isso está expressamente apontado pela doutrina (ConJur, jul/2026) como pendência. Até que a regulamentação venha, a análise deve ser conservadora e periódica, com o critério documentado no condomínio.</p>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A leitura honesta</span>
+        <span class="txt">Um condomínio 100% residencial dificilmente virá contribuinte. Um condomínio comercial ou misto, com receitas relevantes de terceiros, precisa <b>acompanhar o índice</b> e ter um contador que sabe o que está fazendo.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 03 · A regra dos 80% com precisão</div><div class="pg-num">07</div></div>
+  </section>
+
+  <!-- PAGE 08 · CAP 04 -->
+  <section class="page" data-screen-label="08 Cap 04">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 04 · Regime regular</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 04</div>
+        <h2>Regime regular · a <span class="it">matemática</span> da decisão.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">O art. 26, § 2º, I abre uma porta que muitos condomínios não vão perceber que existe. O condomínio <b>pode optar</b> pelo regime regular. Ao fazer isso, ganha direito a créditos sobre aquisições, como qualquer empresa. Em troca, IBS e CBS passam a incidir sobre <b>tudo o que ele cobra</b>, inclusive as cotas ordinárias.</p>
+      <div class="compare" style="margin:4mm 0;">
+        <div class="box good">
+          <span class="lbl">Vantagem</span>
+          <ul>
+            <li>Apropriação de créditos sobre insumos</li>
+            <li>Redução de custo em manutenção, obra, energia, serviço</li>
+            <li>Sistema alinhado ao regime não cumulativo</li>
+            <li>Pode compensar em condomínios com alto volume de aquisições</li>
+          </ul>
+        </div>
+        <div class="box bad">
+          <span class="lbl">Custo</span>
+          <ul>
+            <li>Tributação de TODAS as receitas, inclusive cota ordinária</li>
+            <li>Obrigação acessória plena (documento fiscal, escrituração)</li>
+            <li>Decisão estrutural, com efeitos permanentes</li>
+            <li>Só compensa quando crédito &gt; débito com folga</li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout"><b>Quem tende a considerar.</b> Condomínio de alto padrão com contratos volumosos de manutenção, obra recorrente, energia comprada em ambiente livre e/ou terceirização integral. Nesses casos, o volume de crédito pode superar o ônus. Em condomínio residencial padrão, com contratos modestos, a opção quase nunca compensa.</div>
+      <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+        A opção pelo regime regular é a única decisão da Reforma que o condomínio tem que <b>tomar ativamente</b>. Tudo o mais é lei se aplicando por conta própria. Essa é diferente. E toda decisão estrutural pede projeto, projeção e assinatura embaixo.
+        <div class="signature">Bastidores da Sindicatura</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 04 · Regime regular opcional</div><div class="pg-num">08</div></div>
+  </section>
+
+  <!-- PAGE 09 · CAP 05 -->
+  <section class="page" data-screen-label="09 Cap 05">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 05 · Ordinária x terceiros</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 05</div>
+        <h2>Receita ordinária × receita de <span class="it">terceiros</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:3mm;">Toda análise do art. 26 gira em torno dessa distinção. O que é cobrado dos condôminos entra no numerador. O que vem de fora entra apenas no denominador. E, quando o condomínio se torna contribuinte, é sobre a segunda coluna que incide a tributação.</p>
+      <div class="rectab">
+        <div class="row hdr">
+          <div class="cell">Tipo de receita</div>
+          <div class="cell">Entra como</div>
+          <div class="cell">Tratamento no art. 26</div>
+        </div>
+        <div class="row">
+          <div class="cell tema">Cota condominial ordinária</div>
+          <div class="cell">Valor cobrado do condômino · numerador</div>
+          <div class="cell">Rateio de despesa. Só é tributado no regime regular.</div>
+        </div>
+        <div class="row">
+          <div class="cell tema">Cota extraordinária</div>
+          <div class="cell">Valor cobrado do condômino · numerador</div>
+          <div class="cell">Mesma lógica da ordinária.</div>
+        </div>
+        <div class="row">
+          <div class="cell tema">Fundo de reserva</div>
+          <div class="cell">Valor cobrado do condômino · numerador (interpretativo)</div>
+          <div class="cell">Enquadramento específico ainda depende de regulamentação.</div>
+        </div>
+        <div class="row">
+          <div class="cell tema">Multa e juros por atraso</div>
+          <div class="cell">Cobrado do condômino · numerador (interpretativo)</div>
+          <div class="cell">Enquadramento específico ainda depende de interpretação.</div>
+        </div>
+        <div class="row">
+          <div class="cell tema">Aluguel de antena de operadora</div>
+          <div class="cell">Terceiro · denominador</div>
+          <div class="cell">Tributável se o condomínio virar contribuinte.</div>
+        </div>
+        <div class="row">
+          <div class="cell tema">Aluguel de salão para não morador</div>
+          <div class="cell">Terceiro · denominador</div>
+          <div class="cell">Tributável se o condomínio virar contribuinte.</div>
+        </div>
+        <div class="row">
+          <div class="cell tema">Publicidade em fachada ou elevador</div>
+          <div class="cell">Terceiro · denominador</div>
+          <div class="cell">Tributável se o condomínio virar contribuinte.</div>
+        </div>
+        <div class="row">
+          <div class="cell tema">Vending machine, lavanderia paga</div>
+          <div class="cell">Terceiro · denominador</div>
+          <div class="cell">Tributável se o condomínio virar contribuinte.</div>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A regra prática</span>
+        <span class="txt">Se veio do condômino pagando cota, é numerador. Se veio de fora do condomínio, é denominador. O condomínio vira contribuinte quando o denominador começa a pesar demais.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 05 · Receita ordinária e receita de terceiros</div><div class="pg-num">09</div></div>
+  </section>
+
+  <!-- PAGE 10 · CAP 06 -->
+  <section class="page" data-screen-label="10 Cap 06">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 06 · Locações e receitas</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 06</div>
+        <h2>Antena, salão, publicidade, <span class="it">vending</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">Aqui está o coração operacional do art. 26. Toda vez que o condomínio cobra alguém <b>de fora do rol de condôminos</b>, essa receita cai no denominador. E se, ao cair no denominador, ela empurra as cotas para menos de 80% do total, o condomínio vira contribuinte pontual sobre essa parcela.</p>
+      <div class="cols-2" style="gap:6mm;margin-top:3mm;">
+        <div class="block-card">
+          <div class="h-sub">Aluguel de antena</div>
+          <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Operadora de telecom aluga espaço no topo do prédio. É receita de terceiro. Peso relevante em muitos edifícios altos. <b>Costuma ser o principal responsável por empurrar o índice abaixo de 80%.</b></p>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Salão de festas para não morador</div>
+          <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Se o salão é alugado exclusivamente para condôminos, entra na dinâmica de rateio interno. Se é alugado para <b>terceiros</b> (público externo), a receita é de terceiro.</p>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Publicidade em fachada e elevador</div>
+          <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Contratos de mídia em elevador, painel de fachada, tela digital. Sempre receita de terceiro. <b>Não parece muito, mas soma.</b></p>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Vending e lavanderia paga</div>
+          <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Máquina de café, refrigerante, snacks, lavanderia self-service. Receita variável, mas contínua. Entra no denominador mês a mês.</p>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:3mm;"><b>Cuidado com o contrato de exploração.</b> Alguns condomínios contratam empresa terceirizada que <b>opera</b> a vending, a lavanderia ou o painel de mídia, e recebem apenas comissão. Nesse caso, quem cobra do usuário final é a empresa, não o condomínio. A receita do condomínio é <b>a comissão</b>. A distinção contratual muda o enquadramento e a base de cálculo. Vale conversar com o contador antes de assinar.</div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Princípio</span>
+        <span class="txt">A cada nova receita de terceiro, o índice de 80% muda. O que dava 85% ontem pode dar 78% amanhã. Acompanhar não é opcional. É gestão fiscal.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 06 · Locações e receitas acessórias</div><div class="pg-num">10</div></div>
+  </section>
+
+  <!-- PAGE 11 · CAP 07 -->
+  <section class="page" data-screen-label="11 Cap 07">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 07 · Energia compartilhada</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 07</div>
+        <h2>Energia com <span class="it">geração compartilhada</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;">Um ponto que não estava no radar da maioria dos síndicos e que apareceu confirmado no Decreto 12.955/2026. Condomínios que adotaram estruturas de geração distribuída compartilhada (usina solar em modelo de consórcio, cooperativa, condomínio ou associação) <b>não têm direito à exclusão da base de cálculo</b> pela energia injetada.</p>
+      <div class="callout" style="margin:3mm 0 4mm;"><b>Base normativa.</b> Decreto 12.955/2026, art. 15 § 2º II. A exclusão da base de IBS/CBS pela energia injetada em micro (≤75 kW) ou minigeração (&gt;75 kW a ≤1 MW) fica restrita aos consumidores individuais sob autoconsumo local no Sistema de Compensação de Energia Elétrica. <b>A norma exclui expressamente as estruturas de "consórcio, cooperativa, condomínio e associação".</b></p>
+      <div class="cols-2" style="gap:6mm;">
+        <div class="block-card">
+          <div class="h-sub">O que isso significa na prática</div>
+          <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">O condomínio, como consumidor final, <b>suporta CBS/IBS sobre o valor bruto</b> da energia fornecida pela distribuidora, sem dedução da energia que ele mesmo injetou na rede. O contribuinte de direito é a distribuidora. O ônus econômico cai no condomínio.</p>
+        </div>
+        <div class="block-card">
+          <div class="h-sub">Impacto para quem já investiu</div>
+          <p style="margin:0;font-size:9pt;line-height:1.5;color:var(--ink-2);">Condomínios que fizeram investimento em geração compartilhada esperando o benefício integral precisam <b>rever a projeção financeira</b>. O payback pode ficar mais longo. Não invalida o investimento, mas exige recálculo.</p>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">Alerta específico</span>
+        <span class="txt">Se seu condomínio tem ou está estudando geração compartilhada, essa é a página que o conselho precisa ler. Não é opinião. É Decreto 12.955/2026, artigo 15, parágrafo 2º, inciso II. Está lá.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 07 · Energia com geração compartilhada</div><div class="pg-num">11</div></div>
+  </section>
+
+  <!-- PAGE 12 · CAP 08 -->
+  <section class="page" data-screen-label="12 Cap 08">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 08 · Impacto por ator</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 08</div>
+        <h2>O que muda para cada <span class="it">ator</span> do condomínio.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:4mm;">A Reforma não desloca a responsabilidade principal de ninguém. Mas cria demandas novas para três atores distintos, e cada um precisa saber a parte que lhe cabe antes de dezembro chegar.</p>
+      <div class="atores">
+        <div class="ator">
+          <div class="role">Síndico</div>
+          <div class="ttl">Governança da decisão</div>
+          <ul class="bul">
+            <li>Mapear todas as fontes de receita do condomínio</li>
+            <li>Levar o índice dos 80% para acompanhamento periódico</li>
+            <li>Decidir com o conselho sobre opção pelo regime regular</li>
+            <li>Documentar deliberação em ata</li>
+            <li>Revisar contratos de exploração (antena, publicidade, vending)</li>
+            <li>Comunicar moradores com base em fato, não em post</li>
+          </ul>
+        </div>
+        <div class="ator">
+          <div class="role">Administradora</div>
+          <div class="ttl">Operação e sistema</div>
+          <ul class="bul">
+            <li>Atualizar sistema para separar receita de condômino e de terceiro</li>
+            <li>Preparar rotina de apuração do índice</li>
+            <li>Adequar plano de contas ao novo regime</li>
+            <li>Configurar emissão de documento fiscal quando aplicável</li>
+            <li>Treinar equipe interna</li>
+            <li>Manter arquivo de conformidade auditável</li>
+          </ul>
+        </div>
+        <div class="ator">
+          <div class="role">Contabilidade</div>
+          <div class="ttl">Interpretação e simulação</div>
+          <ul class="bul">
+            <li>Analisar caso a caso a incidência sobre receita de terceiro</li>
+            <li>Simular impacto da opção pelo regime regular</li>
+            <li>Acompanhar publicação de Atos Conjuntos e NTs</li>
+            <li>Emitir parecer técnico quando o índice cair para perto de 80%</li>
+            <li>Orientar sobre créditos apropriáveis</li>
+            <li>Alertar sobre risco de mudança de status</li>
+          </ul>
+        </div>
+      </div>
+      <div class="survival" style="margin-top:auto;">
+        <span class="lbl">A regra dos três</span>
+        <span class="txt">Se qualquer um dos três operar no escuro, o condomínio opera no escuro. A Reforma não perdoa quem terceirizou a leitura da lei.</span>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 08 · Impacto para síndico, administradora e contabilidade</div><div class="pg-num">12</div></div>
+  </section>
+
+  <!-- PAGE 13 · CAP 09 -->
+  <section class="page" data-screen-label="13 Cap 09">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 09 · Mito ou verdade</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 09</div>
+        <h2>Mito ou verdade · o boleto vai virar <span class="it">nota fiscal</span>?</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:4mm;">A pergunta que síndicos e administradoras farão nas próximas assembleias. Aqui vão as principais afirmações circulando, com o veredito baseado na LC 214/2025 e na doutrina de agosto de 2026.</p>
+      <div class="mito">
+        <div class="mito-card">
+          <div class="top">
+            <span class="frase">"A partir de dezembro, todo condomínio vai emitir nota fiscal do boleto."</span>
+            <span class="status no"><span class="d"></span>mito</span>
+          </div>
+          <div class="d">A LC 214/2025 estabelece regra específica para condomínio (art. 26). Como regra, ele não é contribuinte de IBS/CBS. Só é obrigatoriamente tributado sobre receita de terceiros quando as cotas caem abaixo de 80% do total. Nesse caso, a obrigação acessória alcança apenas essa parcela. <b>A afirmação categórica é simplificação incorreta.</b></div>
+        </div>
+        <div class="mito-card">
+          <div class="top">
+            <span class="frase">"O condomínio pode optar por regime que gera crédito sobre insumos."</span>
+            <span class="status ok"><span class="d"></span>verdade</span>
+          </div>
+          <div class="d">Art. 26 § 2º I. É a chamada opção pelo regime regular. Em troca, tributa todas as receitas, inclusive cota ordinária. Só compensa quando o volume de crédito supera o ônus da tributação total. <b>Decisão estrutural.</b></div>
+        </div>
+        <div class="mito-card">
+          <div class="top">
+            <span class="frase">"Se o condomínio tem antena alugada, ele já é contribuinte."</span>
+            <span class="status pen"><span class="d"></span>depende</span>
+          </div>
+          <div class="d">Depende do peso da antena no total da receita. Se as cotas ainda somam 80% ou mais, o condomínio segue fora. Se caem abaixo, tributação apenas sobre a antena e demais receitas de terceiros. <b>É análise numérica, não regra automática.</b></div>
+        </div>
+        <div class="mito-card">
+          <div class="top">
+            <span class="frase">"Multa de morador vira base tributária."</span>
+            <span class="status pen"><span class="d"></span>pendente</span>
+          </div>
+          <div class="d">O tratamento específico de multas, juros e fundo de reserva dentro do denominador dos 80% ainda depende de regulamentação e interpretação. Doutrina tende a enquadrar como valor cobrado do condômino, mas <b>a norma não fez a distinção expressa</b>.</div>
+        </div>
+        <div class="mito-card">
+          <div class="top">
+            <span class="frase">"Energia solar compartilhada zera IBS/CBS na conta."</span>
+            <span class="status no"><span class="d"></span>mito</span>
+          </div>
+          <div class="d">Decreto 12.955/2026, art. 15 § 2º II. A exclusão da base pela energia injetada <b>não alcança</b> geração compartilhada em condomínios. Condomínio suporta o tributo sobre o valor bruto da energia fornecida.</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 09 · Mito ou verdade das afirmações mais comuns</div><div class="pg-num">13</div></div>
+  </section>
+
+  <!-- PAGE 14 · CAP 10 · PONTOS EM ABERTO -->
+  <section class="page" data-screen-label="14 Cap 10">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Capítulo 10 · Pontos em aberto</div></div>
+    <div class="pg-body">
+      <div class="frases-head">
+        <div class="section-kicker">Capítulo 10 · transparência total</div>
+        <h2>Pontos em aberto até agosto de <span class="it">2026</span>.</h2>
+      </div>
+      <p class="body" style="font-size:9.5pt;margin-bottom:4mm;">Este capítulo é o que o mercado costuma esconder. Aqui está o que ainda não foi resolvido pela regulamentação, e que precisa ser acompanhado antes de qualquer decisão definitiva. <b>Cada item abaixo é assumido como pendência, não como afirmação.</b></p>
+      <div class="aberto">
+        <div class="item">
+          <div class="n">01</div>
+          <div class="t"><b>Período de apuração do índice dos 80%.</b> A LC não diz se é mensal, trimestral, anual ou móvel. A doutrina ConJur aponta expressamente essa lacuna. Até que a regulamentação venha, o critério deve ser documentado pelo condomínio de forma conservadora e periódica.</div>
+        </div>
+        <div class="item">
+          <div class="n">02</div>
+          <div class="t"><b>Alcance específico do Ato Conjunto RFB/CGIBS nº 4/2026 para condomínios.</b> O instrumento existe e trata do cronograma de obrigatoriedade dos documentos fiscais eletrônicos. A leitura específica de como isso se aplica a condomínios <b>não contribuintes</b> (a grande maioria) ainda depende de interpretação técnica.</div>
+        </div>
+        <div class="item">
+          <div class="n">03</div>
+          <div class="t"><b>Enquadramento de rubricas atípicas.</b> Fundo de reserva, multa por infração ao regulamento interno, juros por atraso, doação de morador. Se compõem "valores cobrados dos condôminos" ou "receita de terceiros" no denominador dos 80% ainda depende de manifestação regulamentar clara.</div>
+        </div>
+        <div class="item">
+          <div class="n">04</div>
+          <div class="t"><b>Regime da NFS-e para condomínio não contribuinte.</b> Se o condomínio não é contribuinte pela regra dos 80%, ele deve emitir documento fiscal por operações eventuais com terceiros? A resposta operacional depende do detalhamento pela Nota Técnica CGNFS-e aplicável.</div>
+        </div>
+        <div class="item">
+          <div class="n">05</div>
+          <div class="t"><b>Interação com o cronograma de transição da Reforma (2026-2033).</b> O sistema entra em fase de teste, transição parcial e regime pleno em datas distintas. A aplicação prática do dever de documento fiscal por condomínios ao longo dessa transição ainda pede consolidação normativa.</div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:auto;"><b>O que fazer com esses pontos.</b> Não travar decisão porque tem pendência. Mas também não decidir como se não existisse. Documentar critério, consultar contador, acompanhar publicação de Atos Conjuntos e NTs, e revisar a política do condomínio a cada trimestre. <b>É gestão fiscal, não é adivinhação.</b></div>
+    </div>
+    <div class="pg-foot"><div>Capítulo 10 · O que ainda depende de regulamentação</div><div class="pg-num">14</div></div>
+  </section>
+
+  <!-- PAGE 15 · CHECKLIST -->
+  <section class="page" data-screen-label="15 Checklist">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Checklist</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✓</div></div>
+        <div class="meta">
+          <div class="section-kicker">Checklist prático</div>
+          <h2 class="section-title">O que fazer nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">semanas</span>.</h2>
+          <p class="section-lede">Dois blocos. Um para o síndico, outro para a administradora. Cada item marcado é um risco a menos e uma decisão embasada a mais quando chegar o próximo balancete ou a próxima assembleia.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="cols-2" style="gap:6mm;">
+          <div class="block-card">
+            <div class="h-sub">Síndico</div>
+            <ul class="checks">
+              <li><span class="box"></span>Levantar todas as fontes de receita do condomínio</li>
+              <li><span class="box"></span>Calcular a razão cotas / receita total (índice dos 80%)</li>
+              <li><span class="box"></span>Rever contratos de exploração (antena, publicidade, vending)</li>
+              <li><span class="box"></span>Levar o tema para o conselho com dados, não com boato</li>
+              <li><span class="box"></span>Deliberar sobre eventual opção pelo regime regular</li>
+              <li><span class="box"></span>Documentar decisão em ata com base no art. 26 da LC 214/2025</li>
+              <li><span class="box"></span>Comunicar moradores com base em fato, não em post</li>
+              <li><span class="box"></span>Programar reavaliação trimestral do índice</li>
+            </ul>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">Administradora e contabilidade</div>
+            <ul class="checks">
+              <li><span class="box"></span>Adequar plano de contas separando condômino e terceiro</li>
+              <li><span class="box"></span>Configurar sistema para apuração automática do índice</li>
+              <li><span class="box"></span>Preparar rotina de emissão de documento fiscal quando aplicável</li>
+              <li><span class="box"></span>Simular cenário de opção pelo regime regular</li>
+              <li><span class="box"></span>Emitir parecer técnico quando o índice ficar próximo de 80%</li>
+              <li><span class="box"></span>Acompanhar publicação de Atos Conjuntos e NTs aplicáveis</li>
+              <li><span class="box"></span>Manter arquivo de conformidade auditável</li>
+              <li><span class="box"></span>Treinar equipe interna e alinhar com o síndico</li>
+            </ul>
+          </div>
+        </div>
+        <div class="survival" style="margin-top:auto;">
+          <span class="lbl">Princípio</span>
+          <span class="txt">Reforma Tributária não é surpresa. É calendário. E calendário se prepara com antecedência, não com panicaria de última hora.</span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Checklist para síndico, administradora e contabilidade</div><div class="pg-num">15</div></div>
+  </section>
+
+  <!-- PAGE 16 · CONCLUSÃO -->
+  <section class="page" data-screen-label="16 Conclusão">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Conclusão</div></div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num" style="font-style:italic;">✦</div></div>
+        <div class="meta">
+          <div class="section-kicker">Conclusão</div>
+          <h2 class="section-title">Técnica antes da <span class="serif" style="font-style:italic;color:var(--accent);">manchete</span>.</h2>
+          <p class="section-lede">Reforma Tributária no condomínio é tema técnico, com efeito operacional real e com um conjunto de pontos ainda em regulamentação. Nada disso justifica improviso. Também nada disso justifica manchete precipitada.</p>
+        </div>
+      </div>
+      <div class="section-body">
+        <div class="refrain">
+          <p>A regra dos 80% <b>existe</b>.</p>
+          <p>O regime regular opcional <b>existe</b>.</p>
+          <p>O impacto sobre energia compartilhada <b>existe</b>.</p>
+          <p>Os pontos em aberto <b>também existem</b>. E a gestão séria diz os quatro em voz alta.</p>
+        </div>
+        <p class="body">O condomínio que decide com base em fato, com critério documentado e com apoio técnico qualificado, atravessa a Reforma sem susto. O condomínio que decide com base em post, com pressa e com pouco arquivo, atravessa com auto de infração e com assembleia extraordinária. A diferença entre um e outro raramente é a lei. É <b>quem leu a lei</b>.</p>
+        <div class="quote-block" style="margin-top:auto;background:var(--paper-2);">
+          Enquanto o mercado repete simplificação, você cita artigo. E citar artigo, em condomínio, é o único jeito de sair da assembleia com a decisão que ficou.
+          <div class="signature">Juliana Moreira · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>Conclusão · Técnica antes da manchete</div><div class="pg-num">16</div></div>
+  </section>
+
+  <!-- PAGE 17 · CONVITE -->
+  <section class="page capture" data-screen-label="17 Mentoria">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>O convite</div></div>
+    <div class="pg-body">
+      <div class="invite-head">Convite · do improviso ao método</div>
+      <h2 class="invite-title">Enquanto o mercado repete post, você <span class="it">cita artigo</span>.</h2>
+      <div class="invite-grid">
+        <div>
+          <p>A Mentoria Bastidores da Sindicatura não é aberta. É uma turma pequena, com vagas escolhidas a dedo. <b>Eu seleciono pessoalmente cada participante.</b> Por dois motivos. O primeiro é o nível da conversa. O segundo é o método. Um espaço fechado garante que cada decisão seja debatida com a profundidade que esse mercado exige.</p>
+          <p>Se você terminou esse e-book reconhecendo que a Reforma Tributária no seu condomínio precisa de método, não de manchete, você já tem o primeiro requisito: <b>coragem de ler o artigo.</b></p>
+        </div>
+        <div>
+          <p>Na mentoria, você aprende o que o mercado condominial pratica no palco e o que ninguém explica nos bastidores. Como conduzir decisão técnica em assembleia com maioria contrária, como blindar a gestão em transição regulatória, como transformar contador e administradora em parceiros de decisão, e como construir autoridade que sobrevive ao próximo mandato.</p>
+          <p>Não é para quem quer aprender mais sobre sindicatura. É para quem decidiu trocar improviso por <b>método</b>, e construir uma carreira que atravessa mudanças de lei sem virar refém do próximo post viral.</p>
+        </div>
+      </div>
+      <div class="selection-band">
+        <div class="k">Mentoria Bastidores da Sindicatura</div>
+        <div class="t">Vagas <span class="it">limitadas</span> por turma. Seleção por <span class="it">perfil.</span></div>
+        <p class="lines">Os bastidores que ninguém mostra.<br/>As conversas que ninguém grava.<br/>As decisões que atravessam mudança de lei.</p>
+        <div class="u">→ Candidate-se em <span>www.bastidoresdasindicatura.com.br</span></div>
+        <div class="note">Próxima turma com vagas restritas. Seleção feita pessoalmente pela Juliana Moreira.</div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>O convite · Mentoria Bastidores da Sindicatura</div><div class="pg-num">17</div></div>
+  </section>
+
+  <!-- PAGE 18 · MANIFESTO -->
+  <section class="page manifesto" data-screen-label="18 Manifesto" style="background: radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%), var(--paper);">
+    <div class="pg-head"><div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div><div>Encerramento</div></div>
+    <div class="frame" style="padding-top:30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap:12mm;">
+        <div class="cover-eyebrow" style="margin:0;">Reforma Tributária · Vol. 23 · Data de corte ago/2026</div>
+        <h2 style="font-family:'Instrument Serif'; font-weight:400; font-size:36pt; line-height:1.18; color:var(--ink); letter-spacing:-.01em; max-width:170mm;">
+          Manchete <em style="font-style:italic;color:var(--accent);">simplifica.</em><br/>
+          Lei <em style="font-style:italic;color:var(--accent);">decide.</em>
+        </h2>
+        <div style="max-width:145mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          Este guia foi fechado com base na LC 214/2025, no Decreto 12.955/2026 e na doutrina publicada até agosto de 2026. Atualizações virão. Quando vierem, você já vai saber onde encaixar.
+        </div>
+        <div style="font-size:9pt; letter-spacing:.3em; text-transform:uppercase; color:var(--muted); font-weight:600;">
+          Bastidores da Sindicatura
+          <span style="display:block; font-family:'Instrument Serif'; font-style:italic; font-size:22pt; letter-spacing:0; text-transform:none; color:var(--ink); margin-top:3mm;">Juliana Moreira</span>
+        </div>
+        <div style="display:flex; align-items:center; gap:10px; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot"><div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 23 · 2026</div><div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div></div>
+  </section>
+
+<div id="pdfHint" class="pdf-hint" role="note" aria-live="polite"><b>Dica:</b> em &laquo;Mais definições&raquo; ative <b>Gráficos de fundo</b> e use papel <b>A4</b> com margens <b>Nenhuma</b>.</div>
+<button id="pdfFab" class="pdf-fab" type="button" aria-label="Salvar como PDF">
+  <span class="dot-accent" aria-hidden="true"></span>
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 14v5a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+  <span>Salvar como PDF</span>
+</button>
+<script>
+  (function(){
+    var fab=document.getElementById('pdfFab'); var hint=document.getElementById('pdfHint');
+    if(!fab) return; var t;
+    fab.addEventListener('mouseenter',function(){ clearTimeout(t); hint.classList.add('show'); });
+    fab.addEventListener('mouseleave',function(){ t=setTimeout(function(){ hint.classList.remove('show'); },250); });
+    fab.addEventListener('click',function(){ hint.classList.add('show'); setTimeout(function(){ window.print(); },120); setTimeout(function(){ hint.classList.remove('show'); },4000); });
+  })();
+</script>
+</body></html>
