@@ -1,0 +1,226 @@
+/* Bastidores da Sindicatura · estilo dos e-books Kindle (EPUB reflowável) */
+
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/InstrumentSerif-Regular.ttf");
+}
+@font-face {
+  font-family: "Instrument Serif";
+  font-style: italic;
+  font-weight: normal;
+  src: url("../fonts/InstrumentSerif-Italic.ttf");
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Manrope-Regular.ttf");
+}
+@font-face {
+  font-family: "Manrope";
+  font-style: normal;
+  font-weight: bold;
+  src: url("../fonts/Manrope-Bold.ttf");
+}
+
+body {
+  font-family: "Manrope", "Helvetica", "Arial", sans-serif;
+  line-height: 1.55;
+  margin: 0;
+  padding: 0 4%;
+  color: #1F2C3F;
+}
+
+h1, h2, h3 {
+  font-family: "Instrument Serif", "Georgia", "Times New Roman", serif;
+  font-weight: normal;
+  color: #0E1A2B;
+  page-break-after: avoid;
+}
+h2 {
+  font-size: 2em;
+  line-height: 1.12;
+  margin: 1.4em 0 0.5em 0;
+  letter-spacing: -0.01em;
+}
+h2 em, h3 em, .titulo em, .cover-em {
+  font-style: italic;
+  color: #B8543B;
+}
+h3 {
+  font-size: 1.4em;
+  line-height: 1.2;
+  margin: 1.4em 0 0.4em 0;
+}
+h4 {
+  font-family: "Manrope", "Helvetica", "Arial", sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  color: #0E1A2B;
+  margin: 1.2em 0 0.3em 0;
+  page-break-after: avoid;
+}
+
+p {
+  margin: 0 0 0.85em 0;
+  text-align: left;
+}
+
+.kicker {
+  font-size: 0.72em;
+  font-weight: bold;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #8C6A2A;
+  margin: 1.6em 0 0.2em 0;
+}
+.kicker + h2 { margin-top: 0.15em; }
+.label {
+  font-size: 0.72em;
+  font-weight: bold;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #B8543B;
+  margin: 0.4em 0 0.25em 0;
+}
+.lede {
+  font-family: "Instrument Serif", "Georgia", serif;
+  font-size: 1.22em;
+  line-height: 1.4;
+  color: #1F2C3F;
+  margin: 0.4em 0 1.1em 0;
+}
+.quote {
+  font-family: "Instrument Serif", "Georgia", serif;
+  font-style: italic;
+  font-size: 1.18em;
+  line-height: 1.4;
+  color: #0E1A2B;
+  margin: 0.6em 0 0.8em 0;
+}
+.big {
+  font-family: "Instrument Serif", "Georgia", serif;
+  font-size: 1.35em;
+  line-height: 1.25;
+  color: #0E1A2B;
+  margin: 0.3em 0 0.6em 0;
+}
+.signature {
+  text-align: right;
+  font-style: italic;
+  color: #6A7385;
+  margin: 0.2em 0 0.8em 0;
+}
+.small {
+  font-size: 0.86em;
+  color: #6A7385;
+}
+.tags {
+  font-size: 0.82em;
+  color: #6A7385;
+}
+
+/* caixas */
+.box {
+  border: 1px solid #D9D2C2;
+  background-color: #F6F1E4;
+  padding: 0.7em 1em 0.2em 1em;
+  margin: 1em 0 1.1em 0;
+  page-break-inside: avoid;
+}
+.box p { margin-bottom: 0.6em; }
+.box .kicker { margin-top: 0.2em; }
+.box h3, .box h4 { margin-top: 0.3em; }
+.box.callout { border-left: 4px solid #B8543B; }
+.box.summary { background-color: #ECE3CC; border-top: 3px solid #B8543B; }
+.box.quote {
+  font-family: "Instrument Serif", "Georgia", serif;
+  font-style: italic;
+  font-size: 1.15em;
+  line-height: 1.4;
+  color: #0E1A2B;
+  background-color: #ECE3CC;
+  border: none;
+}
+.box.quote p { font-family: "Instrument Serif", "Georgia", serif; }
+.box.good { border-left: 4px solid #3E7A4B; }
+.box.bad { border-left: 4px solid #B8543B; }
+.box.model { background-color: #FBF7EC; border: 1px dashed #B8543B; }
+.box.note { background-color: transparent; border: none; border-top: 1px solid #D9D2C2; padding-left: 0; padding-right: 0; }
+.box.band { background-color: #0E1A2B; color: #F4EEDF; border: none; }
+.box.band h3, .box.band h4, .box.band p, .box.band .big { color: #F4EEDF; }
+.box.band .kicker, .box.band .label { color: #DABDA9; }
+
+.fig { margin: 1.2em 0; text-align: center; page-break-inside: avoid; }
+.fig img { max-width: 100%; }
+.fig p { text-align: center; margin-top: 0.4em; }
+
+/* listas */
+ul, ol { margin: 0.3em 0 1em 0; padding-left: 1.4em; }
+li { margin: 0 0 0.35em 0; }
+ul.checks { list-style-type: square; }
+ul.yes, ul.no { list-style-type: none; padding-left: 0.2em; }
+ol.enum { padding-left: 1.6em; }
+
+/* tabelas */
+table { border-collapse: collapse; width: 100%; margin: 0.6em 0 1em 0; font-size: 0.92em; }
+td, th { border: 1px solid #D9D2C2; padding: 0.35em 0.5em; vertical-align: top; text-align: left; }
+th { background-color: #ECE3CC; font-weight: bold; }
+
+/* páginas de abertura */
+.titlepage { text-align: center; margin-top: 12%; }
+.titlepage .brand {
+  font-family: "Instrument Serif", "Georgia", serif;
+  font-style: italic;
+  font-size: 1.3em;
+  color: #0E1A2B;
+  margin-bottom: 0.2em;
+}
+.titlepage .por {
+  font-size: 0.72em;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #6A7385;
+  margin-bottom: 3em;
+}
+.titlepage .vol {
+  font-family: "Instrument Serif", "Georgia", serif;
+  font-style: italic;
+  font-size: 1.1em;
+  color: #B8543B;
+  margin-bottom: 0.6em;
+}
+.titlepage h1 {
+  font-size: 2.6em;
+  line-height: 1.08;
+  margin: 0 0 0.4em 0;
+  letter-spacing: -0.01em;
+}
+.titlepage .sub {
+  font-family: "Instrument Serif", "Georgia", serif;
+  font-size: 1.3em;
+  line-height: 1.3;
+  color: #1F2C3F;
+  margin: 0 0 2.5em 0;
+}
+.titlepage .autora {
+  font-family: "Instrument Serif", "Georgia", serif;
+  font-size: 1.5em;
+  color: #0E1A2B;
+  margin-bottom: 0.2em;
+}
+.titlepage .site {
+  font-size: 0.72em;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #B8543B;
+}
+.copyright { font-size: 0.88em; color: #1F2C3F; margin-top: 8%; }
+.copyright p { margin-bottom: 0.7em; }
+
+/* sumário HTML */
+.toc ol { list-style-type: none; padding-left: 0; }
+.toc li { margin: 0 0 0.6em 0; }
+.toc a { color: #0E1A2B; text-decoration: none; }

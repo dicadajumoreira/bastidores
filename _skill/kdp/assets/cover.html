@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Capa Kindle</title>
+<style>
+  @font-face { font-family: "Instrument Serif"; font-style: normal; src: url("fonts/InstrumentSerif-Regular.ttf"); }
+  @font-face { font-family: "Instrument Serif"; font-style: italic; src: url("fonts/InstrumentSerif-Italic.ttf"); }
+  @font-face { font-family: "Manrope"; font-weight: 400; src: url("fonts/Manrope-Regular.ttf"); }
+  @font-face { font-family: "Manrope"; font-weight: 600; src: url("fonts/Manrope-SemiBold.ttf"); }
+  @font-face { font-family: "Manrope"; font-weight: 700; src: url("fonts/Manrope-Bold.ttf"); }
+
+  :root {
+    --ink: #0E1A2B; --ink-2: #1F2C3F; --muted: #6A7385;
+    --line: #D9D2C2; --paper: #F4EEDF; --paper-2: #ECE3CC;
+    --accent: #B8543B; --gold: #8C6A2A;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    width: 1600px; height: 2560px; overflow: hidden;
+    background: radial-gradient(70% 55% at 50% 28%, rgba(184,84,59,.10), transparent 62%), var(--paper);
+    font-family: "Manrope", sans-serif; color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+  }
+  .frame {
+    position: absolute; inset: 64px; border: 3px solid var(--ink);
+    padding: 96px 104px 92px 104px;
+    display: flex; flex-direction: column;
+  }
+  .frame::after {
+    content: ""; position: absolute; inset: 14px; border: 1px solid rgba(14,26,43,.35); pointer-events: none;
+  }
+  .top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .logo { display: flex; align-items: center; gap: 22px; }
+  .mark { width: 30px; height: 30px; border: 3px solid var(--ink); position: relative; }
+  .mark::after { content: ""; position: absolute; inset: 7px; background: var(--accent); }
+  .logo span { font-family: "Instrument Serif", serif; font-size: 58px; letter-spacing: -.01em; }
+  .logo i { font-style: italic; }
+  .sub { margin-top: 16px; font-size: 24px; letter-spacing: .32em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .meta { text-align: right; }
+  .ep { font-family: "Instrument Serif", serif; font-style: italic; font-size: 46px; color: var(--accent); }
+  .label { margin-top: 14px; font-size: 22px; letter-spacing: .28em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .label.site { color: var(--accent); }
+
+  .mid { flex: 1; display: flex; flex-direction: column; justify-content: center; padding: 40px 0; min-height: 0; }
+  .eyebrow { display: flex; align-items: center; gap: 22px; font-size: 30px; letter-spacing: .3em; text-transform: uppercase; color: var(--accent); font-weight: 700; margin-bottom: 44px; }
+  .eyebrow::before { content: ""; width: 72px; height: 3px; background: var(--accent); flex: none; }
+  h1 {
+    font-family: "Instrument Serif", serif; font-weight: 400; margin: 0;
+    font-size: 320px; line-height: .94; letter-spacing: -.025em; color: var(--ink);
+    overflow-wrap: normal;
+  }
+  h1 em { font-style: italic; color: var(--accent); }
+  .subtitle { font-family: "Instrument Serif", serif; font-size: 84px; line-height: 1.12; letter-spacing: -.01em; color: var(--ink); margin: 40px 0 0 0; max-width: 1300px; }
+  .subtitle em { font-style: italic; color: var(--accent); }
+  .deck { font-family: "Instrument Serif", serif; font-size: 44px; line-height: 1.36; color: var(--ink-2); margin: 52px 0 0 0; max-width: 1250px; }
+
+  .bottom { border-top: 2px solid var(--ink); padding-top: 44px; display: flex; justify-content: space-between; align-items: flex-end; }
+  .stats { display: flex; gap: 88px; }
+  .s .n { font-family: "Instrument Serif", serif; font-size: 120px; line-height: 1; color: var(--ink); }
+  .s:first-child .n { font-style: italic; color: var(--accent); }
+  .s .l { margin-top: 14px; font-size: 24px; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .edition { text-align: right; font-size: 21px; letter-spacing: .24em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+  .edition b { display: block; font-family: "Instrument Serif", serif; font-style: italic; font-size: 64px; letter-spacing: 0; text-transform: none; color: var(--ink); font-weight: 400; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="frame">
+  <div class="top">
+    <div>
+      <div class="logo"><div class="mark"></div><span><i>Bastidores</i> da Sindicatura</span></div>
+      <div class="sub">por Juliana Moreira</div>
+    </div>
+    <div class="meta">
+      <div class="ep">Volume {{VOL}}</div>
+      <div class="label">{{LABEL}}</div>
+      <div class="label site">{{SITE}}</div>
+    </div>
+  </div>
+  <div class="mid" id="mid">
+    <div class="eyebrow">{{EYEBROW}}</div>
+    <h1 id="h1">{{TITLE}}</h1>
+    {{SUBTITLE}}
+    <p class="deck">{{DECK}}</p>
+  </div>
+  <div class="bottom">
+    <div class="stats">{{STATS}}</div>
+    <div class="edition">Edição<b>{{ANO}}</b></div>
+  </div>
+</div>
+<script>
+  // Ajusta o tamanho do título até o miolo caber no espaço disponível.
+  (function () {
+    var mid = document.getElementById('mid');
+    var h1 = document.getElementById('h1');
+    var size = parseFloat(getComputedStyle(h1).fontSize);
+    var len = h1.textContent.trim().length;
+    if (len > 14) size = 250;
+    if (len > 30) size = 205;
+    if (len > 48) size = 175;
+    if (len > 64) size = 150;
+    h1.style.fontSize = size + 'px';
+    // título curto fica numa linha só; título longo nunca quebra uma palavra ao meio
+    var probe = document.createElement('span');
+    probe.style.cssText = 'position:absolute;visibility:hidden;white-space:nowrap;font-family:"Instrument Serif",serif;letter-spacing:-.025em';
+    document.body.appendChild(probe);
+    function widest() {
+      probe.style.fontSize = size + 'px';
+      var words = h1.textContent.trim().split(/\s+/), w = 0;
+      if (len <= 16) words = [h1.textContent.trim()];
+      words.forEach(function (x) { probe.textContent = x; w = Math.max(w, probe.offsetWidth); });
+      return w;
+    }
+    while (widest() > h1.clientWidth && size > 120) { size -= 6; h1.style.fontSize = size + 'px'; }
+    function overflow() { return mid.scrollHeight > mid.clientHeight + 2; }
+    var guard = 0;
+    while (overflow() && size > 72 && guard++ < 60) {
+      size -= 4; h1.style.fontSize = size + 'px';
+    }
+    var sub = document.querySelector('.subtitle');
+    var deck = document.querySelector('.deck');
+    var ds = 44;
+    guard = 0;
+    while (overflow() && ds > 26 && guard++ < 20) {
+      ds -= 1; deck.style.fontSize = ds + 'px';
+      if (sub) sub.style.fontSize = Math.max(48, parseFloat(getComputedStyle(sub).fontSize) - 2) + 'px';
+    }
+    document.documentElement.setAttribute('data-ready', '1');
+  })();
+</script>
+</body>
+</html>

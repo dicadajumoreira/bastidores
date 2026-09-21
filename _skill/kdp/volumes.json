@@ -1,0 +1,316 @@
+{
+  "serie": "Bastidores da Sindicatura",
+  "autora": "Juliana Moreira",
+  "site": "bastidoresdasindicatura.com.br",
+  "ano": "2026",
+  "volumes": [
+    {
+      "num": "01",
+      "slug": "checklist-assembleia",
+      "source": "Ebooks/V01 - Bastidores da Sindicatura - Checklist de Assembleias.html",
+      "titulo": "Como organizar uma assembleia de verdade",
+      "subtitulo": "Checklist operacional do síndico em 22 etapas, do edital ao registro",
+      "descricao": [
+        "A assembleia é o momento em que a gestão do síndico é julgada em público. Quando ela sai do improviso, vira instrumento de gestão. Quando não sai, vira desgaste, impugnação e retrabalho.",
+        "Este checklist reúne, em 22 etapas, tudo o que precisa ser verificado antes, durante e depois de uma assembleia: diagnóstico da necessidade, pauta, edital, quórum, documentos, condução da reunião, ata e registro. São mais de 260 itens de verificação, organizados na ordem em que acontecem, com regras de bolso e alertas nos pontos em que mais se erra.",
+        "Volume 01 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["assembleia de condomínio", "checklist do síndico", "edital de convocação", "ata de assembleia", "gestão condominial", "síndico profissional", "quórum assembleia"],
+      "categorias": ["Negócios e Economia > Imóveis", "Negócios e Economia > Administração", "Direito > Direito Imobiliário"]
+    },
+    {
+      "num": "02",
+      "slug": "inteligencia-artificial-condominios",
+      "source": "Ebooks/V02 - Bastidores da Sindicatura - Inteligência Artificial em Condomínios.pdf",
+      "titulo": "Inteligência artificial em condomínios",
+      "subtitulo": "Como usar a tecnologia para ganhar tempo, reduzir erros e melhorar a gestão condominial",
+      "capa": {
+        "eyebrow": "Tecnologia para a gestão condominial",
+        "titulo_html": "Inteligência <em>artificial</em> em condomínios.",
+        "deck": "Como usar a tecnologia para ganhar tempo, reduzir erros e melhorar a gestão condominial. Sem promessa milagrosa. Sem jargão. Com critério e responsabilidade.",
+        "label": "Material de apoio",
+        "stats": [["09", "Capítulos"], ["15", "Prompts prontos"], ["30", "Dias de implantação"]]
+      },
+      "descricao": [
+        "A inteligência artificial não substitui o síndico. Ela amplia a capacidade de gestão de quem sabe usar a ferramenta com critério.",
+        "Em 9 capítulos, este guia mostra onde a IA já cabe na rotina condominial: comunicação com moradores, resumo de reuniões, organização de informação, preparação de assembleias e redução de retrabalho. Traz 15 prompts prontos para o síndico adaptar, um capítulo inteiro sobre LGPD e dados dos moradores, a lista do que nunca delegar à IA e um roteiro de implantação em 30 dias.",
+        "Volume 02 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["inteligência artificial", "IA para síndicos", "gestão condominial", "prompts para síndico", "tecnologia em condomínios", "administradora de condomínios", "produtividade do síndico"],
+      "categorias": ["Negócios e Economia > Imóveis", "Informática e Tecnologia > Inteligência Artificial", "Negócios e Economia > Administração"]
+    },
+    {
+      "num": "03",
+      "slug": "sindico-profissional",
+      "source": "Ebooks/V03 - Bastidores da Sindicatura - O que Ninguém te Conta sobre ser Síndico Profissional.pdf",
+      "titulo": "O que ninguém te conta sobre ser síndico profissional",
+      "subtitulo": "Os bastidores que separam quem apaga incêndios de quem constrói uma carreira respeitada na sindicatura",
+      "capa": {
+        "eyebrow": "A camada que ninguém te ensinou",
+        "titulo_html": "O que ninguém te conta sobre ser síndico <em>profissional.</em>",
+        "deck": "Os bastidores que separam quem apenas apaga incêndios de quem constrói uma carreira respeitada na sindicatura.",
+        "label": "Material editorial",
+        "stats": [["11", "Capítulos"], ["30", "Anos de bastidores"], ["2026", "Edição Kindle"]]
+      },
+      "descricao": [
+        "Sindicatura não é só gestão. É também gestão de expectativa, conflito, ansiedade, frustração, vaidade, medo e comunicação truncada. Quase ninguém ensina isso.",
+        "Em 11 capítulos, Juliana Moreira abre a parte da profissão que não aparece nos cursos: a decisão impopular, o conselho que cobra tudo e não sustenta nada, o morador que distorce a sua fala no grupo, a crise que começou anos antes da sua gestão. Um e-book para ler com calma e usar como espelho, não como manual.",
+        "Volume 03 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["síndico profissional", "carreira de síndico", "gestão condominial", "sindicatura profissional", "como ser síndico", "administração de condomínios", "liderança em condomínio"],
+      "categorias": ["Negócios e Economia > Imóveis", "Negócios e Economia > Carreiras", "Negócios e Economia > Administração"]
+    },
+    {
+      "num": "04",
+      "slug": "whatsapp-condominio",
+      "source": "Ebooks/V04 - Bastidores da Sindicatura - Manual de Sobrevivência do Síndico em Grupos de WhatsApp.html",
+      "titulo": "Como sobreviver ao grupo de WhatsApp do condomínio",
+      "subtitulo": "Manual de sobrevivência do síndico: autoridade, sanidade e gestão profissional no tribunal digital",
+      "descricao": [
+        "A maior dor da sindicatura, hoje, mora no grupo de WhatsApp. É lá que o condomínio funciona por áudio, print, cobrança pública e julgamento em tempo real.",
+        "Este manual, em 18 capítulos, mostra como o síndico mantém a autoridade, a sanidade emocional e a gestão profissional sem virar refém do grupo: o que responder, o que não responder, quando migrar para o canal oficial, como montar um protocolo de comunicação e como conduzir o dia da crise. Inclui mais de 14 respostas prontas para copiar, adaptar e enviar.",
+        "Volume 04 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["grupo de whatsapp condomínio", "comunicação do síndico", "síndico profissional", "gestão de conflitos condomínio", "gestão condominial", "moradores whatsapp", "protocolo de comunicação"],
+      "categorias": ["Negócios e Economia > Imóveis", "Negócios e Economia > Comunicação Empresarial", "Negócios e Economia > Administração"]
+    },
+    {
+      "num": "05",
+      "slug": "50-frases",
+      "source": "Ebooks/V05 - Bastidores da Sindicatura - 50 Frases que o Síndico Precisa Aprender a Responder sem Perder a Cabeça.html",
+      "titulo": "50 frases para responder sem perder a cabeça",
+      "subtitulo": "Respostas prontas do síndico para cobranças, provocações, acusações e conflitos",
+      "descricao": [
+        "Na sindicatura, nem sempre vence quem fala mais alto. Vence quem responde com postura.",
+        "Este guia reúne as 50 frases que todo síndico escuta, do \"eu pago condomínio, então eu tenho direito\" ao \"você nunca resolve nada\", com uma resposta pronta para cada uma e a explicação de por que ela funciona. No fim, 10 frases curinga para as situações em que o melhor é ganhar tempo, redirecionar ou encerrar a conversa sem perder a autoridade.",
+        "Volume 05 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["respostas prontas síndico", "comunicação do síndico", "conflitos em condomínio", "síndico profissional", "gestão condominial", "moradores difíceis", "postura profissional"],
+      "categorias": ["Negócios e Economia > Imóveis", "Negócios e Economia > Comunicação Empresarial", "Autoajuda > Comunicação e Habilidades Sociais"]
+    },
+    {
+      "num": "06",
+      "slug": "nr1-condominios",
+      "source": "Ebooks/V06 - Bastidores da Sindicatura - NR-1 nos Condomínios.html",
+      "titulo": "NR-1 nos condomínios",
+      "subtitulo": "Condomínio também é ambiente de trabalho: o que muda para síndicos, administradoras, funcionários e terceirizados",
+      "descricao": [
+        "A nova NR-1 chegou aos condomínios. Riscos psicossociais, gerenciamento de riscos ocupacionais e responsabilidade do síndico passaram a fazer parte da rotina de quem gere portaria, zeladoria, limpeza e manutenção.",
+        "Em 20 capítulos, este guia explica o que muda na prática, quem responde pelo quê, como tratar equipe própria e terceirizada, o que documentar e como organizar a gestão antes que o problema vire passivo trabalhista. Traz 3 modelos prontos de comunicado e documento para adaptar ao seu condomínio.",
+        "Volume 06 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["NR-1", "riscos psicossociais", "segurança do trabalho condomínio", "funcionários de condomínio", "gestão condominial", "síndico profissional", "passivo trabalhista"],
+      "categorias": ["Negócios e Economia > Imóveis", "Direito > Direito do Trabalho", "Negócios e Economia > Recursos Humanos"]
+    },
+    {
+      "num": "07",
+      "slug": "gestao-sob-ataque",
+      "source": "Ebooks/V07 - Bastidores da Sindicatura - Como Lidar com Moradores que Querem Destruir sua Gestão.html",
+      "titulo": "Como lidar com moradores que querem destruir sua gestão",
+      "subtitulo": "Guia da sindicatura sob pressão: boatos, grupos inflamados, acusações injustas e tentativas de destituição",
+      "descricao": [
+        "Toda gestão, em algum momento, é atacada. A diferença entre o síndico que atravessa a crise e o que é destituído está no método.",
+        "Em 20 capítulos, este guia mostra como identificar a oposição destrutiva, separar crítica legítima de sabotagem, responder sem alimentar o conflito, proteger a documentação e conduzir a assembleia sob pressão. Inclui 10 modelos prontos de resposta e um checklist de proteção da gestão.",
+        "Volume 07 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["destituição de síndico", "gestão de crise condomínio", "moradores difíceis", "oposição em condomínio", "síndico profissional", "gestão condominial", "assembleia tensa"],
+      "categorias": ["Negócios e Economia > Imóveis", "Negócios e Economia > Administração", "Negócios e Economia > Liderança"]
+    },
+    {
+      "num": "08",
+      "slug": "conflitos-absurdos",
+      "source": "Ebooks/V08 - Bastidores da Sindicatura - O Guia dos Conflitos mais Absurdos em Condomínio.html",
+      "titulo": "O guia dos conflitos mais absurdos em condomínio",
+      "subtitulo": "10 histórias reais, situações inacreditáveis e as lições que todo síndico precisa aprender",
+      "descricao": [
+        "O conflito em condomínio quase nunca é sobre o motivo aparente. A briga pela vaga, o cachorro no elevador, a churrasqueira, o varal: por trás de cada um há uma disputa de território, de reconhecimento ou de poder.",
+        "Este guia conta 10 histórias reais de conflitos absurdos, mostra o que cada uma ensina sobre a dinâmica do condomínio e entrega um método para desarmar a situação antes que vire crise. Fecha com um checklist de 14 itens para reduzir conflitos na sua gestão.",
+        "Volume 08 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["conflitos em condomínio", "mediação de conflitos", "histórias de condomínio", "síndico profissional", "gestão condominial", "convivência em condomínio", "moradores difíceis"],
+      "categorias": ["Negócios e Economia > Imóveis", "Negócios e Economia > Administração", "Autoajuda > Relacionamentos"]
+    },
+    {
+      "num": "09",
+      "slug": "saude-mental-sindico",
+      "source": "Ebooks/V09 - Bastidores da Sindicatura - O Síndico está Adoecendo.html",
+      "titulo": "O síndico está adoecendo. E ninguém fala sobre isso",
+      "subtitulo": "O custo emocional invisível da profissão, com autoavaliação e plano de 30 dias",
+      "descricao": [
+        "A sindicatura é a profissão que todo mundo cobra, mas poucos compreendem. O síndico atende de madrugada, é julgado em público, carrega o condomínio nas costas e raramente reconhece os próprios sinais de esgotamento.",
+        "Em 10 capítulos, este guia dá nome ao custo emocional invisível da profissão, mostra como reconhecer os sinais, recolocar limites e cuidar de quem cuida do condomínio. Inclui uma autoavaliação com mais de 50 itens e um plano de ação de 30 dias.",
+        "Volume 09 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["saúde mental do síndico", "burnout", "esgotamento profissional", "síndico profissional", "gestão condominial", "limites no trabalho", "equilíbrio emocional"],
+      "categorias": ["Autoajuda > Estresse", "Negócios e Economia > Imóveis", "Saúde e Família > Saúde Mental"]
+    },
+    {
+      "num": "10",
+      "slug": "reputacao-sindico",
+      "source": "Ebooks/V10 - Bastidores da Sindicatura - Tudo o que pode Destruir a Reputação de um Síndico.html",
+      "titulo": "Tudo o que pode destruir a reputação de um síndico",
+      "subtitulo": "Guia direto da carreira em sindicatura, com testes, checklists e diagnóstico de risco reputacional",
+      "descricao": [
+        "Na sindicatura, reputação é ativo. E ela se perde em detalhes: uma resposta mal dada no grupo, uma prestação de contas confusa, um favorecimento que parecia inofensivo, um registro que não foi feito.",
+        "Em 18 capítulos, este guia mapeia tudo o que corrói a imagem profissional do síndico, da comunicação ao conselho, da crise ao WhatsApp. Traz 5 testes diagnósticos, um diagnóstico completo de risco reputacional e um plano de ação de 30 dias para quem quer crescer na carreira sem perder autoridade, credibilidade e mercado.",
+        "Volume 10 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["reputação profissional", "carreira de síndico", "síndico profissional", "gestão condominial", "imagem profissional", "credibilidade do síndico", "marketing pessoal síndico"],
+      "categorias": ["Negócios e Economia > Imóveis", "Negócios e Economia > Carreiras", "Negócios e Economia > Administração"]
+    },
+    {
+      "num": "12",
+      "slug": "arquetipo-bombeiro",
+      "source": "Ebooks/V12 - Bastidores da Sindicatura - O Bombeiro.html",
+      "titulo": "O Bombeiro",
+      "subtitulo": "Como parar de apagar incêndios e assumir o controle da sua gestão (Série Arquétipos do Síndico)",
+      "descricao": [
+        "O Bombeiro é o síndico que vive correndo atrás dos problemas. Resolve tudo, o tempo todo, e por isso nunca sai do modo emergência.",
+        "Em 8 capítulos, este guia mostra como sair da gestão reativa e virar a chave para a gestão estratégica: a matriz de prioridades, o método 30-30-30, a diferença entre resolver o vazamento e resolver a causa, e um plano de ação de 30 dias.",
+        "Volume 12 da série Bastidores da Sindicatura e primeiro título da Série Arquétipos do Síndico, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["arquétipos do síndico", "gestão reativa", "gestão estratégica", "síndico profissional", "gestão condominial", "produtividade do síndico", "prioridades na gestão"],
+      "categorias": ["Negócios e Economia > Imóveis", "Negócios e Economia > Administração", "Negócios e Economia > Liderança"]
+    },
+    {
+      "num": "13",
+      "slug": "arquetipo-politico",
+      "source": "Ebooks/V13 - Bastidores da Sindicatura - O Político.html",
+      "titulo": "O Político",
+      "subtitulo": "O perigo de querer agradar todo mundo (Série Arquétipos do Síndico)",
+      "descricao": [
+        "O Político é o síndico bem-intencionado que está perdendo autoridade na busca por consenso. Quer ser aprovado por todos e, no caminho, deixa de ser respeitado.",
+        "Em 10 capítulos, este guia mostra como liderar um condomínio sem virar refém da aprovação dos moradores: o método para dizer não, o teste da cadeira vazia, a diferença entre ser aprovado e ser respeitado, e um plano de 30 dias.",
+        "Volume 13 da série Bastidores da Sindicatura, Série Arquétipos do Síndico, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["arquétipos do síndico", "liderança em condomínio", "como dizer não", "síndico profissional", "gestão condominial", "autoridade do síndico", "tomada de decisão"],
+      "categorias": ["Negócios e Economia > Imóveis", "Negócios e Economia > Liderança", "Negócios e Economia > Administração"]
+    },
+    {
+      "num": "14",
+      "slug": "arquetipo-solitario",
+      "source": "Ebooks/V14 - Bastidores da Sindicatura - O Solitário.html",
+      "titulo": "O Solitário",
+      "subtitulo": "Pare de carregar o condomínio sozinho (Série Arquétipos do Síndico)",
+      "descricao": [
+        "O Solitário é o síndico dedicado que virou o gargalo da própria gestão. Tudo passa por ele, nada anda sem ele, e o condomínio para quando ele para.",
+        "Em 13 capítulos, este guia mostra como deixar de ser o gargalo e construir um condomínio que funciona sem depender de você para tudo: as 5 mentiras que o Solitário conta a si mesmo, o método das 4 perguntas, o mapa da delegação e um plano de 30 dias.",
+        "Volume 14 da série Bastidores da Sindicatura, Série Arquétipos do Síndico, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["arquétipos do síndico", "delegação", "processos na gestão", "síndico profissional", "gestão condominial", "sobrecarga do síndico", "equipe do condomínio"],
+      "categorias": ["Negócios e Economia > Imóveis", "Negócios e Economia > Administração", "Negócios e Economia > Liderança"]
+    },
+    {
+      "num": "15",
+      "slug": "arquetipo-burocrata",
+      "source": "Ebooks/V15 - Bastidores da Sindicatura - O Burocrata.html",
+      "titulo": "O Burocrata",
+      "subtitulo": "Transforme informação em conexão (Série Arquétipos do Síndico)",
+      "descricao": [
+        "O Burocrata é o síndico organizado que escreve o comunicado impecável que ninguém lê. Informa tudo, comunica pouco, e não entende por que a gestão não é reconhecida.",
+        "Em 13 capítulos, este guia mostra como engajar os moradores, reduzir conflitos e fazer com que a sua gestão seja vista, entendida e valorizada: a regra dos 30 segundos, os 3 fatores de conflito, o teste do comunicado e um plano de 30 dias.",
+        "Volume 15 da série Bastidores da Sindicatura, Série Arquétipos do Síndico, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["arquétipos do síndico", "comunicação em condomínio", "comunicado de condomínio", "síndico profissional", "gestão condominial", "engajamento de moradores", "comunicação eficaz"],
+      "categorias": ["Negócios e Economia > Imóveis", "Negócios e Economia > Comunicação Empresarial", "Negócios e Economia > Administração"]
+    },
+    {
+      "num": "16",
+      "slug": "arquetipo-estrategista",
+      "source": "Ebooks/V16 - Bastidores da Sindicatura - O Estrategista.html",
+      "titulo": "O Estrategista",
+      "subtitulo": "Os bastidores das gestões que viram referência (Série Arquétipos do Síndico)",
+      "descricao": [
+        "O Estrategista é o síndico que já opera em modo estratégico e quer sustentar esse jeito de trabalhar quando todos ao redor o puxam para reagir.",
+        "Em 14 capítulos, este guia mostra o que os melhores síndicos fazem quando ninguém está olhando: a visão dos 5 horizontes, o teste de maturidade estratégica, os sistemas que sobrevivem ao mandato e um plano de 12 meses.",
+        "Volume 16 da série Bastidores da Sindicatura, Série Arquétipos do Síndico, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["arquétipos do síndico", "gestão estratégica", "planejamento condominial", "síndico profissional", "gestão condominial", "liderança estratégica", "gestão de referência"],
+      "categorias": ["Negócios e Economia > Imóveis", "Negócios e Economia > Planejamento Estratégico", "Negócios e Economia > Liderança"]
+    },
+    {
+      "num": "17",
+      "slug": "arquetipo-sargento",
+      "source": "Ebooks/V17 - Bastidores da Sindicatura - O Sargento.html",
+      "titulo": "O Sargento",
+      "subtitulo": "Manda no grito, autoridade pelo volume: como ser respeitado sem depender do medo (Série Arquétipos do Síndico)",
+      "descricao": [
+        "O Sargento é o síndico firme que confunde autoridade com medo. É obedecido, mas nunca admirado. E a obediência acaba no primeiro momento em que o medo passa.",
+        "Em 12 capítulos, este guia mostra por que alguns síndicos são obedecidos e nunca respeitados, e como sair dessa armadilha: os 10 sinais de alerta, a diferença entre obediência por medo e respeito por confiança, os 5 pilares da autoridade e um teste final.",
+        "Volume 17 da série Bastidores da Sindicatura, Série Arquétipos do Síndico, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["arquétipos do síndico", "autoridade do síndico", "liderança autoritária", "síndico profissional", "gestão condominial", "respeito no trabalho", "liderança pela confiança"],
+      "categorias": ["Negócios e Economia > Imóveis", "Negócios e Economia > Liderança", "Negócios e Economia > Administração"]
+    },
+    {
+      "num": "18",
+      "slug": "copa-condominio",
+      "source": "Ebooks/V18 - Bastidores da Sindicatura - As 50 Confusões da Copa no Condomínio.html",
+      "titulo": "As 50 confusões da Copa do Mundo no condomínio",
+      "subtitulo": "Guia jurídico e prático para o síndico atravessar os jogos sem crise",
+      "descricao": [
+        "Bandeira gigante na varanda, churrasco no salão sem reserva, buzinaço na garagem, som alto às onze da noite, grupo de WhatsApp em chamas. A Copa do Mundo muda a rotina do condomínio por semanas.",
+        "Este guia lista as 50 confusões típicas de Copa, organizadas por tema (fachada, WhatsApp, segurança, barulho, áreas comuns, famílias, exageros), com a base legal de cada uma, o que o síndico pode restringir e multar, o nível de risco e a ação recomendada. Traz ainda um kit de comunicados prontos, um plano de ação em 7 marcos e 5 checklists operacionais.",
+        "Volume 18 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["copa do mundo condomínio", "regras de convivência", "barulho em condomínio", "áreas comuns", "síndico profissional", "gestão condominial", "comunicados de condomínio"],
+      "categorias": ["Negócios e Economia > Imóveis", "Direito > Direito Imobiliário", "Negócios e Economia > Administração"]
+    },
+    {
+      "num": "20",
+      "slug": "terceirizados-condominios",
+      "source": "Ebooks/V20 - Bastidores da Sindicatura - Terceirizados em Condomínios.html",
+      "titulo": "Terceirizados em condomínios",
+      "subtitulo": "O que ninguém fiscaliza até dar problema: contrato, jornada, acidente, desvio de função e LGPD",
+      "descricao": [
+        "O contrato de portaria, limpeza, zeladoria e manutenção esconde tudo até a primeira audiência. Passivo trabalhista, falha contratual, acidente, desvio de função e prejuízo aparecem sempre tarde demais.",
+        "Em 30 capítulos práticos, este guia mostra o que o síndico precisa olhar, cobrar e documentar na gestão da terceirizada: risco, contrato, fiscalização, jornada, desvio de função, acidente, LGPD e responsabilidade subsidiária. Mais 4 bônus práticos para aplicar na semana seguinte.",
+        "Volume 20 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["terceirização em condomínio", "portaria terceirizada", "passivo trabalhista", "fiscalização de contrato", "síndico profissional", "gestão condominial", "responsabilidade subsidiária"],
+      "categorias": ["Negócios e Economia > Imóveis", "Direito > Direito do Trabalho", "Negócios e Economia > Administração"]
+    },
+    {
+      "num": "21",
+      "slug": "carregadores-eletricos",
+      "source": "Ebooks/V21 - Bastidores da Sindicatura - Carregadores Elétricos em Condomínios.html",
+      "titulo": "Carregadores elétricos em condomínios",
+      "subtitulo": "O que o síndico precisa saber antes de aprovar: normas, fluxo de aprovação, checklist e modelos prontos",
+      "descricao": [
+        "Todo mundo tem opinião sobre o carregador na garagem e ninguém trouxe laudo. Improviso elétrico, risco de incêndio, conflito entre moradores e passivo para o condomínio começam exatamente nessa assembleia.",
+        "Em 27 capítulos, este guia explica o marco regulatório (NBR 17019, NBR 5410, IEC 61851-1, Diretriz LIGABOM 029/2025), o que o síndico pode e não pode exigir, o fluxo de aprovação interna, a assembleia e o checklist de instalação. Traz 4 modelos prontos, entre eles o termo de responsabilidade do morador.",
+        "Volume 21 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["carregador elétrico condomínio", "carro elétrico garagem", "NBR 17019", "segurança elétrica", "síndico profissional", "gestão condominial", "termo de responsabilidade"],
+      "categorias": ["Negócios e Economia > Imóveis", "Engenharia e Transportes > Engenharia Elétrica", "Negócios e Economia > Administração"]
+    },
+    {
+      "num": "22",
+      "slug": "lgpd-condominios",
+      "source": "Ebooks/V22 - Bastidores da Sindicatura - LGPD em Condomínios.html",
+      "titulo": "LGPD em condomínios",
+      "subtitulo": "O guia definitivo para síndicos, administradoras e gestores condominiais",
+      "descricao": [
+        "Poucos ambientes coletam e guardam tantos dados quanto um condomínio: nome, telefone, documento, placa, imagem de câmera, ficha de funcionário, biometria. Todo dia, em vários sistemas, quase sempre sem inventário.",
+        "Em 16 capítulos, este guia mostra como proteger morador, funcionário, visitante e o próprio condomínio dos riscos do tratamento de dados pessoais: marco regulatório, quem responde pelo quê, mapa dos dados e matriz de risco, reconhecimento facial, câmeras, portaria, WhatsApp, assembleias, crianças, fornecedores e o que fazer no vazamento. Fecha com as 25 maiores falhas de LGPD em condomínios e o checklist final do síndico. Sem juridiquês e sem terror.",
+        "Volume 22 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["LGPD condomínio", "proteção de dados", "câmeras de segurança", "reconhecimento facial", "síndico profissional", "gestão condominial", "privacidade de moradores"],
+      "categorias": ["Negócios e Economia > Imóveis", "Direito > Direito Digital", "Negócios e Economia > Administração"]
+    },
+    {
+      "num": "23",
+      "slug": "reforma-tributaria",
+      "source": "Ebooks/V23 - Bastidores da Sindicatura - Reforma Tributária nos Condomínios.html",
+      "titulo": "Reforma Tributária nos condomínios",
+      "subtitulo": "O que já está definido e o que ainda depende de regulamentação (LC 214/2025 e Decreto 12.955/2026)",
+      "descricao": [
+        "A Reforma Tributária virou manchete, e manchete virou boato no grupo do condomínio. Este guia técnico separa fato de manchete.",
+        "Em 10 capítulos, mostra com rigor o que a LC 214/2025 e o Decreto 12.955/2026 mudam no condomínio: a regra dos 80%, o regime regular opcional, energia com geração compartilhada, a NFS-e e o que o síndico precisa organizar desde já. O que ainda depende de regulamentação fica separado no fim, com a data de corte informada: agosto de 2026.",
+        "Volume 23 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC."
+      ],
+      "palavras_chave": ["reforma tributária", "condomínio impostos", "LC 214/2025", "IBS CBS", "síndico profissional", "gestão condominial", "tributação de condomínios"],
+      "categorias": ["Negócios e Economia > Imóveis", "Direito > Direito Tributário", "Negócios e Economia > Contabilidade"]
+    }
+  ]
+}

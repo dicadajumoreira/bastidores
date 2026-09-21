@@ -1,0 +1,2277 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8" />
+<title>Checklist de Assembleias · Bastidores da Sindicatura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     BASTIDORES DA SINDICATURA · Checklist de Assembleias (A4 PDF)
+     ============================================================ */
+
+  :root{
+    --ink:        #0E1A2B;
+    --ink-2:      #1F2C3F;
+    --muted:      #6A7385;
+    --line:       #D9D2C2;
+    --line-soft:  #EAE3D2;
+    --paper:      #F4EEDF;
+    --paper-2:    #ECE3CC;
+    --cream:      #FBF7EC;
+    --accent:     #B8543B;   /* terracota */
+    --accent-2:   #C68B3B;   /* mostarda  */
+    --gold:       #8C6A2A;
+    --rule:       1px solid var(--line);
+  }
+
+  @page {
+    size: 210mm 297mm;
+    margin: 0;
+  }
+  @page :first { size: 210mm 297mm; margin: 0; }
+
+  *{ box-sizing: border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    background:#2A2522;
+    font-family: "Manrope", system-ui, sans-serif;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Screen stack of pages */
+  .deck{
+    display:flex; flex-direction:column; align-items:center;
+    gap: 18px; padding: 28px 0 60px;
+  }
+
+  .page{
+    width: 210mm;
+    height: 297mm;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 24px 60px rgba(0,0,0,.35), 0 4px 14px rgba(0,0,0,.25);
+    color: var(--ink);
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-child{ page-break-after: auto; }
+
+  /* Print: no background, no shadow, exact size */
+  @media print{
+    html, body{
+      width: 210mm;
+      background:#fff;
+      margin: 0; padding: 0;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+    .deck{ gap:0; padding:0; width: 210mm; }
+    .page{
+      box-shadow:none;
+      margin: 0 !important;
+      width: 210mm !important;
+      height: 297mm !important;
+      page-break-after: always;
+      break-after: page;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .page:last-child{ page-break-after: auto; break-after: auto; }
+  }
+
+  /* ---------- shared chrome ---------- */
+  .frame{
+    position:absolute; inset: 14mm 16mm;
+  }
+
+  .pg-head{
+    position:absolute; top: 10mm; left:16mm; right:16mm;
+    display:flex; align-items:center; justify-content:space-between;
+    font-family:"Manrope"; font-size: 9pt; letter-spacing:.18em;
+    text-transform:uppercase; color: var(--muted);
+    padding-bottom: 4mm;
+    border-bottom: var(--rule);
+  }
+  .pg-head .brand{ display:flex; align-items:center; gap:8px; font-weight:600; color:var(--ink);}
+  .pg-head .brand .dot{
+    width:8px; height:8px; background:var(--accent); border-radius:50%;
+    box-shadow: 0 0 0 3px var(--paper), 0 0 0 4px var(--accent);
+  }
+  .pg-foot{
+    position:absolute; bottom: 10mm; left:16mm; right:16mm;
+    display:flex; align-items:center; justify-content:space-between;
+    font-family:"Manrope"; font-size: 8.5pt; color: var(--muted);
+    padding-top: 4mm;
+    border-top: var(--rule);
+  }
+  .pg-foot .pg-num{
+    font-family:"Instrument Serif"; font-style:italic;
+    font-size: 12pt; color: var(--ink);
+  }
+
+  .pg-body{
+    position:absolute; top: 22mm; bottom: 18mm; left:16mm; right:16mm;
+    display:flex; flex-direction:column;
+  }
+
+  /* ---------- typography ---------- */
+  h1,h2,h3,h4{ margin:0; font-weight:500; color:var(--ink); }
+  .serif{ font-family:"Instrument Serif", "Times New Roman", serif; font-weight:400; }
+  .mono{ font-family:"JetBrains Mono", monospace; }
+
+  .section-num{
+    font-family:"Instrument Serif"; font-style:italic;
+    font-size: 64pt; line-height: 1; color: var(--accent);
+    letter-spacing:-.02em;
+  }
+  .section-kicker{
+    font-size: 8.5pt; letter-spacing:.24em; text-transform:uppercase;
+    color: var(--muted); font-weight:600;
+  }
+  .section-title{
+    font-family:"Instrument Serif"; font-weight:400;
+    font-size: 34pt; line-height: 1.04; letter-spacing:-.01em;
+    color: var(--ink); margin-top: 2mm;
+  }
+  .section-lede{
+    font-size: 10.5pt; line-height:1.55; color: var(--ink-2);
+    max-width: 130mm; margin-top: 5mm;
+  }
+
+  .h-sub{
+    font-family:"Manrope"; font-weight:700;
+    font-size: 9pt; letter-spacing:.22em; text-transform:uppercase;
+    color: var(--gold);
+    display:flex; align-items:center; gap:8px;
+    margin-bottom: 4mm;
+  }
+  .h-sub::before{
+    content:""; width:6px; height:6px; background:var(--accent); border-radius:50%;
+  }
+
+  .h-block{
+    font-family:"Instrument Serif"; font-weight:400;
+    font-size: 18pt; line-height:1.15;
+    color: var(--ink);
+    margin: 0 0 3mm;
+  }
+
+  /* ---------- check list ---------- */
+  ul.checks{
+    list-style:none; padding:0; margin:0;
+    display:flex; flex-direction:column; gap: 2.4mm;
+  }
+  ul.checks li{
+    display:flex; gap: 10px; align-items: flex-start;
+    font-size: 10pt; line-height: 1.42; color: var(--ink-2);
+    padding: 1.2mm 0;
+    border-bottom: 1px dotted var(--line);
+  }
+  ul.checks li:last-child{ border-bottom: none; }
+  ul.checks li .box{
+    flex: 0 0 auto;
+    width: 4.4mm; height: 4.4mm;
+    border: 1.2px solid var(--ink);
+    border-radius: 1.2px;
+    background: var(--cream);
+    margin-top: 1.2mm;
+    position:relative;
+  }
+
+  /* two-column lists */
+  .cols-2{
+    display:grid; grid-template-columns: 1fr 1fr;
+    column-gap: 12mm; row-gap: 0;
+    align-items: start;
+  }
+  .cols-2 > div { min-width:0; }
+
+  /* numbered enumeration (for structured pauta etc) */
+  ol.enum{
+    list-style:none; padding:0; margin: 0;
+    counter-reset: en;
+    display:flex; flex-direction:column; gap: 2mm;
+  }
+  ol.enum li{
+    counter-increment: en;
+    display:flex; gap: 10px; align-items:baseline;
+    font-size: 10pt; line-height: 1.45; color: var(--ink-2);
+    padding: 1mm 0;
+    border-bottom: 1px dotted var(--line);
+  }
+  ol.enum li::before{
+    content: counter(en, decimal-leading-zero);
+    font-family:"Instrument Serif"; font-style:italic;
+    font-size: 12pt; color: var(--accent);
+    flex: 0 0 12mm;
+  }
+
+  /* callouts */
+  .callout{
+    background: var(--paper-2);
+    border-left: 3px solid var(--accent);
+    padding: 5mm 6mm;
+    font-size: 9.5pt; line-height: 1.5; color: var(--ink-2);
+    margin-top: 4mm;
+  }
+  .callout b{ color: var(--ink); }
+
+  .quote-block{
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 7mm 8mm;
+    font-family:"Instrument Serif"; font-style: italic;
+    font-size: 13pt; line-height: 1.45; color: var(--ink);
+  }
+  .quote-block .signature{
+    margin-top: 4mm;
+    font-family:"Manrope"; font-style: normal;
+    font-size: 8.5pt; letter-spacing:.2em; text-transform:uppercase;
+    color: var(--muted);
+  }
+
+  /* tag */
+  .tag{
+    display:inline-flex; align-items:center; gap:6px;
+    font-size: 8pt; letter-spacing:.18em; text-transform:uppercase;
+    color: var(--ink); background: var(--cream);
+    padding: 2.2mm 3.6mm; border-radius: 100px;
+    border:1px solid var(--line);
+    font-weight: 600;
+  }
+
+  /* divider */
+  .hr-orn{
+    display:flex; align-items:center; gap: 10px; color: var(--accent);
+    margin: 4mm 0;
+  }
+  .hr-orn::before, .hr-orn::after{
+    content:""; flex:1; height: 1px; background: var(--line);
+  }
+  .hr-orn .glyph{ font-family:"Instrument Serif"; font-style: italic; font-size: 14pt; color: var(--accent);}
+
+  /* ============================================================
+     COVER
+     ============================================================ */
+  .cover{
+    background:
+      radial-gradient(120% 80% at 100% 0%, rgba(184,84,59,.10), transparent 55%),
+      radial-gradient(80% 60% at 0% 100%, rgba(140,106,42,.12), transparent 55%),
+      var(--paper);
+    color: var(--ink);
+  }
+  .cover .frame{ display:flex; flex-direction:column; }
+  .cover-top{
+    display:flex; justify-content:space-between; align-items:flex-start;
+    border-bottom: var(--rule);
+    padding-bottom: 6mm;
+  }
+  .cover-brand{
+    display:flex; flex-direction:column; gap:2mm;
+  }
+  .cover-brand .logo{
+    display:flex; align-items:center; gap: 10px;
+    font-family:"Instrument Serif"; font-style: italic;
+    font-size: 22pt; color: var(--ink);
+  }
+  .cover-brand .logo .mark{
+    width: 30px; height: 30px; border-radius: 50%;
+    background: var(--ink);
+    position: relative;
+    flex: 0 0 auto;
+  }
+  .cover-brand .logo .mark::after{
+    content:""; position:absolute; inset:5px;
+    border: 2px solid var(--paper); border-radius:50%;
+    border-top-color: var(--accent);
+    transform: rotate(35deg);
+  }
+  .cover-brand .sub{
+    font-size: 8.5pt; letter-spacing:.26em; text-transform:uppercase;
+    color: var(--muted); font-weight:600;
+  }
+  .cover-meta{ text-align:right; }
+  .cover-meta .ep{
+    font-family:"Instrument Serif"; font-style:italic;
+    font-size: 16pt; color: var(--accent);
+  }
+  .cover-meta .label{
+    font-size: 8.5pt; letter-spacing:.24em; text-transform:uppercase;
+    color: var(--muted); font-weight:600; margin-top:2mm;
+  }
+
+  .cover-title-wrap{
+    flex:1; display:flex; flex-direction:column; justify-content:center;
+    padding: 16mm 0 8mm;
+  }
+  .cover-eyebrow{
+    font-family:"Manrope"; font-size:9pt; letter-spacing:.32em; text-transform:uppercase;
+    color: var(--accent); font-weight:700; margin-bottom: 8mm;
+    display:flex; align-items:center; gap: 12px;
+  }
+  .cover-eyebrow::before{
+    content:""; width: 28px; height: 1.5px; background: var(--accent);
+  }
+  .cover-title{
+    font-family:"Instrument Serif"; font-weight:400;
+    font-size: 78pt; line-height: .94; letter-spacing:-.022em;
+    color: var(--ink);
+    margin: 0 0 6mm;
+  }
+  .cover-title .it{ font-style: italic; color: var(--accent); }
+  .cover-deck{
+    font-family:"Manrope"; font-size: 13pt; line-height:1.45;
+    color: var(--ink-2); max-width: 150mm; font-weight: 400;
+  }
+
+  .cover-bottom{
+    border-top: var(--rule);
+    padding-top: 6mm;
+    display:flex; justify-content:space-between; align-items:flex-end;
+  }
+  .cover-stats{ display:flex; gap: 14mm; }
+  .cover-stats .s .n{
+    font-family:"Instrument Serif"; font-size: 38pt; line-height:1;
+    color: var(--ink); letter-spacing:-.02em;
+  }
+  .cover-stats .s .n .it{ font-style:italic; color: var(--accent); }
+  .cover-stats .s .l{
+    font-size:8.5pt; letter-spacing:.22em; text-transform:uppercase;
+    color: var(--muted); font-weight:600; margin-top:2mm;
+  }
+  .cover-edition{
+    text-align:right;
+    font-family:"Manrope"; font-size: 8.5pt; letter-spacing:.22em;
+    text-transform:uppercase; color: var(--muted); font-weight:600;
+  }
+  .cover-edition .yr{
+    display:block; font-family:"Instrument Serif"; font-style:italic;
+    font-size: 22pt; letter-spacing:0; text-transform:none;
+    color: var(--ink); margin-top: 2mm;
+  }
+
+  /* ============================================================
+     POSITIONING / OPENER PAGE
+     ============================================================ */
+  .opener .pg-body{ justify-content:space-between; }
+  .opener-title{
+    font-family:"Instrument Serif";
+    font-size: 56pt; line-height: 1.02;
+    color: var(--ink); letter-spacing:-.02em;
+  }
+  .opener-title .it{ font-style: italic; color: var(--accent); }
+  .opener-grid{
+    display:grid; grid-template-columns: 1fr 1fr;
+    gap: 10mm; margin-top: 8mm;
+  }
+  .opener-grid p{
+    font-size: 10.5pt; line-height: 1.55; color: var(--ink-2);
+    margin:0 0 4mm;
+  }
+
+  /* ============================================================
+     TOC
+     ============================================================ */
+  .toc-list{
+    display:grid; grid-template-columns: 1fr 1fr;
+    column-gap: 14mm; row-gap: 0;
+    margin-top: 6mm;
+  }
+  .toc-item{
+    display:flex; align-items:baseline; gap: 8px;
+    padding: 2.6mm 0;
+    border-bottom: 1px dotted var(--line);
+    font-size: 10pt; color: var(--ink);
+  }
+  .toc-item .num{
+    font-family:"Instrument Serif"; font-style:italic;
+    font-size: 14pt; color: var(--accent); flex: 0 0 12mm;
+  }
+  .toc-item .ttl{ flex:1; font-weight:500; }
+  .toc-item .dots{
+    flex:1; border-bottom: 1px dotted var(--line);
+    transform: translateY(-3px);
+    margin: 0 6px;
+  }
+  .toc-item .pg{
+    font-family:"Instrument Serif"; font-style:italic; font-size: 12pt; color: var(--muted);
+  }
+
+  /* ============================================================
+     SECTION OPENERS (big number layout)
+     ============================================================ */
+  .section-head{
+    display:flex; gap: 10mm; align-items:flex-start;
+    padding-bottom: 7mm;
+    border-bottom: var(--rule);
+    margin-bottom: 7mm;
+  }
+  .section-head .big{ flex: 0 0 auto; }
+  .section-head .meta{ flex:1; padding-top: 4mm;}
+
+  /* multi-column inner content */
+  .section-body{ display:flex; flex-direction:column; gap: 6mm; flex:1;}
+  .block-card{
+    background: var(--cream);
+    border: 1px solid var(--line);
+    padding: 6mm 7mm;
+  }
+
+  /* condensed checks (3-cols) */
+  .checks-3{
+    display:grid; grid-template-columns: 1fr 1fr 1fr;
+    column-gap: 8mm;
+  }
+
+  /* models block (typewriter feel) */
+  .model{
+    background: var(--cream);
+    border: 1px dashed var(--gold);
+    padding: 6mm 7mm;
+    font-family: "Instrument Serif", serif;
+    font-size: 11pt; line-height: 1.5; color: var(--ink-2);
+    position: relative;
+  }
+  .model::before{
+    content:"MODELO";
+    position:absolute; top: -3mm; left: 6mm;
+    background: var(--paper); padding: 0 3mm;
+    font-family:"Manrope"; font-size: 8pt; letter-spacing:.24em;
+    color: var(--gold); font-weight: 700;
+  }
+  .model p{ margin: 0 0 3mm; }
+  .model .sig{ margin-top:3mm; font-style: italic; color: var(--ink);}
+
+  /* phrases block (italic quotes) */
+  .phrases{
+    display:flex; flex-direction:column; gap: 3mm;
+  }
+  .phrases .phrase{
+    font-family:"Instrument Serif"; font-style: italic;
+    font-size: 12pt; line-height: 1.4; color: var(--ink);
+    padding-left: 8mm; position: relative;
+  }
+  .phrases .phrase::before{
+    content:"“"; position:absolute; left:0; top:-2mm;
+    font-family:"Instrument Serif"; font-size: 28pt; color: var(--accent); line-height:1;
+  }
+
+  /* closing manifesto page */
+  .manifesto{
+    background:
+      radial-gradient(70% 60% at 50% 30%, rgba(184,84,59,.08), transparent 60%),
+      var(--paper);
+  }
+  .manifesto .frame{ display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center;}
+  .manifesto .big-quote{
+    font-family:"Instrument Serif"; font-weight:400;
+    font-size: 36pt; line-height: 1.15; color: var(--ink);
+    letter-spacing:-.01em;
+    max-width: 160mm;
+  }
+  .manifesto .big-quote .it{ font-style:italic; color: var(--accent); }
+  .manifesto .big-quote em{ font-style: italic; color: var(--accent); font-weight:400;}
+  .manifesto .attr{
+    margin-top: 12mm;
+    font-size: 9pt; letter-spacing:.3em; text-transform:uppercase; color: var(--muted);
+    font-weight: 600;
+  }
+  .manifesto .attr .name{
+    display:block; font-family:"Instrument Serif"; font-style: italic;
+    font-size: 22pt; letter-spacing:0; text-transform:none; color: var(--ink); margin-top:3mm;
+  }
+
+  /* small specifics */
+  .twoframe{
+    display:grid; grid-template-columns: 1fr 1fr;
+    gap: 8mm;
+  }
+  .stack-tight ul.checks li{ font-size: 9.5pt; padding: .7mm 0; }
+  .stack-tight ul.checks li .box{ width:4mm; height:4mm; }
+
+  /* responsive scaling on screen */
+  @media (max-width: 900px){
+    .deck{ transform: scale(.55); transform-origin: top center; }
+  }
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+  <!-- ============================================================
+       PAGE 01 · COVER
+       ============================================================ -->
+  <section class="page cover" data-screen-label="01 Cover">
+    <div class="frame">
+      <div class="cover-top">
+        <div class="cover-brand">
+          <div class="logo">
+            <div class="mark"></div>
+            <span><i>Bastidores</i> da Sindicatura</span>
+          </div>
+          <div class="sub">por Juliana Moreira</div>
+        </div>
+        <div class="cover-meta">
+          <div class="ep">Volume 01</div>
+          <div class="label">Material de Apoio</div>
+          <div class="label" style="margin-top:6mm;color:var(--accent);">bastidoresdasindicatura.com.br</div>
+        </div>
+      </div>
+
+      <div class="cover-title-wrap">
+        <div class="cover-eyebrow">Checklist Operacional do Síndico</div>
+        <h1 class="cover-title">Como organizar<br/>uma <span class="it">assembleia</span><br/>de verdade.</h1>
+        <p class="cover-deck">O guia completo, em 22 etapas, para sair do improviso e transformar a assembleia em instrumento de gestão. Com pauta, método, documentos e segurança jurídica.</p>
+      </div>
+
+      <div class="cover-bottom">
+        <div class="cover-stats">
+          <div class="s"><div class="n"><span class="it">22</span></div><div class="l">Etapas</div></div>
+          <div class="s"><div class="n">+260</div><div class="l">Itens de verificação</div></div>
+          <div class="s"><div class="n">A4</div><div class="l">Pronto para impressão</div></div>
+        </div>
+        <div class="cover-edition">
+          Edição<span class="yr">2026</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 02 · OPENER (positioning)
+       ============================================================ -->
+  <section class="page opener" data-screen-label="02 Posicionamento">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Posicionamento</div>
+    </div>
+
+    <div class="pg-body">
+      <div>
+        <div class="cover-eyebrow" style="margin-bottom:8mm;">Antes de começar</div>
+        <h2 class="opener-title">Assembleia não é <span class="it">improviso.</span></h2>
+
+        <div class="opener-grid">
+          <div>
+            <p>É o momento em que a gestão presta contas, organiza decisões, protege juridicamente o condomínio e transforma conflito em governança.</p>
+            <p>Quando uma assembleia é mal preparada, o condomínio vira palco de ruído. Quando é bem conduzida, vira instrumento de gestão.</p>
+          </div>
+          <div>
+            <p>O síndico profissional não entra em assembleia apenas para “explicar assuntos”.</p>
+            <p>Ele entra com <b>método, documento, pauta, estratégia e segurança</b>.</p>
+            <p>Este checklist foi feito para isso: virar o roteiro silencioso por trás de cada boa assembleia.</p>
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="hr-orn"><span class="glyph">§</span></div>
+        <div class="twoframe">
+          <div class="block-card">
+            <div class="h-sub">Como usar este material</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Imprima, use em campo, marque os itens à caneta. Cada bloco pode virar slide, vídeo de curso, post de carrossel ou roteiro interno para a equipe da gestão.</p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">Para quem é</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Síndicos profissionais e moradores, conselheiros, administradoras, gerentes prediais e consultores que queiram elevar o padrão de governança condominial.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="pg-foot">
+      <div>Bastidores da Sindicatura · Vol. 01</div>
+      <div class="pg-num">02</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 03 · TABLE OF CONTENTS
+       ============================================================ -->
+  <section class="page" data-screen-label="03 Sumário">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Sumário</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-kicker">Índice</div>
+      <h2 class="section-title" style="margin-bottom:6mm;">O que tem nas próximas <span class="serif" style="font-style:italic;color:var(--accent);">páginas</span>.</h2>
+
+      <div class="toc-list">
+        <div class="toc-item"><span class="num">01</span><span class="ttl">Antes de marcar a assembleia</span><span class="dots"></span><span class="pg">04</span></div>
+        <div class="toc-item"><span class="num">02</span><span class="ttl">Preparação da pauta</span><span class="dots"></span><span class="pg">05</span></div>
+        <div class="toc-item"><span class="num">03</span><span class="ttl">Convenção e legislação</span><span class="dots"></span><span class="pg">06</span></div>
+        <div class="toc-item"><span class="num">04</span><span class="ttl">Documentos pré-convocação</span><span class="dots"></span><span class="pg">07</span></div>
+        <div class="toc-item"><span class="num">05</span><span class="ttl">Convocação da assembleia</span><span class="dots"></span><span class="pg">09</span></div>
+        <div class="toc-item"><span class="num">06</span><span class="ttl">Comunicação pré-assembleia</span><span class="dots"></span><span class="pg">10</span></div>
+        <div class="toc-item"><span class="num">07</span><span class="ttl">Preparação da apresentação</span><span class="dots"></span><span class="pg">11</span></div>
+        <div class="toc-item"><span class="num">08</span><span class="ttl">Preparação da equipe</span><span class="dots"></span><span class="pg">12</span></div>
+        <div class="toc-item"><span class="num">09</span><span class="ttl">Assembleia presencial</span><span class="dots"></span><span class="pg">13</span></div>
+        <div class="toc-item"><span class="num">10</span><span class="ttl">Assembleia virtual ou híbrida</span><span class="dots"></span><span class="pg">14</span></div>
+        <div class="toc-item"><span class="num">11</span><span class="ttl">Abertura da assembleia</span><span class="dots"></span><span class="pg">15</span></div>
+        <div class="toc-item"><span class="num">12</span><span class="ttl">Regras de condução</span><span class="dots"></span><span class="pg">16</span></div>
+        <div class="toc-item"><span class="num">13</span><span class="ttl">Controle de conflitos</span><span class="dots"></span><span class="pg">17</span></div>
+        <div class="toc-item"><span class="num">14</span><span class="ttl">Votação</span><span class="dots"></span><span class="pg">18</span></div>
+        <div class="toc-item"><span class="num">15</span><span class="ttl">Ata da assembleia</span><span class="dots"></span><span class="pg">19</span></div>
+        <div class="toc-item"><span class="num">16</span><span class="ttl">Pós-assembleia imediato</span><span class="dots"></span><span class="pg">20</span></div>
+        <div class="toc-item"><span class="num">17</span><span class="ttl">Comunicação pós-assembleia</span><span class="dots"></span><span class="pg">21</span></div>
+        <div class="toc-item"><span class="num">18</span><span class="ttl">Execução das deliberações</span><span class="dots"></span><span class="pg">22</span></div>
+        <div class="toc-item"><span class="num">19</span><span class="ttl">Arquivamento e governança</span><span class="dots"></span><span class="pg">23</span></div>
+        <div class="toc-item"><span class="num">20</span><span class="ttl">Checklist para temas sensíveis</span><span class="dots"></span><span class="pg">24</span></div>
+        <div class="toc-item"><span class="num">21</span><span class="ttl">Erros comuns a evitar</span><span class="dots"></span><span class="pg">26</span></div>
+        <div class="toc-item"><span class="num">22</span><span class="ttl">Checklist final rápido</span><span class="dots"></span><span class="pg">27</span></div>
+      </div>
+
+      <div style="margin-top:auto;padding-top:8mm;">
+        <div class="callout">
+          <b>Dica de uso:</b> cada etapa é independente. Você pode usar a Etapa 22 (Checklist final rápido) como impresso de bolso no dia da assembleia, e revisitar as etapas detalhadas no preparo dos dias anteriores.
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Sumário</div>
+      <div class="pg-num">03</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 04 · SECTION 01
+       ============================================================ -->
+  <section class="page" data-screen-label="04 Etapa 01">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 01 · Diagnóstico</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">01</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa um</div>
+          <h2 class="section-title">Antes de marcar a <span class="serif" style="font-style:italic;color:var(--accent);">assembleia</span>.</h2>
+          <p class="section-lede">O síndico precisa entender se o tema realmente exige deliberação assemblear ou se pode ser resolvido administrativamente. Toda assembleia desnecessária custa caro: tempo, desgaste e credibilidade.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div>
+          <div class="h-sub">Diagnóstico da necessidade</div>
+          <div class="cols-2">
+            <ul class="checks">
+              <li><span class="box"></span>O assunto exige aprovação dos condôminos?</li>
+              <li><span class="box"></span>O tema depende de quórum específico?</li>
+              <li><span class="box"></span>Existe previsão na convenção ou no regimento interno?</li>
+              <li><span class="box"></span>O assunto pode gerar impacto financeiro?</li>
+            </ul>
+            <ul class="checks">
+              <li><span class="box"></span>O tema envolve obra, rateio, eleição, alteração de regra ou prestação de contas?</li>
+              <li><span class="box"></span>Há risco de impugnação caso a assembleia não seja bem conduzida?</li>
+              <li><span class="box"></span>A administradora e o jurídico foram consultados, se necessário?</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="h-sub">Definição do tipo de assembleia</div>
+          <div class="checks-3">
+            <ul class="checks">
+              <li><span class="box"></span>Geral Ordinária (AGO)</li>
+              <li><span class="box"></span>Geral Extraordinária (AGE)</li>
+              <li><span class="box"></span>De eleição</li>
+            </ul>
+            <ul class="checks">
+              <li><span class="box"></span>De prestação de contas</li>
+              <li><span class="box"></span>De obra ou rateio</li>
+              <li><span class="box"></span>De alteração de convenção</li>
+            </ul>
+            <ul class="checks">
+              <li><span class="box"></span>De urgência</li>
+              <li><span class="box"></span>De instalação ou implantação</li>
+              <li><span class="box"></span>De alteração de regimento</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout">
+          <b>Regra de bolso:</b> se o tema cabe num comunicado, num pedido orçamentário ou numa decisão técnica rotineira, ele não precisa de assembleia. Reserve a assembleia para o que <i>só</i> a coletividade pode decidir.
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 01 · Antes de marcar a assembleia</div>
+      <div class="pg-num">04</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 05 · SECTION 02
+       ============================================================ -->
+  <section class="page" data-screen-label="05 Etapa 02">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 02 · Pauta</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">02</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa dois</div>
+          <h2 class="section-title">Preparação da <span class="serif" style="font-style:italic;color:var(--accent);">pauta</span>.</h2>
+          <p class="section-lede">Uma pauta mal escrita gera confusão, nulidade, discussão fora de controle e decisões frágeis. Escrever pauta é trabalho de redator: clareza, objetividade e nenhuma brecha.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Checklist da pauta</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>A pauta está clara?</li>
+              <li><span class="box"></span>Cada item foi escrito de forma objetiva?</li>
+              <li><span class="box"></span>Os assuntos foram separados por tema?</li>
+              <li><span class="box"></span>Evita termos como “assuntos gerais” em deliberações importantes?</li>
+              <li><span class="box"></span>Cada item informa se haverá votação ou apresentação?</li>
+              <li><span class="box"></span>Os condôminos entenderão o que será decidido?</li>
+              <li><span class="box"></span>Há documentos de apoio para cada item?</li>
+              <li><span class="box"></span>O jurídico validou os itens sensíveis?</li>
+              <li><span class="box"></span>A administradora revisou os dados financeiros?</li>
+              <li><span class="box"></span>A ordem dos temas foi pensada estrategicamente?</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Estrutura modelo de pauta</div>
+            <ol class="enum">
+              <li>Instalação da assembleia</li>
+              <li>Eleição do presidente e secretário da mesa</li>
+              <li>Prestação de contas do período</li>
+              <li>Apresentação e aprovação da previsão orçamentária</li>
+              <li>Deliberação sobre reajuste da taxa condominial</li>
+              <li>Aprovação de obras e respectivos rateios</li>
+              <li>Eleição de síndico, subsíndico e conselho</li>
+              <li>Deliberações específicas do edital</li>
+              <li>Encerramento</li>
+            </ol>
+          </div>
+        </div>
+
+        <div class="callout">
+          <b>Ordem importa:</b> coloque itens informativos no começo, decisões financeiras no meio (com energia alta) e eleições/temas polêmicos perto do fim, depois de já ter construído contexto.
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 02 · Preparação da pauta</div>
+      <div class="pg-num">05</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 06 · SECTION 03
+       ============================================================ -->
+  <section class="page" data-screen-label="06 Etapa 03">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 03 · Convenção e legislação</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">03</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa três</div>
+          <h2 class="section-title">Convenção & <span class="serif" style="font-style:italic;color:var(--accent);">legislação</span>.</h2>
+          <p class="section-lede">Antes de divulgar qualquer convocação, o síndico precisa conferir as regras internas e a legislação aplicável. Ignorar a convenção é o caminho mais curto para uma assembleia anulada.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Conferir na convenção</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Prazo mínimo de convocação</li>
+              <li><span class="box"></span>Forma de convocação permitida</li>
+              <li><span class="box"></span>Quem pode convocar</li>
+              <li><span class="box"></span>Quórum de instalação</li>
+              <li><span class="box"></span>Quórum de aprovação por tema</li>
+              <li><span class="box"></span>Regras para representação por procuração</li>
+              <li><span class="box"></span>Necessidade de reconhecimento de firma</li>
+              <li><span class="box"></span>Limites de procurações por pessoa</li>
+              <li><span class="box"></span>Regras para inadimplentes</li>
+              <li><span class="box"></span>Forma de votação</li>
+              <li><span class="box"></span>Regras para eleição do corpo diretivo</li>
+              <li><span class="box"></span>Exigência de edital físico, digital ou ambos</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Conferir no Código Civil</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Competências do síndico</li>
+              <li><span class="box"></span>Direito de participação dos condôminos</li>
+              <li><span class="box"></span>Regras sobre inadimplência e voto</li>
+              <li><span class="box"></span>Quóruns para obras</li>
+              <li><span class="box"></span>Quóruns para alteração de convenção</li>
+              <li><span class="box"></span>Quóruns para alteração de destinação</li>
+              <li><span class="box"></span>Prestação de contas</li>
+              <li><span class="box"></span>Eleição e destituição de síndico</li>
+            </ul>
+
+            <div class="block-card" style="margin-top:5mm;">
+              <div class="h-sub" style="margin-bottom:2mm;">Lembrete</div>
+              <p style="margin:0;font-size:9.5pt;line-height:1.5;color:var(--ink-2);">A convenção tem força de “estatuto interno” do condomínio. Quando ela for omissa, recorra ao Código Civil. Quando houver conflito, prevalece a lei.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 03 · Convenção e legislação</div>
+      <div class="pg-num">06</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 07 · SECTION 04 part 1
+       ============================================================ -->
+  <section class="page" data-screen-label="07 Etapa 04a">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 04 · Documentos</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">04</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa quatro</div>
+          <h2 class="section-title">Documentos antes da <span class="serif" style="font-style:italic;color:var(--accent);">convocação</span>.</h2>
+          <p class="section-lede">Nenhum item da pauta é levado a uma assembleia “no boca-a-boca”. Cada decisão precisa de evidência: relatório, parecer, orçamento, comparativo. Documento é o que separa gestão de opinião.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Documentos gerais</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Edital de convocação</li>
+              <li><span class="box"></span>Lista atualizada de condôminos</li>
+              <li><span class="box"></span>Lista de unidades inadimplentes</li>
+              <li><span class="box"></span>Convenção e regimento interno</li>
+              <li><span class="box"></span>Minuta de procuração</li>
+              <li><span class="box"></span>Relatórios de gestão</li>
+              <li><span class="box"></span>Relatórios financeiros</li>
+              <li><span class="box"></span>Orçamentos</li>
+              <li><span class="box"></span>Pareceres técnicos</li>
+              <li><span class="box"></span>Laudos, quando houver</li>
+              <li><span class="box"></span>Propostas comerciais</li>
+              <li><span class="box"></span>Minutas de contratos</li>
+              <li><span class="box"></span>Documentos de apoio para votação</li>
+              <li><span class="box"></span>Apresentação visual da assembleia</li>
+              <li><span class="box"></span>Roteiro de condução para o síndico</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Para AGO (prestação anual)</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Balancetes do período</li>
+              <li><span class="box"></span>Demonstrativo de receitas e despesas</li>
+              <li><span class="box"></span>Relatório de inadimplência</li>
+              <li><span class="box"></span>Relatório de ações de cobrança</li>
+              <li><span class="box"></span>Extratos bancários</li>
+              <li><span class="box"></span>Previsão orçamentária</li>
+              <li><span class="box"></span>Comparativo orçado × realizado</li>
+              <li><span class="box"></span>Parecer do conselho</li>
+              <li><span class="box"></span>Proposta de reajuste</li>
+              <li><span class="box"></span>Relação de contratos vigentes</li>
+              <li><span class="box"></span>Relatório de manutenções realizadas</li>
+              <li><span class="box"></span>Relatório de obras e investimentos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 04 · Documentos antes da convocação</div>
+      <div class="pg-num">07</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 08 · SECTION 04 part 2
+       ============================================================ -->
+  <section class="page" data-screen-label="08 Etapa 04b">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 04 · Documentos (continuação)</div>
+    </div>
+    <div class="pg-body">
+      <div style="display:flex; align-items:baseline; gap:10mm; padding-bottom:6mm; border-bottom: var(--rule); margin-bottom:7mm;">
+        <div class="section-kicker">Etapa 04 · parte 2</div>
+        <h2 style="font-family:'Instrument Serif'; font-size:26pt; margin:0;">Documentação para aprovação de <i style="color:var(--accent);">obras</i>.</h2>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Para aprovação de obras</div>
+            <ul class="checks">
+              <li><span class="box"></span>Descrição clara da obra</li>
+              <li><span class="box"></span>Justificativa técnica</li>
+              <li><span class="box"></span>Fotos ou registros do problema</li>
+              <li><span class="box"></span>Laudo ou parecer técnico</li>
+              <li><span class="box"></span>Mínimo de três orçamentos, quando possível</li>
+              <li><span class="box"></span>Comparativo entre fornecedores</li>
+              <li><span class="box"></span>Cronograma estimado</li>
+              <li><span class="box"></span>Forma de pagamento</li>
+              <li><span class="box"></span>Impacto no caixa</li>
+              <li><span class="box"></span>Necessidade de rateio</li>
+              <li><span class="box"></span>Quórum necessário</li>
+              <li><span class="box"></span>Riscos de não execução</li>
+            </ul>
+          </div>
+          <div>
+            <div class="block-card">
+              <div class="h-sub">Classificação da obra</div>
+              <p style="font-size:10pt;line-height:1.5;color:var(--ink-2);margin:0 0 3mm;"><b style="font-family:'Instrument Serif';font-style:italic;font-size:13pt;color:var(--accent);">Necessária.</b> conservação ou de urgência; quórum mais simples.</p>
+              <p style="font-size:10pt;line-height:1.5;color:var(--ink-2);margin:0 0 3mm;"><b style="font-family:'Instrument Serif';font-style:italic;font-size:13pt;color:var(--accent);">Útil.</b> melhora o uso; depende de aprovação majoritária.</p>
+              <p style="font-size:10pt;line-height:1.5;color:var(--ink-2);margin:0;"><b style="font-family:'Instrument Serif';font-style:italic;font-size:13pt;color:var(--accent);">Voluptuária.</b> embelezamento; exige 2/3 dos condôminos.</p>
+            </div>
+
+            <div class="callout" style="margin-top:5mm;">
+              <b>Padrão de mercado:</b> sempre 3 orçamentos comparáveis em escopo, prazo e garantia. Orçamento de “amigo” é o que mais derruba assembleia depois.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 04 · Documentação para obras</div>
+      <div class="pg-num">08</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 09 · SECTION 05
+       ============================================================ -->
+  <section class="page" data-screen-label="09 Etapa 05">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 05 · Convocação</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">05</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa cinco</div>
+          <h2 class="section-title">Convocação da <span class="serif" style="font-style:italic;color:var(--accent);">assembleia</span>.</h2>
+          <p class="section-lede">A convocação precisa ser formal, clara e, sobretudo, comprovável. Sem comprovação de envio dentro do prazo, qualquer decisão futura pode ser questionada.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Checklist do edital</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Nome completo do condomínio</li>
+              <li><span class="box"></span>CNPJ, se aplicável</li>
+              <li><span class="box"></span>Tipo de assembleia</li>
+              <li><span class="box"></span>Data</li>
+              <li><span class="box"></span>Horário da primeira chamada</li>
+              <li><span class="box"></span>Horário da segunda chamada</li>
+              <li><span class="box"></span>Local ou plataforma digital</li>
+              <li><span class="box"></span>Pauta completa</li>
+              <li><span class="box"></span>Regras de participação</li>
+              <li><span class="box"></span>Regras para procurações</li>
+              <li><span class="box"></span>Orientação sobre envio prévio de documentos</li>
+              <li><span class="box"></span>Inadimplência e direito de voto</li>
+              <li><span class="box"></span>Assinatura do convocante</li>
+              <li><span class="box"></span>Data de emissão do edital</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Divulgação da convocação</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Envio por e-mail</li>
+              <li><span class="box"></span>Publicação no aplicativo do condomínio</li>
+              <li><span class="box"></span>Fixação em quadro de avisos</li>
+              <li><span class="box"></span>Envio por correspondência, se exigido</li>
+              <li><span class="box"></span>WhatsApp como reforço</li>
+              <li><span class="box"></span>Comprovação de recebimento ou ciência</li>
+              <li><span class="box"></span>Respeito ao prazo da convenção</li>
+            </ul>
+
+            <div class="callout" style="margin-top:5mm;">
+              <b>Importante.</b> WhatsApp pode reforçar a comunicação, mas <i>não substitui</i> a forma oficial prevista na convenção. Mantenha sempre a via formal documentada.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 05 · Convocação</div>
+      <div class="pg-num">09</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 10 · SECTION 06
+       ============================================================ -->
+  <section class="page" data-screen-label="10 Etapa 06">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 06 · Comunicação prévia</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">06</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa seis</div>
+          <h2 class="section-title">Comunicação <span class="serif" style="font-style:italic;color:var(--accent);">pré-assembleia</span>.</h2>
+          <p class="section-lede">Uma assembleia organizada começa antes da reunião. Quanto mais os moradores entenderem os temas, menor a chance de tumulto no dia.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Checklist de comunicação</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Comunicado explicando a importância da assembleia</li>
+              <li><span class="box"></span>Documentos disponibilizados com antecedência</li>
+              <li><span class="box"></span>Temas técnicos traduzidos em linguagem simples</li>
+              <li><span class="box"></span>Impacto financeiro de cada decisão informado</li>
+              <li><span class="box"></span>Perguntas e respostas dos temas sensíveis</li>
+              <li><span class="box"></span>Antecipação de dúvidas recorrentes</li>
+              <li><span class="box"></span>Sem linguagem alarmista</li>
+              <li><span class="box"></span>Sem promessa de resultado</li>
+              <li><span class="box"></span>Reforço de que a assembleia é o ambiente de deliberação</li>
+              <li><span class="box"></span>Orientação sobre conduta respeitosa</li>
+            </ul>
+          </div>
+          <div>
+            <div class="model">
+              <p>Prezados condôminos,</p>
+              <p>Informamos que a assembleia do condomínio será realizada no dia __/__/____, conforme edital já enviado pelos canais oficiais.</p>
+              <p>Reforçamos a importância da participação de todos, pois serão tratados assuntos relevantes para a gestão, manutenção, orçamento e organização do condomínio.</p>
+              <p>Os documentos de apoio estão disponíveis para consulta prévia, permitindo que todos cheguem com as informações necessárias para uma deliberação consciente e produtiva.</p>
+              <p>Contamos com a participação de todos.</p>
+              <div class="sig">Equipe de Gestão</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 06 · Comunicação pré-assembleia</div>
+      <div class="pg-num">10</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 11 · SECTION 07
+       ============================================================ -->
+  <section class="page" data-screen-label="11 Etapa 07">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 07 · Apresentação</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">07</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa sete</div>
+          <h2 class="section-title">Preparação da <span class="serif" style="font-style:italic;color:var(--accent);">apresentação</span>.</h2>
+          <p class="section-lede">A apresentação serve para <i>conduzir</i> a assembleia, não para complicá-la ainda mais. Slide enxuto, gráfico simples e número claro são o que sustenta uma decisão coletiva.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Checklist da apresentação</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Capa com nome do condomínio e data</li>
+              <li><span class="box"></span>Objetivo da assembleia</li>
+              <li><span class="box"></span>Pauta resumida</li>
+              <li><span class="box"></span>Regras de condução</li>
+              <li><span class="box"></span>Dados financeiros organizados</li>
+              <li><span class="box"></span>Gráficos simples</li>
+              <li><span class="box"></span>Comparativos claros</li>
+              <li><span class="box"></span>Fotos de problemas, quando necessário</li>
+              <li><span class="box"></span>Propostas objetivas</li>
+              <li><span class="box"></span>Quadro de votação por item</li>
+              <li><span class="box"></span>Próximos passos</li>
+              <li><span class="box"></span>Linguagem acessível, sem excesso de texto</li>
+              <li><span class="box"></span>Termos técnicos explicados</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Estrutura recomendada</div>
+            <ol class="enum">
+              <li>Abertura</li>
+              <li>Regras da assembleia</li>
+              <li>Contexto geral</li>
+              <li>Apresentação dos dados</li>
+              <li>Explicação do problema</li>
+              <li>Alternativas possíveis</li>
+              <li>Impacto financeiro</li>
+              <li>Recomendação técnica da gestão</li>
+              <li>Espaço para dúvidas</li>
+              <li>Votação</li>
+              <li>Encaminhamentos</li>
+            </ol>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 07 · Preparação da apresentação</div>
+      <div class="pg-num">11</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 12 · SECTION 08
+       ============================================================ -->
+  <section class="page" data-screen-label="12 Etapa 08">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 08 · Equipe</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">08</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa oito</div>
+          <h2 class="section-title">Preparação da <span class="serif" style="font-style:italic;color:var(--accent);">equipe</span>.</h2>
+          <p class="section-lede">Uma assembleia não depende apenas do síndico. Defina previamente quem faz o quê: quem recebe, quem registra, quem conta, quem conduz e quem responde tecnicamente.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Funções necessárias</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Síndico</li>
+              <li><span class="box"></span>Presidente da mesa</li>
+              <li><span class="box"></span>Secretário da assembleia</li>
+              <li><span class="box"></span>Representante da administradora</li>
+              <li><span class="box"></span>Apoio jurídico (se necessário)</li>
+              <li><span class="box"></span>Apoio técnico (obra/laudo)</li>
+              <li><span class="box"></span>Lista de presença</li>
+              <li><span class="box"></span>Controle de procurações</li>
+              <li><span class="box"></span>Plataforma digital (se on-line)</li>
+              <li><span class="box"></span>Contagem de votos</li>
+              <li><span class="box"></span>Registro dos encaminhamentos</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Alinhamento prévio</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Todos conhecem a pauta?</li>
+              <li><span class="box"></span>Todos identificam os temas sensíveis?</li>
+              <li><span class="box"></span>A administradora tem dados atualizados?</li>
+              <li><span class="box"></span>O jurídico validou os pontos críticos?</li>
+              <li><span class="box"></span>O presidente sabe conduzir conflitos?</li>
+              <li><span class="box"></span>A equipe sabe o que pode ou não ser deliberado?</li>
+              <li><span class="box"></span>Existe roteiro de condução?</li>
+              <li><span class="box"></span>Existe plano para lidar com tumulto?</li>
+            </ul>
+
+            <div class="callout" style="margin-top:4mm;">
+              <b>Reunião pré-assembleia.</b> 30 minutos antes, com toda a equipe presente. Quem fala quando, quem corta, quem registra. Sem improviso.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 08 · Preparação da equipe</div>
+      <div class="pg-num">12</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 13 · SECTION 09
+       ============================================================ -->
+  <section class="page" data-screen-label="13 Etapa 09">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 09 · Presencial</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">09</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa nove</div>
+          <h2 class="section-title">Assembleia <span class="serif" style="font-style:italic;color:var(--accent);">presencial</span>.</h2>
+          <p class="section-lede">O setup físico transmite seriedade. Cadeira faltando, projetor que não liga e lista improvisada minam a percepção de profissionalismo antes mesmo da pauta começar.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Checklist do local</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Espaço reservado com antecedência</li>
+              <li><span class="box"></span>Cadeiras suficientes</li>
+              <li><span class="box"></span>Mesa para condução</li>
+              <li><span class="box"></span>Lista de presença impressa</li>
+              <li><span class="box"></span>Canetas</li>
+              <li><span class="box"></span>Projetor ou TV</li>
+              <li><span class="box"></span>Computador</li>
+              <li><span class="box"></span>Microfone, se necessário</li>
+              <li><span class="box"></span>Internet, se necessário</li>
+              <li><span class="box"></span>Água para a mesa</li>
+              <li><span class="box"></span>Cópias dos principais documentos</li>
+              <li><span class="box"></span>Urna ou método de votação</li>
+              <li><span class="box"></span>Sinalização do local</li>
+              <li><span class="box"></span>Controle de entrada</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Recepção dos condôminos</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Conferir unidade</li>
+              <li><span class="box"></span>Conferir titularidade ou representação</li>
+              <li><span class="box"></span>Receber procuração</li>
+              <li><span class="box"></span>Validar procuração conforme convenção</li>
+              <li><span class="box"></span>Registrar presença</li>
+              <li><span class="box"></span>Identificar inadimplentes (se houver restrição)</li>
+              <li><span class="box"></span>Entregar material de apoio</li>
+              <li><span class="box"></span>Orientar sobre regras de fala e votação</li>
+            </ul>
+
+            <div class="callout" style="margin-top:4mm;">
+              <b>Detalhe que vale ouro:</b> chegue 1h antes. Teste projetor, áudio e internet. O som ruim é responsável por metade dos tumultos.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 09 · Assembleia presencial</div>
+      <div class="pg-num">13</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 14 · SECTION 10
+       ============================================================ -->
+  <section class="page" data-screen-label="14 Etapa 10">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 10 · Virtual / híbrida</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">10</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa dez</div>
+          <h2 class="section-title">Assembleia virtual ou <span class="serif" style="font-style:italic;color:var(--accent);">híbrida</span>.</h2>
+          <p class="section-lede">Online não é “igual presencial num link”. Exige protocolo claro de identificação, validação de procurações, gravação autorizada e mecanismo formal de registro de votos.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Checklist técnico</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Plataforma definida</li>
+              <li><span class="box"></span>Link enviado com antecedência</li>
+              <li><span class="box"></span>Teste de acesso realizado</li>
+              <li><span class="box"></span>Regras de identificação dos participantes</li>
+              <li><span class="box"></span>Controle de entrada na sala virtual</li>
+              <li><span class="box"></span>Lista de presença digital</li>
+              <li><span class="box"></span>Mecanismo de votação definido</li>
+              <li><span class="box"></span>Forma de registro dos votos</li>
+              <li><span class="box"></span>Gravação autorizada (se aplicável)</li>
+              <li><span class="box"></span>Suporte técnico disponível</li>
+              <li><span class="box"></span>Plano B em caso de falha</li>
+              <li><span class="box"></span>Orientação sobre microfones e câmeras</li>
+              <li><span class="box"></span>Canal para envio de procurações</li>
+              <li><span class="box"></span>Critério de validação de participantes</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Regras de condução virtual</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Identificação com nome e unidade</li>
+              <li><span class="box"></span>Microfones fechados durante apresentações</li>
+              <li><span class="box"></span>Falas solicitadas pelo chat ou ferramenta</li>
+              <li><span class="box"></span>Votação registrada de forma clara</li>
+              <li><span class="box"></span>Presidente controla o tempo de fala</li>
+              <li><span class="box"></span>Não identificados não votam</li>
+              <li><span class="box"></span>Procurações validadas antes da votação</li>
+            </ul>
+
+            <div class="callout" style="margin-top:4mm;">
+              <b>Híbrida:</b> trate a sala virtual como “mais uma fileira” da assembleia. Um responsável exclusivo monitora chat, pedidos de fala e votos online.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 10 · Assembleia virtual ou híbrida</div>
+      <div class="pg-num">14</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 15 · SECTION 11
+       ============================================================ -->
+  <section class="page" data-screen-label="15 Etapa 11">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 11 · Abertura</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">11</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa onze</div>
+          <h2 class="section-title">Abertura da <span class="serif" style="font-style:italic;color:var(--accent);">assembleia</span>.</h2>
+          <p class="section-lede">Os primeiros cinco minutos definem o tom de toda a reunião. Abra com firmeza, com texto preparado, e estabeleça desde já o contrato de convivência.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Passos iniciais</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Confirmar horário da primeira chamada</li>
+              <li><span class="box"></span>Confirmar horário da segunda chamada</li>
+              <li><span class="box"></span>Verificar quórum de instalação</li>
+              <li><span class="box"></span>Abrir formalmente a assembleia</li>
+              <li><span class="box"></span>Eleger presidente da mesa</li>
+              <li><span class="box"></span>Eleger secretário</li>
+              <li><span class="box"></span>Registrar os presentes</li>
+              <li><span class="box"></span>Informar a pauta</li>
+              <li><span class="box"></span>Explicar as regras de condução</li>
+              <li><span class="box"></span>Informar que somente itens da pauta serão deliberados</li>
+              <li><span class="box"></span>Informar regras de fala e votação</li>
+            </ul>
+          </div>
+          <div>
+            <div class="model">
+              <p>Boa noite a todos.</p>
+              <p>Declaro aberta a Assembleia Geral do Condomínio ______________, realizada nesta data, conforme edital de convocação enviado aos condôminos.</p>
+              <p>Neste momento, passaremos à eleição do presidente da mesa e do secretário, que serão responsáveis pela condução dos trabalhos e pela lavratura da ata.</p>
+              <p>Reforçamos que a assembleia seguirá a pauta previamente convocada, e as deliberações ocorrerão apenas sobre os itens constantes no edital.</p>
+              <p>Pedimos a colaboração de todos para que as manifestações sejam objetivas, respeitosas e relacionadas aos temas em discussão.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 11 · Abertura</div>
+      <div class="pg-num">15</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 16 · SECTION 12
+       ============================================================ -->
+  <section class="page" data-screen-label="16 Etapa 12">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 12 · Regras de condução</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">12</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa doze</div>
+          <h2 class="section-title">Regras de <span class="serif" style="font-style:italic;color:var(--accent);">condução</span>.</h2>
+          <p class="section-lede">Uma boa assembleia precisa de limite, método e respeito. Frases ensaiadas evitam que a tensão tome conta da mesa.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Checklist de regras</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Falar apenas sobre o item em discussão</li>
+              <li><span class="box"></span>Respeitar ordem de inscrição</li>
+              <li><span class="box"></span>Limitar tempo de fala</li>
+              <li><span class="box"></span>Evitar interrupções</li>
+              <li><span class="box"></span>Não permitir ofensas pessoais</li>
+              <li><span class="box"></span>Não expor moradores ou funcionários</li>
+              <li><span class="box"></span>Não deliberar fora da pauta</li>
+              <li><span class="box"></span>Registrar divergências relevantes</li>
+              <li><span class="box"></span>Separar opinião de fato</li>
+              <li><span class="box"></span>Encaminhar questões individuais para depois</li>
+              <li><span class="box"></span>Manter o foco na decisão coletiva</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Frases úteis para a mesa</div>
+            <div class="phrases">
+              <div class="phrase">Esse ponto é importante, mas não está na pauta. Vou registrar como sugestão para análise futura.</div>
+              <div class="phrase">Vamos manter a discussão dentro do item que está sendo deliberado.</div>
+              <div class="phrase">Peço que a manifestação seja feita com respeito, sem ataques pessoais.</div>
+              <div class="phrase">Essa é uma questão individual e será tratada com a gestão após a assembleia.</div>
+              <div class="phrase">Vamos encaminhar para votação. O tema já foi suficientemente debatido.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 12 · Regras de condução</div>
+      <div class="pg-num">16</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 17 · SECTION 13
+       ============================================================ -->
+  <section class="page" data-screen-label="17 Etapa 13">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 13 · Controle de conflitos</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">13</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa treze</div>
+          <h2 class="section-title">Controle de <span class="serif" style="font-style:italic;color:var(--accent);">conflitos</span>.</h2>
+          <p class="section-lede">Assembleia de condomínio sai do controle rapidamente sem condução firme. O segredo é antecipar os sinais e ter o roteiro pronto antes do tumulto.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Sinais de alerta</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Moradores interrompendo constantemente</li>
+              <li><span class="box"></span>Discussões pessoais</li>
+              <li><span class="box"></span>Acusações sem prova</li>
+              <li><span class="box"></span>Tentativa de mudar a pauta</li>
+              <li><span class="box"></span>Grupos tentando tumultuar a votação</li>
+              <li><span class="box"></span>Exposição de funcionários</li>
+              <li><span class="box"></span>Ataques ao síndico, conselho ou administradora</li>
+              <li><span class="box"></span>Uso de informações falsas</li>
+              <li><span class="box"></span>Pressão emocional para votar sem dados</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Como agir</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Reafirmar as regras da assembleia</li>
+              <li><span class="box"></span>Pedir objetividade</li>
+              <li><span class="box"></span>Cortar falas ofensivas</li>
+              <li><span class="box"></span>Separar fatos de opiniões</li>
+              <li><span class="box"></span>Solicitar registro formal de denúncias</li>
+              <li><span class="box"></span>Encaminhar temas técnicos para análise posterior</li>
+              <li><span class="box"></span>Não discutir no impulso</li>
+              <li><span class="box"></span>Não responder provocações pessoais</li>
+              <li><span class="box"></span>Apoiar-se na convenção, regimento e documentos</li>
+              <li><span class="box"></span>Suspender a assembleia em caso extremo</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout">
+          <b>Princípio:</b> a postura da mesa contagia o plenário. Voz baixa, fala curta, retorno aos documentos. Quem perde a calma na mesa, perde a assembleia.
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 13 · Controle de conflitos</div>
+      <div class="pg-num">17</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 18 · SECTION 14
+       ============================================================ -->
+  <section class="page" data-screen-label="18 Etapa 14">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 14 · Votação</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">14</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa catorze</div>
+          <h2 class="section-title"><span class="serif" style="font-style:italic;color:var(--accent);">Votação</span>.</h2>
+          <p class="section-lede">A votação precisa ser clara, transparente e registrada corretamente. É aqui que discussões viram decisões. E que decisões viram processos, quando mal conduzidas.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Antes de votar</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>O item foi explicado?</li>
+              <li><span class="box"></span>As dúvidas foram respondidas?</li>
+              <li><span class="box"></span>O impacto financeiro foi apresentado?</li>
+              <li><span class="box"></span>O quórum necessário foi informado?</li>
+              <li><span class="box"></span>Quem pode votar foi identificado?</li>
+              <li><span class="box"></span>Procurações foram validadas?</li>
+              <li><span class="box"></span>Inadimplentes foram tratados conforme a lei e convenção?</li>
+              <li><span class="box"></span>A forma de votação foi explicada?</li>
+            </ul>
+
+            <div class="h-sub" style="margin-top:6mm;">Durante a votação</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Registrar votos favoráveis</li>
+              <li><span class="box"></span>Registrar votos contrários</li>
+              <li><span class="box"></span>Registrar abstenções</li>
+              <li><span class="box"></span>Conferir fração ideal, se aplicável</li>
+              <li><span class="box"></span>Conferir quórum exigido</li>
+              <li><span class="box"></span>Anunciar o resultado</li>
+              <li><span class="box"></span>Registrar o resultado na ata</li>
+              <li><span class="box"></span>Registrar ressalvas relevantes</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Formas de votação</div>
+            <ul class="checks">
+              <li><span class="box"></span>Por aclamação</li>
+              <li><span class="box"></span>Por chamada nominal</li>
+              <li><span class="box"></span>Por unidade</li>
+              <li><span class="box"></span>Por fração ideal</li>
+              <li><span class="box"></span>Por voto secreto, se previsto</li>
+              <li><span class="box"></span>Por plataforma digital</li>
+              <li><span class="box"></span>Por cédula física</li>
+            </ul>
+
+            <div class="block-card" style="margin-top:5mm;">
+              <div class="h-sub">Dica de campo</div>
+              <p style="margin:0;font-size:10pt;line-height:1.5;color:var(--ink-2);">Quando o tema for sensível, prefira chamada nominal ou cédula. Aclamação é ágil para itens de baixa polêmica; em tema controverso, ela <i>cria</i> o tumulto que tentava evitar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 14 · Votação</div>
+      <div class="pg-num">18</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 19 · SECTION 15
+       ============================================================ -->
+  <section class="page" data-screen-label="19 Etapa 15">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 15 · Ata</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">15</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa quinze</div>
+          <h2 class="section-title">Ata da <span class="serif" style="font-style:italic;color:var(--accent);">assembleia</span>.</h2>
+          <p class="section-lede">A ata é o documento que formaliza as decisões. Ela precisa ser objetiva, fiel e juridicamente segura. Tudo o que não está na ata, juridicamente, não aconteceu.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Checklist da ata</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Nome do condomínio</li>
+              <li><span class="box"></span>Data, horário e local</li>
+              <li><span class="box"></span>Tipo de assembleia</li>
+              <li><span class="box"></span>Forma de convocação</li>
+              <li><span class="box"></span>Primeira e segunda chamada</li>
+              <li><span class="box"></span>Nome do presidente da mesa</li>
+              <li><span class="box"></span>Nome do secretário</li>
+              <li><span class="box"></span>Lista de presentes</li>
+              <li><span class="box"></span>Registro das procurações</li>
+              <li><span class="box"></span>Pauta integral</li>
+              <li><span class="box"></span>Resumo das discussões</li>
+              <li><span class="box"></span>Deliberações por item</li>
+              <li><span class="box"></span>Resultado das votações</li>
+              <li><span class="box"></span>Quóruns atingidos</li>
+              <li><span class="box"></span>Encaminhamentos aprovados</li>
+              <li><span class="box"></span>Ressalvas relevantes</li>
+              <li><span class="box"></span>Horário de encerramento</li>
+              <li><span class="box"></span>Assinaturas necessárias</li>
+              <li><span class="box"></span>Anexos, se houver</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">O que evitar na ata</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Ata longa demais e confusa</li>
+              <li><span class="box"></span>Fofocas ou acusações sem formalização</li>
+              <li><span class="box"></span>Frases emocionais</li>
+              <li><span class="box"></span>Opiniões pessoais do síndico</li>
+              <li><span class="box"></span>Omissão de resultados de votação</li>
+              <li><span class="box"></span>Alteração do sentido das decisões</li>
+              <li><span class="box"></span>Deliberação fora da pauta</li>
+              <li><span class="box"></span>Termos vagos como “foi decidido resolver depois”</li>
+              <li><span class="box"></span>Falta de identificação de responsáveis</li>
+            </ul>
+
+            <div class="callout" style="margin-top:4mm;">
+              <b>Princípio editorial:</b> ata não é taquigrafia. Registra <i>fatos, deliberações e responsáveis</i>. Discurso vira resumo; resumo vira decisão.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 15 · Ata</div>
+      <div class="pg-num">19</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 20 · SECTION 16
+       ============================================================ -->
+  <section class="page" data-screen-label="20 Etapa 16">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 16 · Pós-assembleia</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">16</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa dezesseis</div>
+          <h2 class="section-title">Pós-assembleia <span class="serif" style="font-style:italic;color:var(--accent);">imediato</span>.</h2>
+          <p class="section-lede">Acabou a assembleia, começa a execução. As próximas 72 horas determinam se a decisão vira realidade ou se vira piada na próxima reunião.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Checklist pós-assembleia</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Revisar a ata</li>
+              <li><span class="box"></span>Conferir se todas as deliberações foram registradas</li>
+              <li><span class="box"></span>Validar com presidente e secretário</li>
+              <li><span class="box"></span>Enviar ata para administradora</li>
+              <li><span class="box"></span>Registrar em cartório, se necessário</li>
+              <li><span class="box"></span>Comunicar os condôminos sobre as decisões</li>
+              <li><span class="box"></span>Arquivar lista de presença</li>
+              <li><span class="box"></span>Arquivar procurações</li>
+              <li><span class="box"></span>Arquivar documentos apresentados</li>
+              <li><span class="box"></span>Atualizar sistema/aplicativo do condomínio</li>
+              <li><span class="box"></span>Iniciar execução das decisões aprovadas</li>
+              <li><span class="box"></span>Criar cronograma de providências</li>
+              <li><span class="box"></span>Informar responsáveis por cada ação</li>
+              <li><span class="box"></span>Monitorar prazos</li>
+            </ul>
+          </div>
+          <div>
+            <div class="block-card">
+              <div class="h-sub">Linha do tempo recomendada</div>
+              <ol class="enum" style="margin-top:2mm;">
+                <li>Em até <b>48h</b>: minuta de ata revisada</li>
+                <li>Em até <b>5 dias</b>: ata assinada e enviada</li>
+                <li>Em até <b>7 dias</b>: comunicado de decisões aos moradores</li>
+                <li>Em até <b>15 dias</b>: plano de execução por deliberação</li>
+                <li>Em até <b>30 dias</b>: primeiro status para o conselho</li>
+              </ol>
+            </div>
+
+            <div class="callout" style="margin-top:5mm;">
+              <b>Velocidade conta:</b> a percepção de competência da gestão se forma nos dias seguintes à assembleia, não no dia dela.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 16 · Pós-assembleia imediato</div>
+      <div class="pg-num">20</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 21 · SECTION 17
+       ============================================================ -->
+  <section class="page" data-screen-label="21 Etapa 17">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 17 · Comunicação pós</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">17</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa dezessete</div>
+          <h2 class="section-title">Comunicação <span class="serif" style="font-style:italic;color:var(--accent);">pós-assembleia</span>.</h2>
+          <p class="section-lede">A comunicação após a reunião evita ruído, boato e interpretações erradas. Quem não comunica, vira tema de grupo de WhatsApp paralelo.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Checklist do comunicado</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Informar que a assembleia foi realizada</li>
+              <li><span class="box"></span>Resumir os principais temas aprovados</li>
+              <li><span class="box"></span>Explicar impactos práticos</li>
+              <li><span class="box"></span>Informar prazos de implantação</li>
+              <li><span class="box"></span>Informar valores, se houver rateio</li>
+              <li><span class="box"></span>Evitar linguagem técnica excessiva</li>
+              <li><span class="box"></span>Não expor discussões internas</li>
+              <li><span class="box"></span>Não citar nomes desnecessariamente</li>
+              <li><span class="box"></span>Reforçar que a ata completa será disponibilizada</li>
+              <li><span class="box"></span>Indicar canal oficial para dúvidas</li>
+            </ul>
+          </div>
+          <div>
+            <div class="model">
+              <p>Prezados condôminos,</p>
+              <p>Informamos que foi realizada a Assembleia Geral do Condomínio ______________, conforme edital previamente enviado.</p>
+              <p>Durante a reunião, foram discutidos e deliberados os itens constantes na pauta, incluindo:</p>
+              <p>1. __________________________<br/>2. __________________________<br/>3. __________________________</p>
+              <p>As decisões aprovadas serão executadas conforme os prazos apresentados em assembleia. A ata será disponibilizada pelos canais oficiais após a finalização e assinatura.</p>
+              <p>Em caso de dúvidas, utilizem os canais formais de atendimento da gestão.</p>
+              <div class="sig">Equipe de Gestão</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 17 · Comunicação pós-assembleia</div>
+      <div class="pg-num">21</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 22 · SECTION 18
+       ============================================================ -->
+  <section class="page" data-screen-label="22 Etapa 18">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 18 · Execução</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">18</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa dezoito</div>
+          <h2 class="section-title">Execução das <span class="serif" style="font-style:italic;color:var(--accent);">deliberações</span>.</h2>
+          <p class="section-lede">A assembleia não termina na votação. A decisão precisa virar ação, tarefa, prazo, responsável. Decisão sem execução é convite à próxima assembleia ainda mais tensa.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Checklist de execução</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Transformar cada deliberação em tarefa</li>
+              <li><span class="box"></span>Definir responsável</li>
+              <li><span class="box"></span>Definir prazo</li>
+              <li><span class="box"></span>Definir orçamento</li>
+              <li><span class="box"></span>Definir fornecedor, se aprovado</li>
+              <li><span class="box"></span>Formalizar contratos necessários</li>
+              <li><span class="box"></span>Emitir boletos de rateio, se aprovado</li>
+              <li><span class="box"></span>Atualizar previsão orçamentária</li>
+              <li><span class="box"></span>Comunicar cronograma aos moradores</li>
+              <li><span class="box"></span>Acompanhar execução</li>
+              <li><span class="box"></span>Prestar contas do andamento</li>
+              <li><span class="box"></span>Registrar evidências</li>
+              <li><span class="box"></span>Atualizar conselho</li>
+              <li><span class="box"></span>Encerrar a demanda formalmente</li>
+            </ul>
+          </div>
+          <div>
+            <div class="block-card">
+              <div class="h-sub">Estrutura de tarefa</div>
+              <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Cada deliberação vira uma linha com cinco campos obrigatórios:</p>
+              <ul class="checks" style="margin-top:3mm;">
+                <li><span class="box"></span><b>Quê</b>: descrição clara da entrega</li>
+                <li><span class="box"></span><b>Quem</b>: responsável nominal</li>
+                <li><span class="box"></span><b>Quando</b>: prazo final</li>
+                <li><span class="box"></span><b>Quanto</b>: valor previsto</li>
+                <li><span class="box"></span><b>Como</b>: fornecedor / método</li>
+              </ul>
+            </div>
+
+            <div class="callout" style="margin-top:5mm;">
+              <b>Boa prática:</b> publique mensalmente um “farol” das deliberações: verde executado, amarelo em andamento, vermelho parado. Transparência tira combustível de qualquer crise.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 18 · Execução das deliberações</div>
+      <div class="pg-num">22</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 23 · SECTION 19
+       ============================================================ -->
+  <section class="page" data-screen-label="23 Etapa 19">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 19 · Arquivamento</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">19</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa dezenove</div>
+          <h2 class="section-title">Arquivamento & <span class="serif" style="font-style:italic;color:var(--accent);">governança</span>.</h2>
+          <p class="section-lede">Uma gestão profissional mantém histórico organizado. O arquivo correto é a maior proteção do síndico, e o ativo mais valioso para a próxima gestão.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div>
+          <div class="h-sub">Documentos que devem ser arquivados</div>
+          <div class="cols-2">
+            <ul class="checks">
+              <li><span class="box"></span>Edital de convocação</li>
+              <li><span class="box"></span>Comprovantes de envio</li>
+              <li><span class="box"></span>Lista de presença</li>
+              <li><span class="box"></span>Procurações</li>
+              <li><span class="box"></span>Ata assinada</li>
+              <li><span class="box"></span>Apresentação utilizada</li>
+              <li><span class="box"></span>Orçamentos apresentados</li>
+            </ul>
+            <ul class="checks">
+              <li><span class="box"></span>Laudos técnicos</li>
+              <li><span class="box"></span>Pareceres jurídicos</li>
+              <li><span class="box"></span>Relatórios financeiros</li>
+              <li><span class="box"></span>Gravação (se houver autorização e previsão)</li>
+              <li><span class="box"></span>Comunicados enviados</li>
+              <li><span class="box"></span>Contratos aprovados</li>
+              <li><span class="box"></span>Comprovantes de execução das deliberações</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="twoframe" style="margin-top: 2mm;">
+          <div class="block-card">
+            <div class="h-sub">Pasta digital padrão</div>
+            <p style="margin:0;font-family:'JetBrains Mono';font-size:9pt;line-height:1.7;color:var(--ink-2);">
+              /AGO-2026/<br/>
+              &nbsp;&nbsp;01_edital/<br/>
+              &nbsp;&nbsp;02_documentos-apoio/<br/>
+              &nbsp;&nbsp;03_lista-presenca/<br/>
+              &nbsp;&nbsp;04_procuracoes/<br/>
+              &nbsp;&nbsp;05_apresentacao/<br/>
+              &nbsp;&nbsp;06_ata/<br/>
+              &nbsp;&nbsp;07_comunicados/<br/>
+              &nbsp;&nbsp;08_execucao/
+            </p>
+          </div>
+          <div class="block-card">
+            <div class="h-sub">Política de retenção</div>
+            <p style="margin:0;font-size:10pt;line-height:1.55;color:var(--ink-2);">Atas e documentos contábeis: <b>mínimo 10 anos</b>. Listas de presença, procurações e edital da respectiva assembleia: <b>5 anos</b>. Em obras estruturais, guarde laudos e contratos enquanto a obra estiver garantida.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 19 · Arquivamento e governança</div>
+      <div class="pg-num">23</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 24 · SECTION 20 part 1
+       ============================================================ -->
+  <section class="page" data-screen-label="24 Etapa 20a">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 20 · Temas sensíveis</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">20</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa vinte</div>
+          <h2 class="section-title">Checklist para <span class="serif" style="font-style:italic;color:var(--accent);">temas sensíveis</span>.</h2>
+          <p class="section-lede">Alguns temas exigem nível extra de preparação. Prestação de contas, previsão orçamentária e obras: nenhum deles pode ir para a mesa “no improviso da reunião”.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Prestação de contas</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Balancetes conferidos</li>
+              <li><span class="box"></span>Extratos disponíveis</li>
+              <li><span class="box"></span>Notas fiscais organizadas</li>
+              <li><span class="box"></span>Receitas e despesas explicadas</li>
+              <li><span class="box"></span>Inadimplência demonstrada</li>
+              <li><span class="box"></span>Fundo de reserva apresentado</li>
+              <li><span class="box"></span>Contas extraordinárias separadas</li>
+              <li><span class="box"></span>Parecer do conselho anexado</li>
+              <li><span class="box"></span>Dúvidas financeiras antecipadas</li>
+            </ul>
+
+            <div class="h-sub" style="margin-top:6mm;">Previsão orçamentária</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Contratos reajustados</li>
+              <li><span class="box"></span>Folha de pagamento considerada</li>
+              <li><span class="box"></span>Encargos previstos</li>
+              <li><span class="box"></span>Inflação considerada</li>
+              <li><span class="box"></span>Manutenções obrigatórias incluídas</li>
+              <li><span class="box"></span>Obras necessárias previstas</li>
+              <li><span class="box"></span>Inadimplência projetada</li>
+              <li><span class="box"></span>Fundo de reserva avaliado</li>
+              <li><span class="box"></span>Taxa condominial simulada</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Obras</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Natureza da obra definida (necessária, útil, voluptuária)</li>
+              <li><span class="box"></span>Quórum identificado</li>
+              <li><span class="box"></span>Risco técnico apresentado</li>
+              <li><span class="box"></span>Orçamentos comparados</li>
+              <li><span class="box"></span>Cronograma apresentado</li>
+              <li><span class="box"></span>Impacto financeiro explicado</li>
+              <li><span class="box"></span>Rateio definido</li>
+              <li><span class="box"></span>Responsável técnico indicado</li>
+              <li><span class="box"></span>Garantias avaliadas</li>
+            </ul>
+
+            <div class="callout" style="margin-top:4mm;">
+              <b>Ponto-chave:</b> apresente sempre o cenário “fazer nada” ao lado das alternativas. Sem isso, a comparação parece desfavorável a qualquer obra.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 20 · Temas sensíveis (parte 1)</div>
+      <div class="pg-num">24</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 25 · SECTION 20 part 2
+       ============================================================ -->
+  <section class="page" data-screen-label="25 Etapa 20b">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 20 · Eleição & destituição</div>
+    </div>
+    <div class="pg-body">
+      <div style="display:flex; align-items:baseline; gap:10mm; padding-bottom:6mm; border-bottom: var(--rule); margin-bottom:7mm;">
+        <div class="section-kicker">Etapa 20 · parte 2</div>
+        <h2 style="font-family:'Instrument Serif'; font-size:26pt; margin:0;">Eleição & <i style="color:var(--accent);">destituição</i>.</h2>
+      </div>
+
+      <div class="section-body">
+        <div class="twoframe">
+          <div>
+            <div class="h-sub">Eleição</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Mandato atual conferido</li>
+              <li><span class="box"></span>Cargos disponíveis informados</li>
+              <li><span class="box"></span>Candidaturas organizadas</li>
+              <li><span class="box"></span>Regras da convenção verificadas</li>
+              <li><span class="box"></span>Procurações conferidas</li>
+              <li><span class="box"></span>Forma de votação definida</li>
+              <li><span class="box"></span>Resultado registrado</li>
+              <li><span class="box"></span>Posse registrada em ata</li>
+              <li><span class="box"></span>Dados bancários e administrativos atualizados após a eleição</li>
+            </ul>
+          </div>
+          <div>
+            <div class="h-sub">Destituição</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Motivo formalmente identificado</li>
+              <li><span class="box"></span>Convocação feita corretamente</li>
+              <li><span class="box"></span>Direito de defesa respeitado</li>
+              <li><span class="box"></span>Quórum validado</li>
+              <li><span class="box"></span>Jurídico envolvido</li>
+              <li><span class="box"></span>Ata extremamente objetiva</li>
+              <li><span class="box"></span>Evitar acusações genéricas</li>
+              <li><span class="box"></span>Registrar apenas fatos e deliberações</li>
+              <li><span class="box"></span>Preservar segurança jurídica</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="quote-block">
+          Em destituição, a ata é o documento mais importante da sua gestão. Cada palavra registrada é prova; cada omissão é fragilidade. Escreva como se ela fosse ser lida por um juiz, porque pode ser.
+          <div class="signature">Princípio editorial · Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 20 · Eleição e destituição</div>
+      <div class="pg-num">25</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 26 · SECTION 21
+       ============================================================ -->
+  <section class="page" data-screen-label="26 Etapa 21">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 21 · Erros comuns</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">21</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa vinte e um</div>
+          <h2 class="section-title">Erros comuns que o síndico deve <span class="serif" style="font-style:italic;color:var(--accent);">evitar</span>.</h2>
+          <p class="section-lede">Mapa dos buracos do caminho. Cada item desta lista já derrubou uma assembleia em algum lugar do Brasil esta semana.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div class="cols-2">
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Convocar assembleia sem consultar a convenção</li>
+            <li><span class="box"></span>Colocar pauta genérica demais</li>
+            <li><span class="box"></span>Deliberar assunto que não estava no edital</li>
+            <li><span class="box"></span>Não conferir procurações</li>
+            <li><span class="box"></span>Permitir voto de inadimplente com restrição legal</li>
+            <li><span class="box"></span>Não saber o quórum necessário</li>
+            <li><span class="box"></span>Não apresentar documentos de apoio</li>
+            <li><span class="box"></span>Misturar opinião pessoal com informação técnica</li>
+            <li><span class="box"></span>Permitir tumulto sem intervenção</li>
+          </ul>
+          <ul class="checks stack-tight">
+            <li><span class="box"></span>Fazer ata incompleta</li>
+            <li><span class="box"></span>Não comunicar as decisões depois</li>
+            <li><span class="box"></span>Não executar o que foi aprovado</li>
+            <li><span class="box"></span>Tratar assembleia como debate de WhatsApp</li>
+            <li><span class="box"></span>Deixar o morador mais exaltado conduzir</li>
+            <li><span class="box"></span>Não preparar o presidente da mesa</li>
+            <li><span class="box"></span>Não ter apoio da administradora em temas financeiros</li>
+            <li><span class="box"></span>Não registrar corretamente os votos</li>
+          </ul>
+        </div>
+
+        <div class="callout">
+          <b>Síntese.</b> 80% dos problemas de assembleia vêm de três pontos: pauta vaga, documento ausente e condução fraca. Cuide desses três e o resto se resolve.
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 21 · Erros comuns a evitar</div>
+      <div class="pg-num">26</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 27 · SECTION 22 (final quick checklist)
+       ============================================================ -->
+  <section class="page" data-screen-label="27 Etapa 22">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Etapa 22 · Checklist final</div>
+    </div>
+    <div class="pg-body">
+      <div class="section-head">
+        <div class="big"><div class="section-num">22</div></div>
+        <div class="meta">
+          <div class="section-kicker">Etapa vinte e dois</div>
+          <h2 class="section-title">Checklist final <span class="serif" style="font-style:italic;color:var(--accent);">rápido</span>.</h2>
+          <p class="section-lede">A página de bolso. Imprima, dobre, leve para a assembleia. Resumo executivo das três fases, antes, durante e depois.</p>
+        </div>
+      </div>
+
+      <div class="section-body">
+        <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: 8mm;">
+          <div>
+            <div class="tag" style="margin-bottom:4mm;">Antes</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Pauta definida</li>
+              <li><span class="box"></span>Convenção consultada</li>
+              <li><span class="box"></span>Quóruns verificados</li>
+              <li><span class="box"></span>Edital preparado</li>
+              <li><span class="box"></span>Documentos organizados</li>
+              <li><span class="box"></span>Comunicação enviada</li>
+              <li><span class="box"></span>Apresentação pronta</li>
+              <li><span class="box"></span>Equipe alinhada</li>
+              <li><span class="box"></span>Procurações orientadas</li>
+              <li><span class="box"></span>Plataforma ou local preparado</li>
+            </ul>
+          </div>
+          <div>
+            <div class="tag" style="margin-bottom:4mm; background:var(--paper-2); border-color:var(--accent); color:var(--accent);">Durante</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Lista de presença preenchida</li>
+              <li><span class="box"></span>Procurações conferidas</li>
+              <li><span class="box"></span>Presidente e secretário eleitos</li>
+              <li><span class="box"></span>Pauta respeitada</li>
+              <li><span class="box"></span>Regras explicadas</li>
+              <li><span class="box"></span>Discussões controladas</li>
+              <li><span class="box"></span>Votações registradas</li>
+              <li><span class="box"></span>Quóruns conferidos</li>
+              <li><span class="box"></span>Encaminhamentos definidos</li>
+              <li><span class="box"></span>Ata estruturada</li>
+            </ul>
+          </div>
+          <div>
+            <div class="tag" style="margin-bottom:4mm;">Depois</div>
+            <ul class="checks stack-tight">
+              <li><span class="box"></span>Ata revisada</li>
+              <li><span class="box"></span>Ata assinada</li>
+              <li><span class="box"></span>Ata enviada</li>
+              <li><span class="box"></span>Documentos arquivados</li>
+              <li><span class="box"></span>Comunicado pós-assembleia enviado</li>
+              <li><span class="box"></span>Deliberações viraram tarefas</li>
+              <li><span class="box"></span>Prazos definidos</li>
+              <li><span class="box"></span>Responsáveis definidos</li>
+              <li><span class="box"></span>Execução acompanhada</li>
+              <li><span class="box"></span>Conselho informado</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="hr-orn" style="margin-top:auto;"><span class="glyph">·  ·  ·</span></div>
+
+        <div class="quote-block" style="background:var(--paper-2);">
+          Quando o síndico chega na assembleia com este checklist marcado, a reunião deixa de ser palco de improviso e vira o que sempre deveria ter sido: o ato formal de uma gestão profissional.
+          <div class="signature">Bastidores da Sindicatura</div>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>Etapa 22 · Checklist final rápido</div>
+      <div class="pg-num">27</div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       PAGE 28 · MANIFESTO / CLOSE
+       ============================================================ -->
+  <section class="page manifesto" data-screen-label="28 Manifesto">
+    <div class="pg-head">
+      <div class="brand"><span class="dot"></span><span>Bastidores da Sindicatura</span></div>
+      <div>Encerramento</div>
+    </div>
+    <div class="frame" style="padding-top: 30mm;">
+      <div style="flex:1; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; gap: 14mm;">
+        <div class="cover-eyebrow" style="margin:0;">Posicionamento</div>
+
+        <h2 class="big-quote">
+          Assembleia não é <em>improviso.</em><br/>
+          É o momento em que a gestão presta contas,<br/>
+          organiza decisões, protege juridicamente<br/>
+          o condomínio e <em>transforma conflito em governança.</em>
+        </h2>
+
+        <div style="max-width:140mm; font-size:11pt; line-height:1.6; color:var(--ink-2);">
+          Quando uma assembleia é mal preparada, o condomínio vira palco de ruído.
+          Quando é bem conduzida, vira instrumento de gestão. O síndico profissional não entra em assembleia
+          apenas para “explicar assuntos”. Ele entra com método, documento, pauta, estratégia e segurança.
+        </div>
+
+        <div class="attr">
+          Material de apoio · Bastidores da Sindicatura
+          <span class="name">Juliana Moreira</span>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:10px; margin-top: -6mm; font-family:'Manrope'; font-size:10pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600;">
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+          www.bastidoresdasindicatura.com.br
+          <span style="width:24px; height:1.5px; background:var(--accent);"></span>
+        </div>
+      </div>
+    </div>
+    <div class="pg-foot">
+      <div>© Juliana Moreira · Bastidores da Sindicatura · Vol. 01 · 2026</div>
+      <div class="pg-num" style="font-family:'Manrope'; font-style:normal; font-size:9pt; letter-spacing:.18em; text-transform:uppercase; color:var(--accent);">bastidoresdasindicatura.com.br</div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Print/Save UI (screen only) -->
+<style>
+  #print-bar{
+    position: fixed; right: 22px; bottom: 22px; z-index: 9999;
+    display: flex; flex-direction: column; gap: 10px; align-items: stretch;
+    font-family: 'Manrope', system-ui, sans-serif;
+  }
+  #print-bar .btn{
+    background: #B8543B; color: #FBF7EC;
+    border: none; cursor: pointer;
+    padding: 14px 22px;
+    font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+    font-size: 12px;
+    border-radius: 999px;
+    box-shadow: 0 8px 24px rgba(0,0,0,.35), 0 2px 6px rgba(0,0,0,.25);
+    display: inline-flex; align-items: center; gap: 10px;
+    transition: transform .15s ease, box-shadow .15s ease;
+  }
+  #print-bar .btn:hover{ transform: translateY(-1px); box-shadow: 0 12px 30px rgba(0,0,0,.4); }
+  #print-bar .btn.secondary{
+    background: #0E1A2B; color: #FBF7EC;
+  }
+  #print-bar .hint{
+    background: #FBF7EC; color: #1F2C3F;
+    border: 1px solid #D9D2C2;
+    padding: 12px 14px; border-radius: 12px;
+    font-size: 11px; line-height: 1.5;
+    max-width: 260px;
+    box-shadow: 0 6px 18px rgba(0,0,0,.18);
+  }
+  #print-bar .hint b{ color: #B8543B; }
+  #print-bar .hint .warn{
+    display:block; margin-top:8px; padding-top:8px;
+    border-top:1px dashed #D9D2C2;
+    color:#B8543B; font-weight:600;
+  }
+  @media print { #print-bar { display: none !important; } }
+</style>
+<div id="print-bar">
+  <div class="hint">
+    No diálogo de impressão:<br>
+    1. <b>Destino:</b> Adobe PDF (ou Salvar como PDF)<br>
+    2. <b>Tamanho do papel:</b> A4<br>
+    3. <b>Margens:</b> Nenhuma<br>
+    4. <b>Escala:</b> 100% (não use “Ajustar à página”)<br>
+    5. <b>Gráficos de fundo:</b> Ativado
+    <span class="warn">Se o papel sair em Carta/Letter, troque manualmente para A4 no menu “Tamanho do papel”.</span>
+  </div>
+  <button class="btn" onclick="window.print()">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+    Salvar como PDF
+  </button>
+</div>
+
+<script>
+  // Open print dialog automatically once fonts are ready
+  (async function(){
+    try {
+      if (document.fonts && document.fonts.ready) {
+        await document.fonts.ready;
+      }
+    } catch (e) {}
+    await new Promise(r => setTimeout(r, 900));
+    try { window.print(); } catch (e) {}
+  })();
+</script>
+
+</body>
+</html>
