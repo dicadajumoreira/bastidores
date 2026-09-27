@@ -848,7 +848,7 @@ def build_cover(meta, vol, cover, out_jpg):
         .replace("{{EYEBROW}}", esc(cover.get("eyebrow") or ""))
         .replace("{{TITLE}}", cover.get("titulo_html") or esc(vol["titulo"]))
         .replace("{{SUBTITLE}}", f'<p class="subtitle">{sub}</p>' if sub else "")
-        .replace("{{DECK}}", esc(cover.get("deck") or ""))
+        .replace('<p class="deck">{{DECK}}</p>', f'<p class="deck">{esc(cover["deck"])}</p>' if cover.get("deck") else "")
         .replace("{{STATS}}", "".join(stats))
         .replace("{{ANO}}", meta["ano"])
     )
@@ -993,6 +993,24 @@ def slugify(s):
     return s
 
 
+def emphasize(text, cover_html):
+    """Escreve o texto do cadastro com o mesmo destaque em itálico da capa
+    original: as palavras que estavam em <em> e continuam no texto voltam em
+    itálico. Se nenhuma sobrar, a última palavra vai em itálico."""
+    out = esc(text)
+    ems = [strip_tags(m).strip(" .,:;") for m in re.findall(r"<em>(.*?)</em>", cover_html or "")]
+    hit = False
+    for e in sorted(ems, key=len, reverse=True):
+        if e and re.search(re.escape(esc(e)), out, re.I) and "<em>" not in out:
+            out = re.sub(re.escape(esc(e)), lambda m: f"<em>{m.group(0)}</em>", out, count=1, flags=re.I)
+            hit = True
+    if not hit and len(text.split()) >= 3:
+        out = re.sub(r"(\S+)$", r"<em>\1</em>", out)
+    if not text.rstrip().endswith(("?", "!", ".")):
+        out += "."
+    return out
+
+
 def build_volume(meta, vol, debug=False, skip_cover=False):
     src = ROOT / vol["source"]
     images = {}
@@ -1004,6 +1022,11 @@ def build_volume(meta, vol, debug=False, skip_cover=False):
         cover, blocks = html_to_blocks(src)
         if vol.get("capa"):
             cover.update(vol["capa"])
+    # A KDP exige que o título (e o subtítulo, quando informado) do cadastro
+    # sejam os mesmos da capa. A capa passa a mostrar exatamente os dois.
+    cover["titulo_html"] = emphasize(vol["titulo"], cover.get("titulo_html"))
+    cover["subtitulo_html"] = emphasize(vol["subtitulo"], cover.get("subtitulo_html") or cover.get("titulo_html"))
+    cover["deck"] = ""
     chapters = split_chapters(blocks)
     folder = OUT / f"V{vol['num']} - {vol['titulo']}"
     base = f"V{vol['num']}-{vol['slug']}"

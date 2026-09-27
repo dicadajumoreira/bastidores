@@ -123,8 +123,8 @@
     var ds = 44;
     guard = 0;
     while (overflow() && ds > 26 && guard++ < 20) {
-      ds -= 1; deck.style.fontSize = ds + 'px';
-      if (sub) sub.style.fontSize = Math.max(48, parseFloat(getComputedStyle(sub).fontSize) - 2) + 'px';
+      ds -= 1; if (deck) deck.style.fontSize = ds + 'px';
+      if (sub) sub.style.fontSize = Math.max(40, parseFloat(getComputedStyle(sub).fontSize) - 2) + 'px';
     }
     document.documentElement.setAttribute('data-ready', '1');
   })();
