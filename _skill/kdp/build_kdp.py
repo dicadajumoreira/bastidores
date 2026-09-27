@@ -877,7 +877,6 @@ def build_cover(meta, vol, cover, out_jpg):
 def ficha_kdp(meta, vol, chapters, epub_name, jpg_name):
     kw = "\n".join(f"{i + 1}. {k}" for i, k in enumerate(vol["palavras_chave"]))
     cats = "\n".join(f"- {c}" for c in vol["categorias"])
-    desc_html = "\n".join(f"<p>{html.escape(p, quote=False)}</p>" for p in vol["descricao"])
     desc_txt = "\n\n".join(vol["descricao"])
     caps = "\n".join(f"- {nav_title(t)}" for t, _ in chapters)
     return f"""# Ficha KDP · Volume {vol['num']} · {vol['titulo']}
@@ -906,13 +905,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 
 ## Descrição
 
-Versão com HTML (a KDP aceita as tags `<p>`, `<b>`, `<i>`, `<br>`):
-
-```html
-{desc_html}
-```
-
-Versão em texto puro:
+Cole o texto abaixo direto na caixa de descrição, do jeito que está. Os parágrafos ficam separados sozinhos. Não cole nenhum código com `<` ou `>`: a caixa normal da KDP trata esses sinais como caracteres não permitidos e trava o cadastro.
 
 {desc_txt}
 
@@ -928,6 +921,18 @@ Versão em texto puro:
 
 {caps}
 - Sobre a autora
+
+## Se aparecer "Corrija o(s) erro(s) destacado(s) para continuar"
+
+A mensagem aparece no fim da página, mas o campo com problema fica mais acima, marcado em vermelho. Suba a página inteira e confira, nesta ordem:
+
+1. **Descrição:** se aparecer algum `<p>` ou `</p>` no texto, apague tudo e cole de novo a descrição desta ficha.
+2. **Conteúdo gerado por IA:** a pergunta precisa estar respondida (Sim ou Não).
+3. **Categorias:** clique em "Escolher categorias" e marque pelo menos uma.
+4. **Conteúdo sexualmente explícito:** marque "Não".
+5. **Direitos de publicação:** marque "Possuo os direitos autorais".
+6. **Série:** se não quiser configurar a série agora, remova a série e salve. Dá pra incluir depois.
+7. **ISBN:** deixe em branco. E-book Kindle não precisa de ISBN.
 
 ## Preço e distribuição (decisão sua)
 
@@ -954,6 +959,10 @@ Cada pasta desta lista tem tudo o que a Amazon pede pra publicar um e-book Kindl
 4. **Conteúdo do e-book:** escolha DRM (sim ou não), envie o `.epub` no campo do manuscrito e o `.jpg` no campo da capa. Espere a conversão e abra o "Visualizador online" pra folhear o livro. Se aparecer aviso de ortografia, revise: normalmente são termos técnicos (LGPD, ANPD, NBR) que a Amazon não conhece.
 5. **Preço:** escolha os territórios, o plano de royalty (35% ou 70%) e o preço. A tela mostra a faixa aceita pro plano de 70%.
 6. Clique em "Publicar". A revisão da Amazon costuma levar até 72 horas.
+
+## Se a KDP não deixar avançar
+
+A mensagem "Corrija o(s) erro(s) destacado(s) para continuar" aparece no fim da página, mas o campo com problema fica mais acima. A causa mais comum aqui é a descrição: cole só o texto da ficha, sem nenhum `<p>`. Cada ficha tem, no fim, a lista completa do que conferir.
 
 ## Ordem sugerida de publicação
 

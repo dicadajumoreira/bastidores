@@ -24,15 +24,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 
 ## Descrição
 
-Versão com HTML (a KDP aceita as tags `<p>`, `<b>`, `<i>`, `<br>`):
-
-```html
-<p>A Reforma Tributária virou manchete, e manchete virou boato no grupo do condomínio. Este guia técnico separa fato de manchete.</p>
-<p>Em 10 capítulos, mostra com rigor o que a LC 214/2025 e o Decreto 12.955/2026 mudam no condomínio: a regra dos 80%, o regime regular opcional, energia com geração compartilhada, a NFS-e e o que o síndico precisa organizar desde já. O que ainda depende de regulamentação fica separado no fim, com a data de corte informada: agosto de 2026.</p>
-<p>Volume 23 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC.</p>
-```
-
-Versão em texto puro:
+Cole o texto abaixo direto na caixa de descrição, do jeito que está. Os parágrafos ficam separados sozinhos. Não cole nenhum código com `<` ou `>`: a caixa normal da KDP trata esses sinais como caracteres não permitidos e trava o cadastro.
 
 A Reforma Tributária virou manchete, e manchete virou boato no grupo do condomínio. Este guia técnico separa fato de manchete.
 
@@ -75,6 +67,18 @@ Volume 23 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindic
 - Enquanto o mercado repete post, você cita artigo 
 - Manchete simplifica. Lei decide
 - Sobre a autora
+
+## Se aparecer "Corrija o(s) erro(s) destacado(s) para continuar"
+
+A mensagem aparece no fim da página, mas o campo com problema fica mais acima, marcado em vermelho. Suba a página inteira e confira, nesta ordem:
+
+1. **Descrição:** se aparecer algum `<p>` ou `</p>` no texto, apague tudo e cole de novo a descrição desta ficha.
+2. **Conteúdo gerado por IA:** a pergunta precisa estar respondida (Sim ou Não).
+3. **Categorias:** clique em "Escolher categorias" e marque pelo menos uma.
+4. **Conteúdo sexualmente explícito:** marque "Não".
+5. **Direitos de publicação:** marque "Possuo os direitos autorais".
+6. **Série:** se não quiser configurar a série agora, remova a série e salve. Dá pra incluir depois.
+7. **ISBN:** deixe em branco. E-book Kindle não precisa de ISBN.
 
 ## Preço e distribuição (decisão sua)
 

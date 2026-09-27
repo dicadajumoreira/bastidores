@@ -24,15 +24,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 
 ## Descrição
 
-Versão com HTML (a KDP aceita as tags `<p>`, `<b>`, `<i>`, `<br>`):
-
-```html
-<p>A maior dor da sindicatura, hoje, mora no grupo de WhatsApp. É lá que o condomínio funciona por áudio, print, cobrança pública e julgamento em tempo real.</p>
-<p>Este manual, em 18 capítulos, mostra como o síndico mantém a autoridade, a sanidade emocional e a gestão profissional sem virar refém do grupo: o que responder, o que não responder, quando migrar para o canal oficial, como montar um protocolo de comunicação e como conduzir o dia da crise. Inclui mais de 14 respostas prontas para copiar, adaptar e enviar.</p>
-<p>Volume 04 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC.</p>
-```
-
-Versão em texto puro:
+Cole o texto abaixo direto na caixa de descrição, do jeito que está. Os parágrafos ficam separados sozinhos. Não cole nenhum código com `<` ou `>`: a caixa normal da KDP trata esses sinais como caracteres não permitidos e trava o cadastro.
 
 A maior dor da sindicatura, hoje, mora no grupo de WhatsApp. É lá que o condomínio funciona por áudio, print, cobrança pública e julgamento em tempo real.
 
@@ -86,6 +78,18 @@ Volume 04 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindic
 - Quer aprender os bastidores reais da sindicatura ?
 - Sobreviver ao WhatsApp não é calar moradores. É organizar a conversa, tratar críticas pelo canal correto e separar demanda real de pressão emocional
 - Sobre a autora
+
+## Se aparecer "Corrija o(s) erro(s) destacado(s) para continuar"
+
+A mensagem aparece no fim da página, mas o campo com problema fica mais acima, marcado em vermelho. Suba a página inteira e confira, nesta ordem:
+
+1. **Descrição:** se aparecer algum `<p>` ou `</p>` no texto, apague tudo e cole de novo a descrição desta ficha.
+2. **Conteúdo gerado por IA:** a pergunta precisa estar respondida (Sim ou Não).
+3. **Categorias:** clique em "Escolher categorias" e marque pelo menos uma.
+4. **Conteúdo sexualmente explícito:** marque "Não".
+5. **Direitos de publicação:** marque "Possuo os direitos autorais".
+6. **Série:** se não quiser configurar a série agora, remova a série e salve. Dá pra incluir depois.
+7. **ISBN:** deixe em branco. E-book Kindle não precisa de ISBN.
 
 ## Preço e distribuição (decisão sua)
 

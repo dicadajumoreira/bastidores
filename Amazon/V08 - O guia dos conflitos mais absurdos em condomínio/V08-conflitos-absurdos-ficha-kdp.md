@@ -24,15 +24,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 
 ## Descrição
 
-Versão com HTML (a KDP aceita as tags `<p>`, `<b>`, `<i>`, `<br>`):
-
-```html
-<p>O conflito em condomínio quase nunca é sobre o motivo aparente. A briga pela vaga, o cachorro no elevador, a churrasqueira, o varal: por trás de cada um há uma disputa de território, de reconhecimento ou de poder.</p>
-<p>Este guia conta 10 histórias reais de conflitos absurdos, mostra o que cada uma ensina sobre a dinâmica do condomínio e entrega um método para desarmar a situação antes que vire crise. Fecha com um checklist de 14 itens para reduzir conflitos na sua gestão.</p>
-<p>Volume 08 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC.</p>
-```
-
-Versão em texto puro:
+Cole o texto abaixo direto na caixa de descrição, do jeito que está. Os parágrafos ficam separados sozinhos. Não cole nenhum código com `<` ou `>`: a caixa normal da KDP trata esses sinais como caracteres não permitidos e trava o cadastro.
 
 O conflito em condomínio quase nunca é sobre o motivo aparente. A briga pela vaga, o cachorro no elevador, a churrasqueira, o varal: por trás de cada um há uma disputa de território, de reconhecimento ou de poder.
 
@@ -74,6 +66,18 @@ Volume 08 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindic
 - A sindicatura vai muito além de atas, boletos e assembleias 
 - Condomínio nunca foi sobre concreto. Sempre foi sobre convivência
 - Sobre a autora
+
+## Se aparecer "Corrija o(s) erro(s) destacado(s) para continuar"
+
+A mensagem aparece no fim da página, mas o campo com problema fica mais acima, marcado em vermelho. Suba a página inteira e confira, nesta ordem:
+
+1. **Descrição:** se aparecer algum `<p>` ou `</p>` no texto, apague tudo e cole de novo a descrição desta ficha.
+2. **Conteúdo gerado por IA:** a pergunta precisa estar respondida (Sim ou Não).
+3. **Categorias:** clique em "Escolher categorias" e marque pelo menos uma.
+4. **Conteúdo sexualmente explícito:** marque "Não".
+5. **Direitos de publicação:** marque "Possuo os direitos autorais".
+6. **Série:** se não quiser configurar a série agora, remova a série e salve. Dá pra incluir depois.
+7. **ISBN:** deixe em branco. E-book Kindle não precisa de ISBN.
 
 ## Preço e distribuição (decisão sua)
 

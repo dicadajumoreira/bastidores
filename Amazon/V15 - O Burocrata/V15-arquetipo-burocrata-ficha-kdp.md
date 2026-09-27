@@ -13,7 +13,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 |--|--|
 | Idioma | Português (Brasil) |
 | Título | O Burocrata |
-| Subtítulo | Transforme informação em conexão (Série Arquétipos do Síndico) |
+| Subtítulo | Transforme informação em conexão |
 | Série | Bastidores da Sindicatura · número 15 |
 | Edição | 1 |
 | Autora | Juliana Moreira |
@@ -24,15 +24,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 
 ## Descrição
 
-Versão com HTML (a KDP aceita as tags `<p>`, `<b>`, `<i>`, `<br>`):
-
-```html
-<p>O Burocrata é o síndico organizado que escreve o comunicado impecável que ninguém lê. Informa tudo, comunica pouco, e não entende por que a gestão não é reconhecida.</p>
-<p>Em 13 capítulos, este guia mostra como engajar os moradores, reduzir conflitos e fazer com que a sua gestão seja vista, entendida e valorizada: a regra dos 30 segundos, os 3 fatores de conflito, o teste do comunicado e um plano de 30 dias.</p>
-<p>Volume 15 da série Bastidores da Sindicatura, Série Arquétipos do Síndico, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC.</p>
-```
-
-Versão em texto puro:
+Cole o texto abaixo direto na caixa de descrição, do jeito que está. Os parágrafos ficam separados sozinhos. Não cole nenhum código com `<` ou `>`: a caixa normal da KDP trata esses sinais como caracteres não permitidos e trava o cadastro.
 
 O Burocrata é o síndico organizado que escreve o comunicado impecável que ninguém lê. Informa tudo, comunica pouco, e não entende por que a gestão não é reconhecida.
 
@@ -80,6 +72,18 @@ Volume 15 da série Bastidores da Sindicatura, Série Arquétipos do Síndico, d
 - A Mentoria não é um curso. É um espaço fechado
 - Informar protege a gestão. Comunicar constrói reputação
 - Sobre a autora
+
+## Se aparecer "Corrija o(s) erro(s) destacado(s) para continuar"
+
+A mensagem aparece no fim da página, mas o campo com problema fica mais acima, marcado em vermelho. Suba a página inteira e confira, nesta ordem:
+
+1. **Descrição:** se aparecer algum `<p>` ou `</p>` no texto, apague tudo e cole de novo a descrição desta ficha.
+2. **Conteúdo gerado por IA:** a pergunta precisa estar respondida (Sim ou Não).
+3. **Categorias:** clique em "Escolher categorias" e marque pelo menos uma.
+4. **Conteúdo sexualmente explícito:** marque "Não".
+5. **Direitos de publicação:** marque "Possuo os direitos autorais".
+6. **Série:** se não quiser configurar a série agora, remova a série e salve. Dá pra incluir depois.
+7. **ISBN:** deixe em branco. E-book Kindle não precisa de ISBN.
 
 ## Preço e distribuição (decisão sua)
 

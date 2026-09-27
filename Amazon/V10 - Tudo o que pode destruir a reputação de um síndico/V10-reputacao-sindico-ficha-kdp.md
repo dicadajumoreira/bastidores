@@ -24,15 +24,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 
 ## Descrição
 
-Versão com HTML (a KDP aceita as tags `<p>`, `<b>`, `<i>`, `<br>`):
-
-```html
-<p>Na sindicatura, reputação é ativo. E ela se perde em detalhes: uma resposta mal dada no grupo, uma prestação de contas confusa, um favorecimento que parecia inofensivo, um registro que não foi feito.</p>
-<p>Em 18 capítulos, este guia mapeia tudo o que corrói a imagem profissional do síndico, da comunicação ao conselho, da crise ao WhatsApp. Traz 5 testes diagnósticos, um diagnóstico completo de risco reputacional e um plano de ação de 30 dias para quem quer crescer na carreira sem perder autoridade, credibilidade e mercado.</p>
-<p>Volume 10 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC.</p>
-```
-
-Versão em texto puro:
+Cole o texto abaixo direto na caixa de descrição, do jeito que está. Os parágrafos ficam separados sozinhos. Não cole nenhum código com `<` ou `>`: a caixa normal da KDP trata esses sinais como caracteres não permitidos e trava o cadastro.
 
 Na sindicatura, reputação é ativo. E ela se perde em detalhes: uma resposta mal dada no grupo, uma prestação de contas confusa, um favorecimento que parecia inofensivo, um registro que não foi feito.
 
@@ -86,6 +78,18 @@ Volume 10 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindic
 - A teoria ensina o que deveria acontecer. A vida real mostra o que acontece
 - Reputação não se recupera com discurso. Reputação se protege com método
 - Sobre a autora
+
+## Se aparecer "Corrija o(s) erro(s) destacado(s) para continuar"
+
+A mensagem aparece no fim da página, mas o campo com problema fica mais acima, marcado em vermelho. Suba a página inteira e confira, nesta ordem:
+
+1. **Descrição:** se aparecer algum `<p>` ou `</p>` no texto, apague tudo e cole de novo a descrição desta ficha.
+2. **Conteúdo gerado por IA:** a pergunta precisa estar respondida (Sim ou Não).
+3. **Categorias:** clique em "Escolher categorias" e marque pelo menos uma.
+4. **Conteúdo sexualmente explícito:** marque "Não".
+5. **Direitos de publicação:** marque "Possuo os direitos autorais".
+6. **Série:** se não quiser configurar a série agora, remova a série e salve. Dá pra incluir depois.
+7. **ISBN:** deixe em branco. E-book Kindle não precisa de ISBN.
 
 ## Preço e distribuição (decisão sua)
 

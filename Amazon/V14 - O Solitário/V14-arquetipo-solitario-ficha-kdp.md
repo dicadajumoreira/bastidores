@@ -13,7 +13,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 |--|--|
 | Idioma | Português (Brasil) |
 | Título | O Solitário |
-| Subtítulo | Pare de carregar o condomínio sozinho (Série Arquétipos do Síndico) |
+| Subtítulo | Pare de carregar o condomínio sozinho |
 | Série | Bastidores da Sindicatura · número 14 |
 | Edição | 1 |
 | Autora | Juliana Moreira |
@@ -24,15 +24,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 
 ## Descrição
 
-Versão com HTML (a KDP aceita as tags `<p>`, `<b>`, `<i>`, `<br>`):
-
-```html
-<p>O Solitário é o síndico dedicado que virou o gargalo da própria gestão. Tudo passa por ele, nada anda sem ele, e o condomínio para quando ele para.</p>
-<p>Em 13 capítulos, este guia mostra como deixar de ser o gargalo e construir um condomínio que funciona sem depender de você para tudo: as 5 mentiras que o Solitário conta a si mesmo, o método das 4 perguntas, o mapa da delegação e um plano de 30 dias.</p>
-<p>Volume 14 da série Bastidores da Sindicatura, Série Arquétipos do Síndico, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC.</p>
-```
-
-Versão em texto puro:
+Cole o texto abaixo direto na caixa de descrição, do jeito que está. Os parágrafos ficam separados sozinhos. Não cole nenhum código com `<` ou `>`: a caixa normal da KDP trata esses sinais como caracteres não permitidos e trava o cadastro.
 
 O Solitário é o síndico dedicado que virou o gargalo da própria gestão. Tudo passa por ele, nada anda sem ele, e o condomínio para quando ele para.
 
@@ -81,6 +73,18 @@ Volume 14 da série Bastidores da Sindicatura, Série Arquétipos do Síndico, d
 - A Mentoria não é um curso. É um espaço fechado
 - Liderança não é fazer tudo. É garantir que tudo aconteça
 - Sobre a autora
+
+## Se aparecer "Corrija o(s) erro(s) destacado(s) para continuar"
+
+A mensagem aparece no fim da página, mas o campo com problema fica mais acima, marcado em vermelho. Suba a página inteira e confira, nesta ordem:
+
+1. **Descrição:** se aparecer algum `<p>` ou `</p>` no texto, apague tudo e cole de novo a descrição desta ficha.
+2. **Conteúdo gerado por IA:** a pergunta precisa estar respondida (Sim ou Não).
+3. **Categorias:** clique em "Escolher categorias" e marque pelo menos uma.
+4. **Conteúdo sexualmente explícito:** marque "Não".
+5. **Direitos de publicação:** marque "Possuo os direitos autorais".
+6. **Série:** se não quiser configurar a série agora, remova a série e salve. Dá pra incluir depois.
+7. **ISBN:** deixe em branco. E-book Kindle não precisa de ISBN.
 
 ## Preço e distribuição (decisão sua)
 

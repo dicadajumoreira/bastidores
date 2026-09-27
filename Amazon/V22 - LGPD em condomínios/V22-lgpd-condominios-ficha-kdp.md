@@ -24,15 +24,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 
 ## Descrição
 
-Versão com HTML (a KDP aceita as tags `<p>`, `<b>`, `<i>`, `<br>`):
-
-```html
-<p>Poucos ambientes coletam e guardam tantos dados quanto um condomínio: nome, telefone, documento, placa, imagem de câmera, ficha de funcionário, biometria. Todo dia, em vários sistemas, quase sempre sem inventário.</p>
-<p>Em 16 capítulos, este guia mostra como proteger morador, funcionário, visitante e o próprio condomínio dos riscos do tratamento de dados pessoais: marco regulatório, quem responde pelo quê, mapa dos dados e matriz de risco, reconhecimento facial, câmeras, portaria, WhatsApp, assembleias, crianças, fornecedores e o que fazer no vazamento. Fecha com as 25 maiores falhas de LGPD em condomínios e o checklist final do síndico. Sem juridiquês e sem terror.</p>
-<p>Volume 22 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC.</p>
-```
-
-Versão em texto puro:
+Cole o texto abaixo direto na caixa de descrição, do jeito que está. Os parágrafos ficam separados sozinhos. Não cole nenhum código com `<` ou `>`: a caixa normal da KDP trata esses sinais como caracteres não permitidos e trava o cadastro.
 
 Poucos ambientes coletam e guardam tantos dados quanto um condomínio: nome, telefone, documento, placa, imagem de câmera, ficha de funcionário, biometria. Todo dia, em vários sistemas, quase sempre sem inventário.
 
@@ -81,6 +73,18 @@ Volume 22 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindic
 - Os maiores problemas do condomínio quase sempre começam nos bastidores 
 - Dado vazado não volta. Gestão protegida se constrói
 - Sobre a autora
+
+## Se aparecer "Corrija o(s) erro(s) destacado(s) para continuar"
+
+A mensagem aparece no fim da página, mas o campo com problema fica mais acima, marcado em vermelho. Suba a página inteira e confira, nesta ordem:
+
+1. **Descrição:** se aparecer algum `<p>` ou `</p>` no texto, apague tudo e cole de novo a descrição desta ficha.
+2. **Conteúdo gerado por IA:** a pergunta precisa estar respondida (Sim ou Não).
+3. **Categorias:** clique em "Escolher categorias" e marque pelo menos uma.
+4. **Conteúdo sexualmente explícito:** marque "Não".
+5. **Direitos de publicação:** marque "Possuo os direitos autorais".
+6. **Série:** se não quiser configurar a série agora, remova a série e salve. Dá pra incluir depois.
+7. **ISBN:** deixe em branco. E-book Kindle não precisa de ISBN.
 
 ## Preço e distribuição (decisão sua)
 

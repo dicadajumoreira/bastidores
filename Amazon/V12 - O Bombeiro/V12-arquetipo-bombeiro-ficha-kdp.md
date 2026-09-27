@@ -13,7 +13,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 |--|--|
 | Idioma | Português (Brasil) |
 | Título | O Bombeiro |
-| Subtítulo | Como parar de apagar incêndios e assumir o controle da sua gestão (Série Arquétipos do Síndico) |
+| Subtítulo | Como parar de apagar incêndios e assumir o controle da sua gestão |
 | Série | Bastidores da Sindicatura · número 12 |
 | Edição | 1 |
 | Autora | Juliana Moreira |
@@ -24,15 +24,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 
 ## Descrição
 
-Versão com HTML (a KDP aceita as tags `<p>`, `<b>`, `<i>`, `<br>`):
-
-```html
-<p>O Bombeiro é o síndico que vive correndo atrás dos problemas. Resolve tudo, o tempo todo, e por isso nunca sai do modo emergência.</p>
-<p>Em 8 capítulos, este guia mostra como sair da gestão reativa e virar a chave para a gestão estratégica: a matriz de prioridades, o método 30-30-30, a diferença entre resolver o vazamento e resolver a causa, e um plano de ação de 30 dias.</p>
-<p>Volume 12 da série Bastidores da Sindicatura e primeiro título da Série Arquétipos do Síndico, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC.</p>
-```
-
-Versão em texto puro:
+Cole o texto abaixo direto na caixa de descrição, do jeito que está. Os parágrafos ficam separados sozinhos. Não cole nenhum código com `<` ou `>`: a caixa normal da KDP trata esses sinais como caracteres não permitidos e trava o cadastro.
 
 O Bombeiro é o síndico que vive correndo atrás dos problemas. Resolve tudo, o tempo todo, e por isso nunca sai do modo emergência.
 
@@ -74,6 +66,18 @@ Volume 12 da série Bastidores da Sindicatura e primeiro título da Série Arqu�
 - A Mentoria não é um curso. É um espaço fechado
 - O Bombeiro resolve. O Estrategista evolui
 - Sobre a autora
+
+## Se aparecer "Corrija o(s) erro(s) destacado(s) para continuar"
+
+A mensagem aparece no fim da página, mas o campo com problema fica mais acima, marcado em vermelho. Suba a página inteira e confira, nesta ordem:
+
+1. **Descrição:** se aparecer algum `<p>` ou `</p>` no texto, apague tudo e cole de novo a descrição desta ficha.
+2. **Conteúdo gerado por IA:** a pergunta precisa estar respondida (Sim ou Não).
+3. **Categorias:** clique em "Escolher categorias" e marque pelo menos uma.
+4. **Conteúdo sexualmente explícito:** marque "Não".
+5. **Direitos de publicação:** marque "Possuo os direitos autorais".
+6. **Série:** se não quiser configurar a série agora, remova a série e salve. Dá pra incluir depois.
+7. **ISBN:** deixe em branco. E-book Kindle não precisa de ISBN.
 
 ## Preço e distribuição (decisão sua)
 

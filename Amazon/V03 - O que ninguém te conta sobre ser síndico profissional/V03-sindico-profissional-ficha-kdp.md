@@ -24,15 +24,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 
 ## Descrição
 
-Versão com HTML (a KDP aceita as tags `<p>`, `<b>`, `<i>`, `<br>`):
-
-```html
-<p>Sindicatura não é só gestão. É também gestão de expectativa, conflito, ansiedade, frustração, vaidade, medo e comunicação truncada. Quase ninguém ensina isso.</p>
-<p>Em 11 capítulos, Juliana Moreira abre a parte da profissão que não aparece nos cursos: a decisão impopular, o conselho que cobra tudo e não sustenta nada, o morador que distorce a sua fala no grupo, a crise que começou anos antes da sua gestão. Um e-book para ler com calma e usar como espelho, não como manual.</p>
-<p>Volume 03 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC.</p>
-```
-
-Versão em texto puro:
+Cole o texto abaixo direto na caixa de descrição, do jeito que está. Os parágrafos ficam separados sozinhos. Não cole nenhum código com `<` ou `>`: a caixa normal da KDP trata esses sinais como caracteres não permitidos e trava o cadastro.
 
 Sindicatura não é só gestão. É também gestão de expectativa, conflito, ansiedade, frustração, vaidade, medo e comunicação truncada. Quase ninguém ensina isso.
 
@@ -76,6 +68,18 @@ Volume 03 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindic
 - Se este e-book descreveu a sua rotina ...
 - Ser síndico profissional não é apenas administrar condomínios. É aprender a conduzir pessoas, conflitos e decisões difíceis sem perder sua autoridade , sua saúde e sua direção 
 - Sobre a autora
+
+## Se aparecer "Corrija o(s) erro(s) destacado(s) para continuar"
+
+A mensagem aparece no fim da página, mas o campo com problema fica mais acima, marcado em vermelho. Suba a página inteira e confira, nesta ordem:
+
+1. **Descrição:** se aparecer algum `<p>` ou `</p>` no texto, apague tudo e cole de novo a descrição desta ficha.
+2. **Conteúdo gerado por IA:** a pergunta precisa estar respondida (Sim ou Não).
+3. **Categorias:** clique em "Escolher categorias" e marque pelo menos uma.
+4. **Conteúdo sexualmente explícito:** marque "Não".
+5. **Direitos de publicação:** marque "Possuo os direitos autorais".
+6. **Série:** se não quiser configurar a série agora, remova a série e salve. Dá pra incluir depois.
+7. **ISBN:** deixe em branco. E-book Kindle não precisa de ISBN.
 
 ## Preço e distribuição (decisão sua)
 

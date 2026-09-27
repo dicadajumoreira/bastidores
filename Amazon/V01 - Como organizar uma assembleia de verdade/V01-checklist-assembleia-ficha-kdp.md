@@ -24,15 +24,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 
 ## Descrição
 
-Versão com HTML (a KDP aceita as tags `<p>`, `<b>`, `<i>`, `<br>`):
-
-```html
-<p>A assembleia é o momento em que a gestão do síndico é julgada em público. Quando ela sai do improviso, vira instrumento de gestão. Quando não sai, vira desgaste, impugnação e retrabalho.</p>
-<p>Este checklist reúne, em 22 etapas, tudo o que precisa ser verificado antes, durante e depois de uma assembleia: diagnóstico da necessidade, pauta, edital, quórum, documentos, condução da reunião, ata e registro. São mais de 260 itens de verificação, organizados na ordem em que acontecem, com regras de bolso e alertas nos pontos em que mais se erra.</p>
-<p>Volume 01 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC.</p>
-```
-
-Versão em texto puro:
+Cole o texto abaixo direto na caixa de descrição, do jeito que está. Os parágrafos ficam separados sozinhos. Não cole nenhum código com `<` ou `>`: a caixa normal da KDP trata esses sinais como caracteres não permitidos e trava o cadastro.
 
 A assembleia é o momento em que a gestão do síndico é julgada em público. Quando ela sai do improviso, vira instrumento de gestão. Quando não sai, vira desgaste, impugnação e retrabalho.
 
@@ -85,6 +77,18 @@ Volume 01 da série Bastidores da Sindicatura, de Juliana Moreira, CEO da Sindic
 - Checklist final rápido 
 - Assembleia não é improviso. É o momento em que a gestão presta contas, organiza decisões, protege juridicamente o condomínio e transforma conflito em governança
 - Sobre a autora
+
+## Se aparecer "Corrija o(s) erro(s) destacado(s) para continuar"
+
+A mensagem aparece no fim da página, mas o campo com problema fica mais acima, marcado em vermelho. Suba a página inteira e confira, nesta ordem:
+
+1. **Descrição:** se aparecer algum `<p>` ou `</p>` no texto, apague tudo e cole de novo a descrição desta ficha.
+2. **Conteúdo gerado por IA:** a pergunta precisa estar respondida (Sim ou Não).
+3. **Categorias:** clique em "Escolher categorias" e marque pelo menos uma.
+4. **Conteúdo sexualmente explícito:** marque "Não".
+5. **Direitos de publicação:** marque "Possuo os direitos autorais".
+6. **Série:** se não quiser configurar a série agora, remova a série e salve. Dá pra incluir depois.
+7. **ISBN:** deixe em branco. E-book Kindle não precisa de ISBN.
 
 ## Preço e distribuição (decisão sua)
 

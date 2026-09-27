@@ -13,7 +13,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 |--|--|
 | Idioma | Português (Brasil) |
 | Título | O Sargento |
-| Subtítulo | Manda no grito, autoridade pelo volume: como ser respeitado sem depender do medo (Série Arquétipos do Síndico) |
+| Subtítulo | Manda no grito, autoridade pelo volume: como ser respeitado sem depender do medo |
 | Série | Bastidores da Sindicatura · número 17 |
 | Edição | 1 |
 | Autora | Juliana Moreira |
@@ -24,15 +24,7 @@ Preencha o cadastro em kdp.amazon.com copiando os campos abaixo.
 
 ## Descrição
 
-Versão com HTML (a KDP aceita as tags `<p>`, `<b>`, `<i>`, `<br>`):
-
-```html
-<p>O Sargento é o síndico firme que confunde autoridade com medo. É obedecido, mas nunca admirado. E a obediência acaba no primeiro momento em que o medo passa.</p>
-<p>Em 12 capítulos, este guia mostra por que alguns síndicos são obedecidos e nunca respeitados, e como sair dessa armadilha: os 10 sinais de alerta, a diferença entre obediência por medo e respeito por confiança, os 5 pilares da autoridade e um teste final.</p>
-<p>Volume 17 da série Bastidores da Sindicatura, Série Arquétipos do Síndico, de Juliana Moreira, CEO da Sindicompany e da Condo Academy e professora de gestão condominial no IBMEC.</p>
-```
-
-Versão em texto puro:
+Cole o texto abaixo direto na caixa de descrição, do jeito que está. Os parágrafos ficam separados sozinhos. Não cole nenhum código com `<` ou `>`: a caixa normal da KDP trata esses sinais como caracteres não permitidos e trava o cadastro.
 
 O Sargento é o síndico firme que confunde autoridade com medo. É obedecido, mas nunca admirado. E a obediência acaba no primeiro momento em que o medo passa.
 
@@ -78,6 +70,18 @@ Volume 17 da série Bastidores da Sindicatura, Série Arquétipos do Síndico, d
 - Sua coragem te trouxe até aqui. O próximo passo não cabe no grito
 - Você pode ser obedecido por medo. Ou seguido por confiança
 - Sobre a autora
+
+## Se aparecer "Corrija o(s) erro(s) destacado(s) para continuar"
+
+A mensagem aparece no fim da página, mas o campo com problema fica mais acima, marcado em vermelho. Suba a página inteira e confira, nesta ordem:
+
+1. **Descrição:** se aparecer algum `<p>` ou `</p>` no texto, apague tudo e cole de novo a descrição desta ficha.
+2. **Conteúdo gerado por IA:** a pergunta precisa estar respondida (Sim ou Não).
+3. **Categorias:** clique em "Escolher categorias" e marque pelo menos uma.
+4. **Conteúdo sexualmente explícito:** marque "Não".
+5. **Direitos de publicação:** marque "Possuo os direitos autorais".
+6. **Série:** se não quiser configurar a série agora, remova a série e salve. Dá pra incluir depois.
+7. **ISBN:** deixe em branco. E-book Kindle não precisa de ISBN.
 
 ## Preço e distribuição (decisão sua)
 

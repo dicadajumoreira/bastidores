@@ -15,6 +15,10 @@ Cada pasta desta lista tem tudo o que a Amazon pede pra publicar um e-book Kindl
 5. **Preço:** escolha os territórios, o plano de royalty (35% ou 70%) e o preço. A tela mostra a faixa aceita pro plano de 70%.
 6. Clique em "Publicar". A revisão da Amazon costuma levar até 72 horas.
 
+## Se a KDP não deixar avançar
+
+A mensagem "Corrija o(s) erro(s) destacado(s) para continuar" aparece no fim da página, mas o campo com problema fica mais acima. A causa mais comum aqui é a descrição: cole só o texto da ficha, sem nenhum `<p>`. Cada ficha tem, no fim, a lista completa do que conferir.
+
 ## Ordem sugerida de publicação
 
 Publique primeiro um volume, confira como ficou na loja, e só depois suba os demais. A série fica ligada automaticamente pelo nome e pelo número informados no cadastro.
